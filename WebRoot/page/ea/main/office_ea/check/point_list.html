@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN""http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+
+		<#assign s=JspTaglibs["/WEB-INF/struts-tags.tld"]>
+		<title>车辆安全巡检点列表</title> <#include
+		"/page/ea/main/office_ea/check/js_css.html">
+		<script type="text/javascript"
+			src="${base}/js/ea/office_ea/check/point_list.js"></script>
+
+		<script type="text/javascript">
+		 var  basePath='${base}';   
+		 var checkpointid = "";     
+		 var search = '${search}';
+		 var type='${type}';
+		</script>
+		<style type="text/css">
+
+
+
+.pointitem {
+	width: 45%;
+	float: right;
+	overflow: auto;
+	height: 200px;
+}
+
+.item {
+	float: left;
+	width: 55%;
+}
+
+.caritem {
+	width: 180px;
+	height: 100px;
+	border: 1px solid #7F9DB9;
+	background: #FFFFFF;
+	overflow: auto;
+}
+
+#caritemtbl {
+	border-collapse: collapse;
+	width: 100%;
+	white-space: nowrap;
+}
+
+#caritemtbl td {
+	border: 1px solid #7F9DB9;
+}
+
+
+</style>
+	</head>
+	<body>
+		<div>
+			<table class="JQueryflexme">
+				<thead>
+					<tr>
+						<th width="40" align="center">
+							选择
+						</th>
+						<th width="150" align="center">
+							车牌号/检查点/检查项
+						</th>
+						<th width="200" align="center">
+							芯片号
+						</th>
+						<th width="150" align="center">
+							是否启用
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<#list pageForm.list as p >
+					<tr id="${p[0]}" class="level1">
+						<td>
+							<input type="checkbox" name="a" class="JQuerypersonvalue"
+								value="${p[0]}" />
+						</td>
+						<td>
+							<div style="text-align: left;">
+								<img src="${base}/images/add_s.png" class="add" />
+								<span id="carNum">${p[1]}</span>
+							</div>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							&nbsp;
+						</td>
+
+					</tr>
+
+
+					<tr id="kelong" style="display: none;">
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							<div style="text-align: left;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<img src="${base}/images/add_s.png" />
+								<span id="checkpointname"></span>
+							</div>
+						</td>
+						<td>
+							<span id="chip"></span>
+						</td>
+						<td>
+							<span id="creator" style="display: none"></span>
+							<span id="useflag"></span>
+						</td>
+
+
+					</tr>
+
+					<tr id="kelong2" style="display: none;" class="level3">
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							<div style="text-align: left;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<img src="${base}/images/sub_s.png" />
+								<span id="checkpointitemname"></span>
+							</div>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					</#list>
+				</tbody>
+			</table>
+			<#assign actionPath="ea/safetycheck/ea_point.jspa?"> <#include
+			"/page/ea/main/office_ea/check/page.html"/>
+
+
+		</div>
+
+
+		<!--搜索窗口 -->
+		<div class="jqmWindow" style="width: 300px; right: 25%; top: 10%"
+			id="jqModelSearch">
+			<form name="postSearchForm" id="postSearchForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					查询信息
+					<div class="close">
+					</div>
+				</div>
+				<table width="100%" cellpadding="5" cellspacing="10"
+					id="cataffSearchTable">
+					<tr>
+						<td align="right">
+							车牌号：
+						</td>
+						<td align="left">
+							<input type="text" name="pointbean.carNum" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<input type="button" class="input-button" id="tosearch"
+								value=" 查询 " />
+							<input name="search" type="hidden" value="search" />
+							<input name="type" type="hidden" value="${type}" />
+						</td>
+
+					</tr>
+				</table>
+			</form>
+		</div>
+
+	</body>
+</html>

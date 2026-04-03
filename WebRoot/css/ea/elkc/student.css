@@ -1,0 +1,57 @@
+@charset "utf-8";
+/*学员信息*/
+.student_info{padding: .7rem .6rem;}
+.head_img{float: left;width: 2.8rem;height: 2.8rem;border: 1px solid #eeeeee;border-radius: 50%;}
+.s_info_text{width: 12rem;float: left;height: 2.8rem;padding: .4rem 0;padding-left: .6rem;}
+.s_info_name{font-size: .73rem;line-height: 1.2rem;color: #666666;}
+.s_info_nm{font-size: .6rem;line-height: .8rem;color: #f2881c;}
+.s_hr{border: 1px solid #dddddd;background: #f3f3f3;height: .3rem;margin: 0;border-left: 0;border-right: 0;}
+.s_list_box{display: block;padding-left: 3.2rem;}
+.s_list{line-height: 3rem;border-bottom: 1px solid #dddddd;color: #191919;font-size: .768rem;background: url(../../../images/ea/driving/elkc/arr_r.png) no-repeat 11.8rem;background-size: .4rem;}
+.s_list_01{background: url(../../../images/ea/driving/elkc/s_list01.png) no-repeat .6rem;background-size: 2rem;}
+.s_list_02{background: url(../../../images/ea/driving/elkc/s_list02.png) no-repeat .6rem;background-size: 2rem;}
+.s_list_03{background: url(../../../images/ea/driving/elkc/s_list03.png) no-repeat .6rem;background-size: 2rem;}
+.s_list_04{background: url(../../../images/ea/driving/elkc/s_list04.png) no-repeat .6rem;background-size: 2rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

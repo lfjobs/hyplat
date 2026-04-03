@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.production.resume">
+	<class name="JobWanted" table="dtJobWanted">
+		<id length="50" name="jobWantedKey">
+			<column length="50" name="jobWantedKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="jobWantedId">
+			<column length="50" name="jobWantedId" not-null="true">
+				<comment>逻辑主键</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID">
+				<comment>人员id </comment>
+			</column>
+		</property>
+		<property name="resumeID">
+			<column length="50" name="resumeID">
+				<comment>个人简历id</comment>
+			</column>
+		</property>
+		<property name="work">
+			<column length="50" name="work">
+				<comment>工作性质</comment>
+			</column>
+		</property>
+		<property name="region">
+			<column length="50" name="region">
+				<comment>工作地区</comment>
+			</column>
+		</property>
+		<property name="position">
+			<column length="50" name="position">
+				<comment>职位类别</comment>
+			</column>
+		</property>
+		<property name="industry">
+			<column length="50" name="industry">
+				<comment>行业类别</comment>
+			</column>
+		</property>
+		<property name="salary">
+			<column length="50" name="salary">
+				<comment>期望薪资</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column length="50" name="status">
+				<comment>求职状态</comment>
+			</column>
+		</property>
+		<property name="degree">
+			<column length="50" name="degree">
+				<comment>进度</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

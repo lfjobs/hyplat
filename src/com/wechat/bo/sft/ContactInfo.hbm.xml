@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="ContactInfo" table="dt_sft_ContactInfo">
+	<comment>二级商户进件——超级管理员信息  </comment>
+		<id length="50" name="coKey">
+			<column length="50" name="coKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="coId">
+			<column length="50" name="coId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="contact_type">
+			<column length="50" name="contact_type" ><comment>超级管理员类型 </comment></column>
+		</property>
+		<property name="contact_name">
+			<column length="50" name="contact_name" ><comment>超级管理员姓名 </comment></column>
+		</property>
+		<property name="contact_id_card_number">
+			<column length="50" name="contact_id_card_number" ><comment>超级管理员身份证件号码</comment></column>
+		</property>
+		<property name="contact_id_doc_copy">
+			<column length="256" name="contact_id_doc_copy" ><comment>超级管理员身份正人像</comment></column>
+		</property>
+		<property name="contact_id_doc_copy_back">
+			<column length="256" name="contact_id_doc_copy_back" ><comment>超级管理员身份证国徽</comment></column>
+		</property>
+		<property name="contact_id_doc_period_begin">
+			<column length="128" name="contact_id_doc_period_begin" ><comment>超级管理员身份证开始时间</comment></column>
+		</property>
+		<property name="contact_id_doc_period_end">
+			<column length="128" name="contact_id_doc_period_end" ><comment>超级管理员身份证结束时间</comment></column>
+		</property>
+		<property name="business_authorization_letter">
+			<column length="256" name="business_authorization_letter" ><comment>超级管理员身份证结束时间</comment></column>
+		</property>
+		<property name="mobile_phone">
+			<column length="50" name="mobile_phone" ><comment>超级管理员手机</comment></column>
+		</property>
+		<property name="contact_email">
+			<column length="50" name="contact_email" ><comment>超级管理员邮箱</comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

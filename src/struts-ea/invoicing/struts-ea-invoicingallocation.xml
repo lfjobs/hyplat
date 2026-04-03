@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="allocation-token" namespace="/ea/allocation"
+		extends="ea-token">
+		<action name="t_ea_*"
+			class="hy.ea.invoicing.action.AllocationWarehousingAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="allocation-ntoken" namespace="/ea/allocation"
+		extends="struts-default">
+		<action name="ea_*"
+			class="hy.ea.invoicing.action.AllocationWarehousingAction" method="{1}">
+			<!--调拨出库列表-->
+			<result name="warelist">/page/ea/main/finance/invoicing/allocationManagement_list.jsp</result>
+			<!--调拨出库添加页面  -->
+			<result name="wareadd">/page/ea/main/finance/invoicing/allocationManagement_add.jsp</result>
+			<!--调拨出库打印预览  -->
+			<result name="wareeditprint">/page/ea/main/finance/invoicing/allocationManagement_print.jsp</result>
+			<!--调拨出库查看  -->
+			<result name="wareedit">/page/ea/main/finance/invoicing/allocationManagement_edit.jsp</result>
+			<result name="failed">/page/ea/fail.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="allocation.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="allocation-jsonajax" namespace="/ea/allocation"
+		extends="json-default">
+		<action name="sajax_ea_*"
+			class="hy.ea.invoicing.action.AllocationWarehousingAction" method="{1}">
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

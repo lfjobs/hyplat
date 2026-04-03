@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company.vo">
+	<class name="ContactCompanyView" table="view_concom"> 
+	<id length="50" name="contactConnectionKey">
+			<column length="50" name="contactConnectionKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="contactConnectionID">
+			<column length="50" name="contactConnectionID" not-null="true" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true" />
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" not-null="true" />
+		</property>
+		 <property name="companyName">
+        	<column name="companyName" length="250" />
+        </property>
+        	<property name="address">
+        	<column name="address" length="250"/>
+        </property>
+        <property name="companyAddr">
+        	<column name="companyAddr" length="256"/>
+        </property>
+		<property name="companyTel">
+			<column length="250" name="companyTel"/>
+		</property>
+		<property name="cresponsible">
+			<column length="250" name="cresponsible"/>
+		</property>
+		<property name="responsibleTel">
+			<column length="250" name="responsibleTel" />
+		</property>
+		<property name="remark">
+			<column length="256" name="remark" />
+		</property>
+		<property name="dealIn">
+			<column length="250" name="dealIn" />
+		</property>
+		<property name="industryType">
+			<column length="250" name="industryType" />
+		</property>
+		<property name="contactConnections">
+			<column length="250" name="contactConnections" />
+		</property>
+		<property name="custStatus">
+			<column length="4" name="custStatus" />
+		</property>
+	</class>
+</hibernate-mapping>

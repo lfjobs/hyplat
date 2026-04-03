@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="COIntermediaryResearch" table="DTCOIntermediaryResearch" >
+		<id length="50" name="intermediaryResearchKey">
+			<column length="50" name="intermediaryResearchKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="intermediaryResearchID">
+			<column length="50" name="intermediaryResearchID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="companyName">
+			<column length="250" name="companyName" />
+		</property>
+		<property name="companyAddress">
+			<column length="250" name="companyAddress" />
+		</property>
+		<property name="address">
+			<column length="250" name="address" />
+		</property>
+		<property name="invitePost">
+			<column length="250" name="invitePost"/>
+		</property>
+		<property name="StartworkDate">
+			<column length="250" name="StartworkDate"/>
+		</property>
+		<property name="offdutyDate">
+			<column length="250" name="offdutyDate"/>
+		</property>
+		<property name="mainTalents">
+			<column length="250" name="mainTalents"/>
+		</property>
+		<property name="remark">
+			<column length="250" name="remark" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.attence">
+	<class name="AttenceGroup" table="DT_At_AttenceGroup" schema="HYPLAT" dynamic-insert="true">
+	<comment>考勤组</comment>
+		<id length="50" name="atgkey" type="java.lang.String">
+			<column length="50" name="atgkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="atgID" type="java.lang.String">
+			<column length="50" name="atgID" >
+			</column>
+		</property>
+		<property name="attenceName" type="java.lang.String">
+			<column name="attenceName" length="50">
+				<comment>考勤组名称</comment>
+			</column>
+		</property>
+		<property name="attenceType" type="java.lang.String">
+			<column length="2" name="attenceType" >
+				<comment>00固定时间上下班 01：按排班时间上下班 02 不固定时间上下班</comment>
+			</column>
+		</property>
+		<property name="ruleID" type="java.lang.String">
+			<column length="50" name="ruleID" >
+				<comment>规则ID</comment>
+			</column>
+		</property>
+		<property name="attenceDate" type="java.lang.String">
+			<column length="50" name="attenceDate" >
+				<comment>考勤时间</comment>
+			</column>
+		</property>
+		<property name="attenceSite" type="java.lang.String">
+			<column name="attenceSite" length="50">
+			<comment>考勤地点</comment>
+			</column>
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50">
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="orgID" type="java.lang.String">
+			<column length="50" name="orgID" >
+			<comment>部门ID ，如果全公司范围使用，部门ID为空</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+         <property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>创建日期</comment>
+			</column>
+		</property>
+		<property name="effectDate" type="java.util.Date">
+			<column name="effectDate" >
+				<comment>生效日期</comment>
+			</column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

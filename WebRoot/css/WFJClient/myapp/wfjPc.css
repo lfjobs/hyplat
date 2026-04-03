@@ -1,0 +1,9 @@
+body{
+    font-size: 20px;
+}
+.carousel-control.left{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .0001) 100%)
+}
+.carousel-control.right{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .2) 100%)
+}

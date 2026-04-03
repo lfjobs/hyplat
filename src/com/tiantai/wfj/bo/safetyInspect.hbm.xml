@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+    <class name="SafetyInspect" table="Dt_SafetyInspect" schema="HYPLAT"
+           dynamic-insert="true">
+        <comment>安全巡查</comment>
+        <id length="50" name="sikey" type="java.lang.String">
+            <column length="50" name="sikey"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="siID" type="java.lang.String">
+            <column length="50" name="siID"/>
+        </property>
+        <property name="nfcID" type="java.lang.String">
+            <column length="50" name="nfcID">
+                <comment>NFC芯片绑定安全点id NfcChip</comment>
+            </column>
+        </property>
+        <property name="illustrate" type="java.lang.String">
+            <column length="250" name="illustrate">
+                <comment>说明</comment>
+            </column>
+        </property>
+        <property name="siType" type="java.lang.String">
+            <column length="4" name="siType" default="02">
+                <comment>类型 00：红 01：黄 02：绿</comment>
+            </column>
+        </property>
+        <property name="companyID" type="java.lang.String">
+            <column length="50" name="companyID">
+                <comment>公司id</comment>
+            </column>
+        </property>
+        <property name="companyName" type="java.lang.String">
+            <column length="50" name="companyName">
+                <comment>公司名称</comment>
+            </column>
+        </property>
+        <property name="staffID" type="java.lang.String">
+            <column length="50" name="staffID">
+                <comment>负责人id</comment>
+            </column>
+        </property>
+        <property name="staffName" type="java.lang.String">
+            <column length="50" name="staffName">
+                <comment>负责人</comment>
+            </column>
+        </property>
+        <property name="siDate" type="java.util.Date">
+            <column name="siDate" sql-type="date">
+                <comment>巡逻时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

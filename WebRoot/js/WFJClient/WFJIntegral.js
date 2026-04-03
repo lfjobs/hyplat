@@ -1,0 +1,9 @@
+$(function(){
+	$("input#signToday").click(function(){
+		$("input#signToday").attr("disabled","disabled");
+		$("form#myform").submit();
+	});
+	$("input#btn_tixian").click(function(){
+		window.location.href=basePath+"daifu/single/TransactionInput.jsp?staffId="+staffId;
+	});
+});

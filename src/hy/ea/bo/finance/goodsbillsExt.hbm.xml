@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="hy.ea.bo.finance.GoodsBillsExt" table="DTGOODSBILLSEXT">
+		<id length="50" name="goodsBillsExtKey">
+			<column length="50" name="GOODSBILLSEXTKEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="goodsBillsExtId">
+			<column name="GOODSBILLSEXTID" length="50"/>
+		</property>
+		 <property name="goodsBillsID">
+        	<column name="GOODSBILLSID" length="50"/>
+        </property>
+        <property name="accountName">
+        	<column name="ACCOUNTNAME" length="250"/>
+        </property>
+        <property name="accountNameId">
+        	<column name="ACCOUNTNAMEID" length="50"><comment>往来单位/个人id(收方)</comment></column>
+        </property>
+		<property name="accountNum">
+			<column name="ACCOUNTNUM" length="250"><comment>银行账号(收方)</comment></column>
+		</property>
+        <property name="accountPhone">
+			<column length="50" name="ACCOUNTPHONE"><comment>联系方式(收方)</comment></column>
+		</property>
+		 <property name="accountFlag">
+        	<column name="ACCOUNTFLAG" length="50"><comment>账户类型(收方)</comment></column>
+        </property>
+        <property name="openBank">
+        	<column name="OPENBANK" length="250"><comment>开户行(收方)</comment></column>
+        </property>
+		<property name="budgetAmount">
+			<column name="BUDGETAMOUNT" length="50"><comment>预算金额</comment></column>
+		</property>
+		<property name="loanDirection">
+			<column name="LOANDIRECTION" length="50"><comment>借贷方向</comment></column>
+		</property>
+		<property name="borrowAmount">
+			<column name="BORROWAMOUNT" length="50"><comment>借方金额</comment></column>
+		</property>
+		<property name="loanAmount">
+			<column name="LOANAMOUNT" length="50"><comment>贷方金额</comment></column>
+		</property>
+		<property name="orderNum">
+			<column name="ORDERNUM"><comment>序号</comment></column>
+		</property>
+		<property name="balance">
+			<column name="BALANCE" length="50"><comment>余额</comment></column>
+		</property>
+		<property name="initialBalance">
+			<column name="INITIALBALANCE" length="50"><comment>初始余额</comment></column>
+		</property>
+		<property name="specsParentId">
+			<column name="SPECSPARENTID" length="50"><comment>规格父级id</comment></column>
+		</property>
+		<property name="accountNameFrom">
+			<column name="ACCOUNTNAME_FROM" length="250"/>
+		</property>
+		<property name="accountNameIdFrom">
+			<column name="ACCOUNTNAMEID_FROM" length="50"><comment>往来单位/个人id(付方)</comment></column>
+		</property>
+		<property name="accountNumFrom">
+			<column name="ACCOUNTNUM_FROM" length="250"><comment>银行账号(付方)</comment></column>
+		</property>
+		<property name="accountPhoneFrom">
+			<column length="50" name="ACCOUNTPHONE_FROM"><comment>联系方式(付方)</comment></column>
+		</property>
+		<property name="accountFlagFrom">
+			<column name="ACCOUNTFLAG_FROM" length="50"><comment>账户类型(付方)</comment></column>
+		</property>
+		<property name="openBankFrom">
+			<column name="OPENBANK_FROM" length="250"><comment>开户行(付方)</comment></column>
+		</property>
+		<property name="teamReward">
+			<column name="TEAM_REWARD" length="50"><comment>团队奖励</comment></column>
+		</property>
+		<property name="personalReward">
+			<column name="PERSONAL_REWARD" length="50"><comment>个人奖励</comment></column>
+		</property>
+		<property name="teamPunishment">
+			<column name="TEAM_PUNISHMENT" length="50"><comment>团队折扣</comment></column>
+		</property>
+		<property name="personalPunishment">
+			<column name="PERSONAL_PUNISHMENT" length="50"><comment>个人折扣</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

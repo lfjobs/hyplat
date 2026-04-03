@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="mobile.tiantai.android.bo">
+    <class name="MyConnection" table="DT_ad_myconnection" schema="HYPLAT">
+        <id name="key" type="java.lang.String">
+            <column name="key" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="id" type="java.lang.String">
+            <column name="id" length="50" />
+        </property>
+        <property name="staffID" type="java.lang.String">
+            <column name="staffID" length="50" />
+        </property>
+        <property name="staffName" type="java.lang.String">
+            <column name="staffName" length="50" />
+        </property>
+        <property name="relationID" type="java.lang.String">
+            <column name="relationID" length="50" />
+        </property>
+         <property name="city" type="java.lang.String">
+            <column name="city" length="50" />
+        </property>
+        
+       
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,972 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.login-main{
+	width:100%;
+	min-width:1000px;
+	}
+.login-content{
+	width:1100px;
+	margin:0 auto;
+	}
+.login-logo1{
+	width:100%;
+	height:135px;
+	background:url(../images/logo11.png) no-repeat;	
+	}
+.LOgin_logo-text{
+	width:700px;
+	float:left
+	}
+.login-text{
+	width:70%;
+	height:130px;
+	margin-top:150px;
+	margin-left:30%;
+	background:url(../images/test.png) no-repeat;
+	}
+.login-logo2{
+	width:100%;
+	height:234px;
+	margin-top:150px;
+	background:url(../images/logo22.png) no-repeat;
+	}
+.login-login{
+	width:90%;
+	margin-left:5%;
+	}
+.login-form{
+	width:344px;
+	height:500px;
+	margin-left:50px;
+	margin-top:100px;
+	background:url(../images/loginBg.png) no-repeat center top;
+	float:left;
+	padding-top:20px;
+	}
+.login-head{
+	width:100%;
+	height:50px;
+	line-height:50px;
+	font-size:20px;
+	border-bottom:#5dc34c 2px solid;
+	}
+.login-head div{
+	margin-left:4%;
+	}
+.login-login-number1{
+	width:86%;
+	margin:35px 7% 25px 7%;
+	height:45px;
+	border:1px #dadada solid;
+	background:#fbfbfb;
+	}
+.login-login-number2{
+	width:86%;
+	margin:0 7%;
+	height:45px;
+	border:1px #dadada solid;
+	background:#fbfbfb;
+	}
+.login-loginbg1{
+	width:52px;
+	height:45px;
+	float:left;
+	background:url(../images/loginbg2.png) no-repeat;
+	}
+.login-login_name{
+	color:#999;
+		}	
+.login-login_input{
+	width:180px;
+	border:0;
+	height:42px;
+	font-size:16px;
+	line-height:42px;
+	background:#fbfbfb;
+		}
+.login-loginbg2{
+	width:52px;
+	height:45px;
+	float:left;
+	background:url(../images/loginbg1.png) no-repeat;
+	}
+.login-verification{
+	width:100%;
+	margin-top:5px;
+	}
+.login_verification-code{
+	width:86%;
+	margin-top:25px;
+	margin-left:7%;
+	height:45px;
+	}	
+.login_verification-code-li1{
+	width:43%;
+	height:42px;
+	font-size:16px;
+	line-height:42px;
+	border:1px #dadada solid;
+	float:left;
+	margin-right:4%;
+	}
+.login_verification-code-li2{
+	width:43%;
+	height:42px;
+	border:1px #dadada solid;
+	/*background:url(../images/yanzhengma.png);*/
+	float:left;
+	margin-right:4%;
+	}
+.login_verification-code-li1 input{
+	width:98%;
+	border:0;
+	height:39px;
+	text-align:center;
+	font-size:16px;
+	line-height:39px;
+	background:#fbfbfb;
+	}
+.login_verification-codebg{
+	width:48%;
+	margin-top:50px;
+	margin-left:4%;
+	height:45px;
+	}
+.login-verification1{
+	width:92%;
+	margin:5px 4%;
+	float:left
+	}	
+.login-login-but{
+	width:92%;
+	margin:35px 4% 10px 4%;
+	*margin:5px 2%;
+	height:45px;
+	line-height:45px;
+	border-radius:3px;
+	float:left;
+	}	
+.login-login-but input{
+	width:100%;
+	height:45px;
+	line-height:45px;
+	border:0;
+	background:#5dc34c;
+	color:#ffffff;
+	font-size:16px;
+	}
+.forget-password{
+	width:92%;
+	margin:0 4%;
+	text-align:right;
+	float:left;
+	}	
+.login-foot{
+	width:100%;
+	text-align:center;
+	font-size:14px;
+	color:#222222;
+	float:left;
+	padding:100px 0;
+	}	
+
+
+/*coach样式*/
+.coach_content{
+	width:100%;
+	float:left;
+	margin-top:20px;
+	border:1px #dadada solid;
+	padding-bottom:40px;
+	margin-bottom:20px;
+	}
+.coach_cont{
+	width:1000px;
+	}
+.coach_coach{
+	width:160px;
+	float:left;
+	}
+.coach_nav_img{
+	width:90px;
+	padding:5px;
+	margin-top:30px;
+	margin-left:40px;
+	margin-bottom:10px;
+	border:1px #dadada solid;
+	float:left;
+	}
+.coach_coach-name{
+	width:100px;
+	text-align:center;
+	margin:20px 40px;
+	}
+/*coach样式结束*/
+/*Coach_about_car样式*/
+.Coach_nav_content{
+	width:100%;
+	float:left;
+	margin-top:20px;
+	border:1px #dadada solid;
+	padding-bottom:40px;
+	margin-bottom:20px;
+	}
+.Coach_about_car-time{
+	width:100%;
+	margin-top:20px;
+	float:left;
+	border-bottom:1px #dadada solid;
+	}
+.Coach_about_car-time_time{
+    width:140px;
+    height:35px;
+    text-align:center;
+    line-height:35px;
+    background:#f1f1f1;
+    border:1px #dadada solid;
+    border-bottom:0;
+    float:left;
+    }
+
+/*Coach_about_car样式结束*/
+/*Reservation_information样式*/
+.Reservation_information-main{
+	width:98%;
+	min-width:1000px;
+	margin:1%;
+	float:left;
+	}
+.Reservation_information-head{
+	width:100%;
+	border-bottom:1px #dadada solid;
+	float:left;
+	}
+.Reservation_information-head div{
+	width:150px;
+	height:45px;
+	font-size:16px;
+	line-height:45px;
+	color:#FFF;
+	background:#349eeb;
+	border-bottom:0;
+	}
+.Reservation_information-content{
+	width:100%;
+	float:left;
+	}
+.Reservation_information-cont1{
+	width:100%;
+	margin-top:15px;
+	float:left;
+	}
+.Reservation_information-table{
+	border-collapse:collapse;
+	border:1px solid #dcdcdc;
+	}
+.Reservation_information-table td{
+	height:45px;
+	line-height:45px;
+	border:solid #dcdcdc;
+	border-width:0 1px 1px 0;
+	padding-left:10px;
+	}
+.Reservation_information-td{
+	background:#f5f5f5;
+	}
+.Reservation_information-cont2{
+	width:100%;
+	border:1px solid #dcdcdc;
+	margin-top:15px;
+	float:left;
+	}
+.Reservation_information-cont2 ul li{
+	margin-left:10px;
+}
+.Student-information{
+	width:100%;
+	height:45px;
+	line-height:45px;
+	font-size:16px;
+	background:#f5f5f5;
+	border-bottom:1px solid #dcdcdc;
+	padding-left:10px;
+	}
+.Student-information-reg{
+    width:300px;
+    clear:both;
+    float:left;
+    margin-left:100px;
+    margin-top:5px;
+    }
+.Student-information-reg1{
+    width:300px;
+    clear:both;
+    float:left;
+    margin-left:130px;
+    margin-top:5px;
+    }
+.Student-information-reg2{
+    width:300px;
+    clear:both;
+    float:left;
+    margin-left:100px;
+    }
+.Student-information-name{
+	width:450px;
+	float:left;
+	}
+.Student-information-name ul li{
+	margin-top:30px;
+	margin-right:10px;
+	
+	float:left;
+	}
+.Student-information-name-but{
+	width:80px;
+	height:25px;
+	line-height:25px;
+	border:0;
+	margin-left:15px;
+
+	background:#349eeb;
+	color:#FFF;
+	cursor:pointer;
+	}
+.Student-information-ID_number{
+	width:650px;
+	float:left;
+	}
+.Student-information-ID_number ul li{
+	margin-top:30px;
+	margin-right:10px;
+	line-height:25px;
+	float:left;
+	}
+.Student-information-ID_number-li{
+	width:300px;
+	}
+.Student-information-Subject{
+	width:100%;
+	float:left;
+	padding-bottom:20px;
+	}
+.Student-information-Subject ul li{
+	margin-right:10px;
+	line-height:40px;
+	float:left;
+	}
+.Student-information-Subject-select{
+	width:170px;
+	margin-top:10px;
+	}
+.Reservation_information-button{
+	width:100%;
+	float:left;
+	margin:30px 0;
+	}
+.saveBtn{
+	background:url(../../../images/ea/driving/elkc/save.png) no-repeat !important;
+	float:left;
+	margin-right:30px;
+	}
+.save2Btn{
+    background: url(../images/save2.png) no-repeat;
+    float: left;
+    margin-right: 30px;
+    width: 155px;
+    height: 37px;
+    line-height: 37px;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding-left: 27px;
+    font-size: 16px;
+    }
+.closeBtn{
+	background:url(../../../images/ea/driving/elkc/close1.png) no-repeat !important;
+	width:170px !important;
+	float:left;
+	}
+/*Reservation_information结束*/
+/*About_car_success-success*/
+.About_car_success-success{
+	width:100%;
+	float:left;
+	}
+.About_car_success-success1{
+	width:400px;
+	height:55px;
+	font-size:35px;
+	text-align:center;
+	line-height:55px;
+	margin:0 auto;
+	margin-top:30px;
+	background:url(../images/success.png) no-repeat;	
+	}
+.About_car_success-success2{
+	text-align:center;
+	padding:30px 0;
+	}
+/*About_car_success-success结束*/
+/*Coach_schedule*/
+.Coach_schedule-content{
+	width:100%;
+	float:left;
+	}
+.Coach_schedule-left_cont{
+	width:12%;
+	margin-right:20px;
+	margin-top:15px;
+	text-align:center;
+	float:left;
+	border:1px solid #dadada;
+	}
+.Coach_schedule-left_cont ul li{
+	height:45px;
+	line-height:45px;
+	}
+.Coach_schedule-left_cont_li{
+	background:#eeeeee;
+	border-bottom:1px #dadada solid;
+	}
+.Coach_schedule-right_cont{
+	width:84%;
+	margin-top:15px;
+	float:left;
+	}
+.Coach_schedule-right_cont_table{
+	border-collapse:collapse;
+	border:1px solid #dadada;
+	}
+.Coach_schedule-right_cont_table td{
+	height:45px;
+	line-height:45px;
+	border:solid #dadada;
+	border-width:0 1px 1px 0;
+	}
+.Coach_schedule-td{
+	background:#f5f5f5;
+	}
+.Coach_schedule-h{
+	background:#eeeeee;
+	}
+.Coach_schedule-blue{
+	color:#078cd7 !important;
+	}
+.Coach_schedule-button{
+	width:100%;
+	float:left;
+	margin:30px 0;
+	}
+.Coach_schedule-saveBtn{
+	width:127px;
+	height:37px;
+	line-height:37px;
+	color:#FFF;
+	border:none;
+	background:url(../../../images/ea/driving/elkc/save.png) no-repeat;
+	cursor:pointer;
+	text-align:center;
+	padding-left:27px;
+	font-size:16px;
+	float:left;
+	margin-right:30px;
+	}
+.Coach_schedule-closeBtn{
+	width:127px;
+	height:37px;
+	line-height:37px;
+	color:#FFF;
+	border:none;
+	background:url(../../../images/ea/driving/elkc/close1.png) no-repeat;
+	cursor:pointer;
+	text-align:center;
+	padding-left:27px;
+	font-size:16px;
+	float:left;
+	}
+/*Coach schedule结束*/
+/*Reservation_mode_maintenance*/
+.Reservation_mode_maintenance-head{
+	width:100%;
+	height:45px;
+	font-weight:bold;
+	line-height:45px;
+	background:#eeeeee;
+	border-bottom:1px #dadada solid;
+	}
+.Reservation_mode_maintenance-content{
+	width:100%;
+	float:left;
+	}
+.Reservation_mode_maintenance-left_cont{
+	width:100%;
+	margin-top:15px;
+	float:left;
+	border:1px solid #dadada;
+	}
+.Reservation_mode_maintenance-left_cont ul li{
+	height:30px;
+	line-height:30px;
+	}
+.Reservation_mode_maintenance-right_cont{
+	width:100%;
+	margin-top:15px;
+	float:left;
+	border:1px #dadada solid;
+	}
+.Reservation_mode_maintenance-right_cont_table{
+	border-collapse:collapse;
+	border:1px solid #dadada;
+	}
+.Reservation_mode_maintenance-right_cont_table td{
+	height:45px;
+	line-height:45px;
+	border:solid #dadada;
+	border-width:0 1px 1px 0;
+	}
+.Reservation_mode_maintenance-td{
+	background:#f5f5f5;
+	}
+.Reservation_mode_maintenance-h{
+	background:#eeeeee;
+	}
+.Reservation_mode_maintenance-blue{
+	color:#078cd7 !important;
+	}
+.Reservation_mode_maintenance-button{
+	width:100%;
+	float:left;
+	margin:30px 0;
+	}
+.Reservation_mode_maintenance-saveBtn{
+	width:127px;
+	height:37px;
+	line-height:37px;
+	color:#FFF;
+	border:none;
+	background:url(../../../images/ea/driving/elkc/save.png) no-repeat;
+	cursor:pointer;
+	text-align:center;
+	padding-left:27px;
+	font-size:16px;
+	float:left;
+	margin-right:30px;
+	}
+.Reservation_mode_maintenance-closeBtn{
+	width:127px;
+	height:37px;
+	line-height:37px;
+	color:#FFF;
+	border:none;
+	background:url(../../../images/ea/driving/elkc/close1.png) no-repeat;
+	cursor:pointer;
+	text-align:center;
+	padding-left:27px;
+	font-size:16px;
+	float:left;
+	}
+.Reservation_mode_maintenance-name{
+    width:250px;
+    padding:30px 0;
+    float:left;
+    margin:0 0 0 150px;
+    }
+.Reservation_mode_maintenance-name ul li{
+	height:35px;
+	line-height:35px;
+	float:left;
+	}
+.Reservation_mode_maintenance-name-li{
+	width:100px;
+	text-align:center;
+	margin-left:10px;
+	}
+.Reservation_mode_maintenance-State{
+    width:250px;
+    padding:30px 0;
+    float:left;
+    margin:0 0 0 150px;
+    }
+.Reservation_mode_maintenance-State ul li{
+	height:35px;
+	line-height:35px;
+	float:left;
+	}
+.Reservation_mode_maintenance-State-li{
+	width:100px;
+	margin-left:10px;
+	}
+.Reservation_mode_maintenance-State-select{
+	width:100%;
+	height:35px;
+	line-height:35px;
+	}
+.Reservation_mode_maintenance-Prompt{
+	padding:20px 0;
+	}
+.add_time{
+    padding:5px 0;
+    width:100%;
+    float:left;
+    }
+.add_time ul li{
+	padding-left:10px;
+	float:left;
+	}
+.textBox-10{
+	width:130px !important;
+	}
+.Otime{
+	margin-left:40px;
+	}
+.Price{
+	margin-left:40px;
+	}
+.Verification{
+	width:100%;
+	float:left;
+	}
+.Verification ul li{
+	padding:5px 30px;
+	float:left;
+	}
+.Reservation_mode_maintenance-right_cont-but{
+	width:900px;
+	padding:30px 0;
+	float:left;
+	}
+.Reservation_mode_maintenance-right_cont-but ul li{
+	width:100%;
+	height:45px;
+	line-height:45px;
+	text-align:center;
+	}
+.Reservation_mode_maintenance-right_cont-but input{
+	width:40px;
+	height:40px;
+	background:url(../../../images/ea/driving/elkc/addbg.png) no-repeat;
+	border:0;
+	cursor:pointer;
+	}
+/*Reservation_mode_maintenance结束*/	
+.About_vehicle_configuration-cont{
+	width:100%;
+	float:left;
+	}
+.About_vehicle_configuration-cont-reg{
+	float:left;
+	width:35%;
+	margin-left:15%;
+	}
+.About_vehicle_configuration-cont-reg1{
+	float:left;
+	/*width:35%; */
+	margin-left:15%;
+	}
+.About_vehicle_configuration-cont ul li{
+	margin:10px 0;
+	float:left;
+	text-align:left;
+	}
+.About_vehicle_configuration-cont ul{
+	clear:both;
+	}
+.About_vehicle_configuration-cont-right{
+	width:15%;
+	min-width:200px;
+	margin:0 10px;
+	text-align:right !important;
+	}
+.About_vehicle_configuration-cont-left{
+	width:70%;
+}
+.About_vehicle_configuration-cont-right a{
+	color:red !important;
+	}
+.About_vehicle_configuration-saveBtn{
+	width:127px;
+	height:37px;
+	line-height:37px;
+	color:#FFF;
+	border:none;
+	background:url(../../../images/ea/driving/elkc/save.png) no-repeat;
+	cursor:pointer;
+	text-align:center;
+	padding-left:27px;
+	font-size:16px;
+	float:left;
+	margin-right:30px;
+	}
+.About_vehicle_configuration-closeBtn{
+	width:170px;
+	height:37px;
+	line-height:37px;
+	color:#FFF;
+	border:none;
+	background:url(../../../images/ea/driving/elkc/close1.png) no-repeat;
+	cursor:pointer;
+	text-align:center;
+	padding-left:27px;
+	font-size:16px;
+	float:left;
+	}
+
+.Reservation_mode_maintenance-name-reg{
+	margin-left:65px;
+	}
+.Reservation_mode_maintenance-name-reg1{
+	clear:both;
+	margin-left:40px;
+	}
+.add_time-reg{
+    width:10%;
+    margin-left:90px;
+    }
+.add_time-reg1{
+    width:10%;
+    margin-left:80px;
+    }
+.add_time-reg2{
+    width:10%;
+    margin-left:50px;
+    }
+
+.one-button{
+    padding:8px 15px;
+    color:#FFF;
+    background:#3f9edc;
+    border:0;
+    cursor:pointer;
+    font-size:14px;
+    }
+.blue{
+    color:#147dc0;
+    }
+.One-button-configuration{
+    padding:10px 0 20px 0;
+    }
+.oneBtn{
+    width:5%;
+    min-width:100px;
+    padding-left:10px;
+    }
+
+.Coach_about_car-time_Print{
+    height:35px;
+    float:right;
+    }
+.Coach_aboutBtn{
+    padding:5px 10px;
+    background:#f5f5f5;
+    border:1px solid #e5e5e5;
+    height:30px;
+    color:#333;
+    cursor:pointer;
+    }
+.search-information-first{
+    width:40%;
+    float:left;
+    }
+.search-information-first ul li{
+    margin-top:30px;
+    margin-right:10px;
+    line-height:25px;
+    margin-right:10px;
+
+    float:left;
+    }
+.search-information-second{
+    width:40%;
+    float:left;
+    }
+.search-information-second ul li{
+    margin-top:15px;
+    margin-bottom:30px;
+    margin-right:10px;
+    line-height:25px;
+    float:left;
+    }
+
+.ycxx-main{
+	width: 100%;
+	float: left;
+}
+.ycxx-head{
+	width: 100%;
+    border-bottom: 1px #dadada solid;
+    float: left;
+}
+.ycxx-head-text{
+	padding: 0 20px;
+    height: 45px;
+    font-size: 16px;
+    line-height: 45px;
+    color: #FFF;
+    background: #349eeb;
+    border-bottom: 0;
+    float: left;
+}
+.ycxx-content{
+	width: 100%;
+	float: left;
+	padding-bottom: 6%;
+}
+.ycxx-li-img li{
+	width: 11.333333333%;
+	float: left;
+	margin: 6% 11% 0 11%;
+}
+.ycxx-buy{
+	width: 70%;
+	height: 40px;
+	margin-left: 15%;
+	float: left;
+	border: 0;
+	background: url(../images/btn.png) no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+	margin-top: 15px;
+}
+/*订单*/
+.jiage-content{
+    width: 100%;
+    float: left;
+    padding: 40px 0;
+}
+.jiage-t_head{
+    width: 100%;
+    float: left;
+    background: #f7f7f7;
+    border-bottom: 1px #e3e3e3 solid;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+}
+.jiage-t_text{
+    width: 100%;
+    float: left;
+    border-bottom: 1px #e3e3e3 solid;
+    text-align: center;
+    padding: 14px 0;
+}
+.jiage-xiangmu{
+    width: 30%;
+    float: left;
+}
+.jiage-price{
+    width: 25%;
+    float: left;
+}
+.jiage-num{
+    width: 20%;
+    float: left;
+}
+.jiage-num-ipt{
+    width: 100%;
+    float: left;
+    text-align: center;
+    border: 0;
+}
+.jiage-sum{
+    width: 20%;
+    padding-right: 5%;
+    float: left;
+    text-align: right !important;
+}
+.jiage-submit{
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+}
+.jiage-submit-btn{
+    float: right;
+    padding: 10px 20px;
+    border: 0;
+    background: #2eb1dc;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 5%;
+    cursor: pointer;
+}
+.jiage-tel{
+	width:90%;
+	float:right;
+	padding:5px 5%;
+    border:1px #dedede solid;
+    text-align:right
+}
+.BoxBg{
+    width:500px;
+    height:300px;
+    border:1px solid #CCC;
+    margin:100px auto;
+    background:#fff;
+    }
+.BoxTitle{
+    width:490px;
+    height:30px;
+    background:url(../images/headBg.png) repeat-x;
+    color:#000;
+    font-size:16px;
+    line-height:30px;
+    font-family:"微软雅黑";
+    padding-left:10px;
+    }
+.BoxCon{
+    width:500px;
+    height:180px;
+    padding-top:30px;
+    }
+.BoxCon-left{
+    width:100px;
+    float:left;
+    margin-left:20px;
+    }
+.BoxCon-right{
+    width:380px;
+    float:right;
+    }
+.BoxCon-right ul{
+
+    }
+.BoxCon-right ul li{
+    width:360px;
+    margin-top:5px;
+    height:30px;
+    float:left;
+    padding-left:20px;
+    }
+.BoxCon-right-title{
+    font-size:16px;
+    color:#F00;
+    font-weight:bold;
+    margin-bottom:10px;
+    }
+.BoxBottomBg{
+    width:500px;
+    height:60px;
+    background:#ededed;
+    }
+.BoxBtnBg{
+    width:150px;
+    float:right;
+    margin-right:10px;
+    margin-top:15px;
+    }
+.BoxBtn{
+    width:150px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    color:#FFF;
+    background:#cd1f1f;
+    border:none;
+    cursor:pointer;
+    }
+
+
+
+
+

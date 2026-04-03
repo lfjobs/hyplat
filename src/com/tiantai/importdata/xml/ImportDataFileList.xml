@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>	
+	<file>
+		<type>QQJBXX</type> <!-- QQ基本信息 -->
+		<name>QQ基本信息</name> <!-- 导入数据的中文名称 -->
+		<desc>导入的是QQ基本信息</desc> <!-- 导入数据的中文描述 -->
+		<xmlMetaFile>com/tiantai/importdata/xml/qq_list_meta.xml</xmlMetaFile> <!-- 导入数据的元数据xml文件,不能以"/"开头 -->
+	</file>
+	<file>
+		<type>SHDWGL(YX)</type>
+		<name>社会单位管理(营销)</name>
+		<desc>导入的是社会单位信息</desc>
+		<xmlMetaFile>com/tiantai/importdata/xml/Contract_Company_meta.xml</xmlMetaFile>
+	</file>
+	<file>
+		<type>SHRLGL(YX)</type>
+		<name>社会人力管理(营销)</name>
+		<desc>导入的是社会人力信息</desc>
+		<xmlMetaFile>com/tiantai/importdata/xml/hr_staff_meta.xml</xmlMetaFile>
+	</file>
+</files>

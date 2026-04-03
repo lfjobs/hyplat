@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="Warehouse" table="dt_inv_wh">
+		<id length="50" name="wareKey">
+			<column length="50" name="wareKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="wareID">
+			<column length="50" name="wareID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="groupCompanySn">
+			<column length="50" name="groupCompanySn" />
+		</property>
+		<property name="wareName">
+			<column length="250" name="wareName"/>
+		</property>
+		<property name="wareType">
+			<column length="50" name="wareType" />
+		</property>
+		<property  name="pware">
+			<column length="50" name="pware" />
+		</property>
+		<property  name="parea">
+			<column length="50" name="parea" />
+		</property>
+		<property  name="pframe">
+			<column length="50" name="pframe" />
+		</property>
+		<property  name="states">
+			<column length="50" name="states" />
+		</property>
+	</class>
+</hibernate-mapping>

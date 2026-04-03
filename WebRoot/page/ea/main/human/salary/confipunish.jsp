@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN""http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>基础工资管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="<%=basePath%>js/common/common.js"></script>
+<script src="<%=basePath%>js/jquery.js"  type="text/javascript"></script>
+<link href="<%=basePath%>/css/ea/staff.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="<%=basePath%>js/jqModal/css/flexigrid_blue.css"/>
+<link rel="stylesheet" type="text/css" href="<%=basePath%>js/jqModal/css/jqModal_blue.css"/>
+<link href="<%=basePath%>/css/ea/validate.css" rel="stylesheet" type="text/css" />
+<script src="<%=basePath%>js/ea/validate.js" type="text/javascript"></script>
+<script type="text/javascript" src="<%=basePath%>js/jqModal/jqDnR.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/jqModal/jqModal.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/flexigrid.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=basePath %>js/163css/css/163css.css"/>
+<script type="text/javascript" src="<%=basePath %>js/163css/js/163css.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/ea/human/salary/confipunish.js"></script>
+<script>
+var basePath = '<%=basePath%>';
+var pageNumber = ${pageNumber};
+var cid = '';
+var notoken = 0;
+var search='${search}';
+var contype = '${contype}';
+</script>
+</head>
+<body>
+<form  name="cofjjForm" id="cofjjForm" method="post">
+	<table id="item" >
+		<thead>
+	 		<tr>
+		 		<th width="25" align="center">选择</th>
+	
+				<th width="200" align="center">公司</th>
+				<th width="100" align="center">部门</th>
+				<th width="100" align="center">奖惩人</th>
+				<th width="150" align="center">项目名称</th>
+				
+				<th width="100" align="center">数量</th>
+				<th width="100" align="center">单价</th>
+				<th width="100" align="center">奖/惩</th>
+			</tr>
+		</thead>
+		<tbody id="tbwid">
+	    <s:iterator value="pageForm.list" var="item">
+	    	<tr id="${item[1]}">
+	    		<td>
+	    			<input type="radio" value="${item[1] }" name="cid" class="cid"/>
+	    		</td>
+	    	
+	    		<td>
+	    			<span id="companyname">${item[2] }</span>
+	    		</td>
+	    		<td>
+	    			<span id="targetdeptname">${item[4] }</span>
+	    		</td>
+	    		<td>
+	    			<span id="targetSalerName">${item[6] }</span>
+	    		</td>
+	    		<td>
+	    			<span id="projectname">${item[3] }</span>
+	    		</td>
+	    		
+	    		<td>
+	    			<span id="quantity">${item[9] }</span>
+	    		</td>
+	    		<td>
+	    			<span id="price">${item[10] }</span>
+	    		</td>
+	    		<td>
+	    			<span id="addsub_state">
+						<c:if test="${item[11] == '0'}">奖</c:if>
+						<c:if test="${item[11] == '1'}">惩</c:if>
+					</span>
+	    		</td>
+	    	</tr>
+	    </s:iterator>
+	    </tbody>
+  </table>
+  </form>
+  <c:import url="../../../page_navigator.jsp">
+	<c:param name="actionPath"
+		value="ea/cofipunish/ea_findItem.jspa?pageNumber=${pageNumber}&search=${search }&contype=${contype}">
+	</c:param>
+</c:import>
+<script type="text/javascript">
+   $(function(){
+       setTimeout(function(){ 
+		   var _height = $(window).height();		
+		       $(".bDiv").css({"height": _height - 150 + "px"});
+		},100);
+    
+	    $(window).resize(function(){ 
+		setTimeout(function(){ 
+		    var _height = $(window).height();		
+		        $(".bDiv").css({"height": _height - 150 + "px"});
+		},100);
+	    }); 
+   });
+</script> 	
+</body>
+</html>

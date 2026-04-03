@@ -1,0 +1,75 @@
+html,body{
+    height:100%;
+    overflow:hidden;
+}
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+.content{
+    height:100%;
+}
+
+.layui-tab-content {
+   padding: 0 !important;
+}
+.content .div-data-echarts{
+    margin-top:20px;
+}
+.content .div-data-echarts .div-title-echarts label{
+    margin-left:30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.content .div-entry-data{
+    height:50px;
+    margin-top:10px;
+    padding:10px;
+}
+.content .div-entry-data .div-person{
+    width:33%;
+    float:left;
+    text-align:center;
+}
+.content .div-entry-data .div-person .div-person-data{
+    margin-top:8px;
+}
+.content .div-entry-data .person-info{
+    color: #372a2a;
+}
+.content .div-entry-data .div-person .person-data{
+    font-size:25px;
+}
+.content .div-entry-data .div-person .person-unit{
+    color: #bda2a2;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.BenDis">
+	<class name="Sign" table="DT_WFJ_SIGN" schema="HYPLAT"
+		dynamic-insert="true">
+		<comment>积分表</comment>
+		<id length="50" name="signKey" type="java.lang.String">
+			<column length="50" name="signKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="signId" type="java.lang.String">
+			<column length="50" name="signId">
+			<comment>签到id</comment>
+			</column>
+		</property>
+		<property name="sccid" type="java.lang.String">
+			<column length="50" name="sccid">
+			<comment>签到人sccid</comment>
+			</column>
+		</property>	
+		<property name="account" type="java.lang.String">
+			<column length="50" name="account">
+			<comment>签到人帐号</comment>
+			</column>
+		</property>	
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="companyId">
+			<comment>被签到的公司id</comment>
+			</column>			
+		</property>	
+		<property name="signScore" type="java.lang.String">
+			<column length="50" name="signScore" sql-type="NUMBER(20,10)">
+			<comment>签到积分</comment>
+			</column>			
+		</property>	
+		<property  name="signDate" type="java.util.Date">
+			<column  name="signDate">
+			<comment>签到时间</comment>
+			</column>
+		</property>		
+		<property name="bonusPointsId" type="java.lang.String">
+			<column length="50" name="bonusPointsId">
+			<comment>积分id(外键)</comment>
+			</column>				
+		</property>	
+		<property name="bonusPointsDetailId" type="java.lang.String">
+			<column length="50" name="bonusPointsDetailId">
+			<comment>积分明细id(外键)</comment>
+			</column>			
+		</property>	
+		<property name="signSite" type="java.lang.String">
+			<column length="50" name="signSite">
+			<comment>签到地点</comment>
+			</column>			
+		</property>	
+		<property name="signInformation" type="java.lang.String">
+			<column length="500" name="signInformation">
+			<comment>签到信息</comment>
+			</column>			
+		</property>	
+		<property name="signImagePath" type="java.lang.String">
+			<column length="900" name="signImagePath">
+			<comment>签到图片路径</comment>
+			</column>			
+		</property>	
+		<property name="signType" type="java.lang.String">
+			<column length="2" name="signType">
+			<comment>签到方式 00 手机  01 终端机</comment>
+			</column>			
+		</property>
+		<property name="status" type="java.lang.String">
+			<column length="50" name="status">
+				<comment>有效：T,无效：F</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
+

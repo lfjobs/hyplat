@@ -1,0 +1,96 @@
+@charset "utf-8";
+/*=========================Reset_start==========================*/
+body,h1,h2,h3,h4,h5,h6,div,p,dl,dt,dd,ol,ul,li,form,table,th,td,a,img,span,strong,var,em,input,textarea,select,option{margin: 0; padding: 0;}
+html,body{font-family:"宋体","微软雅黑",Arail,Tabhoma; font-size:16px; text-align: left;}
+ul,ol{list-style: none;}
+img{border: 0;z-index:999;position: relative;}
+input,select,textarea{outline:0;}
+textarea{resize:none;}
+table{border-collapse: collapse; border-spacing: 0;}
+th,strong,var,em{font-weight: normal; font-style: normal;}
+a{text-decoration: none;}
+/*a:link,a:visited,a:hover,a:active{text-decoration:none;} */
+/*==========================Reset_End===========================*/
+
+.tou_head2{
+    padding: 0;
+}
+.biao_subproject_lis3{
+   
+}
+.biao_subproject_lis2{
+    width: 95%;
+}
+.pull-left2 {
+    width: 30%;
+    height: auto;
+}
+.subproject_lis_right .buy2 {
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    font-size: 0.6rem;
+    color: #ff6600;
+}
+.subproject_lis_right .bjia2 {
+    width: 90%;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 1rem;
+    border-bottom: 1px dashed #000;
+    color: #FF6600;
+}
+.add_subproject_main2 {
+    width: 55%;
+    overflow: hidden;
+    margin: 1.3rem auto 1.3rem auto;
+}
+.bjia2 .price {
+    font-size: 0.9rem;
+    padding: 0 5px;
+}
+.add_kuang2 {
+    width: 95%;
+    margin: 10px auto;
+    border: 1px dashed #DADADA;
+}
+.add_kuang3 {
+    width: 95%;
+    margin: 10px auto;
+    border: 1px solid #DADADA;
+    padding: 0.5rem 0;
+}
+.add_kuang3 h3{
+    font-size: 0.55rem;
+    color: #ff6600;
+    font-weight: 600;
+    padding: 10px 0;
+
+}
+.add_kuang3 p{
+    font-size: 0.6rem;
+}
+.subproject_lis_right2 {
+    width: 70%;
+    background: #ffffff;
+    position: relative;
+    padding: 0 0.5rem;
+}
+.subproject_lis_right .xqing2 {
+    font-size: 0.7rem;
+    position: absolute;
+    line-height: 1.5;
+    top: 0;
+}
+.but_tijiao2 {
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+    color: #ffffff;
+    background: #ff6600;
+    line-height: 2rem;
+    border-radius: 5px;
+}
+.add_subproject_main .main_right2 h4 {
+    font-size: 0.6rem;
+}

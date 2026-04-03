@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="carMotorcar" table="DT_MOTORCAR_CARREGISTRATION">
+		<id length="50" name="motorcarKey">
+			<column length="50" name="motorcarKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="motorcarID">
+			<column length="50" name="motorcarID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="flapperType">
+			<column length="250" name="flapperType" />
+		</property>
+		<property  name="allPeople">
+			<column length="250" name="allPeople" />
+		</property>
+		<property  name="carType">
+			<column length="250" name="carType" />
+		</property>
+		<property  name="address">
+			<column length="250" name="address" />
+		</property>
+		<property  name="useProp">
+			<column length="250" name="useProp" />
+		</property>
+		<property  name="recognitionCode">
+			<column length="250" name="recognitionCode" />
+		</property>
+		<property  name="brandModel">
+			<column length="250" name="brandModel" />
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property  name="registrationDate">
+			<column  name="registrationDate" />
+		</property>
+		<property  name="cardDate">
+			<column name="cardDate" />
+		</property>
+		<property  name="validityDate">
+			<column name="validityDate" />
+		</property>
+		<property  name="carNum">
+			<column length="250" name="carNum" />
+		</property>
+		<property  name="carpeople">
+			<column length="250" name="carpeople" />
+		</property>
+	</class>
+</hibernate-mapping>

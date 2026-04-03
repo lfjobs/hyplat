@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student_card" pageWidth="153" pageHeight="242" columnWidth="153" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.8150000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="6"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="bg" class="java.lang.String"/>
+	<parameter name="registrationcarname" class="java.lang.String"/>
+	<parameter name="staffname" class="java.lang.String"/>
+	<parameter name="staffidentitycard" class="java.lang.String"/>
+	<parameter name="companyname" class="java.lang.String"/>
+	<parameter name="photo" class="java.lang.String"/>
+	<parameter name="gongzhang" class="java.lang.String"/>
+	<field name="photo" class="java.lang.String"/>
+	<field name="registrationcarname" class="java.lang.String"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="staffname" class="java.lang.String"/>
+	<field name="staffidentitycard" class="java.lang.String"/>
+	<title>
+		<band height="242">
+			<image>
+				<reportElement x="0" y="0" width="153" height="242"/>
+				<imageExpression><![CDATA[$P{bg}]]></imageExpression>
+			</image>
+			<line direction="BottomUp">
+				<reportElement x="50" y="207" width="93" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="54" y="197" width="98" height="14"/>
+				<textElement markup="none">
+					<font fontName="微软雅黑" size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{staffidentitycard}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="12" y="218" width="35" height="12"/>
+				<textElement>
+					<font fontName="微软雅黑" size="8" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[服务方式]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="45" y="226" width="98" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="12" y="197" width="44" height="12"/>
+				<textElement>
+					<font fontName="微软雅黑" size="8" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[身份证号码]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="35" y="11" width="114" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="宋体" size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="38" y="64" width="76" height="101" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<image isLazy="true">
+					<reportElement x="0" y="0" width="76" height="101" forecolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</graphicElement>
+					<imageExpression><![CDATA[$P{photo}]]></imageExpression>
+				</image>
+			</frame>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="213" width="87" height="14"/>
+				<textElement markup="none">
+					<font fontName="微软雅黑" size="10" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{registrationcarname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="56" y="38" width="40" height="16"/>
+				<textElement>
+					<font fontName="微软雅黑" size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[学员证]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="47" y="189" width="96" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement x="12" y="11" width="22" height="22"/>
+				<image>
+					<reportElement x="0" y="0" width="22" height="22"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+			</frame>
+			<staticText>
+				<reportElement x="12" y="179" width="35" height="12"/>
+				<textElement>
+					<font fontName="微软雅黑" size="8" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[姓      名]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="175" width="87" height="14"/>
+				<textElement markup="none">
+					<font fontName="宋体" size="10" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{staffname}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="69" y="119" width="80" height="80"/>
+				<image>
+					<reportElement x="0" y="0" width="80" height="80"/>
+					<imageExpression><![CDATA[$P{gongzhang}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+</jasperReport>

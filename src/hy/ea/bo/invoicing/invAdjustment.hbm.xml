@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.invoicing.InvAdjustment" table="DT_INV_ADJUSTMENT" schema="HYPLAT">
+        <id name="iakey">
+            <column name="IAKEY" sql-type="varchar2(50)" length="50">
+                <comment>key</comment>
+            </column>
+            <generator class="uuid"/>
+        </id>
+        <property name="iaid">
+            <column name="IAID" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>id</comment>
+            </column>
+        </property>
+        <property name="adddate">
+            <column name="ADDDATE" sql-type="date">
+                <comment>添加/操作时间</comment>
+            </column>
+        </property>
+        <property name="invid">
+            <column name="INVID" sql-type="varchar2(50)" length="50">
+                <comment>库存id</comment>
+            </column>
+        </property>
+        <property name="staffid">
+            <column name="STAFFID" sql-type="varchar2(50)" length="50">
+                <comment>责任人-调整人id</comment>
+            </column>
+        </property>
+        <property name="comid">
+            <column name="COMID" sql-type="varchar2(50)" length="50">
+                <comment>产品id</comment>
+            </column>
+        </property>
+        <property name="ppid">
+            <column name="PPID" sql-type="varchar2(50)" length="50">
+                <comment>产品条码</comment>
+            </column>
+        </property>
+        <property name="barcode">
+            <column name="BARCODE" sql-type="varchar2(50)" length="50">
+                <comment>公司id</comment>
+            </column>
+        </property>
+        <property name="invnum">
+            <column name="INVNUM" sql-type="varchar2(50)" length="50">
+                <comment>库存数量</comment>
+            </column>
+        </property>
+        <property name="adjnum">
+            <column name="ADJNUM" sql-type="varchar2(50)" length="50">
+                <comment>调整数量</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

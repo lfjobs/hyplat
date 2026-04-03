@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family: "Microsoft Yahei";
+    color: #222;
+    background-color: #fff;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+input, button {
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+}
+
+a, a:link, a:focus, a:active, a:hover {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+img {
+    vertical-align: middle;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header ul {
+    overflow: hidden;
+    background-color: #f74c32;
+}
+
+header ul li {
+    height: 1.8rem;
+    line-height: 1.8rem;
+    float: left;
+    font-size: 0.7rem;
+    text-align: center;
+    color: #fff;
+}
+
+header ul li:nth-child(1) {
+    width: 15%;
+}
+
+header ul li:nth-child(1) img {
+    width: 0.45rem;
+}
+
+header ul li:nth-child(2) {
+    width: 70%;
+}
+
+header ul li:nth-child(3) {
+    width: 15%;
+}
+
+.top {
+    position: relative;
+}
+
+.top img {
+    width: 100%;
+}
+
+.top .txt {
+    width: 10rem;
+    text-align: center;
+    position: absolute;
+    top: 1.2rem;
+    left: 50%;
+    margin: 0 0 0 -5rem;
+    color: #fff;
+}
+
+.top .txt p:nth-child(1) {
+    font-size: 0.8rem;
+}
+
+.top .txt p:nth-child(2) {
+    font-size: 0.5rem;
+    padding-top: 0.3rem;
+}
+
+.top .zan {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    bottom: -1.25rem;
+    left: 50%;
+    margin-left: -1.25rem;
+}
+
+/*打赏*/
+.reward h5 {
+    text-align: center;
+    padding-top: 3rem;
+    font-weight: 500;
+    font-size: 0.55rem;
+}
+
+.reward .sj {
+    overflow: hidden;
+    margin: 1rem 5%;
+}
+
+.reward .sj li {
+    width: 20%;
+    line-height: 1.2rem;
+    font-size: 0.55rem;
+    border: 1px solid #e7221c;
+    border-radius: 0.1rem;
+    color: #e7221c;
+    float: left;
+    text-align: center;
+    margin: 2.15%;
+}
+
+.reward .sj input {
+    width: 20%;
+    line-height: 1.2rem;
+    font-size: 0.5rem;
+    border: 1px solid #e7221c;
+    border-radius: 0.1rem;
+    color: #e7221c;
+    text-align: center;
+    margin: 2.15%;
+}
+
+.reward .sj input::-webkit-input-placeholder {
+    color: #e7221c;
+}
+
+.reward .sj .active {
+    background-color: #e7221c;
+    color: #fff;
+}
+
+.reward .dsr {
+    text-align: center;
+}
+
+.reward .dsr p {
+    font-size: 0.5rem;
+    color: #999;
+}
+
+.reward .dsr .box {
+    width: 10rem;
+    max-height: 5rem;
+    margin: 0.5rem auto;
+    font-size: 0;
+    text-align: center;
+}
+
+.reward .dsr .box img {
+    width: 1rem;
+    height: 1rem;
+    margin: 0.1rem;
+}
+
+.reward #ds {
+    width: 84%;
+    line-height: 1.5rem;
+    font-size: 0.65rem;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: #f74c32;
+    color: #fff;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 7%;
+}
+
+/*弹框*/
+.alert-ds_ {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000030;
+}
+
+.alert-ds {
+    width: 80%;
+    text-align: center;
+    background: #fff;
+    left: 10%;
+    position: fixed;
+    top: 45%;
+    font-size: 0.65rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+.alert-ds h4 {
+    line-height: 2rem;
+    background-color: #f74c32;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.alert-ds p {
+    line-height: 2rem;
+}
+
+.reward .wfj11_015_buy_commit {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+}
+
+.reward .wfj11_015_buy_commit .wfj11_015_need {
+    padding: 10px 10px;
+    background-color: #FFF;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.reward .wfj11_015_buy_commit .wfj11_015_need ul li {
+    font-size: 16px;
+}
+
+.reward .wfj11_015_buy_commit .wfj11_015_allbay {
+    padding: 0 15px 0 10px;
+    background-color: #F8F8F8;
+}
+
+.reward .wfj11_015_buy_commit .wfj11_015_allbay table {
+    width: 100%;
+    background-color: #F8F8F8;
+}
+
+.reward .wfj11_015_buy_commit .wfj11_015_allbay td {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.reward .wfj11_015_buy_commit .wfj11_015_allbay td .all_pay {
+    height: 35px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/*打赏 end*/
+
+/*打赏成功*/
+.reward .succeed {
+    text-align: center;
+}
+
+.reward .succeed .bg {
+    width: 5rem;
+    margin: 5rem 0;
+}
+
+.succeed input {
+    width: 10rem;
+    line-height: 1.5rem;
+    margin: 0 2rem;
+    border: none;
+    font-size: 0.65rem;
+    background: #f74c32;
+    color: #fff;
+    border-radius: 1.5rem;
+}
+
+/*打赏成功 end*/

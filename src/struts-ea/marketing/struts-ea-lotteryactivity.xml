@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="lottery-ntoken" namespace="/ea/lottery"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.marketing.action.lottery.LotteryActivityAction" method="{1}">
+		     <result name="success">/page/ea/success.jsp</result>	
+			 <result name="prizeActivityHomepage">/page/ea/main/marketing/lottery/PrizeActivityHomepage.jsp</result>
+			 <result name="prizeActivityList">/page/ea/main/marketing/lottery/PrizeActivityList.jsp</result>
+			 <result name="MeetingActivityAdd">/page/ea/main/marketing/lottery/MeetingActivityAdd.jsp</result>
+			 <result name="prizeActivityAdd">/page/ea/main/marketing/lottery/PrizeActivityAdd.jsp</result>
+			 <result name="login">/page/WFJClient/Login/Login.jsp</result>
+			 <result name="lottery">/page/ea/main/marketing/lottery/lottery.jsp</result>
+			 <result name="lotteryRecords">/page/ea/main/marketing/lottery/AwardRecord.jsp</result>
+			 <result name="MeetingActivityDetail">/page/ea/main/marketing/lottery/MeetingActivityDetail.jsp</result>
+			 <result name="MeetingTicketList">/page/ea/main/marketing/lottery/MeetingTicketList.jsp</result>
+			 <result name="prizeActivityHomepageBack">/page/WFJClient/pc/5l5C/market/market_index.jsp</result>
+			 <result name="prizeList">/page/ea/main/marketing/lottery/PrizeList.jsp</result>
+			 <result name="loginPc">/page/WFJClient/pc/pc_login.jsp</result>
+			 <!--<result name="proList">/page/ea/main/marketing/lottery/ProductsChance.jsp</result>-->
+             <!--<result name="couponsList">/page/ea/main/marketing/lottery/CouponsChance.jsp</result>-->
+             <!--<result name="couponsAdd">/page/ea/main/marketing/lottery/CouponAdd.jsp</result>-->
+		</action> 
+	</package>	
+	<package strict-method-invocation="false" name="lottery-jsonajax" namespace="/ea/lottery"  extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.marketing.action.lottery.LotteryActivityAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>
+		</action>
+	</package>
+</struts>

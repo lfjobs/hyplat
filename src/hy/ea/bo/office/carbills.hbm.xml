@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarBills" table="dt_Car_CarBills">
+		<id length="50" name="carBillsKey">
+			<column length="50" name="carBillsKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="carBillsID">
+			<column length="50" name="carBillsID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="deptID">
+			<column length="50" name="deptID"/>
+		</property>
+		<property name="principal">
+			<column length="250" name="principal" />
+		</property>
+		<property name="voucherNum">
+			<column length="250" name="voucherNum" />
+		</property>
+		<property  name="accessory">
+			<column length="256" name="accessory" />
+		</property>
+		<property  name="carBillsNum">
+			<column length="250" name="carBillsNum" />
+		</property>
+		<property  name="applianceCrew">
+			<column length="250" name="applianceCrew" />
+		</property>
+		<property  name="carDate">
+			<column  name="carDate" />
+		</property>
+		<property  name="startDate">
+			<column  name="startDate" />
+		</property>
+		<property  name="endDate">
+			<column  name="endDate" />
+		</property>
+		<property  name="carInterval">
+			<column length="250"  name="carInterval" />
+		</property>
+		
+		<property  name="carNum">
+			<column length="250"  name="carNum" />
+		</property>
+		<property  name="carDriver">
+			<column length="250"  name="carDriver" />
+		</property>
+		<property  name="startKilometer">
+			<column length="250"  name="startKilometer" />
+		</property>
+		<property  name="endKilometer">
+			<column length="250"  name="endKilometer" />
+		</property>
+		<property  name="remark">
+			<column length="250"  name="remark" />
+		</property>
+		
+		<property  name="carReason">
+			<column  length="256" name="carReason" />
+		</property>
+		<property  name="idea">
+			<column length="256" name="idea" />
+		</property>
+		
+		<property name="manager">
+			<column length="50" name="manager"/>
+		</property>
+		<property name="president">
+			<column length="50" name="president"/>
+		</property>
+		<property name="deptCharge">
+			<column length="50" name="deptCharge" />
+		</property>
+		<property  name="headCharge">
+			<column length="50" name="headCharge" />
+		</property>
+		<property  name="verify">
+			<column length="50" name="verify" />
+		</property>
+		<property  name="financeVerify">
+			<column length="50" name="financeVerify" />
+		</property>
+		
+		<property  name="accounting">
+			<column length="50" name="accounting" />
+		</property>
+		<property  name="allAccounting">
+			<column length="50" name="allAccounting" />
+		</property>
+		<property  name="cashier">
+			<column length="50" name="cashier" />
+		</property>
+		<property  name="allCashier">
+			<column length="50" name="allCashier" />
+		</property>
+	</class>
+</hibernate-mapping>

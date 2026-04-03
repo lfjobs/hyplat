@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing.voucher">
+	<class name="FiscalPeriod" table="dt_inv_fisperiod">
+		<id length="50" name="fpKey">
+			<column length="50" name="fpKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="fpID">
+			<column length="50" name="fpID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="companyName">
+			<column length="50" name="companyName" />
+		</property>
+		<property name="groupCompanyID">
+        	<column name="groupCompanyID" length="50"/>
+        </property>
+		<property  name="year">
+			<column length="6" name="year" />
+		</property>
+		<property  name="startDate">
+			<column length="6" name="startDate" />
+		</property>
+		<property  name="endDate">
+			<column length="6" name="endDate" />
+		</property>
+		<property  name="creatorID">
+			<column length="50" name="creatorID" />
+		</property>
+		<property  name="creatorName">
+			<column length="50" name="creatorName" />
+		</property>
+		<property  name="updatorID">
+			<column length="50" name="updatorID" />
+		</property>
+		<property  name="updatorName">
+			<column length="50" name="updatorName" />
+		</property>
+		<property  name="createDate">
+			<column length="14" name="createDate" />
+		</property>
+		<property  name="updateDate">
+			<column length="14" name="updateDate" />
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>  
+    <title>呼叫中心信息处理报表</title>
+    <style type="text/css">
+    tr.ok td{background-color:#bbb;}
+    body,th {
+	font-size: 12px;
+}
+
+.table {
+	border-collapse: collapse; 
+	font-size: 12px;
+}
+
+.table th {
+	border: 1px solid; 
+}
+.table .b-bottom th{border:none;border-bottom:1px solid;padding-bottom:10px;font-size:16px;}
+.table td {
+	border: 1px solid;
+	color: #333;padding:5px;
+}
+ 
+.STYLE1 {
+	font-size: 16px;
+	font-weight: bold;
+}
+.STYLE2 {
+	font-size: 16px;
+}
+    </style>
+  </head>
+<body>
+		<div> 
+		    <table class="table">
+		        <thead>
+		        <tr class="b-bottom">
+		            <th colspan="7">${account.companyName} - 呼叫中心信息处理报表</th>
+		        </tr>
+		        <tr>    
+					<th width="30">序号</th>
+					<th width="80">访问电话</th>
+					<th width="100">客户名</th>
+					<th width="140">通话内容</th>
+					<th width="60">是否处理</th>
+					<th width="150">处理人所在公司</th>
+					<th width="80">处理人</th>
+					<th width="140">处理时间</th>
+					<th width="300">处理意见</th>
+				</tr>
+		        </thead>
+		        <tbody>
+		        <#list toPrints as pre> 
+				<tr <#if pre.isdeal!=0> class="ok"</#if> >
+						<td>${pre_index + 1}</td>
+						<td class="customTel">${pre.telnumber }</td>
+						<td class="customName">${pre.customname }</td>
+						<td class="recordContent">${pre.recordcontent}</td>
+						<td class="isDeal"><#if pre.isdeal==1>是<#else>否</#if></td>
+						<td title="${pre.companyname }">${pre.companyname }</td>
+						<td class="dealUser">${pre.dealuser}</td>
+						<td class="dealDate">${pre.dealdate}</td>
+						<td class="dealContent">${pre.dealcontent}</td>			
+
+				</#list>
+			</tbody>
+		    </table>
+		</div> 
+	</body>
+</html>

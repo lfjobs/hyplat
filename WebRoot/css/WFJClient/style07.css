@@ -1,0 +1,70 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { color:#666; text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+/*公共样式*/
+.color000{color:#000;}
+.color3a3{color:#a4a3a3;}
+.colorf00{color:#f00;}
+.colorfff{color:#fff;}
+.color0091f1{color:#0091f1;}/*蓝色*/
+.colorffd800{color:yellow;}/*黄色*/
+.all_width{width:95%;margin:0 auto;}
+.bgcolorf00{background-color:#f00;}
+.bgcolor0091f1{background-color:#0091f1;}
+
+/*Weifenjin07_001*/
+.wfj07_001{width:100%;min-width:320px;max-width:800px;margin:0 auto;height:auto;}
+.wfj07_001 .wfj07_top{width:100%;height:36px;line-height:36px;font-size:14px;}
+.wfj07_001 .wfj07_width{width:95%;height:auto;margin:0 auto;}
+.wfj07_001 .wfj07_title{width:100%;height:30px;line-height:30px;margin:0 auto;border-bottom:1px solid #a4a3a3;}
+.wfj07_001 .wfj07_title .wfj07_tit{}
+.wfj07_001 .wfj07_title .wfj07_tit ul li{float:left;width:18%;text-align:center;}
+.wfj07_001 .wfj07_title .wfj07_tit .wfj07_yuanqu{ position: relative; z-index: 999;}
+.wfj07_001 .wfj07_title .wfj07_tit .wfj07_yuanqu a{display:block;}
+.wfj07_001 .wfj07_title .wfj07_tit .wfj07_yuanqu div{ position: absolute;left:0px; top:31px; height:auto;background-color:#fff;display:none;width:100%;text-align:center;}
+.wfj07_001 .wfj07_title .wfj07_tit .wfj07_yuanqu div a{border-bottom:1px solid #a4a3a3;border-right:1px solid #a4a3a3;border-left:1px solid #a4a3a3;}
+.wfj07_001 .wfj07_title .wfj07_tit .wfj07_yuanqu div a:hover{color:#0091f1;background-color:#a4a3a3;}
+.wfj07_001 .wfj07_logo{float:left;margin:5px auto;border-bottom:1px solid #808080;width:100%;}
+.wfj07_001 .wfj07_logo ul{width:100%;float:left;}
+.wfj07_001 .wfj07_logo ul li{width:100%;float:left;}
+.wfj07_001 .wfj07_logo img{width:100%;height:70px;}
+.wfj07_001 .wfj07_search{float:left;width:100%;margin:10px auto;}
+.wfj07_001 .wfj07_search .wfj07_s{width:80%;margin:0 auto;}
+.wfj07_001 .wfj07_search .wfj07_s ul li{float:left;line-height:26px;}
+.wfj07_001 .wfj07_search .wfj07_s ul li .wfj07_searchs{width:100%;border:1px solid #666;border-radius:4px;height:26px;}
+.wfj07_001 .wfj07_search .wfj07_s ul li .wfj07_searchs ul li{float:left;}
+.wfj07_001 .wfj07_search .wfj07_s ul li .wfj07_searchs input[type=text]{width:95%;border:none;height:24px;line-height:24px;background-color:#F0F0F0;}
+.wfj07_001 .wfj07_search .wfj07_s ul li .wfj07_searchs img{height:26px;width:auto;max-width:100%;}
+.wfj07_001 .wfj07_product{width:100%;float:left;margin-bottom:10px;}
+.wfj07_001 .wfj07_product ul{width:50%;text-align:center;float:left;}
+.wfj07_001 .wfj07_product ul li img{width:60%;text-align:center;}
+.wfj07_001 .wfj07_bottom{width:100%;min-width:320px;max-width:800px;float:left;height:50px;background-color:#fff;position:fixed;margin-top: -50px;bottom:0px;}
+.wfj07_001 .wfj07_bottom ul li{width:25%;text-align:center;float:left;}
+
+.wfj07_003{width:100%;min-width:320px;max-width:800px;margin:0 auto;height:auto;}
+.wfj07_width{width:95%;height:auto;margin:0 auto;}
+.wfj07_t{width:100%;height:36px;line-height:36px;}
+.wfj07_t ul li{width:33%;text-align:left;float:left;cursor:pointer;font-weight:bold;}
+.wfj07_003 .wfj07_block{float:left;width:100%;background-color:#fff;margin-bottom:10px;}
+.wfj07_003 .wfj07_block ul{float:left;clear:both;border-bottom:1px solid #a4a3a3;width:100%;height:24px;line-height:24px;}
+.wfj07_003 .wfj07_block ul li{float:left;}
+.wfj07_003 .wfj07_block ul li img{width:18px;height:auto;vertical-align:middle;}
+.talignleft{text-align:left;}
+.talignright{text-align:right;}
+
+/*Weifenjin07_001end*/

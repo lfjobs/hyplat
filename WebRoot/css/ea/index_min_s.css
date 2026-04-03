@@ -1,0 +1,126 @@
+.tbc-presale {
+	overflow: hidden
+}
+
+.tbc-presale .tbc-presale-title {
+	float: left;
+	width: 86px;
+	text-align: right;
+	padding: 4px 8px 0 0
+}
+
+.tbc-presale .tbc-presale-content {
+	float: left;
+	width: 630px;
+	padding: 3px 0 0 5px
+}
+
+.tbc-presale .tbc-presale-content label {
+	text-align: left;
+	float: none
+}
+
+.tbc-presale-type {
+	overflow: hidden
+}
+
+.tbc-presale-type li {
+	float: left;
+	margin: 0 40px 0 0;
+	clear: none
+}
+
+.tbc-presale-setting {
+	background: #f8f8f8
+}
+
+.tbc-presale-setting .form-intro {
+	padding: 10px 0 0 10px
+}
+
+.tbc-presale-setting .form-area {
+	padding: 0 20px 20px
+}
+
+.tbc-presale-setting .form-intro a {
+	color: #09f
+}
+
+.tbc-presale-setting p {
+	color: #bcbcbc
+}
+
+.tbc-presale-setting .form-line {
+	position: relative;
+	margin: 10px 0
+}
+
+.tbc-presale-setting .form-title {
+	position: absolute;
+	width: 120px;
+	text-align: right;
+	line-height: 22px
+}
+
+.tbc-presale-setting .form-content {
+	margin-left: 120px
+}
+
+.tbc-presale-absolute-time {
+	margin-left: 10px
+}
+
+.tbc-presale-setting .tips {
+	margin: 10px 0
+}
+
+.tbc-presale .tbc-presale-content .tbc-presale-delivery-delay,.tbc-presale-pushdelay
+	{
+	width: 35px;
+	margin: 0 5px
+}
+
+.tbc-presale input.text {
+	margin-left: 0
+}
+
+#J_TbcPrePay {
+	width: 20px
+}
+
+.tbc-presale .tbc-presale-content p span {
+	display: inline
+}
+
+.tbc-presale .tbc-presale-content p .radio {
+	margin-top: -3px;
+	margin-left: 0
+}
+
+.tbc-presale .tbc-presale-content .tbc-presale-relative-time input.text
+	{
+	width: 35px;
+	margin: 0 5px
+}
+
+.tbc-presale .tbc-presale-content .tbc-presale-absolute-time input.text
+	{
+	width: 120px
+}
+
+.tbc-presale-line-delivery .form-content {
+	line-height: 22px
+}
+
+.tbc-presale .form-content .J_TbcPrePayValue {
+	display: inline;
+	margin-left: 10px
+}
+
+.tbc-presale .form-line-error .tips {
+	color: red
+}
+
+.tbc-presale-line-delivery .form-title {
+	line-height: 26px
+}

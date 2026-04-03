@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hy.ea.bo.finance.brokerage.PActPrice" table="dt_pro_activity_price">
+        <id name="actPriceKey" type="java.lang.String">
+            <column name="actPriceKey" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="actPriceId" type="java.lang.String">
+            <column name="actPriceId" length="50">
+            </column>
+        </property>
+        <property name="actPrice" type="java.lang.Double">
+            <column name="actPrice" length="50">
+                <comment>活动价</comment>
+            </column>
+        </property>
+        <property name="factory" type="java.lang.Double">
+            <column name="factory" length="50">
+                <comment>成本价</comment>
+            </column>
+        </property>
+        <property name="brokerage" type="java.lang.Double">
+            <column name="brokerage" length="50">
+                <comment>业务佣金</comment>
+            </column>
+        </property>
+        <property name="brokerages" type="java.lang.Double">
+            <column name="brokerages" length="50">
+                <comment>代理佣金和</comment>
+            </column>
+        </property>
+        <property name="investType" type="java.lang.String">
+            <column name="investType" length="50">
+                <comment>设备投资类型[01:教练车 02:创客单车 03:超市 00:无]</comment>
+            </column>
+        </property>
+        <property name="ppid" type="java.lang.String">
+            <column name="ppid" length="50">
+                <comment>产品id</comment>
+            </column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId" length="50">
+                <comment>公司id</comment>
+            </column>
+        </property>
+        <property name="activityId" type="java.lang.String">
+            <column name="activityId" length="50">
+                <comment>活动id</comment>
+            </column>
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" length="50">
+                <comment>状态[00:正常 01:删除]</comment>
+            </column>
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount" length="50">
+                <comment>原数量</comment>
+            </column>
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="quantity" length="50">
+                <comment>现数量</comment>
+            </column>
+        </property>
+
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EnterpriseAgreement" table="dtEnterpriseAgreement">
+		<id length="50" name="enterpriseAgreementKey">
+			<column length="50" name="enterpriseAgreementKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="enterpriseAgreementID">
+			<column length="50" name="enterpriseAgreementID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="serialNumber">
+			<column length="250" name="serialNumber" />
+		</property>
+		<property name="enName">
+			<column length="250" name="enName" />
+		</property>
+		<property name="enType">
+			<column length="250" name="enType" />
+		</property>
+		<property name="subject">
+			<column length="250" name="subject" />
+		</property>
+		<property name="enFile">
+			<column length="250" name="enFile" />
+		</property>
+		<property name="firstCompany">
+			<column length="250" name="firstCompany" />
+		</property>
+		<property name="firstPerson">
+			<column length="50" name="firstPerson" />
+		</property>
+		<property name="firstSignName">
+			<column length="50" name="firstSignName" />
+		</property>
+		<property name="firstSignTel">
+			<column length="250" name="firstSignTel" />
+		</property>
+		<property name="otherCompany">
+			<column length="250" name="otherCompany" />
+		</property>
+		<property name="otherPerson">
+			<column length="50" name="otherPerson" />
+		</property>
+		<property name="otherSignName">
+			<column length="50" name="otherSignName" />
+		</property>
+		<property name="otherSignTel">
+			<column length="50" name="otherSignTel" />
+		</property>
+		<property name="startDate">
+			<column name="startDate" />
+		</property>
+		<property name="endDate">
+			<column name="endDate" />
+		</property>
+		<property name="remind">
+			<column length="50" name="remind" />
+		</property>
+				<property name="enEdit">
+			<column length="250" name="enEdit" />
+		</property>
+		<property name="enScan">
+			<column length="250" name="enScan" />
+		</property>
+		<property name="enSource">
+			<column length="250" name="enSource" />
+		</property>
+		<property  name="managesStartDate">
+			<column name="managesStartDate" />
+		</property>
+		<property  name="managesEndDate">
+			<column name="managesEndDate" />
+		</property>
+		<property name="responsibler">
+			<column length="50" name="responsibler"/>
+		</property>
+		<property name="fileBoxName">
+			<column length="50" name="fileBoxName"/>
+		</property>
+		<property name="fileFrame">
+			<column length="50" name="fileFrame"/>
+		</property>
+		<property name="numbers">
+			<column length="50" name="numbers"/>
+		</property>
+	</class>
+</hibernate-mapping>

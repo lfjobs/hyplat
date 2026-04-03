@@ -1,0 +1,157 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{min-width: 1240px;}
+body{margin: 0 auto;font-family: "微软雅黑";background: #fff;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #000;}
+a:active,a:hover { text-decoration: none;}
+a:focus{ outline: none; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+input,button{
+    outline: none;
+}
+.fees_{
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: none;
+}
+.fees{
+    width: 478px;
+   /* height: 448px;*/
+    border: 1px solid #787878;
+    background: #fff;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-top: -209px;
+    margin-left: -239px;
+    z-index: 999;
+}
+.fees .tit{
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #009DD9;
+    margin: 0;
+    border-bottom: 1px solid #787878;
+    position: relative;
+    text-indent: 30px;
+}
+.fees .tit img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.fees .con{
+    margin: 20px 0;
+    text-align: center;
+}
+.fees .con .mil{
+    width: 385px;
+    margin: 5px auto;
+    overflow: hidden;
+}
+.fees .con .mil p{
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    text-align: right;
+    font-size: 10px;
+}
+
+.fees .con .mil .check {
+
+    height: 30px;
+    line-height: 30px;
+    align: center;
+    vertical-align:middle;
+
+}
+
+.fees .con .mil .py {
+    float: right;
+    font-size: 0.6rem;
+    margin: 0 0 0 0.3rem;
+}
+.fees .con .mil div{
+    width: 262px;
+    height: 28px;
+    float: left;
+    font-size: 0;
+    border: 1px dashed #787878;
+  	position: relative;
+}
+.fees .con .mil div input{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    margin: 4px 0;
+    font-size: 14px;
+    border: none;
+    text-indent: 5px;
+}
+.fees .con .mil div .error{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.fees .con .mil div .corect{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inherit;
+    width: 20px;
+}
+.fees .con .sub{
+    width: 240px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #009DD9;
+    border: 1px solid #787878;
+    /*margin-top: 20px;*/
+}
+.fees .con .mil .sel{
+    width: 262px;
+    height: 28px;
+    float: left;
+    border: 1px solid #787878;
+    outline: none;
+}
+.main_img {
+    position: relative;
+}
+
+.carousel-inner .item img {
+    margin: 0;
+}
+img {
+    vertical-align: middle;
+}

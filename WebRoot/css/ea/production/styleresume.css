@@ -1,0 +1,417 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+html{overflow-x: hidden; overflow-y: hidden;}
+body{margin: 0 auto;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #000;}
+a:active,a:hover { text-decoration: none;background: #fff;}
+a:focus{ outline: none;background: #fff; }
+input,button{
+    outline: none;
+}
+.clearfix{
+    clear: both;
+}
+.body{
+    background: #f3f3f3;
+}
+.flex-vc {
+  /* 09版 */
+  -webkit-box-align: center;
+  /* 12版 */
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+/*--个人简历--*/
+.res_top{
+    background-color: #fff;
+}
+.res_top ul{
+    line-height: 2.5;
+    padding: 0 10px;
+}
+.res_top ul li{
+    line-height: 45px;
+    float: left;
+    font-size: 0.7rem;
+    text-align: center;
+}
+.res_top ul li:nth-child(1){
+    width: 16%;
+    text-align: left;
+}
+.res_top ul li:nth-child(1) a{
+
+}
+.res_top ul li:nth-child(2){
+    width: 68%;
+
+}
+.res_top ul li:nth-child(3){
+    width: 16%;
+    font-size: 0.55rem;
+    text-align: right;
+}
+.res_top ul li img{
+    height: 30px;
+    padding-top: 0.3rem;
+}
+.res_bot{
+    overflow: auto;
+}
+.res_bot_grd{
+    text-align: center;
+}
+.res_bot_touxiang{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin: 10px auto;
+    overflow: hidden;
+}
+.res_bot_touxiang img{
+    width: 100%;
+    height: 100%;
+}
+.res_bot_grd p{
+    font-size: 0.7rem;
+}
+.res_bot_grd h5{
+    font-size: 0.6rem;
+    color: #666;
+    margin: 0.5rem 0 0 0;
+    position: relative;
+}
+.res_bot_grd h5 span{
+    padding: 0 0.3rem;
+}
+.res_bot_grd h5 a{
+    position: absolute;
+    top: 0;
+    font-size: 0.65rem;
+    color: #ff6600;
+    padding-left: 0.5rem;
+}
+.res_bot_grd h5 a img{
+    width: 0.6rem;
+    margin-top: 0.1rem;
+    padding-right: 0.2rem;
+    float: left;
+}
+.res_bot_grd h5 span:nth-child(2){
+    border: 1px solid #666;
+    border-top: none;
+    border-bottom: none;
+}
+.res_bot_grd button{
+    width: 6rem;
+    height: 1.5rem;
+    background: none;
+    border: 2px solid #B9E7FF;
+    border-radius: 2rem;
+    background-color: white;
+    font-size: 0.75rem;
+    color: #5BC6FF;
+    font-weight: 500;
+    margin: 15px 0;
+}
+.res_bot_grd2{
+    width: 95%;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+}
+/* .res_bot_grd2 p{
+    width: 50%;
+    float: left;
+    font-size: 0.6rem;
+    color: #6C6C6C;
+} */
+.res_bot_grd2 p:nth-child(2){
+
+}
+.res_bot_mil{
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+.res_bot_mil div:nth-child(1){
+    width: 50%;
+    font-size: 0.7rem;
+    float: left;
+}
+.res_bot_mil div:nth-child(1) span{
+    color: #FF6600;
+}
+.res_bot_mil div:nth-child(2){
+    width: 50%;
+    font-size: 0.7rem;
+    float: left;
+    text-align: right;
+    color: #B8B8B8;
+}
+.res_bot_mil div:nth-child(2) p{
+    width: 90%;
+    font-size: 0.7rem;
+    float: left;
+    text-align: left;
+    color: #B8B8B8;
+}
+.res_bot_mil div:nth-child(2) img{
+    width: 0.35rem;
+    padding: 0 0 0 10px;
+}
+/*--个人简历结束--*/
+
+/*--基本资料--*/
+.basics{
+    width: 95%;
+    margin: 0 auto;
+}
+.basics .basics_mil{
+    height: 3rem;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    -webkit-align-items: center;
+    -moz-align-items:center;
+    -o-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: -o-flex;
+    display: -moz-flex;
+    display: flex;
+}
+.basics .basics_mil p{
+    width:43%;
+    float: left;
+    font-size: 0.7rem;
+    color: #666;
+}
+.basics .basics_mil .bas_head{
+    width: 50%;
+   /* display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -o-align-items: center;*/
+}
+.basics .basics_mil .bas_head div{
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    overflow: hidden;
+    float: right;
+    position: relative;
+    margin-right: 0.5rem;
+    right: 0.5rem;
+}
+.basics .basics_mil .bas_head div img{
+    width: 100%;
+    height: 100%;
+}
+.bas_right{
+    width: 0.4rem;
+position: absolute;
+float: right;
+margin-top: 0.7rem;
+right: 0.5rem;
+}
+.basics .basics_mil2{
+    height: 2rem;
+}
+.basics .basics_mil2 input{
+    width: 50%;
+    text-align: right;
+    height: 2rem;
+    border: none;
+    font-size: 0.7rem;
+    color: #666;
+}
+.basics_mil2 .jiantou .bas_right{
+	margin-top: -0.25rem;
+}
+.basics_mil2 .jiantou{
+    width: 7%;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #666;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #666;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #666;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #666;
+}
+#sex{
+    width: 50%;
+    text-align: right;
+        height: 1rem;
+    line-height: 1rem;
+}
+#edu{
+    width: 50%;
+    text-align: right;
+}
+#edu a{
+    color: #666;
+}
+/*--基本资料结束--*/
+
+/*--简历名称--*/
+.resume_name div{
+    width: 95%;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0 0.1rem 0;
+}
+.resume_name div input{
+    width: 100%;
+    font-size: 0.65rem;
+    padding: 0.3rem 0;
+    border: none;
+    text-indent: 1em;
+}
+.resume_name div:nth-child(2){
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background: #f8f8f8;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.resume_name div:nth-child(2) h3{
+    font-size: 18px;
+}
+.resume_name div:nth-child(2) img{
+    width: 24px;
+    float: left;
+    padding-right: 20px;
+}
+/*--简历名称结束--*/
+
+
+/*--求职意向--*/
+.job-int_mil div:nth-child(1) {
+    width: 28%;
+    font-size: 0.7rem;
+    float: left;
+}
+.job-int_mil div:nth-child(2) {
+    width: 72%;
+    font-size: 0.7rem;
+    float: left;
+    text-align: right;
+    color: #B8B8B8;
+}
+.job-int_mil2 div:nth-child(1) span {
+    color: #000;
+}
+.job-int_gzxz{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+
+    z-index: 999;
+    display: none;
+}
+.job-int_d{
+    background: #fff;
+}
+.job-int_d3{
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+.job-int_d3-2{
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+.job-int_d1{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+}
+.job-int_d1 button{
+    width: 20%;
+    padding: 5px 15px;
+    float: left;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 15px 15%;
+    color: #FF6600;
+
+}
+.job-int_d1 button:nth-child(2){
+    background: #FF6600;
+    color: #fff;
+    border: 1px solid #ddd;
+}
+.job-int_d2 p{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 15px 10px;
+        background: url("../production/gou2_.png") 14rem 12px no-repeat;
+    background-size: 26px;
+    border-bottom: 1px solid #f3f3f3;
+}
+.job-int_d2 p:nth-child(1){
+    background: url("../production/gou2.png") 14rem 12px no-repeat;
+    background-size: 28px;
+}
+.job-int_d2 img{
+
+}
+
+.job-int_qzzt{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    display: none;
+}
+
+/*--求职意向结束--*/
+
+
+/*--学历学位--*/
+.degree_txt{
+    width: 95%;
+    margin: 0 auto;
+}
+.degree_txt p{
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #d3d3d3;
+}
+/*--学历学位结束--*/
+
+
+
+@media (max-width: 360px) {
+    .pri-set_div div p {
+        line-height: 1.8;
+    }
+}

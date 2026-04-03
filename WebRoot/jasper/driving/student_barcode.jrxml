@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="barcode" pageWidth="283" pageHeight="70" columnWidth="281" leftMargin="1" rightMargin="1" topMargin="1" bottomMargin="1">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Code" class="java.lang.String"/>
+	<field name="studentcard" class="java.lang.String"/>
+	<field name="studentphone" class="java.lang.String"/>
+	<field name="registrationdate" class="java.util.Date"/>
+	<field name="registrationcarname" class="java.lang.String"/>
+	<field name="studentname" class="java.lang.String"/>
+	<title>
+		<band height="68">
+			<staticText>
+				<reportElement key="staticText-1" x="4" y="1" width="40" height="11" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="微软雅黑" size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[报名时间：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" x="4" y="11" width="40" height="11"/>
+				<textElement textAlignment="Right">
+					<font fontName="微软雅黑" size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[车型：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" x="4" y="21" width="40" height="11"/>
+				<textElement textAlignment="Right">
+					<font fontName="微软雅黑" size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[姓名：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="9" y="31" width="35" height="11"/>
+				<textElement textAlignment="Right">
+					<font fontName="微软雅黑" size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[身份证：]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-2" x="44" y="11" width="92" height="11"/>
+				<textElement>
+					<font fontName="微软雅黑" size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrationcarname}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-4" x="44" y="31" width="92" height="11"/>
+				<textElement>
+					<font fontName="微软雅黑" size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentcard}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField-3" x="44" y="21" width="92" height="11"/>
+				<textElement>
+					<font fontName="微软雅黑" size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentname}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd" isBlankWhenNull="true">
+				<reportElement key="textField-1" x="44" y="1" width="92" height="11"/>
+				<textElement>
+					<font fontName="微软雅黑" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrationdate}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="barcode" x="0" y="43" width="136" height="24" isRemoveLineWhenBlank="true" forecolor="#FFFFFF"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="true" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$P{Code}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</title>
+</jasperReport>

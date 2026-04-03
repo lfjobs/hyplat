@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userDTO-scalable=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media (max-width: 1024px) {
+            th:last-child,
+            td:last-child {
+                position: sticky;
+                left: 0;
+                background: #FFFFFF;
+                text-align: center;
+                right: 0px;
+                border-left: 1px solid #DDDDDD ;
+                width: 100px;
+            }
+        }
+    </style>
+    <title>群组管理</title>
+</head>
+<body class="h-screen">
+<script src="../../../../../js/dynamic-tab/dynamic-tab.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/plugin/quarterOfYear.min.js"></script>
+<script>dayjs.extend(window.dayjs_plugin_quarterOfYear)</script>
+<div class="flex flex-col h-screen">
+    <div id="toolbar" class="flex flex-row items-center justify-between w-full">
+
+    </div>
+
+    <div class="p-2">
+        <div id="date-ranges-tab" class="space-x-4 overflow-x-scroll text-nowrap text-center h-auto p-2">
+
+        </div>
+        <div id="status-tab" class=" space-x-4 overflow-x-scroll text-nowrap text-center h-auto p-2">
+
+        </div>
+    </div>
+
+    <div class="flex-grow px-2 overflow-auto bg-white">
+        <table class="table-auto scroll-pt-8">
+            <thead class="sticky top-0 text-center bg-white">
+            <tr class="text-gray-700 text-sm">
+                <th class="text-nowrap">ID</th>
+                <th class="text-nowrap">群名称</th>
+                <th class="text-nowrap">群成员数</th>
+                <th class="text-nowrap">消息内容</th>
+                <th class="text-nowrap">创建人</th>
+                <th class="text-nowrap">创建时间</th>
+                <th class="text-nowrap">操作</th>
+            </tr>
+            </thead>
+            <tbody id="data-list">
+
+            </tbody>
+        </table>
+        <div class="h-2" id="load-more"></div>
+    </div>
+</div>
+
+<dialog id="process-result-dialog" class="w-full rounded-lg">
+    <div class="min-h-96 bg-gray-500 bg-white flex flex-col space-y-4">
+        <div class="p-4 w-full bg-red-500 text-white text-lg text-center ">举报处置反馈</div>
+        <div class="px-4 flex flex-col gap-2">
+            <span class="text-gray-500 text-nowrap">处理人</span>
+            <input class="w-full p-2 border border-r-2 rounded-lg" placeholder="" value="张三"></input>
+        </div>
+        <div class="px-4 flex flex-col items-start gap-2 grow">
+            <span class="text-gray-500 text-nowrap">处理结果</span>
+            <textarea class="w-full p-2 grow border border-2 rounded-lg" placeholder="请填写详细的举报处理结果"></textarea>
+        </div>
+        <div class="w-full text-center space-x-4 pb-4">
+            <button class="p-2 bg-blue-500 text-white min-w-24 rounded-lg">提交</button>
+            <button class="p-2 bg-red-500 text-white min-w-24 rounded-lg" onclick="closeProcessResultDialog()">取消</button>
+        </div>
+    </div>
+</dialog>
+
+<script>
+    const toolbar = new Toolbar("toolbar", {
+        title: "举报管理",
+        actions: [],
+        onClick: (id) => {
+            console.log(id);
+        }
+    })
+
+    const dateRangesTab = new DynamicTab("date-ranges-tab", {
+        items: generateDateRangeTabs(),
+        selected: 0
+    })
+    dateRangesTab.setSelectChangeListener((tabItem) => {
+        console.log(tabItem)
+    })
+
+    const statusTab = new DynamicTab("status-tab", {
+        items: [
+            {id: "1", label: "全部", data: "ALL", selected: true},
+            {id: "2", label: "未处理", data: "UN_PROCESSED", selected: false},
+            {id: "3", label: "已处理", data: "PROCESSED", selected: false},
+        ],
+        selected: 0
+    })
+    statusTab.setSelectChangeListener((tabItem) => {
+        console.log(tabItem)
+    })
+
+    function loadData() {
+        const dataList = []
+        for (let i = 0; i < 2; i++) {
+            dataList.push({
+                cover: "https://p26.douyinpic.com/aweme/200x200/tos-cn-p-0015/oIAQ0xB1K3I3Ji1b1sSihIAIWP9SXwAZviOPZ",
+                id: "1",
+                reporterId: "2",
+                reporterName: "张三",
+                type: "聊天",
+                messageId: "3",
+                messageContent: "瓜批",
+                images: "",
+                createdDate: "2023年12月14日 15:02",
+                senderId: "6",
+                senderName: "李四",
+                status: "UN_PROCESSED",
+                processor: "同事",
+                processDate: "2023年12月14日 15:05"
+            })
+        }
+
+        for (let i = 0; i < dataList.length; i++) {
+            const item = dataList[i]
+
+            var statusText;
+            switch (item.status) {
+                case "UN_PROCESSED":
+                    statusText = "未处理";
+                    break;
+                case "PROCESSED":
+                    statusText = "已处理";
+                    break;
+            }
+
+            const x = `<tr class="text-sm">
+                <td class="text-sm text-nowrap">${item.id}</td>
+                <td class="text-sm text-nowrap">${item.reporterId}</td>
+                <td class="text-sm text-nowrap">${item.reporterName}</td>
+                <td class="text-sm text-nowrap">${item.type}</td>
+                <td class="text-sm text-nowrap">${item.messageId}</td>
+                <td class="text-sm text-nowrap">${item.messageContent}</td>
+                <td class="text-sm text-nowrap h-8 flex flex-row">
+                    <div class="relative w-8 h-8 mx-2 cursor-default">
+                        <img class="absolute w-8 h-8 bg-gray-200" src="${item.images}"/>
+                        <p class="absolute text-xl bottom-1 right-1">+5</p>
+                   </div>
+                   <button class="text-sm text-red-500">查看</button>
+                </td>
+                <td class="text-sm text-nowrap">${item.createdDate}</td>
+                <td class="text-sm text-nowrap">想举报就举报</td>
+                <td class="text-sm text-nowrap">${item.senderId}</td>
+                <td class="text-sm text-nowrap">${item.senderName}</td>
+                <td class="text-sm text-nowrap text-orange-500">${statusText}</td>
+                <td class="text-sm text-nowrap">${item.processor}</td>
+                <td class="text-sm text-nowrap">帐号封禁一个月</td>
+                <td class="text-sm text-nowrap">${item.processDate}</td>
+                <td class="text-nowrap">
+                    <button class="bg-blue-500 text-white px-2 py-2 text-sm rounded-lg" onclick="onProcessed()">处理</button>
+                </td>
+            </tr>`
+            document.getElementById("data-list").innerHTML = document.getElementById("data-list").innerHTML + x
+
+        }
+    }
+
+    function onPassed() {
+        if (window.confirm("确认此视频通过安全评估审核？")) {
+
+        }
+    }
+
+    function onProcessed() {
+        showProcessResultDialog()
+    }
+
+    function showProcessResultDialog() {
+        document.getElementById("process-result-dialog").showModal()
+    }
+
+    function closeProcessResultDialog() {
+        document.getElementById("process-result-dialog").close()
+    }
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        const entry = entries[0]
+        if (entry.isIntersecting) {
+            loadData()
+        }
+    }, {
+        threshold: 1
+    })
+    observer.observe(document.getElementById('load-more'))
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{min-width: 1240px;}
+body{margin: 0 auto;font-family: "微软雅黑";background: #fff;overflow: auto;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #000;}
+a:active,a:hover { text-decoration: none;}
+a:focus{ outline: none; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+input,button{
+    outline: none;
+}
+.Products_{
+   /* background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;*/
+    /*display: none;*/
+}
+.Products{
+    width: 905px;
+    min-height: 555px;
+    background: #fff;
+   /* position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -209px;
+    margin-left: -472px;
+    z-index: 999;*/
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 50px auto;
+}
+.Products .tit{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 21px;
+    color: #000;
+    background-color: #f1f1f1;
+    margin: 0;
+    position: relative;
+
+}
+.Products .tit img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.Products .con{
+    width: 760px;
+    margin: 15px 0 0 120px;
+    text-align: left;
+}
+.Products .con .mil .title{
+    overflow: hidden;
+}
+.Products .con .mil h3{
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 10px;
+    font-size: 18px;
+    margin: 20px 0 15px 0;
+    float: left;
+}
+.Products .con .mil h3 i{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+    background-color: #5acb89;
+    margin: 10px 0;
+}
+.Products .con .mil .title button{
+    float: right;
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    background-color: #fff;
+    font-size: 16px;
+    margin: 20px 0 15px 0;
+    border: 1px dashed #ddd;
+    color: #ff6600;
+}
+.Products .con .mil .mil_con li{
+    overflow: hidden;
+    margin: 5px 0;
+}
+.Products .con .mil .mil_con li .left{
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    font-size: 16px;
+    float: left;
+    border: none;
+}
+.Products .con .mil .mil_con li .right{
+    width: 305px;
+    height: 29px;
+    line-height: 29px;
+    border-bottom: 1px dashed #666;
+    float: left;
+    margin: 0 0 0 10px;
+}
+.Products .con .mil .mil_con li .right input{
+	margin: 0;
+	border: none;
+}
+.Products .con .mil .mil_con li .right span{
+    font-size: 16px;
+}
+.Products .con .mil .mil_con li .right img{
+    height: 26px;
+}
+.Products .con .mil .mil_con li .btn_inp{
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #ff6600;
+    font-size: 16px;
+    background-color: #fff;
+    border: none;
+}
+.Products .con .mil .mil_con li .file_btn{
+    width: 30px;
+    height: 26px;
+    background: url(../images/ico-file.png) no-repeat;
+    background-size: 24px 26px;
+    border: none;
+    margin: 2px 0 0 0;
+}
+.Products .con .mil .mil_con li .query_clerk{
+    width: 180px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+}
+.Products .con .mil .mil_con li .query_btn{
+    width: 70px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #e4e4e4;
+    font-size: 14px;
+    color: #000;
+}
+.Products .con .mil .table{
+    width: 738px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-bottom: none;
+    margin: 20px 0 20px 0;
+}
+.Products .con .mil .table .title{
+    background-color: #1b94da;
+    color: #fff;
+}
+.Products .con .mil .table li{
+    height: 40px;
+    overflow: hidden;
+}
+.Products .con .mil .table p{
+    width: 122px;
+    line-height: 39px;
+    float: left;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.Products .con .mil .table .select i{
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    border: 1px solid #939393;
+    border-radius: 50%;
+    background-color: #dedede;
+}
+.Products .con .mil .table .active .select i{
+    background-color: #1b94da;
+}
+.Products .con .mil .table .operate input{
+    width: 45px;
+    height: 20px;
+    border: none;
+}
+.Choose{
+    width: 114px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #5091c3;
+    border-radius: 3px;
+    background-color: #5caae6;
+    font-size: 18px;
+    color: #fff;
+    margin: 50px auto 10px auto;
+    display: block;
+}
+.alert_{
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: none;
+}
+.alert{
+    width: 265px;
+    height: 165px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -82px;
+    margin-left: -132px;
+    z-index: 999;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+.alert p{
+    font-size: 21px;
+    margin: 40px 0 0 0;
+}
+.alert .btn{
+    overflow: hidden;
+}
+.alert .btn input{
+    width: 60px;
+    height: 25px;
+    border: none;
+    background: #1b94da;
+    color: #fff;
+    margin: 30px 20px 0 20px;
+}
+
+
+

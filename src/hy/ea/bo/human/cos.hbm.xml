@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human">
+    <class name="COS" table="dtCos">
+        <id name="cosKey" length="50" >
+        	<column name="cosKey" length="50"/>
+        	<generator class="uuid" />
+        </id>
+        <property name="cosID">
+        	<column name="cosID"  length="50"  not-null="true"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"  not-null="true"/>
+        </property>
+        <property name="staffID" >
+        	<column name="staffID" length="50"  not-null="true"/>
+        </property>
+        <property name="organizationID" >
+        	<column name="organizationID" length="50"  not-null="true"/>
+        </property>
+        <property name="depPostID" >
+        	<column name="depPostID" length="50"/>
+        </property>
+        <property name="cosStatus" >
+        	<column name="cosStatus" length="2" />
+        </property>
+        <property name="status" >
+        	<column name="status" length="2" />
+        </property>
+        <property name="salaryLevelId" >
+            <column name="SALARY_LEVEL_ID" length="50"/>
+        </property>
+        <property name="entryDate" >
+            <column name="ENTRY_DATE" length="50"/>
+        </property>
+        <property name="contractType" >
+            <column name="CONTRACT_TYPE" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

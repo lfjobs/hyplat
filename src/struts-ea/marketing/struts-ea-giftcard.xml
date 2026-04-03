@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="giftcard-ntoken" namespace="/ea/giftcard"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.marketing.action.supermaket.GiftCardAction" method="{1}">
+		     <result name="giftCardPage">/page/ea/main/marketing/supermarket/GiftCard/GiftCard.jsp</result>
+			 <result name="appGiftCardPage">/page/ea/main/marketing/supermarket/GiftCard/AppGiftCard.jsp</result>
+
+			<result name="getbpDetail">/page/ea/main/finance/BenDis/Gold_Pool/bonuspoints.jsp</result>
+			<result name="topup">/page/ea/main/marketing/supermarket/GiftCard/topup.jsp</result>
+		</action> 
+	</package>	
+	<package strict-method-invocation="false" name="giftcard-jsonajax" namespace="/ea/giftcard"  extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.marketing.action.supermaket.GiftCardAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>
+		</action>
+	</package>
+</struts>

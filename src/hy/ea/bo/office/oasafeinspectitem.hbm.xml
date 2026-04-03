@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="OASafeInspectItem" table="DT_OA_SAFE_INSPECT_ITEM">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="id">
+			<column length="50" name="id"/>
+		</property>
+		<property name="refid">
+			<column length="50" name="refid"/>
+		</property>
+		<property name="operationDate">
+			<column name="operationDate"/>
+		</property>
+		<property name="startDate">
+			<column  name="startDate"/>
+		</property>
+		<property name="endStart">
+			<column  name="endStart" />
+		</property>
+		<property name="barCode">
+			<column length="250" name="barCode" />
+		</property>
+		<property  name="inspectItemno">
+			<column length="250" name="inspectItemno" />
+		</property>
+		<property  name="inspectAddress">
+			<column length="100" name="inspectAddress" />
+		</property>
+		<property  name="inspectTarget">
+			<column length="50" name="inspectTarget" />
+		</property>
+		<property  name="inspectName">
+			<column length="250" name="inspectName" />
+		</property>
+		<property  name="safeTypeID">
+			<column length="250" name="safeTypeID" />
+		</property>
+		<property  name="inspectType" >
+			<column length="250" name="inspectType" />
+		</property>
+		<property  name="inspectResult">
+			<column length="100" name="inspectResult" />
+		</property>
+		<property  name="attachMent">
+			<column length="150" name="attachMent" />
+		</property>
+		<property  name="isRemind" type='java.lang.Boolean' >
+			<column  name="isRemind" />
+		</property>
+		<property  name="moblle">
+			<column length="152" name="moblle" />
+		</property>
+		<property  name="message">
+			<column length="100" name="message" />
+		</property>
+		<property  name="inspectOrremark">
+			<column length="150" name="inspectOrremark" />
+		</property>
+		<property  name="ManagerRemark">
+			<column length="150" name="ManagerRemark" />
+		</property>
+		<property  name="comments">
+			<column length="200" name="comments" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffBankAccount" table="dt_hr_staff_BankAccount">
+	<comment>个人银行帐号-公司银行帐号</comment>
+		<id length="50" name="bankAccountKey">
+			<column length="50" name="bankAccountKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="bankAccountID">
+			<column length="150" name="bankAccountID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="150" name="staffID"/>
+		</property>
+		<property name="bankCode">
+			<column length="250" name="bankCode"><comment>银行编号</comment></column>
+		</property>
+		<property name="approvalNumber">
+			<column length="250" name="approvalNumber"><comment>证明号（核准号）</comment></column>
+		</property>
+		<property name="bankName">
+			<column length="250" name="bankName"><comment>银行名称</comment></column>
+		</property>
+		<property name="theDate">
+			<column  name="theDate"><comment>发证日期</comment></column>
+		</property>
+		<property  name="accountNature">
+			<column length="250" name="accountNature"><comment>账户性质（使用类别）</comment></column>
+		</property>
+		<property  name="bankAccount">
+			<column length="250" name="bankAccount" ><comment>银行账号</comment></column>
+		</property>
+		<property  name="openDate">
+			<column  name="openDate"><comment>开户时间</comment></column>
+		</property>
+		<property  name="bankContact">
+			<column length="250" name="bankContact" ><comment>银行联系方式</comment></column>
+		</property>
+		<property  name="bankAddress">
+			<column  name="bankAddress" length="250"><comment>所属城市</comment></column>
+		</property>
+		<property  name="cancellationDate">
+			<column  name="cancellationDate" length="250"><comment>注销时间</comment></column>
+		</property>
+		<property  name="type">
+			<column  name="type" length="250"><comment>类型00公司01个人</comment></column>
+		</property>
+		<property name="province">
+			<column length="150" name="province"><comment>所属省份</comment></column>
+		</property>
+		<property name="branchName">
+			<column length="150" name="branchName"><comment>支行名称</comment></column>
+		</property>
+		<property name="ccompanyId">
+			<column name="ccompanyId" length="100"><comment>FK 往来单位业务主键</comment></column>
+		</property>
+		<property name="cardholder">
+			<column length="150" name="cardholder"><comment>持卡人姓名</comment></column>
+		</property>
+		<property name="isdefault">
+			<column length="10" name="isdefault"><comment>是否默认收款银行卡1是 0否</comment></column>
+		</property>
+		<property name="cardType">
+			<column length="10" name="cardType"><comment>00对私01对公</comment></column>
+		</property>
+		<property name="addTime">
+			<column  name="addTime"><comment>新增时间</comment></column>
+		</property>
+		
+		<property  name="idcard">
+			<column length="150" name="idcard" ><comment>身份证号</comment></column>
+		</property>
+		<property  name="tel">
+			<column length="150" name="tel" ><comment>银行预留电话</comment></column>
+		</property>
+	
+	
+	</class>
+</hibernate-mapping>

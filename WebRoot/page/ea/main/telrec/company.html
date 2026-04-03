@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head>
+		<title>接待单位记录</title> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="${base}/css/overlayer.css" />
+		<link href="${base}/css/ea/validate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="${base}/css/admin_main.css" />
+		<link rel="stylesheet" type="text/css" href="${base}/js/jqModal/css/flexigrid_blue.css" />
+		<link rel="stylesheet" type="text/css" href="${base}/js/jqModal/css/jqModal_blue.css" />
+
+		<script src="${base}/js/jquery.js" type="text/javascript"></script>
+		<script src="${base}/js/ea/validate.js" type="text/javascript"></script>
+		<script type="text/javascript" src="${base}/js/flexigrid.js"></script>
+		<script type="text/javascript" src="${base}/js/jqModal/jqDnR.js"></script>
+		<script type="text/javascript" src="${base}/js/jqModal/jqModal.js"></script>
+		<script src="${base}/page/ea/main/telrec/js/company.js" type="text/javascript"></script>
+		<script language="javascript" type="text/javascript" src="${base}/js/My97DatePicker/WdatePicker.js"></script>
+		<script type="text/javascript">
+		 var  basePath='${base}/';           
+         var  pNumber ='${pageNumber}';  
+         var  search='${search}';
+         var  telMessageID = '';
+         var  token=0;
+         var  type = '${type}';
+		</script>
+		<style type="text/css">td {	white-space: nowrap;}.input {width: 150px;height: 15px;	line-height: 15px;}.flexigrid div.bDiv .ok td{ background-color:#E0F0FF;}</style>
+	</head>
+	<body>
+		<div class="main_main">
+			<table class="JQueryflexme">
+				<thead>
+					<tr class="tablewith">
+						<th width="20">
+							选择
+						</th>
+						<th width="20">
+							序号
+						</th>
+						<th width="270">
+							单位名称
+						</th>
+						<th width="90">
+							访问电话
+						</th>
+						<th width="55">
+							通话类型
+						</th>
+						<th width="70">
+							接待人
+						</th>
+						<th width="70">
+							接待时间
+						</th>
+						<th width="120">
+							内容
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				    <#list pageForm.list as pre>
+						<tr id="${pre[0].id}" >
+							<td>
+								<input type="radio" name="a" class="JQuerypersonvalue"
+									value="${pre[0].id}" />
+							</td>
+							<td>${pre_index + 1}</td>
+							<td class="customName">
+								${pre[0].customName }
+							</td>
+							<td class="customTel">
+								${pre[0].telNumber }
+							</td>
+							<td class="recordType">
+								${pre[0].recordType }
+							</td>
+							<td class="userId">
+								${pre[1].staffName}
+							</td>
+							<td class="recodeDate">
+								${pre[0].recodeDate}
+							</td>
+							<td class="recordContent">
+								${pre[0].recordContent}
+							</td>
+						</tr>
+					</#list>
+				</tbody>
+			</table>
+		<#assign actionPath="ea/tel/tel_companyRecords.jspa?">
+		<#include "/page/ea/main/office_ea/check/page.html"/>
+		</div>
+		<div class="jqmWindow" style="top: 10%; right: 25%; width: 500px"
+			id="jqModel">
+			<form name="cstaffForm" id="cstaffForm" method="post">
+				<input type="hidden" name="telInRecord.customType" value="2" />
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					单位接待记录
+					<div class="close">
+					</div>
+				</div>
+				<table width="100%" cellpadding="5" cellspacing="10" id="stafftable">
+					<tr>
+						<td style="width: 25%;" align="right">
+							接待类型：
+						</td>
+						<td>
+							<select id="recordType" name="recordType" style="width: 155px;">
+							    <#list codeList as code>
+							    <option value="${code.codeValue}">
+									${code.codeValue}
+								</option>
+							    </#list> 
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							单位名称：
+						</td>
+						<td>
+							<input name="customName" id="customName"  class="input"/>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							访问电话：
+						</td>
+						<td>
+							<input name="customTel" id="customTel"  class="input"/>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							接待时间：
+						</td>
+						<td>
+							<input name="recodeDate" id="recodeDate"  class="input"/>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							内&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;容：
+						</td>
+						<td>
+							<textarea rows="6" cols="55" name="recordContent"
+								id="recordContent"></textarea>
+						</td>
+					</tr>
+					<tr id="dealComment">
+						<td align="right">
+							处理意见：
+						</td>
+						<td>
+							<textarea rows="4" cols="55" name="telInRecord.dealContent"
+								id="dealContent"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="button" id="btnDeal"
+								class="JQueryreturn input-button"
+								style="cursor: pointer; width: 80px;" value="提交" />
+							<input type="button" class="JQueryreturn input-button"
+								style="cursor: pointer; width: 80px;" value="关闭" />
+
+						</td>
+					</tr>
+				</table>
+				<s:token></s:token>
+			</form>
+		</div>
+		<!--搜索窗口 -->
+		<div class="jqmWindow" style="width: 460px; right: 25%;; top: 10%"
+			id="jqModelSearch">
+			<form name="postSearchForm" id="postSearchForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					查询信息
+					<div class="close">
+					</div>
+				</div>
+				<table width="100%" id="cataffSearchTable" cellspacing="5">
+					<tr>
+						<td align="right">
+							接待类型：
+						</td>
+						<td>
+							<select name="telInRecord.recordType">
+								<#list codeList as code>
+							    <option value="${code.codeValue}">
+									${code.codeValue}
+								</option>
+							    </#list> 
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							客户名称：
+						</td>
+						<td>
+							<input type="text" name="telInRecord.customName" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							客户电话：
+						</td>
+						<td>
+							<input type="text" name="telInRecord.customTel" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							是否处理：
+						</td>
+						<td>
+							<select name="telInRecord.isDeal">
+								<option value="1">
+									是
+								</option>
+								<option selected="selected" value="0">
+									否
+								</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<select name="queryDateType">
+								<option value="1">
+									接待时间
+								</option>
+								<option value="2">
+									处理时间
+								</option>
+							</select>
+						</td>
+						<td>
+							<input name="beginDate" id="beginDate" onfocus="date(this)" />
+							到
+							<input name="endDate" id="endDate" onfocus="date(this)" />
+						</td>
+					</tr>
+				</table>
+				<div align="center">
+					<input type="button" class="input-button" id="searchStaff"
+						value="   查询  " />
+					<input name="search" type="hidden" value="search" />
+					<input name="type" type="hidden" value="${type}" />
+				</div>
+			</form>
+		</div>
+		<iframe name="hidden" width="0" height="0"></iframe>
+	</body>
+</html>

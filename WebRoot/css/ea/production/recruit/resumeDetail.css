@@ -1,0 +1,653 @@
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+header {
+    /* background-color: #f74c32; */
+    border-bottom: 1px solid #d0d0d0;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .7rem;
+    color:  #6d6d6d;
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .525rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+.content section.grxx {
+    padding: .75rem 0 1rem .625rem;
+    border: .08rem solid #f3f3f3;
+    border-right: 0;
+    margin: .75rem .625rem 0 .625rem;
+    border-radius: .35rem
+}
+
+.content section.grxx .p-zw {
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .55rem;
+    color: #555
+}
+
+.content section.grxx section.sec-xx .div-left {
+    width: 75%;
+    float: left
+}
+
+.content section.grxx section.sec-xx .div-left .div-01 h2 {
+    float: left;
+    height: 2.65rem;
+    line-height: 2.65rem;
+    font-size: 1.15rem;
+    color: #222;
+    font-weight: 600;
+    padding-right: .65rem
+}
+
+.content section.grxx section.sec-xx .div-left .div-01 p {
+    float: left;
+    line-height: 3.35rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.content section.grxx section.sec-xx .div-left .div-02 p {
+    float: left;
+    height: 1.075rem;
+    line-height: 1.075rem;
+    font-size: .55rem;
+    color: #555
+}
+
+.content section.grxx section.sec-xx .div-left .div-02 span {
+    float: left;
+    display: block;
+    width: .5rem;
+    height: 1.075rem;
+    position: relative
+}
+
+.content section.grxx section.sec-xx .div-left .div-02 span::after {
+    content: "";
+    position: absolute;
+    width: .05rem;
+    height: .575rem;
+    background-color: #ddd;
+    left: 50%;
+    top: 26%
+}
+
+.content section.grxx section.sec-xx .div-left p.hj {
+    height: 1.075rem;
+    line-height: 1.075rem;
+    font-size: .55rem;
+    color: #555;
+    padding-bottom: .625rem
+}
+
+.content section.grxx section.sec-xx .div-left .div-03 div {
+    padding-right: .5rem;
+    height: 1.425rem;
+    line-height: 1.425rem;
+    float: left;
+    display: flex;
+    align-items: center
+}
+
+.content section.grxx section.sec-xx .div-left .div-03 div img {
+    margin-left: .05rem;
+    width: .525rem;
+    align-items: center
+}
+
+.content section.grxx section.sec-xx .div-left .div-03 p {
+    height: 1.425rem;
+    line-height: 1.425rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.content section.grxx section.sec-xx .div-right {
+    padding-top: .75rem;
+    padding-right: .5rem;
+    float: right
+}
+
+.content section.grxx section.sec-xx .div-right img {
+    width: 2.5rem
+}
+
+.content section.grxx .div-yx div {
+    float: left;
+    display: flex;
+    align-items: center;
+    height: 1.425rem;
+    line-height: 1.425rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.content section.grxx .div-yx div img {
+    padding-right: .46rem;
+    align-items: center;
+    width: .65rem
+}
+
+.content section.grxx .div-yx p:first-of-type {
+    float: left;
+    height: 1.425rem;
+    line-height: 1.425rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.content section.grxx .div-yx p:last-of-type {
+    float: right;
+    padding-right: .375rem;
+    height: 1.425rem;
+    line-height: 1.425rem;
+    font-size: .55rem;
+    color: #f74c32
+}
+
+.content .qzyx {
+    border-bottom: .025rem solid #eee;
+    padding: 1.125rem 0 .875rem .75rem
+}
+
+.content .qzyx h2 {
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .85rem;
+    color: #222;
+    font-weight: 550;
+    padding-right: .65rem
+}
+
+.content .qzyx p.p-zp {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .65rem;
+    color: #222
+}
+
+.content .qzyx p.p-zp span {
+    padding-left: .65rem;
+    font-size: .6rem;
+    color: #f74c32
+}
+
+.content .qzyx .div-01 p {
+    float: left;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.content .qzyx .div-01 span {
+    float: left;
+    display: block;
+    width: .5rem;
+    height: 1.075rem;
+    position: relative
+}
+
+.content .qzyx .div-01 span::after {
+    content: "";
+    position: absolute;
+    width: .05rem;
+    height: .575rem;
+    background-color: #ddd;
+    left: 50%;
+    top: 26%
+}
+
+.content .qzyx .div-02 div {
+    padding-right: .3rem;
+    float: left;
+    display: flex;
+    align-items: center;
+    height: 1.35rem;
+    line-height: 1.35rem
+}
+
+.content .qzyx .div-02 div img {
+    align-items: center;
+    width: .45rem
+}
+
+.content .qzyx .div-02 p {
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.content .rwjl {
+    border-bottom: .025rem solid #eee;
+    padding: .75rem 0 1.25rem .75rem
+}
+
+.content .rwjl h2 {
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .85rem;
+    color: #222;
+    font-weight: 550;
+    padding-right: .65rem
+}
+
+.content .rwjl .div-con .div-left {
+    height: 2.5rem;
+    float: left;
+    padding-right: .65rem;
+    padding-top: .425rem
+}
+
+.content .rwjl .div-con .div-left p {
+    text-align: center;
+    width: .95rem
+}
+
+.content .rwjl .div-con .div-left p img {
+    display: block;
+    width: .4rem;
+    margin: 0 auto
+}
+
+.content .rwjl .div-con .div-left div {
+    height: 100%;
+    position: relative;
+    background-color: #e5e5e5;
+    width: .025rem;
+    margin: 0 auto
+}
+
+.content .rwjl .div-con .div-right {
+    float: left;
+    width: 85%
+}
+
+.content .rwjl .div-con .div-right h3 {
+    font-weight: 400;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .65rem;
+    color: #555
+}
+
+.content .rwjl .div-con .div-right .gzsj {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: .6rem;
+    color: #555;
+    padding-bottom: .2rem
+}
+
+.content .rwjl .div-con .div-right .gzzw {
+    height: 1.9rem;
+    line-height: 1.9rem;
+    font-size: .6rem;
+    color: #555
+}
+
+.content .rwjl .div-con .div-right .gzzw span {
+    padding-left: .75rem
+}
+
+.content .rwjl .div-con .div-right .div-bq {
+    padding-bottom: .35rem
+}
+
+.content .rwjl .div-con .div-right .div-bq p {
+    margin: 0 .5rem .3rem 0;
+    text-align: center;
+    float: left;
+    padding: 0 .5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .6rem;
+    color: #222;
+    background-color: #f8f8f8
+}
+
+.content .rwjl .div-con .div-right .p-text {
+    line-height: 1.3rem;
+    font-size: .6rem;
+    color: #222
+}
+
+.content .jyjl {
+    border-bottom: .025rem solid #eee;
+    padding: .75rem 0 1.125rem .75rem
+}
+
+.content .jyjl h2 {
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .85rem;
+    color: #222;
+    font-weight: 550;
+    padding-right: .65rem
+}
+
+.content .jyjl .div-con .div-left {
+    height: 2.5rem;
+    float: left;
+    padding-right: .65rem;
+    padding-top: .425rem
+}
+
+.content .jyjl .div-con .div-left p {
+    text-align: center;
+    width: .95rem
+}
+
+.content .jyjl .div-con .div-left p img {
+    display: block;
+    width: .4rem;
+    margin: 0 auto
+}
+
+.content .jyjl .div-con .div-left div {
+    height: 100%;
+    position: relative;
+    background-color: #e5e5e5;
+    width: .025rem;
+    margin: 0 auto
+}
+
+.content .jyjl .div-con .div-right {
+    float: left
+}
+
+.content .jyjl .div-con .div-right section {
+    padding-bottom: .2rem
+}
+
+.content .jyjl .div-con .div-right section h3 {
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .65rem;
+    color: #222;
+    font-weight: 400
+}
+
+.content .jyjl .div-con .div-right section p {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: .6rem;
+    color: #222;
+    padding-bottom: .2rem
+}
+
+.content .jyjl .div-con .div-right div p {
+    float: left;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.content .jyjl .div-con .div-right div span {
+    float: left;
+    display: block;
+    width: .5rem;
+    height: 1.075rem;
+    position: relative
+}
+
+.content .jyjl .div-con .div-right div span::after {
+    content: "";
+    position: absolute;
+    width: .05rem;
+    height: .575rem;
+    background-color: #ddd;
+    left: 50%;
+    top: 45%
+}
+
+.content .xmjl {
+    border-bottom: .025rem solid #eee;
+    padding: .75rem 0 1.125rem .75rem
+}
+
+.content .xmjl h2 {
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .85rem;
+    color: #222;
+    font-weight: 550;
+    padding-right: .65rem
+}
+
+.content .xmjl .div-con .div-left {
+    height: 2.5rem;
+    float: left;
+    padding-right: .65rem;
+    padding-top: .425rem
+}
+
+.content .xmjl .div-con .div-left p {
+    text-align: center;
+    width: .95rem
+}
+
+.content .xmjl .div-con .div-left p img {
+    display: block;
+    width: .4rem;
+    margin: 0 auto
+}
+
+.content .xmjl .div-con .div-left div {
+    height: 100%;
+    position: relative;
+    background-color: #e5e5e5;
+    width: .025rem;
+    margin: 0 auto
+}
+
+.content .xmjl .div-con .div-right {
+    width: 85%;
+    float: left
+}
+
+.content .xmjl .div-con .div-right section {
+    padding-bottom: .2rem
+}
+
+.content .xmjl .div-con .div-right section h3 {
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .65rem;
+    color: #222;
+    font-weight: 400
+}
+
+.content .xmjl .div-con .div-right section p {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: .6rem;
+    color: #222;
+    padding-bottom: .2rem
+}
+
+.content .xmjl .div-con .div-right div p {
+    float: left;
+    line-height: 1.5rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.content .zwpj {
+    width: 90%;
+    border-bottom: .025rem solid #eee;
+    padding: 0 0 1rem .75rem
+}
+
+.content .zwpj h2 {
+    height: 3.3rem;
+    line-height: 3.3rem;
+    font-size: .85rem;
+    color: #222
+}
+
+.content .zwpj p {
+    line-height: 1.25rem;
+    font-size: .6rem;
+    color: #222
+}
+
+.div-footer-top {
+    height: 4.675rem
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 0 1px #000;
+    border-top: .12rem solid #f8f8f8;
+    border-bottom: .12rem solid #f8f8f8;
+    padding: 1.375rem 1.3rem 1.25rem .125rem
+}
+
+.footer ul {
+    width: 52.6%;
+    float: left
+}
+
+.footer ul li {
+    text-align: center;
+    float: left;
+    width: 33%
+}
+
+.footer ul li img {
+    height: .8rem
+}
+
+.footer ul li img:first-of-type {
+    height: .825rem
+}
+
+.footer ul li p {
+    padding-top: .15rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.footer input {
+    border-radius: .15rem;
+    margin-left: .5rem;
+    width: 37%;
+    height: 2.05rem;
+    line-height: 2.05rem;
+    font-size: .7rem;
+    color: #fff;
+    background-color: #f74c32;
+    border: 0
+}
+
+.div-del {
+    z-index: 999;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.div-del .box {
+    width: 75%;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 60%;
+    border-radius: .35rem
+}
+
+.div-del .box > p {
+    text-align: center;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: .7rem;
+    color: #1c1c1c
+}
+
+.div-del .box div {
+    border-top: .025rem solid #eee
+}
+
+.div-del .box div p {
+    width: 49.5%;
+    text-align: center;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    font-size: .65rem;
+    color: #555
+}
+
+.div-del .box div p:first-of-type {
+    float: left;
+    border-right: .025rem solid #eee
+}
+
+.div-del .box div p:last-of-type {
+    float: right;
+    color: #e74a45
+}
+@media (min-width: 960px) {
+
+    .content,header{
+        margin:auto 25%!important;
+
+        border-left:1px solid #d0d0d0;
+        border-right:1px solid #d0d0d0;
+
+
+    }
+    .footer {
+
+        width: 50%;
+        padding: 1.375rem 0rem 1.25rem 0rem;
+        left: 25%;
+    }
+
+    .div-del .box {
+        width: 20%;
+        margin-top: 20%;
+    }
+
+}

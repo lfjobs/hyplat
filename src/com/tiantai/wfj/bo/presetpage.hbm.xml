@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="PresetPage" table="DT_PresetPage" schema="HYPLAT" dynamic-insert="true">
+
+	<comment>电子秤预置键</comment>
+		<id length="50" name="scpKey" type="java.lang.String">
+			<column length="50" name="scpKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="scpId" type="java.lang.String">
+			<column length="50" name="scpId" >
+			</column>
+		</property>
+		<property name="preCode" type="java.lang.String">
+			<column name="preCode" length="10">
+			<comment>编号</comment>
+			</column>
+		</property>
+		<property name="keyCount" type="java.lang.String">
+			<column  length="10"  name="keyCount" >
+			<comment>键数</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>责任ID</comment>
+			</column>
+		</property>
+		<property name="staffname" type="java.lang.String">
+			<column length="50" name="staffname" >
+				<comment>责任人姓名</comment>
+			</column>
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column length="50" name="companyID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="cdate" type="java.util.Date">
+			<column name="cate" >
+				<comment>添加日期</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

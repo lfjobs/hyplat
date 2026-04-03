@@ -1,0 +1,146 @@
+html,body{
+    height:100%;
+    overflow:hidden;
+}
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+.sec-hide {
+    background: #f9f9f9;
+    padding: 0 20%;
+}
+.content{
+    padding:10px 20px;
+}
+.content .sec-nav ul li {
+    text-align: center;
+    float: left;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: #222;
+    padding: 0.1rem 0.4rem 0.1rem 0.3rem;
+    font-weight:bold;
+}
+.sec-hide ul li:nth-of-type(1){
+    margin-left:10%
+}
+.sec-hide ul li:nth-of-type(2){
+    margin-left:20%
+}
+.sec-hide ul li:nth-of-type(3){
+    margin-left:20%
+}
+.sec-data-title ul{
+    width: 100%;
+    background-color: #fff;
+    height:30px;
+}
+.sec-data-title ul li {
+
+    text-align: left;
+    float: left;
+    color: #177512de;
+    font-size: 14px;
+    font-weight: 600;
+}
+.sec-list ul li:nth-of-type(1){
+    width:13%;
+}
+.sec-list ul li:nth-of-type(2),.sec-list ul li:nth-of-type(3){
+    width:12%;
+}
+.sec-list ul li:nth-of-type(4),
+.sec-list ul li:nth-of-type(5),
+.sec-list ul li:nth-of-type(6),
+.sec-list ul li:nth-of-type(7),
+.sec-list ul li:nth-of-type(8),
+.sec-list ul li:nth-of-type(9),
+.sec-list ul li:nth-of-type(10)
+{
+    width:9%;
+}
+.sec-data-list ul {
+    width: 100%;
+    background-color: #fff;
+    height: 30px;
+    margin: 10px 0;
+}
+.sec-data-list ul li {
+    width: 25%;
+    text-align: left;
+    float: left;
+    font-size: 14px;
+}
+.list-data{
+    z-index:99;
+    height:100%;
+    padding:0px 5px
+}
+.layui-form-label {
+    padding: 6px 15px;
+    text-align: left;
+}
+.layui-input-block{
+    padding-top:6px;
+}
+.layui-form-item {
+    margin-bottom: 0px;
+}
+.layui-colla-title {
+    background-color: #eb644f;
+    color:#fff;
+}
+.layui-colla-content {
+    padding:10px 5px;
+}
+.layui-input-block {
+    min-height: 32px;
+}
+.div-pc{
+    display:block;
+}
+.div-iphone{
+    display:none;
+}
+@media screen and (max-width: 700px) {
+    .content{
+        padding:10px 0px;
+    }
+    .div-pc{
+        display:none;
+    }
+    .div-iphone{
+        display:block;
+    }
+}

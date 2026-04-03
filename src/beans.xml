@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="false" xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<context:component-scan base-package="
+										hy.base.action.**,
+										hy.ea.**,
+										hy.plat.**,
+										hy.tel.**,
+										mobile.tiantai.android.**,
+										com.tiantai.webservice.**,
+										com.tiantai.wfj.**,
+										hy.webservice.**,
+										com.mysl.**,
+										com.wechat.**"/>
+
+
+	<!--jbpm4.4工作流  -->
+	<bean id="springHelper" class="org.jbpm.pvm.internal.processengine.SpringHelper">
+		<property name="jbpmCfg" value="spring-jbpm4.cfg.xml" />
+	</bean>
+	<bean id="processEngine" factory-bean="springHelper" factory-method="createProcessEngine" />
+	<!-- 
+		<bean id="jbpmConfiguration" class="org.jbpm.pvm.internal.cfg.SpringConfiguration">
+		<constructor-arg value="jbpm.cfg.xml" />
+		</bean> 
+		
+		<bean id="processEngine" factory-bean="jbpmConfiguration" factory-method="buildProcessEngine"></bean>
+	-->
+	<bean id="executionService" factory-bean="processEngine" factory-method="getExecutionService"></bean>
+
+	<bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService"></bean>
+
+	<bean id="taskService" factory-bean="processEngine" factory-method="getTaskService"></bean>
+
+	<bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService"></bean>
+
+	<bean id="identityService" factory-bean="processEngine" factory-method="getIdentityService"></bean>
+
+	<bean id="managementService" factory-bean="processEngine" factory-method="getManagementService"></bean>
+
+	<!-- 测试：123.57.26.228 --><!--本地: 192.168.3.9 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@123.57.26.228:1521:ttsw" />
+		<!--<property name="jdbcUrl" value="jdbc:oracle:thin:@60.205.156.248:1521:TTSW" />-->
+		<!--连接池中保留的最小连接数。-->
+		<property name="minPoolSize" value="5" />
+
+		<!--连接池中保留的最大连接数。Default: 15 -->
+		<property name="maxPoolSize" value="30" />
+
+		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+		<property name="initialPoolSize" value="10"/>
+
+		<!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+		<property name="maxIdleTime" value="60"/>
+
+		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+		<property name="acquireIncrement" value="5" />
+
+		<!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements
+            属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。
+            如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0-->
+		<property name="maxStatements" value="0" />
+
+		<!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+		<property name="idleConnectionTestPeriod" value="60" />
+
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+		<property name="acquireRetryAttempts" value="5" />
+		<property name="maxIdleTimeExcessConnections" value="600"/>
+
+		<!--获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常。但是数据源仍有效
+            保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试
+            获取连接失败后该数据源将申明已断开并永久关闭。Default: false-->
+		<!--<property name="breakAfterAcquireFailure" value="true" />-->
+		<property name="maxConnectionAge" value="3600"></property>
+		<!-- 配置用户名和密码 -->
+		<property name="properties" ref="dataSourceProperties" />
+		<!-- 检测连接有效性 -->
+		<property name="testConnectionOnCheckin" value="true" />
+		<property name="preferredTestQuery" value="SELECT 1 FROM DUAL" />
+	</bean>
+	<bean id="dataSourceProperties" class="hy.ea.util.MyBasicDataSource">
+		<property name="properties">
+			<props>
+				<prop key="user">*****</prop>
+				<prop key="password">******</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:hy/ea/bo</value>
+				<value>classpath:hy/ea/office/bo</value>
+				<value>classpath:hy/plat/bo</value>
+				<value>classpath:com/tiantai/telrec/bo</value>
+				<value>classpath:hy/tel/bo</value>
+				<value>classpath:com/tiantai/nwa/tbank/bo</value>
+				<value>classpath:mobile/tiantai/android/bo</value>
+				<value>classpath:hy/ea/marketing/bo</value>
+				<value>classpath:com/tiantai/wfj/bo</value>
+				<value>classpath:com/tiantai/wfj/edmandServe/bo</value>
+				<value>classpath:com/mysl/bo</value>
+				<value>classpath:com/wechat/bo/sft</value>
+			</list>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:jbpm.execution.hbm.xml</value>
+				<value>classpath:jbpm.history.hbm.xml</value>
+				<value>classpath:jbpm.identity.hbm.xml</value>
+				<value>classpath:jbpm.repository.hbm.xml</value>
+				<value>classpath:jbpm.task.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+
+			<props>
+				<prop key="hibernate.dialect">hy.ea.util.OracletDialect_ttsw</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.use_outer_join">true</prop>
+				<!-- <prop key="hibernate.connection.pool_size">100</prop> -->
+				<prop key="hibernate.connection.release_mode">auto</prop>
+				<prop key="hibernate.autoReconnect">true</prop>
+				<prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.cache.use_query_cache">false</prop>
+
+				<prop key="Connection.useUnicode">true</prop>
+				<prop key="connection.characterEncoding">UTF-8</prop>
+				<prop key="jdbc.batch_size">30</prop>
+				<prop key="jdbc.fetch_size">50</prop>
+				<prop key="hibernate.connection.url">jdbc:oracle:thin:@192.168.3.9:1521:ttsw</prop>
+				<prop key="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</prop>
+
+
+			</props>
+		</property>
+	</bean>
+	<!--
+        <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+            <property name="configLocation" value="/WEB-INF/classes/ehcache.xml" />
+        </bean>     -->
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!--使用基于注解方式配置事务 -->
+	<tx:annotation-driven transaction-manager="txManager" />
+	<bean id="SpringContextUtil" class="hy.ea.util.SpringContextUtil" />
+	<!-- 电话系统加转配置文件 -->
+	<import resource="struts-ea/telrec/telrec-spring.xml" />
+
+	<!-- 配置定时任务
+	<bean id="test" class="hy.plat.service.impl.HistoryServiceImpl"/>
+	<bean id="jobDetail1"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="test" />
+		<property name="targetMethod" value="filingHistory" />
+	</bean> -->
+	<!-- 配置定时时间
+	<bean id="cronTrigger1"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobDetail1" /> -->
+	<!-- 每三个月的一号一点重复运行
+    <property name="cronExpression" value="1 1 0 1 * ?" />
+</bean> -->
+	<!-- 开启定时任务
+	<bean
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger1" />
+			</list>
+		</property>
+	</bean> -->
+
+	<!-- <bean id="baseBeanServiceImpl" class="hy.plat.service.impl.BaseBeanServiceImpl"/> -->
+	<!-- 配置工资日志加锁定时任务  -->
+	<bean id="test1" class="hy.ea.human.action.LogBookSummaryAction"/>
+	<bean id="jobDetail2"
+		  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="test1" />
+		<property name="targetMethod" value="MonthSalsry" />
+	</bean>
+	<!--  配置工资日志加锁定时时间   -->
+	<bean id="cronTrigger2"
+		  class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobDetail2" />
+		<!-- 每月3号凌晨重复运行 -->
+		<property name="cronExpression" value="0 0 0 3 * ?" />
+	</bean>
+	<!-- 开启工资日志加锁定时任务 -->
+	<bean
+			class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger2" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 配置企业合同到期日期任务  -->
+	<bean id="test2" class="hy.ea.office.action.DocumentCommonAction"/>
+	<bean id="jobDetail3"
+		  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="test2" />
+		<property name="targetMethod" value="noticeClient" />
+	</bean>
+	<!--  配置企业合同到期提醒时间 -->
+	<bean id="cronTrigger3"
+		  class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobDetail3" />
+		<!-- 每天00凌晨重复运行 -->
+		<property name="cronExpression" value="00 00 00 * * ?" />
+	</bean>
+	<!-- 开启企业合同到期提醒任务 -->
+	<bean
+			class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger3" />
+			</list>
+		</property>
+	</bean>
+	<!--&lt;!&ndash; 配置自动收货任务 &ndash;&gt;-->
+	<!--<bean id="receipt" class="hy.ea.finance.action.BenDis.hy_phoneBillAction"/>-->
+	<!--<bean id="receiptJobDetail"-->
+	<!--class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+	<!--<property name="targetObject" ref="receipt" />-->
+	<!--<property name="targetMethod" value="automaticReceipt" />-->
+	<!--</bean>-->
+	<!--&lt;!&ndash;  配置自动收货时间  &ndash;&gt;-->
+	<!--<bean id="receiptTrigger3"-->
+	<!--class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+	<!--<property name="jobDetail" ref="receiptJobDetail" />-->
+	<!--&lt;!&ndash; 	每天00凌晨重复运行  &ndash;&gt;-->
+	<!--<property name="cronExpression" value="0 0 0 * * ?" />-->
+	<!--</bean>-->
+	<!--&lt;!&ndash; 开启自动收货任务&ndash;&gt;-->
+	<!--<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">-->
+	<!--<property name="triggers">-->
+	<!--<list>-->
+	<!--<ref bean="receiptTrigger3" />-->
+	<!--</list>-->
+	<!--</property>-->
+	<!--</bean>-->
+	<!-- 配置自动完结分账 -->
+	<bean id="finishOrderID" class="hy.ea.finance.action.NewPhoneOrders.PhoneOrdersAction_Buyers"/>
+	<bean id="finishOrderJobDetail"
+		  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="finishOrderID" />
+		<property name="targetMethod" value="finishOrder" />
+	</bean>
+	<!--  配置自完结分账 时间  -->
+	<bean id="finishOrderTrigger"
+		  class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="finishOrderJobDetail" />
+		<!-- 	每天00凌晨重复运行  -->
+		<property name="cronExpression" value="0 0 4 * * ?" />
+	</bean>
+	<!-- 开启完结分账任务-->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="finishOrderTrigger" />
+			</list>
+		</property>
+	</bean>
+
+	<!--每天凌晨初始化约车计划-->
+	<bean id="initOrderConfig" class="hy.ea.driving.action.elkc.ElkcCompanyConfigAction"/>
+	<bean id="jobDetailCon"
+		  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="initOrderConfig" />
+		<property name="targetMethod" value="timeOrderConfig" />
+	</bean>
+
+	<bean id="configTrigger"
+		  class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobDetailCon" />
+		<!-- 每天00凌晨重复运行 -->
+		<property name="cronExpression" value="00 00 00 * * ?" />
+	</bean>
+	<bean
+			class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="configTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!--每天凌晨初始化约车计划-->
+
+
+
+	<!-- 配置pk汇总日期任务
+<bean id="test4" class="hy.ea.human.action.PKGoldAction"/>
+<bean id="jobDetail5"
+    class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+    <property name="targetObject" ref="test4" />
+    <property name="targetMethod" value="saveAllPKGoldPool" />
+</bean>
+  配置pk汇总提醒时间
+<bean id="cronTrigger5"
+    class="org.springframework.scheduling.quartz.CronTriggerBean">
+    <property name="jobDetail" ref="jobDetail5" />
+     每天00凌晨重复运行
+    <property name="cronExpression" value="00 30 8 1 * ?" />
+</bean>
+    开启pk汇总提醒任务
+<bean
+    class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <property name="triggers">
+        <list>
+            <ref bean="cronTrigger5" />
+        </list>
+    </property>
+</bean>
+-->
+	<!-- 配置系统自动导入银行交易明细  begin-->
+	<!-- <bean id="importTransDetailsAction" class="com.tiantai.nwa.tbank.action.BankAccountTransDetailsAction">
+		<property name="transDate">
+			<props>
+				<prop key="ABC">default</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="job_importTransDetails" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="importTransDetailsAction" />
+		<property name="targetMethod" value="importAccountTransDetails" />
+	</bean>
+	<bean id="cronTrigger_importTransDetails"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="job_importTransDetails" />
+		每天凌晨02点开始导入前一天的流水     开发测试用00 00/03 09-18 * * ?
+		<property name="cronExpression" value="00 00 02 * * ?" />
+	</bean>
+	<bean
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger_importTransDetails" />
+			</list>
+		</property>
+	</bean> -->
+	<!-- 配置系统自动导入银行交易明细  end-->
+	<!-- <import resource="beans4website.xml"/> -->
+
+	<!-- 配置自动获取elkc数据任务  -->
+	<bean id="elkcAcquiring" class="hy.ea.driving.action.elkc.ElkcRecordAction"/>
+	<bean id="elkcDetail"
+		  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="elkcAcquiring" />
+		<property name="targetMethod" value="automaticStartup" />
+	</bean>
+	<!--  配置自动获取elkc数据提醒时间 -->
+	<bean id="elkcTrigger"
+		  class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="elkcDetail" />
+		<!-- 每天00凌晨重复运行 -->
+		<property name="cronExpression" value="00 00 00 * * ?" />
+	</bean>
+	<!-- 开启自动获取elkc数据任务 -->
+	<bean
+			class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="elkcTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!-- 配置自动获取elkc数据任务  -->
+
+
+	<!--&lt;!&ndash; 微信accessToken获取  &ndash;&gt;-->
+	<!--<bean id="wechatAccess" class="com.wechat.action.WeChatAction"/>-->
+	<!--<bean id="wechatDetail"-->
+	<!--class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+	<!--<property name="targetObject" ref="wechatAccess" />-->
+	<!--<property name="targetMethod" value="doAccessToken" />-->
+	<!--</bean>-->
+
+	<!--<bean id="wechatTrigger"-->
+	<!--class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+	<!--<property name="jobDetail" ref="wechatDetail" />-->
+	<!--&lt;!&ndash;每天每隔一小时运行 0 * */1 * * ? &ndash;&gt;-->
+	<!--<property name="cronExpression" value="0 */5 * * * ?" />-->
+	<!--</bean>-->
+
+	<!--<bean-->
+	<!--class="org.springframework.scheduling.quartz.SchedulerFactoryBean">-->
+	<!--<property name="triggers">-->
+	<!--<list>-->
+	<!--<ref bean="wechatTrigger" />-->
+	<!--</list>-->
+	<!--</property>-->
+	<!--</bean>-->
+	<!--  微信accessToken获取任务 -->
+
+
+
+</beans>

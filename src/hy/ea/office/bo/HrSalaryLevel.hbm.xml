@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.office.bo">
+	<class name="hy.ea.office.bo.HrSalaryLevel" table="DT_HR_SALARY_LEVEL" schema="HYPLAT" dynamic-insert="true">
+	<comment>工资级别</comment>
+		<id length="50" name="salaryLevelKey" type="java.lang.String">
+			<column length="50" name="SALARY_LEVEL_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="salaryLevelId" type="java.lang.String">
+			<column length="50" name="SALARY_LEVEL_ID" >
+				<comment>级别id</comment>
+			</column>
+		</property>
+		<property name="salaryLevelSerial" type="java.lang.String">
+			<column length="50" name="SALARY_LEVEL_SERIAL" >
+				<comment>序号</comment>
+			</column>
+		</property>
+		<property name="salaryLevelNum" type="java.lang.String">
+			<column length="50" name="SALARY_LEVEL_NUM" >
+				<comment>工资级别编号</comment>
+			</column>
+		</property>
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="COMPANY_ID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="createStaffId" type="java.lang.String">
+			<column length="50" name="CREATE_STAFF_ID" >
+				<comment>设置人</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column length="255" name="CREATE_DATE" >
+				<comment>设置时间</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
+

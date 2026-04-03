@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color:transparent;
+}
+body{margin:0 auto; background-color: #fff;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0 0; color:#666; font-family:'微软雅黑';}
+img{ cursor:pointer;border:none;vertical-align: middle;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #666;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+input{
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/*公共样式 end*/
+
+/*签到*/
+.content_sign{
+  /*  background: url("../images/bg.png") no-repeat;
+    background-size: 100%;*/
+}
+.content_sign header {
+    position: fixed;
+    top: 0;
+}
+.content_sign header img {
+    width: 0.45rem;
+    margin: 0.45rem 0.5rem;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content_sign .text{
+    width: 100%;
+    height: 4.5rem;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+.content_sign .text p{
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.8rem 0 0.5rem 0;
+}
+.content_sign .text h5{
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 500;
+}
+.content_sign .btn{
+    width: 100%;
+    position: absolute;
+    bottom: 7rem;
+    text-align: center;
+}
+.content_sign .btn .yes{
+   height: 2rem;
+}
+.content_sign .btn .no{
+    height: 2rem;
+    display: none;
+}
+.alert_succeed_{
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: none;
+}
+.alert_succeed{
+    width: 10rem;
+    height: 8rem;
+    background: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -4rem 0 0 -5rem;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+.alert_succeed .x{
+    width: 1rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+}
+.alert_succeed p{
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #ec020a;
+    padding: 2.3rem 0 1.5rem 0;
+}
+.alert_succeed h5{
+    font-size: 0.68rem;
+    color: #676767;
+}
+
+@media screen and (max-height: 480px){
+    .content_sign .text {
+        height: 4rem;
+    }
+    .content_sign .text p {
+        padding: 0.9rem 0 0.5rem 0;
+    }
+    .content_sign .btn {
+        bottom: 6rem;
+    }
+}
+
+
+
+
+/*签到 end*/

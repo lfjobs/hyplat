@@ -1,0 +1,27 @@
+<ap>
+	<CCTransCode></CCTransCode>
+    <ProductID>ICC</ProductID>
+	<ChannelType>ERP</ChannelType>
+	<CorpNo></CorpNo>
+	<OpNo></OpNo>
+	<AuthNo></AuthNo>
+	<ReqSeqNo></ReqSeqNo>
+	<ReqDate></ReqDate>
+	<ReqTime></ReqTime>
+	<Sign></Sign>
+	<Corp>
+		<StartDate>起始日期</StartDate>
+	    <EndDate>终止日期</EndDate>
+	</Corp>
+	<Channel>
+		<LastJrnNo>0</LastJrnNo>
+	</Channel>
+	<Cmp>
+		<DbAccNo>借方账号</DbAccNo>
+		<DbProv>借方省市代码</DbProv>
+		<DbCur>借方货币号</DbCur>
+		<StartTime>000000</StartTime>
+	</Cmp>
+</ap>
+
+

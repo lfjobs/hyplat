@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666; font-family:'华文黑体';}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+.wfj_width{ width:92%; margin:0 auto;}
+.wfj_phwidth{ width:95%; margin:0 auto;}
+.bgcolorFFF{ background-color:#FFF;}
+/*公共样式*/
+
+/*------------------------------------------------wfj12_011-----------------------------------------------*/
+.wfj12_011 .wfj12_011_width{ width:94%; margin:0 auto;}
+
+.wfj12_011{ width:100%; height:100%; margin:0 auto; max-width:1080px; overflow:hidden;}
+/*-----------中联园区头部 ---------------*/
+.wfj_top{ width:100%; margin:0 auto; background-color:#F74C31;}
+.wfj_top ul li{ float:left; text-align:center; color:#FFF;}
+.wfj_top ul li img{vertical-align:middle;}
+/*----------中联园区头部 end-------------*/
+
+.wfj12_011 .wfj12_011_con .wfj12_011_title{  width:100%; color:#000; font-weight:bold; }
+
+.wfj12_011 .wfj12_011_con{ width:100%; margin:0 auto; clear:both;}
+.wfj12_011 .wfj12_011_con .wfj12_011_shouinfo{ width:100%; background-color:#FFF; clear:both; float:left;}
+.wfj12_011 .wfj12_011_con .wfj12_011_shouinfo ul{ clear:both;}
+.wfj12_011 .wfj12_011_con .wfj12_011_shouinfo ul li{ float:left;}
+.wfj12_011 .wfj12_011_con .wfj12_011_proinfo{ width:100%; background-color:#FFF; clear:both; float:left;}
+.wfj12_011 .wfj12_011_con .wfj12_011_proinfo table{ width:100%;}
+.wfj12_011 .wfj12_011_con .wfj12_011_proinfo table td img{ width:90%; height:auto;}
+.wfj12_011 .wfj12_011_con .wfj12_011_tuiinfo{ width:100%; clear:both; float:left; background-color:#FFF; }
+.wfj12_011 .wfj12_011_con .wfj12_011_tuiinfo .wfj12_011_tuiimg{ width:100%;}
+.wfj12_011 .wfj12_011_con .wfj12_011_tuiinfo .wfj12_011_tuiimg ul li{ width:25%; text-align:center; float:left;}
+.wfj12_011 .wfj12_011_con .wfj12_011_tuiinfo .wfj12_011_tuiimg ul li img{ width:80%; height:auto;}
+
+.wfj12_011 .wfj12_011_bottom{ width:80%; margin:0 10%; clear:both; float:left;}
+.wfj12_011 .wfj12_011_bottom ul li{ width:50%; float:left;}
+.wfj12_011 .wfj12_011_bottom ul li div{ width:70%; margin:0 15%; text-align:center; background-color:#F74C31; color:#FFF;  text-align:center; cursor:pointer;}
+
+/*------------------------------------------------wfj12_011 end-----------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

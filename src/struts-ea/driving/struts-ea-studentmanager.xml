@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package strict-method-invocation="false" name="studentmanager-ntoken" namespace="/ea/studentManager" extends="struts-default">
+		<action name="ea_*" class="hy.ea.driving.action.StudentManagerAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="academicadmin_list_student">/page/ea/main/driving/StudentManager.jsp</result>
+		    <result name="list">/page/ea/main/human/adance/StudentManagerInformation.jsp</result>
+		    <result name="printinfo">/page/ea/boderCarster.jsp</result>
+		    <result name="bigprintpage">/page/ea/bigPrintPage.jsp</result>
+		    <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="drivingList.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="studentmanager-sajax" namespace="/ea/studentManager" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.driving.action.StudentManagerAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="/ea/studentManager" extends="jasperreports-default" >
+	    <action name="barcode" class="hy.ea.driving.action.StudentManagerAction" method="codebar">
+	        <result name="codebar" type="jasper">
+                <param name="location">/jasper/driving/student_barcode.jasper</param>  
+                <param name="dataSource">beans</param>
+                <param name="reportParameters">reportParameter</param>
+                <param name="contentDisposition">filename="student_barcode_${code}.pdf"</param>
+            </result>
+	    </action>
+	    <action name="card" class="hy.ea.driving.action.StudentManagerAction" method="printCard">
+	        <result name="printCard" type="jasper">
+                <param name="location">/jasper/driving/student_card.jasper</param>
+                <param name="dataSource">reportParameter</param>
+                <param name="contentDisposition">filename="student_card.pdf"</param>
+               <param name="reportParameters">reportParameter</param>
+            </result> 
+	    </action>
+	    
+	    <action name="cardback" class="hy.ea.driving.action.StudentManagerAction" method="printCardBack">
+	        <result name="printCardBack" type="jasper">
+                <param name="location">/jasper/driving/student_cardback.jasper</param>
+                <param name="dataSource">reportParameter</param>
+                <param name="contentDisposition">filename="student_cardback.pdf"</param>
+               <param name="reportParameters">reportParameter</param>
+            </result> 
+	    </action>
+	</package>
+</struts>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="OASafeInspectInfo" table="DT_OA_SAFE_INSPECT_INFO">
+		<id length="50" name="key">
+			<column length="50" name="key"/>
+			<generator class="uuid" />
+		</id>
+		<property name="id">
+			<column length="50" name="id" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="inspectNO">
+			<column length="50" name="inspectNO" not-null="true"/>
+		</property>
+		<property name="personDepartmentID">
+			<column length="50" name="personDepartmentID" not-null="true"/>
+		</property>
+		<property name="safeTypeID">
+			<column length="50" name="safeTypeID" not-null="true"/>
+		</property>
+		<property name="departmentID">
+			<column length="50" name="departmentID" not-null="true"/>
+		</property>
+		<property  name="staffID">
+			<column length="50" name="staffID" not-null="false"/>
+		</property>
+		<property name="staffNumber">
+			<column length="250" name="staffNumber" not-null="false"/>
+		</property>
+		<property name="position">
+			<column length="250" name="position" not-null="false"/>
+		</property>
+		<property  name="contactcompanyID">
+			<column length="250" name="contactcompanyID" not-null="false"/>
+		</property>
+		<property  name="contactcompanyBankNum">
+			<column length="100" name="contactcompanyBankNum" not-null="false"/>
+		</property>
+		<property name="unitRelationShip">
+			<column length="250" name="unitRelationShip" not-null="false"/>
+		</property>
+		<property name="contactUserID">
+			<column length="250" name="contactUserID" not-null="false"/>
+		</property>
+		<property name="contactUserBankNum">
+			<column length="100" name="contactUserBankNum" not-null="false"/>
+		</property>
+		<property  name="personalRelationShip">
+			<column length="250" name="personalRelationShip" not-null="false"/>
+		</property>
+		<property name="makeDate">
+			<column name="makeDate" not-null="true"/>
+		</property>
+		<property name="attachment">
+			<column length="100" name="attachment" not-null="false"/>
+		</property>
+	</class>
+</hibernate-mapping>

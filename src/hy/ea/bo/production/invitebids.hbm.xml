@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="InviteBids" table="dtInviteBids">
+		<id length="50" name="ibkey">
+			<column length="50" name="ibkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ibId">
+			<column length="50" name="ibId"><comment>ID</comment></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID"><comment>单据ID</comment></column>
+		</property>
+		<property name="journalNum">
+			<column length="250" name="journalNum"><comment>凭证号</comment></column>
+		</property>
+		<property name="billsType">
+			<column length="250" name="billsType"><comment>单据类型</comment></column>
+		</property>
+		<property name="startDate">
+			<column  name="startDate"><comment>有效期开始</comment></column>
+		</property>
+		<property name="endDate">
+			<column  name="endDate"><comment>有效期结束时间</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>责任人ID</comment></column>
+		</property>
+		<property name="staffName">
+			<column length="50" name="staffName"><comment>责任人Name</comment></column>
+		</property>
+		<property name="inputID">
+			<column length="50" name="inputID"><comment>制单人ID</comment></column>
+		</property>
+		<property name="inputName">
+			<column length="50" name="inputName"><comment>制单人Name</comment></column>
+		</property>
+		<property name="publishID">
+			<column length="50" name="publishID"><comment>发布人ID</comment></column>
+		</property>
+		<property name="publishName">
+			<column length="50" name="publishName"><comment>发布人Name</comment></column>
+		</property>
+		<property name="selectID">
+			<column length="50" name="selectID"><comment>选标人ID</comment></column>
+		</property>
+		<property name="selectName">
+			<column length="50" name="selectName"><comment>选标人Name</comment></column>
+		</property>
+		<property name="companyId">
+			<column length="50" name="companyId"><comment>公司ID</comment></column>
+		</property>
+		<property name="companyName">
+			<column length="50" name="companyName"><comment>公司名称</comment></column>
+		</property>
+		<property name="organizationId">
+			<column length="50" name="organizationId"><comment>部门ID</comment></column>
+		</property>
+		<property name="organizationName">
+			<column length="50" name="organizationName"><comment>部门名称</comment></column>
+		</property>
+		<property name="remark">
+			<column length="5000" name="remark"><comment>招标说明</comment></column>
+		</property>
+		<property name="publishDate">
+			<column  name="publishDate"><comment>发布时间</comment></column>
+		</property>
+		<property name="cancelDate">
+			<column  name="cancelDate"><comment>取消发布时间</comment></column>
+		</property>
+		<property name="applyPubDate">
+			<column  name="applyPubDate"><comment>申请发布时间即审核通过时间</comment></column>
+		</property>
+		<property name="selectbidDate">
+			<column  name="selectbidDate"><comment>选标日期</comment></column>
+		</property>
+		<property name="status">
+			<column length="50" name="status"><comment>发布状态 00未发布  01已发布 02已选标</comment></column>
+		</property>
+        <property name="fiveClear">
+			<column length="50" name="fiveClear"><comment>1人事2办公室3财务4生产5营销</comment></column>
+		</property>
+		 <property name="ppID">
+			<column length="50" name="ppID"><comment>主产品ID</comment></column>
+		</property>
+		 <property name="publishType">
+			<column length="2" name="publishType"><comment>00公司 01个人</comment></column>
+		</property>
+		<property name="bidcount">
+			<column length="10" name="bidcount"><comment>投标次数</comment></column>
+		</property>
+		<property name="type">
+			<column length="10" name="type"><comment>生产类型</comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

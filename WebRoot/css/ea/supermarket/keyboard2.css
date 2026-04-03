@@ -1,0 +1,15 @@
+#virtualKeyboard{
+    width: 674px;
+}
+#kbDesk div#kb_bbackspace{
+    float: right;
+}
+#kbDesk div#kb_benter{
+    float: right;
+}
+#kbDesk div#kb_bdel{
+    float: right;
+}
+#kb_binput_method{
+    float: right;
+}

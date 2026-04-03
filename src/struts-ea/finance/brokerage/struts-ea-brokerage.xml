@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <!--零售价佣金模块始-->
+    <package strict-method-invocation="false" name="retail-token" namespace="/ea/retail" extends="struts-default">
+        <action name="ea_*" class="hy.ea.finance.action.brokerage.RetailAction" method="{1}">
+            <result name="retail_list">/page/ea/main/finance/brokerage/retail/retail_list.jsp</result>
+            <result name="retail_add">/page/ea/main/finance/brokerage/retail/retail_add.jsp</result>
+            <result name="retail_update">/page/ea/main/finance/brokerage/retail/retail_update.jsp</result>
+            <result name="failed">/page/ea/not_login.jsp</result>
+            <result name="showexcel" type="stream">
+                <param name="contentType">
+                    application/vnd.ms-excel
+                </param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">
+                    filename="retail.xls"
+                </param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="retail-sajax" namespace="/ea/retail" extends="json-default">
+        <action name="sajax_ea_*" class="hy.ea.finance.action.brokerage.RetailAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+    <!--零售价佣金模块终-->
+
+    <!--批发价佣金模块始-->
+    <package strict-method-invocation="false" name="wholesale-token" namespace="/ea/wholesale" extends="struts-default">
+        <action name="ea_*" class="hy.ea.finance.action.brokerage.WholesaleAction" method="{1}">
+            <result name="wholesale_list">/page/ea/main/finance/brokerage/wholesale/wholesale_list.jsp</result>
+            <result name="wholesale_add">/page/ea/main/finance/brokerage/wholesale/wholesale_add.jsp</result>
+            <result name="wholesale_update">/page/ea/main/finance/brokerage/wholesale/wholesale_update.jsp</result>
+            <result name="failed">/page/ea/not_login.jsp</result>
+            <result name="showexcel" type="stream">
+                <param name="contentType">
+                    application/vnd.ms-excel
+                </param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">
+                    filename="wholesale.xls"
+                </param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="wholesale-sajax" namespace="/ea/wholesale" extends="json-default">
+        <action name="sajax_ea_*" class="hy.ea.finance.action.brokerage.WholesaleAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+    <!--批发价佣金模块终-->
+
+    <!--VIP价佣金模块始-->
+    <package strict-method-invocation="false" name="vip-token" namespace="/ea/vip" extends="struts-default">
+        <action name="ea_*" class="hy.ea.finance.action.brokerage.VipAction" method="{1}">
+            <result name="vip_list">/page/ea/main/finance/brokerage/vip/vip_list.jsp</result>
+            <result name="vip_add">/page/ea/main/finance/brokerage/vip/vip_add.jsp</result>
+            <result name="vip_update">/page/ea/main/finance/brokerage/vip/vip_update.jsp</result>
+            <result name="failed">/page/ea/not_login.jsp</result>
+            <result name="showexcel" type="stream">
+                <param name="contentType">
+                    application/vnd.ms-excel
+                </param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">
+                    filename="vip.xls"
+                </param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="vip-sajax" namespace="/ea/vip" extends="json-default">
+        <action name="sajax_ea_*" class="hy.ea.finance.action.brokerage.VipAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+    <!--VIP价佣金模块终-->
+
+    <!--活动价佣金模块始-->
+    <package strict-method-invocation="false" name="activity-token" namespace="/ea/activityPrice" extends="struts-default">
+        <action name="ea_*" class="hy.ea.finance.action.brokerage.ActivityAction" method="{1}">
+            <result name="activity_list">/page/ea/main/finance/brokerage/activity/activity_list.jsp</result>
+            <result name="activity_print">/page/ea/main/finance/brokerage/activity/activity_printPrice.jsp</result>
+            <result name="activity_add">/page/ea/main/finance/brokerage/activity/activity_add.jsp</result>
+            <result name="activity_update">/page/ea/main/finance/brokerage/activity/activity_update.jsp</result>
+            <result name="actBrokerage_add">/page/ea/main/finance/brokerage/activity/activity_brokerage_add.jsp</result>
+            <result name="actBrokerage_update">/page/ea/main/finance/brokerage/activity/activity_brokerage_update.jsp</result>
+            <result name="failed">/page/ea/not_login.jsp</result>
+            <result name="showexcel" type="stream">
+                <param name="contentType">
+                    application/vnd.ms-excel
+                </param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">
+                    filename="activity.xls"
+                </param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="activityPrice-sajax" namespace="/ea/activityPrice" extends="json-default">
+        <action name="sajax_ea_*" class="hy.ea.finance.action.brokerage.ActivityAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+    <!--活动价佣金模块终-->
+</struts>

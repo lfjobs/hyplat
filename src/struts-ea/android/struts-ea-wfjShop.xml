@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package strict-method-invocation="false" name="wfjshop-token" namespace="/ea/wfjshop" extends="struts-default">
+
+        <action name="ea_*" class="com.tiantai.wfj.front.WfjEshopProductAction" method="{1}">
+            <result name="success">/page/ea/success.jsp</result>
+            <result name="zhuceError">/zhuceError.jsp</result>
+            <result name="industrylist">/page/WFJClient/PersonalJoining/IndustryList.jsp</result>
+            <result name="newslist">/page/WFJClient/PersonalJoining/NewsList.jsp</result>
+            <result name="wfjshops">/page/WFJClient/PersonalJoining/App-revision.jsp</result>
+            <result name="shopproducts">/page/WFJClient/ShopOwner/ShopShow.jsp</result>
+            <result name="shophuilist">/page/WFJClient/PersonalJoining/ProductsInfo.jsp</result>
+            <result name="ShopDetail">/page/WFJClient/ShopOwner/ShopRegInfo.jsp</result>
+            <result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+            <result name="doodsDetail">/page/WFJClient/ShopOwner/GoodsDetail.jsp</result>
+            <result name="comment">/page/WFJClient/ShopOwner/commet.jsp</result>
+            <result name="newcity">/page/WFJClient/ShopOwner/city.jsp</result>
+            <result name="shopList">/page/WFJClient/pc/5l5C/shopList.jsp</result>
+            <result name="searchshops">/page/WFJClient/GoodsShow/GoodsSearch.jsp</result>
+            <result name="activityShopSearch">/page/mobile/activity/shopSearch.jsp</result>
+            <result name="gmyemian">/page/WFJClient/PersonalJoining/CompanyBuy.jsp</result>
+            <result name="zhifuyenmian">/page/WFJClient/GoodsShow/zfym.jsp</result>
+            <result name="cg">/page/WFJClient/suc/cg.jsp</result>
+            <result name="vipsuc">/page/scMobile/qyrz/toSuccess.jsp</result>
+            <result name="buyIsOkPage">/st/buyIsOkPage.jsp</result>
+            <result name="reward">/page/WFJClient/PersonalJoining/RewardIsOk.jsp</result>
+            <result name="wxcg">/page/WFJClient/suc/wxcg.jsp</result>
+            <result name="goldpool">/page/WFJClient/suc/czcg.jsp</result>
+            <result name="dsh">/page/WFJClient/suc/dsh.jsp</result>
+            <result name="moneybox">/page/WFJClient/ShopOwner/moneybox.jsp</result>
+            <result name="fansok">/page/WFJClient/suc/fansOk.jsp</result>
+            <result name="grgm">/page/WFJClient/PersonalJoining/PersonalBuy.jsp</result>
+            <result name="news">/page/WFJClient/PersonalJoining/news.jsp</result>
+            <result name="NEWjsp">/page/mobile/wfjzn.jsp</result>
+            <result name="zcok">/page/mobile/zcok.jsp</result>
+            <result name="orderdetailss">/page/WFJClient/ShopOwner/OrderDetailss.jsp</result>
+            <result name="jiaru">/page/WFJClient/PersonalJoining/Myjiaru.jsp</result>
+            <result name="toadd">/page/WFJClient/ShopOwner/AddAddress.jsp</result>
+            <result name="toaddrecive">/page/WFJClient/ShopOwner/person/reciveAdd.jsp</result>
+            <result name="addressList">/page/WFJClient/ShopOwner/ReceivingADDRT.jsp</result>
+            <result name="newcat">/page/WFJClient/ShopOwner/OrderDetails.jsp</result>
+            <result name="perAdd">/page/WFJClient/ShopOwner/person/reciveAddress.jsp</result>
+            <result name="toDetail">/page/WFJClient/ShopOwner/person/recive-toDetail.jsp</result>
+            <result name="restaurantAddress">/page/conacts/restaurant/orderingDeliveryAddress.jsp</result>
+            <result name="shippingAddresss">/page/conacts/restaurant/tableWaiter2.jsp</result>
+            <result name="Address">/page/conacts/restaurant/shippingAddress.jsp</result>
+            <result name="newsNew">/page/newMyapp/Web-New.jsp</result>
+            <result name="register">/page/WFJClient/Login/Login.jsp</result>
+            <result name="paysuc">/page/conacts/restaurant/paySuc.jsp</result>
+            <result name="purchaseSuccess">/page/ea/main/human/office/scanPay/sfshop/purchaseSuccess.jsp</result>
+            <result name="bindingSuccess">/page/ea/main/human/office/scanPay/sfshop/bindingSuccess.jsp</result>
+            <result name="digitalindex">/page/WFJClient/DigitalIndex_New.jsp</result>
+            <result name="qyht">/page/ea/main/office_ea/contract/paySuc.jsp</result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="wfjshop-jsonajax" namespace="/ea/wfjshop" extends="json-default">
+        <action name="sajax_ea_*" class="com.tiantai.wfj.front.WfjEshopProductAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+
+        </action>
+    </package>
+
+</struts>

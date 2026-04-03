@@ -1,0 +1,443 @@
+// ajax查询物品通过芯片
+var chipids = new Array();
+var i = 0;
+$(document).ready(function() {
+	$(".jqmWindow").jqm({
+		modal : true,// 
+		overlay : 20
+			// 
+		}).jqmAddClose('.close');//
+	// .jqDrag('.drag');//
+	$('.JQueryflexme').flexigrid({
+		        allDouble:true,
+				height : 345,
+				width : 'auto',
+				minwidth : 30,
+				title : module_Identifier=='customer_Consultation'?'个人客户基本信息':module_Identifier=='customer_Reservation'?'预定客户建档':'成交客户建档',
+				minheight : 80,
+				buttons : [ {
+					name : '个人建档管理',
+					bclass : 'edit',
+					onpress : action
+						// 当点击调用方法
+					}, {
+					separator : true
+				},{
+					name : '查询',
+					bclass : 'mysearch',
+					onpress : action
+						// 当点击调用方法
+					},{
+					separator : true
+				},{
+					name : '窗口查询',
+					bclass : 'mysearch',
+					onpress : action
+						// 当点击调用方法
+					},{
+					separator : true
+				},{
+					name : '设置每页显示条数',
+					bclass : 'mysearch',
+					onpress : action
+						// 当点击调用方法
+					},{
+					separator : true
+				}]
+			});
+	function action(com, grid) {
+		switch (com) {
+			case '个人建档管理':
+				if(staffID==""){
+					alert("请选择人员");
+					return;
+				}
+				/*var url =basePath+ "ea/enroll/ea_getHumanResource.jspa?showType=edit"+"&cstaff.staffID="+staffID+"&contactrelation.relationID="+relationID+"&apply=apply";
+				window.open(url, '','scrollbars=yes,resizable=yes,channelmode');*/
+				var url = basePath
+						+ "ea/stafftrack/ea_toSaveJsp.jspa?showType=edit&cstaff.staffID="
+						+ staffID;
+				window.open(url, '','scrollbars=yes,resizable=yes,channelmode');
+				break;
+			case '修改':
+				/*var url =basePath+ "ea/enroll/ea_getHumanResource.jspa?showType=edit"+"&cstaff.staffID="+staffID+"&contactrelation.relationID="+relationID+"&apply=apply";
+				window.open(url, '','scrollbars=yes,resizable=yes,channelmode');*/
+				var url = basePath
+						+ "ea/stafftrack/ea_toSaveJsp.jspa?showType=edit&cstaff.staffID="
+						+ staffID;
+				window.open(url, '','scrollbars=yes,resizable=yes,channelmode');
+				break;
+			case '查询':
+				$("#jqModelSearch").jqmShow();
+				break;	
+			case '设置每页显示条数' :
+				var url = basePath
+						+ "ea/clinch/ea_getListContactUserConsult.jspa?search="
+						+ search+"&module_Identifier="+module_Identifier;
+				numback(url);
+				break;	
+			case '窗口查询' :
+				$(".jqmWindow", $("#goodsForm")).jqmShow();
+				$("#goodsForm #loadcabs")
+						.attr(
+								"src",
+								basePath
+										+ "page/ea/main/human/cstaff/loadActiveX.html?code="
+										+ Math.random());
+				$("#tbody").html("");
+				$(".scan").hide();
+				$(".manual").show();
+				$("#searchGood").hide();
+				break;		
+		}
+	}
+	$("tr[id]").click(function(){
+		relationID=$(this).attr("id");
+		staffID=$.trim($(this).find("span#staffID").text());
+		$(this).find("input#relationID").attr("checked","checked");
+	})
+	$("tr[id]").dblclick(function(){
+		$(this).trigger("click");
+		action("修改");
+	})
+	$("#tosearch").click(function(){
+		$("#SearchForm").attr("action",basePath+ "ea/clinch/ea_toSearch.jspa?pageNumber="+pNumber+"&module_Identifier="+module_Identifier);
+		document.getElementById("SearchForm").submit.click();
+	})
+	
+	
+	$(".JQueryreturns").click(function() {
+				notoken = 0;
+				$(".jqmWindow").jqmHide();
+				location.reload();
+				loadcabs.window.closePort();// 关闭读数据端口
+				// ajax查询物品通过芯片
+				chipids = new Array();
+				i = 0;
+
+			});
+	
+	// 根据输入的条码查询
+	$("input#searchGood,input.JQueryrefresh").click(function() {
+				var recordCode = $("#recordCode", $("table#searchgood")).val();
+				if ($("#tbody").html().indexOf($.trim(recordCode)) > 0) {
+					return;
+				}
+				$(":input#parms").val("parameter=" + recordCode);
+				cx("parameter=" + $.trim(recordCode));
+			});
+
+	// 上一页
+	$("#wpsy").click(function() {
+				var sy = $("#wpsy").attr("title");
+				if (sy != 0) {
+					var typeName = $(":input#parms").val();
+					var typeCN = typeName + "&pageForm.pageNumber=" + sy;
+					cx(typeCN);
+				} else {
+					alert("已是首页！");
+				}
+			});
+
+	// 下一页
+	$("#wpxy").click(function() {
+				var xy = $("#wpxy").attr("title");
+				if (xy != 0) {
+					var typeName = $(":input#parms").val();
+					var typeCN = typeName + "&pageForm.pageNumber=" + xy;
+					cx(typeCN);
+				} else {
+					alert("已是尾页！");
+				}
+			});
+
+	$("tr[id]").click(function() {
+				relationID = $(this).attr("id");
+				staffID = $.trim($(this).find("span#staffID").text());
+				$(this).find("input#relationID").attr("checked", "checked");
+			});
+	$("tr[id]").dblclick(function() {
+				$(this).trigger("click");
+				action("查看");
+			});
+	$("#tosearch").click(function() {
+		$("#SearchForm").attr("action",
+				basePath + "ea/clinch/ea_toSearchConsult.jspa?pageNumber=" + pNumber);
+		document.getElementById("SearchForm").submit.click();
+	});
+
+	// 手动输入点击
+	$(".manual").click(function() {
+		$(this).hide();
+		$(".scan").show();
+		$("#searchGood").show();
+			// $("#recordCode", $("table#searchgood")).removeAttr("readonly");
+
+		});
+
+	// 扫描输入点击
+	$(".scan").click(function() {
+		$(this).hide();
+		$(".manual").show();
+		$("#searchGood").hide();
+			// $("#recordCode", $("table#searchgood")).attr({
+			// readonly : 'true'
+			// });
+		});
+		
+	// 新增往来个人	
+	$(".xzgr").click(function() {
+				window.open(basePath
+						+ "ea/cstaff/ea_getListCStaffByCompanyID.jspa?");
+			});	
+	//添加建档
+	$(".inputting").click(function(){
+	
+				var parameterStaffIDs="";
+				
+				$("input[class='ragood']").each(function(){
+							if ($(this).is(':checked')) {
+							parameterStaffIDs+=$(this).val()+"-";
+							}
+				})
+				
+				if (parameterStaffIDs == "" || parameterStaffIDs.length == 0) {
+					alert('请选择');
+					return
+				}
+				var wlgrurl = basePath
+						+ "ea/cstaff/sajax_n_ea_updateContactUsers.jspa?parameterStaffIDs="
+						+ parameterStaffIDs + "&date=" + new Date().toLocaleString();
+				$.ajax({
+							url : encodeURI(wlgrurl),
+							type : "get",
+							async : true,
+							dataType : "json",
+							success : function cbf(data) {
+								var member = eval("(" + data + ")");
+								var result = member.result;
+								retoken = 0;
+								if(result=="success"){
+								alert("人员建档成功！");
+								}
+							},
+							error : function cbf(data) {
+								retoken = 0;
+								alert("数据获取失败！");
+							}
+						});
+	})	
+	setInterval(function() {
+
+				var recordCode = $("#recordCode", $("table#searchgood")).val();
+				if ($("#goodsForm .scan").is(":hidden")) {
+					if (recordCode != "") {
+						if ($("#tbody").html().indexOf($.trim(recordCode)) > 0) {
+							$("#recordCode", $("table#searchgood")).val("");
+							return;
+						}
+						$("input#parms").val("parameter=" + recordCode);
+						cx("parameter=" + $.trim(recordCode));
+						$("#recordCode", $("table#searchgood")).val("");
+
+					}
+
+				}
+	}, 1000);
+		
+});
+
+
+
+document.onkeydown = function(evt) {// 捕捉回车
+		evt = (evt) ? evt : ((window.event) ? window.event : ""); // 兼容IE和Firefox获得keyBoardEvent对象
+		var key = evt.keyCode ? evt.keyCode : evt.which; // 兼容IE和Firefox获得keyBoardEvent对象的键值
+		var activeElementId = document.activeElement.id;// 当前处于焦点的元素的id
+		if (key == 13 && activeElementId == "bc") {
+			queryByBarCode();// 要触发的方法
+		}
+};
+
+	// 快速条码查询
+function queryByBarCode() {
+		$("#jqModelSearch #staffCode").val($("#bc").val());
+		$("#SearchForm").attr("action",basePath+ "ea/clinch/ea_toSearch.jspa?pageNumber="+pNumber);
+		document.getElementById("SearchForm").submit.click();
+}
+
+
+// ajax查询物品列表
+function cx(typeCN) {
+	// if (notoken) {
+	// alert("正在获取数据！请稍等");
+	// return;
+	// }
+	notoken = 1;
+	var searchurl = basePath
+			+ "ea/clinch/sajax_ea_getAjaxListStudentArchive.jspa?type=archive&";
+	$.ajax({
+		url : encodeURI(searchurl + typeCN +"&view_Identifier="+view_Identifier+"&module_title="+module_title+"&module_Identifier="+module_Identifier+"&date="
+				+ new Date().toLocaleString()),
+		type : "get",
+		async : true,
+		dataType : "json",
+		success : function cbf(data) {
+			var member = eval("(" + data + ")");
+			var nologin = member.nologin;
+			if (nologin) {
+				document.location.href = basePath + "page/ea/not_login.jsp";
+			}
+			var student = member.student;
+			if (student == null) {
+				if(confirm("无此人员是否添加!")){
+				window.open(basePath
+						+ "ea/cstaff/ea_getListCStaffByCompanyID.jspa?");
+				}
+				notoken = 0;
+				return;
+			}
+			var tabletr = "";
+			var staffIDs = '"' + student.staffID + '"';
+			tabletr += "<tr style='cursor: hand;' id = " + student.staffID
+					+ ">";
+			tabletr += "<td id='check' align='center'><input type ='checkbox' class='ragood' value="
+					+ student.staffID + " name='check'/></td>";
+			tabletr += "<td id='staffCode' align='center'>" + student.staffCode
+					+ "</td>";
+			tabletr += "<td id='recordCode'  align='center'>"
+					+ student.recordCode + "</td>";
+			tabletr += "<td id='staffName'  align='center'>"
+					+ student.staffName + "</td>";
+			tabletr += "<td id='usedNmae' align='center'>" + student.usedNmae
+					+ "</td>";
+			tabletr += "<td id='sex' align='center'>" + student.sex + "</td>";
+			tabletr += "<td id='staffID' style='display:none' align='center'>"
+					+ student.staffID + "</td>";
+			tabletr += "<td id='birthday'  align='center'>" + student.birthday
+					+ "</td>";
+			tabletr += "<td id='nationality'  align='center'>"
+					+ student.nationality + "</td>";
+			tabletr += "<td id='nativePlace'  align='center'>"
+					+ student.nativePlace + "</td>";
+			tabletr += "<td id='nation'  align='center'>" + student.nation
+					+ "</td>";
+			tabletr += "<td id='staffIdentityCard'  align='center'>"
+					+ student.staffIdentityCard + "</td>";	
+			tabletr += "<td id='price'  align='center'><a  onclick='viewDetail("
+					+ staffIDs + ")'>查看</a></td>";
+			tabletr += " </tr>";
+			$("#tbody").append(tabletr);
+			$("#body_02").show();
+			notoken = 0;
+			window.status = "数据加载成功";
+		},
+		error : function cbf(data) {
+			notoken = 0;
+			alert("获取物品出错！");
+		}
+	});
+}
+
+// 查看详情
+function viewDetail(staffID) {
+	// alert(staffID);
+	// var url = basePath +
+	// "ea/soincumbent/ea_getBasicInformation.jspa?staffID="
+	// + staffID;
+	// window.open(url);
+	// var url = basePath
+	// +
+	// "ea/humanResource/ea_getHumanResource.jspa?showType=edit&cstaff.staffID="
+	// + staffID;
+	// window.open(url, '', 'scrollbars=yes,resizable=yes,channelmode');
+	//var url =basePath+ "ea/enroll/ea_getHumanResource.jspa?showType=edit"+"&cstaff.staffID="+staffID+"&module_title="+module_title+"&educationalCategories="+educationalCategories+"&theModule="+theModule;
+	var url = basePath
+						+ "ea/stafftrack/ea_toSaveJsp.jspa?showType=edit&cstaff.staffID="
+						+ staffID;	
+	window.open(url, '','scrollbars=yes,resizable=yes,channelmode');
+
+}
+
+function QueryArchiveInfo(typeCN) {
+	typeCN = '"' + typeCN + '"';
+	setTimeout("getArchive(" + typeCN + ")", 100);
+}
+
+function getArchive(typeCN) {
+	for (var i = 0; i < chipids.length; i++) {
+		if (chipids[i].indexOf(typeCN) > -1) {
+			return false;
+		}
+	}
+	chipids[i] = typeCN;
+	typeCN = "parameter=" + typeCN;
+	notoken = 1;
+	var searchurl = basePath
+			+ "ea/clinch/sajax_ea_getStudentArchive.jspa?type=out" + "&";
+	$.ajax({
+		url : encodeURI(searchurl + typeCN + "&date="
+				+ new Date().toLocaleString()),
+		type : "get",
+		async : true,
+		dataType : "json",
+		success : function cbf(data) {
+			var member = eval("(" + data + ")");
+			var staffinfo = member.staffinfo;
+			if (staffinfo == null) {
+				return;
+			}
+			var tabletr = "";
+			var staffIDs = '"' + staffinfo.staffID + '"';
+			tabletr += "<tr style='cursor: hand;' id = " + staffinfo.staffID
+					+ ">";
+			tabletr += "<td id='check' align='center'><input type ='checkbox' class='ragood' value="
+					+ staffinfo.staffID + " name='check'/></td>";
+			tabletr += "<td id='staffCode' align='center'>"
+					+ staffinfo.staffCode + "</td>";
+			tabletr += "<td id='recordCode'  align='center'>"
+					+ staffinfo.recordCode + "</td>";
+			tabletr += "<td id='staffName'  align='center'>"
+					+ staffinfo.staffName + "</td>";
+			tabletr += "<td id='usedNmae' align='center'>" + staffinfo.usedNmae
+					+ "</td>";
+			tabletr += "<td id='sex' align='center'>" + staffinfo.sex + "</td>";
+			tabletr += "<td id='staffID' style='display:none' align='center'>"
+					+ staffinfo.staffID + "</td>";
+			tabletr += "<td id='birthday'  align='center'>"
+					+ staffinfo.birthday + "</td>";
+			tabletr += "<td id='nationality'  align='center'>"
+					+ staffinfo.nationality + "</td>";
+			tabletr += "<td id='nativePlace'  align='center'>"
+					+ staffinfo.nativePlace + "</td>";
+			tabletr += "<td id='nation'  align='center'>" + staffinfo.nation
+					+ "</td>";
+			tabletr += "<td id='staffIdentityCard'  align='center'>"
+					+ staffinfo.staffIdentityCard + "</td>";
+			tabletr += "<td id='price'  align='center'><a  onclick='viewDetail("
+					+ staffIDs + ")'>查看</a></td>";
+			tabletr += " </tr>";
+			$("#tbody").append(tabletr);
+			$("#body_02").show();
+			notoken = 0;
+		},
+		error : function cbf(data) {
+			notoken = 0;
+			alert("获取物品出错！");
+		}
+
+	});
+	i++;
+}
+
+    
+function re_load() {
+	if (token)
+		document.location.href = basePath
+				+ "ea/contactuser/ea_getListContactUserConsult.jspa?pageNumber="
+				+ pNumber + "&search=" + search + "&pageForm.pageNumber="
+				+ $("#pageNumber").attr("value");
+}
+
+
+
+

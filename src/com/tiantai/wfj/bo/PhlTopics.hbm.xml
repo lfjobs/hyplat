@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="PhlTopics" table="DT_PhlTopics" schema="HYPLAT" dynamic-insert="true">
+	<comment>拼货拉广告区主题</comment>
+		<id length="50" name="ptKey" type="java.lang.String">
+			<column length="50" name="ptKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ptID" type="java.lang.String">
+			<column length="50" name="ptID" >
+			</column>
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column length="50" name="companyID" >
+			</column>
+		</property>
+		<property name="topic" type="java.lang.String">
+			<column name="topic" length="50">
+				<comment>话题</comment>
+			</column>
+		</property>
+		<property name="hotnum" type="java.lang.Integer">
+			<column name="hotnum" length="50">
+				<comment>热度排序</comment>
+			</column>
+		</property>	
+	</class>
+</hibernate-mapping>

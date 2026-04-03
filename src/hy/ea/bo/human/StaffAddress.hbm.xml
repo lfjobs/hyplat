@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffAddress" table="dt_hr_staff_address">
+		<id length="50" name="addressKey">
+			<column length="50" name="addressKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="addressID">
+			<column length="50" name="addressID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="addressType">
+			<column length="250" name="addressType"/>
+		</property>
+		<property name="livestartDate">
+			<column length="250" name="livestartDate"/>
+		</property>
+		<property name="liveendDate">
+			<column length="250" name="liveendDate"/>
+		</property>
+		<property name="addressDesc">
+			<column length="250" name="addressDesc" />
+		</property>
+		<property  name="addressDetailed">
+			<column length="250" name="addressDetailed" />
+		</property>
+		<property  name="isDefault">
+			<column length="50" name="isDefault" />
+		</property>
+		<property  name="area">
+			<column length="250" name="area" />
+		</property>
+		<property  name="consignee">
+			<column length="50" name="consignee" />
+		</property>
+		<property  name="phone">
+			<column length="50" name="phone" />
+		</property>
+		<property  name="postCode">
+			<column length="50" name="postCode" />
+		</property>
+	</class>
+</hibernate-mapping>

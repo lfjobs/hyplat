@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--招聘管理, 面试人员管理 -->
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="saudition-token" namespace="/ea/saudition"
+		extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.AuditionAction"
+			method="{1}">
+			<result name="auditionlist">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_audition.jsp
+			</result>
+			<result name="employement">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_employment.jsp
+			</result>
+			<result name="trainlist">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_train.jsp
+			</result>
+			<result name="cstaff_audition_j">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_audition_j.jsp
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="saudition-ntoken" namespace="/ea/saudition"
+		extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.AuditionAction" method="{1}">
+			<result name="auditionlist">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_audition.jsp
+			</result>
+			<result name="registerlist">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_register.jsp
+			</result>
+			<result name="printBIAud">
+				/page/ea/main/human/office/SersonnelSystem/print_register.jsp
+			</result>
+			<result name="edit_audition">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_audition_edit.jsp
+			</result>
+			<result name="cstaff_audition_k">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_audition_k.jsp
+			</result>
+			<result name="cstaff_audition_j">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_audition_j.jsp
+			</result>
+			<result name="employement">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_employment.jsp
+			</result>
+			<result name="trainlist">
+				/page/ea/main/human/office/SersonnelSystem/cstaff_train.jsp
+			</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="audition.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="saudition-jsonajax" namespace="/ea/saudition"
+		extends="ea-sajax">
+		<action name="sajax_ea_*"
+			class="hy.ea.human.action.AuditionAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="saudition-njsonajax" namespace="/ea/saudition"
+		extends="json-default">
+		<action name="sajax_n_ea_*"
+			class="hy.ea.human.action.AuditionAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

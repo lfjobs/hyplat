@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="wfjzh-ntoken" namespace="/ea/wfjzh" extends="struts-default">
+		<action name="ea_*" class="hy.ea.finance.action.BenDis.wfjzhAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="list">/page/mobile/activity/wfjzh_list.jsp</result>
+			<result name="listuser">/page/mobile/activity/wfjhy_list.jsp</result>
+		</action>
+	</package>
+</struts>

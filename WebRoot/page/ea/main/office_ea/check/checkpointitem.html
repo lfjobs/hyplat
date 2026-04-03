@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN""http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+
+		<#assign s=JspTaglibs["/WEB-INF/struts-tags.tld"]>
+		<title>车辆安全检查项</title> <#include
+		"/page/ea/main/office_ea/check/js_css.html">
+		<script type="text/javascript"
+			src="${base}/js/ea/office_ea/check/pointitem.js"></script>
+
+		<script type="text/javascript">
+		 var  basePath='${base}';   
+		 var checkpointitemid = "";     
+		 var search = '${search}';
+		</script>
+		<style type="text/css">
+#jqModelAdd table td input {
+	height: 15px;
+	line-height: 15px;
+}
+</style>
+	</head>
+	<body>
+		<div>
+			<table class="JQueryflexme">
+				<thead>
+					<tr>
+						<th width="40" align="center">
+							选择
+						</th>
+						<th width="60" align="center">
+							序号
+						</th>
+						<th width="150" align="center">
+							检查项名称
+						</th>
+						<th width="150" align="center">
+							是否必检
+						</th>
+						<th width="150" align="center">
+							是否启用
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<#list pageForm.list as c>
+					<tr id="${c.checkpointitemid}">
+						<td>
+							<input type="radio" name="a" class="JQuerypersonvalue"
+								value="${c.checkpointitemid}" />
+						</td>
+						<td>
+							<span>${c_index+1}</span>
+						</td>
+						<td>
+							<span id="checkpointitemname">${c.checkpointitemname}</span>
+						</td>
+						<td>
+							<#if c.needflag==0> 否 <#else> 是 </#if>
+							<span id="needflag" style="display: none;">${c.needflag}</span>
+						</td>
+
+						<td>
+							<#if c.useflag==0> 未启用 <#else> 已启用 </#if>
+							<span id="useflag" style="display: none;">${c.useflag}</span>
+							<span id="checkpointitemid" style="display: none">${c.checkpointitemid}</span>
+							<span id="checkpointid" style="display: none">${c.checkpointid}</span>
+						</td>
+
+					</tr>
+					</#list>
+				</tbody>
+			</table>
+			<#assign actionPath="ea/safetycheck/ea_pointitem.jspa?"> <#include
+			"/page/ea/main/office_ea/check/page.html"/>
+
+
+		</div>
+
+		<!--添加窗口 -->
+		<div class="jqmWindow" style="width: 350px; right: 25%; top: 10%"
+			id="jqModelAdd">
+			<form name="postAddForm" id="postAddForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					<div id="title">
+						添加
+					</div>
+					<div class="close">
+					</div>
+				</div>
+				<center>
+				<table width="100%" cellpadding="5" cellspacing="15" id="addTable">
+					<tr>
+						<td align="right" style="width: 25%;">
+							检查项名称：
+						</td>
+						<td align="left">
+							<input type="text" name="pointitembean.checkpointitemname"
+								id="checkpointitemname" class="put3" />
+							<input type="hidden" name="pointitembean.checkpointitemid"
+								id="checkpointitemid" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right" style="width: 25%;">
+							所属检查点：
+						</td>
+						<td align="left">
+							<select style="width: 135px;" name="pointitembean.checkpointid"
+								id="point" class="put3"></select>
+						</td>
+					</tr>
+				</table>
+				<div style="align: center;">
+
+					<input type="button" class="input-button" id="toSubmit"
+						value="   确定   " />
+					<input type="button" class="input-button close" value="  关闭  " />
+				</div>
+				</center>
+			</form>
+		</div>
+
+		<!--搜索窗口 -->
+		<div class="jqmWindow" style="width: 300px; right: 25%; top: 10%"
+			id="jqModelSearch">
+			<form name="postSearchForm" id="postSearchForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					查询信息
+					<div class="close">
+					</div>
+				</div>
+				<table width="100%" cellpadding="5" cellspacing="10"
+					id="cataffSearchTable">
+					<tr>
+						<td align="right">
+							检查项名称：
+						</td>
+						<td align="left">
+							<input type="text" name="pointitembean.checkpointitemname" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<input type="button" class="input-button" id="tosearch"
+								value=" 查询 " />
+							<input name="search" type="hidden" value="search" />
+						</td>
+
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div id="socialJqm" class="jqmWindow"
+			style="width: 75%; height: 250px; absolute; display: none; left: 15%; top: 8%; z-index: 9999; background: #DAE7F6; overflow-y: hidden;">
+			<div style="background: #DAE7F6; margin-right: 500px;">
+				<input style="display: none;" id="checkopertionID" />
+				<input style="display: none;" id="checkopertionName" />
+				<input style="display: none;" id="childopertionName" />
+				<input style="display: none;" id="checkform" />
+			</div>
+			<iframe name="daoRu" id="daoRu" width="100%" height="210px"
+				frameborder="0" style="overflow-x: hidden; overflow-y: auto;">
+			</iframe>
+			<div style="height: 28px; border: 1;">
+				<input type="hidden" value="" id="markid" />
+				<input type="button" class="input-button" id="DaoRuFanqd"
+					onclick="DaoruConfirm();" value=" 确定 "
+					style="cursor: hand; border: 1; margin-left: 400px; height: 25px; width: 60px" />
+				<input type="button" class="input-button" id="DaoRuFan"
+					onclick="cancelJqm();" value=" 关闭 "
+					style="cursor: hand; border: 1; margin-left: 40px; height: 25px; width: 60px" />
+			</div>
+
+		</div>
+		<!--JS遮罩层-->
+		<div id="fullbg"></div>
+		<iframe name="hidden" width="0" height="0"></iframe>
+	</body>
+</html>

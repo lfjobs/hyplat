@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="clinch-ntoken" namespace="/ea/clinch"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.driving.action.ClinchCustomerAction" method="{1}">
+			<result name="list">/page/ea/main/driving/signup/clinch.jsp</result>
+			<result name="list_extend">/page/ea/main/driving/signup/clinch_extend.jsp</result>
+			<result name="toprintprev">/page/ea/main/driving/signup/toprintprev.jsp</result>
+			<result name="historylist">/page/ea/main/driving/signup/clinch_historyprint.jsp</result>
+			<result name="archivelist">/page/ea/main/driving/signup/driving_student_archive.jsp</result>
+		    <result name="add">/page/ea/main/driving/signup/driving_student_archive_add.jsp</result>
+		    <result name="sheet">/page/ea/main/driving/signup/driving_student_archive_sheet.jsp</result>
+		    <result name="edit">/page/ea/main/driving/signup/driving_student_archive_sheet_edit.jsp</result>
+		    <result name="printpa">/page/ea/main/driving/signup/student_archive_sheetsprint.jsp</result>
+		    <result name="success">/page/ea/success.jsp</result>
+		    <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="student.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="clinch-sajax" namespace="/ea/clinch" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.driving.action.ClinchCustomerAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+  
+</struts>

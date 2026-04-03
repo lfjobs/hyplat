@@ -1,0 +1,500 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html{overflow-x: hidden; overflow-y: hidden;overflow: auto; -webkit-overflow-scrolling: touch;}
+body{margin: 0 auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; padding: 0; overflow-y: scroll;}
+::-webkit-scrollbar {
+    width: 0;
+}
+*{-webkit-tap-highlight-color: transparent;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; color:#666; font-family:'微软雅黑';}
+img{ cursor:pointer;border:none;vertical-align: middle;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #666;}
+a:active,a:hover { text-decoration: none;}
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+input{outline: none;-webkit-appearance: none;}
+/*::-webkit-scrollbar {
+    width: 0;
+}*/
+
+/*公共样式 end*/
+
+.clearfix{
+    clear: both;
+}
+
+/*--数字地球商城--*/
+header{
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #c6c6c6;
+    z-index: 999;
+}
+header ul{
+    padding: 0;
+    height: 100%;
+}
+header ul li{
+    float: left;
+    text-align: center;
+}
+header ul li:nth-child(2){
+    font-size: 0.8rem;
+}
+header ul li img{
+   width: 30%;
+    margin-top: -0.15rem;
+}
+header ul li #search{
+    width: 0.8rem;
+}
+.return{
+    position: absolute;
+    z-index: 999;
+    right: 1rem;
+    bottom: 1rem;
+    display: none;
+}
+.return img{
+    width: 2rem;
+}
+
+.mil_shop{
+    width: 100%;
+    background: #fff;
+    border-bottom: 7px solid #eee;
+    position: fixed;
+    z-index: 9;
+}
+.mil_shop ul{
+    overflow: hidden;
+    padding: 0 0.5rem;
+}
+.mil_shop ul li{
+    width: 33%;
+    text-align: center;
+    font-size: 0.65rem;
+    float: left;
+}
+.mil_shop .case{
+    width: 100%;
+    height:calc(10rem + 4px);
+    height:-webkit-calc(10rem + 4px);
+    height:-moz-calc(10rem + 4px);
+    overflow: auto;
+    position: absolute;
+    top: 48px;
+    background: #fff;
+    left: 0;
+    text-indent: 1em;
+    font-size: 0.65rem;
+    z-index: 9;
+    display: none;
+}
+.mil_shop .case dd{
+  border-bottom: 1px solid #ddd;
+  line-height: 2rem;
+  margin: 0 0.5rem;
+}
+.mil_shop .case dd:last-child{
+    border-bottom: none;
+}
+.mil_shop .case .active{
+    color: #ff6600;
+}
+.con_shop ul{
+    overflow: hidden;
+}
+.con_shop ul li{
+    float: left;
+    height: 12.8rem;
+    width: calc(50% - 4px);
+    background: #fff;
+    margin: 0 0 5px 0;
+    box-shadow: 0 1px 3px #ccc;
+    width: -webkit-calc(50% - 4px);
+    width: -moz-calc(50% - 4px);
+    border: 2px solid rgba(221, 221, 221, 0);
+    text-align: center;
+    position: relative;
+}
+
+
+.con_shop ul li img{
+    width: 94%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+}
+.con_shop ul li .txt{
+    text-indent: 0.1em;
+    padding: 0.3rem 0.2rem;
+    line-height: 1rem;
+    overflow: hidden;
+    text-align: left;
+}
+.con_shop ul li .txt h4{
+    font-size: 0.7rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.con_shop ul li .txt p{
+/*	width: 44%;*/
+    float: left;
+    margin-right: 0.2rem;
+    font-size: 0.55rem;
+    color: #ff6600;
+}
+/*.con_shop ul li .txt p:nth-of-type(2n){*/
+    /*margin-right: 0rem;*/
+/*}*/
+.con_shop ul li .txt p a{
+    padding-left: 1rem;
+    font-size: 0.5rem;
+}
+.con_shop ul li .txt .shop{
+	width: 56%;
+	color: #818181;
+	font-size: 0.55rem;
+	text-indent: 0.1em;
+}
+.con_shop ul li .txt p span{
+    font-size: 0.65rem;
+}
+.alert_{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 8;
+    display: none;
+}
+.display{
+    display: block !important;
+}
+.grade-eject, .Category-eject, .Sort-eject{
+    display: none;
+    z-index: 9;
+}
+.grade-w-roll::after {
+    background: rgba(0,0,0,0.3);
+    display: none;
+  /*  z-index: 9;*/
+}
+.alert_search {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    position: fixed;
+    z-index: 999;
+    display: none;
+}
+.alert_search .top {
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    position: relative;
+}
+.alert_search input {
+    width: 80%;
+    height: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    text-indent: 2.3em;
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    margin-top: -0.75rem;
+}
+.alert_search .top #ss {
+    width: 12.5%;
+    height: 1.5rem;
+    border: none;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    text-indent: 0;
+    float: right;
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    left: initial;
+    margin-top: -0.75rem;
+}
+.alert_search .top #qx {
+    width: 12.5%;
+    height: 1.5rem;
+    border: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    text-indent: 0;
+    float: right;
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    left: initial;
+    margin-top: -0.75rem;
+}
+.alert_search .top .sousuo {
+    background: url(../../images/WFJClient/DigitalMall/ico-search.png) 1em 50% no-repeat !important;
+    background-size: 0.7rem !important;
+}
+
+/*2016.12.23*/
+.mil_shop2{
+    display: none;
+}
+#search_sc{
+    width: 95%;
+    padding: 0.2rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    text-indent: 2.3em;
+    background: url(../../images/WFJClient/DigitalMall/ico-search.png) 1em 50% no-repeat !important;
+    background-size: 0.7rem !important;
+}
+#search_ss{
+    font-size: 0.7rem;
+    border: none;
+    background: #fff;
+    border-radius: 3px;
+}
+.alert_2{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 1);
+    z-index: 8;
+}
+.alert_2 .con{
+
+}
+.alert_2 .con .mil{
+    padding: 0.5rem;
+}
+.alert_2 .con .mil h5{
+    font-size: 0.7rem;
+}
+.alert_2 .con .mil .mil_c{
+    overflow: hidden;
+}
+.alert_2 .con .mil .mil_c p{
+    float: left;
+    padding: 0.3rem 0.5rem;
+    background: #ddd;
+    border-radius: 5px;
+    font-size: 0.55rem;
+    margin: 0.2rem 0.2rem 0 0;
+    cursor: pointer;
+}
+/*2017.2.8*/
+.mil_shop{
+    border: 1px solid #ddd;
+}
+.con_shop ul {
+    background: #ddd;
+}
+
+.con_shop ul li .xs{
+    position: absolute;
+    background-color: transparent;
+    left: 3%;
+    top: 0;
+    z-index: 99;
+    overflow: hidden;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+}
+.con_shop ul li .xs::after{
+    width: 2rem;
+    position: absolute;
+    font-size: 0.3rem;
+    color: #fff;
+    transform: rotate(-45deg);
+    top: 0.25rem;
+    left: -0.5rem;
+}
+.con_shop ul li .cx::after{
+    content: "促销";
+}
+.con_shop ul li .vip::after{
+    content: "vip";
+}
+.con_shop ul li .tj::after{
+    content: "特价";
+}
+.con_shop ul li .xs i{
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    margin-left: -1.7rem;
+    margin-top: -1.7rem;
+    transform: rotate(45deg);
+    background: #f7c246;
+}
+header{
+
+}
+#ss .con .mil h5 .det{
+    height: 0.7rem;
+    margin: 0.1rem 0;
+    float: right;
+    vertical-align: middle;
+}
+.alert_body{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+.mil_shop ul li span img{
+    width: 0.5rem;
+    margin-left: 0.2rem;
+}
+.mil_shop ul li span img:nth-child(2){
+    display: none;
+}
+.mil_shop ul li .screen2 img:nth-child(1){
+    display: none;
+}
+.mil_shop ul li .screen2 img:nth-child(2){
+    display: inline;
+}
+.mil_shop ul li .screen_{
+    display: none;
+}
+/*2017.2.8 end*/
+
+/*--数字地球商城 end--*/
+
+/* screening */
+div.screening{
+   
+}
+div.screening>ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    overflow: hidden;
+}
+/* grade */
+.grade-eject,.Category-eject,.Sort-eject{
+    position:fixed;
+    top: -65%;
+    width: 100%;
+    height: 65%;
+    z-index: 1;
+    -webkit-transition-duration: 0.4s;
+}
+
+.grade-eject>ul,.Category-eject>ul,.Sort-eject>ul{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    -webkit-transition-duration: 0.4s;
+}
+.grade-eject>ul>li,.Category-eject>ul>li,.Sort-eject>ul>li{
+    line-height: 2rem;
+    font-size: 0.6rem;
+    padding-left: 1rem;
+    border-bottom: solid 1px #ddd;
+    cursor: pointer;
+}
+.grade-eject>ul.grade-w,.Category-eject>ul.Category-w{
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+}
+.grade-eject>ul.grade-t,.Category-eject>ul.Category-t{
+    background: #fff;
+    position: absolute;
+    z-index: 2;
+    left: 100%;
+}
+.grade-eject>ul.grade-t>li,.Category-eject>ul.Category-t>li{
+    border-bottom: solid 1px #ddd;
+}
+.grade-eject>ul.grade-s,.Category-eject>ul.Category-s{
+    background: #fff;
+    position: absolute;
+    z-index: 3;
+    left: 100%;
+    list-style-type: none;
+}
+.grade-eject>ul.grade-s>li,.Category-eject>ul.Category-s>li{
+    border-bottom: solid 1px #eee;
+    margin-left: 1rem;
+    padding: 0;
+}
+.grade-w-roll{
+top: 92px;
+}
+.grade-w-roll::after{
+    position: fixed;
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background:rgba(0,0,0,0.2);
+    top: 0;
+}
+/*Sort-eject*/
+.Sort-Sort{
+    background: #fff;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    list-style-type: none;
+}
+.Sort-Sort>li{
+    border-bottom: solid 1px #eee;
+    padding: 0;
+}
+.Sort-height{
+    height: 343px;
+}
+
+/* demo-content */
+.demo-content{padding-top: 3rem;}
+
+li .num0 {
+    position: absolute;
+    right: 9%;
+    top: 5%;
+    min-width: 0.65rem;
+    min-height: 0.65rem;
+    background: red;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
+    line-height: 0.65rem;
+    font-size: 0.5rem;
+    display: none;
+    color: #FFFFFF;
+    padding:3px;
+}
+.alert_body header{
+    height: 2.3rem!important;
+    line-height: 2.3rem!important;
+    position: fixed!important;
+}
+

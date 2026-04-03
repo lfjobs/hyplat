@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.telrec.bo">
+	<class name="TelrecTelInInfo" 
+		table="telrectelininfo">
+		<id length="50" name="id">
+			<column length="50" name="id" />
+			<generator class="uuid" />
+		</id>
+		<property name="userid">
+			<column length="50" name="userid" />
+		</property>
+		<property name="username">
+			<column name="username" length="50"></column>
+		</property>
+		<property name="companyid">
+			<column name="companyid" length="50"></column>
+		</property>
+		<property name="companyname">
+			<column name="companyname" length="50"></column>
+		</property>
+		<property name="telno">
+			<column length="20" name="telno" />
+		</property>
+		<property name="in_time">
+			<column name="in_time" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

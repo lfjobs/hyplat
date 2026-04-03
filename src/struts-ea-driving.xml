@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<include file="struts-ea/driving/struts-ea-driving.xml" />
+	<include file="struts-ea/driving/struts-ea-academicadmin.xml" />
+	<include file="struts-ea/driving/struts-ea-clinchcustomer.xml" />
+	<include file="struts-ea/driving/struts-ea-studentmanager.xml" />
+	<include file="struts-ea/driving/struts-ea-ddsrsubjectmanager.xml" />
+	<include file="struts-ea/driving/struts-ea-ddsrstudentmanager.xml" />
+	<include file="struts-ea/driving/struts-ea-ddsrcoachmanager.xml" />
+	<include file="struts-ea/driving/struts-ea-customermanage.xml" />
+	<include file="struts-ea/driving/drivingPart/struts-ea-cheguan.xml" />
+	<include file="struts-ea/driving/drivingPart/struts-ea-appointment.xml" />
+	<include file="struts-ea/driving/drivingPart/struts-ea-training.xml" />
+	<include file="struts-ea/driving/struts-ea-carcylindermanager.xml" />
+	<include file="struts-ea/driving/struts-ea-carcylinderdisptich.xml" />
+	<include file="struts-ea/driving/struts-ea-gascylindertest.xml" />
+	<include file="struts-ea/driving/training/struts-ea-progressstudent.xml" />
+	<include file="struts-ea/driving/training/struts-ea-progressstudentsubject.xml" />
+	<include file="struts-ea/driving/training/struts-ea-trainingregistration.xml" />
+	<include file="struts-ea/driving/notice/struts-ea-notice.xml" />
+	<include file="struts-ea/driving/drivingPart/struts-ea-baokaixue.xml" />
+	<include file="struts-ea/driving/drivingPart/struts-ea-piecework.xml" />
+	<include file="struts-ea/driving/training/struts-ea-trainingSchedule.xml" />
+	<include file="struts-ea/driving/elkc/struts-ea-aflovacation.xml"/>
+	<include file="struts-ea/driving/elkc/struts-ea-aflovacation.xml"/>
+	<include file="struts-ea/driving/elkc/struts-ea-elkcRecord.xml"/>
+	<include file="struts-ea/driving/elkc/struts-ea-elkcInform.xml"/>
+	<include file="struts-ea/driving/elkc/struts-ea-staffmanage.xml"/>
+	<!--驾校配置-->
+    <include file="struts-ea/driving/elkc/struts-ea-elkccompanyconfig.xml"/>
+	<!--时间段模式配置-->
+	<include file="struts-ea/driving/elkc/struts-ea-elkcreservmode.xml"/>
+	<!--班次维护-->
+	<include file="struts-ea/driving/elkc/struts-ea-elkcscheduling.xml"/>
+	<!--教练排班-->
+	<include file="struts-ea/driving/elkc/struts-ea-elkteacherschedul.xml"/>
+
+	<include file="struts-ea/driving/elkc/struts-ea-coachReservation.xml"/>
+
+	<include file="struts-ea/driving/struts-ea-student.xml" />
+	<include file="struts-ea/driving/elkc/struts-ea-complaint.xml"/>
+</struts>

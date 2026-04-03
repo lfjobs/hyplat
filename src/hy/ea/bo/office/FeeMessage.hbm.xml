@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office"> 
+	<class name="FeeMessage" table="dt_FeeMessage">
+		<id length="50" name="fmkey">
+			<column length="50" name="fmkey" />
+			<generator class="uuid" />
+		</id>
+		<property  name="fmId" type="java.lang.String">
+			<column  length="50" name="fmId">
+				<comment>逻辑主键</comment>
+			</column>
+		</property>
+		<property name="totalNum" type="java.lang.Integer">
+			<column length="10" name="totalNum">
+				<comment>短信总免费条数</comment>
+			</column>
+		</property>
+		<property name="surplusNum" type="java.lang.Integer">
+			<column length="10" name="surplusNum" >
+				<comment>剩余条数</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>创建人</comment>
+
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

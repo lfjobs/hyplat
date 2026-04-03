@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="Comments" table="DTComments">
+	<comment>评价表</comment>
+		<id length="50" name="commekey">
+			<column length="50" name="commekey" ></column>
+			<generator class="uuid" />
+		</id>
+		<property name="commeID">
+			<column length="50" name="commeID" ></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID" ><comment>订单ID</comment></column>
+		</property>
+		<property name="ppID">
+			<column length="50" name="ppID" ><comment>产品ID</comment></column>
+		</property>
+		<property name="csid">
+			<column length="50" name="csid" ><comment>收货单ID</comment></column>
+		</property>
+		
+		<property name="comments">
+			<column length="300" name="comments" ><comment>评价内容</comment></column>
+		</property>
+		<property name="anonymous">
+			<column length="4" name="anonymous" ><comment>是否为匿名评价00匿名 01:公开</comment></column>
+		</property>
+		<property name="evaluation">
+			<column length="2" name="evaluation" ><comment>00中评，01好评，02差评</comment></column>
+		</property>
+		<property name="score1">
+			<column length="2" name="score1" ><comment>描述相符 打星</comment></column>
+		</property>
+		<property name="score2">
+			<column length="2" name="score2" ><comment>物流服务 打星</comment></column>
+		</property>
+		<property name="score3">
+			<column length="2" name="score3" ><comment>服务态度 打星</comment></column>
+		</property>
+		<property name="image1">
+			<column length="200" name="image1" ><comment>用户评价上传的图片</comment></column>
+		</property>
+		<property name="image2">
+			<column length="200" name="image2" ><comment>用户评价上传的图片</comment></column>
+		</property>
+		<property name="image3">
+			<column length="200" name="image3" ><comment>用户评价上传的图片</comment></column>
+		</property>
+		<property name="comdate">
+			<column length="50" name="comdate" ><comment>评价日期</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

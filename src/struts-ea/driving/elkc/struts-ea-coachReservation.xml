@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="coachreserv-ntoken" namespace="/ea/coachreserv" extends="struts-default">
+		<action name="ea_*" class="hy.ea.driving.action.elkc.CoacheRservationAction" method="{1}">
+			<result name="login">/page/ea/not_login.jsp</result>
+			<result name="bookingByCoach">/page/ea/main/driving/elkc/bookingByCoach.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="coachingTime">/page/ea/main/driving/elkc/appointmentCoachingTime.jsp</result>
+			<result name="bookTime">/page/ea/main/driving/elkc/bookingByTime.jsp</result>
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			<result name="courseManagement">/page/ea/main/driving/elkc/courseManagement.jsp</result>
+			<result name="courseManagementDetails">/page/ea/main/driving/elkc/courseManagementDetails.jsp</result>
+			<result name="appointment">/page/ea/main/driving/elkc/appointment.jsp</result>
+			<result name="registrationTrainee">/page/ea/main/driving/elkc/registrationTrainee.jsp</result>
+			<result name="pcStudentManager">/page/ea/main/driving/elkc/pcStudentManager.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="studentInformation.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="coachreserv-sajax" namespace="/ea/coachreserv" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.driving.action.elkc.CoacheRservationAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json" name="success">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+
+		</action>
+	</package>
+</struts>

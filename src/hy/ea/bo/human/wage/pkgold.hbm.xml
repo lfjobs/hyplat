@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.wage">
+	<class name="PKGold" table="dt_hr_pkgold">
+		<id length="50" name="pkgoldKey">
+			<column length="50" name="pkgoldKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="pkgoldID">
+			<column length="50" name="pkgoldID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="companyName">
+			<column length="200" name="companyName" />
+		</property>
+		<property name="organizationName">
+			<column length="200" name="organizationName" />
+		</property>
+		<property name="depName">
+			<column length="200" name="depName" />
+		</property>
+		<property name="staffName">
+			<column length="200" name="staffName" />
+		</property>
+		<property  name="pkDate">
+			<column length="50" name="pkDate" />
+		</property>
+		<property  name="gold">
+			<column length="50" name="gold" />
+		</property>
+		<property  name="status">
+			<column length="50" name="status" />
+		</property>
+		<property  name="remarks">
+			<column length="200" name="remarks" />
+		</property>
+	</class>
+</hibernate-mapping>

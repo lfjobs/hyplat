@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="InstitutionsRegistration" table="dtInstitutionsRegistration">
+		<id length="50" name="registrationKey">
+			<column length="50" name="registrationKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="registrationID">
+			<column length="50" name="registrationID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="250" name="organizationID" />
+		</property>
+		<property name="organizationPID">
+			<column length="250" name="organizationPID"/>
+		</property>
+		<property name="bankRegistrationID">
+			<column length="50" name="bankRegistrationID"/>
+		</property>
+		<property name="registrationDate">
+			<column  name="registrationDate" />
+		</property>
+		<property name="accountNature">
+			<column length="250" name="accountNature" />
+		</property>
+		<property  name="bankName">
+			<column length="250" name="bankName" />
+		</property>
+		<property  name="bankAccount">
+			<column length="250" name="bankAccount" />
+		</property>
+		<property  name="openAccountDate">
+			<column name="openAccountDate" />
+		</property>
+		<property  name="cancellationDate">
+			<column name="cancellationDate" />
+		</property>
+		
+		<property name="accountNum">
+			<column length="250" name="accountNum"/>
+		</property>
+		<property name="contact">
+			<column length="250" name="contact"/>
+		</property>
+		<property name="conPerson">
+			<column length="250" name="conPerson"/>
+		</property>
+		<property name="bankAddr">
+			<column length="250" name="bankAddr"/>
+		</property> 
+		<property name="papersType">
+			<column length="250" name="papers_type"/>
+		</property> 
+		<property name="papersNumber">
+			<column length="50" name="papers_number"/>
+		</property> 
+		<property name="birthday">
+			<column length="50" name="birthday"/>
+		</property> 
+		<property name="bankCyber">
+			<column length="256" name="bank_cyber"/>
+		</property> 
+		 <property name="bankState" type="java.lang.Integer">
+            <column name="bank_state" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>

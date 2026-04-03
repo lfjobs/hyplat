@@ -1,0 +1,163 @@
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+header {
+	background-color: #f74c32
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #fff
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+
+header ul li:nth-of-type(3) {
+	width: 20%;
+	text-align: right
+}
+.main-content{
+	font-size:1.1rem;
+}
+.main-content .p-title{
+	padding:5rem 1rem 0.5rem 1rem;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: 600;
+}
+.main-content .p-detail{
+	margin: 0 auto;
+	text-align: center;
+	font-size:0.8rem;
+}
+.main-content .p-btn{
+	margin: 5rem  auto;
+	text-align: center;
+}
+
+.main-content .p-img{
+	margin: 5rem auto 0rem auto;
+	text-align: center;
+}
+.main-content .p-img img{
+	width:4rem;
+}
+.main-content input:last-of-type{
+	margin:1rem;
+	color:#fff;
+	background-color: red;
+	border:1px solid red;
+	padding:0.4rem;
+}
+.main-content input:first-of-type{
+	margin:1rem;;
+	border:1px solid #d7cbcb;
+	padding:0.4rem;
+	background-color: #fff;
+}
+
+.div-tingyong {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .4)
+}
+
+.div-tingyong .box {
+	width: 21rem;
+	margin: 30vh auto 0 auto
+}
+
+.div-tingyong .box>p {
+	border-top-left-radius: .3rem;
+	border-top-right-radius: .3rem;
+	background-color: #f74c32;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: 1rem;
+	color: #fefefe;
+	text-align: center;
+	position: relative
+}
+
+.div-tingyong .box>p img {
+	position: absolute;
+	width: 1.5rem;
+	top: -8%;
+	right: -2%
+}
+
+.div-tingyong .box .div-box p {
+	background-color: #fff;
+	height: 5rem;
+	line-height: 5rem;
+	font-size: 1rem;
+	color: #222;
+	text-align: center;
+	border-bottom: 0.025rem solid #eee;
+}
+
+.div-tingyong .box .div-box div p {
+	background-color: #fff;
+	width: 50%;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #222;
+	text-align: center
+}
+
+.div-tingyong .box .div-box div p:nth-of-type(1) {
+	border-bottom-left-radius: .3rem;
+	color: #666;
+	position: relative
+}
+
+.div-tingyong .box .div-box div p:nth-of-type(1):before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: .025rem;
+	right: .025rem;
+	background-color: #eee
+}
+
+.div-tingyong .box .div-box div p:nth-of-type(2) {
+	border-bottom-right-radius: .3rem
+}
+
+
+
+@media (min-width: 960px) {
+
+
+
+}

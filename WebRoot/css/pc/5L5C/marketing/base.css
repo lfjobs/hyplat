@@ -1,0 +1,78 @@
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+
+}
+body {
+    font-family:"Helvetica Neue", Helvetica,'PingFang SC', 'HarmonyOS_Medium', "Hiragino Sans GB",'Microsoft YaHei',"Helvetica Neue", Arial, sans-serif;
+}
+
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+dd {
+    margin-inline-start: 0;
+}
+li {
+    list-style: none;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+section,p{
+    display: block;
+    text-align: justify;
+}
+
+/* Forms */
+input, textarea, select, button {
+    font-family: inherit;
+}
+input, textarea, select {
+    width: 100%;
+}
+input, textarea{
+    display: block;
+    margin: 0;
+}
+button{
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* Images */
+img,svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th, td {
+    text-align: left;
+}

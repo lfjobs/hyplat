@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.vo">
+	<class name="GoodsBillsVO" table="dtGoodsBillsVO">
+		<id length="50" name="goodsBillsKey">
+			<column length="50" name="goodsBillsKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="goodsBillsID">
+        	<column name="goodsBillsID" length="50"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+		 <property name="cashierBillsID">
+        	<column name="cashierBillsID" length="50"/>
+        </property>
+		<property name="goodsVariableID">
+			<column length="50" name="goodsVariableID" />
+		</property>
+		<property name="goodsVariable">
+			<column length="256" name="goodsVariable" />
+		</property>
+		<property name="goodsNomber">
+        	<column name="goodsNomber" length="50"/>
+        </property>
+		<property name="variable1ID">
+			<column length="50" name="variable1ID" />
+		</property>
+		<property name="variable2ID">
+			<column length="50" name="variable2ID" />
+		</property>
+		<property name="variable3ID">
+			<column length="50" name="variable3ID" />
+		</property>
+		<property name="variable4ID">
+			<column length="50" name="variable4ID" />
+		</property>
+		
+		<property name="subjectsID">
+			<column length="50" name="subjectsID" />
+		</property>
+		<property name="subjectsName">
+			<column length="250" name="subjectsName" />
+		</property>
+		<property name="startDate">
+			<column  name="startDate" />
+		</property>
+		<property name="endDate">
+			<column  name="endDate" />
+		</property>
+		
+		<property name="batchNumber">
+			<column length="250" name="batchNumber" not-null="false"/>
+		</property>
+		<property name="periodDate">
+			<column  name="periodDate" not-null="false"/>
+		</property>
+		<property name="remindedContent">
+			<column length="250" name="remindedContent" not-null="false"/>
+		</property>
+		
+		
+		<property name="costType">
+			<column length="250" name="costType" />
+		</property>
+		<property name="payType">
+			<column length="250" name="payType" />
+		</property>
+		<property name="moneySpent">
+			<column length="250" name="moneySpent" />
+		</property>
+		<property name="weight">
+			<column length="250" name="weight" />
+		</property>
+		<property name="boxStandard">
+			<column length="250" name="boxStandard" />
+		</property>
+		<property name="goodsID">
+			<column length="50" name="goodsID" />
+		</property>
+		<property name="priceManage">
+			<column length="250" name="priceManage" />
+		</property>
+		
+		
+		<property name="defaultStorage">
+			<column length="250" name="defaultStorage" />
+		</property>
+		<property name="logistics">
+			<column length="250" name="logistics" />
+		</property>
+		<property name="quantity">
+			<column length="250" name="quantity" />
+		</property>
+		<property name="price">
+			<column length="250" name="price" />
+		</property>
+		<property name="money">
+			<column length="250" name="money" />
+		</property>
+		<property name="depotID">
+			<column length="50" name="depotID" />
+		</property>
+		<property name="depotName">
+			<column length="250" name="depotName" />
+		</property>
+		<property name="depotType">
+			<column length="250" name="depotType" />
+		</property>
+		<property name="loan">
+			<column length="250" name="loan" />
+		</property>
+		<property name="forLoan">
+			<column length="250" name="forLoan" />
+		</property>
+		<property name="direction">
+			<column length="250" name="direction" />
+		</property>
+		<property name="balance">
+			<column length="250" name="balance" />
+		</property>
+		
+		 <property name="goodsCoding">
+        	<column name="goodsCoding" length="250" />
+        </property>
+        	<property name="goodsName">
+        	<column name="goodsName" length="250"/>
+        </property>
+        <property name="identifyingCode">
+			<column length="250" name="identifyingCode" />
+		</property>
+		<property name="typeID">
+			<column length="50" name="typeID"/>
+		</property>
+		<property name="variableID">
+			<column length="50" name="variableID"/>
+		</property>
+        <property name="standard">
+        	<column name="standard" length="250"/>
+        </property>
+		<property name="mnemonicCode">
+			<column length="250" name="mnemonicCode"/>
+		</property>
+		<property name="model">
+			<column length="250" name="model"/>
+		</property>
+		<property name="registrationDate">
+			<column name="registrationDate" />
+		</property>
+		<property name="accompanyDate">
+			<column name="accompanyDate" />
+		</property>
+		<property name="reason">
+			<column length="250" name="reason" />
+		</property>
+		
+		<property name="projectDec">
+			<column length="250" name="projectDec" />
+		</property>
+		
+		<property name="attachmentPath">
+			<column length="200" name="attachmentPath" />
+		</property>
+		<property name="remark">
+			<column length="100" name="remark" />
+		</property>
+		<property name="status">
+			<column length="250" name="status" />
+		</property>
+		
+		<property name="workSite">
+			<column length="250" name="workSite" />
+		</property>
+		<property name="serviceWay">
+			<column length="250" name="serviceWay" />
+		</property>
+		<property name="serviceContent">
+			<column length="250" name="serviceContent" />
+		</property>
+		<property name="serviceReason">
+			<column length="250" name="serviceReason" />
+		</property>
+		<property name="dealStatus">
+			<column length="250" name="dealStatus" />
+		</property>
+		
+		<property name="entryTime">
+			<column name="entryTime" />
+		</property>
+			<property name="billsNumbers">
+			<column length="250" name="billsNumbers" />
+		</property>
+		<property name="reasonThing">
+			<column length="250" name="reasonThing" />
+		</property>
+		<property name="otherAmount">
+			<column length="250" name="otherAmount" />
+		</property>
+		<property name="isSelected">
+			<column length="5" name="isSelected" />
+		</property>
+		
+		<property name="appropriationMoney">
+			<column length="50" name="appropriationMoney" />
+		</property>
+		<property name="appropriationNum">
+			<column length="250" name="appropriationNum" />
+		</property>
+		<property name="appropriationcompanyID">
+			<column length="50" name="appropriationcompanyID" />
+		</property>
+		<property name="appropriationcompanyName">
+			<column length="250" name="appropriationcompanyName" />
+		</property>
+		<property name="ReceivablesID">
+			<column length="50" name="ReceivablesID" />
+		</property>
+		<property name="ReceivablesName">
+			<column length="250" name="ReceivablesName" />
+		</property>
+		<property name="RecropriationNum">
+			<column length="250" name="RecropriationNum" />
+		</property>
+		<property name="appstyle">
+			<column length="50" name="appstyle" />
+		</property>
+		
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" />
+		</property>
+		
+		<property name="ccompanyName">
+			<column length="50" name="ccompanyName" />
+		</property>
+		
+		<property name="connectID">
+			<column length="50" name="connectID" />
+		</property>
+		
+		<property name="connectName">
+			<column length="50" name="connectName" />
+		</property>
+		
+		<property name="studentCode">
+			<column length="50" name="studentCode" />
+		</property>
+		<property name="studentPeriods">
+			<column length="50" name="studentPeriods" />
+		</property>
+		<property name="schoolopendate" >
+			<column name="schoolopendate" />
+		</property>
+		
+		<property name="targetStart">
+			<column length="15" name="targetStart" />
+		</property>
+		<property name="targetEnd">
+			<column length="15" name="targetEnd" />
+		</property>
+		<property name="targetDeptID">
+			<column length="50" name="targetDeptID" />
+		</property>
+		<property name="targetDeptName">
+			<column length="50" name="targetDeptName" />
+		</property>
+		<property name="targetSalerID">
+			<column length="50" name="targetSalerID" />
+		</property>
+		<property name="targetSalerName">
+			<column length="50" name="targetSalerName" />
+		</property>
+			<property name="tiaoPrice">
+			<column length="50" name="tiaoPrice" />
+		</property>
+		<property name="tiaoQuantity" >
+			<column length="50" name="tiaoQuantity" />
+		</property>
+		<property name="tiaoMoney" >
+			<column length="50" name="tiaoMoney" />
+		</property>
+		<property name="planGoodsBillsID" >
+			<column length="50" name="planGoodsBillsID" />
+		</property>
+		<property name="realMoney">
+			<column length="250" name="realMoney" />
+		</property>
+		<property name="alreadyMoney">
+			<column length="250" name="alreadyMoney" />
+		</property>
+		<property name="futureMoney">
+			<column length="250" name="futureMoney" />
+		</property>
+		<property name="rebate">
+			<column length="50" name="rebate" />
+		</property>
+		<property name="rebatePrice">
+			<column length="250" name="rebatePrice" />
+		</property>
+		<property name="premiums">
+			<column length="50" name="premiums"><comment>是否是奖品  0或null:否  1:是  </comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

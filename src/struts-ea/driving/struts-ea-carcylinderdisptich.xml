@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="dispitch-ntoken" namespace="/ea/dispitch"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.driving.action.DisptichOrderAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+					     <result name="sheetlist">/page/ea/main/driving/signup/sheetPrint.jsp</result><!-- 派工单列表 -->
+			<result name="printpanfei">/page/ea/main/driving/signup/CarlinderRequisition.jsp</result><!-- 判废通知打印 -->
+			<result name="Windingpage">/page/ea/main/driving/signup/CarlinderWindingView.jsp</result><!-- 缠绕瓶打印页面 -->
+			<result name="cylinderpage">/page/ea/main/driving/signup/CarlinderView.jsp</result><!-- 钢瓶打印页面 -->
+		    <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="student.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="dispitch-sajax" namespace="/ea/dispitch" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.driving.action.DisptichOrderAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+  
+</struts>

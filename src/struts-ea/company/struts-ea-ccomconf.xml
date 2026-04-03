@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package strict-method-invocation="false" name="ccomconf-ntoken" namespace="/ea/ccomconf"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.company.action.CcomConfAction" method="{1}">
+		     <result name="getCconConfList">/page/ea/main/office_ea/comConfig.jsp</result>
+		      <result name="topage">/page/ea/main/office_ea/comConfig_add.jsp</result>
+			 <result name="success">/page/ea/success.jsp</result>
+			 <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="ccomconf.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+
+
+	<package strict-method-invocation="false" name="ccomconf-njsonajax" namespace="/ea/ccomconf"
+		extends="json-default">
+		<action name="sajax_n_ea_*"
+			class="hy.ea.company.action.CcomConfAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userDTO-scalable=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>资讯详情</title>
+</head>
+<body class="h-screen">
+<script src="../../../../../js/dynamic-tab/dynamic-tab.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/plugin/quarterOfYear.min.js"></script>
+<script>dayjs.extend(window.dayjs_plugin_quarterOfYear)</script>
+<div class="flex flex-col h-screen">
+
+    <div id="toolbar" class="flex flex-row items-center justify-between w-full">
+
+    </div>
+
+    <div class="p-4 space-y-4">
+
+        <div class="flex flex-row space-x-2 items-start w-full">
+            <span class="text-gray-500 text-nowrap text-start">新闻标题</span>
+            <div>数字地球——5L5CERP。满足多种行业业务管理场景，能够定制不同的解决方案，赋能企业数智一体化转型。</div>
+        </div>
+
+        <div class="flex flex-row space-x-2 items-start w-full">
+            <span class="text-gray-500">资讯作者</span>
+            <div>张三</div>
+        </div>
+
+        <div class="flex flex-row space-x-2 items-start w-full">
+            <span class="text-gray-500">创建时间</span>
+            <div>2024-01-01 12:00:00</div>
+        </div>
+
+        <div class="flex flex-col items-start w-full">
+            <span class="text-gray-500">资讯内容</span>
+            <div>这是短视频的描述信息</div>
+        </div>
+    </div>
+</div>
+<script>
+    const toolbar = new Toolbar("toolbar", {
+        title: "资讯详情",
+        actions: [],
+        onClick: (id) => {
+            console.log(id);
+        }
+    })
+</script>
+</body>
+</html>

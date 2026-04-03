@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing.voucher">
+	<class name="VoucherBill" table="dt_inv_voucher">
+		<id length="50" name="voucherKey">
+			<column length="50" name="voucherKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="voucherID">
+			<column length="50" name="voucherID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property  name="voucherNum">
+			<column length="250" name="voucherNum" />
+		</property>
+		<property  name="companyName">
+			<column length="250" name="companyName" />
+		</property>
+		<property  name="organizationName">
+			<column length="250" name="organizationName" />
+		</property>
+		<property  name="appendixNum">
+			<column length="50" name="appendixNum" />
+		</property>
+		<property  name="makePeople">
+			<column length="250" name="makePeople" />
+		</property>
+		<property  name="makeDate">
+			<column  name="makeDate" />
+		</property>
+		<property  name="auditingPeo">
+			<column length="250" name="auditingPeo" />
+		</property>
+		<property  name="auditingDate">
+			<column  name="auditingDate" />
+		</property>
+		<property  name="tallyPeople">
+			<column length="250" name="tallyPeople" />
+		</property>
+		<property  name="tallyDate">
+			<column  name="tallyDate" />
+		</property>
+		<property  name="sum">
+			<column length="250" name="sum" />
+		</property>
+		<property  name="status">
+			<column length="250" name="status" />
+		</property>
+		<property  name="remarks">
+			<column length="250" name="remarks" />
+		</property>
+		<property  name="openDate">
+			<column  name="openDate" />
+		</property>
+	</class>
+</hibernate-mapping>

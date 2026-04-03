@@ -1,0 +1,620 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #fff;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; color:#666; font-family:'微软雅黑';}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #666;}
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+/*公共样式*/
+
+.clearfix{
+    clear: both;
+}
+
+/*--China--*/
+header{
+    width: 100%;
+    height: 45px;
+    /*position: fixed;*/
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #c6c6c6;
+    z-index: 9;
+}
+header ul{
+    padding: 0;
+    height: 100%;
+}
+header ul li{
+    float: left;
+    text-align: center;
+}
+header ul li:nth-child(2){
+    font-size: 0.8rem;
+}
+header ul li img{
+    width: 35%;
+    margin-top: -0.15rem;
+}
+.china_ban{
+    border-bottom: 1px solid #ddd;
+}
+.china_ban img{
+    width: 100%;
+}
+.china_nav{
+    border-bottom: 1px solid #ddd;
+}
+.china_nav ul{
+    width: 80%;
+    margin: 0 auto 25px auto;
+}
+.china_nav ul li{
+    float: left;
+    text-align: center;
+    padding: 25px 0.7rem 0 0.7rem;
+    vertical-align:middle;
+}
+.china_nav ul li img{
+    width: 60%;
+    padding: 0 0 0.5rem 0;
+}
+.china_nav ul li h5{
+    font-size: 0.6rem;
+}
+.china_grd{
+    text-align: center;
+    border-bottom: 3px solid #ddd;
+}
+.china_txt_hed{
+    position: relative;
+    top: 1.5rem;
+    height: 3rem;
+}
+.china_txt_hed h5{
+    width: 5rem;
+    margin: 0 auto;
+    border: 1px solid #000;
+    font-size: 0.7rem;
+    padding: 5px;
+    color: #000;
+    position: relative;
+}
+.china_txt_hed h5:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -4rem;
+    width: 4rem;
+    height: 1px;
+    background: #000;
+}
+.china_txt_hed h5:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -4rem;
+    width: 4rem;
+    height: 1px;
+    background: #000;
+}
+.china_txt_hed h4{
+    color: #000;
+    font-size: 0.75rem;
+    padding: 10px 0;
+}
+/* .china_txt_hed p{
+    width: 3rem;
+    position: absolute;
+    top: 0.6rem;
+    left: 2.5rem;
+    border-bottom: 1px solid #000;
+}
+.china_txt_hed p:nth-child(3){
+    left: 10.5rem;
+} */
+.joint-shop_d li{
+    width: 95%;
+    text-align: left;
+    margin: 0 auto;
+    height: 4rem;
+}
+.joint-shop_d li img{
+    width: 25%;
+    height:90%;
+}
+.joint-shop_txt{
+    width: 70%;
+    height: 3.5rem;
+    float: right;
+}
+.joint-shop_txt h4{
+    font-size: 0.7rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 1.5;
+}
+.joint-shop_txt h3{
+    font-size: 0.75rem;
+    color: #FF501A;
+    padding-top: 1.5rem;
+}
+.joint-shop_txt h3 p{
+    float: right;
+    font-size: 0.6rem;
+    color: #9B9B9B;
+    margin-top: 0.1rem;
+}
+.china_look2 {
+    margin: 0 0 20px 0 !important;
+}
+.zwdiv{
+    height: 2rem;
+}
+.china_case ul{
+    height: 100%;
+}
+.china_case ul li{
+    float: left;
+    padding: 15px 10px;
+    vertical-align:middle;
+}
+.china_case ul li img{
+    width: 100%;
+}
+.china_case ul li div{
+    background-color: #F1F1F1;
+    padding: 10px 0 0 0;
+    border-radius: 5px;
+}
+.china_case ul li div h4{
+    color: #000;
+    font-size: 0.7rem;
+    padding: 5px 0;
+}
+.china_case ul li div p{
+    font-size: 0.5rem;
+    padding: 0 0 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.china_look{
+    margin: 20px 0;
+}
+.china_look h4{
+    color: #000;
+}
+.china_look h4 span{
+    font-size: 0.7rem;
+    padding: 0 10px 0 0;
+    color: #000;
+}
+.china_look h4 img{
+    width: 0.7rem;
+}
+.china_grd2 .china_mil{
+    width: 95%;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 0.7rem;
+}
+.china_mil img{
+    width: 30%;
+    float: left;
+    border: 1px solid #ddd;
+}
+.china_mil_txt{
+    width: 70%;
+    float: left;
+}
+.china_mil_txt h4{
+    font-size: 0.7rem;
+    color: #000;
+    padding: 0 5px;
+    line-height: 1.3;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.china_mil_txt h5{
+    font-size: 0.6rem;
+   padding: 0.1rem 5px 0 5px;
+    line-height: 1.2;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.china_txt_hed2{
+	width: 85%;
+    padding: 20px;
+    margin: 0 auto !important;
+    overflow: hidden;
+}
+.china_txt_hed2 span {
+    /* width: 5rem; */
+    padding: 0 20px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    font-size: 0.7rem;
+    padding: 5px 20px;
+    color: #000;
+    position: relative;
+}
+.china_txt_hed2 span:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -4rem;
+    width: 4rem;
+    height: 1px;
+    background: #000;
+}
+.china_txt_hed2 span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -4rem;
+    width: 4rem;
+    height: 1px;
+    background: #000;
+}
+.china_mil p{
+    text-align: right;
+    font-size: 0.5rem;
+    color: #A3A3A3;
+}
+.carousel2 {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+}
+.new-page_mil{
+
+}
+.new-page_mil h3{
+    font-size: 0.8rem;
+    width: 70%;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+}
+.new-page_mil span{
+    font-size: 0.6rem;
+    width: 30%;
+    float: right;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+}
+.new-page_mil h4{
+    font-size: 0.58rem;
+    width: 80%;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+    margin: 0.5rem 0;
+}
+.new-page_mil p{
+    font-size: 0.58rem;
+    width: 20%;
+    color: #FF501A;
+    float: right;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+    margin: 0.5rem 0;
+    line-height: 1.1;
+}
+.new-page_mil .weizhi{
+    width: 40%;
+    float: left;
+    margin-bottom: 0.5rem;
+}
+.new-page_mil .weizhi img{
+    width: 1rem;
+}
+.new-page_mil .weizhi span{
+    float: none;
+    font-size: 12px;
+    margin-left: 5px;
+}
+.carousel-control.right2,.carousel-control.left2 {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-indicators2 {
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+}
+.carousel-indicators2 .active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: #FF501A;
+}
+
+.business_d ul{
+    width: 90%;
+    margin: 0 auto;
+}
+.business_d ul li img{
+    width: 15%;
+    padding-right: 15px;
+    float: left;
+}
+.business_d ul li p{
+    font-size: 0.7rem;
+    line-height: 2.5;
+}
+.china_intro {
+    padding: 0 2.5% 1rem 2.5%;
+}
+.erweima{
+    padding: 1rem 0;
+}
+.erweima img{
+    width: 8rem;
+}
+.erweima div{
+    position: relative;
+    margin: 0.5rem 0;
+}
+.erweima div p:nth-child(1){
+    position: absolute;
+    width: 2.5rem;
+    border-top: 3px solid #FF3534;
+    left: 3.5rem;
+    margin-top: 0.35rem;
+}
+.erweima div h4{
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    width: 4rem;
+}
+.erweima div p:nth-child(3){
+    position: absolute;
+    width: 2.5rem;
+    border-top: 3px solid #FF3534;
+    left: 10rem;
+    margin-top: -0.36rem;
+}
+
+.map_txt{
+    width: 95%;
+    margin: 0.5rem auto;
+}
+.map_txt h4{
+    width: 22%;
+    font-size: 0.7rem;
+    float: left;
+    line-height: 3;
+    font-weight: 600;
+}
+.map_txt p{
+    width: 60%;
+    font-size: 0.6rem;
+    float: left;
+    padding: 0.3rem 0;
+    letter-spacing: 2px;
+}
+.map_txt img{
+    width: 18%;
+    float: right;
+    padding: 0.3rem 0.5rem 0 0.5rem;
+}
+.china_intro p {
+    text-indent: 2em;
+    font-size: 0.7rem;
+    color: #000;
+    line-height: 1.8;
+}
+.china_ruzhu ul{
+    width: 90%;
+    margin: 0 auto;
+}
+.china_ruzhu ul li{
+    padding: 0.3rem 0.6rem;
+    text-align: center;
+    vertical-align:middle;
+}
+.china_ruzhu ul li img{
+    width: 80%;
+    margin: 0 auto;
+}
+.china_ruzhu ul li h5{
+    font-size: 0.6rem;
+    padding: 0.5rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.china_admin{
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.china_admin img{
+    width: 1.2rem;
+    margin: -0.2rem 10px 0 0;
+}
+.china_admin span{
+    font-size: 0.9rem;
+    color: #68B83A;
+}
+.china_adn ul li{
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+    vertical-align:middle;
+}
+.china_adn ul li img{
+    width: 80%;
+}
+.china_adn ul li h5{
+    padding: 0.3rem 0;
+    font-size: 0.7rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 3px;
+}
+.china_adn ul li div{
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    border: 2px solid #FF501A;
+    color: #FF501A;
+    font-family: "微软雅黑";
+    font-weight: 700;
+    line-height: 2.1rem;
+}
+.footer{
+    background: #F2F2F2;
+    text-align: center;
+    padding: 1rem 0;
+}
+.footer p{
+    font-size: 0.6rem;
+}
+/* 2016.10.13 */
+.style1_con {
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.style1_con li {
+    width: calc(50% - 4px);
+    float: left;
+    margin: 3px 2px;
+    background: #fff;
+}
+.style1_con li img {
+    width: 100%;
+    height: 180px;
+    margin: 0 auto;
+    display: block;
+    max-width: 200px;
+}
+.style1_con h3 {
+    color: #030e15;
+    width: 90%;
+    max-width: 200px;
+    margin: 15px auto;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    letter-spacing: 1px;
+    height: 40px;
+    text-align: left;
+}
+.style1_con h4 {
+    font-weight: normal;
+    width: 90%;
+    max-width: 200px;
+    margin: 10px auto;
+    position: relative;
+    color: #ef6060;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: left;
+}
+.style1_con span {
+    font-weight: normal;
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    display: block;
+    color: #818181;
+    font-size: 12px;
+}
+
+
+/*--China end--*/
+
+@media screen and (max-width: 768px)and (min-width: 460px){
+    /*--China--*/
+    .zwdiv {
+        height: 1rem;
+    }
+    .china_case {
+        width: 95%;
+        height: 13rem;
+        margin: 0 auto;
+    }
+    .china_txt_hed p {
+        width: 3rem;
+        position: absolute;
+        top: 0.5rem;
+        left: 2.5rem;
+        border-bottom: 1px solid #000;
+    }
+    .china_look h4 img {
+        width: 0.7rem;
+        margin: -0.25rem 0 0 0;
+    }
+    .china_mil_txt h4 {
+        font-size: 0.7rem;
+        color: #000;
+        padding: 0 0.3rem;
+        line-height: 1.3;
+    }
+    .china_mil_txt h5 {
+        font-size: 0.6rem;
+        padding: 12px 0.3rem 0 0.3rem;
+        line-height: 1.2;
+    }
+    .carousel2 {
+        width: 95%;
+        position: relative;
+        margin: 1rem auto;
+    }
+    /*--China end--*/
+}
+@media screen and (max-width: 340px){
+
+}
+/*2016年8月7日11:29:13 薛帅 改*/
+
+.carousel-indicators li{background-color:#cccccc;}

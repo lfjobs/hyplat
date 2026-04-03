@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="COSJobTask" table="dtCOSJobTask">
+		<id length="50" name="jobTaskKey">
+			<column length="50" name="jobTaskKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="jobTaskID">
+			<column length="50" name="jobTaskID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="neededTime">
+			<column length="250" name="neededTime"/>
+		</property>
+		<property name="taskNumber">
+			<column length="250" name="taskNumber"/>
+		</property>
+		<property name="taskName">
+			<column length="250" name="taskName"/>
+		</property>
+		<property name="startDate">
+			<column length="50" name="startDate" />
+		</property>
+		<property  name="endDate">
+			<column length="50" name="endDate" />
+		</property>
+		<property  name="bonusPoint">
+			<column length="250" name="bonusPoint" />
+		</property>
+		<property  name="penaltyPoint">
+			<column length="250" name="penaltyPoint" />
+		</property>
+		<property  name="checkUpTime">
+			<column length="250" name="checkUpTime" />
+		</property>
+		<property  name="actualperformance">
+			<column length="250" name="actualperformance" />
+		</property>
+		<property  name="actualBonusPoint">
+			<column length="250" name="actualBonusPoint" />
+		</property>
+		<property  name="actualPenaltyPoint">
+			<column length="250" name="actualPenaltyPoint" />
+		</property>
+		<property  name="status">
+			<column length="50" name="status" />
+		</property>
+		<property  name="codeID">
+			<column length="50" name="codeID" />
+		</property>
+		<property  name="codeValue">
+			<column length="50" name="codeValue" />
+		</property>
+		<property  name="projectID">
+			<column length="50" name="projectID" />
+		</property>
+		<property  name="projectName">
+			<column length="50" name="projectName" />
+		</property>
+			<property  name="target">
+			<column length="50" name="target" />
+		</property>
+		<property  name="prioritys">
+			<column length="5" name="prioritys" />
+		</property>
+		<property  name="weight">
+			<column length="5" name="weight" />
+		</property>
+		<property  name="time">
+			<column length="50" name="time" />
+		</property>
+		<property  name="finishrate">
+			<column length="50" name="finishrate" />
+		</property>
+		<property  name="staffName">
+			<column length="50" name="staffName" />
+		</property>
+		<property  name="facttime">
+			<column length="50" name="facttime" />
+		</property>
+		<property  name="factrateday">
+			<column length="50" name="factrateday" />
+		</property>
+		<property  name="datemonth">
+			<column length="50" name="datemonth" />
+		</property>
+		<property  name="groupCompanySn">
+			<column length="50" name="groupCompanySn" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

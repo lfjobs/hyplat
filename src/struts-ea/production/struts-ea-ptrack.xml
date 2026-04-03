@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="ptrack-token" namespace="/ea/ptrack"
+		extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.PTrackeAction"
+			method="{1}">
+			<result name="ptracklist">/page/ea/main/production/cprocedure/ptrack_list.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="addptrack">/page/ea/main/production/cprocedure/ptrackAdd2.jsp</result>
+			<result name="printPreview">/page/ea/main/production/cprocedure/ptrackPrintPreview.jsp</result>
+			<result name="protrack">/page/ea/main/production/cprocedure/projectTrack.jsp</result>
+			<result name="propic">/page/ea/main/production/cprocedure/proCompletePic.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="ptrack.xls"
+				</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ptrack-jsonajax" namespace="/ea/ptrack"
+		extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.PTrackeAction"
+			method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

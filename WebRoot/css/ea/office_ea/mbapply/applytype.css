@@ -1,0 +1,152 @@
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+header {
+	background-color: #f74c30
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: .65rem;
+	color: #fff
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .45rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center
+}
+
+header ul li:nth-of-type(3) {
+	font-size: .6rem;
+	width: 20%;
+	text-align: right
+}
+
+.content {
+	padding: .375rem .75rem 0 .75rem
+}
+
+.content .p-lx {
+	padding-left: .375rem;
+	height: 3.95rem;
+	line-height: 3.95rem;
+	font-size: .65rem;
+	color: #222
+}
+
+.content section>div {
+	border: .025rem solid #f8f8f8;
+	border-top: 0;
+	border-radius: .35rem;
+	padding: .575rem .575rem .575rem .75rem;
+	margin-bottom: 1.45rem;
+	box-shadow: 0 .125rem .25rem #f8f8f8
+}
+
+.content section>div .left {
+	width: 85%
+}
+
+.content section>div .left p:nth-of-type(1) {
+	height: 1.4rem;
+	line-height: 1.4rem;
+	font-size: .75rem;
+	color: #222
+}
+
+.content section>div .left p:nth-of-type(2) {
+	height: 1.25rem;
+	line-height: 1.25rem;
+	font-size: .6rem;
+	color: #666
+}
+
+.content section>div .right {
+	height: 2.6rem;
+	line-height: 2.6rem;
+	display: flex;
+	align-items: center
+}
+
+.content section>div .right img {
+	width: .95rem
+}
+
+.content section>div .right img:nth-of-type(1) {
+	display: inline-block
+}
+
+.content section>div .right img:nth-of-type(2) {
+	display: none
+}
+
+.content section>div.active .right img:nth-of-type(1) {
+	display: none
+}
+
+.content section>div.active .right img:nth-of-type(2) {
+	display: inline-block
+}
+
+/*.content .div-bottom {*/
+	/*padding-top: 6.25rem*/
+/*}*/
+
+.content .div-bottom .p-01 {
+	text-align: center;
+	border-radius: 1rem;
+	width: 67%;
+	margin: 0 auto;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: .6rem;
+	color: #fff;
+	background-color: #f74c32;
+	padding-bottom: 1rem
+}
+
+.content .div-bottom div {
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem
+}
+
+.content .div-bottom div img {
+	width: .7rem;
+	margin-bottom: .075rem
+}
+
+.content .div-bottom div img:nth-of-type(1) {
+	display: none
+}
+
+.content .div-bottom div img:nth-of-type(2) {
+	display: inline-block
+}
+
+.content .div-bottom div.active img:nth-of-type(1) {
+	display: inline-block
+}
+
+.content .div-bottom div.active img:nth-of-type(2) {
+	display: none
+}

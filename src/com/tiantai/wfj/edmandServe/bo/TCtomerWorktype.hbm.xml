@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.tiantai.wfj.edmandServe.bo.TCtomerWorktype" table="T_CTOMER_WORKTYPE" schema="HYPLAT">
+        <comment>微分金帐号工种管理</comment>
+        <id name="cwkey">
+            <column name="CWKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="cwid">
+            <column name="CWID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="cwcustid">
+            <column name="CWCUSTID" sql-type="varchar2(50)" length="50"><comment>添加工种帐号id</comment></column>
+        </property>
+        <property name="cwstaffid">
+            <column name="cwstaffid" sql-type="varchar2(50)" length="50"><comment>添加工种人员id</comment></column>
+        </property>
+        <property name="cwphone">
+            <column name="cwphone" sql-type="varchar2(50)" length="50"><comment>手机号</comment></column>
+        </property>
+        <property name="cwcredentialsID">
+            <column name="cwcredentialsID" sql-type="varchar2(50)" length="50"><comment>证件id</comment></column>
+        </property>
+        <property name="cwscodeid">
+            <column name="CWSCODEID" sql-type="varchar2(50)" length="50"><comment>行业类别（工种）id</comment></column>
+        </property>
+        <property name="cwvalue">
+            <column name="CWVALUE" sql-type="varchar2(50)" length="50"><comment>行业类别（工种）名称</comment></column>
+        </property>
+        <property name="cwdate">
+            <column name="CWDATE" sql-type="date"><comment>添加时间</comment></column>
+        </property>
+        <property name="cwstatus">
+            <column name="CWSTATUS" sql-type="varchar2(5)" length="5"><comment>状态 0：审核通过 1：移除 2：审核驳回 3:审核中 </comment></column>
+        </property>
+
+        <property name="ddaddress" type="java.lang.String">
+            <column name="DDADDRESS" sql-type="varchar2(100)" length="100"><comment>地址</comment></column>
+        </property>
+        <property name="coordinate" type="java.lang.String">
+            <column name="COORDINATE" sql-type="varchar2(50)" length="50"><comment>地址经纬度</comment></column>
+        </property>
+
+        <property name="cwstaffname" type="java.lang.String">
+            <column name="cwstaffname" sql-type="varchar2(50)" length="50"><comment>添加工种姓名</comment></column>
+        </property>
+        <property name="cwcredenname" type="java.lang.String">
+            <column name="cwcredenname" sql-type="varchar2(50)" length="50"><comment>证件</comment></column>
+        </property>
+        <property name="cwcid" type="java.lang.String">
+            <column name="cwcid" sql-type="varchar2(50)" length="50"><comment>关联id (来源不同关联表不同,来源1:关联staff 2:关联company)</comment></column>
+        </property>
+        <property name="cwtype" type="java.lang.String">
+            <column name="cwtype" sql-type="varchar2(5)" length="5"><comment>来源 1:个人 2:企业</comment></column>
+        </property>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.plat.bo">
+	<class name="SInterface" table="dtSInterface">
+		<id name="interfaceKey">
+			<column length="50" name="interfaceKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="interfaceID">
+			<column length="50" name="interfaceID" unique="true" not-null="true" />
+		</property>
+		<property name="boID">
+			<column length="50" name="boID" not-null="true" />
+		</property>
+		<property name="interfaceName">
+			<column length="50" name="interfaceName" not-null="true" />
+		</property>
+		<property name="interfaceUrl">
+			<column length="256" name="interfaceUrl" not-null="true" />
+		</property>
+		<property name="interfaceCreateDate">
+			<column name="interfaceCreateDate" not-null="true" />
+		</property>
+		<property name="interfaceTeam">
+			<column name="interfaceTeam" not-null="true" />
+		</property>
+		<property name="interfaceStatus">
+			<column length="2" name="interfaceStatus" not-null="true" />
+		</property>
+		<property name="interfaceDesc">
+			<column length="256" name="interfaceDesc" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

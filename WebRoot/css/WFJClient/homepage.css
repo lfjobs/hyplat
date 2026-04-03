@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { color:#666; text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.more{ float: right; }
+.more a{ font-weight: normal; font-size: 12px; }
+.fl{ display: inline; float: left;} 
+.fr{ display: inline;  float: right; }
+.fixed:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }   
+.fixed { display: block; min-height: 1%; }   
+*html .fixed{ height: 1%; }    
+.clear {width:100%; diplay: block!important; float: none!important; clear: both; overflow: hidden; width: auto!important; height: 0!important; margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0; }
+.pos{ position:relative;}
+.black{ color: black;}
+/*公共样式*/
+
+.con{ width:720px; height:100%; background:ececec; margin:0 auto;}
+.main{ padding:0 10px; height:284px; background:#fff; border:1px solid #cbc9c9; margin-top:10px; overflow:hidden;}
+h1{ font-family:"微软雅黑"; font-size:16px; margin-top:10px;}
+
+.tup{ margin-top:10px;}
+
+.zhans{ width:700px; height:100%; padding:0 10px;} 
+h2{ font-family:"微软雅黑"; font-size:16px; margin:14px 0 10px 0;}
+
+
+.store{ width:342px; height:246px; background:#FFF;}
+.jiam ul{ margin-top:20px;}
+.jiam ul a{ font-size:16px; font-family:"微软雅黑";}
+.jiam ul .fl a{ padding-left:15px;}
+.jiam ul .fr a{ padding-right:15px; color:#F93;}
+
+
+.on{ width:700px; height:246px; }
+.down{width:700px; height:246px; margin-top:15px;}
+

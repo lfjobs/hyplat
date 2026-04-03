@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hy.ea.bo.office.face.TbFaceDevice" table="OFFICE_FACEDEVICE">
+		<id length="50" name="id">
+			<column length="50" name="id" />
+			<generator class="uuid" />
+		</id>
+		<property name="faceDeviceId" type="string">
+			<column length="50" name="FACE_DEVICE_ID" />
+		</property>
+		<property name="companyId">
+			<column length="50" name="COMPANY_ID" />
+		</property>
+		<property  name="deviceName">
+			<column length="250" name="DEVICE_NAME" />
+		</property>
+		<property  name="deviceSN">
+			<column length="250" name="DEVICE_SN" />
+		</property>
+		<property  name="notes">
+			<column length="250" name="notes" />
+		</property>
+		<property  name="companyName">
+			<column length="250" name="COMPANY_NAME" />
+		</property>
+		<property  name="createTime">
+			<column length="250" name="CREATE_TIME" />
+		</property>
+		<property  name="updateTime">
+			<column length="250" name="UPDATE_TIME" />
+		</property>
+		<property  name="deleteState">
+			<column length="250" name="DELETE_STATE" />
+		</property>
+		<property  name="siteId">
+			<column length="250" name="SITE_ID" />
+		</property>
+		<property  name="inoutFlag">
+			<column length="250" name="INOUT_FLAG" />
+		</property>
+	</class>
+</hibernate-mapping>

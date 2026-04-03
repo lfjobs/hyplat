@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="archivemanage-token" namespace="/ea/archive"   extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.office.action.ArchiveManageAction" method="{1}">
+		      <result name="archivelist">/page/ea/main/office_ea/archives/ArchivesManage.jsp</result>
+		      <result name="locationlist">/page/ea/main/office_ea/archives/LocationList.jsp</result>
+		       <result name="contract">/page/ea/main/office_ea/archives/contractAccountList.jsp</result>
+		      <result name="toPrint">/page/ea/main/office_ea/archives/archive_print.jsp</result>
+		      <result name="success">/page/ea/success.jsp</result>
+		      <result name="stafflist">/page/ea/main/office_ea/archives/jqm_cstaffs.jsp</result>
+		      <result name="extension_staff_coach" type="chain" >
+				<param name="actionName">ea_getStudentArchiveList</param>
+				<param name="nameSpace">/ea/enroll</param>  
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="archivemanage-jsonajax" namespace="/ea/archive" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.ArchiveManageAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

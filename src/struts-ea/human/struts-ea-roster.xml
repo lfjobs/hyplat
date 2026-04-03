@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="roster-token" namespace="/ea/roster" extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.RosterAction" method="{1}">
+		     <result name="list">/page/ea/main/human/adance/adance.jsp</result>
+		     <result name="invalid.token">/page/ea/main/human/adance/adance.jsp</result>
+		     <result name="succ">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="roster-ntoken" namespace="/ea/roster"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.RosterAction" method="{1}">
+			<result name="rosterList">/page/ea/main/human/humanroster.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="error">/page/ea/main/human/adance/adance_daorufail.jsp</result>
+			<result name="excelImport">/page/ea/main/human/adance/adance_daoru.jsp</result>
+			<result name="excelImportfail">/page/ea/main/human/adance/adance_daorufail_show.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="roster.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="roster-sajax" namespace="/ea/roster" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.RosterAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>
+            <result name="rosterList">/page/ea/main/human/adance/printroster.jsp</result>
+		</action>
+	</package>
+</struts>

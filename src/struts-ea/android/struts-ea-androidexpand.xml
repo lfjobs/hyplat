@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="android-expand" namespace="/ea/androidexpand" extends="json-default">
+		<action name="ea_*" class="mobile.tiantai.android.action.AndroidManageJson" method="{1}">
+		
+			<!-- action内部chain转发获取短信列表  -->
+            <result name="extension_android_forward" type="chain" >
+				<param name="actionName">ea_getTelMessageList</param>
+				<param name="nameSpace">/ea/telmessageandroid</param>
+				<param name="chainParam">${chainParam}</param>   
+			</result>
+			
+			<!-- action内部chain转发  发送短信-->
+            <result name="extension_android_forward_send" type="chain" >
+				<param name="actionName">ea_sendMessage</param>
+				<param name="nameSpace">/ea/telmessageandroid</param>
+				<param name="chainParam">${chainParam}</param>   
+			</result>
+			<!-- action内部chain转发  查询-->
+            <result name="extension_android_forward_search" type="chain" >
+				<param name="actionName">ea_toSearch</param>
+				<param name="nameSpace">/ea/telmessageandroid</param>
+				<param name="chainParam">${chainParam}</param>   
+			</result>
+			
+			<!-- action内部chain转发  删除-->
+            <result name="extension_android_forward_del" type="chain" >
+				<param name="actionName">ea_delTelMessage</param>
+				<param name="nameSpace">/ea/telmessageandroid</param>
+				<param name="chainParam">${chainParam}</param>   
+			</result>
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result name="success" type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>
+		</action>
+	</package>
+</struts>

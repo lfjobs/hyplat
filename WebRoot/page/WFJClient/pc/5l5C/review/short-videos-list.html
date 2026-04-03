@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userDTO-scalable=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media (max-width: 1024px) {
+            th:last-child,
+            td:last-child {
+                position: sticky;
+                left: 0;
+                background: #FFFFFF;
+                text-align: center;
+                right: 0px;
+                border-left: 1px solid #DDDDDD ;
+                width: 100px;
+            }
+        }
+    </style>
+    <title>短视频管理</title>
+</head>
+<body class="h-screen">
+<script src="../../../../../js/dynamic-tab/dynamic-tab.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/plugin/quarterOfYear.min.js"></script>
+<script>dayjs.extend(window.dayjs_plugin_quarterOfYear)</script>
+<div class="flex flex-col h-screen">
+
+    <div id="toolbar" class="flex flex-row items-center justify-between w-full">
+
+    </div>
+
+    <div class="p-2">
+        <div id="date-ranges-tab" class="space-x-4 overflow-x-scroll text-nowrap text-center h-auto p-2">
+
+        </div>
+        <div id="status-tab" class=" space-x-4 overflow-x-scroll text-nowrap text-center h-auto p-2">
+
+        </div>
+    </div>
+
+    <div class="flex-grow px-2 overflow-auto bg-white">
+        <table class="table-auto scroll-pt-8">
+            <thead class="sticky top-0 text-center bg-white">
+            <tr class="text-gray-700">
+                <th class="text-nowrap">封面</th>
+                <th class="text-nowrap">标题/描述</th>
+                <th class="text-nowrap">播放</th>
+                <th class="text-nowrap">点赞</th>
+                <th class="text-nowrap">收藏</th>
+                <th class="text-nowrap">评论</th>
+                <th class="text-nowrap">分享</th>
+                <th class="text-nowrap">状态</th>
+                <th class="text-nowrap">审核人</th>
+                <th class="text-nowrap">审核时间</th>
+                <th class="text-nowrap">创建人</th>
+                <th class="text-nowrap">创建时间</th>
+                <th class="text-nowrap">操作</th>
+            </tr>
+            </thead>
+            <tbody id="data-list">
+
+            </tbody>
+        </table>
+        <div class="h-2" id="load-more"></div>
+    </div>
+</div>
+
+<dialog id="process-result-dialog" class="w-full rounded-lg">
+    <div class="min-h-96 bg-gray-500 bg-white flex flex-col space-y-4">
+        <div class="p-4 w-full bg-red-500 text-white text-lg text-center ">审核反馈</div>
+        <div class="px-4 flex flex-col gap-2">
+            <span class="text-gray-500 text-nowrap">审核人</span>
+            <input class="w-full p-2 border border-r-2 rounded-lg" placeholder="" value="张三"></input>
+        </div>
+        <div class="px-4 flex flex-col items-start gap-2 grow">
+            <span class="text-gray-500 text-nowrap">原因</span>
+            <textarea class="w-full p-2 grow border border-2 rounded-lg" placeholder="请填写审核不通过的具体原因"></textarea>
+        </div>
+        <div class="w-full text-center space-x-4 pb-4">
+            <button class="p-2 bg-blue-500 text-white min-w-24 rounded-lg">提交</button>
+            <button class="p-2 bg-red-500 text-white min-w-24 rounded-lg" onclick="closeProcessResultDialog()">取消</button>
+        </div>
+    </div>
+</dialog>
+
+<script>
+    const toolbar = new Toolbar("toolbar", {
+        title: "短视频管理",
+        actions: [],
+        onClick: (id) => {
+            console.log(id);
+        }
+    })
+
+    const dateRangesTab = new DynamicTab("date-ranges-tab", {
+        items: generateDateRangeTabs(),
+        selected: 0
+    })
+    dateRangesTab.setSelectChangeListener((tabItem) => {
+        console.log(tabItem)
+    })
+
+    const statusTab = new DynamicTab("status-tab", {
+        items: [
+            {id: "1", label: "全部", data: "ALL", selected: true},
+            {id: "2", label: "未审核", data: "IN_REVIEW", selected: false},
+            {id: "3", label: "已通过", data: "PASSED", selected: false},
+            {id: "4", label: "未通过", data: "NO_PASSED", selected: false}
+        ],
+        selected: 0
+    })
+    statusTab.setSelectChangeListener((tabItem) => {
+        console.log(tabItem)
+    })
+
+    function loadData() {
+        const videosList = []
+        for (let i = 0; i < 2; i++) {
+            videosList.push({
+                cover: "https://p26.douyinpic.com/aweme/200x200/tos-cn-p-0015/oYPAVIIyY8Bwwa2Q0kCWAIZsMpcBEg5iKoi1P",
+                title: "食物界有自己的混凝土",
+                description: "",
+                play: "2005.2万",
+                like: "2.8万",
+                comments: "9542",
+                favorite: "5.7万",
+                share: "956",
+                status: "IN_REVIEW",
+                auditor: "自动审核",
+                auditDate: "2023年12月14日 15:02",
+                createBy: "毛桃桃大眼袋",
+                createdDate: "2023年12月14日 15:02"
+            }, {
+                cover: "https://p26.douyinpic.com/aweme/200x200/tos-cn-p-0015/ogfYcCuAAABiA2gU1IBCCzI0rIjFxRe3ii3AJt",
+                title: "有兴趣来一把杨戬了吗？",
+                description: "",
+                play: "150.2万",
+                like: "45.2万",
+                comments: "5352",
+                favorite: "3.0万",
+                share: "15.7万",
+                status: "IN_REVIEW",
+                auditor: "自动审核",
+                auditDate: "2023年12月14日 15:02",
+                createBy: "LuFee",
+                createdDate: "2023年12月14日 15:02"
+            }, {
+                cover: "https://p26.douyinpic.com/aweme/200x200/tos-cn-p-0015/oIAQ0xB1K3I3Ji1b1sSihIAIWP9SXwAZviOPZ",
+                title: "男人的衣柜#内容启发搜索",
+                description: "",
+                play: "0",
+                like: "0",
+                comments: "0",
+                favorite: "0",
+                share: "0",
+                status: "IN_REVIEW",
+                auditor: "",
+                auditDate: "",
+                createBy: "别发狗头",
+                createdDate: "2023年12月14日 15:02"
+            })
+        }
+
+        for (let i = 0; i < videosList.length; i++) {
+            const video = videosList[i]
+
+            var statusText;
+            switch (video.status) {
+                case "IN_REVIEW":
+                    statusText = "审核中";
+                    break;
+                case "Approved":
+                    statusText = "已通过";
+                    break;
+                case "NOT_PASS":
+                    statusText = "未通过";
+                    break;
+            }
+
+            const x = `<tr class="text-sm">
+                <td>
+                    <img class="w-8 aspect-square" src="${video.cover}">
+                </td>
+                <td class="w-36">
+                    <p class="text-xs">${video.title}</p>
+                    <p class="text-xs text-gray-500">${video.description}</p>
+                </td>
+                <td class="text-xs text-nowrap text-end">${video.play}</td>
+                <td class="text-sm text-nowrap text-end">${video.like}</td>
+                <td class="text-sm text-nowrap text-end">${video.favorite}</td>
+                <td class="text-sm text-nowrap text-end">${video.comments}</td>
+                <td class="text-sm text-nowrap text-end">${video.share}</td>
+                <td class="text-sm text-nowrap text-orange-500">${statusText}</td>
+                <td class="text-sm text-nowrap">${video.auditor}</td>
+                <td class="text-sm text-nowrap">${video.auditDate}</td>
+                <td class="text-sm text-nowrap">${video.createBy}</td>
+                <td class="text-sm text-nowrap">${video.createdDate}</td>
+                <td class="text-nowrap">
+                    <button class="bg-blue-500 text-white px-2 py-2 text-sm rounded-lg" onclick="onPassed()">通过</button>
+                    <button class="bg-red-500 text-white px-2 py-2 text-sm rounded-lg" onclick="onNoPassed()">不通过</button>
+                </td>
+            </tr>`
+            document.getElementById("data-list").innerHTML = document.getElementById("data-list").innerHTML + x
+
+        }
+    }
+
+    function onPassed() {
+        if (window.confirm("确认此视频通过安全评估审核？")) {
+
+        }
+    }
+
+    function onNoPassed() {
+        showProcessResultDialog()
+    }
+
+    function showProcessResultDialog() {
+        document.getElementById("process-result-dialog").showModal()
+    }
+
+    function closeProcessResultDialog() {
+        document.getElementById("process-result-dialog").close()
+    }
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        const entry = entries[0]
+        if (entry.isIntersecting) {
+            loadData()
+        }
+    }, {
+        threshold: 1
+    })
+    observer.observe(document.getElementById('load-more'))
+</script>
+</body>
+</html>

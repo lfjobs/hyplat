@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="WithDrawApply" table="dtWithDrawApply">
+		<id length="50" name="wdaKey">
+			<column length="50" name="wdaKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="wdaID">
+        	<column name="wdaID" length="50"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"><comment>当前公司ID</comment></column>
+        </property>
+         <property name="sccid">
+        	<column name="sccid" length="50"><comment>申请人ID</comment></column>
+        </property>
+        <property name="exportStaffID">
+        	<column name="exportStaffID" length="250"><comment>最新一次导出人ID</comment></column>
+        </property>
+		<property name="exportTimes">
+        	<column name="exportTimes" length="10"><comment>导出次数</comment></column>
+        </property>
+        <property name="exportDate">
+        	<column name="exportDate" ><comment>导出日期</comment></column>
+        </property>
+        <property name="payState">
+        	<column name="payState" length="2" default="00"><comment>状态 00 初始状态 01 通过02 不通过 03已打款</comment></column>
+        </property>
+         <property name="payDate">
+        	<column name="payDate" ><comment>审核操作时间</comment></column>
+        </property>
+        <property name="payOperatorID">
+        	<column name="payOperatorID" length="50"><comment>审核操作人员ID</comment></column>
+        </property>
+        <property name="payOperatorName">
+			<column name="payOperatorName" length="50" ><comment>审核操作人员姓名</comment></column>
+		</property>
+
+		<property name="receiptOprID">
+			<column name="receiptOprID" length="50"><comment>回执填单操作人</comment></column>
+		</property>
+		<property name="receiptOprName">
+			<column name="receiptOprName" length="50"><comment>回执填单操作人姓名</comment></column>
+		</property>
+		<property name="receiptOprDate">
+			<column name="receiptOprDate" ><comment>回执填单操作日期</comment></column>
+		</property>
+		<property name="auditOpinion">
+			<column name="auditOpinion" ><comment>审核意见</comment></column>
+		</property>
+		<property name="tradeCode">
+			<column name="tradeCode" ><comment>第三方交易号，回执单上面的回执单号</comment></column>
+		</property>
+		<property name="currency">
+			<column name="currency" length="50" default="RMB"><comment>币种默认RMB</comment></column>
+		</property>
+		<property name="applyDate">
+			<column  name="applyDate"><comment>申请日期 (当日时间格式：20180319)</comment></column>
+		</property>
+        <property name="detailmark">
+        	<column name="detailmark" length="50"><comment>明细标志</comment></column>
+        </property>
+        <property name="orderNum">
+			<column length="50" name="orderNum"><comment>顺序号</comment></column>
+		</property>
+		<property name="payOpenAccountBank">
+			<column length="50" name="payOpenAccountBank" default="中国工行北京东城东直门支行"><comment>付款账号开户行</comment></column>
+		</property>
+		<property name="payCardAccount">
+			<column length="50" name="payCardAccount" default="0200210709020118801"><comment>付款账号/卡号</comment></column>
+		</property>
+		<property name="payCardName">
+			<column length="50" name="payCardName" default="北京天太世统科技有限公司"><comment>付款账号名称/卡名称</comment></column>
+		</property>
+		<property name="recevOpenAccountBank">
+			<column length="50" name="recevOpenAccountBank" ><comment>收款账号开户行</comment></column>
+		</property>
+		<property name="recevCardProvince">
+			<column length="50" name="recevCardProvince" ><comment>收款账号省份</comment></column>
+		</property>
+		<property name="recevCardCity">
+			<column length="50" name="recevCardCity"><comment>收款账号地市</comment></column>
+		</property>
+		<property name="receCardDCode">
+			<column length="4" name="receCardDCode" ><comment>收款账号地区码  工行：0200， 其他：0000</comment></column>
+		</property>
+		<property name="recevCardAccount">
+			<column length="50" name="recevCardAccount"><comment>收款账号</comment></column>
+		</property>
+		<property name="recevCardName">
+			<column length="50" name="recevCardName" ><comment>收款账号名称</comment></column>
+		</property>
+		<property name="money">
+			<column length="50" name="money" ><comment>金额</comment></column>
+		</property>
+		<property name="payurpose">
+			<column length="50" name="payurpose" default="商家业务员佣金"><comment>汇款用途</comment></column>
+		</property>
+	
+		<property name="remark">
+			<column length="50" name="remark" ><comment>备注信息</comment></column>
+		</property>
+
+		<property name="payMode">
+			<column length="50" name="payMode"><comment>付款方式  0，普通；1，加急；3，跨行快汇  默认为0</comment></column>
+		</property>
+		<property name="recevTel">
+			<column length="11" name="recevTel" ><comment>收款账户短信通知手机号码</comment></column>
+		</property>
+		<property name="userDefined">
+			<column name="userDefined" length="50" ><comment>自定义序号</comment></column>
+		</property>
+
+	</class> 
+	
+</hibernate-mapping>

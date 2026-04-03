@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="CostSheetBill" table="dt_inv_csthb">
+		<id length="50" name="csbKey">
+			<column length="50" name="csbKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="csbID">
+			<column length="50" name="csbID" />
+		</property>
+		<property name="groupCompanySn">
+			<column length="50" name="groupCompanySn" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="companyName">
+        	<column name="companyName" length="250"/>
+        </property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="departmentID">
+			<column length="50" name="departmentID" />
+		</property>
+		<property name="departmentName">
+        	<column name="departmentName" length="250"/>
+        </property>
+		<property  name="companyBankNum">
+			<column length="250" name="companyBankNum" />
+		</property>
+		<property  name="billStatus">
+			<column length="50" name="billStatus" />
+		</property>
+		<property  name="cstaffID">
+			<column length="50" name="cstaffID" />
+		</property>
+		<property  name="cstaffName">
+			<column length="250" name="cstaffName" />
+		</property>
+		<property  name="cstaffRelationship">
+			<column length="50" name="cstaffRelationship" />
+		</property>
+		<property  name="userAccountNum">
+			<column length="50" name="userAccountNum" />
+		</property>
+		<property name="reference">
+			<column name="reference" length="250" />
+		</property>
+		<property name="staffIdentityCard">
+			<column name="staffIdentityCard" length="250" />
+		</property>
+		<property name="referenceCode">
+			<column name="referenceCode" length="250" />
+		</property>
+		<property name="referenceOrganization">
+			<column name="referenceOrganization" length="250" />
+		</property>
+		<property name="staffAddress">
+			<column name="staffAddress" length="250" />
+		</property>
+		
+		<property  name="ccompanyID">
+			<column length="50" name="ccompanyID" />
+		</property>
+		<property  name="ccompanyName">
+			<column length="250" name="ccompanyName" />
+		</property>
+		<property  name="ccompanyRelationship">
+			<column length="250" name="ccompanyRelationship" />
+		</property>
+		<property  name="accountNum">
+			<column length="50" name="accountNum" />
+		</property>
+		<property name="companyAddr">
+        	<column name="companyAddr" length="256"/>
+        </property>
+        <property name="companyTel">
+			<column length="250" name="companyTel"/>
+		</property>
+		<property name="cresponsible">
+			<column length="250" name="cresponsible"/>
+		</property>
+		<property name="responsibleTel">
+			<column length="250" name="responsibleTel" />
+		</property>
+		<property name="industryType">
+			<column length="256" name="industryType" />
+		</property>
+		
+		<property  name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property  name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+		<property name="staffCode">
+			<column name="staffCode" length="250" />
+		</property>
+		
+		<property  name="billsType">
+			<column length="250" name="billsType" />
+		</property>
+		<property  name="journalNum">
+			<column length="250" name="journalNum" />
+		</property>
+		<property  name="pJournalNum">
+			<column length="250" name="pJournalNum" />
+		</property>
+		<property  name="billsDate">
+			<column name="billsDate" sql-type="Date"/>
+		</property>
+		<property  name="billStaffID">
+			<column length="50" name="billStaffID" />
+		</property>
+		<property  name="billStaffName">
+			<column length="250" name="billStaffName" />
+		</property>
+		
+		<property  name="billComppanyID">
+			<column length="50" name="billComppanyID" />
+		</property>
+		<property  name="billCompanyName">
+			<column length="250" name="billCompanyName" />
+		</property>
+		
+		<property  name="billDeptID">
+			<column length="50" name="billDeptID" />
+		</property>
+		<property  name="billDeptName">
+			<column length="250" name="billDeptName" />
+		</property>
+		<property  name="csreviewedID">
+			<column length="50" name="csreviewedID" />
+		</property>
+		<property  name="csreviewedName">
+			<column length="250" name="csreviewedName" />
+		</property>
+		<property name="projectName">
+			<column length="50" name="projectName" />
+		</property>
+		<property name="startTime">
+			<column name="startTime" sql-type="Date" />
+		</property>
+		<property name="endTime">
+			<column name="endTime" sql-type="Date" />
+		</property>
+		<property name="costdescription">
+			<column length="1000" name="costdescription" />
+		</property>
+		<property name="budgetAmount">
+			<column length="8" name="budgetAmount" sql-type="number" />
+		</property>
+		<property name="actualAmount">
+			<column length="8" name="actualAmount" sql-type="number" />
+		</property>
+		<property name="accessoriesUrl">
+			<column length="500" name="accessoriesUrl" />
+		</property>
+				<property name="receiverID">
+			<column length="50" name="receiverID" />
+		</property>
+		
+		<property name="receiverName">
+			<column length="50" name="receiverName"/>
+		</property>
+		<property  name="passerID">
+			<column length="50" name="passerID" />
+		</property>
+		<property  name="passerDeptID">
+			<column length="50" name="passerDeptID" />
+		</property>
+		<property  name="passerCompanyID">
+			<column length="250" name="passerCompanyID" />
+		</property>
+		<property  name="passerName">
+			<column length="50" name="passerName" />
+		</property>
+		<property  name="passerDeptName">
+			<column length="50" name="passerDeptName" />
+		</property>
+		<property  name="isLeaf">
+			<column length="5" name="isLeaf" />
+		</property>
+		<property name="passerCompanyName">
+			<column name="passerCompanyName" length="50" />
+		</property>
+		<property name="titles">
+			<column name="titles" length="200" />
+		</property>
+		<property name="docIds">
+			<column name="docIds" length="200" />
+		</property>
+		<property  name="carID">
+			<column length="50" name="carID" />
+		</property>
+		<property  name="carNum">
+			<column length="50" name="carNum" />
+		</property>
+		<property  name="engineNum">
+			<column length="50" name="engineNum" />
+		</property>
+		<property  name="engineType">
+			<column length="50" name="engineType" />
+		</property>
+		<property  name="carType">
+			<column length="50" name="carType" />
+		</property>
+		<property  name="fuelType">
+			<column length="50" name="fuelType" />
+		</property>
+		<property  name="vehicleBrand">
+			<column length="50" name="vehicleBrand" />
+		</property>
+		<property  name="driveType">
+			<column length="50" name="driveType" />
+		</property>
+		<property  name="colorPaintNum">
+			<column length="50" name="colorPaintNum" />
+		</property>
+		<property  name="carFrameNum">
+			<column length="50" name="carFrameNum" />
+		</property>
+		<property  name="xmtype">
+			<column length="50" name="xmtype" />
+		</property>
+		<property  name="xmtypename">
+			<column length="50" name="xmtypename" />
+		</property>
+		<property name="groupJournalNum">
+			<column length="50" name="groupJournalNum" />
+		</property>
+		<property name="ydsocre">
+			<column length="20" name="ydsocre" />
+		</property>
+		<property name="jfscore">
+			<column length="20" name="jfscore" />
+		</property>
+		<property name="kfscore">
+			<column length="20" name="kfscore" />
+		</property>
+		<property name="sdscore">
+			<column length="20" name="sdscore" />
+		</property>
+			<property name="examineID">
+			<column length="50" name="examineID" />
+		</property>
+			<property name="examineName">
+			<column length="50" name="examineName" />
+		</property>
+			<property name="examineComID">
+			<column length="50" name="examineComID" />
+		</property>
+			<property name="examineComName">
+			<column length="50" name="examineComName" />
+		</property>
+			<property name="examineorgID">
+			<column length="50" name="examineorgID" />
+		</property>
+			<property name="examineorgName">
+			<column length="50" name="examineorgName" />
+		</property>
+				<property name="assignsID">
+        	<column name="assignsID" length="50"/>
+        </property>
+        <property name="assignsName">
+        	<column name="assignsName" length="50"/>
+        </property>
+		<property name="signUpDate">
+			<column  name="signUpDate" />
+		</property>
+		<property name="referrerName">
+        	<column name="referrerName" length="50"/>
+        </property>
+        <property name="referrerID">
+        	<column name="referrerID" length="50"/>
+        </property>
+        <property name="referrerPhone">
+        	<column name="referrerPhone" length="50"/>
+        </property>
+        <property name="referrerIdentityCard">
+        	<column name="referrerIdentityCard" length="50"/>
+        </property>
+        <property name="referrerEmail">
+        	<column name="referrerEmail" length="50"/>
+        </property>
+        <property name="referrerAddress">
+        	<column name="referrerAddress" length="1000"/>
+        </property>
+	
+		
+	</class>
+</hibernate-mapping>

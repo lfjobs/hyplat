@@ -1,0 +1,440 @@
+.font(@fot, @clo) {
+  font-size: @fot;
+  color: @clo;
+}
+
+.hei(@hei) {
+  height: @hei;
+  line-height: @hei;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right
+}
+
+html, body {
+  height: 100%;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: #f74c30;
+
+  ul {
+    padding: 0 0.5rem;
+
+    li {
+      .fl;
+      .hei(2.2rem);
+      .font(0.7rem, #ffffff);
+    }
+
+    li:first-of-type {
+      width: 20%;
+
+      img {
+        width: 0.45rem;
+      }
+    }
+
+    li:nth-of-type(2) {
+      width: 58%;
+      text-align: center;
+    }
+
+    li:nth-of-type(3) {
+      width: 20%;
+      text-align: right;
+    }
+  }
+}
+
+.signin-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: .5rem;
+
+  .logo {
+    width: 100%;
+    margin-top: 4rem;
+    text-align: center;
+
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  button:active {
+    border: none;
+  }
+
+  .signface {
+    display: block;
+    margin: auto;
+    background: url(../../../images/home/img-007.png) no-repeat left top;
+    background-size: contain;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 50%;
+    color: white;
+    font-size: .75rem;
+    border: none;
+  }
+
+  .company-info {
+    img {
+      width: 0.65rem;
+      height: 0.65rem;
+      object-fit: contain;
+    }
+
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    .font(0.65rem, #222222);
+    padding: 0 .5rem;
+  }
+}
+
+.device-info {
+  font-size: .3rem;
+  color: gray;
+  text-align: start;
+  padding: 0 .5rem;
+}
+
+dialog {
+  width: 80%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: .75rem;
+  border: none;
+
+  .dialog-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      font-size: .5rem;
+      font-weight: normal;
+      margin: 0 0 16px 0;
+
+      .title {
+        text-align: start;
+        flex-grow: 1;
+        font-size: .5rem;
+        font-weight: bold;
+
+        img {
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      .close {
+        padding: 0 8px 0 8px;
+        border: none;
+        font-size: .5rem;
+        font-weight: bold;
+        background: none;
+      }
+    }
+
+    .content {
+      height: 100%;
+    }
+  }
+}
+
+#faceRecognitionDialog {
+  .dialog-wrapper {
+    height: 100%;
+    width: 100%;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      #tips {
+        line-height: 48px;
+        font-size: .5rem;
+        text-align: center
+      }
+
+      .detect-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        flex-grow: 1;
+        margin: auto;
+        border-radius: 1vw;
+
+        video {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 1vw;
+        }
+
+        #detected-box-overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 1vw;
+        }
+
+        .detected-face-preview-overlay {
+          position: absolute;
+          display: none;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 1vw;
+
+          .content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .face-preview {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+            }
+
+            .shell {
+              position: absolute;
+              width: 96px;
+              height: 96px;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              margin: auto;
+            }
+          }
+        }
+
+        .stats {
+          background: white;
+          color: red;
+          font-size: 0.3rem;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+#companyPickerDialog {
+  background: #ffffff;
+  border-radius: 8px;
+  border: none;
+}
+
+#bindDialog {
+  background: #ffffff;
+  border-radius: 8px;
+  border: none;
+
+  ul {
+    margin-top: 16px;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li {
+      gap: 8px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 0.5rem;
+      }
+
+      input {
+        border-radius: 8px;
+        padding: 16px;
+        border: 1px gray solid;
+        font-size: .5rem;
+      }
+
+      .captcha {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+
+        input {
+          width: 100%;
+          border-radius: 8px;
+          padding: 16px;
+          border: 1px gray solid;
+          font-size: .5rem;
+        }
+
+        button {
+          border-radius: 8px;
+          border: 1px gray solid;
+          text-wrap: nowrap;
+          padding: 0 8px 0 8px;
+          font-size: .5rem;
+        }
+      }
+
+      button {
+        background: red;
+        color: white;
+        border-radius: 8px;
+        width: 100%;
+        border: 1px gray solid;
+        text-wrap: nowrap;
+        padding: 16px;
+        font-size: .5rem;
+      }
+    }
+  }
+}
+
+#companiesPickerDialog {
+  .content {
+    margin-top: 16px;
+
+    .company-wrapper {
+
+      .company-list {
+        margin: 16px 0 16px 0;
+
+        .company-item {
+          font-size: .75rem !important;
+          background: #f8f8f8;
+          border-radius: 16px;
+          padding: 16px;
+          cursor: pointer;
+        }
+
+        .active {
+          border: 1px red solid;
+        }
+      }
+
+      button {
+        background: red;
+        color: white;
+        border-radius: 8px;
+        width: 100%;
+        border: 1px gray solid;
+        text-wrap: nowrap;
+        padding: 8px;
+        font-size: .6rem;
+      }
+    }
+  }
+}
+
+#successDialog {
+  border: none;
+
+  .content {
+    text-align: center;
+
+    .big-icon {
+      width: 50%;
+      margin-bottom: 32px;
+    }
+
+    .list {
+      text-align: start;
+
+      .item {
+        display: flex;
+        flex-direction: row;
+        font-size: .5rem;
+        gap: 16px;
+
+        .title {
+          overflow: hidden;
+          text-align: justify;
+          text-align-last: justify;
+          text-wrap: nowrap;
+          color: #787878;
+        }
+
+        .subtitle {
+          flex-grow: 1;
+          font-weight: bold;
+          color: #303030;
+        }
+
+      }
+
+    }
+
+
+  }
+}
+
+#failedDialog {
+  border: none;
+
+  .content {
+    text-align: center;
+
+    .big-icon {
+      width: 50%;
+      margin-bottom: 32px;
+    }
+
+    .title {
+      font-size: .75rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+}
+
+#loadingDialog {
+  height: .75rem;
+  font-size: .5rem;
+  text-align: center;
+  border: none;
+}
+
+@keyframes rotate {
+  from {
+    transform-origin: center center;
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform-origin: center center;
+    transform: rotate(360deg);
+  }
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+}

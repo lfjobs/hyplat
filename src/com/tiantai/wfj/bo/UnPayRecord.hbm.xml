@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="com.tiantai.wfj.bo.UnPayRecord" schema="HYPLAT" table="dt_UnPayRecord">
+  <id name="uprkey" type="java.lang.String">
+   <column length="50" name="uprkey"/>
+   <generator class="uuid"/>
+  </id>
+  <property  name="uprId" type="java.lang.String">
+   <column length="50" name="uprId"/>
+  </property>
+  <property  name="sccId" type="java.lang.String">
+   <column length="50" name="sccId"/>
+  </property>
+  <property  name="journalNum" type="java.lang.String">
+   <column length="50" name="journalNum"/>
+  </property>
+  <property  name="totalMoney" type="java.lang.String">
+   <column length="10" name="totalMoney"/>
+  </property>
+  <property  name="scoreNum" type="java.lang.String">
+   <column length="10" name="scoreNum"/>
+  </property>
+  <property  name="coinNum" type="java.lang.String">
+   <column length="10" name="coinNum"/>
+  </property>
+  <property  name="remainNum" type="java.lang.String">
+   <column name="remainNum" length="10"/>
+  </property>
+  <property  name="status" type="java.lang.String">
+   <column name="status" length="2"/>
+  </property>
+   <property  name="createDate" type="java.util.Date">
+   <column name="createDate"/>
+  </property>
+  <property  name="finishDate" type="java.util.Date">
+   <column name="finishDate"/>
+  </property>
+
+
+ </class>
+</hibernate-mapping>

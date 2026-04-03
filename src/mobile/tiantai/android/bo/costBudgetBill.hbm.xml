@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.plat.bo">
+    <class name="mobile.tiantai.android.bo.CostBudgetBill" table="DT_COST_BUDGET_BILL">
+        <comment>项目预填单</comment>
+        <id name="budgetBillKey">
+            <column length="50" name="BUDGET_BILL_KEY">
+                <comment>主键id</comment>
+            </column>
+        </id>
+        <property name="budgetBillId">
+            <column length="50" name="BUDGET_BILL_ID">
+                <comment>预算单id</comment>
+            </column>
+        </property>
+        <property name="voucherNum">
+            <column length="50" name="VOUCHER_NUM">
+                <comment>凭证号</comment>
+            </column>
+        </property>
+        <property name="companyId">
+            <column length="50" name="COMPANY_ID">
+                <comment>所属公司</comment>
+            </column>
+        </property>
+        <property name="businessTypeId">
+            <column length="50" name="BUSINESS_TYPE_ID">
+                <comment>行业类别id</comment>
+            </column>
+        </property>
+        <property name="businessTypeName">
+            <column length="300" name="BUSINESS_TYPE_NAME">
+                <comment>行业类别名称</comment>
+            </column>
+        </property>
+        <property name="ccompanyId">
+            <column length="50" name="CCOMPANY_ID">
+                <comment>父公司id</comment>
+            </column>
+        </property>
+        <property name="goodsTypeId">
+            <column length="50" name="GOODS_TYPE_ID">
+                <comment>物品类别id</comment>
+            </column>
+        </property>
+        <property name="goodsTypeName">
+            <column length="300" name="GOODS_TYPE_NAME">
+                <comment>物品类别名称</comment>
+            </column>
+        </property>
+        <property name="projectTypeId">
+            <column length="50" name="PROJECT_TYPE_ID">
+                <comment>项目分类id</comment>
+            </column>
+        </property>
+        <property name="projectTypeName">
+            <column length="300" name="PROJECT_TYPE_NAME">
+                <comment>项目分类</comment>
+            </column>
+        </property>
+        <property name="billDate">
+            <column length="7" name="BILL_DATE">
+                <comment>制单时间</comment>
+            </column>
+        </property>
+        <property name="status">
+            <column length="2" name="STATUS">
+                <comment>单据状态码</comment>
+            </column>
+        </property>
+        <property name="statusName">
+            <column length="50" name="STATUS_NAME">
+                <comment>单据状态</comment>
+            </column>
+        </property>
+        <property name="billType">
+            <column length="2" name="BILL_TYPE">
+                <comment>单据类型码</comment>
+            </column>
+        </property>
+        <property name="billTypeName">
+            <column length="50" name="BILL_TYPE_NAME">
+                <comment>单据类型</comment>
+            </column>
+        </property>
+        <property name="sumAmount">
+            <column length="255" name="SUM_AMOUNT">
+                <comment>合计金额</comment>
+            </column>
+        </property>
+        <property name="createId">
+            <column length="50" name="CREATE_ID">
+                <comment>制单人id</comment>
+            </column>
+        </property>
+        <property name="createName">
+            <column length="50" name="CREATE_NAME">
+                <comment>制单人姓名</comment>
+            </column>
+        </property>
+        <property name="updateId">
+            <column length="50" name="UPDATE_ID">
+                <comment>修改人id</comment>
+            </column>
+        </property>
+        <property name="updateName">
+            <column length="50" name="UPDATE_NAME">
+                <comment>修改人姓名</comment>
+            </column>
+        </property>
+        <property name="createTime">
+            <column length="7" name="CREATE_TIME">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        <property name="updateTime">
+            <column length="7" name="UPDATE_TIME">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="address">
+            <column length="500" name="ADDRESS">
+                <comment>地址</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

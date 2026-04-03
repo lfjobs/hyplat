@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="AuditDetail" table="dt_sft_AuditDetail">
+	<comment>驳回原因详情  </comment>
+		<id length="50" name="adKey">
+			<column length="50" name="adKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="adId">
+			<column length="50" name="adId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="param_name">
+			<column length="50" name="param_name" ><comment>提交申请单的资料项名称 </comment></column>
+		</property>
+		<property name="reject_reason">
+			<column length="50" name="reject_reason" ><comment>	提交资料项被驳回原因。</comment></column>
+		</property>
+		<property name="arId">
+			<column length="50" name="arId" ><comment>通过业务申请编号查询申请状态</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

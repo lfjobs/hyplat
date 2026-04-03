@@ -1,0 +1,30 @@
+@charset 'utf-8';
+/*学时查询*/
+.xs_wrap{margin: .3rem .6rem;border: 1px solid #dbdbdb;}
+.xs_name{text-align: center;line-height: 2rem;color: #3e3e3e;font-size: .73rem}
+.xs_con dt{padding-left: 2rem;line-height: 2rem;border-top: 1px solid #dbdbdb;border-bottom: 1px solid #dbdbdb;background:url(../../images/BuildPlatform/tit_ico.png) no-repeat .4rem #f2f2f2;background-size: 1.2rem;color: #373737;position: relative;}
+.xs_det{position: absolute;right: .6rem;top: 0;text-align: left;background: url(../../images/BuildPlatform/a_r.png) no-repeat right;padding-right: .5rem;background-size: .36rem;color: #656565;font-size: .64rem;}
+.xs_con dd{line-height: 2rem;border-bottom: 1px solid #dbdbdb;padding-left: 1rem;font-size: .64rem;color: #5a5a5a;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.xs_con dd span{color: #ff2222;}
+.xs_con dd:last-child{border: 0;}
+.xs_con dt span{font-size: .64rem;color: #ffb83c;}
+.lc_tit{line-height: 2rem;background: #f2f2f2;color: #373737;padding-left: .6rem;}
+.lc_img{float: left;width: 50%;padding: .3rem .6rem 0;text-align: center;overflow: hidden;}
+.lc_img img{width: 100%;height: 4rem;}
+.lc_img_box{padding: .4rem}
+.lc_img span{display: block;line-height: 1.6rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

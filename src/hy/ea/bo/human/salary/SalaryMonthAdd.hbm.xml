@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="hy.ea.bo.human.salary.SalaryMonthAdd" table="DT_SALARY_MONTH_ADD">
+		<id length="50" name="salaryMonthAddId" >
+			<column length="50" name="SALARY_MONTH_ADD_ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="staffId" >
+			<column length="50" name="STAFF_ID" not-null="true"/>
+		</property>
+		<property name="companyId" >
+			<column length="50" name="COMPANY_ID" not-null="true"/>
+		</property>
+		<property name="settlementMonth" >
+			<column length="10" name="SETTLEMENT_MONTH" not-null="true"/>
+		</property>
+		<property name="salaryLevelId" >
+			<column length="50" name="SALARY_LEVEL_ID"/>
+		</property>
+		<property name="salaryLevelNum" >
+			<column length="250" name="SALARY_LEVEL_NUM"/>
+		</property>
+		<property name="baseSalary" >
+			<column length="50" name="BASE_SALARY"/>
+		</property>
+		<property name="roleSalary" >
+			<column length="50" name="ROLE_SALARY" />
+		</property>
+		<property name="dutySalary">
+			<column length="50" name="DUTY_SALARY" />
+		</property>
+		<property name="competeSalary">
+			<column length="50" name="COMPETE_SALARY" />
+		</property>
+		<property name="secrecySalary">
+			<column length="50" name="SECRECY_SALARY" />
+		</property>
+		<property name="levelSalary">
+			<column length="50" name="LEVEL_SALARY" />
+		</property>
+		<property name="guaranteeSalary">
+			<column length="50" name="GUARANTEE_SALARY" />
+		</property>
+		<property name="welfareSalary">
+			<column length="50" name="WELFARE_SALARY" />
+		</property>
+		<property name="totalSalary">
+			<column length="50" name="TOTAL_SALARY" />
+		</property>
+		<property name="signInDayCount">
+			<column length="50" name="SIGNIN_DAY_COUNT" />
+		</property>
+		<property name="signInSalary">
+			<column length="50" name="SIGNIN_SALARY" />
+		</property>
+		<property name="leaveAddMoney">
+			<column length="50" name="LEAVE_ADD_MONEY" />
+		</property>
+		<property name="weekendOvertimeMoney">
+			<column length="50" name="WEEKEND_OVERTIME_MONEY" />
+		</property>
+		<property name="eightHourOvertimeMoney">
+			<column length="50" name="EIGHT_HOUR_OVERTIME_MONEY" />
+		</property>
+		<property name="holidayOvertimeMoney">
+			<column length="50" name="HOLIDAY_OVERTIME_MONEY" />
+		</property>
+		<property name="realSalary">
+			<column length="50" name="REAL_SALARY" />
+		</property>
+		<property name="elderlyCareDiscountMoney" type="java.lang.String">
+			<column length="50" name="ELDERLY_CARE_DISCOUNT_MONEY" >
+				<comment>养老扣费</comment>
+			</column>
+		</property>
+		<property name="medicalDiscountMoney" type="java.lang.String">
+			<column length="50" name="MEDICAL_DISCOUNT_MONEY" >
+				<comment>医疗扣费</comment>
+			</column>
+		</property>
+		<property name="unemploymentDiscountMoney" type="java.lang.String">
+			<column name="UNEMPLOYMENT_DISCOUNT_MONEY" length="50">
+				<comment>失业金扣费</comment>
+			</column>
+		</property>
+		<property name="socialSecurityLevel" type="java.lang.String">
+			<column length="50" name="SOCIAL_SECURITY_LEVEL" >
+				<comment>社保缴纳基数</comment>
+			</column>
+		</property>
+		<property name="signInDayTotalCount" type="java.lang.String">
+			<column length="50" name="SIGNIN_DAY_TOTAL_COUNT" />
+		</property>
+		<property name="lateLeaveEarlyDayCount" type="java.lang.String">
+			<column length="50" name="LATE_LEAVEEARLY_DAY_COUNT" />
+		</property>
+		<property name="leaveAddDayCount" type="java.lang.String">
+			<column length="50" name="LEAVE_ADD_DAY_COUNT" />
+		</property>
+		<property name="weekendOvertimeDayCount" type="java.lang.String">
+			<column length="50" name="WEEKEND_OVERTIME_DAY_COUNT" />
+		</property>
+		<property name="eightHourOvertimeDayCount" type="java.lang.String">
+			<column length="50" name="EIGHT_HOUR_OVERTIME_DAY_COUNT" />
+		</property>
+		<property name="holidayOvertimeDayCount" type="java.lang.String">
+			<column length="50" name="HOLIDAY_OVERTIME_DAY_COUNT" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,151 @@
+html,body{
+    height:100%;
+    overflow:hidden;
+}
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+.sec-list-contract{
+    z-index: 99;
+    height: 100%;
+    padding: 0 10px;
+}
+.data-title-contract{
+    height: 30px;
+}
+.div-sec-data-contract {
+    overflow-x: auto;
+    overflow-y: hidden;
+    float: left;
+    width: 100%;
+}
+
+.div-sec-data-contract ul {
+    z-index: 9;
+    left: 0;
+    background-color: #fff;
+    height: 30px;
+    margin: 10px 0;
+}
+.data-title-contract ul li {
+    text-align: left;
+    float: left;
+    color: #177512de;
+    font-size: 15px;
+    font-weight: 600;
+}
+.data-list-contract ul li {
+    width: 20%;
+    text-align: left;
+    float: left;
+    font-size: 16px;
+    height:100%;
+}
+.data-title-contract, .div-data-contract {
+    width: 1140px;
+}
+.div-sec-data-contract ul li:nth-of-type(1) {
+    width: 100px;
+}
+.div-sec-data-contract ul li:nth-of-type(2) {
+    width: 100px;
+}
+.div-sec-data-contract ul li:nth-of-type(3) {
+    width: 100px;
+}
+.div-sec-data-contract ul li:nth-of-type(4) {
+    width: 80px;
+}
+.div-sec-data-contract ul li:nth-of-type(5) {
+    width: 120px;
+}
+.div-sec-data-contract ul li:nth-of-type(6) {
+    width: 120px;
+}
+.div-sec-data-contract ul li:nth-of-type(7) {
+    width: 100px;
+}
+.div-sec-data-contract ul li:nth-of-type(8) {
+    width: 120px;
+}
+.div-sec-data-contract ul li:nth-of-type(9) {
+    width: 200px;
+}
+.div-sec-data-contract ul li:nth-of-type(10) {
+    width: 100px;
+}
+.div-bottom {
+    left: 0;
+    width: 100%;
+    padding: .5rem 0;
+    background-color: #e64d3d;
+    text-align: center;
+    border-top: 0.35rem solid #f8f8f8;
+    height: 2rem !important;
+    line-height: 1.5rem;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+.div-temp-ul{
+    background-color: #fff;
+    height: 30px;
+    margin: 15px;
+}
+.div-temp-ul li{
+    text-align: left;
+    float: left;
+    font-size: 16px;
+    height: 100%;
+}
+.div-temp-ul li:nth-of-type(1) {
+    width: 200px;
+}
+.div-temp-ul li:nth-of-type(2) {
+    width: 100px;
+}
+.div-temp-ul li:nth-of-type(3) {
+    width: 50px;
+}
+.layui-tab-item{
+    height:100%;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+}
+@media (min-width: 960px) {
+    html{
+        margin: 0 20% 0 20%;
+    }
+}

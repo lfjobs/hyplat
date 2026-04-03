@@ -1,0 +1,698 @@
+@charset "utf-8";
+.bgff {
+    background-color: #fff
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.db {
+    display: block
+}
+
+.w100 {
+    width: 100%
+}
+
+.hover {
+    cursor: pointer
+}
+
+.fixed_top {
+    position: fixed;
+    top: 0;
+    left: 0
+}
+
+.fixed_bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0
+}
+
+body,
+html {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch
+}
+
+body {
+    margin: 0 auto;
+    background-color: #fff;
+    width: 100%
+}
+
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+input,
+li,
+menu,
+p,
+section,
+select,
+span,
+table,
+td,
+textarea,
+th,
+ul {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: '微软雅黑'
+}
+
+img {
+    cursor: pointer;
+    border: none;
+    vertical-align: middle
+}
+
+li,
+ol,
+ul {
+    list-style: none
+}
+
+a,
+a:link {
+    text-decoration: none;
+    color: #666
+}
+
+a:active,
+a:hover {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+a:focus {
+    outline: 0
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+.txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.txt_2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.txt_3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+input {
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+::-webkit-scrollbar {
+    width: 0
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: table
+}
+
+.clearfix:after {
+    clear: both;
+    overflow: hidden
+}
+
+.clearfix {
+    zoom: 1
+}
+
+::-webkit-input-placeholder {
+    color: #ccc
+}
+
+:-moz-placeholder {
+    color: #ccc
+}
+
+::-moz-placeholder {
+    color: #ccc
+}
+
+:-ms-input-placeholder {
+    color: #ccc
+}
+
+header ul li {
+    float: left;
+    width: 10%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .9rem;
+    color: #222
+}
+
+header ul li:first-of-type img {
+    margin-left: .95rem;
+    width: .5rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 80%;
+    text-align: center
+}
+
+/*.content {
+	background: url(../images/scMobile/payBudget/addBudget/bg_01.png) no-repeat left top;
+	background-size: 100%
+}*/
+
+.content section.sec_con1 {
+    padding: .5rem;
+    border-bottom: .025rem solid #f2f2f2
+}
+
+.content section.sec_con1 form>p label {
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .6rem;
+    color: #666;
+    float: left
+}
+
+.content section.sec_con1 form>p label span {
+    display: inline-block;
+    width: .25rem;
+    color: #d60000
+}
+
+.content section.sec_con1 form>p input {
+    width: 70%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .6rem;
+    color: #ccc;
+    background-color: transparent;
+    border: 0
+}
+
+.content section.sec_con1 form>div p {
+    width: 50%;
+    float: left
+}
+
+.content section.sec_con1 form>div p label {
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .6rem;
+    color: #666;
+    float: left
+}
+
+.content section.sec_con1 form>div p label span {
+    display: inline-block;
+    width: .25rem;
+    color: #d60000
+}
+
+.content section.sec_con1 form>div p input {
+    width: 45%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .6rem;
+    color: #222;
+    background-color: transparent;
+    border: 0
+}
+
+.content section.sec_con1 form>div p .gs_name {
+    width: 60%
+}
+
+.content section.sec_con1 form>div p img {
+    width: .325rem;
+    float: right;
+    margin-top: 8.5%;
+    margin-right: 5%
+}
+
+.content section.sec_con2 ul.ul_con {
+    padding-top: .1rem
+}
+
+.content section.sec_con2 ul.ul_con>li {
+    border-bottom: .025rem solid #f2f2f2;
+    padding: .75rem 0 0 0
+}
+
+.content section.sec_con2 ul.ul_con>li aside {
+    padding-top: .75rem;
+    width: 10%;
+    float: left
+}
+
+.content section.sec_con2 ul.ul_con>li aside img {
+    width: .9rem;
+    margin: 0 auto
+}
+
+.content section.sec_con2 ul.ul_con>li aside.aside_yes .img_no {
+    display: none
+}
+
+.content section.sec_con2 ul.ul_con>li aside.aside_yes .img_yes {
+    display: block
+}
+
+.content section.sec_con2 ul.ul_con>li aside.aside_no .img_yes {
+    display: none
+}
+
+.content section.sec_con2 ul.ul_con>li aside.aside_no .img_no {
+    display: block
+}
+
+.content section.sec_con2 ul.ul_con>li section {
+    width: 90%;
+    float: left
+}
+
+.content section.sec_con2 ul.ul_con>li section img.img_del {
+    float: right;
+    width: .65rem;
+    margin: -.25rem .35rem .2rem 0
+}
+
+.content section.sec_con2 ul.ul_con>li section div {
+    float: left;
+    margin-right: .5rem;
+    border-radius: .25rem;
+    border: .025rem solid #ccc;
+    width: 4.25rem;
+    height: 4.25rem
+}
+
+.content section.sec_con2 ul.ul_con>li section div img {
+    width: 4.25rem
+}
+
+.content section.sec_con2 ul.ul_con>li section ul {
+    width: 66%;
+    float: left
+}
+
+.content section.sec_con2 ul.ul_con>li section ul li {
+    font-size: .7rem;
+    color: #444
+}
+
+.content section.sec_con2 ul.ul_con>li section ul li.img_no1 {
+    line-height: .9rem;
+    height: 1.5rem;
+    font-size: .85rem;
+    color: #222
+}
+
+.content section.sec_con2 ul.ul_con>li section ul li.img_no2,
+.content section.sec_con2 ul.ul_con>li section ul li.img_no3 {
+    height: .8rem;
+    line-height: .8rem
+}
+
+.content section.sec_con2 ul.ul_con>li section ul li.img_no3 span {
+    display: inline-block;
+    width: 5rem
+}
+
+.content section.sec_con2 ul.ul_con>li section ul li.img_no4 {
+    height: 1.45rem;
+    line-height: 1.45rem
+}
+
+.content section.sec_con2 ul.ul_con>li section ul li.img_no4 span:first-of-type {
+    display: inline-block;
+    width: 5rem
+}
+
+.content section.sec_con2 ul.ul_con>li section ul li.img_no4 span:last-of-type {
+    color: #e21a1a
+}
+
+.content section.sec_con2>div {
+    /*margin-top: 2.5rem;*/
+    background-color: #f2f2f2;
+    padding: .5rem .5rem;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    background-color: #fff;
+    width: 100%;
+}
+
+.content section.sec_con2>div div.left p {
+    height: 1.6rem;
+    line-height: 1.6rem
+}
+
+.content section.sec_con2>div div.left p:first-of-type {
+    font-size: .6rem;
+    color: #e21a1a
+}
+
+/*.content section.sec_con2>div div.left p:last-of-type {*/
+    /*font-size: .6rem;*/
+    /*color: #999*/
+/*}*/
+
+.content section.sec_con2>div div.right {
+    /*padding-top: 2%*/
+}
+
+.content section.sec_con2>div div.right p {
+    float: left;
+    width: 3.25rem;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    text-align: center;
+    border-radius: 1.5rem
+}
+
+.content section.sec_con2>div div.right p{
+    margin-top: 1%;
+    font-size: .65rem;
+    color: #444;
+    border: .025rem solid #cfcfcf;
+    background-color: #fff;
+    margin-right: .25rem
+}
+
+.content section.sec_con2>div div.right p:last-of-type {
+    color: #4792f7;
+    border: .025rem solid #4f96f7;
+    background-color: #e4effe;
+    margin-right: 0;
+}
+.sec-ull{
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+}
+.content ul.ul_con3 {
+    width: 45%;
+    margin: 0 auto;
+    padding-top: 2.5rem;
+    padding: 1rem .25rem 1rem .25rem;
+}
+
+.content ul.ul_con3 li {
+    text-align: center;
+    float: left;
+    width: 50%
+}
+
+.content ul.ul_con3 li p.p_img img {
+    width: 63%
+}
+
+.content ul.ul_con3 li p.p_p {
+    text-align: center;
+    height: 1.65rem;
+    line-height: 1.65rem;
+    font-size: .6rem;
+    color: #222
+}
+
+.div-name {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.div-name>div {
+    width: 92%;
+    height: 95%;
+    margin: 5% auto 0 auto;
+    background-color: #fff;
+    border-radius: .25rem
+}
+
+.div-name>div>section:first-of-type {
+    padding: 1rem .25rem 1rem .25rem;
+    position: relative
+}
+
+.div-name>div>section:first-of-type input {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .55rem;
+    color: #b9b9b9;
+    border: 0;
+    background-color: #f3f3f3;
+    border-radius: .15rem
+}
+
+.div-name>div>section:first-of-type input:first-of-type {
+    float: left;
+    width: 70%;
+    padding-left: 10%
+}
+
+.div-name>div>section:first-of-type input:last-of-type {
+    float: right;
+    width: 28%;
+    color: #222
+}
+
+.div-name>div>section:first-of-type img {
+    position: absolute;
+    left: 4.5%;
+    top: 40%;
+    width: .7rem
+}
+
+.div-name>div #div_table {
+    overflow-y: scroll;
+    padding: 0 .25rem 0 .25rem
+}
+
+.div-name>div #div_table table {
+    width: 100%;
+    border-top: 1px solid #f3f3f3;
+    border-collapse: collapse
+}
+
+.div-name>div #div_table table tr {
+    border-bottom: 1px solid #f3f3f3
+}
+
+.div-name>div #div_table table tr th:first-of-type {
+    width: 10%
+}
+
+.div-name>div #div_table table tr th:nth-of-type(2) {
+    width: 60%
+}
+
+.div-name>div #div_table table tr th:nth-of-type(3) {
+    width: 30%
+}
+
+.div-name>div #div_table table tr td:first-of-type {
+    width: 10%
+}
+
+.div-name>div #div_table table tr td:nth-of-type(2) {
+    width: 60%
+}
+
+.div-name>div #div_table table tr td:nth-of-type(3) {
+    width: 30%
+}
+
+.div-name>div #div_table table tr th {
+    height: 1.85rem;
+    line-height: 1.85rem;
+    font-size: .55rem;
+    color: #222;
+    font-weight: 400
+}
+
+.div-name>div #div_table table tr td {
+    height: 1.7rem;
+    line-height: 1.7rem;
+    font-size: .55rem;
+    color: #666
+}
+
+.div-name>div #div_table table tr td aside {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%
+}
+
+.div-name>div #div_table table tr td aside img {
+    width: .75rem;
+    align-items: center;
+    margin: 0 auto
+}
+
+.div-name>div #div_table table tr td aside.aside_yes .img_no {
+    display: none
+}
+
+.div-name>div #div_table table tr td aside.aside_yes .img_yes {
+    display: block
+}
+
+.div-name>div #div_table table tr td aside.aside_no .img_yes {
+    display: none
+}
+
+.div-name>div #div_table table tr td aside.aside_no .img_no {
+    display: block
+}
+
+.div-name>div #div_table table tr td:last-of-type {
+    text-align: center
+}
+
+.div-name .div_scroll {
+    overflow-y: scroll
+}
+
+.div-name section.button {
+    padding: 1.5rem 0 1.5rem 0;
+    width: 100%
+}
+
+.div-name section.button p {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: .15rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    font-size: .6rem;
+    color: #fff;
+    background-color: #f74c32
+}
+
+.body_yc {
+    height: 100%;
+    overflow-y: hidden
+}
+
+table {
+    width: 100%;
+    border-top: 0.025rem solid #e9e9e9;
+    border-bottom: 0.025rem solid #e9e9e9;
+}
+table tr td:first-of-type {
+    width: 21%;
+}
+table tr td:nth-of-type(2) {
+    width: 12%;
+}
+table tr td:nth-of-type(3) {
+    width: 12%;
+}
+table tr td:nth-of-type(4) {
+    width: 20%;
+}
+table tr td:nth-of-type(5) {
+    width: 13%;
+}
+table tr td:nth-of-type(6) {
+    width: 13%;
+}
+table tr td:nth-of-type(7) {
+    width: 13%;
+}
+table tr td {
+    text-align: center;
+    height: 1.8rem;
+    line-height: 0.8rem;
+    font-size: 0.6rem;
+    color: #1f1f1f;
+}
+table tr .num ul {
+    border-radius: 0.25rem;
+}
+table tr .num ul li {
+    float: left;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    text-align: center;
+    border: 0.025rem solid #d2d2d2;
+}
+table tr .num ul li:nth-of-type(1) {
+    width: 29%;
+    color: #f74c30;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+table tr .num ul li:nth-of-type(2) {
+    width: 38%;
+    border-left: 0;
+    border-right: 0;
+}
+table tr .num ul li:nth-of-type(3) {
+    width: 29%;
+    color: #f74c30;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+table .tr-zl .td-cs {
+    color: #00bf6c;
+}
+table .tr-sl1 .td-cs {
+    color: #f5d500;
+}
+table .tr-sl2 .td-cs {
+    color: #ff3b52;
+}

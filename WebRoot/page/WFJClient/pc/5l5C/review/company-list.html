@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userDTO-scalable=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>注册单位</title>
+</head>
+<body class="h-screen">
+<script src="../../../../../js/dynamic-tab/dynamic-tab.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/plugin/quarterOfYear.min.js"></script>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script>dayjs.extend(window.dayjs_plugin_quarterOfYear)</script>
+<div class="flex flex-col h-screen">
+
+    <div id="toolbar" class="flex flex-row items-center justify-between w-full">
+
+    </div>
+
+    <div class="p-2">
+        <div id="actions-tab" class="space-x-4 text-center h-auto p-2">
+
+        </div>
+    </div>
+
+    <div class="flex-grow px-2 overflow-auto bg-white">
+        <table class="table-auto scroll-pt-8">
+            <thead class="sticky top-0 text-center bg-white">
+            <tr class="text-gray-700">
+                <th class="text-nowrap p-2">序号</th>
+                <th class="text-nowrap p-2">单位编号</th>
+                <th class="text-nowrap p-2">单位名称</th>
+                <th class="text-nowrap p-2">经营产品</th>
+                <th class="text-nowrap p-2">地址</th>
+                <th class="text-nowrap p-2">单位电话</th>
+                <th class="text-nowrap p-2">单位责任人</th>
+                <th class="text-nowrap p-2">企业认证</th>
+                <th class="text-nowrap p-2">短信</th>
+                <th class="text-nowrap p-2">单位群</th>
+                <th class="text-nowrap p-2">小视频</th>
+                <th class="text-nowrap p-2">资讯</th>
+                <th class="text-nowrap p-2">咨询</th>
+                <th class="text-nowrap p-2">电商</th>
+                <th class="text-nowrap p-2">会员卡</th>
+                <th class="text-nowrap p-2">往来关系</th>
+                <th class="text-nowrap p-2">合作项目</th>
+                <th class="text-nowrap p-2">收付</th>
+                <th class="text-nowrap p-2">合作意向</th>
+                <th class="text-nowrap p-2">来源方式</th>
+                <th class="text-nowrap p-2">分配服务人</th>
+                <th class="text-nowrap p-2">佣金审核</th>
+            </tr>
+            </thead>
+            <tbody id="data-list">
+
+            </tbody>
+        </table>
+        <div class="h-2" id="load-more"></div>
+    </div>
+</div>
+<script>
+    const toolbar = new Toolbar("toolbar", {
+        title: "注册单位",
+        actions: [],
+        onClick: (id) => {
+            console.log(id);
+        }
+    })
+
+    const statusTab = new DynamicTab("actions-tab", {
+        items: [
+            {id: "1", label: "添加", data: "ADD", selected: true},
+            {id: "2", label: "删除", data: "DELETE", selected: false},
+            {id: "3", label: "查询", data: "QUERY", selected: false},
+            {id: "4", label: "打印", data: "PRINT", selected: false}
+        ],
+        selected: 0
+    })
+    statusTab.setSelectChangeListener((tabItem) => {
+        console.log(tabItem)
+    })
+
+    function loadData() {
+        const videosList = []
+        for (let i = 0; i < 20; i++) {
+            videosList.push({
+                id: `${i}`,
+                code: Math.random().toString(16).substring(2, 10).toUpperCase(),
+                companyName: "某某公司",
+                businessScope: "服装、女鞋",
+                address: "成都市金牛区韦家碾红星美凯龙B座17层",
+                contactNumber: "18888888888",
+                contactName: "张三",
+                certificationStatus: "未认证",
+                shortMessageCount: (Math.random() * 100).toFixed(0),
+                instantMessageGroupCount: (Math.random() * 100).toFixed(0),
+                shortVideoCount: (Math.random() * 100).toFixed(0),
+                articleCount: (Math.random() * 100).toFixed(0),
+                consultCount: (Math.random() * 10).toFixed(0),
+                createBy: "别发狗头",
+                createdDate: "2023年12月14日 15:02"
+            })
+        }
+
+        for (let i = 0; i < videosList.length; i++) {
+            const video = videosList[i]
+
+            var statusText;
+            switch (video.status) {
+                case "IN_REVIEW":
+                    statusText = "审核中";
+                    break;
+                case "Approved":
+                    statusText = "已通过";
+                    break;
+                case "NOT_PASS":
+                    statusText = "未通过";
+                    break;
+            }
+
+            const x = `<tr class="text-sm">
+                <td>${video.id}</td>
+                <td>
+                    ${video.code}
+                </td>
+                <td class="text-xs text-nowrap text-end">${video.companyName}</td>
+                <td class="text-sm text-nowrap text-center">${video.businessScope}</td>
+                <td class="text-sm text-nowrap text-center">${video.address}</td>
+                <td class="text-sm text-nowrap text-center">${video.contactNumber}</td>
+                <td class="text-sm text-nowrap text-center">${video.contactName}</td>
+                <td class="text-sm text-nowrap text-orange-500">${video.certificationStatus}</td>
+                <td class="text-sm text-nowrap text-end">${video.shortMessageCount}</td>
+                <td class="text-sm text-nowrap text-end">${video.instantMessageGroupCount}</td>
+                <td class="text-sm text-nowrap text-end">${video.shortVideoCount}</td>
+                <td class="text-sm text-nowrap text-end">${video.articleCount}</td>
+                <td class="text-sm text-nowrap text-end">${video.consultCount}</td>
+                <td class="text-sm text-nowrap text-end">${video.consultCount}</td>
+                <td class="text-sm text-nowrap text-end">${video.consultCount}</td>
+                <td class="text-sm text-nowrap text-end">${video.consultCount}</td>
+                <td class="text-sm text-nowrap">商城</td>
+                <td class="text-sm text-right">
+                <span class="text-nowrap">收  <b>0.0</b> </span>
+                <span class="text-nowrap">付  <b>0.0</b></span>
+                </td>
+                <td class="text-nowrap text-center">无意向</td>
+                <td class="text-nowrap text-center">导入</td>
+                <td class="text-nowrap text-center">分配</td>
+                <td class="text-nowrap text-center">
+                    <b>￥0.0</b>
+                    <span class="underline text-red-600 cursor-default">审核</span>
+                </td>
+            </tr>`
+            document.getElementById("data-list").innerHTML = document.getElementById("data-list").innerHTML + x
+
+        }
+    }
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        const entry = entries[0]
+        if (entry.isIntersecting) {
+            loadData()
+        }
+    }, {
+        threshold: 1
+    })
+    observer.observe(document.getElementById('load-more'))
+</script>
+</body>
+</html>

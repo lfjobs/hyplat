@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666; font-family:'华文黑体';}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+.wfj_width{ width:92%; margin:0 auto;}
+.wfj_phwidth{ width:95%; margin:0 auto;}
+/*公共样式*/
+
+
+/*------------------------------------------------wfj11_111-----------------------------------------------*/
+.wfj11_111{ width:100%; margin:0 auto;}/* min-width:850px;*/
+.wfj11_111 .wfj11_111_width{ width:100%; margin:0 auto;}
+.wfj11_111 .wfj11_111_width table{ border-collapse:collapse; float:left;}
+.wfj11_111 .wfj11_111_width table .wfj11_111_bg{ background-color:#E4F1FA; text-align:center;}
+.wfj11_111 .wfj11_111_width table .wfj11_111_bg td{ color:#1e5494; border-bottom:none;}
+.wfj11_111 .wfj11_111_width table .wfj11_111_bg span{ color:#F00;}
+.wfj11_111 .wfj11_111_width table .left_title{ height:50px;}
+/* .wfj11_111 .wfj11_111_width table .left_title td{ width:25%;} */
+.wfj11_111 .wfj11_111_width table tr td{ border:1px solid #666; height:24px; line-height:24px;}
+.wfj11_111 .wfj11_111_width .wfj11_111_title_width01{ width:100%;}
+.wfj11_111 .wfj11_111_width .wfj11_111_title_width01 td{ width:90px;}
+.wfj11_111 .wfj11_111_width table input{ width:90%; border:none; text-align:right; margin-right:5px;}
+
+
+
+
+/*------------------------------------------------wfj11_111 end-----------------------------------------------*/
+
+
+
+
+
+
+
+

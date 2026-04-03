@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="DepotPerson" table="dtDepotPerson">
+		<id length="50" name="depotPersonKey">
+			<column length="50" name="depotPersonKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="depotPersonID">
+			<column length="50" name="depotPersonID" not-null="true" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true" />
+		</property>
+		 <property name="organizationID">
+        	<column name="organizationID" length="50" />
+        </property>
+         <property name="depotID">
+        	<column name="depotID" length="50" />
+        </property>
+        	<property name="SinceTime">
+        	<column name="SinceTime"/>
+        </property>
+		<property name="StopTime">
+			<column length="250" name="StopTime"/>
+		</property>
+		<property name="responsible">
+			<column length="250" name="responsible" />
+		</property>
+		<property name="responsibleCode">
+			<column length="250" name="responsibleCode" />
+		</property>
+		<property name="responsiblePhone">
+			<column length="250" name="responsiblePhone" />
+		</property>
+	</class>
+</hibernate-mapping>

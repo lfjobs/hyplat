@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human.vo">
+    <class name="CSPPayScaleVO" table="view_csp">
+        <id name="cosKey" length="50" >
+        	<column name="cosKey" length="50"/>
+        	<generator class="uuid" />
+        </id>
+        <property name="staffID">
+        	<column name="staffID"  length="50"  not-null="true"/>
+        </property>
+         <property name="staffCode" >
+        	<column name="staffCode" length="250"  />
+        </property>
+         <property name="staffName" >
+        	<column name="staffName" length="250"  />
+        </property>
+         <property name="companyname" >
+        	<column name="companyname" length="250"  />
+        </property>
+         <property name="cspcompanyid" >
+        	<column name="cspcompanyid" length="50"  />
+        </property>
+         <property name="sex" >
+        	<column name="sex" length="50"  />
+        </property>
+         <property name="staffIdentityCard" >
+        	<column name="staffIdentityCard" length="250"  />
+        </property>
+        
+        <property name="companyID">
+        	<column name="companyID" length="50"  not-null="true"/>
+        </property>  
+        <property name="payScalekey">
+        	<column name="payScalekey" length="50"/>
+        </property>
+         <property name="payScaleID">
+        	<column name="payScaleID" length="50"/>
+        </property>
+		<property name="scale">
+			<column  length="250" name="scale" />
+		</property>
+		<property name="position">
+			<column length="250" name="position" />
+		</property>
+		<property name="positionPay">
+			<column length="250" name="positionPay" />
+		</property>
+		<property name="basePay">
+			<column  length="250" name="basePay"/>
+		</property>
+		<property name="workWeek">
+			<column length="250" name="workWeek"/>
+		</property>
+		<property name="workNight">
+			<column  length="250" name="workNight" />
+		</property>
+		<property  name="workHolidays">
+			<column length="250" name="workHolidays" />
+		</property>
+		<property name="pushMoney">
+			<column  length="250" name="pushMoney"/>
+		</property>
+		<property name="timingMoney">
+			<column length="250" name="timingMoney"/>
+		</property>
+		<property name="piecerate">
+			<column length="250" name="piecerate" />
+		</property>
+		<property name="paAward">
+			<column length="250" name="paAward" />
+		</property>
+		<property name="awardPay">
+			<column length="250" name="awardPay" />
+		</property>
+		<property name="stPay">
+			<column length="250" name="stPay" />
+		</property>
+		<property  name="secrecyPay">
+			<column length="250" name="secrecyPay" />
+		</property>
+		
+		<property name="safetyAward">
+			<column  length="250" name="safetyAward" />
+		</property>
+		<property  name="expenseAllowances">
+			<column length="250" name="expenseAllowances" />
+		</property>
+		<property name="discountedCost">
+			<column  length="250" name="discountedCost"/>
+		</property>
+		<property name="premium">
+			<column length="250" name="premium"/>
+		</property>
+		<property name="alimony">
+			<column length="250" name="alimony" />
+		</property>
+		<property name="piTax">
+			<column length="250" name="piTax" />
+		</property>
+        
+        
+        <property name="pietypay">
+			<column length="250" name="pietypay" />
+		</property>
+		<property name="campaignpay">
+			<column length="250" name="campaignpay" />
+		</property>
+		<property name="telecompay">
+			<column length="250" name="telecompay" />
+		</property>
+		<property name="pkpay">
+			<column length="250" name="pkpay" />
+		</property>
+		<property name="living">
+			<column length="250" name="living" />
+		</property>
+			<property name="montasks">
+			<column length="250" name="montasks" />
+		</property>
+			<property name="goaltasks">
+			<column length="250" name="goaltasks" />
+		</property>
+			<property name="unpremium">
+			<column length="250" name="unpremium" />
+		</property>
+			<property name="kkqnpay">
+			<column length="250" name="kkqnpay" />
+		</property>
+    </class>
+</hibernate-mapping>

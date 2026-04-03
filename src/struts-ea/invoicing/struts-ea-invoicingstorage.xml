@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="storage-token" namespace="/ea/storage"
+		extends="ea-token">
+		<action name="t_ea_*"
+			class="hy.ea.invoicing.action.InvoicingStorageAction" method="{1}">
+			<result name="warelist">
+				/page/ea/main/finance/invoicing/storage_list.jsp
+			</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+
+	<package strict-method-invocation="false" name="storage-ntoken" namespace="/ea/storage"
+		extends="struts-default">
+		<action name="ea_*"
+			class="hy.ea.invoicing.action.InvoicingStorageAction" method="{1}">
+			<!--选择入库-->
+			<result name="choosewarehousing">
+				/page/ea/main/finance/invoicing/chooseWarehousing_list.jsp
+			</result>
+			<result name="choosewarehousingBill">
+				/page/ea/main/finance/invoicing/chooseWarehousing_bill.jsp
+			</result>
+			
+			<result name="success">/page/ea/success.jsp</result>
+			<!--入库管理-->
+			<result name="warelist">
+				/page/ea/main/finance/invoicing/storage_list.jsp
+			</result>
+			<result name="wareedit">
+				/page/ea/main/finance/invoicing/storage_edit.jsp
+			</result>
+			<result name="wareadd">
+				/page/ea/main/finance/invoicing/storage_add.jsp
+			</result>
+			<result name="failed">/page/ea/fail.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="storage-jsonajax" namespace="/ea/storage"
+		extends="json-default">
+		<action name="sajax_ea_*"
+			class="hy.ea.invoicing.action.InvoicingStorageAction" method="{1}">
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.tiantai.wfj.edmandServe.bo.DemandDetail" table="DT_DEMAND_DETAIL" schema="HYPLAT">
+        <comment>需求详情管理</comment>
+        <id name="ddkey" type="java.lang.String">
+            <column name="DDKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="ddid" type="java.lang.String">
+            <column name="DDID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="ddsccid" type="java.lang.String">
+            <column name="DDSCCID" sql-type="varchar2(50)" length="50"><comment>发布需求人员帐号</comment></column>
+        </property>
+        <property name="ddstaffid" type="java.lang.String">
+            <column name="ddstaffid" sql-type="varchar2(50)" length="50"><comment>发布需求人员id</comment></column>
+        </property>
+        <property name="ddtitle" type="java.lang.String">
+            <column name="DDTITLE" sql-type="varchar2(50)" length="50"><comment>标题</comment></column>
+        </property>
+        <property name="ddremark" type="java.lang.String">
+            <column name="DDREMARK" sql-type="varchar2(100)" length="100"><comment>备注</comment></column>
+        </property>
+        <property name="ddexpectdate" type="java.util.Date">
+            <column name="DDEXPECTDATE" sql-type="date"><comment>期望时间</comment></column>
+        </property>
+        <property name="ddexpectprice" type="java.lang.String">
+            <column name="DDEXPECTPRICE" sql-type="varchar2(10)" length="10"><comment>期望价格</comment></column>
+        </property>
+        <property name="ddadddate" type="java.util.Date">
+            <column name="DDADDDATE" sql-type="date"><comment>添加时间</comment></column>
+        </property>
+        <property name="ddcontactname" type="java.lang.String">
+            <column name="DDCONTACTNAME" sql-type="varchar2(20)" length="20"><comment>联系人</comment></column>
+        </property>
+        <property name="ddcontactphone" type="java.lang.String">
+            <column name="DDCONTACTPHONE" sql-type="varchar2(20)" length="20"><comment>联系电话</comment></column>
+        </property>
+        <property name="ddaddress" type="java.lang.String">
+            <column name="DDADDRESS" sql-type="varchar2(100)" length="100"><comment>地址</comment></column>
+        </property>
+        <property name="ddstatus" type="java.lang.String">
+            <column name="DDSTATUS" sql-type="varchar2(5)" length="5"><comment>状态 0：抢单中 1：已确认订单 2：过期 3：移除</comment></column>
+        </property>
+        <property name="ddBool" type="java.lang.Character">
+            <column name="DDBOOL" sql-type="char(1)" length="1"><comment>Y:有空缺 N:饱和（抢单数据5条为饱和）</comment></column>
+        </property>
+        <property name="coordinate" type="java.lang.String">
+            <column name="COORDINATE" sql-type="varchar2(50)" length="50"><comment>地址经纬度</comment></column>
+        </property>
+        <property name="ddscodeid" type="java.lang.String">
+            <column name="DDSCODEID" sql-type="varchar2(50)" length="50"><comment>行业类别id</comment></column>
+        </property>
+        <property name="ddworktype" type="java.lang.String">
+            <column name="DDWORKTYPE" sql-type="varchar2(50)" length="50"><comment>行业类别名称</comment></column>
+        </property>
+        <property name="dscount" type="integer">
+            <column name="DSCOUNT" sql-type="number(1)" length="1"><comment>抢单条数</comment></column>
+        </property>
+        <property name="photo" type="java.lang.String">
+            <column name="photo" sql-type="varchar2(250)" length="250"><comment>图片地址</comment></column>
+        </property>
+        <property name="ddcid" type="java.lang.String">
+        <column name="ddcid" sql-type="varchar2(50)" length="50"><comment>关联id (来源不同关联表不同,来源1:关联staff 2:关联company)</comment></column>
+    </property>
+        <property name="ddtype" type="java.lang.String">
+            <column name="ddtype" sql-type="varchar2(5)" length="5"><comment>来源 1:个人 2:企业</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

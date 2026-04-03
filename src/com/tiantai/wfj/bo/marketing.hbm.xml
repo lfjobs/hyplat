@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="MarKeting" table="dtmarketing">
+		<id length="50" name="mkkey">
+			<column length="50" name="mkkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="mkID">
+			<column length="250" name="mkID" />
+		</property>
+		<property name="mkuserID">
+			<column length="250" name="mkuserID" />
+		</property>	
+		<property name="mkSccId">
+			<column length="250" name="mkSccId" />
+		</property>
+		<property name="userID">
+			<column length="250" name="userID" />
+		</property>
+		<property name="userSccId">
+			<column length="250" name="userSccId" />
+		</property>
+		<property name="mkdate">
+			<column length="50" name="mkdate" />
+		</property>
+		<property name="source">
+			<column length="50" name="source" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

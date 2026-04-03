@@ -1,0 +1,30 @@
+<!--
+芯片读取方法，和Archives.cab一起用
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>芯片读卡</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<object classid="clsid:35D4C13E-4704-4762-B5B9-036E56A8FB75"
+			codebase="Archives.cab#version=1,0,1,23" width="1" height="1"
+			id="Archives" name="Archives">
+		</object>
+		<script type="text/javascript"> 
+			document.Archives.OpenPort();
+			document.Archives.GetDatas();
+			//控件回调函数
+			function GetTagId(values) {			 
+				if (values) {
+				  window.parent.QueryArchiveInfo(values);				
+				}
+			}
+			function closePort(){
+			    document.Archives.ClosePort();
+			}
+		</script>
+	</body>
+</html>

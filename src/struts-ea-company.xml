@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<include file="struts-ea/company/struts-ea-goodsmanage.xml" />
+	<include file="struts-ea/company/struts-ea-babymanage.xml" />
+	<include file="struts-ea/company/struts-ea-depotmanage.xml" />
+	<include file="struts-ea/company/struts-ea-contactcompany.xml" />
+	<include file="struts-ea/company/struts-ea-contactuser.xml" />
+	<include file="struts-ea/company/struts-ea-depotperson.xml" />
+	<include file="struts-ea/company/struts-ea-contactconnection.xml" />
+	<include file="struts-ea/company/struts-ea-printinformation.xml" />
+	<include file="struts-ea/company/struts-ea-overtimecompany.xml" />
+	<include file="struts-ea/company/struts-ea-leavecompany.xml" />
+	<include file="struts-ea/company/struts-ea-gamjeomcompany.xml" />
+	<include file="struts-ea/company/struts-ea-staffrankcompany.xml" />
+	<include file="struts-ea/company/struts-ea-permissionupdaterecord.xml" />
+	<include file="struts-ea/company/struts-ea-babyclass.xml" />
+	<include file="struts-ea/company/struts-ea-contactimg.xml" />
+	<include file="struts-ea/company/struts-ea-ccomconf.xml" />
+	
+	<!-- 办公室office下 -->
+	<include file="struts-ea/company/office/struts-ea-enterpriseartCompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterpriseartGroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-corporationPhotoCompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-corporationPhotoGroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterpriselogocompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterpriselogogroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisespiritcompany.xml"/>
+	<include file="struts-ea/company/office/struts-ea-enterprisespiritgroup.xml"/>
+	<include file="struts-ea/company/office/struts-ea-enterpriseculture.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterpriseculturegroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisecitationCompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisecitationGroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterpriseideaCompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterpriseideaGroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisegoalCompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisegoalGroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisemannerCompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisemannerGroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisemanageCompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisemanageGroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisemeritoriousCompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisemeritoriousGroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisereportCompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisereportGroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-enterprisevideoCompany.xml"/>
+	<include file="struts-ea/company/office/struts-ea-enterprisevideoGroup.xml"/>
+	<include file="struts-ea/company/office/struts-ea-filemanagecompany.xml"/>
+    <include file="struts-ea/company/office/struts-ea-filemanagegroup.xml"/>
+    <include file="struts-ea/company/office/struts-ea-addressipcompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-addressipgroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-qqcompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-qqgroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-netdiskcompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-netdiskgroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-domainnamecompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-domainnamegroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-networkfaxcompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-networkfaxgroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-schedulecompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-schedulegroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-networkcompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-networkgroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-networkanvicompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-networkanvigroup.xml" />
+	
+	<!-- 车辆信息 -->
+	<include file="struts-ea/company/office/struts-ea-carinforcompany.xml" />
+	<include file="struts-ea/company/office/struts-ea-carinforgroup.xml" />
+	<include file="struts-ea/company/office/struts-ea-carmanage.xml" />
+	<!-- 人脸闸机 -->
+	<include file="struts-ea/company/office/struts-ea-facerec.xml" />
+	<include file="struts-ea/company/office/struts-ea-qfacerec.xml" />
+	
+	<!-- 酒店 -->
+	<include file="struts-ea/company/struts-ea-accommod.xml" />
+	<include file="struts-ea/company/struts-ea-accommodhot.xml" />
+	
+	
+	<!-- 财务部分 -->
+	<include file="struts-ea/product/struts-ea-productdesignCompany.xml" />
+	<include file="struts-ea/product/struts-ea-productdesignGroup.xml" />
+	<!-- 集团单据归档汇总 -->
+	<include file="struts-ea/product/struts-ea-productdesignCompany.xml" />
+	<include file="struts-ea/product/struts-ea-productdesignGroup.xml" />
+	<!-- 集团单据归档 -->
+	<include file="struts-ea/company/finance/struts-ea-archivessummary.xml" />
+	<!-- 集团人事humen下在职员工汇总-->
+	<include file="struts-ea/company/human/struts-ea-staffcoscompany.xml" />
+	<include file="struts-ea/company/human/struts-ea-staffpaycompany.xml" />
+	<include file="struts-ea/company/human/struts-ea-logbookcompany.xml" />
+	<include file="struts-ea/company/human/struts-ea-jobplancompany.xml" />
+	<include file="struts-ea/company/human/struts-ea-jobtaskcompany.xml" />
+	<include file="struts-ea/company/human/struts-ea-appraisalcompany.xml" />
+	<include file="struts-ea/company/human/struts-ea-payscalecompany.xml" />
+	<include file="struts-ea/company/human/struts-ea-payscaleacompany.xml" />
+	<include file="struts-ea/company/human/struts-ea-gamjeomscompany.xml" />
+	<!-- 集团人事humen下离职员工汇总-->
+	<include file="struts-ea/company/human/struts-ea-staffdimissioncompany.xml" />
+	<include file="struts-ea/company/human/struts-ea-staffdimpaycompany.xml" />
+	<!-- 微信支付通知结果 -->
+	<include file="struts-ea/company/struts-ea-wechat.xml" />
+	<include file="struts-ea/company/human/struts-ea-staffdimpaycompany.xml" />
+</struts>

@@ -1,0 +1,405 @@
+@charset 'utf-8';
+/*金币池首页 开始*/
+.per_info{padding: .7rem 0;border-bottom: 1px solid #eeeeee;display: block;background: #fff;}
+.per_headimg{float: left;width: 2.6rem;height: 2.6rem;border-radius: .2rem;margin-left: .6rem;margin-right: .6rem;}
+.info_text{float: left;width: 11.6rem;height: 2.6rem;padding-right: .8rem;background: url(../../../../images/ea/finance/BenDis/arr_r.png) no-repeat right;background-size: .45rem;}
+.text_top{font-size: 0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.text_top span:first-child{font-size:.683rem;color: #666666;line-height: 1.3rem;margin-right: .2rem;}
+.text_top span:last-child{font-size:.597rem;color: #f2881c;line-height: 1.3rem;}
+.text_bottom{font-size: .73rem;font-weight: bold;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #1b1b1b;}
+.nav_half{float: left;width: 50%;padding: .8rem 0 .8rem 2.2rem}
+/* .gold_num{background: url(../../../../images/ea/finance/BenDis/gold_ico.png) no-repeat .7rem #fff;background-size: .9rem;border-right: 1px solid #f3f3f3;}
+.bank_num{background: url(../../../../images/ea/finance/BenDis/bank_ico.png) no-repeat .7rem #fff;background-size: 1rem;border-left: 1px solid #f3f3f3;}
+.nav_top_tit{line-height: 1rem;font-size: .768rem;color: #393939;}
+.part_goldnum{color: #b58f3c;font-size: .683rem;line-height: 1rem;white-space: nowrap;}
+.part_banknum{color: #949494;font-size: .683rem;line-height: 1rem;white-space: nowrap;}
+.nav_top{border-top: .3rem solid #f3f3f3;border-bottom: .3rem solid #f3f3f3;}
+.nav_box{float: left;width: 50%;line-height:2rem;padding: 1rem 0 1rem 3.4rem;font-size: .768rem;font-weight: bold;}
+.nav_01{background: url(../../../../images/ea/finance/Gold_Pool/nav_01.png) no-repeat 1rem #fff;background-size: 1.7rem;border-bottom: 1px solid #f3f3f3;border-right: 1px solid #f3f3f3;color: #52acc0;}
+.nav_02{background: url(../../../../images/ea/finance/Gold_Pool/nav_02.png) no-repeat 1rem #fff;background-size: 1.7rem;border-bottom: 1px solid #f3f3f3;border-left: 1px solid #f3f3f3;color: #ff5400;}
+.nav_03{background: url(../../../../images/ea/finance/Gold_Pool/nav_03.png) no-repeat 1rem #fff;background-size: 1.7rem;border-top: 1px solid #f3f3f3;border-right: 1px solid #f3f3f3;color: #a057b9;}
+.nav_04{background: url(../../../../images/ea/finance/Gold_Pool/nav_04.png) no-repeat 1rem #fff;background-size: 1.7rem;border-top: 1px solid #f3f3f3;border-left: 1px solid #f3f3f3;color: #cea21b;}
+.gold_wrap{height: 100%;margin: 0;padding-top: 2.16rem;background: #f3f3f3;} */
+/*金币池首页 结束*/
+/*我的银行卡 开始*/
+/*.bank_wrap{border-top: .3rem solid #f9f9f9;}*/
+.bank_box{padding: .5rem 0 1rem 0;cursor: pointer;transform: translateX(0);-webkit-transform: translateX(0);position: relative;z-index: 1;background: #fff;transition: all .2s ease-in;-webkit-transition: all .2s ease-in;}
+/*.bank_box_L{transform: translate3d(-5rem,0,0);-webkit-transform:translate3d(-5rem,0,0);}*/
+.bank_box_L{transform: translate3d(-5rem,0,0)!important;-webkit-transform:translate3d(-5rem,0,0)!important;}
+.bank_ico{float: left;width: 2rem;height: 2rem;margin: 0.4rem 1rem 0 1rem;object-fit: contain;}
+.bank_text{float: left;width: 12rem;height: 2rem;}
+.bank_s{color: #999!important;font-size: 0.6rem!important; }
+.bank_btn_wrap{position: relative;border-bottom: .3rem solid #f9f9f9;}
+.relieve_btn{position: absolute;top: 0;bottom: 0;right: 0;line-height: 3.6rem;background: #ff4f32;color: #fff;font-size: .768rem;width: 5rem;text-align: center;z-index: 0;}
+.bank_name{color: #656565;font-size: .7rem;font-weight: bold;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;line-height: 1.2rem;}
+.bank_n {color: #999999;font-size: .6rem;line-height: .8rem;}
+.add_card{display: block;line-height: 3.6rem;text-align: center;font-size:.81rem;;color: #4d67a4;width: 14.8rem;margin: .8rem auto;border:2px dotted #c9c9c9;}
+.addcard_ico{display: inline-block;width: 1.1rem;height: 1.1rem;background: url(../../../../images/ea/finance/BenDis/add.png) no-repeat center;vertical-align: text-bottom;margin-right: .4rem;background-size: contain;}
+/*我的银行卡 结束*/
+/*金币兑换 开始*/
+.g_num_box{width: 8rem;height: 4.2rem;background: url(../../../../images/ea/finance/BenDis/gold_num.png) no-repeat center;background-size: contain;margin: 0 auto;text-align: center;padding-top: 1.1rem;}
+.g_num_wrap{padding: 1rem 0;background: -webkit-linear-gradient(left, #ffebcf,#fff3e2, #ffebcf);background: linear-gradient(to right,#ffebcf,#fff3e2, #ffebcf)}
+.g_num_tit{color: #8f601f;font-size: .683rem;}
+.g_num{color: #8f601f;font-size: .73rem;white-space: nowrap;line-height: 1.2rem;}
+.select_bank{display: block;padding: .8rem 0;border-top: .3rem solid #f4f4f4;border-bottom: .3rem solid #f4f4f4;}
+.sele_img{float: left;width: 2rem;height: 2rem;object-fit: contain;margin: 0 1rem;}
+.sele_t{float: left;width: 11.4rem;color: #999999;height: 2rem;padding-right: 1.4rem;background: url(../../../../images/ea/finance/BenDis/arr_r.png) no-repeat right;background-size: .35rem}
+.sele_name{line-height: 1.2rem;font-size: .768rem;font-weight: bold;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.sele_num{font-size: .683rem;line-height: .8rem;}
+.inp_box{width: 14.8rem;margin: .7rem auto;border: 1px solid #e0e0e0;font-size: 0;padding: .4rem 0;border-radius: .15rem;}
+.gold_inp{width: 100%;text-align: center;outline: 0;border: 0;font-size: .768rem;color: #585858}
+.exchange{display: block;line-height: 1.8rem;width: 14.8rem;margin: 0 auto;text-align: center;font-size: .81rem;background: #ff9c01;color: #fff;border-radius: .15rem;height: 1.8rem;}
+.hint_tit{text-align: center;letter-spacing: .1rem;color: #5e4622;font-size: .81rem;margin: .6rem auto .4rem;}
+.hint_con{padding: 0 .5rem;font-size: .654rem;color: #575757;}
+.popup_pay{background: #fff;width: 12rem;border-radius: .3rem;position: relative;}
+.close_btn{float: right;width: 2.1rem;height: 1.8rem;background: url(../../../../images/ea/finance/BenDis/close.png) no-repeat center; background-size: .6rem;border-left: 1px solid #b7b7b7;}
+.pay_hd{padding: .2rem 0;border-bottom: 2px solid #cdcdcd;}
+.pay_hd span{display: inline-block;line-height: 1.8rem;width:8rem;font-size:.81rem;color: #212121;padding-left: 1.6rem;}
+.pay_bd{text-align: center;}
+.rmb_ico{color: #ff6600;font-size: .81rem;}
+.pay_bd{padding: .6rem  0;border-bottom: 2px solid #cdcdcd;}
+.sum_num{font-size: 1.5rem;color: #ff6600;}
+.pay_text{color: #282727;font-size: .73rem;line-height: 1.5rem;}
+.pay_label{border: 2px solid #dcdcdc;width: 10.8rem;box-sizing:content-box;margin: .6rem auto;cursor: pointer;}
+.pay_label li{float: left;width: 1.8rem;height: 1.8rem;border-right: 1px solid #eeeeee;cursor: pointer;}
+.pay_label li:last-child{border: 0;}
+.pay_inp{position: absolute;left: -9999px;opacity: 0}
+/*新增金币红包 2017年2月4日 09:37:55*/
+.nav_05{background: url(../../../../images/ea/finance/Gold_Pool/nav_05.png) no-repeat 1.2rem #fff;background-size: 1.3rem;border-top: 1px solid #f3f3f3;border-left: 1px solid #f3f3f3;color: #de3121;}
+.hb_top{text-align: center;padding-top: 1.2rem;padding-bottom: .8rem;border-bottom: .3rem solid #eeeeee;}
+.hb_img{width: 7rem;}
+.hb_text{color: #3b3b3b;font-size: .73rem;line-height: 1.5rem;margin-top: .8rem;}
+.hb_balance{color: #f92f2f;font-size: 1.1rem;}
+.hb_pay_btn{display: block;width: 4.2rem;line-height: 1.2rem;border-radius: .15rem;background: #ff3a3a;color: #fff;margin: 1rem auto 0}
+.hb_warn{font-size: .64rem;text-align: center;line-height: 1.4rem;color: #181818;background: #ff9c01;}
+.hb_th span{float: left;width: 33.333%;color: #5e4622;font-size: .7rem;line-height: 1.8rem;margin-top: .3rem;}
+.hb_th span:nth-child(1){padding-left: .6rem;text-align: left;}
+.hb_th span:nth-child(2){text-align: center;}
+.hb_th span:nth-child(3){padding-right: .6rem;text-align: right;}
+.hb_tr span{float: left;width: 33.333%;font-size: .64rem;line-height: 1.5rem;}
+.hb_tr span:nth-child(1){text-align: left;padding-left: .6rem;color: #383838;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.hb_tr span:nth-child(2){text-align: center;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.hb_tr span:nth-child(3){text-align: right;padding-right: .6rem;color: #5e4622;}
+.hb_tr{overflow: hidden;display: block;}
+/*添加银行卡 开始*/
+.top_wran{color: #b2710b;font-size: .7rem;line-height: 2rem;padding-left: .6rem;border-bottom: .2rem solid #f9f9f9;}
+.ab_box{overflow: hidden;padding: 0 .6rem;margin: .2rem 0;}
+.ab_L{float: left;width: 35%;height: 2rem;line-height: 2rem;color: #6b6b6b;font-size: .73rem;}
+.ab_R{float: left;width: 65%;height: 2rem;border-bottom: 1px solid #eeeeee;cursor: pointer;position: relative;font-size: 0;}
+.ab_inp{font-size: .7rem;margin-top: .5rem;border: 0;outline: 0;width: 100%;padding-right: 1rem;vertical-align: top;color: #333333;}
+.down_ico{position: absolute;width: .6rem;height: 1rem;right: 0;top: .5rem;background: url(../../../../images/ea/finance/Gold_Pool/dowm_ico.png) no-repeat center;background-size: contain;cursor: pointer;}
+.verification_inp{width: 55%;}
+.verification_btn{display: inline-block;width: 45%;font-size: .6rem;color: #ffffff;background: #ff9c01;line-height: 1.8rem;text-align: center;vertical-align: top;margin-top: 1px;border-radius: .15rem;border: 0;outline: 0;}
+.disabled_btn{background:#bdbdbd;}
+.ab_submit{display: block;width: 14.8rem;margin: 2rem auto;line-height: 2rem;text-align: center;background: #ea9003;color: #ffffff;border-radius: .1rem;}
+.dw{position: fixed;}
+/*增加积分模块*/
+.nav_06{background: url(../../../../images/ea/finance/Gold_Pool/nav_06.png) no-repeat 1rem #fff;background-size: 1.8rem;border-top: 1px solid #f3f3f3;border-left: 1px solid #f3f3f3;color: #9b7e47;}
+/*积分数 页面*/
+.jifen_top{padding:0 0 .5rem 0;overflow: hidden;}
+.jifen_num{color: #d38200;}
+.jifen_btn{background-color: #ff6600;}
+.jifen_text{font-size: .5rem;margin-top: .6rem;background: url(../../../../images/ea/finance/Gold_Pool/dot_s.png) no-repeat .55rem .25rem;background-size: .25rem;color: #5e4622;padding-left: 1.1rem;line-height: .75rem;}
+#jifen{overflow-y: scroll;padding-bottom: 1rem}
+.hb_tr span{display: table-cell;font-size: .6rem;} 
+/*修改积分数双行显示*/
+.double_line{padding:.2rem 0}
+.double_line span{line-height: 2rem;}
+.double_line span:nth-child(1){line-height: .8rem;white-space: normal;display:-webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;height: 1.6rem;margin-top: .2rem;}
+
+/*输入验证码弹窗*/
+.popup_pay {
+	display: none;
+}
+.popup_code{background: #fff;width: 12rem;border-radius: .3rem;display: none;}
+.code_hd{text-align: center;position: relative;height: 1.8rem;line-height: 1.8rem;color: #212121;font-size: .768rem;margin-top: .3rem;}
+.code_hd .close_btn{position: absolute;right: .3rem;border: 0;}
+.code_bd{margin: .8rem auto 1.2rem;}
+.phone_num{float: left;width: 60%;text-align: center;line-height: 1.4rem;height: 1.4rem;font-size: .768rem;}
+.code_btn{width: 30%;float: left;text-align: center;line-height: 1.4rem;border: 1px solid #ff6600;color: #ff6600;font-size: .64rem;margin-top: -1px;}
+.code_fd{margin-bottom: 1.6rem;}
+.code_label{border: 2px solid #dcdcdc;width: 10.8rem;box-sizing:content-box;margin: .6rem auto;cursor: pointer;}
+.code_label li{float: left;width: 1.8rem;height: 1.8rem;border-right: 1px solid #eeeeee;cursor: pointer;}
+.code_label li:last-child{border: 0;}
+.pass{background: url(../../../../images/ea/finance/BenDis/dot.png) no-repeat center;background-size: .5rem;}
+.code_inp{position: absolute;left: -9999px;opacity: 0}
+.code_btn{background: #fff;padding: 0;}
+.disabled_code{color: #c9c9c9;border: 1px solid #c9c9c9;}
+
+/*积分充值*/
+.jifen_pay_wrap{padding: .6rem 0 1rem;}
+.jifen_pay{width: 6rem;height: 6rem;margin: 0 auto;background: url(../../../../images/ea/finance/BenDis/yuan_bg.png) no-repeat center;background-size: contain;text-align: center;line-height: 1rem;font-size: .6rem;color: #fe6401;overflow: hidden;}
+.jifen_paynum{font-size: 1.2rem;line-height: 1.8rem;margin-top: 1.9rem}
+
+/*输入验证码显示数字样式*/
+.code_label li{line-height:1.8rem;font-size: 1rem;text-align: center;color: #000;}
+.code_label{width: 7.2rem}
+ /*2017年4月5日 18:02:46*/
+.overlay>input{position: absolute;
+    left:-9999px;z-index: 0;}
+
+/*2017年4月13日 增加我的钱包页面*/
+.nav_list_wrap{background: #fff;}
+.nav_list_box{height: 2.2rem;line-height: 2.2rem;font-size: 0;color: #393939;background: url(../../../../images/ea/finance/BenDis/arr_sr.png) no-repeat 15rem;background-size: .36rem;border-bottom: 1px solid #f9f9f9;display: block;}
+.nav_list_box i{display: inline-block;vertical-align: top;width: 2.6rem;height: 2.2rem;}
+.nav_list_box span,.nav_list_box small{display: inline-block;vertical-align: center;font-size: .73rem;width: 5.4rem;}
+.nav_list_01{background: url(../../../../images/ea/finance/BenDis/list_bank.png) no-repeat center;background-size: 1rem;}
+.nav_list_02{background: url(../../../../images/ea/finance/BenDis/list_01.png) no-repeat center;background-size: .88rem;}
+.nav_list_03{background: url(../../../../images/ea/finance/BenDis/list_02.png) no-repeat center;background-size: 1rem;}
+.nav_list_04{background: url(../../../../images/ea/finance/BenDis/list_03.png) no-repeat center;background-size: .9rem;}
+.nav_list_05{background: url(../../../../images/ea/finance/BenDis/list_04.png) no-repeat center;background-size: .9rem;}
+.nav_list_06{background: url(../../../../images/ea/finance/BenDis/list_05.png) no-repeat center;background-size: .8rem;}
+.nav_list_07{background: url(../../../../images/ea/finance/BenDis/list_06.png) no-repeat center;background-size: 1rem;}
+.nav_list_08{background: url(../../../../images/ea/finance/BenDis/list_07.png) no-repeat center;background-size: 1rem;}
+.nav_list_09{background: url(../../../../images/ea/finance/BenDis/list_08.png) no-repeat center;background-size: .8rem;}
+.list_part{border-top: .4rem solid #f3f3f3;}
+.nav_list_box small{text-align: right;width: 6.5rem;font-size: .683rem;color: #949494;}
+.nav_list_box:first-child{background:none;}
+.nav_list_box:first-child small{width:7.5rem;}#prompt div{
+												  width: 70%;
+												  background: rgba(0,0,0, 0.5);
+											  }
+.list_part .bank_card{background: url(../../../../images/ea/finance/BenDis/arr_sr.png) no-repeat 15rem;background-size: .36rem;}
+.list_part .bank_card small{width:6.5rem;}
+
+/*2017.4.21*/
+#prompt div{
+	width: 70%;
+	background: rgba(0,0,0, 0.5);
+}
+.bangding{
+	border-bottom: .5rem solid #f4f4f4
+}
+
+.bangding .relieve_btn{
+	line-height: 2.4rem;
+	font-size: 0.7rem;
+}
+.btn_jc{
+	cursor: pointer;position: relative;z-index: 1;background: #fff;transition: all .2s ease-in;-webkit-transition: all .2s ease-in;
+}
+.bd_li {
+	overflow: hidden;
+	position:relative;
+	border-bottom: 1px solid #f4f4f4;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	padding-left: 0.5rem;
+}
+
+.left_div {
+	float: left;
+	width: 1.6rem
+}
+
+.left_div_img {
+	margin-top: 40%;
+	height: .875rem;
+	width: .875rem
+}
+
+.cen_p{
+	float: left;
+	font-size: .6rem;
+	color: #222
+}
+
+.cen_span {
+	float: left;
+	margin-left: .65rem;
+	font-size: .5rem;
+	color: #999
+}
+/*验证码*/
+.Bbox {
+	display: none;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.2);
+	position: fixed
+}
+
+.content {
+	width: 80%;
+	margin: 20% auto 0 auto;
+	background-color: #fff
+}
+
+.box_sec_1 {
+	padding-top: .75rem;
+	padding-bottom: 1.825rem
+}
+
+.box_sec_1_img{
+	width: 100%
+}
+
+.box_sec_2 {
+	width: 87%;
+	margin: 0 auto 0.5rem auto;
+	border-bottom: 1px solid #f4f4f4
+}
+
+.box_sec_2_img{
+	width: .55rem
+}
+
+.box_sec_2_div_1{
+	display: inline-block;
+	padding-left: 1rem;
+	width: 50%;
+	height: 2.1rem;
+	line-height: 2.1rem;
+	border: 0;
+	font-size: .5rem;
+	color: #222
+}
+
+.box_sec_2_input{
+	float: right;
+	width: 29%;
+	padding-right: .35rem;
+	height: 2.1rem;
+	line-height: 2.1rem;
+	border: 0;
+	font-size: .5rem;
+	color: #f74c32;
+	background-color: #fff
+}
+
+.box_sec_3_p{
+	height: .85rem;
+	line-height: .85rem;
+	text-align: center;
+	font-size: .5rem;
+	color: #222
+}
+
+.footer{
+	padding-bottom: 1.5rem;
+	text-align: center;
+	position: relative
+}
+
+.footer_inp_1,.footer_inp_2{
+	width: 38%;
+	border: 0;
+	border-radius: .25rem;
+	background-color: #f74c32;
+	height: 1.65rem;
+	line-height: 1.65rem;
+	font-size: .6rem;
+	color: #fff
+}
+
+.footer_inp_2{
+	margin-left: 8% ;
+	background-color: #b1b0b0;
+
+}
+
+.footer_img{
+	position: absolute;
+	width: .8rem;
+	bottom: -15%;
+	left: 47%
+}
+
+.shoujihao {
+	height: 3rem;
+	position: relative
+}
+
+.container {
+	text-align: center
+}
+
+.container p {
+	font-family: "微软雅黑";
+	color: #888
+}
+
+.val-box {
+	top: 20%;
+	left: 14.5%;
+	position: absolute;
+	width: 71%;
+	text-align: center;
+	-webkit-tap-highlight-color: transparent
+}
+
+.container input[type=text] {
+	border: 0;
+	position: absolute;
+	left: 11%;
+	top: 7%;
+	width: 10rem;
+	height: 4rem;
+	opacity: 0
+}
+
+.val-box input[type=text]:active {
+	border: 0
+}
+
+.val-box div {
+	height: .8rem;
+	line-height: .8rem;
+	width: 13%;
+	margin: 0 1.8%;
+	padding: .5rem 0;
+	z-index: 5;
+	color: red;
+	font-size: 1.2rem;
+	text-align: center;
+	float: left;
+	position: relative
+}
+
+.val-box div:before {
+	content: "";
+	width: 100%;
+	background-color: #ddd;
+	position: absolute;
+	left: 0;
+	top: 48%;
+	height: .125rem
+}
+
+.val-box .available:before {
+	background-color: transparent
+}
+.num_js{
+	display: none;
+	float: right;
+	width: 29%;
+	text-align: center;
+	height: 2.1rem;
+	line-height: 2.1rem;
+	font-size: 0.55rem;
+	color: #f74c32;
+}
+@media (min-width: 960px) {
+
+	html {
+
+	margin: 0 25% 0 25%;
+	}
+
+	body {
+
+
+		left :25%;
+
+		 right:25%;
+		font-size: 1rem;
+	}
+}
+
+
+
+
+

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.PrizeProbaBean" table="DT_PRIZE_PROBA" schema="HYPLAT">
+        <comment>奖品等级概率表</comment>
+        <id name="probaId" column="PROBA_ID">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="prizeLevel">
+            <column name="prize_level">
+                <comment>奖品等级</comment>
+            </column>
+        </property>
+        <property name="probaRate" >
+            <column name="PROBA_RATE">
+                <comment>中奖几率</comment>
+            </column>
+        </property>
+        <property name="prizeScheme">
+            <column name="PRIZE_SCHEME">
+                <comment>方案</comment>
+            </column>
+        </property>
+        <property name="lotteryIndex">
+            <column name="LOTTERY_INDEX">
+                <comment>位置</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

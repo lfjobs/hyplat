@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="SalesSceneInfo" table="dt_sft_SalesSceneInfo">
+	<comment>二级商户进件 ——-店铺信息</comment>
+		<id length="50" name="ssKey">
+			<column length="50" name="ssKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="ssId">
+			<column length="50" name="ssId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="store_name">
+			<column length="50" name="store_name" ><comment>店铺名称</comment></column>
+		</property>
+		<property name="store_url">
+			<column length="50" name="store_url" ><comment>店铺链接 </comment></column>
+		</property>
+		<property name="store_qr_code">
+			<column length="50" name="store_qr_code" ><comment>店铺二维码</comment></column>
+		</property>
+
+
+	</class>
+</hibernate-mapping>

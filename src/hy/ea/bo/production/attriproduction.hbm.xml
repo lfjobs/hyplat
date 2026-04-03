@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                            
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="AttriProduction"  table="dtAttriProduction">
+		<id length="50" name="apkey">
+			<column length="50" name="apkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="apid">
+			<column length="50" name="apid" not-null="true"><comment>逻辑主键</comment></column>
+		</property>
+		<property name="attriname">
+			<column length="50" name="attriname"><comment>属性名 e.g.颜色 </comment></column>
+		</property>
+		<property  name="attrivalue">
+			<column length="50" name="attrivalue"><comment>属性值 e.g.白色</comment></column>
+		</property>
+		<property  name="imgurl">
+			<column length="250" name="imgurl"><comment>图片链接</comment></column>
+		</property>
+		<property  name="goodsid">
+			<column length="50" name="goodsid"><comment>物品ID</comment></column>
+		</property>
+		<property  name="type">
+			<column length="1" name="type"><comment>0尺码,1颜色,2副图</comment></column>
+		</property>
+		<property name="sort" type="integer">
+			<column name="sort" ><comment>排序</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

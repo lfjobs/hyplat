@@ -1,0 +1,31 @@
+  .atop{width:750px;}
+.top-wg{width:750px;position:relative;}
+    .top-dh{width:750px;position:absolute;top:28px;}
+    .top-dh img{position:absolute;left:24px;}
+    .csb{position:absolute;background:url(../../../images/ea/bids/jiantou.png) 67px 17px no-repeat;font-size:34px;color: #fff;right:61px;padding-right:23px;}
+    .ipt{position:absolute;border-radius:10px;width:537px;left:46px;padding:10px 20px ;font-size:30px;opacity:0.6;filter: alpha(opacity=60);top:232px;}
+    .xuqiu{position:absolute;padding-top:41px;background:url(../../../images/ea/bids/xuqiu_03.jpg) 13px 3px no-repeat;right:35px;font-size:20px;color: #fff;top:232px;}
+	.zbs{width:750px;overflow: hidden;padding:36px 0;border-bottom:2px #ebebeb solid;}
+	.zbs li{float:left;}
+	.zbs h6{font-size:23px;color: #5d5c5c;padding-top:13px;}
+	.zbs li:nth-child(1){margin-left:50px;}
+	.zbs li:nth-child(2){margin-left:60px;}
+	.zbs li:nth-child(3){margin-left:60px;}
+	.zbs li:nth-child(4){margin-left:60px;}
+	.clear{clear:both;}
+	.tsfw{padding:16px 49px;font-size:24px;color: #eb4f38;margin-left:280px;}
+	.tsfw1{background: url(../../../images/ea/bids/fw.png) 0px 12px no-repeat;}
+	.tsfw2{background: url(../../../images/ea/bids/tj.png) 0px 12px no-repeat;}
+	.tsfw-fl li{float:left;border-right:1px #ebebeb solid;border-top:1px #ebebeb solid;border-bottom:1px #ebebeb solid;width:187px;height:214px}
+	.tsfw-fl h4{color:#3b3b3b;padding-top:20px;padding-left: 18px;}
+	.tsfw-fl p{color:#828282;padding-top:10px;padding-left: 18px;}
+	.tsfw-fl img{padding-top:21px;padding-left:8px;}
+	.tj_con{ overflow:hidden; width:100%;}    
+.tj_con li{ width:750px; float:left;}
+.tj_con .tj_img{float:left;}
+.tj_con .tj_img img{ width:161px;margin:15px auto;}
+.tj_con .tj_text{float:right;padding:15px 0; border-bottom:1px solid #e2e2e2;width:529px;}
+.tj_con .tj_text h3{margin-right:10px;font-size:27px;padding-top:34px;line-height:33px;color: #4c4c4c;}
+.tj_con .tj_text h4{margin-right:10px;position:relative; color:#ef6060; margin:10px 0; font-size:31px;line-height:48px;}
+.tj_con .tj_text span{ font-weight:normal; position:absolute; bottom:0; right:50px; display:block; color:#818181; font-size:23px;}
+.tj_con .tj_text div{position:absolute;right:209px;color:#68b83a; font-size:23px; bottom:0;}

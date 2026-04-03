@@ -1,0 +1,23 @@
+<Configuration>
+	<protocol>smtp</protocol>
+	<host>smtp.163.com</host>
+	<port>25</port>
+	<auth>true</auth>
+	<authUser>xxyifan@163.com</authUser>
+	<authPassword>07030106</authPassword>
+	<mailFrom>xxyifan@163.com</mailFrom>
+	<mailTo></mailTo>
+	<copyTo>xxyifan0106@tom.com</copyTo>
+	<replyMail>xxyifan@163.com</replyMail>
+	<replyPhone>15810332329</replyPhone>
+	<petSystemPassword></petSystemPassword>
+	<msgSubject>欢迎您使用在线宠物管理系统</msgSubject>
+	<msgText>
+		尊敬的userName:
+		您好！
+		欢迎您注册/使用在线宠物管理系统，您的用户名是：userName，您的密码是:password，
+		您可以点击这里登录：http://petsystem.com 
+		您在登录系统后，请注意及时修改密码。
+		如您有任何问题，请回复：replyMail，或致电：replyPhone。
+	</msgText>
+</Configuration>

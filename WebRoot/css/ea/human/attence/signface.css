@@ -1,0 +1,86 @@
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+header {
+  background-color: #f74c30;
+}
+header ul {
+  padding: 0 0.5rem;
+}
+header ul li {
+  float: left;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  font-size: 0.7rem;
+  color: #ffffff;
+}
+header ul li:first-of-type {
+  width: 20%;
+}
+header ul li:first-of-type img {
+  width: 0.45rem;
+}
+header ul li:nth-of-type(2) {
+  width: 58%;
+  text-align: center;
+}
+header ul li:nth-of-type(3) {
+  width: 20%;
+  text-align: right;
+}
+.content p {
+  text-align: center;
+}
+.content .p-img {
+  padding-top: 1rem;
+  padding-bottom:1rem;
+}
+.content .p-img img {
+  width: 7.5rem;
+}
+.content .p-time {
+  padding-bottom: 0.5rem;
+}
+.content .p-time div {
+  margin: 0 auto;
+  background: url(../../../../images/home/img-007.png) no-repeat left top;
+  background-size: contain;
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 50%;
+}
+.content .p-time div p {
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+.content .p-time div p:first-of-type {
+  padding-top: 1.5rem;
+}
+.content .p-time div p:last-of-type {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.6rem;
+  color: #ffffff;
+}
+.content .p-gs {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.6rem;
+  color: #222222;
+  text-align:left;
+}
+.content .p-gs img {
+  width: 0.7rem;
+  margin: 0 0.35rem;
+}
+
+.content .p-dz{
+	font-size: 0.6rem;
+	 line-height: 0.8rem;
+	 padding-bottom:2rem;
+}

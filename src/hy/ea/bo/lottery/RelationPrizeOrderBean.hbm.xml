@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.RelationPrizeOrderBean" table="DT_RELATION_PRIZE_ORDER" schema="HYPLAT">
+       <comment>抽奖与订单关联表</comment>
+        <id name="id">
+            <column name="ID" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="prizeId">
+            <column name="PRIZE_ID" sql-type="varchar2(50)" length="50" not-null="true">
+            <comment>奖池id</comment>
+            </column>
+        </property>
+        <property name="productId">
+            <column name="PRODUCT_ID" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>产品id</comment>
+            </column>
+        </property>
+        <property name="orderNum">
+            <column name="ORDER_NUM" sql-type="varchar2(250)" length="250" not-null="true">
+                <comment>订单号</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

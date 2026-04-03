@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CompleteAllter" table="dtCompleteAllter">
+		<id length="50" name="completeAllterKey">
+			<column length="50" name="completeAllterKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="completeAllterID">
+			<column length="50" name="completeAllterID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="deptID">
+			<column length="50" name="deptID"/>
+		</property>
+		<property name="voucherNumber">
+			<column length="250" name="voucherNumber"/>
+		</property>
+		<property name="company">
+			<column length="250" name="company" />
+		</property>
+		<property name="organization">
+			<column length="250" name="computerModel" />
+		</property>
+		<property  name="responsible">
+			<column length="250" name="responsible" />
+		</property>
+		<property  name="completeAllterDate">
+			<column  name="completeAllterDate" />
+		</property>
+		<property  name="completeAllterTongZhiCode">
+			<column length="250" name="completeAllterTongZhiCode" />
+		</property>
+		<property  name="completeAllterCode">
+			<column length="250" name="completeAllterCode" />
+		</property>
+		<property  name="completeAllterGoods">
+			<column length="250" name="completeAllterGoods" />
+		</property>
+		<property  name="completeAllterMan">
+			<column length="250" name="completeAllterMan" />
+		</property>
+		<property  name="completeAllterTongZhiCause">
+			<column length="250" name="completeAllterTongZhiCause" />
+		</property>
+		<property  name="completeAllterBeCauseOne">
+			<column length="250" name="completeAllterBeCauseOne" />
+		</property>
+		<property  name="remarkOne">
+			<column length="250" name="remarkOne" />
+		</property>
+		<property  name="completeAllterBeCauseTwo">
+			<column length="250" name="completeAllterBeCauseTwo" />
+		</property>
+		<property  name="remarkTwo">
+			<column length="250" name="remarkTwo" />
+		</property>
+		<property  name="completeAllterBeCauseThree">
+			<column length="250" name="completeAllterBeCauseThree" />
+		</property>
+		<property  name="remarkThree">
+			<column length="250" name="remarkThree" />
+		</property>
+		<property  name="accessories">
+			<column length="256" name="accessories" />
+		</property>
+		
+		<property  name="manager">
+			<column length="250" name="manager" />
+		</property>
+		<property  name="president">
+			<column length="250" name="president" />
+		</property>
+			<property  name="deptCharge">
+			<column length="250" name="deptCharge" />
+		</property>
+		<property  name="headCharge">
+			<column length="250" name="headCharge" />
+		</property>
+		<property  name="verify">
+			<column length="250" name="verify" />
+		</property>
+			<property  name="financeVerify">
+			<column length="250" name="financeVerify" />
+		</property>
+		<property  name="accounting">
+			<column length="250" name="accounting" />
+		</property>
+			<property  name="allAccounting">
+			<column length="250" name="allAccounting" />
+		</property>
+		<property  name="cashier">
+			<column length="250" name="cashier" />
+		</property>
+		<property  name="allCashier">
+			<column length="250" name="allCashier" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.audits">
+    <class name="Procedure" table="dt_au_Procedure">
+        <id name="proKey" length="50">
+        	<column name="proKey" length="50"/>
+        	<generator class="uuid" />
+        </id>
+         <property name="proId">
+        	<column name="proId" length="50" unique="true" not-null="true"/>
+        </property>
+           <property name="proName">
+        	<column name="proName" length="50"  />
+        </property>
+        <property name="startDate" >
+        	<column name="startDate" length="7" />
+        </property>
+        <property name="endDate" >
+        	<column name="endDate" length="7" />
+        </property>
+         <property name="status" >
+        	<column name="status" length="3"/>
+        </property>
+         <property name="createDate" >
+        	<column name="createDate" length="7"  />
+        </property>
+        <property name="creatorID" >
+        	<column name="creatorID" length="50"  />
+        </property>
+          <property name="companyID">
+        	<column name="companyID" length="50" />
+        </property>
+          <property name="organizationID">
+        	<column name="organizationID" length="50" />
+        </property>
+           <property name="forms">
+        	<column name="forms" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

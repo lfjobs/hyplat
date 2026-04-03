@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<constant name="struts.result.type.plainText" value="org.apache.struts2.dispatcher.PlainTextResult"/>
+
+	<constant name="struts.configuration.xml.reload" value="false"/>
+	<constant name="struts.devMode" value="false"/>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.i18n.reload" value="false"/>
+	<constant name="struts.custom.i18n.resources" value="global" />
+
+	<constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.action.excludePattern" value="/servlet/FileUpload,/servlet/FileUploadServlet.htm" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.action.extension" value="jspa,do,action" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.configuration.xmlreload" value="true" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+	<constant name="struts.multipart.maxSize" value="51457280" />
+
+
+	<package strict-method-invocation="false" name="base" extends="struts-default">
+	</package>
+	<include file="struts-ea.xml" />
+	<include file="struts-ea-human.xml" /><!-- 正在转移 -->
+	<include file="struts-ea-invoicing.xml" />
+	<include file="struts-ea-finance.xml" />
+	<include file="struts-ea-office.xml" />
+	<include file="struts-ea-production.xml" />
+	<include file="struts-ea-company.xml" />
+	<include file="struts-ea-ccompany.xml" />
+	<include file="struts-ea/telrec/telrec-struts.xml" />
+	<include file="struts-ea/dataSync/dataSync-struts.xml" />
+	<include file="struts-ea-repassword.xml" />
+	<include file="struts-ea-marketing.xml" />
+	<include file="struts-ea-websitemall.xml" />
+	<include file="struts-tel.xml" />
+	<include file="struts-ea-driving.xml" />
+	<include file="struts-ea-android.xml" />
+	<!-- 电脑功能转手机端-->
+	<include file="struts-ea-scMobile.xml" />
+
+	<!-- 对接银行参数配置管理    add by zhb -->
+	<include file="struts-nwa-manager.xml" />
+	<!-- 预约系统管理配置 -->
+	<include file="struts-ea-ddsr.xml" />
+	<!-- 数据导入的action配置 -->
+	<include file="struts-ea-importdata.xml" />
+		<!-- mysl的action配置 -->
+	<include file="struts-ea-mysl.xml" />
+	<!-- 鉴权 -->
+	<include file="struts-ea/telrec/authentication-struts.xml" />
+	
+	<include file="struts-ea-milvus.xml"></include>
+
+</struts>

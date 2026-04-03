@@ -1,0 +1,114 @@
+@charset 'utf-8';
+/*收付码商城*/
+.main_list{padding-left: .6rem;}
+.main_list li{line-height: 2.4rem;padding-left: 2rem;border-bottom: 1px solid #eeeeee;}
+.main_list li:first-child{background: url(../../../../../images/ea/office/scanPay/sfshop/listico_01.png) no-repeat .3rem;background-size: 1.4rem;}
+.main_list li:last-child{background: url(../../../../../images/ea/office/scanPay/sfshop/listico_02.png) no-repeat .3rem;background-size: 1.1rem;}
+.main_list a{color: #000000;display: block;}
+.tab_wrap{position: fixed;width: 100%;top: 2.16rem;left: 0;z-index: 99;background: #fff;}
+.tab_box{float: left;width: 50%;text-align: center;line-height: 2rem;color: #000000;border-bottom: 1px solid #eeeeee;}
+.tab_box:first-child{border-right: 1px solid #eeeeee;}
+.tab_cur{color: #ff6e31;}
+.tab_con{padding: 2.5rem .6rem 3rem;display: block;}
+.pay_wrap{display: block;position: relative;border: 1px solid #f9f9f9;-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,.2);box-shadow: 1px 1px 3px rgba(0,0,0,.2);padding:.4rem .6rem .4rem 2.6rem;border-radius: .25rem;margin-bottom: .5rem;}
+.s_logo{position: absolute;left: 0.4rem;width: 1.6rem;height: 1.6rem;top: .5rem;border-radius: 50%;}
+.pay_line{line-height: 1.8rem;overflow: hidden;}
+.pay_line span{float: left;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.pay_name{width: 70%;color: #343434;}
+.pay_state{width: 30%;text-align: right;}
+.no_pay{color: #ff6e31;}
+.pay_num{color: #4c4c4c;font-size: 1.2rem;}
+.pay_num b{color: #2d2c2c;}
+.pay_ordernum{color: #898989;width: 80%;font-size: .555rem;}
+.pay_pirce{color: #1b1b1b;width: 40%;font-size: .8rem;}
+.pay_operation{width: 60%;}
+.pay_operation span{float: left;width: 45%;text-align: center;line-height: 1.2rem;border-radius: 1.2rem;font-size: .64rem;margin-top: .3rem;}
+.pay_operation span:last-child{margin-left: 10%;border: 1px solid #65aad1;color: #65aad1;}
+.pay_operation span:first-child{border: 1px solid #ff6e31;color: #ff6e31;}
+.paid{color: #95c1dd;}
+/*.tab_con:last-child{display: none;}*/
+.sele_tn{border-bottom: 1px solid #eeeeee;padding: .4rem .6rem;line-height: 1.6rem;display: block;font-size: 0;position: fixed;width: 100%;left: 0;top: 2.16rem;z-index: 9;background: #fff;}
+.o_logo{width: 1.6rem;height: 1.6rem;margin-left: .6rem;margin-right: .8rem;vertical-align: middle;border-radius: 50%;}
+.sele_tn span{font-size: .73rem;color: #000000;line-height: 1.6rem;display: inline-block;vertical-align: middle;}
+.o_s_name{width: 7rem;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: 1px;}
+.o_tn{width: 4.8rem;text-align: right;padding-right: .8rem;/**/}
+.menu_wrap{padding: 3rem .6rem 4rem;}
+.menu_part{padding: 0 .6rem .8rem;border: 1px solid #f9f9f9;margin-bottom: .6rem;-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,.1);box-shadow: 2px 2px 5px rgba(0,0,0,.1);border-radius: .25rem;}
+.menu_img{border-radius: 50%;width: 1.6rem;height: 1.6rem;margin-right: .8rem;}
+.menu_name{padding: .5rem 0;}
+.menu_box li span{float: left;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.menu_box li{overflow: hidden;line-height: 1.4rem;}
+.menu_box{border-bottom: 1px solid #eeeeee;border-top: 1px solid #eeeeee;padding: .4rem 0;}
+.menu_box li span:nth-child(1){width: 70%;color: #343434;}
+.menu_box li span:nth-child(2){width: 15%;text-align: center;color: #5e5e5e;font-size: .64rem;}
+.menu_box li span:nth-child(3){width: 15%;text-align: center;color: #5e5e5e;font-size: .64rem;}
+.o_time{line-height: 1.8rem;font-size: .6rem;color: #969696;}
+.o_remark{color: #3f3f3f;line-height: 1.1rem;}
+.menu_total{position: fixed;width: 100%;background: #fff;bottom: 0;left: 0;padding:.8rem 1.2rem;border-top: 1px solid #eeeeee;z-index: 9;}
+.menu_pirce{float: left;width: 6.6rem;line-height: 1.1rem;color: #ff6e31;font-weight: bold;letter-spacing: 1px;font-size: .9rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.menu_operation{float: left;width: 7rem;}
+.menu_operation a{float: left;width: 3rem;text-align: center;border-radius: 1.2rem;height: 1.2rem;line-height: 1.1rem;}
+.m_add{border: 1px solid #ff6e31;color: #ff6e31;}
+.m_js{border: 1px solid #65aad1;color: #65aad1;margin-left: 1rem;}
+.js_state{text-align: right;margin-right: 1rem;color: #7d7d7d;}
+.tn_act .o_tn{background: url(../../../../../images/ea/office/scanPay/sfshop/arr_R.png) no-repeat right;background-size: .4rem;color: #ff6e31;}
+.qr_btn{width: 1rem;height: 1rem;background: url(../../../../../images/ea/office/scanPay/sfshop/sm.png) no-repeat center;background-size: contain;margin-right: .2rem;}
+
+.nest_page{position: fixed;width: 100%;height: 100%;top:0;right: 0;z-index: 9999;background: #fff;overflow-y: scroll;display: none;}
+.nest_hd{line-height: 2.16rem;border-bottom: 1px solid #dcdcdc;text-align: center;font-size:.768rem;color: #222222;position: fixed;width: 100%;background: #fff;z-index: 99;}
+.nest_back{position: absolute;width: 1rem;height: 1rem;left: .6rem;top: .58rem;background: url(../../../../../images/ea/office/scanPay/sfshop/back.png) no-repeat center;background-size: .5rem;}
+.nest_bd{margin-top: 2.16rem;}
+
+.table_wrap{padding: 1rem .5rem 1rem 1rem;}
+.table_type{color: #4a4a4a;line-height: 2.4rem;}
+.table_box{float: left;}
+.table_box span{display: block;width: 3.12rem;text-align: center;border: 1px solid #65aad1;line-height: 1.1rem;border-radius: 1.2rem;position: relative;margin-right: .5rem;color: #65aad1;margin-bottom: .8rem;}
+.tn_inp{position: absolute;}
+.tn_inp:checked+span{border: 1px solid #ff6e31;color: #ff6e31;}
+.tn_inp:disabled+span{color: #c6c6c6;border: 1px solid #c6c6c6;}
+/*修改客户订单-已结算详情*/
+.menu_pirce{float: right;text-align: right;width: 45%;margin-top: 1rem;}
+.menu_text{float: left;width: 70%;}
+.js_name{line-height: 1rem;color: #525252;}
+.js_time{font-size: .5rem;color: #7d7d7d;line-height: 1.4rem;}
+.order_pirce {
+    width: 6.6rem;
+    line-height: 1.1rem;
+    color: #ff6e31;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: .9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.order_operation {
+    float: right;
+    width: 7rem;
+}
+.order_operation a {
+    float: right;
+    width: 4rem;
+    text-align: center;
+    border-radius: 1.2rem;
+    height: 1.2rem;
+    line-height: 1.1rem;
+}
+.m_js {
+    border: 1px solid #65aad1;
+    color: #65aad1;
+    margin-left: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

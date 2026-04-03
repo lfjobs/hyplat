@@ -1,0 +1,275 @@
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+::-webkit-input-placeholder {
+    color: #ccc;
+    font-size: .6rem
+}
+
+::-moz-placeholder {
+    color: #ccc;
+    font-size: .6rem
+}
+
+:-ms-input-placeholder {
+    color: #ccc;
+    font-size: .6rem
+}
+
+body.body-no {
+    overflow: hidden
+}
+
+header {
+    /* background-color: #f74c32; */
+    border-bottom: 1px solid #d0d0d0;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .7rem;
+    color: #6d6d6d
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .525rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+.content .sec-nav {
+    padding: .875rem 0 .2rem 0
+}
+
+.content .sec-nav ul {
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    border: .025rem solid #f74c32
+}
+
+.content .sec-nav ul li {
+    background-color: #fff;
+    text-align: center;
+    width: 50%;
+    float: left;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .6rem;
+    color: #222
+}
+
+.content .sec-nav ul li.active {
+    background-color: #f74c32;
+    color: #fff
+}
+
+.content .ul-con li {
+    padding: .625rem .625rem 0 .875rem;
+    border-bottom: .5rem solid #f4f4f4
+}
+
+.content .ul-con li h3 {
+    height: 1.4rem;
+    line-height: 1.4rem;
+    font-size: .6rem;
+    color: #222;
+    font-weight: 400
+}
+
+.content .ul-con li .div-01 p {
+    float: left;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.content .ul-con li .div-01 span {
+    float: left;
+    display: block;
+    width: .5rem;
+    height: 1.075rem;
+    position: relative
+}
+
+.content .ul-con li .div-01 span::after {
+    content: "";
+    position: absolute;
+    width: .05rem;
+    height: .575rem;
+    background-color: #ddd;
+    left: 50%;
+    top: 26%
+}
+
+.content .ul-con li .p-xm {
+    height: 1.4rem;
+    line-height: 1.4rem;
+    font-size: .55rem;
+    color: #666
+}
+
+.content .ul-con li section {
+    padding: .5rem 0 .75rem 0
+}
+
+.content .ul-con li section p {
+    float: right;
+    border: .025rem solid #f74c32;
+    text-align: center;
+    border-radius: 1rem;
+    width: 2.5rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: .55rem;
+    color: #f74c32;
+    margin: 0 .25rem
+}
+
+.content .ul-con li section .p-del {
+    background-color: #f74c32;
+    color: #fff
+}
+
+.content .div-tab2 {
+    display: none
+}
+
+.content .div-tab2 ul li {
+    background: url(../../../../images/resume/img_43.png) no-repeat 60% 8%;
+    background-size: 3.5rem
+}
+
+.content .div-tab2 ul li section p {
+    border-color: #cdcdcd;
+    color: #999
+}
+
+.content .div-tab2 ul li section .p-del {
+    background-color: #ccc
+}
+
+.footer-box {
+    height: 4rem;
+    width: 100%
+}
+
+.footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: .75rem 0;
+    background-color: #fff
+}
+
+.footer p {
+    width: 80%;
+    border-radius: .25rem;
+    text-align: center;
+    background-color: #f74c32;
+    height: 1.65rem;
+    line-height: 1.65rem;
+    font-size: .6rem;
+    color: #fff;
+    margin: 0 auto
+}
+
+.div-del {
+    z-index: 999;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.div-del .box {
+    width: 75%;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 60%;
+    border-radius: .35rem
+}
+
+.div-del .box > p {
+    text-align: center;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: .7rem;
+    color: #1c1c1c
+}
+
+.div-del .box div {
+    border-top: .025rem solid #eee
+}
+
+.div-del .box div p {
+    width: 49.5%;
+    text-align: center;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    font-size: .65rem;
+    color: #555
+}
+
+.div-del .box div p:first-of-type {
+    float: left;
+    border-right: .025rem solid #eee
+}
+
+.div-del .box div p:last-of-type {
+    float: right;
+    color: #e74a45
+}
+
+@media (min-width: 960px) {
+
+    html{
+        margin:auto 25%!important;
+
+
+    }
+    .content,header{
+        border-left:1px solid #d0d0d0;
+        border-right:1px solid #d0d0d0;
+    }
+    .footer p {
+        width: 20%;
+
+    }
+
+    .div-del .box {
+        width: 30%;
+        margin-top: 20%;
+
+    }
+}

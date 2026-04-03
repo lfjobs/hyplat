@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	   xmlns:jaxws="http://cxf.apache.org/jaxws"
+	   xmlns:cxf="http://cxf.apache.org/core" xmlns:task="http://www.springframework.org/schema/task"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://cxf.apache.org/jaxws
+    http://cxf.apache.org/schemas/jaxws.xsd
+    http://cxf.apache.org/core
+    http://cxf.apache.org/schemas/core.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<jaxws:endpoint id="Login" implementor="#webservice.Login" address="/login"> 		 
+	</jaxws:endpoint>
+	<jaxws:endpoint id="Check" implementor="#webservice.Check" address="/check"> 		 
+	</jaxws:endpoint>
+	<jaxws:endpoint id="Reminds" implementor="#webservice.Reminds" address="/reminds"> 		 
+	</jaxws:endpoint>
+	<jaxws:endpoint id="CmsMembers" implementor="#webservice.CmsMembers" address="/cmsMembers"> 		 
+	</jaxws:endpoint>
+	<!-- 启用 Spring 的定时任务 -->
+	<task:annotation-driven scheduler="myScheduler"/>
+
+	<!-- 配置定时任务线程池（可选） -->
+	<task:scheduler id="myScheduler" pool-size="5"/>
+ </beans>

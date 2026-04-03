@@ -1,0 +1,98 @@
+html,body{
+    height:100%;
+    overflow:hidden;
+}
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+.layui-form-item {
+    margin-top: 20px;
+    width: 80%;
+}
+.layui-btn {
+    width: 100%;
+    background-color: #e64d3d;
+    border-top: 0.35rem solid #f8f8f8;
+    height: 53px;
+}
+.div-custom-set {
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.div-custom-set .layui-inline {
+    margin-bottom: 0px;
+}
+.div-custom-set .layui-inline .layui-input-inline {
+    width: 100px;
+    float: left;
+    margin-left: 10px;
+}
+.div-custom-button {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border-top: 0.025rem solid #eee;
+}
+
+.div-custom-button .layui-input-block{
+    margin-left:0px;
+    min-height:53px
+}
+.layui-btn-save,.layui-btn-cancel{
+    background-color: #fff;
+    color:#333;
+    width:50%;
+    float:left;
+    margin-left:0 !important;
+    border-top: 0.35rem solid #f8f8f8;
+    height: 53px;
+    display: inline-block;
+    line-height: 38px;
+    padding: 0 18px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.layui-btn-cancel{
+    color:#666;
+    border-right: 0.025rem solid #eee;
+}
+.layui-input, .layui-select, .layui-textarea {
+    border-width: 0px !important;
+    color: #312828;
+}

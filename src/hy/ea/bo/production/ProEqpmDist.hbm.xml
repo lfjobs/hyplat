@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                     
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="ProEqpmDist"  table="dt_pro_eqpm_dist" schema="hyplat">
+		<comment>设备分配表</comment>
+		<id length="50" name="pedKey">
+			<column length="50" name="ped_Key" />
+			<generator class="uuid" />
+		</id>
+		<property name="pedId">
+			<column length="50" name="ped_Id"><comment>业务主键</comment></column>
+		</property>
+		<property name="companyId">
+			<column length="50" name="companyId"><comment>公司表业务主键</comment></column>
+		</property>
+		<property name="pedStartDate">
+			<column name="ped_Start_Date" sql-type="date"><comment>开始时间</comment></column>
+		</property>
+		<property  name="pedEndDate">
+			<column name="ped_End_Date" sql-type="date"><comment>结束时间</comment></column>
+		</property>
+		<property  name="ppID">
+			<column length="50" name="ppID"><comment>产品包装业务主键</comment></column>
+		</property>
+		<property  name="goodsName">
+			<column length="250" name="goodsName"><comment>产品名称</comment></column>
+		</property>
+		<property name="prodctSn">
+			<column length="50" name="prodct_Sn" ><comment>项目产品编号</comment></column>
+		</property>
+		<property  name="staffId">
+			<column length="50" name="staffId"><comment>社会人力业务主键</comment></column>
+		</property>
+			<property name="staffName">
+			<column length="250" name="staffName"><comment>分配责任人</comment></column>
+		</property>
+		<property name="duty">
+			<column length="200" name="duty"><comment>职责</comment></column>
+		</property>
+		<property  name="distDate">
+			<column name="distDate" sql-type="date"><comment>分配时间</comment></column>
+		</property>
+		<property  name="distRemark">
+			<column length="200" name="distRemark"><comment>分配备注</comment></column>
+		</property>
+		<property  name="devices">
+			<column length="500" name="devices"><comment>设备</comment></column>
+		</property>
+		<property  name="type">
+			<column length="500" name="type"><comment>生产类别</comment></column>
+		</property>
+		<property  name="category">
+			<column length="50" name="category"><comment>产品类型</comment></column>
+		</property>
+		<property  name="fiveClear">
+			<column length="50" name="fiveClear"><comment>组织机构</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

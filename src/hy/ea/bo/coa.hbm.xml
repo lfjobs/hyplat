@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="COA" table="dtCoa">
+		<id length="50" name="coaKey">
+			<column length="50" name="coaKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="coaID">
+			<column length="50" name="coaID" not-null="true" />
+		</property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"  not-null="true"/>
+        </property>
+        	<property name="organizationID">
+        	<column name="organizationID" length="50"/>
+        </property>
+		<property name="accountID">
+			<column length="50" name="accountID" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

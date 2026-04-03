@@ -1,0 +1,358 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	bgcolor: #007BC6;
+	FONT-SIZE: 12px;
+	margin: auto;
+}
+.red{ color:red;}
+.main {
+	width: 100%;
+	height: auto;
+	align: center;
+	margin: auto;
+}
+
+.top {
+	width: 50%;
+	height: 50px;
+	background-color: #009DD9;
+	text-align: center;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 15px;
+	color: #FFFFFF;
+	border: 1px dotted #ccc;
+	border-bottom:0px;
+	margin: auto;
+	margin-bottom:0px;
+}
+
+.body {
+	width: 50%;
+	border: 1px dotted #ccc;
+	border-top:0px;
+	margin: auto;
+	margin-top:0px;
+
+	
+}
+
+
+
+.ttab{
+	width:100%;
+	height:29px;
+	margin-top:1px;
+	
+}
+
+ul.tab li {
+	float: left;
+	width: 20%;
+	height:29px;
+	line-height:29px;
+	text-align: center;
+	background-color: #fff;
+	border: 1px #bbb solid;
+	border-left:none;
+	cursor:pointer;
+	
+	
+}
+li.left{
+margin-left:0px;
+	
+}
+
+ul.tab li.selected {
+	background-color:#ccc;
+} 
+ul.tab {
+	overflow: hidden;
+ 	/* zoom: 1;  */
+	list-style-type: none;
+	margin-top:0px;
+	margin-left:0px;
+}
+
+.show{
+    width: 100%;
+	border-top: 1px dotted #ccc;
+    margin-top:2px;
+    margin-bottom:10px;
+
+	
+	
+}
+
+.showinfo table{
+	width:100%;
+}
+
+
+
+
+.uploadpic{
+	width:250px;
+	height:250px;
+	border:1px solid #CCC;
+
+}
+
+.bottom{
+	width:100%;
+	text-align:center;
+	height:50px;
+	line-height:50px;
+	
+	
+}
+.btn{
+	
+	width:50%;
+	height:28px;
+	background:#FFFFFF;
+	border: 1px dotted #ccc;
+	
+}
+
+.group{
+	width:100%;
+	text-align:left;
+	margin-top:10px;
+	
+	
+}
+
+.group .input{
+	width:50%;
+	height:20px;
+	border:1px solid #ccc;
+	
+}
+
+.group .btnx{
+
+	height:25px;
+	
+}
+.group .title{
+	
+	margin-bottom:5px;
+}
+
+.hidcontent{
+  display:none;
+  
+	
+}
+
+
+
+/* 物品预览 */
+
+
+.body .baseinfo{
+	
+	text-align:center;
+	width:60%;
+	margin:auto;
+	
+
+}
+
+.body .detailinfo{
+	width:100%;
+	margin:auto;
+	text-align:center;
+
+	
+}
+.mainpic{
+	
+	width:90%;
+	height:300px;
+	border:1px solid #ccc;
+	margin:auto;
+	margin-bottom:5px;
+	margin-top:5px;
+	
+	
+}
+
+
+
+.ttab .detail li{
+	
+	width:49%;
+
+	
+
+}
+
+.ttab .detail{
+	
+margin-left:-37px;
+   width:100%;
+}
+
+.showparam table{
+	width:100%;
+	border:1px solid #ccc;
+	margin-bottom:100px;
+    border-collapse: collapse; 
+    margin-top:1px;
+	
+}
+.showparam td{
+	border-bottom:1px solid #ccc;
+	
+	
+}
+
+.btn01{
+	
+	width:40px;
+	height:25px;
+	border:1px solid #ccc;
+	cursor:pointer;
+}
+.inputtext{
+	width:50%;
+	height:20px;
+	border:1px solid #ccc;
+}
+.inputtext1{
+	width:50%;
+	height:20px;
+	border:1px solid #ccc;
+}
+
+.laytable{
+	
+	border:1px solid #ccc;
+	border-collapse:collapse;
+	width:60%;
+	margin-top:20px;
+	margin: auto;
+	
+	
+}
+
+.laytable th{
+	background:#009DD9;
+	height:38px;
+	
+}
+
+.laytable td,tr{
+	border:1px solid #ccc;
+	
+}
+
+.laytable td{
+	height:30px;
+	line-height: 30px;
+	white-space: nowrap;
+	
+}
+ .cap {
+	
+	font-size:16px;
+	font-weight:bold;
+	margin:auto;
+	margin-bottom:10px;
+    margin-top:20px;
+    text-align:center;
+   
+	
+}
+.laytable img{
+	/* margin-bottom:-3px; */
+	cursor:pointer;
+	vertical-align:middle;
+	
+}
+
+.laytable .tiname{
+	
+	cursor:pointer;
+	
+	
+}
+
+.laytable .blank{
+	width:18px;
+	
+}
+
+
+/*尺码*/
+.pro_size{ padding:20px 0 0px 0px; overflow:hidden;}
+/*题目*/
+
+.size_con{ width:320px; float:left;}
+.size_con label{ width:60px; height:28px; border: 1px #e0e0e0 solid; float:left; text-align:center; line-height:28px; margin:0 15px 12px 0; box-sizing:border-box; display:block;}
+.size_con p{border: 1px #e0e0e0 solid; float:left; text-align:center; line-height:28px; margin:0 15px 12px 0; box-sizing:border-box;
+border:none; width:60px; height:28px; text-align:center;}
+.size_con p input{ width:50px; height:28px; line-height:28px; border: 1px #e0e0e0 solid; background-color:#f0f0f0; margin:0 auto;}
+.tianjia{ width:60px; height:28px; border: 1px #e0e0e0 solid; float:left; text-align:center; line-height:22px; box-sizing:border-box; display:block;}
+/*颜色*/
+.pro_color{ padding:20 0 50px 0px; overflow:hidden;}
+.color_con{ overflow:hidden;}
+.style_list{ overflow:hidden; float:left;}
+.style_list li{ width:90px; height:120px; float:left; position:relative; margin-right:28px; margin-bottom:20px;}
+.style_list li .img{ width:100%; height:90px; box-sizing:border-box; border:1px #e0e0e0 solid; background-color:#FFF; position:relative;}
+.style_list li .img img{ width:100%; height:100%;}
+#add_img{ width:60px; height:60px; margin:14px;}
+.style_list li input{ width:100%; height:22px; box-sizing:border-box; border:1px #e0e0e0 solid; position:absolute; bottom:0; text-align:center; font-size:14px; letter-spacing:2px;}
+#add_button{ width:90px; height:120px; float:left; position:relative; margin-bottom:20px;}
+#add_button input{ width:100%; height:22px;line-height:22px; box-sizing:border-box; position:absolute; bottom:0; text-align:center; font-size:14px; letter-spacing:2px;  border: 1px #e0e0e0 solid; background-color:#f0f0f0;}
+.xuanzhong{ color:#fff; background-color:#fe9d9d;}
+.alert{ position:fixed; top:0; left:0; width:100%; height:100%; display:none;}
+.alert_bg{ width:100%; height:100%; background:#000; opacity:0.3; position:fixed;}
+.alert_con{ width:240px; height:140px;  background:#f2f2f2; margin:160px auto; position:relative;}
+.alert_con #jg{ width:100%; height:82px; line-height:82px; text-align:center; font-size:12px; border-bottom:#e6e6e6 solid 1px; background:#fff;}
+.alert_con button{ width:70px; height:25px; position:absolute; right:25px; bottom:15px;}
+
+.btn_file{ width:100%; height:100%; position:absolute; top:0; left:0; opacity:0;}
+.kxtitle{ width:60px; height:28px; border: 1px #e0e0e0 solid;text-align: center;}
+ul, ol, dl, dt, dd {list-style: none outside none;}
+.hid{
+	display:none;
+	
+}
+
+.bottomgl{
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    z-index: 1;
+    height: 40px;
+    margin: 10px 0px 0px 0px;
+
+}
+
+
+
+.highlight{
+   background-color:#EBFBE2;
+}
+
+.hidmodel{
+	display:none;
+}
+
+.ratetable{
+	font-size:15px;
+	width:100%;
+	
+}
+
+.ratetable tr{
+	height:50px;
+	
+}
+
+

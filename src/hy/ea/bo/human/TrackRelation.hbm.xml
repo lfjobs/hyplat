@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="TrackRelation" table="dttrackrelation">
+		<id length="50" name="trackrelationKey">
+			<column length="50" name="trackrelationKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="trackrelationID">
+			<column length="50" name="trackrelationID" not-null="true"/>
+		</property>
+		<property name="foreignKeyID">
+			<column length="50" name="foreignKeyID" not-null="true"/>
+		</property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+         <property name="organizationID">
+        	<column name="organizationID" length="50"/>
+        </property>
+        <property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="collectdate">
+			<column sql-type="Date" name="collectdate"/>
+		</property>
+		<property  name="Status">
+			<column length="2" name="Status" />
+		</property>
+		<property  name="contactConnections">
+			<column length="50" name="contactConnections" />
+		</property>
+		<property name="Address">
+			<column length="250" name="Address" />
+		</property>
+	</class>
+</hibernate-mapping>

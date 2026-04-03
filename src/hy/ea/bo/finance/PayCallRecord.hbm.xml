@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="PayCallRecord" table="dtPayCallRecord">
+		<id length="50" name="pckey">
+			<column length="50" name="pckey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="pcId">
+        	<column name="pcId" length="50"/>
+        </property>
+         <property name="journalNum">
+        	<column name="journalNum" length="20">
+        	<comment>商户订单号</comment>
+        	</column>
+        </property>
+
+	</class> 
+	
+</hibernate-mapping>

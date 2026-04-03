@@ -1,0 +1,59 @@
+body, div, td, a, h2, h3, h4, p, input, textarea, button {color: #555555;font-family: tahoma,arial,helvetica,sans-serif;font-size: 12px;margin: 0;padding: 0;}
+td {color: #555555;font-family: tahoma,arial,helvetica,sans-serif;font-size: 12px;margin: 0;padding: 0;}
+ul, li {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+ 
+input {color: #555555;font-family: tahoma,arial,helvetica,sans-serif;font-size: 12px;margin: 0; padding: 0;}
+select {
+    color: #555555;
+    font-size: 12px;
+    margin: 0;
+    padding: 1px;
+} 
+/*file upload progress */
+.swf_mask {
+    background-color: #FFFFFF;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 10000;
+}
+.progress_box {
+    background: url("img/progress.gif") no-repeat scroll 0 0 transparent;
+    height: 35px;
+    left: 50%;
+    margin-left: -230px;
+    margin-top: -17px;
+    position: absolute;
+    top: 50%;
+    visibility: hidden;
+    width: 460px;
+    z-index: 20000;
+}
+.progress_box .progressbar_container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    font-size: 0;
+    height: 6px;
+    left: 15px;
+    line-height: 6px;
+    position: relative;
+    top: 14px;
+    width: 300px;
+}
+.progress_box .progressbar_container .progressbar {
+    background: none repeat scroll 0 0 #41B8E8;
+    font-size: 0;
+    height: 6px;
+    line-height: 6px;
+    width: 50%;
+}
+.progress_box .progress_text {
+    color: #FFFFFF;
+    font-size: 12px;
+    left: 330px;
+    position: relative;
+    top: 1px;
+}

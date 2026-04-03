@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office"> 
+	<class name="Qq" table="dtQq">
+		<id length="50" name="qqKey">
+			<column length="50" name="qqKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="qqID">
+			<column length="50" name="qqID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="qqNum">
+			<column length="250" name="qqNum"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="qqSequence">
+			<column length="250" name="qqSequence" />
+		</property>
+		<property  name="qqTel">
+			<column  name="qqTel" />
+		</property>
+	</class>
+</hibernate-mapping>

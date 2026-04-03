@@ -1,0 +1,256 @@
+@CHARSET "UTF-8";
+html, body {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+
+body {
+    margin: 0 auto;
+    background-color: #fff;
+    width: 100%;
+    font-family: "微软雅黑";
+}
+
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
+    margin: 0 0;
+    padding: 0px 0px;
+    font-size: 0.8rem;
+    color: #000;
+    font-family: '微软雅黑';
+}
+
+img {
+    cursor: pointer;
+    border: none;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+a, a:link {
+    text-decoration: none;
+}
+
+a:active, a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+ul, li {
+    margin: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+p {
+    margin: 0;
+}
+
+/*公共样式*/
+header {
+    width: 100%;
+    height: 50px;
+    background: #FFFFFF;
+    text-align: center;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+header p {
+    float: left;
+    line-height: 40px;
+    width: 15%;
+}
+
+header p img {
+    vertical-align: middle;
+    height: 25px;
+    cursor: pointer
+}
+
+header span {
+    line-height: 50px;
+    font-size: 16px;
+    float: left;
+    width: 70%;
+}
+
+#prompt div {
+    width: 70%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.main {
+    /*width: calc(100% + 17px);*/
+    overflow: auto;
+    background: #f2f2f2;
+    border-radius: 1rem;
+}
+
+.main .main_inp2 {
+    height: 2rem;
+    line-height: 2rem;
+    overflow: hidden;
+    padding: 0 0.6rem;
+    border-bottom: 1px solid #dddddd;
+    cursor: pointer;
+}
+
+.main .main_inp_left {
+    float: left;
+    line-height: 2rem;
+    font-size: 0.6rem
+}
+
+.main .main_inp_right {
+    float: right;
+    text-align: right;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* line-height: 3rem; */
+    /* height: 3rem; */
+}
+.main .main_inp_right input{
+    width: 21%;
+    padding: 0 0.2rem;
+    height: 1.4rem;
+    font-size: 0.6rem;
+    text-align: right;
+    color: #e8642d;
+    border: 0.1rem solid transparent;
+    border-radius: 0.2rem;
+    background-color: transparent;
+}
+.main .main_inp_right input:focus{
+    outline: none;
+    border: 0.1rem solid #ccc;
+}
+.main .main_inp_right p {
+    /* margin-right: 0.5rem; */
+    float: right;
+    line-height: 2rem;
+    font-size: 0.6rem;
+    margin-left: 0.2rem;
+}
+.main .main_inp_right .num{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main .main_inp_right .num .reduce{
+
+}
+.main .main_inp_right .num img{
+    height: 1.5rem;
+}
+.main .main_inp_right .num .add{
+
+}
+.main .main_inp_right .num span{
+    padding: 0 0.2rem;
+    font-size: 0.6rem;
+    /*width: 1.4rem;*/
+    text-align: center;
+    color:#e8642d;
+}
+.main_inp_right_unit {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    /*border: 0.1rem solid #CCC;*/
+    border-radius: 0.1rem;
+    background-color: #fb5e1e;
+    padding: 0 0.5rem;
+    font-size: 0.6rem;
+    margin-top: 0.24rem;
+    color: #fff;
+    margin-left: 0.25rem;
+}
+
+.main .main_inp_right p:first-child {
+    margin-right: 2px;
+    color: #e8642d;
+    float: left;
+    /*width: 90%;*/
+}
+
+.main .main_inp_right p img {
+    width: 0.35rem;
+    vertical-align: middle;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+}
+
+footer div {
+    align-content: center;
+    margin: 1%;
+    line-height: 1.5rem;
+    float: left;
+    text-align: center;
+    border-radius: 0.25rem;
+    font-size: 0.6rem;
+}
+
+footer div.footer_half {
+    width: 46.5%;
+    /* border-color: #ccc; */
+    border: 0.1rem #ccc solid;
+    background-color: #fff;
+    color: #222;
+    cursor: pointer;
+}
+
+footer div.footer_entire {
+    width: 98%;
+    background: #fb5e1e;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.annotation {
+    margin: 0.5rem;
+    font-size: 0.6rem;
+    padding-bottom: 3.2rem;
+}
+
+.annotation div {
+    margin: 0.3rem;
+    font-size: 0.6rem;
+}
+
+
+
+@media (min-width: 960px) {
+    form{
+        width: 60%;
+        margin: 0 auto;
+    }
+    footer {
+        width: 60%;
+    }
+    #prompt{
+        width: 60%!important;
+    }
+
+}

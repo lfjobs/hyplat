@@ -1,0 +1,110 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+html{}
+body{margin: 0 auto; }
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #000;}
+a:active,a:hover { text-decoration: none;}
+a:focus{ outline: none;}
+input,button{
+    outline: none;
+}
+.clearfix{
+    clear: both;
+}
+
+.gold_ticket{
+    width: 750px;
+    height: 430px;
+    margin-top: 80px;
+}
+.gold_ticket h2{
+    font-size: 24px;
+}
+.gold_ticket .txt{
+    text-align: left;
+    overflow: hidden;
+    padding: 30px 0 20px 40px;
+}
+.gold_ticket .txt h4{
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    height: 45px;
+}
+.gold_ticket .txt .one{
+    width: 230px;
+    overflow: hidden;
+    float: left;
+}
+.gold_ticket .txt .one h4{
+
+}
+.gold_ticket .txt .one p{
+    font-size: 14px;
+    float: left;
+    width: 175px;
+}
+.gold_ticket .txt .one .sim p{
+   width: 146px;
+}
+.gold_ticket .txt .one div{
+    overflow: hidden;
+}
+.gold_ticket .txt .three{
+    width: 232px;
+    overflow: hidden;
+    float: left;
+}
+.gold_ticket .txt .three div{
+    overflow: hidden;
+}
+.gold_ticket .txt .three .person p{
+    width: 80px;
+    float: left;
+}
+.gold_ticket .txt .three div h4{
+    float: left;
+}
+.gold_ticket .txt .three .proof p{
+    width: 175px;
+    float: left;
+    font-size: 14px;
+    word-break:break-all;
+    word-wrap:break-word;
+}
+.tab{
+    border-bottom: 1px solid #000;
+}
+.tab tr td{
+    width: 205px;
+    height: 50px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #000;
+}
+.tab tr td:nth-child(1){
+    border-bottom: none;
+}
+.tab tr td:nth-child(2){
+    width: 480px;
+    border-left: none;
+    border-bottom: none;
+}
+.btm{
+    text-align: left;
+    overflow: hidden;
+    padding: 30px 0 20px 30px;
+}
+.btm h5{
+    font-size: 14px;
+    width: 144px;
+    height: 40px;
+    font-weight: 500;
+    float: left;
+}

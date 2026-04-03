@@ -1,0 +1,276 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+}
+body{margin:0 auto; background-color: #fff;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0 0; color:#000; font-family:'微软雅黑';-webkit-tap-highlight-color:rgba(0,0,0,0); outline: none; -webkit-appearance: none;}
+img{ cursor:pointer;border:none;vertical-align: middle;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #666;}
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+/*公共样式*/
+
+
+
+header{
+    width: 100%;
+    height: 45px;
+    /*position: fixed;*/
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #c6c6c6;
+    z-index: 9;
+    overflow: hidden;
+}
+header ul{
+    padding: 0;
+    height: 100%;
+}
+header ul li{
+    float: left;
+    text-align: center;
+}
+header ul li:nth-child(2){
+    font-size: 0.8rem;
+}
+header ul li img{
+    width: 35%;
+    margin-top: -0.15rem;
+}
+
+/*停车收费*/
+.content{
+    margin: 0 0.5rem;
+    -webkit-overflow-scrolling: touch;
+}
+.content .title{
+    font-size: 0.7rem;
+    line-height: 1.5rem;
+    text-indent: 0.5rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+.content .title i{
+    width: 0.3rem;
+    height: 0.3rem;
+    display: inline-block;
+    background-color: #6487ff;
+    border-radius: 0.3rem;
+    float: left;
+    margin: 0.65rem 0 0.55rem 0;
+}
+.mil{
+    overflow: hidden;
+}
+.mil li{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.mil li .img{
+    width: 4rem;
+    height: 3rem;
+    position: relative;
+    float: left;
+}
+.mil li .img img{
+    width: 100%;
+    height: 100%;
+}
+.mil li .img p{
+    font-size: 0.45rem;
+    color: #fff;
+    position: absolute;
+    right: 0.2rem;
+    bottom: 0.1rem;
+}
+.mil li .img p span{
+    color: #d48c1a;
+}
+.mil li .img .l{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.mil li .text{
+    width: 9rem;
+    height: 3rem;
+    float: left;
+    margin-left: 0.7rem;
+}
+.mil li .text .ipt{
+    width: 3.5rem;
+    height: 1rem;
+    font-size: 0;
+    border: none;
+    margin-bottom: 0.3rem;
+}
+.mil li .text .ipt input{
+    width: 3.5rem;
+    height: 0.8rem;
+    border: none;
+    text-align: left;
+    font-size: 0.6rem;
+    margin: 0.1rem 0;
+}
+.mil .ipt_on .text .ipt{
+    border: 1px dashed #ff6600;
+}
+.mil .ipt_on .text .ipt input{
+    text-align: center;
+}
+.mil li .text .time{
+    font-size: 0.6rem;
+}
+.mil li .text .site{
+    font-size: 0.55rem;
+}
+.mil li #revise{
+    width: 2rem;
+    height: 1rem;
+    position: absolute;
+    right: 0;
+    top: 0.2rem;
+    background-color: #fff;
+    border: 1px solid #ff6600;
+    color: #ff6600;
+    border-radius: 0.2rem;
+}
+.mil li #matching{
+    width: 2rem;
+    height: 1rem;
+    position: absolute;
+    right: 0;
+    top: 1.5rem;
+    background-color: #fff;
+    border: 1px solid #ff6600;
+    color: #ff6600;
+    border-radius: 0.2rem;
+}
+.mil .ipt_on #revise{
+    display: none;
+}
+.mate li{
+    margin-bottom: 1rem;
+}
+.mate li .text .ipt{
+    border: none;
+
+}
+.mate li .text .ipt input{
+    text-align: left;
+}
+.mate li .select{
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 1px solid #bfbfbf;
+    border-radius: 0.15rem;
+    background-color: #f1f1f1;
+    float: left;
+    margin: 1rem 0;
+    position: relative;
+}
+.mate li .select img{
+    width: 1rem;
+    position: absolute;
+    bottom: -0.15rem;
+    left: -0.15rem;
+    display: none;
+}
+.mate .active .select img{
+    display: block;
+}
+.mate .not{
+    text-align: center;
+    display: none;
+}
+.mate .not img{
+    width: 8rem;
+}
+.mate .not p{
+    font-size: 0.7rem;
+    color: #666666;
+}
+.btn{
+    border-top: 1px solid #ddd;
+}
+.btn button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 0.75rem;
+    background-color: #fff;
+    color: #ff6600;
+}
+.alert_{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: 0;
+    display: none;
+}
+.alert{
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    margin: 10%;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+.alert .deldte{
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+}
+.alert .alert_mil{
+    padding-top: 1rem;
+    margin: 0 0.5rem;
+}
+.alert .alert_mil h4{
+    font-size: 0.7rem;
+    line-height: 1.5rem;
+    text-indent: 0.5rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+.alert .alert_mil h4 i{
+    width: 0.3rem;
+    height: 0.3rem;
+    display: inline-block;
+    background-color: #6487ff;
+    border-radius: 0.3rem;
+    float: left;
+    margin: 0.65rem 0 0.55rem 0;
+}
+.alert .alert_mil .swiper-container{
+    width: 9rem;
+    height: 6rem;
+}
+.alert .alert_mil .swiper-container img{
+    width: 100%;
+    height: 100%;
+}
+.alert .alert_mil .swiper-container .swiper-pagination{
+    font-size: 0.7rem;
+    color: #fff;
+}
+.alert .alert_mil .swiper-container .swiper-pagination .swiper-pagination-current{
+    color: #ff6600;
+}
+
+/*停车收费 end*/

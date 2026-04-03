@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffPoliticalStatus" table="dt_hr_staff_PoliticalStatus">
+		<id length="50" name="politicalkey">
+			<column length="50" name="politicalkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="politicalID">
+			<column length="50" name="politicalID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="politicalStatus">
+			<column length="250" name="politicalStatus"/>
+		</property>
+		<property name="joinDate">
+			<column length="250" name="joinDate"/>
+		</property>
+		<property name="unit">
+			<column length="250" name="unit" />
+		</property>
+		<property  name="introducer">
+			<column length="250" name="introducer" />
+		</property>
+		<property  name="probatePassDate">
+			<column length="250" name="probatePassDate" />
+		</property>
+		<property  name="partyStand">
+			<column length="250" name="partyStand" />
+		</property>
+			<property  name="auditor">
+			<column length="250" name="auditor" />
+		</property>
+			<property  name="auditorNumber">
+			<column length="250" name="auditorNumber" />
+		</property>
+			<property  name="auditorTime">
+			<column length="250" name="auditorTime" />
+		</property>
+			<property  name="appendix">
+			<column length="250" name="appendix" />
+		</property>
+			<property  name="politicalDesc">
+			<column length="250" name="politicalDesc" />
+		</property>
+		<property  name="photo">
+			<column length="256" name="photo" />
+		</property>
+	</class>
+</hibernate-mapping>

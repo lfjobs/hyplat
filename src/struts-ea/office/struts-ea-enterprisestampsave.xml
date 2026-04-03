@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="enterprisestamp" namespace="/ea/signmanager" extends="struts-default">
+		<action name="addstamp"
+			class="hy.ea.office.action.SaveStampAction">
+		</action>
+		<action name="upload"
+			class="hy.ea.office.action.UploadFileAction">
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="signmanager" namespace="/ea/signmanager" extends="struts-default">
+		<action name="ea_*"
+			class="hy.ea.office.action.SignManagerAction" method="{1}">
+		</action>
+		<action name="countsignmanager"
+			class="hy.ea.office.action.CountSignManager">
+		</action>
+		<action name="querysignmanager"
+			class="hy.ea.office.action.QuerySignManager">
+		</action>
+		<action name="signListByAccount"
+			class="hy.ea.office.action.QuerySignListByAccount">
+		</action>
+	</package>
+</struts>

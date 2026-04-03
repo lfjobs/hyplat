@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="carQuasi" table="DT_CAR_QUASI">
+		<id length="50" name="quasiKey">
+			<column length="50" name="quasiKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="quasiID">
+			<column length="50" name="quasiID"/>
+		</property>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="carNum">
+			<column  length="250" name="carNum" />
+		</property>
+		<property  name="carType">
+			<column length="250" name="carType" />
+		</property>
+		<property  name="carFrameNum">
+			<column length="250" name="carFrameNum" />
+		</property>
+		<property  name="numeral">
+			<column  length="256" name="numeral" />
+		</property>
+		<property  name="seatNum">
+			<column  length="256" name="seatNum" />
+		</property>
+		<property  name="zuonum">
+			<column  length="256" name="zuonum" />
+		</property>
+		<property  name="seatState">
+			<column  length="256" name="seatState" />
+		</property>
+		<property  name="quasiLoad">
+			<column  length="256" name="quasiLoad" />
+		</property>
+		<property  name="realLoad">
+			<column  length="256" name="realLoad" />
+		</property>
+		<property  name="overLoad">
+			<column  length="256" name="overLoad" />
+		</property>
+		<property  name="carUtil">
+			<column  length="256" name="carUtil" />
+		</property>
+		<property  name="utilPeople">
+			<column  length="256" name="utilPeople" />
+		</property>
+		<property  name="utilTel">
+			<column  length="256" name="utilTel" />
+		</property>
+		<property  name="driver">
+			<column  length="256" name="driver" />
+		</property>
+		<property  name="driverTel">
+			<column  length="256" name="driverTel" />
+		</property>
+		<property  name="beganPlace">
+			<column  length="256" name="beganPlace" />
+		</property>
+		<property  name="endPlace">
+			<column  length="256" name="endPlace" />
+		</property>
+		<property  name="beganTime">
+			<column   name="beganTime" />
+		</property>
+		<property  name="endTime">
+			<column   name="endTime" />
+		</property>
+		<property  name="util">
+			<column  length="256" name="util" />
+		</property>
+		<property  name="passenger">
+			<column  length="256" name="passenger" />
+		</property>
+		<property  name="passengerTel">
+			<column  length="256" name="passengerTel" />
+		</property>
+		<property  name="undertakeUtil">
+			<column  length="256" name="undertakeUtil" />
+		</property>
+		<property  name="undertakePeo">
+			<column  length="256" name="undertakePeo" />
+		</property>
+		<property  name="undertakeTel">
+			<column  length="256" name="undertakeTel" />
+		</property>
+		<property  name="remark">
+			<column  length="256" name="remark" />
+		</property>
+		<property  name="byWay">
+			<column  length="256" name="byWay" />
+		</property>
+		<property  name="departureTime">
+			<column   name="departureTime" />
+		</property>
+		<property  name="arriveTime">
+			<column   name="arriveTime" />
+		</property>
+	</class>
+</hibernate-mapping>

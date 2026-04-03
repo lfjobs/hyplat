@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hy.ea.bo.DrivingSchool.elyc.ElycNotifyThePictures" table="tb_elyc_Notify_Pictures" schema="HYPLAT">
+        <id length="50" name="entpKey">
+            <column length="50" name="entpKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="entpId" type="java.lang.String">
+            <column name="entpId"  length="50" ><comment>逻辑ID</comment></column>
+        </property>
+        <property name="edsnId" type="java.lang.String">
+            <column name="edsnId"  length="50" ><comment>驾校通知id</comment></column>
+        </property>
+        <property name="picpath" type="java.lang.String">
+            <column name="picpath"  length="250" ><comment>图片路径</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

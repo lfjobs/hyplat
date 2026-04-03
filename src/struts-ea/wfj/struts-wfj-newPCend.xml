@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="wfjnewpcend-token" namespace="/ea/newpcend" extends="struts-default">
+		<action name="ea_*" class="com.tiantai.wfj.front.NewPCendAction" method="{1}">
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+			<result name="skipMall">/page/newMyapp/numeralTheEarth.jsp</result>	
+			<result name="skipInformation">/page/newMyapp/webSiteInformation.jsp</result>
+			<result name="InformationForDetails">/page/newMyapp/InformationForDetails.jsp</result>
+			<result name="work">/page/ea/index.jsp</result>
+			<result name="goodsDetails">/page/newMyapp/PC_goodsDetails.jsp</result>
+			<result name="pcShoppingCart">/page/newMyapp/PC_searchResult.jsp</result>
+			<result name="pcSelShoppingCart">/page/newMyapp/PC_goodsShoppingCart.jsp</result>
+			<result name="pcGoodsPayNow">/page/newMyapp/PC_goodsPayNow.jsp</result>
+			<result name="pcGoodsPayMethod">/page/newMyapp/PC_goodsPayMethod.jsp</result>
+			<result name="pcGoodsPayComplete">/page/newMyapp/PC_goodsPayComplete.jsp</result>
+			<result name="pcAddGoodsStaffAddress">/page/newMyapp/PC_addGoodsStaffAddress.jsp</result>
+			<result name="theTender">/page/newMyapp/PC_theTender.jsp</result>
+			<result name="recruitment">/page/newMyapp/PC_recruitmentList.jsp</result>
+			<result name="pcTheTenderDetails">/page/newMyapp/PC_Thetenderdetails.jsp</result>
+			<result name="pcRecruitmentDetails">/page/newMyapp/PC_recruitmentDetail.jsp</result>
+			<result name="Chinamerchants">/page/newMyapp/PC_Chinamerchants.jsp</result>
+			<result name="recruitmentList">/page/newMyapp/PC_recruitmentList.jsp</result>
+			<result name="pcproAgentDetail">/page/newMyapp/PC_Theserviceisintroduced.jsp</result>
+			<result name="pcg">/page/WFJClient/suc/pcg.jsp</result>
+			<result name="aboutUs">/page/newMyapp/about_us.jsp</result>
+            <result name="investment">/page/newMyapp/china_merchants.jsp</result>
+            <result name="economicPlatform">/page/newMyapp/economic_platform.jsp</result>
+			<result name="agentQualification">/page/newMyapp/agent_qualification.jsp</result>
+			<result name="paySuccess">/page/newMyapp/pay_success.jsp</result>
+            <result name="joinPlatform">/page/newMyapp/join_platform.jsp</result>
+			<result name="readExtensively">/page/newMyapp/read_extensively.jsp</result>
+			<result name="homePage">/page/newMyapp/PC_companyWebsite.jsp</result>
+			<result name="companyStore">/page/newMyapp/PC_companyStore.jsp</result>
+            <result name="companyMallDetails">/page/newMyapp/PC_companyMallDetails.jsp</result>
+			<result name="companyChinaMerchants">/page/newMyapp/PC_companyChinaMerchants.jsp</result>
+            <result name="cipDetails">/page/newMyapp/PC_cipDetails.jsp</result>
+            <result name="companyNews">/page/newMyapp/PC_companyNews.jsp</result>
+			<result name="companyNewsDetails">/page/newMyapp/PC_companyNewsDetails.jsp</result>
+			<result name="companyRecruitment">/page/newMyapp/PC_companyRecruitment.jsp</result>
+			<result name="crtDetails">/page/newMyapp/PC_crtDetails.jsp</result>
+			<result name="companyAboutUs">/page/newMyapp/PC_companyAboutUs.jsp</result>
+
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="wfjnewpcend-jsonajax" namespace="/ea/newpcend" extends="json-default">
+		<action name="sajax_ea_*" class="com.tiantai.wfj.front.NewPCendAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

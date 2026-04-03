@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+       
+<hibernate-mapping package="hy.ea.bo.production.scmanage">
+	<class name="MaterialContent"  table="dtMaterialContent">
+		<id length="50" name="mckey">
+			<column length="50" name="mckey" />
+			<generator class="uuid" />
+		</id>
+		<property name="mcId">
+			<column length="50" name="mcId" not-null="true"><comment>逻辑主键</comment></column>
+		</property>
+		<property name="describe">
+			<column length="50" name="describe"><comment>描述 </comment></column>
+		</property>
+		<property  name="staffID">
+			<column length="50" name="staffID"><comment>上传人ID</comment></column>
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID"><comment>公司ID</comment></column>
+		</property>
+		<property  name="groupID">
+			<column length="50" name="groupID"><comment>文件分组</comment></column>
+		</property>
+		<property  name="fileType">
+			<column length="2" name="fileType"><comment>存放的文件类型 00:图片 01：视频 02：音频</comment></column>
+		</property>
+		<property name="createDate">
+			<column name="createDate" ><comment>创建日期</comment></column>
+		</property>
+		<property name="filepath">
+			<column length="250" name="filepath" ><comment>文件路径</comment></column>
+		</property>
+		<property name="filecover">
+			<column length="250" name="filecover" ><comment>如果是视频，需要有个截图</comment></column>
+		</property>
+		<property name="state">
+			<column name="state"  length="2"><comment>00：初始；01：09:已删除</comment></column>
+		</property>
+		<property name="filesize">
+			<column name="filesize"  length="10"><comment>文件大小</comment></column>
+		</property>
+		<property name="sorts">
+			<column name="sorts"  length="10"><comment>排序</comment></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

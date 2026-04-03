@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="Cmodal-ntoken" namespace="/ea/Cmodal"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.action.CmodalAction" method="{1}">
+			<result name="modal_manager">/page/ea/main/modal/modal_manger.jsp</result>
+			<result name="modal_list">/page/ea/main/modal/modal_list.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="Cmodal-sajax" namespace="/ea/Cmodal" extends="ea-sajax">
+		<action name="sajax_ea_*" class="hy.ea.action.CmodalAction" method="{1}">
+			<!-- 返回类型为json 在json-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+</struts>

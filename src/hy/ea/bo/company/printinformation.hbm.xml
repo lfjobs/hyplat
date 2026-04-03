@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="PrintInformation" table="dtPrintInformation">
+		<id length="50" name="printInfoKey">
+			<column length="50" name="printInfoKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="printInfoID">
+			<column length="50" name="printInfoID" not-null="true" />
+		</property>
+		<property name="accountID">
+			<column length="50" name="accountID" not-null="true" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true" />
+		</property>
+		<property name="staffName">
+			<column length="250" name="staffName"/>
+		</property>
+		 <property name="staffCode">
+        	<column name="staffCode" length="250" />
+        </property>
+        <property name="serveWay">
+        	<column name="serveWay" length="250" />
+        </property>
+        	<property name="staffIdentityCard">
+        	<column name="staffIdentityCard" length="250"/>
+        </property>
+        <property name="dateofissue"> 
+        	<column name="dateofissue"/>
+        </property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="credentialsTitle">
+			<column length="250" name="credentialsTitle"/>
+		</property>
+		<property name="credentialsName">
+			<column length="250" name="credentialsName"/>
+		</property>
+		<property name="credentialsCode">
+			<column length="250" name="credentialsCode" />
+		</property>
+		<property name="credentialsType">
+			<column length="250" name="credentialsType" />
+		</property>
+		<property name="credentialsDate">
+			<column  name="credentialsDate" />
+		</property>
+		
+		<property name="createDate">
+			<column  name="createDate" />
+		</property>
+		<property name="address">
+			<column length="256" name="address" />
+		</property>
+		<property name="photo">
+			<column length="256" name="photo" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

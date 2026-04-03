@@ -1,0 +1,1124 @@
+@charset "UTF-8";
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #fff;width:100%;
+    font-family: "微软雅黑";}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{
+    margin:0 0; padding:0px 0px; font-size:12px; color:#666; font-family:'宋体';
+}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+/*公共样式*/
+
+
+/*------------------------------页面样式--------------------------------------*/
+#tops{
+    overflow: hidden;
+    background: #f74c31;
+   /* height: 50px;*/
+}
+/*#tops li{
+    float: left;
+    width: 15%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #FFFFFF;
+    /!*padding: 0 20px;*!/
+}*/
+#tops li:nth-child(2){
+    width: 70%;
+}
+#tops li div{
+    height: 50px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+#tops li img{
+    height: 25px;
+    vertical-align: middle;
+}
+.main_auto{
+    overflow: auto;
+}
+.main_hidden{
+    overflow: auto;
+}
+
+
+
+
+
+
+
+.drive_top{
+    height: 52px;
+    width: 100%;
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    border-bottom: 2px solid #dcdcdc;
+    z-index: 1000;
+}
+/*.drive_top div img{*/
+    /*display: inline-block;*/
+    /*position: absolute;*/
+    /*top: 30%;*/
+    /*left: 2%;*/
+/*}*/
+.drive_top div{
+    width: 33%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 17px;
+    float: left;
+    line-height: 3;
+}
+.drive_top div:first-child{
+    height: 96%;
+}
+.drive_top div img{
+    padding-top: 8%;
+    width: 14px;
+}
+.drive_top div:nth-child(1){
+    text-align: left;
+    padding-left: 1rem;
+    width: 30%;
+}
+.drive_top div:nth-child(3){
+    text-align: right;
+    color: #ff5a5a;
+    width: 30%;
+}
+.drive_top div:nth-child(3) img{
+    width: 20%;
+}
+.drive_top div:nth-child(3) a{
+    color: #000;
+}
+
+/*--------------------------胜威驾校学员-------------------------------*/
+.drive_main{
+    height: 100%;
+    overflow: hidden;
+}
+/*.drive_hide{*/
+    /*width: calc(100% + 17px);*/
+/*}*/
+.drive_main_lis{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5px;
+    padding-top: 10px;
+    background: #fff;
+}
+.drive_main_lis_left{
+    float: left;
+    width: 17%;
+    padding: 5px 0 10px 8px;
+}
+.drive_main_lis_left img{
+    width: 80%;
+}
+.drive_main_lis_right{
+    float: right;
+    width: 80%;
+    border-bottom: 2px solid #e0e0e0;
+}
+.drive_main_lis_right.nob{
+    border: none;
+}
+.drive_main_lis_right.note{
+    width: 97%;
+}
+.drive_main_lis_right dl{
+    float: left;
+    width: 80%;
+}
+.drive_main_lis_right dl.drive_tongzhi{
+    width: 96%;
+}
+.drive_main_lis_right dl dt{
+    font-size: 30px;
+    line-height: 30px;
+    color: #000;
+    overflow: hidden;
+}
+.drive_main_lis_right dl dt div.dt_top{
+    overflow: hidden;
+    width: 100%;
+}
+.drive_main_lis_right dl dt div.dt_top span{
+    float: right;
+    line-height: 20px;
+    font-size: 14px;
+}
+.drive_main_lis_right dl dt div.dt_top img.dt_top_img{
+    height: 15px;
+}
+.drive_main_lis_right dl dt div.dt_top span img{
+    width: 10px;
+    height:auto;
+}
+.drive_main_lis_right dl dt div.dt_top span:first-child{
+    float: left;
+}
+.drive_main_lis_right dl dt div.dt_bot{
+    clear: both;
+    line-height: 20px;
+    font-size: 14px;
+    float: left;
+}
+.drive_main_lis_right dl dd{
+    font-size: 15px;
+    line-height: 25px;
+}
+.drive_main_lis_right dl dd p{
+    word-wrap: break-word;
+    font-size: 15px;
+    height: 50px;
+    overflow: hidden;
+}
+.drive_main_lis_right div{
+    float: right;
+    display: inline-block;
+
+}
+.drive_main_lis_right div.drive_main_lis_right_div{
+    margin-right: 2%;
+}
+.drive_main_lis_right_img{
+    /*display: inline-block;*/
+    margin-top: 50%;
+}
+.drive_main_lis_right div img{
+    width: 20px;
+}
+.jiaolianyuan{
+    margin-top: -2px;
+}
+.jiaolianyuan div:first-child{
+    float: left;
+    font-size: 2rem;
+}
+
+/*--------------------------------------驾校通知----------------------------------------*/
+.drive_xiang_main{
+    margin: 1rem 0;
+}
+.drive_xiang_main .drive_xiang_main_top{
+    width: calc(100% - 2rem);
+    overflow: hidden;
+    background: #FFFFFF;
+    padding: 1rem;
+}
+.drive_xiang_main .drive_xiang_main_top .xiang_top h3{
+    line-height: 5rem;
+    font-size: 3rem;
+}
+.drive_xiang_main .drive_xiang_main_top .xiang_bot span{
+    line-height: 4.5rem;
+    font-size: 2.5rem;
+}
+.drive_xiang_main .drive_xiang_main_top .xiang_bot span.xiang_data{
+    float: right;
+}
+.drive_xiang_main .drive_xiang_main_bot{
+    background: #FFFFFF;
+    margin: 10px 0;
+}
+.drive_xiang_main .drive_xiang_main_bot p{
+    word-wrap: break-word;
+    font-size: 35px;
+    overflow: hidden;
+    padding: 1rem;
+}
+/*-------------------------------学习进度--------------------------------*/
+.jindu_table{
+    width: 100%;
+    overflow: hidden;
+    margin: 0.5rem 0;
+    padding-top: 0.5rem;
+    background: #FFFFFF;
+}
+.jindu_table tr td{
+    width: 25%;
+    text-align: center;
+    line-height: 2.5rem;
+}
+.jindu_table tr td div{
+    font-size: 1.5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+.jindu_table tr td div img{
+    width: 100%;
+}
+.jindu_lis ul li{
+    overflow: hidden;
+    background: #ffffff;
+    height: 6rem;
+}
+.jindu_lis ul li:nth-child(2n){
+    background: #f8f8f8;
+}
+.jindu_lis ul li div{
+    float: left;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.jindu_lis ul li div img{
+    display: block;
+}
+.jindu_lis ul li div:nth-child(2n){
+    float: right;
+}
+.jindu_footer{
+    background: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.jindu_footer .bottom_table{
+    width: 100%;
+    overflow: hidden;
+    margin: 0.5rem 0;
+    background: #FFFFFF;
+}
+.jindu_footer .bottom_table tr td{
+    text-align: center;
+}
+.jindu_footer .bottom_table tr td div{
+    font-size: 1.5rem;
+}
+.jindu_footer .bottom_table tr td div img{
+    width: 5rem;
+    margin-top: 0.8rem;
+    z-index: 1000;
+}
+/*----------------------------学员记事本---------------------------------*/
+.drive_main .note_data{
+    background: #FFFFFF;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    height: 3rem;
+
+}
+.drive_main .note_data div{
+    font-size: 1.5rem;
+    float: left;
+}
+.drive_main .note_data div:first-child{
+    margin: 0 2rem 0 1rem;
+}
+.drive_main .note_data div input{
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 100%;
+}
+.note_main{
+    background: #FFFFFF;
+    min-height: 20rem;
+}
+.note_main textarea{
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    resize: none;
+}
+/*----------------------------------基本资料-------------------------------------*/
+.nav{
+    width: 8rem;
+    background: #FFFFFF;
+    position: fixed;
+    top: 15%;
+    left: -7.5rem;
+    border-radius: 0  10px 10px 0;
+    z-index: 1000;
+}
+.nav_main{
+    box-shadow:1px 0px 5px #000;
+}
+.nav_main ul li{
+    height: 3rem;
+    width: 100%;
+    line-height: 3rem;
+    border-left: 2px solid transparent;
+}
+.nav_main ul li.on{
+    border-left: 2px solid #eb4b35;
+}
+.nav_main ul li div{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1rem;
+    text-align: center;
+    border-bottom:1px solid #eee;
+}
+.nav_main ul li:last-child div{
+    border-bottom: none;
+}
+.nav_main_img {
+    position: absolute;
+    top: 20%;
+    right: -11px;
+    border-radius: 0 7px 12px 0;
+    overflow: hidden;
+}
+.nav.on{
+    animation: show 0.5s linear forwards;
+}
+.drive_zheng{
+    margin-top: 2rem;
+}
+.drive_zheng .zheng_top{
+    width: 60%;
+    margin: 0 auto;
+    background: #d9d9d9;
+    margin-bottom: 5rem;
+    position: relative;
+}
+.drive_zheng .zheng_bot{
+    width: 60%;
+    margin: 0 auto;
+    background: #d9d9d9;
+    position: relative;
+}
+.drive_zheng .zheng_b{
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    bottom: 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.drive_zheng img{
+    width: 100%;
+    height: 100%;
+}
+/*----------------------------扫描证件-----------------------------*/
+.drive_zheng .sao_zheng{
+    width: 55%;
+    margin: 0 auto;
+    background: #f3f3f3;
+}
+/*-------------------------暂住证编号----------------------------------*/
+.drive_zheng .zan_zheng table{
+    width: 80%;
+    margin: 0 auto;
+}
+.drive_zheng .zan_zheng table tr td{
+    width: 50%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.drive_zheng .zan_zheng table tr td:first-child{
+    width: 25%;
+}
+.drive_zheng .zan_zheng table tr td div{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    text-align: center;
+}
+.drive_zheng .zan_zheng table tr td input{
+    width: 96%;
+    height: 100%;
+    font-size: 3REM;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.drive_zheng .zan_zheng p{
+    text-align: center;
+    font-size: 1rem;
+    color: #b4b4b4;
+    margin: 1rem 0;
+}
+.drive_zheng .zan_zheng .zan_img{
+    width: 50%;
+    margin: 0 auto;
+}
+/*----------------------------基本资料----------------------------*/
+.ziliao{
+    width: 80%;
+    margin: 2rem auto 0;
+}
+.ziliao table{
+    width: 100%;
+}
+.ziliao table .ziliao_left{
+    width: 90%;
+    height: 9rem;
+    background: #d5d5d5;
+}
+.ziliao table tr{
+    height: 3rem;
+}
+.ziliao table div{
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-align: center;
+}
+.ziliao table tr td{
+    text-align: right;
+    font-size: 1rem;
+}
+.ziliao table .drivetable2 div{
+    float: left;
+    width: 73%;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+.ziliao table div input[type="text"]{
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    background: transparent;
+}
+.ziliao table .drivetable2 div:first-child{
+    width: 25%;
+    line-height: 2.5rem;
+    border: none;
+}
+.ziliao table .drivetable2 div:nth-child(2){
+    border: 1px solid #E5E5E5;
+}
+.ziliao table .drivetable2.xing div:nth-child(2){
+    border: none;
+}
+.ziliao table .drivetable2.ming div:nth-child(2) input{
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    outline: none;
+    border: none;
+    font-size: 100%;
+    background: transparent;
+}
+.ziliao table .drivetable2.xing div:nth-child(2) input{
+    margin: 0 1rem;
+}
+
+/*---------------------------学员管理---------------------------------*/
+.drive_main_nav{
+    background: #FFFFFF;
+    overflow: hidden;
+    margin: 0.3rem 0;
+}
+.drive_main_nav ul{
+    width: 40%;
+    margin: 0 auto;
+}
+.drive_main_nav ul li{
+    float: left;
+    line-height: 3rem;
+    font-size: 1.3rem;
+    border-bottom: 2px solid transparent;
+}
+.drive_main_nav ul li.on{
+    border-bottom: 2px solid #fb8989;
+}
+.drive_main_nav ul li:nth-child(2){
+    float: right;
+}
+.xueyuan_top{
+    background: #FFFFFF;
+    padding: 0.8rem 0;
+}
+.xueyuan_top img{
+    margin: 0 0.5rem;
+    width: 10px;
+}
+.renyuan{
+    overflow: hidden;
+}
+.renyuan table{
+    width: 90%;
+    margin: 0 auto;
+}
+.renyuan tr td{
+    width: 20%;
+    text-align: center;
+}
+.renyuan tr td div{
+    width: 75%;
+    margin: 0.5rem auto;
+    border-radius:50%;
+    overflow: hidden;
+}
+.renyuan tr td div img{
+    width: 100%;
+}
+
+/*------------------------课程管理--------------------------    */
+.kecheng_data{
+    background: #FFFFFF;
+    margin-top: 2px;
+}
+.kecheng_data input{
+    display: block;
+    width: 60%;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.kecheng_xiang{
+    line-height: 30px;
+    font-size: 15px;
+    background: #FFFFFF;
+    text-align: center;
+    margin: 4px 0;
+}
+.kecheng_student{
+    background: #FFFFFF;
+    width: 100%;
+    margin: 3px 0;
+}
+.kecheng_student_data{
+    margin: 5px 0 0 5px;
+}
+.kecheng_student_data img{
+    width: 10px;
+}
+
+
+@keyframes show
+{
+    from {left:-7.5rem;}
+    to {left:0;}
+}
+@media screen and (max-width:325px){
+    .ziliao{
+        width: 90%;}
+    .drive_top{
+        height: 45px;
+    }
+    .drive_top div{
+        line-height: 2.5;
+    }
+}
+/*--------------------------驾校时间表-----------------------------*/
+.time_main{
+
+}
+.time_main_top{
+    width: 100%;
+    overflow: hidden;
+    padding: 12px;
+}
+.time_main_top .main_top_left{
+    width: 30%;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    overflow: hidden;
+    float: left;
+}
+.time_main_top .main_top_left img{
+    display: block;
+    width: 100%;
+}
+.time_main_top .main_top_right{
+    float: right;
+    width: 67%;
+}
+.time_main_top .main_top_right h2{
+    font-size: 20px;
+}
+.time_main_top .main_top_right p{
+    line-height: 25px;
+    overflow: hidden;
+}
+.time_main_top .main_top_right p img{
+    width:12px;
+    float: left;
+}
+.time_main_top .main_top_right p span.adress{
+    word-wrap: break-word;
+    word-break: normal;
+    float: left;
+}
+.main_lis{
+    border-bottom: 5px solid #e2e2e2;
+}
+.time_main_time{
+    width: 100%;
+}
+.time_main_time .main_time_top{
+    text-align: center;
+    font-size: 16px;
+    background: #3c7ec1;
+    color: #fff;
+    line-height: 25px;
+}
+.time_main_time table{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    /*border: 1px solid #e3e3e3;*/
+}
+.time_main_time table tr td{
+    line-height: 25px;
+    font-size: 14px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.time_main_time table tr:last-child td{
+    border-bottom: none;
+}
+
+/*------------------------------网上预约----------------------------------*/
+.header{
+    text-align: center;
+    font-size: 20px;
+    margin: 40px 0;
+    /*line-height: 60px;*/
+}
+
+.wang_main{
+    width: 70%;
+    margin: 0 auto;
+}
+.wang_main table{
+    width: 100%;
+}
+.wang_main table tr td{
+    border-bottom: 1px solid #e3e3e3;
+    text-align: center;
+    height: 40px;
+}
+.wang_main table tr td img{
+    width: 22px;
+}
+.wang_main table tr td input{
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    outline: none;
+    border: none;
+}
+.wang_main_submit{
+    width: 100%;
+    height: 40px;
+    background: #3c7ec1;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 40px;
+    font-size: 18px;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+/*--------------------------考场列表----------------------------*/
+.search{
+    width: 100%;
+    border-bottom: 1px solid #e3e3e3;
+    text-align: center;
+}
+.search_kuang{
+    width: 90%;
+    height: 30px;
+    margin: 5px auto;
+    background: #e2e2e2;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    line-height: 30px;
+}
+.search_kuang img{
+    width: 15px;
+}
+.yuding{
+    width: 70px;
+    background: #f74c31;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 20px;
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+}
+/*-------------------------在线学习---------------------------*/
+.xuexi_lis{
+    overflow: hidden;
+    border-bottom: 5px solid #e3e3e3;
+}
+.xuexi_lis div.xuexi_top_left{
+    width: 50%;
+    height: auto;
+    float: left;
+    border-right:1px solid #e3e3e3;
+    text-align: center;
+    padding: 3% 0;
+}
+.xuexi_lis div.xuexi_top_left p{
+
+    font-size: 20px;
+}
+.xuexi_lis div.xuexi_top_right{
+    width: calc(50% - 2px);
+    float: left;
+    overflow: hidden;
+    text-align: center;
+}
+.xuexi_lis div.xuexi_top_right div{
+    width: 100%;
+    border-bottom: 1px solid #e3e3e3;
+    box-sizing: border-box;
+    text-align: center;
+}
+.xuexi_lis div.xuexi_top_right div:last-child{
+    border-bottom: none;
+}
+.xuexi_lis div.xuexi_top_right div span{
+    line-height: 50px;
+}
+.xuexi_lis div.xuexi_top_right p{
+    display: inline-block;
+}
+.xuexi_lis div.xuexi_top_right p img{
+    vertical-align: middle;
+}
+.xuexi_bot_left{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.xuexi_bot_right{
+    width: 49%;
+    float: left;
+    text-align: center;
+    border-bottom: 1px solid #e3e3e3;
+}
+.xuexi_bot_left{
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+}
+.xuexi_bot_left p{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+.xuexi_bot_left p img{
+    vertical-align: middle;
+    width: 60%;
+}
+.xuexi_bot_left span{
+    float: left;
+    text-align:left;
+    font-size: 16px;
+}
+.xuexi_bot_right p{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+.xuexi_bot_right p img{
+    vertical-align: middle;
+    width: 60%;
+}
+.xuexi_bot_right span{
+    float: left;
+    width: 50%;
+    text-align:left;
+    font-size: 16px;
+}
+
+/*--------------------------预约列表-----------------------*/
+.yuyue_lis{
+    border-bottom: 5px solid #e2e2e2;
+}
+.yuyue_lis:last-child{
+    border-bottom: none;
+}
+.yuyue_lis ul li{
+    overflow: hidden;
+    border-bottom: 1px solid #e3e3e3;
+}
+.yuyue_lis ul li:last-child{
+    border-bottom: none;
+}
+.yuyue_lis ul li>div{
+    float: left;
+    padding: 10px 0 10px 10px;
+}
+.yuyue_lis ul li>div:first-child{
+    width: 25%;
+}
+.yuyue_lis ul li>div img{
+    width: 100%;
+    height: 100%;
+}
+.yuyue_lis .yuyue_right{
+    width: 66%;
+}
+.yuyue_lis .yuyue_right div:first-child{
+
+}
+.yuyue_lis .yuyue_right div:last-child>span:first-child{
+    float: left;
+    color: #f74c31;
+}
+.yuyue_lis ul li:first-child .yuyue_right div:last-child>span:first-child{
+    float: left;
+    color: #f74c31;
+    font-size: 16px;
+}
+.yuyue_lis .yuyue_right div:last-child>span.yuyue_time{
+    float: left;
+    color: #666;
+}
+.yuyue_lis .yuyue_right div:last-child>span:last-child{
+    float: right;
+}
+.hide_head{
+    height: 100%;
+    margin: 0 auto;
+}
+
+/*-----------------------顺序学习-----------------------------*/
+.sunxu_main{
+    padding: 0 20px;
+} .sunxu_main_header{
+    font-size: 14px;
+    line-height: 35px;
+}
+.shunxu_img{
+    width: 100%;
+    margin: 0 auto;
+}
+.shunxu_img img{
+    width: 100%;
+    height: 100%;
+}
+.sunxu_main .sunxu_main_daan{
+    overflow: hidden;
+}
+.sunxu_main .sunxu_main_daan li{
+    line-height: 40px;
+    font-size: 16px;
+    border-bottom: 1px solid #e3e3e3;
+    padding-left: 20px;
+}
+/*-------选择场地和客服-----------*/
+.M_nav{
+    background: #FFFFFF;
+}
+.M_nav ul{
+    overflow: hidden;
+    height: 40px;
+}
+.M_nav li{
+    float: left;
+    width: 33%;
+    text-align: center;
+    border-right: 1px solid #e3e3e3;
+    line-height: 39px;
+    font-size: 16px;
+}
+.M_nav li:last-child{
+    border: 0;
+}
+.M_nav li.on{
+    color: #f74c31;
+    border-bottom: 1px solid #f74c31;
+}
+
+/**/
+.M_main_lis{
+    margin: 0 0;
+}
+.same_bot_lis_main{
+    padding: 10px;
+    width: 100%;
+    border-bottom: 3px solid #e3e3e3;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+.same_bot_lis_main div.Img{
+    width: 20%;
+    float: left;
+}
+.same_bot_lis_main div.Img img{
+    width: 100%;
+}
+.same_bot_lis_main div.Text{
+    width: 60%;
+    float: left;
+    text-align: left;
+    padding-left: 20px;
+}
+.same_bot_lis_main div.Text h3{
+    line-height: 30px;
+    font-size: 2rem;
+}
+.same_bot_lis_main div.Text div.Text_main{
+    width: 100%;
+    height: 25px;
+    font-size: 18px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.same_bot_lis_main div.Text div.Text_main nobr{
+    text-overflow: ellipsis;
+}
+.same_bot_lis_main div.Text div.Img_start{
+    overflow: hidden;
+    clear: both;
+    margin: 3px 0;
+}
+.same_bot_lis_main div.Text div.Img_start span{
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+.same_bot_lis_main div.Text div.Img_start span img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.same_bot_lis_main div.gou{
+    width: 20%;
+    float: left;
+}
+.same_bot_lis_main>div{
+    overflow: hidden;
+}
+.same_bot_lis_main div.Img_gou{
+    width: 15%;
+    text-align: right;
+    display: table-cell;
+    vertical-align: middle;
+}
+.same_bot_lis_main img.gou{
+    width: 35px;
+    height: 35px;
+}
+.waiter{
+    display: none;}
+
+.top{
+    height: 50px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.top ul{
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.top ul li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 33.3%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    color: #000;
+}
+.top ul li.arrow div{
+    height: 50px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.top ul li.arrow img{
+    width: 15px;
+}
+.item{
+    height: 200px;
+}
+.carousel-inner .item img{
+    width: 100%;
+    height: 100%;
+}
+
+.xiangq_main{
+    margin: 20px 0;
+}
+.xiangq_main .xq_header{
+    font-size: 25px;
+    width: 30%;
+    margin: 5px auto;
+    border: 1px solid #fdaa31;
+    text-align: center;
+}
+.xiangq_main .xq_header2{
+    text-align: center;
+    margin: 0 auto;
+}
+.xiangq_main .xq_header2 span{
+    font-size: 22px;
+}
+.xiangq_main .xq_header span{
+    background: #fdaa31;
+    display: block;
+    height: 100%;
+    margin: 2px;
+}
+.xiangq_main .xq_jieshao p{
+    text-indent: 2em;
+    font-size: 16px;
+}
+.huaixin_footer .xuan_yes{
+    float: right;
+    line-height: 50px;
+    width: 25%;
+    text-align: center;
+    background: #fdaa31;
+    font-size: 20px;
+}
+.changdi,.kefu{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:765px) {
+    .xuexi_lis div.xuexi_top_left{
+        padding: 7% 0;
+    }
+}
+
+
+

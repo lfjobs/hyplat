@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.finance.BenDis.UallSubsidize" table="DT_UALL_SUBSIDIZE" schema="HYPLAT">
+        <id name="uskey">
+            <column name="USKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="usid">
+            <column name="USID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="ssid">
+            <column name="SSID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="psccid">
+            <column name="PSCCID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="sccid">
+            <column name="SCCID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="slevel">
+            <column name="SLEVEL" sql-type="number"/>
+        </property>
+        <property name="adddate">
+            <column name="ADDDATE" sql-type="date"/>
+        </property>
+        <property name="CountNum">
+            <column name="CountNum" sql-type="number"/>
+        </property>
+    </class>
+</hibernate-mapping>

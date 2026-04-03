@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+    <class name="SubjectHour" table="dtSubjectHour">
+        <id length="50" name="subjectHourKey">
+            <column length="50" name="subjectHourKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="subjectHourId">
+            <column length="50" name="sremindID" />
+        </property>
+        <property name="licenseType">
+            <column length="10" name="licenseType">
+                <comment>培训车型</comment>
+            </column>
+        </property>
+        <property name="staffId">
+            <column length="50" name="staffId" >
+                <comment>人员ID</comment>
+            </column>
+        </property>
+        <property name="p1Time">
+            <column length="10" name="p1Time" >
+                <comment>科一学时</comment>
+            </column>
+        </property>
+        <property name="p2Time">
+            <column length="10" name="p2Time" >
+                <comment>科二学时</comment>
+            </column>
+        </property>
+        <property name="p3Time">
+            <column length="10" name="p3Time" >
+                <comment>科三学时</comment>
+            </column>
+        </property>
+        <property name="p4Time">
+            <column length="10" name="p4Time" >
+                <comment>科四学时</comment>
+            </column>
+        </property>
+        <property name="totalTime">
+            <column length="10" name="totalTime" >
+                <comment>总学时</comment>
+            </column>
+        </property>
+        <property name="p1NetworkTime">
+            <column length="10" name="p1NetworkTime" >
+                <comment>已学科一学时</comment>
+            </column>
+        </property>
+        <property name="p2NetworkTime">
+            <column length="10" name="p2NetworkTime" >
+                <comment>已学科二学时</comment>
+            </column>
+        </property>
+        <property name="p3NetworkTime">
+            <column length="10" name="p3NetworkTime" >
+                <comment>已学科三学时</comment>
+            </column>
+        </property>
+        <property name="p4NetworkTime">
+            <column length="10" name="p4NetworkTime" >
+                <comment>已学科四学时</comment>
+            </column>
+        </property>
+        <property name="hasTime">
+            <column length="10" name="hasTime" >
+                <comment>拥有学时</comment>
+            </column>
+        </property>
+        <property name="reserved1">
+            <column length="10" name="reserved1" >
+                <comment>预留字段</comment>
+            </column>
+        </property>
+        <property name="reserved2">
+            <column length="10" name="reserved2" >
+                <comment>预留字段</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

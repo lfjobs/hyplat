@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="restaurant-ntoken" namespace="/ea/restaurant"
+		extends="struts-default">
+		<action name="ea_*"
+			class="hy.ea.finance.action.BenDis.RestaurantAction" method="{1}">
+			<result name="choice">/page/conacts/restaurant/tableWaiter.jsp</result>
+			<result name="queryLoginName">/page/conacts/restaurant/tableWaiter2.jsp</result>
+			<result name="puy">/page/conacts/restaurant/details.jsp</result>
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+             <!--扫码付款-->
+			<result name="01">/page/conacts/restaurant/scanCodePay.jsp</result>
+			<!--扫码点餐-->
+			<result name="02">/page/WFJClient/ShopOwner/city.jsp</result>
+			<!--扫桌号-->
+			<result name="03">/page/conacts/restaurant/products.jsp</result>
+			<!--自助收银支付-->
+			<result name="08">/page/ea/main/marketing/supermarket/selfservice/selfService_ppay.jsp</result>
+			<!--停车收费扫码付款-->
+			<result name="09">/page/WFJClient/ShopOwner/parking/parkingPay.jsp</result>
+			<!--扫码付款-->
+			<result name="10-1" type="redirectAction">
+				<param name="actionName">/ea_toCostBudgetBillList.jspa</param>
+				<param name="namespace">/ea/scBudget</param>
+				<param name="tenantFlag">other</param>
+				<param name="companyid">${companyId}</param>
+				<param name="staffId">${staffId}</param>
+				<param name="menuId">ng</param>
+			</result>
+			<!--扫码付款-->
+			<result name="10-2" type="redirectAction">
+				<param name="actionName">/ea_getcity.jspa</param>
+				<param name="namespace">/ea/wfjshop</param>
+				<param name="state">0</param>
+				<param name="companyId">${companyId}</param>
+				<param name="returnPage">01</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="restaurant-sajaxs" namespace="/ea/restaurant" extends="json-default">
+		<action name="sajax_ea_*" 
+		         class="hy.ea.finance.action.BenDis.RestaurantAction" method="{1}">
+	<!-- 返回类型为json 在sjon-default中定义 -->  
+			<result type="json">  
+				<!-- root的值对应要返回的值的属性 -->    
+				<!-- 这里的result值即是 对应action中的 result -->  
+				<param name="root">result</param>  
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="restaurant-sajax" namespace="/ea/restaurant" extends="json-default">
+		<action name="sajaxj_ea_*"
+				class="hy.ea.finance.action.BenDis.RestaurantAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">results</param>
+			</result>
+			<result name="login">/page/ea/index.jsp</result>
+		</action>
+	</package>
+</struts>

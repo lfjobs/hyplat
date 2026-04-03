@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                     
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="ProEqpmDistToGood"  table="dt_pro_eqpm_dist_to_good" schema="hyplat">
+		<comment>设备分配关系表</comment>
+		<id length="50" name="pedtgKey">
+			<column length="50" name="pedtg_Key" />
+			<generator class="uuid" />
+		</id>
+		<property name="pedtgId">
+			<column length="50" name="ped_Id" not-null="true" ><comment>关系表业务主键</comment></column>
+		</property>
+		<property name="pedId">
+			<column length="50" name="pedId"><comment>设备分配表业务主键</comment></column>
+		</property>
+		<property  name="goodId">
+			<column length="50" name="goodId"><comment>物品表业务主键</comment></column>
+		</property>
+		<property  name="goodsName">
+			<column length="50" name="goodsName"><comment>物品名称</comment></column>
+		</property>
+		<property  name="fieId">
+			<column length="50" name="fieId"><comment>场地分配表ID</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

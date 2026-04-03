@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+#body_02 {
+	border: #a8c7ce 1px solid;
+	width: 100%;
+	height:100%;
+	font-size: 12px;
+	float: left;
+	background-color: #dae7f6;
+}
+
+.table {
+	border-collapse: collapse;
+	border: 1px solid #a8c7ce;
+	font-size: 12px;
+}
+
+
+.table th {
+	border: 1px solid #a8c7ce;
+	color: #a8c7ce;
+	background: #E4F1FA;
+}
+
+.table td {
+	border: 1px solid #a8c7ce;
+	color: #333;
+	padding: 3px;
+}
+
+.anniu01 {
+	background: url(../../../images/ea/office/document/bianxie.jpg)
+		no-repeat;
+	width: 94px;
+	height: 25px;
+	cursor: pointer;
+	border: solid 0px #111;
+	padding-left: 10px;
+	line-height: 24px;
+	font-size: 12px;
+	margin: 0 10px 0 0px;
+}
+
+.anniu02 {
+	background: url(../../../images/ea/office/document/bx.jpg) no-repeat;
+	width: 94px;
+	height: 25px;
+	cursor: pointer;
+	border: solid 0px #111;
+	padding-left: 10px;
+	line-height: 26px;
+	font-size: 12px;
+	margin: 0 10px 0 0px;
+}
+
+.input {
+	border: 1px solid #a8c7ce;
+	height: 22px;
+	line-height: 22px;
+	padding: 0px 2px;
+}
+
+.input1 {
+	border: 1px solid #a8c7ce;
+	padding: 2px;
+}
+
+.r_t_c_left {
+	float: left;
+	width: 178px;
+	height: 100%;
+	border: 1px #A8C7CE solid;
+	/* Do rounding (native in Safari, Firefox and Chrome) */
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+.tree_c_left {
+	float: left;
+	width: 100%;
+	height: 670px;
+	margin: 3px 0 0 5px;
+	overflow: auto;
+}
+
+.rtcl_top {
+	height: 25px;
+	line-height: 25px;
+	text-align: left;
+	text-indent: 5px;
+	background: url(../../../images/ea/office/document/r_6_28.gif) repeat-x;
+}
+
+.rtcl_top01 {
+	height: 25px;
+	line-height: 25px;
+	font-weight: bold;
+	text-align: left;
+	text-indent: 20px;
+	background: url(../../../images/ea/office/document/bg_04.gif) no-repeat;
+}
+
+.r_t_c_right {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	border: #7da1ed 1px solid;
+}
+
+.shu {
+	width: 99%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 4px;
+}
+
+.bannb_01 {
+	background: url(../../../images/ea/office/document/bg_01.gif) repeat-x;
+	height: 27px;
+	width: 100%;
+}
+
+.txt01 {
+	color: #1E5494;
+	font-size: 12px;
+	font-weight: bolder;
+	line-height: 22px;
+}
+
+a {
+	text-decoration: none;
+}
+.deleteBtn {
+	background: url(../../../images/admin_images/Delete.gif);
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	border: none;
+	cursor: hand;
+}
+
+
+.borderStyle2 {
+	width: 93%;
+	border: 0;
+	height: 25px;
+	line-height: 25px;
+}
+.borderStyle {
+	border: none;
+	width: 15%;
+}

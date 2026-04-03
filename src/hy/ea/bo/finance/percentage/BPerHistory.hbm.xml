@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.percentage">
+	<!--业务佣金百分比历史记录表-->
+	<class name="BPerHistory" table="b_per_history">
+		<!--主键-->
+		<id length="50" name="brokerageKey">
+			<column length="50" name="brokerageKey" />
+			<generator class="uuid" /> 
+		</id>
+		<!--业务佣金百分比id-->
+		<property name="brokerageId">
+			<column length="50" name="brokerageId" />
+		</property>
+		<!--设备安装佣金百分比-->
+		<property name="sbaz">
+			<column length="50" name="sbaz" />
+		</property>
+		<!--贴牌佣金百分比-->
+		<property name="tp">
+			<column length="50" name="tp" />
+		</property>
+		<!--村级代理佣金百分比-->
+		<property name="cjdl">
+			<column length="50" name="cjdl" />
+		</property>
+		<!--省级代理佣金百分比-->
+		<property name="sjdl">
+			<column length="50" name="sjdl" />
+		</property>
+		<!--设备投资佣金百分比-->
+		<property name="sbtz">
+			<column length="50" name="sbtz" />
+		</property>
+		<!--县级代理佣金百分比	-->
+		<property name="xjdl">
+			<column length="50" name="xjdl" ></column>
+		</property>
+		<!--客户积分佣金百分比	-->
+		<property name="khjf">
+			<column length="50" name="khjf" ></column>
+		</property>
+		<!--业务佣金百分比	-->
+		<property name="ywyj">
+			<column length="50" name="ywyj" ></column>
+		</property>
+		<!--设置佣金百分比责任人-->
+		<property name="principal">
+			<column length="50" name="principal" ></column>
+		</property>
+		<!--设置时间-->
+		<property name="times">
+			<column length="50" name="times"/>
+		</property>
+		<!--公司id-->
+		<property name="companyId">
+			<column length="50" name="companyId" />
+		</property>
+	</class>
+</hibernate-mapping>

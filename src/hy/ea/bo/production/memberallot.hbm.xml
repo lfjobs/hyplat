@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                       
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="MemberAllot"  table="dtPMemberAllot">
+		<id length="50" name="makey">
+			<column length="50" name="makey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="maid">
+			<column length="50" name="maid" not-null="true" ><comment></comment></column>
+		</property>
+		<property name="productCode">
+			<column length="20" name="productCode"><comment>产品编号</comment></column>
+		</property>
+		<property  name="productName">
+			<column length="50" name="productName"><comment>产品名称</comment></column>
+		</property>
+		<property  name="productID">
+			<column length="50" name="productID"><comment>产品ID</comment></column>
+		</property>
+		<property  name="startDate">
+			<column  name="startDate"><comment>项目开始时间</comment></column>
+		</property>
+		<property  name="endDate">
+			<column name="endDate"><comment>项目结束时间</comment></column>
+		</property>
+			<property name="allotorID">
+			<column length="50" name="allotorID" ><comment>分配人ID</comment></column>
+		</property>
+		<property name="allotorName">
+			<column length="50" name="allotorName"><comment>分配人Name</comment></column>
+		</property>
+		<property  name="transferID">
+			<column length="50" name="transferID"><comment>交接人ID</comment></column>
+		</property>
+		<property  name="transferName">
+			<column length="50" name="transferName"><comment>交接人Name</comment></column>
+		</property>
+		<property  name="receiverID">
+			<column length="50" name="receiverID"><comment>接收人id</comment></column>
+		</property>
+		<property  name="receiverName">
+			<column length="50" name="receiverName"><comment>接收人name</comment></column>
+		</property>
+		<property  name="duty">
+			<column length="50" name="duty"><comment>职责</comment></column>
+		</property>
+		<property  name="allotDate">
+			<column  name="allotDate"><comment>分配时间</comment></column>
+		</property>
+		<property  name="remark">
+			<column  length="250" name="remark"><comment>备注</comment></column>
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID"><comment>公司ID公司表业务主键</comment></column>
+		</property>
+		<property  name="type">
+			<column length="50" name="type"><comment>生产类别</comment></column>
+		</property>
+		<property  name="category">
+			<column length="50" name="category"><comment>产品类型</comment></column>
+		</property>
+		<property  name="fiveClear">
+			<column length="200" name="fiveClear"><comment>产品类型</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

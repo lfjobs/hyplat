@@ -1,0 +1,1113 @@
+@charset "utf-8";
+/*.mobile-screen *[class^="page-"]{*/
+/*    padding: 12px;*/
+/*}*/
+.top-title-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: rgb(247,76,50);
+}
+.top-title-header > .header-left{
+    width: 1.5em;
+    height: 1.5em;
+    fill: white;
+}
+.top-title-header > .header-title{
+    margin-left: 12px;
+    margin-right: 12px;
+    flex: 1;
+    overflow: hidden;
+}
+.top-title-header > .header-title > .text{
+    width: 100%;
+    display: block;
+    white-space: nowrap;      /* 禁止文本换行 */
+    overflow: hidden;         /* 隐藏超出部分的文本 */
+    text-overflow: ellipsis;  /* 使用省略号表示溢出文本 */
+    text-align: center;
+    color: white;
+    font-size: 17px;
+}
+.top-title-header > .header-right{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.bottom-nav-footer{
+    display: grid;
+    grid-gap: 6%;
+    padding:8px 4% 4px;
+    grid-template-columns:  repeat(5, 1fr);
+    box-shadow: 0 0 4px 0 #CCCCCC;
+    fill: #CCCCCC;
+    color: #363636;
+    background: white;
+}
+.bottom-nav-footer > .nav-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bottom-nav-footer > .nav-item > .icon-svg{
+    margin-bottom: 4px;
+    width: 32px;
+    height: 32px;
+}
+.bottom-nav-footer > .nav-item > .text{
+    margin-top: 2px;
+    font-size: 1em;
+    text-align: center;
+}
+.bottom-nav-footer > .opt{
+    fill: #FF442E;
+}
+.bottom-nav-footer > .opt > .text{
+    color: #e44f4e;
+}
+
+/* 1. 声明过渡效果 */
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+/* 2. 声明进入和离开的状态 */
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: scale(0.01);
+}
+
+/* 3. 确保离开的项目被移除出了布局流
+      以便正确地计算移动时的动画效果。 */
+.fade-leave-active {
+    position: absolute;
+}
+
+/********  component-dialog  ********/
+.component-dialog{
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: white;
+    outline: none;
+}
+.component-dialog::backdrop {
+    border: none;
+    box-shadow: none;
+    background: rgba(0,0,0,0.2);
+}
+
+.component-dialog .button-row{}
+.component-dialog .button-row > .button{
+    min-width: 6em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+
+    outline: none;
+    user-select: none;
+    vertical-align: middle;
+
+    padding: 8px 1em;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 4px;
+}
+.component-dialog .button-row > .button-red{
+    color: white;
+    background-color:#E64E40FF;
+    border:solid 1px #E64E40FF;
+}
+.component-dialog .button-row > .button-red:hover{
+    background-color: #f68578;
+    border:solid 1px #f68578;
+}
+.component-dialog .button-row > .button-red:active{
+    background-color: #c14437;
+    border:solid 1px #c14437;
+}
+
+.component-dialog .button-row > .button-blue{
+    color: white;
+    background-color: #409eff;
+    border:solid 1px #409eff;
+}
+.component-dialog .button-row > .button-blue:hover{
+    background-color: #7dbafa;
+    border:solid 1px #7dbafa;
+}
+.component-dialog .button-row > .button-blue:active{
+    background-color: #337ecc;
+    border:solid 1px #337ecc;
+}
+
+.component-dialog .button-row > .button-gray{
+    color: #606266;
+    background-color:white;
+    border: solid 1px #DCDFE6FF;
+}
+.component-dialog .button-row > .button-gray:hover{
+    color: #50a6ff;
+    background-color: #ecf5ff;
+    border: solid 1px #96cbff;
+}
+.component-dialog .button-row > .button-gray:active{
+    border: solid 1px #50a6ff;
+}
+
+.component-dialog > .body{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.component-dialog > .body > p{
+    color:#606266;
+    font-size: 1em;
+}
+
+
+/********  page/pc/5L5C/marketing/template/layout-alert.jsp  ********/
+.left-alert-aside > .alert-root{
+    position: fixed;
+    z-index: 11;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+}
+.left-alert-aside > .alert-root .alert-base{
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transform-origin:0 0;
+    overflow: hidden;
+}
+.left-alert-aside > .alert-root .alert-base > .icon-alert{
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+}
+.left-alert-aside > .alert-root .alert-base > .main-text{
+    flex: 1;
+    max-width: 100%;
+    white-space: nowrap;      /* 禁止文本换行 */
+    overflow: hidden;         /* 隐藏超出部分的文本 */
+    text-overflow: ellipsis;  /* 使用省略号表示溢出文本 */
+}
+.left-alert-aside > .alert-root .alert-base > .icon-cancel{
+    margin-left: 1rem;
+    width: 14px;
+    height: 14px;
+    padding: 2px;
+
+    cursor: pointer;
+    fill: #b3b4ba;
+}
+
+.left-alert-aside > .alert-root .icon-error{
+    background-color: #fef0f0;
+}
+.left-alert-aside > .alert-root .icon-error > .icon-alert{
+    fill:#f56c6c;
+}
+.left-alert-aside > .alert-root .icon-error > .main-text{
+    color:#F56C6CFF;
+}
+
+.left-alert-aside > .alert-root .icon-success{
+    background-color: #f0f9eb;
+}
+.left-alert-aside > .alert-root .icon-success > .icon-alert{
+    fill: #67c23a;
+}
+.left-alert-aside > .alert-root .icon-success > .main-text{
+    color:#67c23a;
+}
+
+.left-alert-aside > .alert-root .icon-warning{
+    background-color: #fdf6ec;
+}
+.left-alert-aside > .alert-root .icon-warning > .icon-alert{
+    fill: #e6a23c;
+}
+.left-alert-aside > .alert-root .icon-warning > .main-text{
+    color:#e6a23c;
+}
+
+.left-alert-aside > .alert-root .icon-info{
+    background-color: #f4f4f5;
+}
+.left-alert-aside > .alert-root .icon-info > .icon-alert{
+    fill: #909399;
+}
+.left-alert-aside > .alert-root .icon-info > .main-text{
+    color: #909399;
+}
+
+
+/********  marketing/module/load-wait.jsp  ********/
+.load-wait-container{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.load-wait-container > .spinner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.load-wait-container > .spinner > span{
+    color: #565656;
+}
+.load-wait-container .svg-spin{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    animation: svgSpin 1s linear infinite;
+    fill: #363636;
+}
+@keyframes svgSpin {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0.2;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0.2;
+    }
+}
+
+/********  marketing/module/drop-down-select.jsp  ********/
+.drop-down-select-container{
+    width: 100%;
+    position: relative;
+}
+.drop-down-select-container > .display-header{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: calc(2em + 4px);
+    padding: 0 8px;
+    border-radius: 4px;
+    border: solid 1px #c6c6c6;
+    background-color: white;
+    cursor: pointer;
+}
+.drop-down-select-container > .display-header > .add-context{
+    display: flex;
+}
+.drop-down-select-container > .display-header > .add-context .placeholder{
+    color: #a8abb2
+}
+.drop-down-select-container > .display-header > .add-context .text-select{
+    color: #363636;
+}
+.drop-down-select-container > .display-header > .icon-svg{
+    width: 1em;
+    height: 1em;;
+    fill: #dddddd;
+    transition: all .5s ease-in-out;
+    transform: rotate(90deg);
+}
+
+.drop-down-select-container > .display-select{
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin:0 0;
+    transition: transform .2s ease-in-out;
+}
+.drop-down-select-container > .display-select > .select-options{
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 0 4px 1px #CCCCCC;
+}
+.drop-down-select-container > .display-select > .select-options:before{
+    content: '';
+    position: absolute;
+    transform: translate(-50%,-50%) rotate(45deg);
+    top: 0;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    box-shadow: 0 0 4px 1px #CCCCCC;
+}
+.drop-down-select-container > .display-select > .select-options:after{
+    content: '';
+    position: absolute;
+    transform: translate(-50%,0);
+    top: 0;
+    left: 50%;
+    width: 16px;
+    height: 10px;
+    background-color: white;
+}
+.drop-down-select-container > .display-select > .select-options > .option{
+    width: 100%;
+    padding: .5em 1em;
+    cursor: pointer;
+    color: #565656;
+}
+.drop-down-select-container > .display-select > .select-options > .option:hover{
+    background-color: rgba(229, 237, 255, 0.5);
+}
+.drop-down-select-container > .door-closer{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+}
+
+/********  page/pc/5L5C/marketing/visitorHome.jsp  ********/
+.page-visitor-home{
+    padding: 12px;
+}
+.page-visitor-home .single-row-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 0 3px 0 #CCCCCC;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.page-visitor-home .single-row-nav > .row-left {
+    flex: 1;
+    padding-right: 8px;
+}
+.page-visitor-home .single-row-nav > .row-left .text {
+    color: #363636;
+}
+.page-visitor-home .single-row-nav > .row-right {
+    flex-shrink: 0;
+}
+.page-visitor-home .single-row-nav > .row-right > .icon-svg {
+    width: 12px;
+    height: 12px;
+    fill: rgb(159, 159, 167);
+}
+
+/********  page/pc/5L5C/marketing/visitorFansList.jsp  ********/
+.page-visitor-fans{
+    padding: 0 0 12px !important;
+}
+.page-visitor-fans > p{
+    color: #696969;
+    text-align: center;
+}
+
+.page-visitor-fans > .nav-href{}
+.page-visitor-fans > .nav-href > .ul-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+.page-visitor-fans > .nav-href > .ul-link > li{
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #0d76ac;
+    border: 1px solid #0d76ac;
+    cursor: pointer;
+}
+
+.page-visitor-fans > .above-menu{
+}
+.page-visitor-fans > .above-menu .ul-classify{
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    border-bottom: solid 1px #CCCCCC;
+    font-weight: bold;
+    color: #696969;
+}
+.page-visitor-fans > .above-menu .ul-classify > li{
+    border-top: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    padding: 8px 12px;
+}
+.page-visitor-fans > .above-menu .ul-classify > li:first-child{
+    border-top-left-radius: 4px;
+}
+.page-visitor-fans > .above-menu .ul-classify > li:last-child{
+    border-right: 1px solid #CCCCCC;
+    border-top-right-radius:4px;
+}
+.page-visitor-fans > .above-menu .ul-classify > .at{
+    color: #cf5645;
+}
+.page-visitor-fans > .table-box{
+    padding: 1em;
+}
+
+
+/********  page/pc/5L5C/marketing/visitorImport1.jsp  ********/
+.page-visitor-import{
+    position: relative;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.page-visitor-import > .upload-file-box{
+    flex: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+.page-visitor-import > .upload-file-box > .main-icon-svg {
+    width: 40%;
+    max-width: 140px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.page-visitor-import > .upload-file-box > .main-icon-svg > svg{
+    width: 100%;
+    fill: rgb(22, 186, 186);
+}
+.page-visitor-import > .upload-file-box > .hint-text{
+    width: 70%;
+    margin: 2em auto;
+    color: #696969;
+}
+.page-visitor-import > .upload-file-box > .action-button > .uploader-click{
+    cursor: pointer;
+    color: #fff;
+    background: #4A54FF linear-gradient(315deg, #6772FF 0, #00F9E5 100%) center center;
+    background-size: 104% 104%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 99px;
+    padding:0 2em;
+    height: 2.666666em;
+    box-shadow: 1px 1px 2px 0 #2a2f91;
+}
+.page-visitor-import > .upload-file-box > .action-button > .uploader-click:active{
+    box-shadow: inset 1px 1px 2px 0 #2a2f91;
+}
+
+.page-visitor-import > .component-excel-table-root{
+    width: 100%;
+    height: 100%;
+    background-color: #3498db;
+}
+.page-visitor-import > .component-excel-table-root > .table-box{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100vh;
+
+    overflow: auto;
+}
+.page-visitor-import > .component-excel-table-root > .table-box tr > th:first-child{
+    padding-left: 8px;
+    width: 32px;
+}
+.page-visitor-import > .component-excel-table-root > .table-box tr > th:last-child{
+    padding-right: 8px;
+}
+.page-visitor-import > .component-excel-table-root > .table-box tr > td:first-child{
+    padding-left: 8px;
+}
+.page-visitor-import > .component-excel-table-root > .table-box tr > td:last-child{
+    padding-right: 8px;
+}
+
+.page-visitor-import > .component-excel-table-root > .button-box{
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.page-visitor-import > .component-excel-table-root > .button-box > .button-item{
+    display: block;
+    flex-shrink: 0;
+    margin: 16px auto;
+    border-radius: 25px;
+    padding: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    width: 32%;
+    transition: background-color 0.3s, transform 0.1s; /* 增加缩放效果 */
+}
+.page-visitor-import > .component-excel-table-root > .button-box > .button-item:active {
+    transform: scale(0.95); /* 点击时缩放，提供触控反馈 */
+}
+.page-visitor-import > .component-excel-table-root > .button-box .confirm-button {
+    background-color: rgb(230, 78, 64);
+    color: white;
+}
+.page-visitor-import > .component-excel-table-root > .button-box .confirm-button:hover {
+    background-color: rgb(210, 68, 54); /* 悬停时颜色略微变深 */
+}
+.page-visitor-import > .component-excel-table-root > .button-box .cancel-button{
+    background-color: #fdccb7; /* 暖色调浅鲑鱼色 */
+    color: white;
+}
+.page-visitor-import > .component-excel-table-root > .button-box .cancel-button:hover {
+    background-color: #ff8c69; /* 悬停时颜色略微变深 */
+}
+
+
+/********  page/pc/5L5C/marketing/visitorMessagesHome.jsp  ********/
+.page-visitor-messages{
+    padding: 12px;
+}
+.page-visitor-messages > .messages-above{}
+.page-visitor-messages > .messages-above .search-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #dddddd;
+    padding: 8px 12px;
+    box-shadow: 0 0 2px 0 #696969;
+}
+.page-visitor-messages > .messages-above .search-box > .before{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-visitor-messages > .messages-above .search-box > .before .icon-svg{
+    width: 1.2em;
+    height: 1.2em;
+}
+.page-visitor-messages > .messages-above .search-box > .before .icon-svg > svg{
+    fill: #363636;
+    width: 100%;
+    height: 100%;
+}
+.page-visitor-messages > .messages-above .search-box > .target{
+    flex: 1;
+}
+.page-visitor-messages > .messages-above .search-box > .target input{
+    display: block;
+    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+
+.page-visitor-messages > .messages-content{}
+.page-visitor-messages > .messages-content .desc-ul{
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-bottom: solid 1px #CCCCCC;
+}
+.page-visitor-messages > .messages-content .desc-ul > li{
+    padding: 8px 1em;
+    width: 40%;
+}
+.page-visitor-messages > .messages-content .desc-ul > li:first-child{
+    text-align: right;
+}
+
+.page-visitor-messages > .messages-content .template-preview{
+    width: 100%;
+}
+.page-visitor-messages > .messages-content .template-preview > li{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    padding: 12px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+.page-visitor-messages > .messages-content .template-preview > li > .header{
+    position: relative;
+    width: 100%;
+}
+.page-visitor-messages > .messages-content .template-preview > li > .header > .caption{
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #363636;
+    flex: 1;
+}
+.page-visitor-messages > .messages-content .template-preview > li > .header > .menu-delete{
+    position: absolute;
+    top: -4px;
+    right: -4px;
+}
+.page-visitor-messages > .messages-content .template-preview > li > .header > .menu-delete svg{
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    fill: #969696;
+}
+.page-visitor-messages > .messages-content .template-preview > li > .header > .menu-delete svg:hover{
+    fill: #cf5645;
+}
+
+.page-visitor-messages > .messages-content .template-preview > li > .main{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.page-visitor-messages > .messages-content .template-preview > li > .main > .about{
+    color: #464646;
+}
+.page-visitor-messages > .messages-content .template-preview > li > .tail{
+    color: #696969;
+}
+
+.page-visitor-messages > .messages-below{
+    position: sticky;
+    left: 0;
+    bottom: 72px;
+    z-index: 11;
+    width: 100%;
+}
+.page-visitor-messages > .messages-below .button-base{
+    display: block;
+    width: 70%;
+    margin: 16px auto;
+    border-radius: 25px;
+    padding: 8px 1em;
+
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.1s; /* 增加缩放效果 */
+}
+.page-visitor-messages > .messages-below .button-base:active {
+    transform: scale(0.95); /* 点击时缩放，提供触控反馈 */
+}
+.page-visitor-messages > .messages-below .button-confirm{
+    background-color: rgb(230, 78, 64);
+    color: white;
+}
+.page-visitor-messages > .messages-below .button-confirm:hover {
+    background-color: rgb(210, 68, 54); /* 悬停时颜色略微变深 */
+}
+
+
+/********  src/page/marketing/template/CreateMessagesTemplate.vue  ********/
+.page-create-messages-template{
+    padding: 12px;
+    background-color: #f1f1f1;
+}
+.page-create-messages-template > .above{
+    flex: 1;
+}
+.page-create-messages-template > .above .text-title-box{
+    margin-top: 8px;
+    border-radius: 6px;
+    background-color: white;
+    overflow: hidden;
+}
+.page-create-messages-template > .above .text-title-box input{
+    border: none;
+    padding: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    border-bottom: solid 1px #ccc;
+}
+.page-create-messages-template > .above .text-title-box input:active{
+    background-color: rgba(50,50,50,0.1);
+}
+
+.page-create-messages-template > .above .text-field-box{
+    border-radius: 6px;
+    background-color: white;
+    padding: 8px;
+    overflow: hidden;
+}
+.page-create-messages-template > .above .text-field-box:active{
+    background-color: rgba(50,50,50,0.1);
+}
+.page-create-messages-template > .above .text-field-box textarea{
+    display: block;
+    min-height: 160px;
+    height: 25vh;
+    font-size: 1em;
+    color: #363636;
+    background-color: transparent;
+    border: none;
+    resize: none;/*控制 textarea 是否可调整大小*/
+}
+.page-create-messages-template > .above .text-field-box > p{
+    text-align: right;
+    color: #969696;
+}
+
+.page-create-messages-template > .above .text-fill-box{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.page-create-messages-template > .above .text-fill-box > li{
+    display: block;
+    background-color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+    color: #0d76ac;
+    text-decoration:underline;
+}
+
+.page-create-messages-template > .above .tips-box{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.page-create-messages-template > .above .tips-box h4{
+    color: #363636;
+}
+.page-create-messages-template > .above .tips-box ol > li{
+    color: #565656;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+/********  page/pc/5L5C/marketing/visitorMessagesSend.jsp  ********/
+.page-messages-send{}
+.page-messages-send h2{
+    font-size: 17px;
+    color: #565656;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.page-messages-send > .nav-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px #ccc;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+.page-messages-send > .nav-list > .at-item{
+    position: relative;
+}
+.page-messages-send > .nav-list > .at-item::before{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translate(-50%,0);
+    content: ' ';
+    width: 2em;
+    height: 4px;
+    background: #cf5645;
+}
+.page-messages-send > .nav-list > .nav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 2em;
+}
+.page-messages-send > .nav-list > .nav-item .icon-svg{
+    width: 3em;
+    height: 3em;
+    fill: #cf5645;
+}
+.page-messages-send > .nav-list > .nav-item .icon-svg > svg{
+    width: 100%;
+    height: 100%;
+}
+.page-messages-send > .nav-list > .nav-item .text{
+    margin-top: 4px;
+    font-size: 1em;
+}
+
+.page-messages-send > .sms-template{
+    padding: 12px;
+}
+.page-messages-send > .sms-template .textarea-box{
+    display: block;
+    width: 100%;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    padding: 8px;
+}
+.page-messages-send > .sms-template .textarea-box > label{
+    display: block;
+    width: 100%;
+}
+.page-messages-send > .sms-template .textarea-box > label > textarea{
+    display: block;
+    min-height: 160px;
+    height: 22vh;
+    font-size: 1em;
+    color: #999999;
+    background-color: transparent;
+    border: none;
+    resize: none;/*控制 textarea 是否可调整大小*/
+}
+.page-messages-send > .sms-template .textarea-box > aside{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    height: 1em;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #999999;
+    margin-top: 8px;
+}
+.page-messages-send > .sms-template .textarea-box > aside > .text-time{
+    text-align: left;
+}
+.page-messages-send > .sms-template .textarea-box > aside .text-count{
+    text-align: right;
+}
+
+.page-messages-send > .sms-template .tips-box{
+}
+.page-messages-send > .sms-template .tips-box > p{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    color: #464646;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.page-messages-send > .sms-template .tips-box > p:after{
+    position: absolute;
+    content: '*';
+    left: 2px;
+    top: 4px;
+    color: #cf5645;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+
+.page-messages-send > .customer-select{
+    padding: 12px;
+}
+.page-messages-send > .customer-select > .filtrate-menu{
+    position: relative;
+    width: 100%;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.7em;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: white;
+    box-shadow: 0 -1px  4px 0 #969696;
+    border-radius: 4px 4px 0 0;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-button > li{
+    flex: 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-button > li > .name{
+    display: block;
+    max-width: 4em;
+    white-space: nowrap;      /* 禁止文本换行 */
+    overflow: hidden;         /* 隐藏超出部分的文本 */
+    text-overflow: ellipsis;  /* 使用省略号表示溢出文本 */
+    color: #363636;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-button > li > .icon-svg{
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+    fill: #696969;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-button > li > .icon-svg > svg{
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-in-out;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-list{
+    position: absolute;
+    left: 0;
+    top: calc(100% - 2px);
+    width: 100%;
+
+    background: white;
+    box-shadow: 0 2px 2px 0 #969696;
+    border-radius: 0 0 4px 4px;
+    z-index: 2;
+    max-height: 200px;
+    overflow-y: auto;
+    transform: scale(1, 0);
+    transform-origin:0 0;
+    transition: transform .2s ease-in-out;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-list > li{
+    cursor: pointer;
+    padding: 8px 12px;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-list > .active{
+    position: relative;
+    color: #d81e06;
+    font-weight: bold;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-list > .active:before{
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    content: ' ';
+    width: 1em;
+    height: 1em;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D%220%200%201024%201024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M39.00678448%20576.37479917c-12.05474038-12.05474038-14.04315117-30.82036717-3.3554432-44.24213997l24.85513481-31.31746987c10.19060528-12.80039443%2029.20478341-16.03156195%2042.75083188-7.08371342l215.2454675%20143.66267924c11.30908635%207.58081612%2030.94464285%206.58661072%2041.50807514-1.9884108L928.69633517%20173.97016652c12.80039443-10.31488095%2032.80877795-9.44495123%2043.99358862%201.73985943l14.04315118%2014.04315117c12.17901605%2012.17901605%2011.30908635%2031.44174555-1.49130809%2044.24213998L374.79965582%20843.44322275c-19.01417813%2019.01417813-50.20737232%2018.14424842-69.71865315-1.3670324L39.00678448%20576.37479917z%22%20fill%3D%22%23d81e06%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+    background-size: cover;
+}
+.page-messages-send > .customer-select > .filtrate-menu > .menu-list > .active > span{
+    margin-left: calc(1em + 4px);
+}
+
+.page-messages-send .customer-view{
+    width: 100%;
+    overflow-y: auto;
+    min-height: 300px;
+    max-height: 35vh;
+    box-shadow: 0 0  3px 0 #969696;
+    padding: 12px;
+    border-radius: 0 0 4px 4px;
+}
+.page-messages-send .customer-view > .row{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.page-messages-send .customer-view > .row > .name{
+    width: 5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.page-messages-send .customer-view > .row > .contact{
+    flex: 1;
+}
+.page-messages-send .customer-view > .row > .checkbox{
+    width: 2em;
+}
+
+
+/********  page/pc/5L5C/marketing/document/norm.jsp  ********/
+.page-norm-document{
+
+}
+.page-norm-document > .document-white-book{
+    width: 100%;
+    background: white;
+}
+.page-norm-document > .document-white-book h1{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 2;
+}
+.page-norm-document > .document-white-book p{
+    text-indent: 2em;
+    color: #222222;
+}
+.page-norm-document > .document-white-book ul > li{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.page-norm-document > .document-white-book ul > li > div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1em;
+}
+.page-norm-document > .document-white-book ol > li{
+    padding-left: 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #333333;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.page-norm-document > .document-white-book ol > li > i{
+    font-style: normal;
+    margin-right: 0.5em;
+}
+
+
+/********  page/pc/5L5C/marketing/tip/operationTip.jsp  ********/
+.page-operation-tip{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.page-operation-tip .above-tip-section{
+    width: 90%;
+    margin: 0 auto;
+}
+.page-operation-tip .above-tip-section > .icon-area{
+    margin-top: 40px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-operation-tip .above-tip-section > .icon-area > .icon-svg{
+    width: 80px;
+    height: 80px;
+    fill: rgb(230, 78, 64);
+}
+.page-operation-tip .above-tip-section > h2{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 22px;
+}
+.page-operation-tip .above-tip-section > p{
+    font-size: 16px;
+    color: #363636;
+    text-indent: 2em;
+}
+
+.page-operation-tip .below-tip-section{
+    width: 90%;
+    margin: 24px auto;
+
+}
+.page-operation-tip .below-tip-section > p{
+    font-size: 14px;
+    color: #565656;
+}

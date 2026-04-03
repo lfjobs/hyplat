@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.invoicing.SendBill" table="DT_SEND_BILL" schema="HYPLAT">
+        <id name="sendkey">
+            <column name="SENDKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="sendid">
+            <column name="SENDID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="journalnum">
+            <column name="JOURNALNUM" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="sendnum">
+            <column name="SENDNUM" sql-type="varchar2(50)"/>
+        </property>
+        <property name="companyid">
+            <column name="COMPANYID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="purchaserid">
+            <column name="PURCHASERID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="purchasername">
+            <column name="PURCHASERNAME" sql-type="varchar2(50)"/>
+        </property>
+        <property name="pickingid">
+            <column name="PICKINGID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="pichingname">
+            <column name="PICHINGNAME" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="sellermessage">
+            <column name="SELLERMESSAGE" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="cashierbillsid">
+            <column name="CASHIERBILLSID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="adddate">
+            <column name="ADDDATE" sql-type="date"/>
+        </property>
+        <property name="status">
+            <column name="STATUS" sql-type="varchar2(50)" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

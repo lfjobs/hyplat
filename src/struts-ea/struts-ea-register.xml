@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<package strict-method-invocation="false" name="ea-register"  extends="base">
+		<interceptors>
+			<!-- <interceptor name="pushCompany4website" class="com.tiantai.website.interceptor.PushCompany4WebSite"/> -->
+			<interceptor-stack name="regisgerStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="token" />
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="invalid.token">
+				/page/ea/register.jsp
+			</result>
+		</global-results>
+		<action name="register"
+			class="hy.ea.action.RegisterAction" method="register">
+			<interceptor-ref name="regisgerStack" />
+			<result name="failed">
+				/page/ea/register.jsp
+			</result>
+			<result name="success">/page/ea/registerSuccess.jsp</result>
+		</action>
+		<action name="register1"
+			class="hy.ea.action.RegisterAction" method="register">
+			<interceptor-ref name="regisgerStack" />
+			<result name="failed">
+				/page/ea/register.jsp
+			</result>
+			<result name="success">/page/ea/login1.jsp</result>
+		</action>
+		<action name="custregister"
+			class="hy.ea.action.RegisterAction" method="register">			
+			<interceptor-ref name="regisgerStack" />			
+			<!-- <interceptor-ref name="pushCompany4website" /> 注册机构开通ERP时，给站推送机构信息 -->
+			<result name="failed">
+				/page/ea/register.jsp
+			</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="register" namespace="/register"  extends="base">
+		<action name="ea_*" class="hy.ea.action.RegisterAction" method="{1}">
+			<result name="success">/page/ea/register.jsp</result>
+			<result name="no_authority">/page/ea/no_authority.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="ea-register-sajax" extends="json-default">
+		<action name="ajax_register_*" class="hy.ea.action.RegisterAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+
+</struts>

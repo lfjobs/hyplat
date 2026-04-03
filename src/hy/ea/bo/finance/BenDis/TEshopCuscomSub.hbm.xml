@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.BenDis">
+
+    <class name="TEshopCuscomSub" table="T_ESHOP_CUSCOM_SUB">
+        <id name="sccskey">
+            <column name="SCCSKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="sccsid">
+            <column name="SCCSID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sccid">
+            <column name="SCCID" sql-type="varchar2(50)" length="50"><comment>帐号id</comment></column>
+        </property>
+        <property name="account">
+            <column name="ACCOUNT" sql-type="varchar2(50)" length="50"><comment>帐号</comment></column>
+        </property>
+        <property name="tyepPpid">
+            <column name="TYEPPPID" sql-type="varchar2(50)" length="50"><comment>佣金分配代理类别产品id</comment></column>
+        </property>
+        <property name="areappid">
+            <column name="areappid" sql-type="varchar2(50)" length="50"><comment>区域产品id</comment></column>
+        </property>
+        <property name="sjdate">
+            <column name="SJDATE" sql-type="date"><comment>时间</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

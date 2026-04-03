@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>信息处理中心</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="${base}/css/overlayer.css" />
+<link href="${base}/css/ea/validate.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="${base}/css/admin_main.css" />
+<link rel="stylesheet" type="text/css" href="${base}/js/jqModal/css/flexigrid_blue.css" />
+<link rel="stylesheet" type="text/css" href="${base}/js/jqModal/css/jqModal_blue.css" />
+<style type="text/css">td {white-space: nowrap;}.input {width: 150px;height: 15px;line-height: 15px;}.flexigrid div.bDiv .ok td {background-color: #E0F0FF;}</style>
+<script type="text/javascript" src="${base}/js/common/common.js"></script>
+<script src="${base}/js/jquery.js" type="text/javascript"></script>
+<script src="${base}/js/ea/validate.js" type="text/javascript"></script>
+<script type="text/javascript" src="${base}/js/flexigrid.js"></script>
+<script type="text/javascript" src="${base}/js/jqModal/jqDnR.js"></script>
+<script type="text/javascript" src="${base}/js/jqModal/jqModal.js"></script>
+<script src="${base}/page/ea/main/telrec/js/infoDealCenter.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="${base}/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript">
+    var  basePath='${base}/';
+    var  pNumber ='${pageNumber}';
+    var  search='${search}';
+    var  telMessageID = '';
+    var  token=0;
+    var  type = '${type}';
+    var  staffID = '${staffID}'; //个人客户呼叫信息中心
+    var telcodetype = '${telcodetype}';
+</script>
+
+</head>
+<body>
+	<div class="main_main">
+		<table class="JQueryflexme">
+			<thead>
+				<tr class="tablewith">
+					<th width="20">选择</th>
+					<th width="20">序号</th>
+					<th width="120">访问电话</th>
+					<th width="100">客户名</th>
+					<th width="140">通话内容</th>
+					<th width="60">是否处理</th>
+					<th width="150">处理人所在公司</th>
+					<th width="80">处理人</th>
+					<th width="140">处理时间</th>
+					<th width="300">处理意见</th>
+				</tr>
+			</thead>
+			<tbody>
+				<#if pageForm != null>
+			    <#list pageForm.list as pre> 
+			       <#if pre != null>
+					<tr id="${pre.recordid}" data-dealId="${pre.id}" class="trclass <#if pre.isdeal!=0>ok</#if>">
+						<td>
+						    <input type="radio" name="a" class="JQuerypersonvalue" value="${pre.recordid}" />
+						</td>
+						<td>${pre_index + 1}</td>
+						<td class="customTel">${pre.telnumber }</td>
+						<td class="customName">${pre.customname }</td>
+						<td class="recordContent">${pre.recordcontent}</td>
+						<td class="isDeal"><#if pre.isdeal==1>是<#else>否</#if></td>
+						<td title="${pre.companyname }">${pre.companyname }</td>
+						<td class="dealUser">${pre.dealuser}</td>
+						<td class="dealDate">${pre.dealdate}</td>
+						<td class="dealContent">${pre.dealcontent}</td>
+						<!-- <td class="recodeType">${pre.recordType }</td> -->
+					</tr>
+					</#if>
+				</#list>
+				</#if>
+			</tbody>
+		</table>
+		<#if pageForm != null>
+		<#assign actionPath="ea/tel/tel_infoDealCenter.jspa?">
+		<#include "/page/ea/main/office_ea/check/page.html"/>
+		</#if>
+	</div>
+	<div class="jqmWindow " style="top: 0%;left:10%;width: 550px"
+		id="jqModel">
+		<form name="cstaffForm" id="cstaffForm" method="post">
+			<input type="submit" name="submit" style="display: none" /> 
+			<input type="hidden" name="deal.telInRecord.id" id="telInRecordId" /> 
+			<input type="hidden" name="deal.id" id="dealId"/>
+			<div class="drag">
+				问题处理记录
+				<div class="close"></div>
+			</div>
+			<table width="100%" cellpadding="5" cellspacing="10" id="stafftable">
+				<tr>
+					<td>接待类型：</td>
+					<td>
+					<select id="recordType" name="telInRecord.recordType">
+					    <option>请选择</option>
+					    <#list codeList as code>
+					    <option value="${code.codeValue }">${code.codeValue }</option>
+					    </#list>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td>客户姓名：</td>
+					<td><input name="telInRecord.customName" id="customName"
+						class="input" />
+					</td>
+				</tr>
+				<tr>
+					<td>客户电话：</td>
+					<td><input name="telInRecord.customTel" id="customTel"
+						class="input" />
+					</td>
+				</tr>
+				<tr>
+					<td>接待时间：</td>
+					<td><input name="telInRecord.recodeDate" id="dealDate"
+						class="input" />
+					</td>
+				</tr>
+				<tr>
+					<td>内容：</td>
+					<td><textarea rows="6" cols="55"
+							name="telInRecord.recordContent" id="recordContent"></textarea>
+					</td>
+				</tr>
+			    <tr>
+					<td>问题转发：</td>
+					<td>
+					    <input type="hidden" name="deal.companyname" id="companyName" /> 
+						<select id="receiverCompanyID" name="deal.company" onchange="changeCompany(this)">
+							<option value="" selected="selected">请选择公司</option>
+					    </select> 
+					    <select id="receiverDeptID" name="receiverDeptID" onchange="changeDept(this,'receiverCompanyID')">
+							<option value="" selected="selected">请选择部门</option>
+					    </select> 
+					    <input type="hidden" name="deal.dealuser" id="dealuser" /> 
+					    <select id='receiverID'>
+							<option value="" selected="selected">请选择处理人</option>
+					    </select>
+					</td>
+				</tr>
+				<tr id="dealComment">
+					<td>处理意见：</td>
+					<td><textarea rows="4" cols="55" name="deal.dealcontent"
+							id="dealContent"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+					<input type="button" id="btnDeal" class="JQueryreturn input-button" style="cursor: pointer; width: 80px; display: none;" value="提交" />
+					<input type="button" class="JQueryreturn input-button" style="cursor: pointer; width: 80px;" value="关闭" />
+						</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<!--搜索窗口 -->
+	<div class="jqmWindow" style="width: 550px; right: 25%;; top: 10%"
+		id="jqModelSearch">
+		<form name="postSearchForm" id="postSearchForm" method="post">
+			<input type="submit" name="submit" style="display: none" />
+			<div class="drag">
+				查询信息
+				<div class="close"></div>
+			</div>
+			<table width="100%" id="cataffSearchTable" cellspacing="5">
+				<tr>
+					<td align="right">接待类型：</td>
+					<td>
+					    <select class="recodeType" name="telInRecord.recordType">
+					        <option value="">请选择接待类型</option>
+					        <#list codeList as code>
+								<option value="${code.codeValue }">${code.codeValue }</option>
+							</#list>
+					</select></td>
+				</tr>
+				<tr>
+					<td align="right">责任人：</td>
+					<td>
+					<input type="hidden" id="receiverCompanyID1" value="${account.companyID}" />
+					<select id="receiverDeptID1" name="receiverDeptID"
+						onchange="changeDept(this,'receiverCompanyID1')">
+							<option value="" selected="selected">请选择部门</option>
+					</select> 
+					<input type="hidden" id="staffKey" name="telInRecord.user.staffKey" />
+					<select  id='receiverID1'>
+							<option value="" selected="selected">请选择责任人</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+				    <td align="right">责任人电话：</td>
+				    <td><input type="text"　name="telInRecord.user.reference" /></td>
+				</tr>
+				<tr>
+					<td align="right">客户名称：</td>
+					<td><input type="text" name="telInRecord.customName" value=""
+						class="input" /></td>
+				</tr>
+				<tr>
+					<td align="right">客户电话：</td>
+					<td><input type="text" name="telInRecord.customTel"
+						class="input" /></td>
+				</tr>
+				<tr>
+					<td align="right">是否处理：</td>
+					<td><select name="telInRecord.isDeal">
+							<option selected="selected" value="-1">请选择</option>
+							<option value="1">是</option>
+							<option value="0">否</option>
+					</select></td>
+				</tr>
+				
+				<tr>
+					<td align="right">处理人：</td>
+					<td><input type="text" name="telInRecord.customName"
+						class="input" /></td>
+				</tr>
+				<tr>
+					<td align="right">处理时间：</td>
+					<td><input name="beginDate" id="beginDate"
+						onfocus="date(this)" /> 到 <input name="endDate" id="endDate"
+						onfocus="date(this)" /></td>
+				</tr>
+			</table>
+			<div align="center">
+				<input type="button" class="input-button" id="searchStaff" value="   查询   " /> 
+			    <input type="button" class="input-button" id="toPrint" value="   打印  " /> 
+				<input name="search" type="hidden" value="search" id="search"/> 
+				<input name="telcodetype" id="telcodetype" type="hidden" value="${telcodetype}" /> 
+				<input name="type" type="hidden" value="${type}" />
+			</div>
+		</form>
+	</div>
+	<iframe name="hidden" width="0" height="0"></iframe>
+	<script type="text/javascript">
+	
+	if(type == 'customer'){
+		$(function(){   
+		    	setTimeout(function(){ 				    
+			        $("div.bDiv").css({"height":parent.document.getElementById("mainframe14").offsetHeight-87+"px"});
+			},100);
+		    	 $(window).resize(function(){ 
+					setTimeout(function(){ 				    
+					        $("div.bDiv").css({"height":parent.document.getElementById("mainframe14").offsetHeight-87+"px"});
+					},100);
+		    	 }); 	
+		    });
+	}
+	
+	    var companyId = "${account.companyID}";
+		function getAllCompanyOfGroups() {
+	var url = basePath
+			+ "ea/documentcommon/sajax_ea_getAllCompanyByCurrent.jspa?date="
+			+ new Date().toLocaleString();
+	$.ajax({
+		url : encodeURI(url),
+		type : "get",
+		async : true,
+		dataType : "json",
+		success : function cbf(data) {
+			var member = eval("(" + data + ")");
+			var companylist = member.companylist;
+
+			var str = "<option value=''>请选择公司</option>";
+			for (var i = 0; i < companylist.length; i++) {
+				var obj = companylist[i];
+				str += "<option "  + (companyId == obj.companyID ? "selected='selected'" : "") +  " title='" + obj.companyName + "'value='"
+						+ obj.companyID + "'>" + obj.companyName + "</option>";
+			}
+			$("#receiverCompanyID,#receiverCompanyID1").html(str).change();
+		},
+		error : function cbf(data) {
+			alert("数据获取失败！");
+		}
+	});
+}
+
+/**
+ * 
+ * 根据公司获得部门
+ * 
+ * @param {}
+ *            val
+ */
+function bmdepts(val) {
+
+	$("option", $("#receiverDeptID,#receiverDeptID1")).remove();
+	var url = basePath
+			+ "ea/documentcommon/sajax_ea_getAllOrganizations.jspa?date="
+			+ new Date().toLocaleString();
+	$.ajax({
+				url : encodeURI(url),
+				type : "post",
+				async : false,
+				dataType : "json",
+				data : {
+					"companyID" : val
+				},
+				success : function cbf(data) {
+					var member = eval("(" + data + ")");
+					var orgaizationlist = member.orgaizationlist;
+					var str = "<option value=''>请选择部门</option>";
+					for (var i = 0; i < orgaizationlist.length; i++) {
+						var obj = orgaizationlist[i];
+						str += "<option value='" + obj.organizationID + "'>"
+								+ obj.organizationName + "</option>";
+					}
+					$("#receiverDeptID,#receiverDeptID1").html(str);
+				},
+				error : function cbf(data) {
+					alert("数据获取失败！");
+				}
+			});
+		
+}
+
+/**
+ * 
+ * 根据部门获得人员
+ * 
+ * @param {}
+ *            company
+ * @param {}
+ *            org
+ */
+function getPersons(company, org) {
+
+	$("option", $("#receiverID,#receiverID1")).remove();
+
+	var url = basePath
+			+ "ea/documentcommon/sajax_ea_getPersonByDept.jspa?date="
+			+ new Date();
+	$.ajax({
+				url : encodeURI(url),
+				type : "post",
+				async : false,
+				dataType : "json",
+				data : {
+					"currentCompanyID" : company,
+					"checkOrgID" : org
+				},
+				success : function cbf(data) {
+					var member = eval("(" + data + ")");
+					var persons = member.stafflist;
+					var str = "<option rvalue='' value=''>请选择处理人</option>";
+					for (var i = 0; i < persons.length; i++) {
+						var obj = persons[i];
+						str += "<option rvalue='"+ obj.staffKey +"' value='" + obj.staffID + "'>"
+								+ obj.staffName + "(" + obj.staffCode
+								+ ")</option>";
+					}
+					$("#receiverID,#receiverID1").html(str);
+				}
+			});
+}
+function changeCompany(obj) { 
+	if ($(obj).val() != '') {
+		bmdepts($(obj).val());
+	} else {
+		$("#receiverDeptID,#receiverDeptID1").html("<option value=''>请选择部门</option>");
+		$("#receiverID,#receiverID1").html("<option value=''>请选择人员</option>");
+	}
+}
+/**
+ * 
+ * 当部门改变时，获取员工
+ * 
+ * @param {}
+ *            obj
+ */
+function changeDept(obj,companyID) {
+$("#receiverID,#receiverID1").html("<option value=''>请选择人员</option>");
+	var dept = obj.value;
+	if (dept != "") {
+		getPersons($("#" + companyID).val(), dept);
+	}  
+}
+getAllCompanyOfGroups();
+		</script>
+</body>
+</html>

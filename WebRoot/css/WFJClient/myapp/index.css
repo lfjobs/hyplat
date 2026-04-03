@@ -1,0 +1,26 @@
+.main_nav li.col-xs-3{
+    padding: 0 10px 0;
+    border: none;
+}
+.nav-bar{
+    font-size: 18px;
+    line-height: 40px;
+    background: #F74C31;
+    color: #FFFFFF;
+}
+.carousel-inner .item{
+    height: 100%;
+}
+.carousel-inner .item img{
+    width: 100%;
+    /*height: 100%;*/
+}
+.carousel-indicators{
+    bottom: 0;
+}
+.img-responsive{
+    max-width: 85%;
+}
+
+
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<import-mapping>
+	<entity  type="SHRLGL(YX)"  table=""  className="hy.ea.bo.human.Staff">
+		<field order="0" name="序号"  column=""  property="" comment="序号列不需要导入" needImport="false"/>
+		<field order="1" name="人员编号"  column=""  property="staffCode" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="2" name="档案编号"  column=""  property="recordCode" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="3" name="人员姓名"  column=""  property="staffName" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="4" name="性别"  column=""  property="sex" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="5" name="出生日期"  column=""  property="birthday" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="6" name="籍贯"  column=""  property="nativePlace" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="7" name="国籍"  column=""  property="nationality" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="8" name="民族"  column=""  property="nation" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="9" name="身份证"  column=""  property="staffIdentityCard" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="10" name="最常用联系方式"  column=""  property="reference" comment="电话/手机" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<tableField name="主键"  column=""  property="staffKey" comment="">
+			<generator type="uuid" />
+		</tableField>
+		<tableField name="系统ID"  column=""  property="staffID" comment="">
+			<generator type="sysid" prefix="cstaff"/>
+		</tableField>
+		<tableField name="集团ID"  column=""  property="groupCompanySn" comment="">
+			<generator type="sessionid"/>
+		</tableField>
+	</entity>
+</import-mapping>

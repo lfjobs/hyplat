@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hy.ea.bo.finance.brokerage.PWholesale" table="dt_pro_wholesale">
+        <id name="wholesaleKey" type="java.lang.String">
+            <column name="wholesaleKey" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="wholesaleId" type="java.lang.String">
+            <column name="wholesaleId" length="50">
+            </column>
+        </property>
+        <property name="wholesale" type="java.lang.Double">
+            <column name="wholesale" length="50">
+                <comment>批发价</comment>
+            </column>
+        </property>
+        <property name="factory" type="java.lang.Double">
+            <column name="factory" length="50">
+                <comment>成本价</comment>
+            </column>
+        </property>
+        <property name="brokerage" type="java.lang.Double">
+            <column name="brokerage" length="50">
+                <comment>业务佣金</comment>
+            </column>
+        </property>
+        <property name="brokerages" type="java.lang.Double">
+            <column name="brokerages" length="50">
+                <comment>代理佣金和</comment>
+            </column>
+        </property>
+        <property name="investType" type="java.lang.String">
+            <column name="investType" length="50">
+                <comment>投资类型[设备投资类型 01:教练车 02:创客单车 00:无]</comment>
+            </column>
+        </property>
+        <property name="principal" type="java.lang.String">
+            <column name="principal" length="50">
+                <comment>设置批发价责任人</comment>
+            </column>
+        </property>
+        <property name="addTimes" type="java.util.Date">
+            <column name="addTimes" length="50">
+                <comment>设置[添加]时间</comment>
+            </column>
+        </property>
+        <property name="updateTimes" type="java.util.Date">
+            <column name="updateTimes" length="50">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="ppid" type="java.lang.String">
+            <column name="ppid" length="50">
+                <comment>产品id</comment>
+            </column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId" length="50">
+                <comment>公司id</comment>
+            </column>
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" length="50">
+                <comment>状态[00:正常/审核通过 01:删除 02:草稿 03:审核中 04:驳回]</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

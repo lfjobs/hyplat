@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+         	                         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="CostSheetBillHistory" table="dt_inv_csthbhistory">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="hisId">
+			<column length="50" name="hisId" />
+		</property>
+		<property name="receiverID">
+			<column length="50" name="receiverID" />
+		</property>
+		<property name="receiverDeptID">
+			<column length="50" name="receiverDeptID" />
+		</property>
+		<property name="receiverCompanyID">
+        	<column name="receiverCompanyID" length="50"/>
+        </property>
+		<property name="receiverName">
+			<column length="50" name="receiverName"/>
+		</property>
+		<property name="receiverDeptName">
+			<column length="50" name="receiverDeptName" />
+		</property>
+		<property name="receiverCompanyName">
+        	<column name="receiverCompanyName" length="50"/>
+        </property>
+		<property  name="costSheetBillID">
+			<column length="50" name="costSheetBillID" />
+		</property>
+		<property  name="passerID">
+			<column length="50" name="passerID" />
+		</property>
+		<property  name="passerDeptID">
+			<column length="50" name="passerDeptID" />
+		</property>
+		<property  name="passerCompanyID">
+			<column length="250" name="passerCompanyID" />
+		</property>
+		<property  name="passerName">
+			<column length="50" name="passerName" />
+		</property>
+		<property  name="passerDeptName">
+			<column length="50" name="passerDeptName" />
+		</property>
+		<property name="passerCompanyName">
+			<column name="passerCompanyName" length="50" />
+		</property>
+		<property name="groupCompanySn">
+			<column name="groupCompanySn" length="50" />
+		</property>
+			<property name="passtime">
+			<column name="passtime" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

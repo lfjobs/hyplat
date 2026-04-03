@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<constant name="struts.objectFactory" value="spring"></constant>
+
+	<package strict-method-invocation="false" name="telrec" extends="struts-default">
+		<action name="clientlogin" class="clientLoginAction"></action>
+		<action name="clientQueryUserPara"
+			class="clientQueryUserPara">
+		</action>
+		<action name="clientInsertCustomer"
+			class="clientInsertCustomer">
+		</action>
+		<action name="clientQueryCustomer"
+			class="clientQueryCustomer">
+		</action>
+		<action name="clientQueryCustomerTelRec"
+			class="clientQueryCustomerTelRec">
+		</action>
+		<action name="clientWaveFileUpload"
+			class="clientWaveFileUpload">
+			<interceptor-ref name="fileUploadStack" />
+		</action>
+		<action name="clientQueryCustomerList"
+			class="clientQueryCustomerList">
+		</action>
+		<action name="clientInsertTelRec" class="clientInsertTelRec">
+			<result name="success">insertTelrecInfo.jsp</result>
+		</action>
+		<action name="clientQueryTelForDate"
+			class="clientQueryTelForDate">
+		</action>
+		<action name="clientTestConnection"
+			class="clientTestConnection">
+		</action>
+		<action name="webQueryCustomerInfoById"
+			class="webQueryCustomerInfoById">
+		</action>
+		<action name="clientSaveStaff" class="clientSaveStaff"></action>
+		<action name="clientSaveContactCompany"
+			class="clientSaveContactCompany">
+		</action>
+		<action name="clientMissedCall" class="clientMissCall"></action>
+		<action name="webInsertCompany" class="webInsertCompany">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="webInsertUser" class="webInsertUser">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="webUserList" class="webUserList">
+			<result name="success">jsp/userlist.jsp</result>
+			<result name="telrec">jsp/telrecStep1.jsp</result>
+		</action>
+		<action name="webDeleteUserInfo" class="webDeleteUserInfo">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="webUpdateUserInfo" class="webUpdateUserInfo">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="webQueryUser" class="webQueryUser">
+			<result name="success">jsp/updateUserInfo.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="queryUserTelRec" class="queryUserTelRec">
+			<result name="success">jsp/telrecStep2.jsp</result>
+		</action>
+		<action name="queryUserWorkInfo" class="queryUserWorkInfo">
+			<result name="report">jsp/userWorkReport.jsp</result>
+			<result name="histogram">jsp/userWorkHistogram.jsp</result>
+		</action>
+		<action name="WebQueryCustomer" class="WebQueryCustomer">
+			<result name="success">
+				page/ea/main/telrec/queryCustomerList.jsp
+			</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="webChangePassWord" class="webChangePassWord">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="webClearSession" class="webClearSession">
+			<result name="success">successClear.jsp</result>
+		</action>
+		<action name="webSplitPageForUser"
+			class="webSplitPageForUser">
+			<result name="success">jsp/userlist.jsp</result>
+		</action>
+		<action name="webQueryUserWorkSplit"
+			class="webQueryUserWorkSplit">
+			<result name="success">jsp/queryUserWorkInfo.jsp</result>
+		</action>
+		<action name="webCustomerTotal" class="webCustomerTotal">
+			<result name="report">userWorkReport.jsp</result>
+			<result name="histogram">userWorkHistogram.jsp</result>
+		</action>
+		<action name="webInsertAccessInfo"
+			class="webInsertAccessInfo">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="webInsertCustomerInfo"
+			class="webInsertCustomerInfo">
+			<result name="success">queryCustomerList.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<!-- 客户管理 -->
+		<action name="queryCustomer" class="WebQueryCustomer">
+			<result name="success">jsp/updateCustomerInfo.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="webUpdateCustomerInfo"
+			class="webUpdateCustomerInfo">
+			<result name="success">queryCustomerList.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="queryCustomerRelaListInfo"
+			class="queryCustomerRelaListInfo">
+			<result name="success">
+				jsp/queryCustomerRelaList.jsp
+			</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="insertCustomerRelaInfo"
+			class="insertCustomerRelaInfo">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="updateCustomerRelaInfo"
+			class="updateCustomerRelaInfo">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="updateCustomerRelaForQuery"
+			class="updateCustomerRelaForQuery">
+			<result name="success">
+				jsp/updateCustomerRelaInfo.jsp
+			</result>
+		</action>
+		<action name="queryCustomerNameSpell"
+			class="queryCustomerNameSpell">
+		</action>
+		<action name="queryCustomerRelaSpell"
+			class="queryCustomerRelaSpell">
+		</action>
+		<action name="queryAccessInfoList"
+			class="queryAccessInfoList">
+			<result name="success">jsp/queryAccessInfoList.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="telrecjson" extends="json-default">
+		<action name="webQueryCustomerAction"
+			class="WebQueryCustomerAction">
+
+		</action>
+		<action name="WebQueryTelByCustomerId"
+			class="WebQueryTelByCustomerId">
+		</action>
+		<!-- 根据customerid查询客户
+		<action name="webQueryCustomerInfoById"
+			class="webQueryCustomerInfoById">
+		</action> -->
+		<!-- 查询行业类型 -->
+		<action name="clientQueryParam" class="clientQueryParam">
+		</action>
+		<action name="WebQueryTelForCustomer"
+			class="WebQueryTelForCustomer">
+		</action>
+		<action name="WebQueryTelForUser"
+			class="WebQueryTelForUser">
+		</action>
+	</package>
+</struts>

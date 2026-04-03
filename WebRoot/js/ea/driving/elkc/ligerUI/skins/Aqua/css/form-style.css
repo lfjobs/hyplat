@@ -1,0 +1,256 @@
+
+body {
+	
+	font-size:12px;
+	color:#6c6c6c;
+	margin:0;
+	
+}
+:focus {
+	outline-width:0px
+}
+
+/*页面行距*/
+#regist .item {
+	Z-INDEX:1;
+	POSITION:relative;
+	LINE-HEIGHT:34px;
+	HEIGHT:40px;
+	PADDING-TOP:9px;
+	width:540px;
+	float:left;
+}
+/*页面label样式*/
+#regist .label {
+	TEXT-ALIGN:right;
+	WIDTH:130px;
+	PADDING-RIGHT:10px;
+	COLOR:#4a4a4a;
+	FONT-SIZE:12px
+}
+/*文本框样式---未获得焦点前*/
+#regist .text {
+	border-bottom:#cccccc 1px solid;
+	border-left:#cccccc 1px solid;
+	width:180px;
+	font-family:arial,"宋体";
+	float:none;
+	height:16px;
+	color:#999;
+	font-size:12px;
+	border-top:#cccccc 1px solid;
+	border-right:#cccccc 1px solid;
+	padding:5px 5px;
+
+}
+/*信息正确-图标样式背景*/
+#regist .blank {
+	position:absolute;
+	padding-bottom:3px;
+	padding-left:3px;
+	width:16px;
+	padding-right:3px;
+	float:none;
+	height:16px;
+	top:7px;
+	right:3px;
+	padding-top:3px
+}
+/*信息正确-图标样式*/
+#regist .succeed {
+	background:url(../images/form/sucess.png) #ffffff no-repeat
+}
+
+/*文本框样式---获得焦点*/
+#regist .highlight1 {
+	border-bottom:#008ed7 1px solid;
+	border-left:#008ed7 1px solid;
+	color:#333;
+	border-top:#008ed7 1px solid;
+	border-right:#008ed7 1px solid
+}
+/*文本框样式-获得焦点-错误样式*/
+
+#regist .highlight2 {
+	border-bottom:#f00 1px solid;
+	border-left:#f00 1px solid;
+	color:#f00;
+	border-top:#f00 1px solid;
+	border-right:#f00 1px solid
+}
+/*文本框样式-获得焦点-提示样式*/
+#regist .focus {
+	border-bottom:#ffbdbe 1px solid;
+	border-left:#ffbdbe 1px solid;
+	padding-bottom:5px;
+	line-height:34px;
+	padding-left:5px;
+	padding-right:5px;
+	background:#ffebeb;
+	height:28px;
+	color:#e4393c;
+	overflow:hidden;
+	border-top:#ffbdbe 1px solid;
+	top:0px;
+	border-right:#ffbdbe 1px solid;
+	padding-top:5px;
+	width:200px;
+}
+/*提示消息样式---错误样式*/
+#regist .error {
+	border-bottom:#ffbdbe 1px solid;
+	border-left:#ffbdbe 1px solid;
+	padding-bottom:5px;
+	line-height:28px;
+	padding-left:5px;
+	padding-right:5px;
+	background:#ffebeb;
+	height:28px;
+	color:#e4393c;
+	overflow:hidden;
+	border-top:#ffbdbe 1px solid;
+	top:0px;
+	border-right:#ffbdbe 1px solid;
+	padding-top:5px;
+	width:200px
+}
+/*提示消息样式--错误信息行距*/
+#regist .error span {
+	line-height:14px
+}
+/*提示消息样式---帮助信息行距*/
+#regist .focus span {
+	
+}
+/*文本框样式---获得焦点-提示消息框样式*/
+#regist .focus {
+	border-bottom:#dddddd 1px solid;
+	border-left:#dddddd 1px solid;
+	line-height:34px;
+	background:#f7f7f7;
+	color:#999;
+	border-top:#dddddd 1px solid;
+	border-right:#dddddd 1px solid
+}
+/*密码强度*/
+#pwdstrength {
+	position:absolute;
+	line-height:14px;
+	padding-right:10px;
+	float:none;
+	color:#999;
+	clear:both;
+	top:40px;
+	right:-7px;
+	_top:43px
+}
+#pwdstrength b {
+	width:104px;
+	float:left;
+	height:13px;
+	overflow:hidden
+}
+.strengtha b {
+	background:url(../images/form/pwdstrength.gif) no-repeat 0px 0px
+}
+.strengthb b {
+	background:url(../images/form/pwdstrength.gif) no-repeat 0px -13px
+}
+.strengthc b {
+	background:url(../images/form/pwdstrength.gif) no-repeat 0px -26px
+}
+#regist .item .item-ifo {
+	position:relative
+}
+
+
+/*布局*/
+
+.framBg {
+	width:100%;
+	float:left;
+	height:auto;
+	border:1px solid #d7d5d5;
+	border-bottom:none;
+	border-top:none;
+	border-left:none;
+}
+.framMain{
+	width:100%;
+	float:left;
+	
+	}
+.fram_form{
+	width:90%;
+	float:left;
+	margin:5%;
+	
+	}
+.fram_titleBg {
+	width:100%;
+	height:32px;
+	float:left;
+	background:url(../images/form/partBg.gif) repeat-x;
+}
+.fram_icon {
+	width:40px;
+	height:32px;
+	float:left;
+	background:url(../images/form/partIcon.png) no-repeat center center;
+}
+.fram_title {
+	padding-top:10px;
+	float:left;
+	font-size:14px;
+	font-family:"宋体";
+	font-weight:bold;
+	color:#007bba;
+}
+.sys_help {
+	width:50px;
+	height:23px;
+	float:right;
+	background:url(../images/form/help.png) no-repeat left center;
+	padding:12px 0 0 20px;
+}
+
+/*表单选项样式*/
+
+
+/*选项标题,更改表单行距，只需更改此处padding的上下值即可*/
+
+.formOptions_title {
+	width:15%;
+	text-align:right;
+	padding:15px 10px 15px 10px;
+
+}
+/*文本框宽度为35%的样式*/
+.formOptions_content {
+	width:35%;
+	text-align:left;
+}
+
+/*文本框宽度为20%的样式*/
+.formOptions_txtBoxBg{
+	width:15%;
+	text-align:left;
+	
+	}
+/*操作提示*/
+.formOptions_tip{
+	width:20%;
+	text-align:left;
+	overflow:hidden;
+	
+	}
+/*下拉框样式*/
+.formOptions_select {
+	float:left;
+	width:190px;
+	border:1px solid #cccccc;
+	height:30px;
+	padding:5px 5px;
+	background:#FFF;
+	height:30px;
+}

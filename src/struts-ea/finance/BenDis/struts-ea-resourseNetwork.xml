@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <package strict-method-invocation="false" name="resourse-sajax" namespace="/ea/resourse" extends="json-default">
+     <action name="sajax_ea_*" class="hy.ea.finance.action.BenDis.ResourseNetwork" method="{1}">
+       <!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <param name="root">result</param>  
+            </result>
+     </action>
+  </package>
+  
+  
+  <package strict-method-invocation="false" name="activity-work" namespace="/ea/resourse" extends="struts-default">
+		
+		<action name="ea_*" class="hy.ea.finance.action.BenDis.ResourseNetwork" method="{1}">
+		  <result name="conwealth">/page/Network/resources_0.jsp</result>
+		  <result name="ttresource">/page/Network/totalResource.jsp</result>
+		  <result name="show">/page/Network/resources_2.jsp</result>
+		  <result name="attresources">/page/Network/attention_resources.jsp</result>
+		   <result name="att_1">/page/Network/att_1.jsp</result>
+		    <result name="att_2">/page/Network/att_2.jsp</result>
+		     <result name="att_3">/page/Network/att_3.jsp</result>
+		      <result name="att_4">/page/Network/att_4.jsp</result>
+		</action>
+	</package> 
+</struts>

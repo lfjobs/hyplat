@@ -1,0 +1,53 @@
+.div-listPop {
+    display: none;
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.div-listPop .div-box {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.div-listPop .div-box .div-top {
+    padding: 0 0.6rem;
+    padding-top: 0.2rem;
+    height: 1.2rem;
+}
+.div-listPop .div-box .div-top p {
+    float: left;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.6rem;
+    color: #000000;
+}
+.div-listPop .div-box .div-top div {
+    display: flex;
+    align-items: center;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    float: right;
+    font-size: 0.6rem;
+}
+.div-listPop .div-box .div-top div img {
+    width: 0.6rem;
+}
+.div-listPop .div-box .div-con {
+    padding: 0.65rem 0.65rem 0 0.65rem;
+}
+.div-listPop .div-box .div-con ul li {
+    margin-bottom: 0.65rem;
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.6rem;
+    color: #000000;
+    background-color: #f8f8f8;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+
+	<class name="hy.ea.bo.human.MoneyEmpowerMenu" table="DT_MONEY_EMPOWER_MENU">
+		<id length="50" name="empowerMenuKey" >
+			<column length="50" name="EMPOWER_MENU_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="empowerId" >
+			<column length="50" name="EMPOWER_ID" not-null="true"/>
+		</property>
+		<property name="menuId" >
+			<column length="50" name="MENU_ID" not-null="true"/>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="taskmanage-token" namespace="/ea/taskmanage"   extends="struts-default">
+		<action name="ea_*" class="com.mysl.action.TaskManageAction" method="{1}">
+			  <!-- 孟竹 -->	
+			  <!-- 任务通知列表 -->	
+			  <result name="tasknotice">/page/mysl/TaskManage.jsp</result>
+			  <!-- 新建任务页面 -->	
+			  <result name="newtask">/page/mysl/addtask.jsp</result>
+			  <!-- 查看任务页面 -->	
+			  <result name="seetask">/page/mysl/seetask.jsp</result>
+			  <!-- 收支费用管理 -->	
+			  <result name="szcost">/page/mysl/SzcostManage.jsp</result>
+		      <result name="success">/page/ea/success.jsp</result>	 
+		      
+		      
+		      
+		      
+		      
+			  <!-- 娄飞 -->
+			  <!-- 项目档案管理列表 -->	
+			  <result name="TaskManageFileList">/page/mysl/TaskManageFile.jsp</result>
+			  <!-- 新添档案页面 -->	
+			  <result name="newArchives">/page/mysl/addArchives.jsp</result>
+		      <result name="success">/page/ea/success.jsp</result>
+		      
+		      
+		      
+		      
+			  <!-- 许亚洲 -->
+			  <result name="checklist">/page/ea/main/office_ea/archives/CheckList.jsp</result>
+		      <result name="success">/page/ea/success.jsp</result>
+		      
+		      
+		      
+			  <!-- 张灿 -->	
+		      <result name="TaskManageProductionList">/page/mysl/TaskManageProduction.jsp</result>
+		      <result name="TaskManageFinishedList">/page/mysl/TaskManageFinished.jsp</result>
+		      <result name="TaskManageResultsList">/page/mysl/TaskManageResults.jsp</result>
+		      <result name="success">/page/ea/success.jsp</result>
+		      <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="logbook.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	
+	
+	
+	
+	
+	<package strict-method-invocation="false" name="taskmanage-jsonajax" namespace="/ea/taskmanage" extends="json-default">
+		<action name="sajax_ea_*" class="com.mysl.action.TaskManageAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

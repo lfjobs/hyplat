@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="CLogBook" table="dtCLogBook">
+		<id length="50" name="clogbookKey">
+			<column length="50" name="clogbookKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="clogbookID">
+			<column length="50" name="clogbookID" not-null="true" />
+		</property>
+		<property name="accountEmail">
+			<column length="250" name="accountEmail"  />
+		</property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"  />
+        </property>
+        	<property name="clogbookCounect">
+        	<column name="clogbookCounect" length="256"/>
+        </property>
+		<property name="clogbookDay">
+			<column length="250" name="clogbookDay"  />
+		</property>
+		<property name="clogbookIP">
+			<column length="250" name="clogbookIP"  />
+		</property>
+		<property name="clogbookUrl">
+			<column length="256" name="clogbookUrl"  />
+		</property>
+	</class>
+</hibernate-mapping>

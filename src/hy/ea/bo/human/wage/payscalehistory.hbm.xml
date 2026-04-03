@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.wage">
+	<class name="PSHistory" table="dt_hr_ps_History">
+		<id length="50" name="pshKey">
+			<column length="50" name="pshKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="pshID">
+			<column length="50" name="pshID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="payScaleID">
+			<column length="50" name="payScaleID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property  name="applyDate">
+			<column length="50" name="applyDate" />
+		</property>
+		<property  name="effectiveDate">
+			<column length="50" name="effectiveDate" />
+		</property>
+		<property  name="status">
+			<column length="50" name="status" />
+		</property>
+	</class>
+</hibernate-mapping>

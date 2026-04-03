@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package strict-method-invocation="false" name="contract-ntoken" namespace="/ea/contract" extends="struts-default">
+		<action name="ea_*" class="hy.ea.office.action.ContractAction" method="{1}">
+			<result name="filemanage">/page/ea/main/office_ea/contract/fileManage.jsp</result>
+			<result name="draftlist">/page/ea/main/office_ea/contract/draftlist.jsp</result>
+			<result name="receivelist">/page/ea/main/office_ea/contract/receivelist.jsp</result>
+			<result name="sendedlist">/page/ea/main/office_ea/contract/sendedlist.jsp</result>
+			<result name="auditlist">/page/ea/main/office_ea/contract/auditlist.jsp</result>
+			<result name="auditedlist">/page/ea/main/office_ea/contract/auditedlist.jsp</result>
+			<result name="seallist">/page/ea/main/office_ea/contract/seallist.jsp</result>
+			<result name="sealedlist">/page/ea/main/office_ea/contract/sealedlist.jsp</result>
+			<result name="publishlist">/page/ea/main/office_ea/contract/publishlist.jsp</result>
+			<result name="publishedlist">/page/ea/main/office_ea/contract/publishedlist.jsp</result>
+			<result name="readlist">/page/ea/main/office_ea/contract/readlist.jsp</result>
+			<result name="readedlist">/page/ea/main/office_ea/contract/readedlist.jsp</result>
+			<result name="archivelist">/page/ea/main/office_ea/contract/archivelist.jsp</result>
+			<result name="recylelist">/page/ea/main/office_ea/contract/recylelist.jsp</result>
+			<result name="sharelist">/page/ea/main/office_ea/contract/sharelist.jsp</result>
+			<result name="tmppre">/page/ea/main/office_ea/contract/fileTmpPre.jsp</result>
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+			<result name="notlogin">/page/ea/not_login.jsp</result>
+			<result name="qyht">/page/ea/main/office_ea/contract/paySuc.jsp</result>
+			<result name="allfiles">/page/ea/main/office_ea/contract/allfiles.jsp</result>
+			<result name="tocard">/page/ea/main/office_ea/contract/perstudentnfo.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+
+		</action>
+	</package>
+	
+
+	<package strict-method-invocation="false" name="contract-jsonajax" namespace="/ea/contract" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.ContractAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

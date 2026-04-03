@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffPersonalFile" table="dt_hr_staff_PersonalFile" >
+		<id length="50" name="recordKey">
+			<column length="50" name="recordKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="recordID">
+        	<column name="recordID" length="50" not-null="true"/>
+        </property>
+        <property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		 <property name="companyID">
+        	<column name="companyID" length="50" not-null="true"/>
+        </property>
+		<property name="recordCode">
+			<column length="250" name="recordCode" />
+		</property>
+		<property name="recordName">
+			<column length="250" name="recordName" />
+		</property>
+		<property name="controlStartDate">
+			<column  name="oneRegistrationType" />
+		</property>
+		<property name="controlEndDate">
+			<column  name="controlEndDate"/>
+		</property>
+		<property name="dutyOfficer">
+			<column length="250" name="dutyOfficer"/>
+		</property>
+		<property name="recordBoxCode">
+			<column  length="250" name="recordBoxCode" />
+		</property>
+		<property  name="recordBoxName">
+			<column length="250" name="recordBoxName" />
+		</property>
+		<property name="assessor">
+			<column length="250" name="assessor"/>
+		</property>
+		<property name="assessorCode">
+			<column length="250" name="assessorCode" />
+		</property>
+		<property name="assessorDate">
+			<column  name="assessorDate" />
+		</property>
+		<property name="photo">
+			<column length="256" name="photo" />
+		</property>
+	</class>
+</hibernate-mapping>

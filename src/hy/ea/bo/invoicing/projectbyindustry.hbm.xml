@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+
+	                                "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="ProjectByIndustry" table="dt_projectIndustry">
+		<id length="50" name="reKey">
+			<column length="50" name="reKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="reID">
+			<column length="50" name="reID" />
+		</property>
+		<property name="industryID">
+			<column length="50" name="industryID" />
+		</property>
+		<property name="industryName">
+			<column length="50" name="industryName" />
+		</property>
+		<property name="salesman">
+			<column length="50" name="salesman"/>
+		</property>
+		<property name="salesmanID">
+        	<column name="salesmanID" length="50" />
+        </property>
+		<property name="salesmanCode">
+			<column length="50" name="salesmanCode" />
+		</property>
+		<property  name="recruiterID">
+			<column length="50" name="recruiterID" />
+		</property>
+		<property name="recruiterName">
+			<column length="50" name="recruiterName" />
+		</property>
+		<property  name="recruiterCode">
+			<column length="20" name="recruiterCode" />
+		</property>
+		<property  name="identityCard">
+			<column length="50" name="identityCard" />
+		</property>
+		
+		<property  name="email">
+			<column length="50" name="email" />
+		</property>
+		<property  name="address">
+			<column length="50" name="address" />
+		</property>
+		<property  name="phone">
+			<column length="20" name="phone" />
+		</property>
+		<property  name="applyPlaceID">
+			<column length="50" name="applyPlaceID" />
+		</property>
+		<property  name="applyPlaceName">
+			<column length="50" name="applyPlaceName" />
+		</property>
+		<property  name="projectID">
+			<column length="50" name="projectID" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

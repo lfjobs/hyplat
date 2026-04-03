@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="ProductCateHot" table="dt_phl_ProductCateHot">
+		<comment>分类的点击率搜索率</comment>
+		<id length="50" name="pchKey">
+			<column length="50" name="pchKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="pchID">
+			<column length="50" name="pchID" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="codeID">
+			<column length="50" name="codeID" >
+			<comment>分类ID</comment>
+			</column>
+		</property>
+		<property name="hotnum">
+			<column  name="hotnum" >
+			<comment>热度即点击数量</comment>
+			</column>
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" >
+				<comment>各自平台</comment>
+			</column>
+		</property>
+		<property name="ccompanyPID">
+			<column length="50" name="ccompanyPID" >
+				<comment>父平台</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

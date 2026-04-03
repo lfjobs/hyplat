@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<tree id="0">
+	<item text="投诉意见电子化传输" id="documentTransport" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+		 <item text="网站投诉箱" id="draftdd" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+			<item text="投诉处理箱" id="draft" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+			<item text="已处理箱" id="dealed" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+		    
+		</item>
+		<item text="审批" id="approval" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+			<item text="未审批投诉" id="approvalno" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+			<item text="已审批投诉" id="approvalye" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+		</item>
+		<item text="盖章" id="stamp" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+			<item text="未盖章投诉" id="stampno" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+			<item text="已盖章投诉" id="stampye" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+		</item>
+	<!-- <item text="发文管理" id="formaldocument" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+			<item text="未发投诉" id="nosenddoc" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+			<item text="已发投诉" id="yesenddoc" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+		</item>
+		<item text="阅读管理" id="receivesendmanage" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+			<item text="未阅读投诉" id="receivemanage" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+			<item text="已阅读投诉" id="sendmanage" im0="lea.gif" im1="folderOpen.gif" im2="folderClosed.gif"></item>
+		</item> -->	
+	</item>
+</tree>

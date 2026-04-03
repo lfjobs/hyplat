@@ -1,0 +1,238 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+    margin: 0;
+    padding: 0;
+    color: #333;
+/*     font-size:62.5%; */
+    background: #ededed;
+    font-family: Microsoft YaHei;
+}
+
+/* screening */
+div.screening{
+   
+}
+div.screening>ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    overflow: hidden;
+}
+div.screening>ul>li{
+    background: url(/hyplat/images/WFJClient/DigitalMall/on_1.png) no-repeat 85% center;
+} 
+/* grade */
+.grade-eject,.Category-eject,.Sort-eject,.distance-eject,.learn-eject,.sex-eject,.dis-eject{
+    position:fixed;
+    top: -65%;
+    width: 100%;
+    height: 65%;
+    z-index: 1;
+  /*   -webkit-transition-duration: 0.4s; */
+}
+
+.grade-eject>ul,.Category-eject>ul,.Sort-eject>ul,.dis-eject>ul,.distance-eject>ul,.learn-eject>ul,.sex-eject>ul{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+   /*  -webkit-transition-duration: 0.4s; */
+}
+.grade-eject>ul>li,.Category-eject>ul>li,.Sort-eject>ul>li,.learn-eject>ul>li,.sex-eject>ul>li{
+    line-height: 3rem;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+    border-bottom: solid 1px #eee;
+}
+.grade-eject>ul.grade-w,.Category-eject>ul.Category-w{
+    background: #fff;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    list-style-type: none;
+}
+.grade-eject>ul.grade-t,.Category-eject>ul.Category-t{
+    background: #eee;
+    position: absolute;
+    z-index: 2;
+    left: 100%;
+}
+.grade-eject>ul.grade-t>li,.Category-eject>ul.Category-t>li{
+    border-bottom: solid 1px #fff;
+}
+.grade-eject>ul.grade-s,.Category-eject>ul.Category-s{
+    background: #fff;
+    position: absolute;
+    z-index: 3;
+    left: 100%;
+    list-style-type: none;
+}
+.grade-eject>ul.grade-s>li,.Category-eject>ul.Category-s>li{
+    border-bottom: solid 1px #eee;
+    margin-left: 1rem;
+    padding: 0;
+}
+.grade-w-roll{
+    top: 79px;
+}
+.grade-w-roll::after{
+    position: fixed;
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background:rgba(0,0,0,0.2);
+    top: 79px;
+}
+
+
+
+
+
+
+/*Sort-eject*/
+.Sort-Sort{
+    background: #fff;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    list-style-type: none;
+}
+.Sort-Sort>li{
+    border-bottom: solid 1px #eee;
+    padding: 0;
+}
+.Sort-height{
+    height: 294px;
+}
+
+/* demo-content */
+.demo-content{padding-top: 3rem;}
+
+#Sort-Sort img,#gradew img,.zmain img,#learn-Sort img,#sex-Sort img,.dismain img{
+float:right;
+margin-right:2rem;
+line-height:3rem;
+margin-top:1rem;
+width:1rem;
+}
+
+.orange{
+	color:#ff6600;
+	
+}
+.left{
+    background: #FAFAFA;
+	float:left;
+	width:30%;
+	height: 350px;
+
+	
+
+}
+.right{
+    background: #fff;
+	float:right;
+	width:70%;
+	height: 350px;
+    overflow:auto;
+
+    }
+
+
+.grade-right li{
+	line-height: 3rem;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+    border-bottom: solid 1px #eee;
+	
+}
+
+.grade-left li{
+	line-height: 3rem;
+	height: 3rem;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+}
+.grade-left>li span:nth-child(2){
+	 color:#ff6600;
+	 font-size:0.5rem;
+	 line-height: 1rem;
+}
+.zmain .grade-left span{ 
+	display:block;
+	line-height:2rem;
+	}
+
+.zmain{
+	 background:#ffffff;
+	 position: absolute;
+     z-index: 3;
+	
+}
+
+.white{
+	background:#ffffff;
+}
+
+.btnorange {
+    border-radius: 1rem;
+    padding: 0.2rem 1rem;
+    background: #ff6600;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+    font-size: 15px;
+    width:6rem;
+    line-height:1.5rem;
+    text-align:center;
+    color:#ffffff;
+}
+
+
+.btnwhite {
+    border-radius: 1rem;
+    padding: 0.2rem 1rem;
+    background: #ffffff;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+    font-size: 15px;
+    width:6rem;
+    line-height:1.5rem;
+    text-align:center;
+    border:1px solid #eee;
+
+}
+.clear{
+	clear: both;
+}
+.opra{
+	height:5rem;
+	padding-top:10px;
+	position:relative;
+	z-index:3;
+	width:100%;
+
+	
+}
+.selmain{
+	position:relative;
+	z-index:3;
+	width:100%;
+	height:20%;
+	
+}
+
+.rightbor{
+	 float:right;
+	 margin-right: 2rem;
+	
+}
+.leftbor{
+	 margin-left: 5rem;
+	
+}
+
+

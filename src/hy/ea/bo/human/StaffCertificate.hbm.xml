@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffCertificate" table="dt_hr_staff_Certificate">
+		<id length="50" name="credentialskey">
+			<column length="50" name="credentialskey" />
+			<generator class="uuid" />
+		</id>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="credentialsID">
+			<column length="50" name="credentialsID" not-null="true"/>
+		</property>
+		<property name="credentialsName">
+			<column length="250" name="credentialsName"/>
+		</property>
+		<property name="credentialsType">
+			<column length="250" name="credentialsType"/>
+		</property>
+		<property name="invalidateStart">
+			<column length="250" name="invalidateStart" />
+		</property>
+		<property name="invalidateEnd">
+			<column length="250" name="invalidateEnd" />
+		</property>
+		<property  name="invalidate">
+			<column length="250" name="invalidate" />
+		</property>
+		<property  name="credentialsNo">
+			<column length="250" name="credentialsNo" />
+		</property>
+		<property  name="recordsNumber">
+			<column length="250" name="recordsNumber" />
+		</property>
+		<property  name="address">
+			<column length="250" name="address" />
+		</property>
+		<property  name="organ">
+			<column length="250" name="organ" />
+		</property>
+		<property  name="credentialsrecordNo">
+			<column length="250" name="credentialsrecordNo" />
+		</property>
+			<property  name="appendixNumber">
+			<column length="250" name="appendixNumber" />
+		</property>
+		<property  name="auditor">
+			<column length="250" name="auditor" />
+		</property>
+		<property  name="auditorNumber">
+			<column length="250" name="auditorNumber" />
+		</property>
+		<property  name="auditorTime">
+			<column length="250" name="auditorTime" />
+		</property>
+		<property  name="auditorState">
+			<column length="250" name="auditorState" />
+		</property>
+		<property  name="appendix">
+			<column length="250" name="appendix" />
+		</property>
+		<property  name="credentialsDesc">
+			<column length="250" name="credentialsDesc" />
+		</property>
+		<property  name="photo">
+			<column length="256" name="photo" />
+		</property>
+	</class>
+</hibernate-mapping>

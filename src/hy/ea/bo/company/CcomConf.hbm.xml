@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="CcomConf" table="DT_ccom_conf">
+	<comment>往来单位公司关系表</comment>
+		<id length="50" name="ccomConfKey">
+			<column length="50" name="ccom_conf_key" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="ccomConfId">
+			<column length="50" name="ccom_conf_id" ><comment>业务主键</comment></column>
+		</property>
+		<property name="ccompanyId">
+			<column length="50" name="ccompnay_id" ><comment>FK:往来单位Id</comment></column>
+		</property>
+		<property name="picPath">
+			<column length="300" name="pic_path" ><comment>图片路径</comment></column>
+		</property>
+		<property name="modalName">
+			<column length="100" name="modal_name" ><comment>模块名称,限制50字</comment></column>
+		</property>
+		<property name="modalRemark">
+			<column length="4000" name="mdoal_remark" ><comment>详细说明,长度1000汉字</comment></column>
+		</property>
+		<property name="modalType">
+			<column length="2" name="modal_type" ><comment>类型0:企业简介,1:关于公司</comment></column>
+		</property>
+		<property name="state">
+			<column length="2" name="state" ><comment>状态默认0</comment></column>
+		</property>
+		<property name="sn">
+			<column length="2" name="sn" ><comment>排序编号</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

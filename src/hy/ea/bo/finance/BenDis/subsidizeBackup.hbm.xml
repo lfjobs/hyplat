@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.finance.BenDis.subsidizeBackup" table="DT_SUBSIDIZE_BACKUP" schema="hyplat">
+        <id name="sbKey">
+            <column name="SB_KEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="sbId">
+            <column name="SB_ID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="cashId">
+            <column name="CASH_ID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="cashJum">
+            <column name="CASH_JUM" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="mType">
+            <column name="M_TYPE" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="mId">
+            <column name="M_ID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="mZh">
+            <column name="M_ZH" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="staffId">
+            <column name="STAFF_ID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="staffName">
+            <column name="STAFF_NAME" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="mStatus">
+            <column name="M_STATUS" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="jbNum">
+            <column name="JB_NUM" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="jbBl">
+            <column name="JB_BL" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="status">
+            <column name="STATUS" sql-type="varchar2(50)" length="50" default="0"/>
+        </property>
+        <property name="SbType">
+            <column name="Sb_Type" sql-type="varchar2(50)" length="50" default="0"/>
+        </property>
+    </class>
+</hibernate-mapping>

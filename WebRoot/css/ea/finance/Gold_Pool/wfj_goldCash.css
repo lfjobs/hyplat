@@ -1,0 +1,70 @@
+@charset 'utf-8';
+
+
+.flip_d{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(102,102,102,0.3);
+    top: 0;
+}
+   .flip{
+       width: 60%;
+	    background-color: #fff;
+	    text-align: center;
+	    position: fixed;
+	    top: 50%;
+	    left: 50%;
+	    margin-left: -30%;
+	    padding: 35px 10px 0 10px;
+	    border-radius: 10px;
+	    transform: translateY(-50%);
+	    -webkit-transform: translateY(-50%);
+	    -moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    -o-transform: translateY(-50%);
+}
+.flip p{
+    font-size: 41px;
+    color: #000;
+    line-height: 78px;
+}
+.flip img{
+       width: 25%;
+    margin: 40px 0 70px 0;
+}
+.flip h3{
+     font-size: 55px;
+    color: #FF6507;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    padding: 50px 0;
+
+}
+.modal_TS p{font-size:2rem;line-height:1.5;}
+.modal_TS img{margin: 1rem 0 1.5rem 0;}
+.modal_TS h3{font-size:2rem;padding: 0 0;}
+
+
+.jifen{
+    width: 100%;
+    background: url(../../../../images/ea/finance/BenDis/jifen_bg.png) no-repeat left top;
+    background-size: 100%;
+    height: 5.8rem;
+}
+.jifen ul{
+    padding-top: 6.5%;
+}
+.jifen ul li{
+    text-align: center;
+    height: 2rem;
+    line-height: 1.7rem;
+    font-size: 0.6rem;
+    text-align: center;
+    color: #222222;
+    background: url(../../../../images/ea/finance/BenDis/li_bg.png) no-repeat center top;
+    background-size: 70%;
+}
+.jifen ul li:first-of-type{
+    margin-bottom: 0.3rem;
+}

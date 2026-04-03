@@ -1,0 +1,536 @@
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+header {
+	background-color: #f74c30
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: .65rem;
+	color: #fff
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .45rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center
+}
+
+header ul li:nth-of-type(3) {
+	font-size: .6rem;
+	width: 20%;
+	text-align: right
+}
+
+.content .sec-nav {
+	padding: .875rem 1% 0 1%
+}
+
+.content .sec-nav ul li {
+	position: relative;
+	overflow: hidden;
+	float: left;
+	text-align: center;
+	width: 20%;
+	height: 1.25rem;
+	line-height: 1.25rem;
+	font-size: .55rem;
+	color: #222
+}
+
+.content .sec-nav ul li::before {
+	content: "";
+	z-index: -2;
+	position: absolute;
+	width: 2.5rem;
+	height: 2.45rem;
+	left: 13%;
+	top: -44%;
+	transform: rotate(-75deg);
+	background-color: #f4f4f4
+}
+
+.content .sec-nav ul li:after {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	width: 2.5rem;
+	height: .2rem;
+	left: -27%;
+	top: 16%;
+	transform: rotate(-75deg);
+	background-color: #e8e8e8
+}
+
+.content .sec-nav ul li.active {
+	color: #f74c30
+}
+
+.content .sec-nav ul li.active::before {
+	background-color: #fddbd6
+}
+
+.content .sec-nav ul li.active::after {
+	background-color: #f74c30
+}
+
+.content .div-01 {
+	border-bottom: .025rem solid #e9e9e9
+}
+
+.content .div-01 .sec-sfz {
+	padding: .25rem .1rem 0 .375rem
+}
+
+.content .div-01 .sec-sfz>p {
+	float: left;
+	height: 3.15rem;
+	line-height: 3.15rem;
+	font-size: .6rem;
+	color: #222;
+	width: 22%
+}
+
+.content .div-01 .sec-sfz div {
+	width: 38.5%;
+	float: left
+}
+
+.content .div-01 .sec-sfz div input {
+	text-align: center;
+	margin-top: 1.075rem;
+	width: 70%;
+	float: left;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: .55rem;
+	color: #222;
+	background-color: transparent;
+	border: .025rem solid #ccc
+}
+
+.content .div-01 .sec-sfz div label {
+	height: 3.15rem;
+	line-height: 3.15rem;
+	display: flex;
+	align-items: center;
+	float: left;
+	width: 30%
+}
+
+.content .div-01 .sec-sfz div label img {
+	width: 50%;
+	margin: 0 auto
+}
+
+.content .div-01 .p-01 {
+	padding: 0 .1rem 0 .375rem
+}
+
+.content .div-01 .p-01 label {
+	display: inline-block;
+	width: 22%;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .div-01 .p-01 .lab-xm {
+	letter-spacing: .45rem
+}
+
+.content .div-01 .p-01 input {
+	/*text-align: center;*/
+	padding-left: 0.5rem;
+	width: 72%;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: .55rem;
+	color: #222;
+	background-color: transparent;
+	border: .025rem solid #ccc
+}
+
+.content .div-01 .div-p-02 {
+	padding: .25rem 0 .75rem 0
+}
+
+.content .div-01 .div-p-02 p {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: .55rem;
+	color: #222;
+	background-color: #f8f8f8
+}
+
+.content .sec-cailiao {
+	border-bottom: .025rem solid #e9e9e9;
+	padding: .25rem .375rem
+}
+
+.content .sec-cailiao>p {
+	height: 1.8rem;
+	line-height: 1.8rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .sec-cailiao>input {
+	height: 1.75rem;
+	line-height: 1.75rem;
+	font-size: .6rem;
+	color: #222;
+	border: .025rem solid #ccc;
+	width: 92%;
+	border: 0
+}
+
+.content .div-02 .div-02-01 {
+	padding: .625rem .375rem;
+	border-bottom: .025rem solid #e9e9e9
+}
+
+.content .div-02 .div-02-01 label {
+	display: inline-block;
+	width: 22%;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .div-02 .div-02-01 input {
+	float: right;
+	text-align: center;
+	width: 54%;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .55rem;
+	color: #222;
+	background-color: transparent;
+	border: .025rem solid #ccc
+}
+
+.content .div-02 .div-02-02 {
+	padding: .625rem .375rem;
+	border-bottom: .025rem solid #e9e9e9
+}
+
+.content .div-02 .div-02-02 .p-lx {
+	float: left;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .div-02 .div-02-02 .box {
+	width: 60%;
+	float: right
+}
+
+.content .div-02 .div-02-02 .box .divxl {
+	width: 44%;
+	text-align: center;
+	border: .025rem solid #ccc;
+	float: right;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .div-02 .div-02-02 .box .divxl span {
+	margin-left: 12%;
+	display: block;
+	float: left;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .div-02 .div-02-02 .box .divxl img {
+	width: .45rem
+}
+
+.content .div-02 .div-02-02 .box .divmarrig {
+	margin-right: .25rem
+}
+
+.content .ul-dizhi li {
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: .6rem;
+	color: #222;
+	padding: 0 .375rem;
+	border-bottom: .025rem solid #e9e9e9
+}
+
+.content .ul-dizhi li p:first-of-type {
+	float: left
+}
+
+.content .ul-dizhi li p:last-of-type {
+	float: right
+}
+
+.content .ul-dizhi li p:last-of-type img {
+	margin-left: .15rem;
+	width: .45rem;
+	margin-bottom: .1rem
+}
+
+.content .div-001 {
+	padding: .625rem .375rem;
+	border-bottom: .025rem solid #e9e9e9
+}
+
+.content .div-001 label {
+	display: inline-block;
+	width: 22%;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .div-001 input {
+	float: right;
+	text-align: right;
+	width: 54%;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .55rem;
+	color: #222;
+	background-color: transparent;
+	border: 0
+}
+
+.content .sec-qixian {
+	padding: 0 .1rem 0 .375rem
+}
+
+.content .sec-qixian>p {
+	float: left;
+	height: 3.15rem;
+	line-height: 3.15rem;
+	font-size: .6rem;
+	color: #222;
+	width: 30%
+}
+.content .sec-qixian {
+	border-bottom: .025rem solid #e9e9e9;
+	padding: 0 0.1rem 0 0.375rem;
+}
+.content .sec-qixian > p {
+	float: left;
+	height: 3.15rem;
+	line-height: 3.15rem;
+	font-size: .6rem;
+	color: #222;
+	width: 30%;
+}
+.content .sec-qixian>div {
+	width: 31.5%;
+	float: left;
+	position: relative;
+}
+.content .sec-qixian>div>input {
+	/*text-align: center;*/
+	margin-top: 1.075rem;
+	padding-left: 5%;
+	width: 90%;
+	float: left;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: .55rem;
+	color: #222;
+	background-color: transparent;
+	border: 0.025rem solid #ccc;
+}
+.content .sec-qixian>div>label {
+	right: 4%;
+	position: absolute;
+	height: 3.15rem;
+	line-height: 3.15rem;
+	display: flex;
+	align-items: center;
+	float: left;
+	width: 30%;
+}
+.content .sec-qixian>div>label img {
+	width: 36%;
+	margin: 0 auto;
+}
+
+.content .div-last-bottom {
+	margin-bottom: 1rem
+}
+
+.liandong {
+	position: relative
+}
+
+.liandong #myAddrs {
+	position: absolute;
+	border: 0;
+	width: 100%;
+	height: 7.5rem;
+	background-color: transparent;
+	color: transparent
+}
+
+.getDateBox .choiceDateTitle {
+	height: 2rem!important
+}
+
+.getDateBox .choiceDateTitle button {
+	color: #f74c32!important;
+	font-size: .6rem!important
+}
+
+#daywrapper ul li,
+#monthwrapper ul li,
+#yearwrapper ul li {
+	font-size: .6rem!important
+}
+
+.getDateBox .dateContent {
+	margin: 2rem 0!important
+}
+
+.div-datatime {
+	display: none;
+	position: fixed;
+	top: 0;
+	border: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 12;
+	background-color: rgba(0, 0, 0, .3)
+}
+
+.div-datatime p {
+	height: 1.8rem;
+	line-height: 1.8rem;
+	font-size: .6rem;
+	color: #222;
+	background-color: #fff;
+	width: 80%;
+	margin: 60% auto 0 auto;
+	border-radius: .35rem;
+	text-align: center
+}
+
+.sec-box {
+	padding: .25rem .25rem .25rem .25rem;
+}
+.div-sf{
+	padding: 0.5rem 0;
+	position: relative
+}
+.div-sf>p{
+	float: left;
+	height: 4.4rem;
+	line-height: 4.4rem;
+	font-size: .6rem;
+	color: #222;
+	padding-right: 0.5rem;
+}
+.div-sf>section{
+}
+
+.sec-box .sec-sfzsc1,
+.sec-box .sec-sfzsc2 {
+	float: left;
+	position: relative;
+	width: 36%
+}
+
+.sec-box .sec-sfzsc1 input,
+.sec-box .sec-sfzsc2 input {
+	top: 9%;
+	position: absolute;
+	width: 100%;
+	height: 88%;
+	opacity: 0
+}
+
+.sec-box .sec-sfzsc1 img,
+.sec-box .sec-sfzsc2 img {
+	width: 100%
+}
+
+.sec-box .sec-sfzsc1 {
+	margin-right: 3%
+}
+
+.content .sec-footer {
+	padding-bottom: 1rem;
+	padding-top: 0.5rem;
+}
+
+.content .sec-footer p {
+	width: 80%;
+	margin: 0 auto;
+	border-radius: .25rem;
+	height: 1.65rem;
+	line-height: 1.65rem;
+	font-size: .6rem;
+	color: #fff;
+	text-align: center;
+	background-color: #f74c32
+}
+/*多选框美化*/
+.check-wrap { position: relative; display: inline-block; vertical-align: middle;  padding-left: 13px; font-size: 0.6rem;color:#444444;}
+.check-wrap~.check-wrap{
+	margin-left: 10px;
+}
+.check-wrap > .icheck { opacity: 0;width: 1rem!important; }
+.check-wrap > .ilabel {padding-right:2.2rem; margin-top: 0.9rem; border-radius: 3px; cursor: pointer; display: block; position: absolute; top:11%; left: 0; width: 1rem; height: 1rem; }
+.check-wrap > .ilabel:after {content: " ";border: 1px solid #999;display: block;font-weight: bold;text-align: center;border-radius: 3px;width: 0.85rem;height: 0.85rem;line-height: 0.85rem;}
+.check-wrap > .icheck:checked + .ilabel:after {content: "✓";border-color: #999;background-color: #fff;color: #3ad045;}
+.check-wrap > .icheck:indeterminate + .ilabel:after { content: "■"; color: #3f51b5; background-color: #FFF; border-color: #3f51b5; }
+.check-wrap>p{
+	width: 1.8rem;
+	padding: 0 0 0 23%;
+	line-height: 1.5rem;
+}
+.sec-footer{
+	padding:0.5rem 10%!important;
+}
+.sec-footer .p-s{
+	width: 33%!important;
+	float: left;
+	background-color: #ccc!important;
+}
+.sec-footer .p-x{
+	width: 63%!important;
+	float: right;
+}

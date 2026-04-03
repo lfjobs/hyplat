@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="cosdimission-token" namespace="/ea/cosdimission"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.COSDimissionAction" method="{1}">
+			<result name="list">/page/ea/main/human/office/production/cstaff_dimission.jsp</result>
+			
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="cosdimission-ntoken" namespace="/ea/cosdimission" extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.COSDimissionAction" method="{1}">
+			<result name="list">/page/ea/main/human/office/production/cstaff_dimission.jsp</result>
+			<result name="dimissionSalarylist">/page/ea/main/human/office/production/cstaff_dimissionSalary.jsp</result>
+			<result name="printdimissionwage">/page/ea/main/human/office/production/printDimWages.jsp</result>
+			<result name="printEveryoneDimWages">/page/ea/main/human/office/production/printEveryoneDimWages.jsp</result>
+			
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="contactcompany.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="success">/page/ea/success.jsp</result> 
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="cosdimission-sajax" namespace="/ea/cosdimission" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.company.action.COSDimissionAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="cosdimission-jsonajax" namespace="/ea/cosdimission" extends="json-default">
+		<action name="sajax_n_ea_*" class="hy.ea.human.action.COSDimissionAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+           <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

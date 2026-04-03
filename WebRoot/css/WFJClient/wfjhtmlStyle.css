@@ -1,0 +1,195 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;width:100%; max-width: 800px; min-width: 320px;height:auto;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 auto; padding:0px 0px; font-size:12px; color:#666;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { color:#666; text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+/*公共样式*/
+.color000{color:#000;}
+.color3a3{color:#a4a3a3;}
+.colorf00{color:#f00;}
+.all_width{width:95%;margin:0 auto;}
+.wfjtopchoice{font-size:16px;color:#E0E366;}
+.change_bg{background-color:#e0dfdf;}
+.center{text-align:center;}
+.bgfff{background-color:#fff;}
+
+
+/*Weifenjin002*/
+.wfjall{width:100%;height:auto;margin:0 auto;}
+.wfjall .wfjlogo{clear:both;width:100%;height:auto;margin:0 auto;}
+.wfjall .wfjlogo img{width:100%;height:auto;margin:0 auto;max-height:100px;}
+.wfjall .wfjtop{clear:both;height:36px;line-height:36px;background-color:#2E63FB;margin:0 auto;}
+.wfjall .wfjtopbg{clear:both;height:36px;line-height:36px;background-color:#2E63FB;}
+.wfjall .wfjtopbg ul li{float:left;}
+.wfjall .wfjtopbg ul .wfj_img img{width:22px;height:auto;}
+.wfjall .wfjtopbg ul .wfj_tit{width:80%;text-align:center;font-size:16px;color:#fff;}
+.wfjall .wfjtop ul li{width:100%;text-align:center;font-size:16px;float:left;color:#fff;}
+
+.wfjall .wfj_search{clear:both;width:100%;background-color:#fff;}
+.wfjall .wfj_search .wfjsearch{clear:both;width:90%;padding-top:10px;height:40px;margin:0 auto;}
+.wfjall .wfj_search .wfjsearch ul li{float:left;}
+.wfjall .wfj_search .wfjsearch ul li .wfjtext{height:28px;line-height:28px;border:1px solid #666;border-radius:4px;text-align:center;}
+.wfjall .wfj_search .wfjsearch ul li .wfjtext input[type=text]{border:0px;width:100%;height:100%;text-align:left;background:url(../Images/search.png) no-repeat left;padding-left:15px;}
+.wfjall .wfj_search .wfjsearch ul li .wfjbutton{height:28px;line-height:28px;border-radius:4px;text-align:center;background-color:#f00;color:#fff;margin-left:10px;max-width:100px;}
+
+.wfjall .wfjpro{width:48%;border:1px solid #666;height:85px;overflow:hidden;}
+.wfjall .wfjpro div{float:left;height:auto;}
+.wfjall .wfjpro .wfjp{float:left;padding-top:10px;text-align:center;}
+.wfjall .wfjpro .wfjp ul li{font-weight:bold;color:#000;min-width:40px;}
+.wfjall .wfjpro .wfjproduct{padding-top:10px;width:65%;}
+.wfjall .wfjpro .wfjproduct ul li{float:left;text-indent:5px;line-height:18px;}
+.wfjall .wfjpro .wfjproinfo{width:100%;margin:auto;background-color:#fff;}
+.wfjall .wfjpro .wfjproinfo ul{width:33%;float:left;text-align:center;margin-top:10px;padding-bottom:2px;}
+.wfjall .wfjpro .wfjproinfo ul li img{max-height:55px;width:auto;}
+.wfjall .wfjcontent{width:100%;margin-top:10px;background-color:#fff;}
+.wfjall .wfjcontent .wfj_content{width:100%;}
+.wfjall .wfjcontent .wfj_content .wfj_con{}
+.wfjall .wfjcontent .wfj_content .wfj_con ul{float:left;}
+.wfjall .wfjcontent .wfj_content .wfj_con .wfj_title{width:35%;border-bottom:1px solid #a4a3a3;border-right:1px solid #a4a3a3;}
+.wfjall .wfjcontent .wfj_content .wfj_con .wfj_title li{font-weight:bold;color:#000;}
+.wfjall .wfjcontent .wfj_content .wfj_con .wfj_cons{width:60%;}
+.wfjall .wfjcontent .wfj_content .wfj_con .wfj_cons li{height:35px;line-height:35px;padding-left:5px;border-bottom:1px solid #a4a3a3;cursor:pointer;}
+.wfjall .wfjcontent .wfj_content .wfj_con .wfj_cons li span{float:right;padding-right:15px}
+.wfjall .wfj_bottom{width:100%;margin:0 auto;line-height:20px;margin-top:60px;}
+.wfjall .wfj_bottom .wfj_link{width:230px;}
+.wfjall .wfj_bottom div{clear:both;width:60%;margin:auto;text-align:center;}
+.wfjall .wfj_bottom .wfj_link ul li{text-align:center;float:left;text-indent:5px;}
+.wfjall .wfj_bottom .wfj_link ul li a{text-decoration:underline;}
+
+
+
+.title_height1{height:35px;line-height:35px;padding-left:10px;background-color:#fff;}
+.title_height2{height:70px;line-height:70px;padding-left:10px;padding-bottom:1px;background-color:#fff;}
+.title_height3{height:105px;line-height:105px;padding-left:10px;padding-bottom:2px;background-color:#fff;}
+.title_height4{height:140px;line-height:140px;padding-left:10px;padding-bottom:3px;background-color:#fff;}
+.title_height5{height:175px;line-height:175px;padding-left:10px;padding-bottom:4px;background-color:#fff;}
+/*Weifenjin002*/
+
+/*Weifenjin001*/
+.wfj_login{width:95%;margin:auto;}
+.wfj_login ul li{float:left;}
+.wfj_login .login_phone{width:100%;margin:auto;float:left;border:1px solid #666;height:35px;line-height:35px;background-color:#fff;}
+.wfj_login .login_pwd{width:100%;float:left;border:1px solid #666;height:35px;line-height:35px;background-color:#fff;border-top:none;}
+.wfj_login .phone_name{width:20%;text-align:left;padding-left:10px;}
+.wfj_login .phone_text{width:75%;height:35px;line-height:35px;}
+.wfj_login .phone_text input[type=text]{width:100%;height:35px;line-height:35px;border:none;}
+.wfj_login .phone_text input[type=password]{width:100%;height:35px;line-height:35px;border:none;}
+.wfj_login .wfj_log{width:100%;margin:10px auto;float:left;background-color:#ff8500;text-align:center;height:35px;line-height:35px;color:#fff;border-radius:8px;font-size:14px;font-weight:bold;cursor:pointer;}
+.wfj_login_bottom{clear:both;float:left;width:100%;margin:0 auto;text-align:center;}
+.wfj_login_bottom div{width:230px;clear:both;margin:0 auto;}
+.wfj_login_bottom .wfj_zhuce{width:118px;}
+.wfj_login_bottom .wfj_beian{width:168px;}
+.wfj_login_bottom .wfj_beian{width:167px;}
+.wfj_login_bottom .wfj_ttst{width:149px;}
+.wfj_login_bottom .wfj_links ul li a{text-decoration:underline;}
+.wfj_login_bottom ul{clear:both;text-align:center;}
+.wfj_login_bottom ul li{float:left;line-height:25px;text-align:center;text-indent:5px;}
+.security_code{width:100%;margin:auto;border:1px solid #666;height:35px;line-height:35px;background-color:#fff;border-top:none;float:left;}
+.security_code .code_text{width:50%;height:35px;line-height:35px;border:none;}
+.security_code .code_text input[type=text]{width:100%;height:35px;line-height:35px;border:none;}
+.security_code ul li{width:25%;}
+.security_code ul li div{width:100%;min-width:65px;text-align:center;background-color:#ff8500;border-radius:4px;height:35px;line-height:35px;color:#fff;cursor:pointer;}
+.security_code ul li{float:left;}
+/*Weifenjin001end*/
+
+
+/*Weifenjin007_008*/
+.wfj_class{width:100%;margin:auto;}
+.wfj_class ul li{width:50%;text-align:center;float:left;height:26px;line-height:26px;font-size:14px;border-bottom:1px solid #666;cursor:pointer;}
+.unagency{width:100%;clear:both;margin:auto;}
+.unagency .wfj_block{width:100%;background-color:#fff;border-bottom:1px solid #666;height:110px;}
+.unagency .wfj_block .wfj_proimg{text-align:left;float:left;width:20%;}
+.unagency .wfj_block .wfj_proimg img{width:95%;padding-top:10px;max-width:90px;height:90px;}
+.unagency .wfj_block .wfj_pro_info{width:80%;margin:auto;float:right;}
+.unagency .wfj_block .wfj_pro_info .wfjyong{height:24px;line-height:24px;background-color:#f00;color:#fff;border-radius:4px;text-align:center;padding:2px 10px;margin-left:10px;}
+.unagency .wfj_block .wfj_pro_info ul{clear:both;line-height:36px;}
+.unagency .wfj_block .wfj_pro_info ul li{float:left;}
+.unagency .wfj_block .wfj_pro_info .referral{padding-top:10px;line-height:24px;}
+.unagency .wfj_block .wfj_pro_info .wfj_m{width:100%;margin:auto;clear:both;}
+.unagency .wfj_block .wfj_pro_info .wfj_m li{width:50%;float:left;}
+.unagency .wfj_block .wfj_pro_info .wfj_m .wfjdetails{width:60%;height:24px;line-height:24px;background-color:#cccaca;color:#000;border-radius:4px;text-align:center;cursor:pointer;}
+.unagency .wfj_block .wfj_pro_info .wfj_m .wfjagency{width:60%;height:24px;line-height:24px;background-color:#f00;color:#fff;border-radius:4px;text-align:center;cursor:pointer;}
+.unagency .wfj_block .wfj_pro_info .wfj_m .wfjshare{width:60%;height:24px;line-height:24px;background-color:#ff8500;color:#fff;border-radius:4px;text-align:center;cursor:pointer;}
+.unagency .wfj_block .wfj_pro_info .wfj_m .wfjcancel{width:60%;height:24px;line-height:24px;background-color:#fff;color:#ff8500;border-radius:4px;text-align:center;cursor:pointer;border:1px solid #ff8500;}
+
+/*Weifenjin007_008*/
+
+
+/*Weifenjin009_010_011*/
+.OrderInformation{width:100%;margin:0 auto; max-width: 800px; min-width: 320px;}
+.OrderInformation .order_o{width:100%;margin:0 auto;height:40px;background-color:#fff;}
+.OrderInformation .order_title{width:100%;margin:0 auto;height:24px;line-height:24px;padding-top:8px;}
+.OrderInformation .order_title .or_none{border-left: 1px solid #808080; border-right: 1px solid #808080; }
+.OrderInformation .order_title ul li{width:33%;float:left;text-align:center;}
+.OrderInformation .order{width:100%;margin:auto;background-color:#fff;}
+.OrderInformation .order .order_width{width:95%;margin:auto;}
+.OrderInformation .order .o_wait{width:100%;margin:auto;height:50px;line-height:50px;margin-top:10px;background-color:#fff;}
+.OrderInformation .order .o_wait div{width:100%;height:30px;line-height:30px;padding-top:10px;}
+.OrderInformation .order .o_wait div ul{float:left;}
+.OrderInformation .order .o_wait div .order_name{float:left;line-height:16px;}
+.OrderInformation .order .o_wait div ul li{clear:both;color:#000;}
+.OrderInformation .order .o_wait div .order_wait{float:right;border-left:1px solid #666;padding-left:10px;background-color:#fff;}
+.OrderInformation .order .order_width .order_pro{width:100%;margin:0 auto;border-top:1px dashed #a4a3a3;height:80px;max-height:110px;padding:10px 0;}
+.OrderInformation .order .order_width .order_pro div{float:left;}
+.OrderInformation .order .order_width .order_pro .order_pro_img{width:90px;text-align:left;}
+.OrderInformation .order .order_width .order_pro .order_pro_img img{height:80px;width:auto;}
+.OrderInformation .order .order_width .order_pro .order_tit{height:80px;line-height:26px;}
+.OrderInformation .order .order_width .order_pro .order_tit .order_li_w{width:130px;color:#000;line-height:initial;}
+.OrderInformation .order .order_width .order_pro .order_right{float:right;line-height:26px;text-align:right;}
+.OrderInformation .order_pro_all{width:100%;margin:0 auto;height:40px;background-color:#fff;line-height:40px;border-bottom:1px solid #a4a3a3;border-top:1px solid #a4a3a3;}
+.OrderInformation .order_pro_all ul li{float:right;text-align:right;}
+.OrderInformation .order_pay{width:100%;margin:0 auto;background-color:#fff;height:50px;}
+.OrderInformation .order_pay .order_pay_z{width:95%;margin-bottom:1px;}
+.OrderInformation .order_pay .order_pay_z div{float:right;max-width:100px;min-width:70px;margin-right:10px;margin-top:5px;height:36px;line-height:36px;text-align:center;border:1px solid #a4a3a3;border-radius:6px;cursor:pointer;color:#000;}
+
+.pro_top{width:100%;margin:0 auto;height:40px;line-height:40px;background-color:#3692EB;}
+.pro_top ul li{width:33%;float:left;}
+.pro_top ul li img{padding-left:10px;width:25px;height:auto;padding-top:6px;}
+.pro_top ul .adds{float:right;text-align:right;}
+.pro_top ul .adds a{color:#fff;font-size:14px;padding-right:10px;}
+.pro_top ul .pro_info{text-align:center;font-size:16px;font-weight:bold;color:#fff;}
+/*Weifenjin009_010_011end*/
+
+
+/*Weifenjin011_5*/
+.Orderdetail{width:100%;margin:0 auto; max-width: 800px; min-width: 320px;}
+.Orderdetail .careless{width:100%;height:200px;background-color:#fff;margin-bottom:10px;}
+.Orderdetail .careless table{width:100%;line-height:16px;}
+.Orderdetail .careless table tr .table_left{width:30%;text-align:left;padding-left:10px;}
+.Orderdetail .careless table tr .table_right{width:70%;text-align:right;}
+.Orderdetail .careless table tr .table_left img{max-width:80px;height:auto;max-height:100px;padding:10px 0 5px 10px;}
+/*Weifenjin011_5end*/
+
+/*Weifenjin012*/
+.wfj_integral{width:100%;margin:0 auto;}
+.wfj_integral div{width:60px;height:60px;background-color:#ff8500;border-radius:30px;text-align:center;line-height:18px;font-size:16px;margin:10px auto 10px auto;}
+.wfj_integral div ul li{color:#fff;}
+.intedetail{width:100%;margin-top:10px;}
+.intedetail ul li{float:left;}
+.width35{width:35%;border-bottom:1px solid #a4a3a3;padding-top:8px;}
+.width30{width:30%;text-align:center;font-size:16px;color:#000;font-weight:bold;}
+.wfj_intedetail{float:left;width:100%;border-bottom:1px solid #a4a3a3;cursor:pointer;}
+.wfj_intedetail ul{clear:both;line-height:26px;}
+/*Weifenjin012end*/
+
+/*Weifenjin013*/
+.wfj_yj{width:100%;margin:auto;margin-top:10px;}
+.wfj_yongjin{margin:auto;height:35px;line-height:35px;background-color:#fff;}
+.wfj_yj ul{clear:both;}
+.wfj_yj .wfj_o{clear:both;margin-top:10px;width:100%;background-color:#fff;}
+.wfj_yj .wfj_o ul{border-bottom:1px solid #a4a3a3;height:35px;line-height:35px;cursor:pointer;}
+
+/*Weifenjin013end*/

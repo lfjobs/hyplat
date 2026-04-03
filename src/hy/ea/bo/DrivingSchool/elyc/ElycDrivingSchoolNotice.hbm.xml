@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hy.ea.bo.DrivingSchool.elyc.ElycDrivingSchoolNotice" table="tb_elyc_Driving_School_Notice" schema="HYPLAT">
+        <id length="50" name="edsnKey">
+            <column length="50" name="edsnKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="edsnId" type="java.lang.String">
+            <column name="edsnId"  length="50" ><comment>逻辑ID</comment></column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId"  length="50" ><comment>所属驾校</comment></column>
+        </property>
+        <property name="createdate" type="java.util.Date">
+            <column name="createdate"  ><comment>创建时间</comment></column>
+        </property>
+        <property name="createperson" type="java.lang.String">
+            <column name="createperson"  length="50" ><comment>创建人ID</comment></column>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status"  length="2" ><comment>状态:00:正常,01:删除</comment></column>
+        </property>
+        <property name="theme" type="java.lang.String">
+            <column name="theme"  length="250" ><comment>主题</comment></column>
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content"  length="500" ><comment>内容</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

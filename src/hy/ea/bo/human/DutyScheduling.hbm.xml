@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="DutyScheduling" table="DT_DUTY_SCHEDULING" schema="HYPLAT" dynamic-insert="true">
+	<comment>值班排班</comment>
+		<id length="50" name="dutySchedulingId" type="java.lang.String">
+			<column length="50" name="DT_DUTY_SCHEDULING_ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="COMPANY_ID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="ADDRESS" length="50">
+				<comment>值班地点</comment>
+			</column>
+		</property>
+		<property name="dutyStaffId" type="java.lang.String">
+			<column name="DUTY_STAFF_ID" length="50">
+			<comment>值班人ID</comment>
+			</column>
+		</property>
+		<property name="dutyStartDate" type="java.lang.String">
+			<column length="50" name="DUTY_START_DATE" >
+			<comment>值班开始日期</comment>
+			</column>
+		</property>
+		<property name="dutyEndDate" type="java.lang.String">
+			<column length="50" name="DUTY_END_DATE" >
+				<comment>值班结束日期</comment>
+			</column>
+		</property>
+		<property name="dutyType" type="java.lang.String">
+			<column length="50" name="DUTY_TYPE" >
+				<comment>值班类别</comment>
+			</column>
+		</property>
+		<property name="tel" type="java.lang.String">
+			<column length="50" name="TEL" >
+				<comment>值班人电话</comment>
+			</column>
+		</property>
+		<property name="dutyContent" type="java.lang.String">
+			<column length="200" name="DUTY_CONTENT" >
+				<comment>值班内容</comment>
+			</column>
+		</property>
+		<property name="schedulingDate" type="java.lang.String">
+			<column name="SCHEDULING_DATE">
+				<comment>排班时间</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="goldwater-ntoken" namespace="/ea/goldwater"
+		extends="struts-default">
+		<action name="ea_*"
+			class="hy.ea.finance.action.BenDis.UserGoldWaterReportAction" method="{1}">
+			<result name="pageData">/page/ea/main/finance/BenDis/userGoldWaterReport_list.jsp</result>
+			<result name="edit">/page/ea/main/finance/BenDis/orderedit.jsp</result>
+			<result name="member">/page/ea/main/finance/BenDis/userGoldWaterReport_query.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="LogisticsStorage.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="goldwater-jsonajax" namespace="/ea/goldwater"
+		extends="json-default">
+		<action name="sajax_ea_*"
+			class="hy.ea.finance.action.BenDis.UserGoldWaterReportAction" method="{1}">
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

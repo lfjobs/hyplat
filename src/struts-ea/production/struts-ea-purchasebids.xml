@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="purchasebids-token" namespace="/ea/purchasebids"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.PurchaseBidsAction" method="{1}">
+		      <result name="success">/page/ea/success.jsp</result>
+		      <result name="list">/page/ea/main/production/cprocedure/purBudSheet_list.jsp</result>
+		      <result name="addpage">/page/ea/main/production/cprocedure/purBudSheet_add.jsp</result>
+		      <result name="editpage">/page/ea/main/production/cprocedure/purBudSheet_edit.jsp</result>
+		      <result name="printprev">/page/ea/main/production/cprocedure/purBudSheet_print.jsp</result>
+		      <result name="listcheck">/page/ea/main/production/cprocedure/purBudSheet_check.jsp</result>
+		      <result name="viewcheck">/page/ea/main/production/cprocedure/purBudSheet_viewcheck.jsp</result>
+		      <result name="listinvite">/page/ea/main/production/cprocedure/inviteBids_list.jsp</result>
+		      <result name="viewinvite">/page/ea/main/production/cprocedure/inviteBids_viewpublish.jsp</result>
+		      <result name="listselectb">/page/ea/main/production/cprocedure/selectBids_list.jsp</result>
+		      <result name="viewselectb">/page/ea/main/production/cprocedure/selectBids_view.jsp</result>
+		      <result name="pricematch">/page/ea/main/production/cprocedure/priceMatch.jsp</result>
+		      <result name="tozb">/page/ea/main/production/cprocedure/wfjBids_searchresult.jsp</result>
+		      <result name="zbindex">/page/ea/main/production/cprocedure/wfjBids_index.jsp</result>
+		      <result name="zbbids">/page/ea/main/production/cprocedure/wfjBids_zbbids.jsp</result>
+		      <result name="tosub">/page/ea/main/production/cprocedure/wfjBids_subbids.jsp</result>
+		      <result name="enterbids">/page/ea/main/production/cprocedure/wfjBids_enterbids.jsp</result>
+		      <result name="mybidgood">/page/ea/main/production/cprocedure/wfjBids_selectmybgs.jsp</result>
+		      <result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>	
+		      <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="purchasebids.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="purchasebids-jsonajax" namespace="/ea/purchasebids" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.PurchaseBidsAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

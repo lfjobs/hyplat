@@ -1,0 +1,111 @@
+.pages {
+  width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+.pages #Pagination {
+  width: 600px;
+  height: 30px;
+  float: left;
+  overflow: hidden;
+}
+.pages #Pagination .pagination {
+  height: 30px;
+  text-align: right;
+  font-family: \u5b8b\u4f53,Arial;
+}
+.pages #Pagination .pagination a,
+.pages #Pagination .pagination span {
+  width: 28px;
+  height: 28px;
+  line-height: 30px;
+  font-size: 13px;
+  float: left;
+  margin: 0 5px;
+  text-align: center;
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.pages #Pagination .pagination .current {
+  background: #b2defd;
+  color: #fff;
+}
+.pages #Pagination .pagination .prev i,
+.pages #Pagination .pagination .next i {
+  display: inline-block;
+
+}
+.pages #Pagination .pagination .prev {
+  width: 60px;
+  text-align: center;
+  height: 28px;
+  line-height: 30px;
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+  color: #000;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+.pages #Pagination .pagination .next {
+  width: 60px;
+  text-align: center;
+  height: 28px;
+  line-height: 30px;
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+  color: #000;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+.pages #Pagination .pagination .prev i {
+
+}
+.pages #Pagination .pagination .next i {
+}
+.pages #Pagination .pagination .pagination-break {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 13px;
+  float: left;
+  margin: 0 5px;
+  text-align: center;
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.pages .searchPage {
+  float: left;
+}
+.pages .searchPage .page-sum {
+  line-height: 30px;
+  color: #999999;
+  font-family: \u5b8b\u4f53,Arial;
+  font-size: 14px;
+}
+.pages .searchPage .page-go {
+  padding: 8px 0;
+  color: #999999;
+  font-family: \u5b8b\u4f53,Arial;
+  font-size: 14px;
+  padding: 10px 0\9;
+  *padding: 6px 0;
+}
+.pages .searchPage .page-go input {
+  width: 21px;
+  height: 20px;
+  margin: 0 5px;
+  padding-left: 5px;
+  border: 1px solid #e4e4e4;
+}
+.pages .searchPage .page-btn {
+  margin: 9px 0 5px 5px;
+  padding: 2px 5px;
+  background: #b2defd;
+  border-radius: 2px;
+  color: #ffffff;
+  font-family: Arial, 'Microsoft YaHei';
+  font-size: 14px;
+  text-decoration: none;
+}

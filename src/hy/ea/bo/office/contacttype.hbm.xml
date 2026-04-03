@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office"> 
+	<class name="ContactType" table="dtContactType">
+		<id length="50" name="contactTypeKey">
+			<column length="50" name="contactTypeKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="contactTypeID">
+			<column length="50" name="contactTypeID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID"/>
+		</property>
+		<property name="conType">
+			<column length="250" name="conType"/>
+		</property>
+		<property name="conNum">
+			<column length="250" name="conNum" />
+		</property>
+		<property name="conSort">
+			<column length="250" name="conSort" />
+		</property>
+		<property  name="conPerson">
+			<column  length="250" name="conPerson" />
+		</property>
+		<property  name="mark">
+			<column  length="250" name="mark" />
+		</property> 
+	</class>
+</hibernate-mapping>

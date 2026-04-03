@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+        <class name="hy.ea.bo.DrivingSchool.SchProCategory" table="dt_SchProCategory" schema="HYPLAT">
+        <id length="50" name="categoryKey">
+            <column length="50" name="categoryKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="categoryId" type="java.lang.String">
+            <column name="categoryId"  length="50" ><comment>类别ID</comment></column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId"  length="50" ><comment>驾校ID</comment></column>
+        </property>
+        <property name="categoryName" type="java.lang.String">
+            <column name="categoryName"  length="50" ><comment>类别名称</comment></column>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status"  length="2" ><comment>1、驾校学车产品2、驾校其他辅助产品</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

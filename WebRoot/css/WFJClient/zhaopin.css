@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { color:#666; text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.more{ float: right; }
+.more a{ font-weight: normal; font-size: 12px; }
+.fl{ display: inline; float: left; } 
+.fr{ display: inline;  float: right; }
+.fixed:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }   
+.fixed { display: block; min-height: 1%; }   
+*html .fixed{ height: 1%; }    
+.clear {width:100%; display: block!important; float: none!important; clear: both; overflow: hidden; width: auto!important; height: 0!important; margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0; }
+.pos{ position:relative;}
+.black{ color: black;}
+/*公共样式*/
+
+/*index  iframe样式*/
+#indexTop{ position: fixed; top: 0px; left: 0px; z-index: 500; }
+#indexCon{position: absolute; top: 0px; left: 0px;}
+#indexBottom{ position: fixed; left: 0px; bottom: 0px;}
+/*index  iframe样式*/
+
+/*Page/mobile/wxZhaopin/Jobs_Reception*/
+.Jobs_Reception{width:360px;margin:auto;}
+.Jobs_Reception .title{width:100%;margin:auto; font-size:24px;background-color:#42ABE1;text-align:center;color:#fff;height:48px; line-height:48px;font-weight:bold;}
+.Jobs_Reception .divPic{width: 100%; margin: auto; background-color: #fff; height: 35px; line-height: 35px; margin-top: 8px;font-size: 14px;}
+.Jobs_Reception .divPic img{padding-left: 20px; width: 6px; height: auto;}
+.Jobs_Reception .divPic label{padding-left: 12px; font-weight: bold;}
+/*Page/mobile/wxZhaopin/Jobs_Reception*/
+
+
+/*Page/mobile/wxZhaopin/Jobs_Backstage*/
+.Jobs_Backstage{width:360px;margin:auto;}
+.Jobs_Backstage .clboth{clear:both;float:left;}
+.Jobs_Backstage .title{width:100%;margin:auto; font-size:24px;background-color:#42ABE1;text-align:center; color:#fff;height:48px; line-height:48px;font-weight:bold;}
+.Jobs_Backstage .content{width:100%;margin:auto;background-color:#ffffff;}
+.Jobs_Backstage .content .padd{width:96%;margin:auto;}
+.Jobs_Backstage .job_info{clear:both;float: left;font-size:14px;background-color:#FF6600;margin-top:10px; margin-bottom:10px; width:28%;text-align:center;height:26px;line-height:26px;color:#ffffff;font-weight:bold;}
+.Jobs_Backstage .job_name{clear:both; font-size:16px;color:#00AFFF;font-weight:bold;float:left; width:33%;}
+.Jobs_Backstage .staff{float:left; width:33%;}
+.Jobs_Backstage .job_claim{float:left; width:49%;}
+.Jobs_Backstage .job_claim .fleft{clear:both; float:left; width:30%;background-color:#00AFFF;color:#ffffff;text-align:center;padding-top:5px;padding-bottom:5px;}
+.Jobs_Backstage .job_claim .fclaim{ float:left; width:65%;background-color:#E6E6E6;color:#646464;padding-top:5px;padding-bottom:5px;padding-left:5px;}
+.Jobs_Backstage .content .padd p{text-indent:2em;padding-bottom:3px;}
+/*Page/mobile/wxZhaopin/Jobs_Backstage*/

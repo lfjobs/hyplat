@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="wfjindustry-token" namespace="/ea/industry" extends="struts-default">
+		<action name="ea_*" class="com.tiantai.wfj.front.IndustryClassificationAction" method="{1}">
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+			<result name="shopproducts">/page/WFJClient/ShopOwner/ProductDisplay.jsp</result>
+			<result name="companyList">/page/WFJClient/PersonalJoining/CompanyList2.jsp</result>
+			<result name="industryList">/page/WFJClient/PersonalJoining/IndustryList-new.jsp</result>
+			<!-- <result name="companyHome">/page/WFJClient/PersonalJoining/CompanyHome.jsp</result> -->
+			<!-- 			<result name="companyHome">/page/WFJClient/PersonalJoining/CompanyHome110.jsp</result> -->
+			<!-- 			<result name="companycard">/page/WFJClient/PersonalJoining/CompanyHome110.jsp</result> -->
+			<result name="companyHome">/page/WFJClient/PersonalJoining/CompanyHome2.jsp</result>
+			<result name="companycard">/page/WFJClient/PersonalJoining/CompanyHome2.jsp</result>
+			<result name="companyproducts">/page/WFJClient/PersonalJoining/CompanyProducts.jsp</result>
+			<result name="editCompanyCard">/page/WFJClient/CompanyWebCard/CompanyInfo.jsp</result>
+			<result name="bankcardInfo">/page/WFJClient/CompanyWebCard/BankCardInfo.jsp</result>
+			<result name="ActivitiesList">/page/WFJClient/CompanyWebCard/CompanyActivities.jsp</result>
+			<result name="toEdit">/page/WFJClient/CompanyWebCard/AddCompanyActivities.jsp</result>
+			<result name="companymien">/page/WFJClient/CompanyWebCard/CompanyMien.jsp</result>
+			<result name="companycertificates">/page/WFJClient/CompanyWebCard/CompanyCertificates.jsp</result>
+			<result name="toEditCompanyMien">/page/WFJClient/CompanyWebCard/AddCompanyMien.jsp</result>
+			<result name="toAddCertificates">/page/WFJClient/CompanyWebCard/AddCompanyCertificates.jsp</result>
+			<result name="companyforumslist">/page/WFJClient/CompanyWebCard/CompanyForums.jsp</result>
+			<result name="toEditForum">/page/WFJClient/CompanyWebCard/AddCompanyForum.jsp</result>
+			<result name="editcompanystyle">/page/WFJClient/CompanyWebCard/CompanyStyle.jsp</result>
+			<result name="companyHouse">/page/conacts/restaurant/mainNew.jsp</result>
+			<result name="Investment">/page/conacts/investment/Investment.jsp</result>
+			<result name="secondLevel">/page/conacts/investment/secondLevel.jsp</result>
+			<result name="threeIndustry">/page/conacts/investment/threeIndustry.jsp</result>
+			<result name="docdetail">/page/WFJClient/PersonalJoining/docdetail.jsp</result>
+			<result name="doclist">/page/WFJClient/PersonalJoining/helpdocList.jsp</result>
+			<result name="marketing">/page/WFJClient/PersonalJoining/new/new1.jsp</result>
+			<result name="torecruit">/page/ea/main/production/cprocedure/recruit/recruitinfo_index.jsp</result>
+			<result name="PlatformSummary">/page/WFJClient/PersonalJoining/PlatformSummary.jsp</result>
+			<result name="informationDetails">/page/WFJClient/PersonalJoining/PlatformNew.jsp</result>
+			<result name="linkFailure">/page/WFJClient/PersonalJoining/linkFailure.jsp</result>
+			<result name="supermarketGoods">/page/ea/main/marketing/unmannedsupermarket/supermarketGoods_home.jsp</result>
+
+			<!-- 驾校联营平台 -->
+			<!--<result name="st">/st/stapp.jsp</result>-->
+			<result name="st">/st/ERoadExpress.jsp</result>
+			<!-- 驾校公司网站 -->
+			<result name="stCompany">/st/stcompanyapp.jsp</result>
+			<!-- 认领公司列表 -->
+			<result name="claimCompanyList">/page/WFJClient/PersonalJoining/ClaimCompanyList.jsp</result>
+			<result name="perfectInformation">/page/WFJClient/PersonalJoining/PerfectInformation.jsp</result>
+			<result name="submitIsOk">/page/WFJClient/PersonalJoining/SubmitIsOk.jsp</result>
+			<result name="bTypeEdit">/page/WFJClient/pc/5l5C/office/businessTypeEdit.jsp</result>
+			<!-- 老版银行列表
+			<result name="banklist">/page/WFJClient/CompanyWebCard/CompanyBankCard.jsp</result>
+			<result name="addbankcard">/page/WFJClient/CompanyWebCard/AddBankCard.jsp</result>
+			 -->
+
+			<!-- 新版银行列表 -->
+			<result name="banklist">/page/ea/main/finance/BenDis/Gold_Pool/wfj_companyBankCard.jsp</result>
+			<result name="addbankcard">/page/ea/main/finance/BenDis/Gold_Pool/wfj_companyBankCardAdd.jsp</result>
+
+			<!-- 打赏 -->
+			<result name="reward">/page/WFJClient/PersonalJoining/Reward.jsp</result>
+
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="ccomconf.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+
+	<package strict-method-invocation="false" name="wfjindustry-jsonajax" namespace="/ea/industry" extends="json-default">
+		<action name="sajax_ea_*" class="com.tiantai.wfj.front.IndustryClassificationAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

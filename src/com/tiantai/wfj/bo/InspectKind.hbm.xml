@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+    <class name="InspectKind" table="Dt_InspectKind" schema="HYPLAT"
+           dynamic-insert="true">
+        <comment>安全巡查分类</comment>
+        <id length="50" name="ikkey" type="java.lang.String">
+            <column length="50" name="ikkey" />
+            <generator class="uuid" />
+        </id>
+        <property name="ikid" type="java.lang.String">
+            <column length="50" name="ikid"/>
+        </property>
+        <property name="siID" type="java.lang.String">
+            <column length="50" name="siID">
+                <comment>安全巡查id (SafetyInspect)</comment>
+            </column>
+        </property>
+        <property name="kid" type="java.lang.String">
+            <column length="50" name="kid">
+                <comment>安全巡查id (OASafeKind)</comment>
+            </column>
+        </property>
+        <property name="kname" type="java.lang.String">
+            <column length="50" name="kname">
+                <comment>安全分类名称</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

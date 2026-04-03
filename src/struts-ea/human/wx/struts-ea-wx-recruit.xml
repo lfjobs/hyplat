@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="wxrecruit-ntoken" namespace="/ea/wxrecruit"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.wx.WxRecruitAction" method="{1}">
+			<result name="itemList">/page/ea/main/human/wx/wxrecruit.jsp</result>
+			<result name="toAdd">/page/ea/main/human/wx/addwxrecruit.jsp</result>
+			<result name="success">/page/ea/success.jsp</result> 
+			<result name="positions">/page/mobile/wxZhaopin/positions.jsp</result> 
+			<result name="positionItem">/page/mobile/wxZhaopin/positionItem.jsp</result> 
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="wxrecruit-jsonajax" namespace="/ea/wxrecruit" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.wx.WxRecruitAction" method="{1}">
+            <result type="json">  
+                <param name="root">result</param>
+            </result>  
+		</action>
+	</package>
+</struts>

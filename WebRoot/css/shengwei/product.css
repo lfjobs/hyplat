@@ -1,0 +1,55 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { color:#666; text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.more{ float: right; }
+.more a{ font-weight: normal; font-size: 12px; }
+.fl{ display: inline; float: left; } 
+.fr{ display: inline;  float: right; }
+.fixed:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }   
+.fixed { display: block; min-height: 1%; }   
+*html .fixed{ height: 1%; }    
+.clear {width:100%; display: block!important; float: none!important; clear: both; overflow: hidden; width: auto!important; height: 0!important; margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0; }
+.pos{ position:relative;}
+.black{ color: black;}
+/*公共样式*/
+
+.product_manage{width:360px;margin:auto;height:640px;}
+.product_manage .product_tit{width:100%;height:24px;line-height:24px;background-color:#1D7DF8;}
+.product_manage .product_tit ul li{float:left;}
+.product_manage .product_tit .product_sym a{margin-left:10px;width:20px;color:#fff;font-weight:bold;}
+.product_manage .product_tit .product_name{color:#fff;padding-left:120px;font-weight:bold;font-size:14px;}
+.product_manage .pro_name{clear:both;margin-top:10px;margin-left:5px;height:20px;line-height:20px;}
+.product_manage .pro_name input{width:130px;}
+.product_manage .pro_upload{clear:both;margin-top:10px;margin-left:3px;height:30px;}
+.product_manage .pro_upload .pro_logo{height:28px;line-height:28px;font-size:14px;}
+.product_manage .pro_upload .pro_zhu{margin-left:5px;margin-right:0px;}
+.product_manage .pro_upload div{float:left;margin-right:3px;}
+.product_manage .pro_upload div img{height:28px;width:auto;}
+.product_manage .pro_upload div ul li{clear:left;}
+.product_manage .pro_upload div ul li div{width:65px;height:12px;line-height:12px;text-align:center;background-color:#B2E1FF;border:1px solid #6DC2F8;color:#000;margin-bottom:3px;cursor:pointer;}
+.product_manage .pro_text{clear:both;width:360px;height:210px;}
+.product_manage .pro_text div ul{float:left;margin-left:3px;margin-top:6px;}
+.product_manage .pro_text div ul li{float:left;text-align:right;width:85px;height:24px;line-height:24px;}
+.product_manage .pro_text div ul li input{width:85px;height:18px;}
+.product_manage .pro_text div ul li div{width:89px;height:18px;background-color:#fff;line-height:18px;}
+.product_manage .pro_text div ul li div input{float:left;width:12px;}
+.product_manage .pro_text div ul li div span{float:left;width:12px;margin-left:5px;}
+.product_manage .pro_text div ul li div .wei_left{height:12px;line-height:18px;margin-top:4px;margin-left:5px;}
+.product_manage .pro_text div ul li div .wei_right{height:12px;line-height:18px;margin-top:4px;margin-left:15px;}
+.product_manage .pro_text div ul li select{width:89px;height:18px;}
+.product_manage .pro_text .pro_txt input{border:0px;border-bottom:1px solid #CCCCCC;background-color:#F0F0F0;width:87px;}
+.product_manage .pro_bottom{width:100%;margin:auto;}
+.product_manage .pro_bottom div{float:left;width:100px;text-align:center;color:black;height:20px;line-height:20px;font-size:14px;background-color:#FF7C0F;margin-left:10px;margin-top:25px;border-radius:2px;cursor:pointer;font-weight:bold;}

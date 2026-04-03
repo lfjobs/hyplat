@@ -1,0 +1,144 @@
+@charset "utf-8";
+/*热门活动 开始*/
+.tab_wrap{line-height: 2rem;font-size: 0;overflow-x: scroll;height: 2rem;white-space: nowrap;width: 100%;border-bottom: 1px solid #f5f5f5;position: fixed;width: 100%;top: 2.16rem;background: #fff;z-index: 999;left: 0;}
+.tab_wrap span{display: inline-block;vertical-align: top;font-size: .683rem;color: #404040;padding: 0 .5rem;cursor: pointer;}
+.tab_wrap .tab_cur{color:#ff563a; }
+.activity_list{padding: 2rem 0 2.5rem;}
+.xw_box {
+	padding: .5rem .6rem;
+	display: block;
+}
+
+.xw_box img {
+	width: 3.8rem;
+	height: 3.8rem;
+	-o-object-fit: cover;
+	object-fit: cover;
+	float: left;
+	margin-right: .6rem;
+}
+
+.xw_text {
+	float: left;
+	width: 10.4rem;
+}
+
+.xw_tit {
+	line-height: 2.4rem;
+	font-size: .83rem;
+	color: #202020;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.xw_state {
+	font-size: 0;
+}
+
+.xw_state span {
+	line-height: 1.4rem;
+	color: #434343;
+	font-size: .6rem;
+	display: inline-block;
+	width: 3.4rem;
+	white-space: nowrap;
+}
+
+.xw_state i {
+	display: inline-block;
+	width: 1rem;
+	height: .8rem;
+	vertical-align: text-bottom;
+	margin-right: .2rem;
+}
+
+.xw_ck {
+	background: url(../../../images/ea/lottery/xw_ck.png) no-repeat center;
+	background-size: .7rem;
+}
+
+.xw_dz {
+	background: url(../../../images/ea/lottery/xw_dz.png) no-repeat center;
+	background-size: .6rem;
+}
+
+.xw_pl {
+	background: url(../../../images/ea/lottery/xw_pl.png) no-repeat center;
+	background-size: .6rem;
+}
+.add_act{position: fixed;left: .5rem;right: .5rem;bottom: .3rem;line-height: 2.2rem;text-align: center;border-radius: .15rem;background: #6179af;color: #fff;letter-spacing: .15rem;font-size: .73rem;}
+.add_act i{display: inline-block;width: 1rem;height: 1rem;vertical-align: text-bottom;background: url(../../../images/ea/lottery/add_act.png) no-repeat center;background-size: contain;margin-right: .26rem;}
+/*热门活动 结束*/
+/*创建活动 开始*/
+.create_act_wrap{border-left: 1px solid #e5e5e5;border-top: 1px solid #e5e5e5;}
+.create_box{float: left;width: 33.333%;text-align: center;border-right: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;padding: .8rem 0 .6rem;height: 6.6rem;}
+.create_img{width: 2.2rem;height: 2.2rem;-o-object-fit: contain;object-fit: contain;}
+.create_name{color: #2c2b2b;font-size: .768rem;line-height: 1.8rem;height: 1.8rem;margin-top: .2rem;}
+.create_info {
+	color: #acacac;
+    font-size: .555rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1rem;
+    height: 1rem;
+}
+
+/*签到活动*/
+.xw_state .sign_span{width: 65%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;vertical-align: top;font-size: .5rem;}
+.act_R{width: 10.4rem;float: left;}
+.xw_state  .sign_in{display: inline-block;width: 35%;vertical-align: top;text-align: right;color: #ff6600;}
+.act_box{border-bottom: 1px solid #f0f0f0;}
+/*签到送积分详情*/
+.attention_btn{color: #ff6600;}
+.sign_details{padding: .8rem .6rem;}
+.sign_details img{max-width: 100%;}
+.sign_href{display: block;width: 14.8rem;margin: 1rem auto;text-align: center;background: #ffc659;color: #ffffff;border-radius: .15rem;line-height: 1.8rem;font-size: .73rem;}
+.sign_href i{display: inline-block;width:.85rem;height: .85rem;background: url(../../../images/ea/lottery/sign_ico.png) no-repeat center;background-size: contain;vertical-align: text-bottom;margin-left: .3rem;}
+
+/*活动添加*/
+.step_box{float: left;width: 4.2rem;font-size: .6rem;text-align: center;line-height: 1.4rem;background: #dcdcdc;color: #ffffff;border-radius: .15rem;}
+.step_box:active{color:#ff563a;}
+.step_wrap{padding: .5rem .6rem;border-bottom: 1px solid #f5f5f5;background: #fff;height: 2.4rem;position: fixed;width: 100%;top: 2.16rem;left: 0;background: #fff;z-index: 900;}
+.step_box:nth-child(2){margin: 0 1.1rem;}
+.step_act{background: #facd89;color: #ff563a;}
+.act_infoL{float: left;width: 35%;line-height: 2rem;color: #7e7e7e;font-size: .683rem;}
+.act_infoR{float: left;width: 65%;}
+.act_imgL{line-height: 4rem;}
+.act_info_box{padding: 0 .6rem;border-bottom: 1px solid #f5f5f5;}
+.act_mainimg{float: right;width: 3rem;height: 3rem;margin: .5rem 1rem .5rem;background: url(../../../images/ea/lottery/no_img.png) no-repeat center #f4f4f4;background-size: 1.8rem;position: relative;}
+.act_imgR{background: url(../../../images/ea/lottery/arr_R.png) no-repeat right;background-size: .4rem;}
+.act_info_inp{width: 100%;height: 2rem;border: 0;outline: 0;padding: .6rem 0;font-size: .683rem;color: #515151;text-align: right;}
+.act_begin{color: #5aa33d;}
+.act_end{color: #ff563a;}
+.save_next{position: fixed;left: .6rem;right: .6rem;bottom: .6rem;line-height: 2rem;text-align: center;background: #6179af;color: #ffffff;border-radius: .15rem;font-size: .73rem;}
+.ticket_box{position: relative;border-bottom: .2rem solid #f7f7f7}
+.minus_btn{position: absolute;width: .8rem;height: .8rem;background: url(../../../images/ea/lottery/jian_ico.png) no-repeat center;background-size: contain;left: 1.2rem;top: .5rem;}
+.ticket_info_tr{line-height: 1.8rem;padding-left: 4rem;border-bottom: 1px solid #f7f7f7;font-size: 0;padding-right: .6rem;}
+.ticket_info_tr span{font-size: .64rem;display: inline-block;vertical-align: top;}
+.ticket_info_tr span:first-child{width: 30%;}
+.ticket_info_tr span:last-child{width: 70%;}
+.ticket_inp{width: 100%;border: 0;height: 1rem;vertical-align: top;margin-top: .4rem;text-align: center;outline: 0;}
+.ticket_inp::-webkit-input-placeholder{color: #f74c31;}
+.act_wrap{padding-bottom: 3rem;background: #f7f7f7;padding-top: 2.4rem;}
+.ticket_add{line-height: 1.8rem;padding-left: 4rem;font-size: .64rem;color: #f74c31;display: block;background: url(../../../images/ea/lottery/jia_ico.png) no-repeat 1.2rem;background-size: .8rem;}
+.hotact_con{background: #fff;margin-top: .3rem;display: none;}
+.act_info_wrap{display: block;}
+#act_upinp {
+	position: absolute;width: 100%;height: 100%;opacity: 0;z-index: 99;
+}
+#act_img{position: absolute;width: 100%;height: 100%;z-index: 9;}
+/*新增loading*/
+.crop_wrap{display: none;}
+.loading{width: 8rem;background-color: rgba(58,58,58,.8);border-radius: .2rem;padding: .5rem;position: relative;text-align: center;color: #fff;font-size: .66rem;display: none;}
+.loading img{height: 1rem;width: 1rem;position: absolute;left: .7rem;top: .5rem;}
+.loading span{margin-left: .6rem;}
+
+
+
+
+
+
+

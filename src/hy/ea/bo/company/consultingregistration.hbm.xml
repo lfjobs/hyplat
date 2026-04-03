@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hy.ea.bo.company.ConsultingRegistration" table="dtCltRegistration" schema="HYPLAT">
+		<id length="50" name="crKey">
+			<column length="50" name="crKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="crId" type="java.lang.String">
+			<column name="crId"  length="50" ><comment>逻辑ID</comment></column>
+		</property>
+		<property name="companyId">
+			<column name="companyId"  length="50" ><comment>公司id</comment></column>
+		</property>
+		<property name="companyName">
+			<column name="companyName"  length="50" ><comment>公司名称</comment></column>
+		</property>
+
+		<property name="staffId">
+			<column name="staffId"  length="50" ><comment>个人无商家</comment></column>
+		</property>
+		<property name="consultantName">
+			<column name="consultantName"  length="50" ><comment>咨询人姓名</comment></column>
+		</property>
+		<property name="consultantPhone">
+			<column name="consultantPhone"  length="50" ><comment>资讯人电话</comment></column>
+		</property>
+		<property name="consultantContent">
+			<column name="consultantContent"  length="50" ><comment>咨询内容类别</comment></column>
+		</property>
+		<property name="consultingDate">
+			<column name="consultingDate"  ><comment>创建时间</comment></column>
+		</property>
+		<property name="state">
+			<column name="state"  length="2" ><comment>状态:00:正常,01:删除</comment></column>
+		</property>
+		<property name="ppid">
+			<column name="ppid"  length="50" ><comment> 文章的ID</comment></column>
+		</property>
+		<property name="goodsname">
+			<column name="goodsname"  length="500" ><comment>文章标题</comment></column>
+		</property>
+		<property name="ccompanyId">
+			<column name="ccompanyId"  length="50" ><comment>往来单位ID</comment></column>
+		</property>
+		<property name="source">
+			<column name="source"  length="2" ><comment>/00文章 01 公司网站</comment></column>
+		</property>
+		<property name="returnVisit">
+			<column name="returnVisit"  length="2" ><comment>00 没有回访 01 回访过了</comment></column>
+		</property>
+		<property name="visitContent">
+			<column name="visitContent"  length="500" ><comment>回访重点内容纪录</comment></column>
+		</property>
+
+		<property name="visitStaffID">
+			<column name="visitStaffID"  length="50" ><comment>回访客服ID</comment></column>
+		</property>
+		<property name="visitStaffName">
+			<column name="visitStaffName"  length="50" ><comment>回访客服姓名</comment></column>
+		</property>
+		<property name="islisten">
+			<column name="islisten"  length="2" ><comment>//是否接听 00 未接听，01 接听</comment></column>
+		</property>
+		<property name="visitDate">
+			<column name="visitDate" ><comment>回访时间</comment></column>
+		</property>
+		<property name="isIntentCustomer">
+			<column name="isIntentCustomer"  length="2" ><comment>/00 不敢兴趣了，01 意向客户</comment></column>
+		</property>
+		<property name="clientType">
+			<column name="clientType"  length="2" ><comment>客户类型</comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;width:100%;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.clear{clear:both;}
+/*公共样式*/
+
+.alert_{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+}
+.alert_ .alert{
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(102, 102, 102, 0.1);
+    position: relative;
+    padding: 1% 0;
+    top: 2.16rem;
+}
+.alert_ .alert .left{
+    width: 0.6rem;
+    float: left;
+    position: absolute;
+    top: 50%;
+}
+.alert_ .alert p{
+    width: 90%;
+    float: left;
+    margin-left: 5%;
+   
+}
+.alert_ .alert .delete{
+    width: 5%;
+    float: left;
+}
+#qrcode{
+    margin-top: 0.5rem;
+}
+#qrcode img{
+
+ margin:0 auto;
+}

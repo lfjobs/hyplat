@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.office.bo">
+	<class name="CheckOnSetup" table="DT_CHECKON_SETUP" schema="HYPLAT" dynamic-insert="true">
+	<comment>考勤设置</comment>
+		<id length="50" name="checkOnSetupId" type="java.lang.String">
+			<column length="50" name="CHECKON_SETUP_ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="COMPANY_ID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="rankId" type="java.lang.String">
+			<column name="RANK_ID" length="50">
+				<comment>工资级别Id</comment>
+			</column>
+		</property>
+		<property name="checkOnTypeId" type="java.lang.String">
+			<column name="CHECKON_TYPE_ID" length="50">
+			<comment>考勤类别Id</comment>
+			</column>
+		</property>
+		<property name="referenceBaseSalary" type="java.lang.String">
+			<column length="10" name="REFERENCE_BASE_SALARY" >
+			<comment>引用基本工资:Y/N</comment>
+			</column>
+		</property>
+		<property name="referenceGuaranteeSalary" type="java.lang.String">
+			<column length="10" name="REFERENCE_GUARANTEE_SALARY" >
+				<comment>引用保障工资:Y/N</comment>
+			</column>
+		</property>
+		<property name="referenceWelfareSalary" type="java.lang.String">
+			<column length="10" name="REFERENCE_WELFARE_SALARY" >
+				<comment>引用福利工资:Y/N</comment>
+			</column>
+		</property>
+		<property name="discountRate" type="java.lang.Double">
+			<column length="20" name="DISCOUNT_RATE" >
+			<comment>折扣倍数</comment>
+			</column>
+		</property>
+		<property name="amountType" type="java.lang.String">
+			<column name="AMOUNT_TYPE" length="10">
+				<comment>奖折方式</comment>
+			</column>
+		</property>
+		<property name="checkOnAmount" type="java.lang.Double">
+			<column length="20" name="CHECKON_AMOUNT" >
+			<comment>奖励金额</comment>
+			</column>
+		</property>
+		<property name="meetingRecord" type="java.lang.String">
+			<column name="MEETING_RECORD" length="200">
+				<comment>会议记录</comment>
+			</column>
+		</property>
+		<property name="transferReviewerId" type="java.lang.String">
+			<column name="TRANSFER_REVIEWER_ID" length="50">
+				<comment>转审核人</comment>
+			</column>
+		</property>
+		<property name="reviewerComments" type="java.lang.String">
+			<column name="REVIEWER_COMMENTS" length="500">
+				<comment>审核意见</comment>
+			</column>
+		</property>
+		<property name="reviewerId" type="java.lang.String">
+			<column name="REVIEWER_ID" length="50">
+				<comment>审核人</comment>
+			</column>
+		</property>
+		<property name="setupDate" type="java.util.Date">
+			<column name="SETUP_DATE">
+				<comment>设置时间</comment>
+			</column>
+		</property>
+		<property name="staffId" type="java.lang.String">
+			<column name="STAFF_ID" length="50">
+				<comment>设置人</comment>
+			</column>
+		</property>
+		<property name="reviewStatus" type="java.lang.String">
+			<column name="REVIEW_STATUS" length="10">
+				<comment>审核状态</comment>
+			</column>
+		</property>
+		<property name="rewardDeductType" type="java.lang.String">
+			<column name="REWARD_DEDUCT_TYPE" length="10">
+				<comment>奖励扣款方式</comment>
+			</column>
+		</property>
+		<property name="rewardDeductAmount" type="java.lang.Double">
+			<column name="REWARD_DEDUCT_AMOUNT">
+				<comment>奖折金额</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
+

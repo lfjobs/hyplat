@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="FileCabinet" table="DT_OA_File_Cabinet">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="fileCabinetId" type="java.lang.String">
+			<column name="fileCabinetId" length="50" />
+		</property>
+		<property name="companyId" type="java.lang.String">
+			<column name="companyId" length="50" />
+		</property>
+		<property name="companyName" type="java.lang.String">
+			<column name="companyName" length="50" />
+		</property>
+		<property name="fileCabinetName" type="java.lang.String">
+			<column name="fileCabinetName" length="200" />
+		</property>
+		<property name="usedSpace" type="java.lang.String">
+			<column name="usedSpace" length="50" />
+		</property>
+		<property name="fileFolderNumber" type="java.lang.String">
+			<column name="fileFolderNumber" length="50" />
+		</property>
+		<property name="fileNumber" type="java.lang.String">
+			<column name="fileNumber" length="50" />
+		</property>
+		<property name="createrId" type="java.lang.String">
+			<column name="createrId" length="50" />
+		</property>
+		<property name="createrName" type="java.lang.String">
+			<column name="createrName" length="50" />
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column name="createTime" length="7" />
+		</property>
+		<property name="descriptor" type="java.lang.String">
+			<column name="descriptor" length="300" />
+		</property>
+		<set name="fileFolders" inverse="true" lazy="true" cascade="all-delete-orphan">
+			<key>
+				<column name="fileCabinetKey" length="50" />
+			</key>
+			<one-to-many class="hy.ea.bo.office.FileFolder" />
+		</set>
+		<set name="fileUploads" inverse="true" lazy="true" cascade="all-delete-orphan">
+			<key>
+				<column name="fileCabinetKey" length="50" />
+			</key>
+			<one-to-many class="hy.ea.bo.office.FileUpload" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

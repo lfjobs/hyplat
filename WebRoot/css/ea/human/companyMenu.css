@@ -1,0 +1,136 @@
+html,body{
+    height:100%;
+    overflow:hidden;
+}
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+.content .sec-list ul li {
+    padding: 0 .5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: .85rem;
+    color: #222;
+    border-bottom: .025rem solid #eee;
+    cursor: pointer;
+    clear:both;
+}
+
+.content .sec-list ul li p:nth-of-type(1) {
+    float: left;
+    width: 55%;
+    overflow: hidden;
+    word-break: keep-all
+}
+
+.content .sec-list ul li p:nth-of-type(2) {
+    float: right;
+    font-size:.7rem;
+}
+
+.content .sec-list ul li:first-of-type {
+    border-top: .025rem solid #eee
+}
+.sec-hide{
+    background:#f9f9f9;
+    padding-left: 0.5rem;
+}
+
+
+.content .nav {
+    position: fixed;
+    z-index: 999;
+    top:-0.5rem;
+    width: 100%;
+}
+
+
+.content .sec-nav ul li .del img {
+    width: 1.2rem;
+}
+
+.content .p-wq span:nth-of-type(1) {
+    padding-right:0.2rem;
+}
+
+.tab-title{
+    width:50%;
+}
+.layui-tab-brief>.layui-tab-more li.layui-this:after,.layui-tab-brief>.layui-tab-title .layui-this:after {
+    border-bottom: 2px solid #f74c32 !important;
+}
+
+.div-company-name{
+    float:left;
+}
+.buttom-power{
+    float:left;
+    margin-top:10px;
+    background-color: #d36951 !important;
+}
+.layui-tab-content{
+    overflow-y:auto;
+}
+.dtd-oa-search-bar {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 42px;
+    line-height: 1;
+    font-size: 14px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding:10px 10px 0px 10px;
+}
+.dtd-oa-search-bar-input {
+    border: 1px solid rgb(145 125 88 / 50%);
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 25px 4px 30px;
+    border-radius: 4px;
+}
+.dtd-oa-search-bar-icon-wrapper {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 40%;
+    left: 10px;
+    margin-top: 2px;
+    line-height: 16px;
+    text-align: center;
+    margin-left:5px;
+}

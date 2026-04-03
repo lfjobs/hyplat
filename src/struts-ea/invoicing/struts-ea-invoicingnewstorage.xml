@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="newstorage-token" namespace="/ea/newstorage"
+		extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.invoicing.action.InvoicingStorageNewAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+
+	<package strict-method-invocation="false" name="newstorage-ntoken" namespace="/ea/newstorage"
+		extends="struts-default">
+		<action name="ea_*" class="hy.ea.invoicing.action.InvoicingStorageNewAction" method="{1}">
+			<!--入库单页面-->
+			<result name="toinvoicingstorage">
+				/page/ea/main/finance/invoicing/chooseWarehousingnew.jsp
+			</result>
+			<!--入库单(采购入库列表)验货单页面-->
+			<result name="tostoragelist">
+				/page/ea/main/finance/invoicing/chooseWarehousing_billlist.jsp
+			</result>
+			<!--入库单(采购入库列表)验货单查看页面  -->
+			<result name="toSeegb">
+				/page/ea/main/finance/invoicing/chooseWarehousing_see.jsp
+			</result>
+			<!--入库单(采购入库列表)验货单打印页面  -->
+			<result name="toSeegbprint">
+				/page/ea/main/finance/invoicing/chooseWarehousing_print.jsp
+			</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="newstorage-jsonajax" namespace="/ea/newstorage"
+		extends="json-default">
+		<action name="sajax_ea_*"
+			class="hy.ea.invoicing.action.InvoicingStorageNewAction" method="{1}">
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

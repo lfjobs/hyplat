@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.tao">
+	<class name="AttriCate" table="tao_attricate">
+		<id length="50" name="acKey">
+			<column length="50" name="acKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="acID">
+			<column length="50" name="acID" not-null="true" />
+		</property>
+		<property name="attriname">
+			<column length="50" name="attriname" />
+		</property>
+		 <property name="orders">
+        	<column name="orders" length="10" />
+        </property>
+         <property name="cateID">
+        	<column name="cateID" length="50" />
+        </property>
+         <property name="controltype">
+        	<column name="controltype" length="20" />
+        </property>
+         <property name="isMultiValue">
+        	<column name="isMultiValue" length="1" />
+        </property>
+         <property name="valueType">
+        	<column name="valueType" length="10" />
+        </property>
+          <property name="status">
+        	<column name="status" length="1" />
+        </property>
+          <property name="required">
+        	<column name="required" length="1" />
+        </property>
+        	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,83 @@
+/* 抽奖页面 */
+.banner{display:block;width:12.5rem;margin-left:auto;margin-right:auto;margin-bottom: 20px;}
+.banner .turnplate{display:block;width:100%;position:relative;background:url(../../../images/ea/lottery/turnplate-bg.png) no-repeat;background-size:100%;z-index: 99;}
+.banner .turnplate canvas.item{width:100%;}
+.banner .turnplate img.pointer{position:absolute;width:31.5%;height:42.5%;left:50%;-webkit-transform: translateX(-50%);transform: translateX(-50%);top:22.6%;}
+.bg_img{width: 100%;}
+.shadow{height: 2rem;background: url(../../../images/ea/lottery/shadow.png) no-repeat center;background-size: 80%;margin-top: -1.9rem;}
+.notice_wrap{width: 13rem;margin: 1rem auto;background:url(../../../images/ea/lottery/notice_ico.png) no-repeat .6rem #f9f9d8;background-size: .9rem;color: #333333;font-family: Arial,"microsoft yahei";padding-left: 2rem;border: 5px solid #ffa676;border-radius: .25rem;position: relative;height: 100px;}
+.notice_L{position: absolute;width: 1.8rem;height: 1.8rem;background: url(../../../images/ea/lottery/notice_L.png) no-repeat;background-size: contain;left: 0;top: -1.8rem;}
+.notice_R{position: absolute;width: 1.8rem;height: 1.8rem;background: url(../../../images/ea/lottery/notice_R.png) no-repeat;background-size: contain;right: -.5rem;top: -1.8rem;}
+.notice_list{position: absolute;width: 100%;top: 0;left: 0;height: 90px;}
+.notice_list li{line-height: 30px;overflow: hidden;}
+.notice_list li span{font-size: 14px;float: left;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.notice_list li span:nth-child(1){width: 48%;}
+.notice_list li span:nth-child(2){width: 12%;}
+.notice_list li span:nth-child(3){width: 40%;color: #cc0000;}
+.notice_list_wrap{position: relative;height: 90px;overflow: hidden;}
+.draw_rule_wrap{width: 12.5rem;margin: 0 auto 1rem;color: #010101;font-size: .64rem;line-height: 1.2rem;}
+.hint_wrap{width: 12.5rem;margin: 1rem auto;color: #010101;font-size: .64rem;line-height: 1.2rem;text-align: center;}
+.draw_btn_wrap{width: 14rem;margin: 1.8rem auto;}
+.draw_btn_box{float: left;width: 50%;font-size: 0;text-align: center;}
+.draw_btn_box a{display: inline-block;font-size: .768rem;color: #4a2214;width: 4rem;}
+.draw_btn_box i{height: 4rem;display: inline-block;width: 100%;border-radius: 100%;border: 2px solid #141414;}
+.sign_btn i{background: url(../../../images/ea/lottery/draw_btn01.png) no-repeat center #ae5da1;background-size: 2.6rem;}
+.record_btn i{background: url(../../../images/ea/lottery/draw_btn02.png) no-repeat center #ae5da1;background-size: 2.3rem;}
+a.record_btn{color: #000}
+.draw_btn_box span{display: inline-block;line-height: 1.8rem;}
+.award_wrap{width: 12.5rem;margin: 0 auto 1rem;font-size: .64rem;text-align: center;border: 2px solid #010101;border-radius: .25rem;padding: .2rem .5rem;line-height: 1rem;color: #000000;}
+.award_wrap span{display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.share{width: 1rem;height: 1rem;background: url(../../../images/ea/lottery/share.png) no-repeat center;background-size: contain;}
+.popup_box{width: 12rem;border: .15rem solid #1b1b1b;border-radius: .25rem;position: relative;display: none;}
+.popup_bd{height: 6rem;background-color: #f93c3d;background-size: 60%;background-position: center;background-repeat: no-repeat;border-top-left-radius: .2rem;border-top-right-radius: .2rem;}
+.award_00{background-image: url(../../../images/ea/lottery/no_award.png);}
+.award_01{background-image: url(../../../images/ea/lottery/award_01.png);background-size: 50%;}
+.award_02{background-image: url(../../../images/ea/lottery/award_02.png);background-size: 50%;}
+.award_03{background-image: url(../../../images/ea/lottery/award_03.png);background-size: 50%;}
+.award_04{background-image: url(../../../images/ea/lottery/award_04.png);background-size: 50%;}
+.award_05{background-image: url(../../../images/ea/lottery/award_05.png);background-size: 50%;}
+.award_06{background-image: url(../../../images/ea/lottery/award_06.png);background-size: 50%;}
+.popup_fd{background: #ffffff;padding: .8rem .6rem .6rem;}
+.popup_fd>span{display: block;text-align: center;font-size: .683rem;color: #1b1b1b;line-height: 1rem;}
+.sure_btn{display: block;width: 5rem;margin: .6rem auto 0;border: .1rem solid #1b1b1b;background: #e5cc1a;color: #1b1b1b;text-align: center;font-size: .7rem;line-height: 1.2rem;border-radius: .15rem;}
+.popup_text span{color: #bf0e0e;}
+.close_btn{position: absolute;width: 1.2rem;height: 1.2rem;background: url(../../../images/ea/lottery/close.png) no-repeat center;background-size: contain;right: .5rem;top: .4rem;}
+.record_con{width: 14.8rem;border:2px solid #1b1b1b;margin: 0 auto;border-radius: .5rem;position: relative;}
+.con_top{position: relative;left: 0;top: -.8rem;width: 13rem;margin: 0 auto;display: block;}
+.record_top{padding-bottom: 1rem;}
+.record_list{overflow-y: scroll;font-size: 0;padding: 0 .5rem;display: none;}
+.record_list span{display: inline-block;font-size: .6rem;color: #181818;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;line-height: 1.5rem;vertical-align: top;}
+.record_list li span:nth-child(1){width: 30%;}
+.record_list li span:nth-child(2){width: 45%;text-align: center;word-wrap: break-word;word-break: break-all;}
+.record_list li span:nth-child(3){width: 25%;text-align: right;}
+.record_list .no_get{color: #ff5467;}
+i.top_ico{position: absolute;width: 1rem;height: 2px;background: #1b1b1b;top:-2px;border-left: .3rem solid #ffe532;border-right: .3rem solid #ffe532;right: 1rem;}
+i.bottom_ico{position: absolute;width: 1rem;height: 2px;background: #1b1b1b;bottom:-2px;border-left: .3rem solid #ffe532;border-right: .3rem solid #ffe532;left: 2rem;}
+
+#activityName{
+    margin-top: 20px;
+    padding-left: 35px;
+    padding-right: 30px;
+    padding-top: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 210px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    word-wrap: break-word; /* 允许在长单词内部换行 */
+    word-break: break-all; /* 允许在任意位置换行 */
+
+    -webkit-text-stroke: 2px black;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
+

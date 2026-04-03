@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="carBottle" table="DT_BOTTLE_USE">
+		<id length="50" name="bottleKey">
+			<column length="50" name="bottleKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="bottleID">
+			<column length="50" name="bottleID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="boardingNum">
+			<column length="250" name="boardingNum"/>
+		</property>
+		<property name="area">
+			<column length="250" name="area"/>
+		</property>
+		<property name="carNum">
+			<column length="250" name="carNum" />
+		</property>
+		<property name="unit">
+			<column length="250" name="unit" />
+		</property>
+		<property  name="brandType">
+			<column length="256" name="brandType" />
+		</property>
+		<property  name="owners">
+			<column length="250" name="owners" />
+		</property>
+		<property  name="frameNum">
+			<column length="250" name="frameNum" />
+		</property>
+		<property  name="engineNum">
+			<column  length="250" name="engineNum" />
+		</property>
+		<property  name="bottleAddress">
+			<column  length="250" name="bottleAddress" />
+		</property>
+		<property  name="telephone">
+			<column  length="250" name="telephone" />
+		</property>
+		<property  name="installationUnit">
+			<column length="250"  name="installationUnit" />
+		</property>
+		
+		<property  name="installationNum">
+			<column length="250"  name="installationNum" />
+		</property>
+		<property  name="installationDate">
+			<column  name="installationDate" />
+		</property>
+		<property  name="cylindersNum">
+			<column length="250"  name="cylindersNum" />
+		</property>
+		<property  name="typeNum">
+			<column length="250"  name="typeNum" />
+		</property>
+		<property  name="makeUnit">
+			<column length="250"  name="makeUnit" />
+		</property>
+		<property  name="factoryDate">
+			<column  name="factoryDate" />
+		</property>
+		<property  name="volume">
+			<column length="256" name="volume" />
+		</property>
+		<property name="inspectionDate">
+			<column  name="inspectionDate"/>
+		</property>
+		<property name="carPeople">
+			<column length="250" name="carPeople"/>
+		</property>
+		<property  name="carType">
+			<column length="50" name="carType" />
+		</property>
+	</class>
+</hibernate-mapping>

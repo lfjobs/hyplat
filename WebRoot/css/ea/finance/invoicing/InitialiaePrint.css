@@ -1,0 +1,128 @@
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+body.hid {
+    overflow: hidden
+}
+
+header {
+    background-color: #f74c30
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .65rem;
+    color: #fff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .45rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+.content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.content ul.ul-01 {
+    width: 87%;
+    margin: 0 auto;
+    border: .025rem solid #f74c32;
+    background-color: #feedea;
+    border-radius: .25rem
+}
+
+.content ul.ul-01 li {
+    padding: 0.25rem .5rem;
+    border-bottom: .025rem solid #fcb8ad;
+    /*height: 2.2rem;*/
+    font-size: .6rem;
+    color: #222;
+}
+
+.content ul.ul-01 li>p {
+    float: left;
+    width: 50%;
+    line-height: 1.25rem;
+}
+
+.content ul.ul-01 li div {
+    height: 2.2rem;
+    line-height: 2.2rem;
+    display: flex;
+    align-items: center;
+    float: right
+}
+
+.content ul.ul-01 li div img {
+    margin-left: .6rem;
+    float: right;
+    width: .35rem
+}
+
+.content ul.ul-02 {
+    border-bottom: .5rem solid #f4f4f4
+}
+
+.content ul.ul-02 li {
+    padding: 0 .5rem;
+    border-bottom: .025rem solid #f4f4f4;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .6rem;
+    color: #222
+}
+
+.content ul.ul-02 li>p {
+    float: right
+}
+
+.content ul.ul-02 li div {
+    height: 2.2rem;
+    line-height: 2.2rem;
+    display: flex;
+    align-items: center;
+    float: right
+}
+
+.content ul.ul-02 li div img {
+    margin-left: .6rem;
+    float: right;
+    width: .35rem
+}
+
+.content ul.ul-02 li input {
+    text-align: right;
+    border: 0;
+    float: right;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .6rem;
+    color: #222
+}

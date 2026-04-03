@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="CREMI" table="dtCREMI">
+		<id name="remiKey">
+			<column length="50" name="remiKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="remiID">
+			<column length="50" name="remiID" not-null="true" />
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID" not-null="true" />
+		</property>
+		<property name="roleID">
+			<column length="50" name="roleID" not-null="true" />
+		</property>
+		<property name="eaID">
+			<column length="50" name="eaID" not-null="true" />
+		</property>
+		<property name="menuID">
+			<column length="50" name="menuID" not-null="true" />
+		</property>
+		<property name="interfaceID">
+			<column length="50" name="interfaceID" not-null="true" />
+		</property>
+		<property name="interfaceUrl">
+			<column length="256" name="interfaceUrl" not-null="true" />
+		</property>
+		<property name="interfaceStatus">
+			<column length="2" name="interfaceStatus" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

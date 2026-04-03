@@ -1,0 +1,353 @@
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+header {
+	background-color: #f74c32;
+}
+header ul {
+	padding: 0 0.5rem;
+}
+header ul li {
+	float: left;
+	height: 3.4rem;
+	line-height: 3.4rem;
+	font-size: 1.2rem;
+	color: #ffffff;
+}
+header ul li:first-of-type {
+	width: 20%;
+}
+header ul li:first-of-type img {
+	width: 0.45rem;
+}
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center;
+}
+header ul li:nth-of-type(3) {
+	width: 20%;
+	text-align: right;
+	font-size: 0.6rem;
+}
+.content .div-header {
+	border-bottom: 0.025rem solid #eeeeee;
+	padding: 0 0.65rem;
+}
+.content .div-header .div-img {
+	float: left;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 1rem 0.5rem 1rem 0.5rem;
+
+}
+.content .div-header .div-img img {
+	width:100%;
+	height:100%;
+}
+.content .div-header .div-text {
+	float: left;
+	padding-top: 0.5rem;
+}
+
+.content .div-header .div-text img {
+	width: 2.8rem;
+	margin-left: 0.2rem;
+}
+.content .div-header .div-text p:nth-of-type(1) {
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #222222;
+}
+.content .div-header .div-text p:nth-of-type(2) {
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: 0.95rem;
+	color: #a8a8a8;
+}
+.content .div-header .div-right {
+	float: right;
+	height: 6rem;
+	line-height: 6rem;
+	display: flex;
+	align-items: center;
+}
+.content .div-header .div-right img {
+	width: 2rem;
+}
+.content .div-news {
+	padding: 0 1.0rem;
+	border-bottom: 0.6rem solid #f8f8f8;
+	font-size: 1rem;
+}
+.interest{
+	display: flex;
+	white-space: nowrap;
+	padding-top: 8px;
+	padding-bottom: 6px;
+}
+.interestInfo{
+	display: flex;
+	overflow-x: auto; /* 启用水平滚动 */
+	white-space: nowrap; /* 防止子项换行 */
+}
+ /*.recommend{
+	 width: 100%;
+	 display: flex;
+	 flex-wrap: wrap;
+	 justify-content: space-between;
+	 padding-bottom: 5px;
+	 padding-top: 5px;
+ }
+.recommend tile{
+	flex: 0 0 14%;
+}*/
+/*.content .div-news ul li {*/
+	/*border-bottom: 0.025rem solid #eeeeee;*/
+/*}*/
+.content .div-news ul li .div-top p {
+	float: left;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #000000;
+}
+.content .div-news ul li .div-top .div-img {
+	float: right;
+	height: 3rem;
+	line-height: 3rem;
+	display: flex;
+	align-items: center;
+}
+.content .div-news ul li .div-top .div-img img {
+	width: 1.8rem;
+}
+.content .div-news ul li .div-bottom .div-img {
+	float: left;
+	padding-right: 0.55rem;
+	padding-bottom: 0.75rem;
+}
+.content .div-news ul li .div-bottom .div-img img {
+	width: 7.2rem;
+}
+.content .div-news ul li .div-bottom .div-right {
+	padding-top: 0rem;
+}
+.content .div-news ul li .div-bottom .div-right .p-text {
+	line-height: 2rem;
+	font-size: 1rem;
+	color: #222222;
+}
+.content .div-news ul li .div-bottom .div-right .p-time {
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 1rem;
+	color: #999999;
+}
+.content .div-news ul li:last-of-type {
+	border: 0;
+}
+.content .div-my,
+.content .div-set {
+	padding: 0 1rem;
+}
+
+.content .div-set img {
+	width:1.5rem;
+}
+.suoJin{
+	margin-left: 15px;
+}
+
+.content .div-my h3,
+.content .div-set h3 {
+	border-bottom: 0.025rem solid #eeeeee;
+	height: 3rem;
+	font-weight: normal;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #f74c32;
+	display:inline-block;
+}
+.content .div-my ul li,
+.content .div-set ul li {
+	border-bottom: 0.025rem solid #eeeeee;
+}
+.content .div-my ul li .img-left,
+.content .div-set ul li .img-left {
+	height: 2.5rem;
+	line-height: 2.5rem;
+	float: left;
+	padding-left: 0.8rem;
+	display: flex;
+	align-items: center;
+}
+.content .div-my ul li .img-left img,
+.content .div-set ul li .img-left img {
+	width: 1.2rem;
+}
+.content .div-my ul li p,
+.content .div-set ul li p {
+	padding-left: 0.6rem;
+	float: left;
+	width: 8rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: 1rem;
+	color: #222222;
+}
+.content .div-my ul li .img-right,
+.content .div-set ul li .img-right {
+	float: right;
+	height: 2.4rem;
+	line-height: 2.4rem;
+	display: flex;
+	align-items: center;
+}
+.content .div-my ul li .img-right img,
+.content .div-set ul li .img-right img {
+	width: 0.3rem;
+}
+.content .content-bottom {
+	height: 5rem;
+}
+.footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	background-color: #fff;
+}
+.footer ul li {
+	border-top: 0.075rem solid #ebebeb;
+	padding-top: 0.55rem;
+	width: 20%;
+	float: left;
+}
+.footer ul li div {
+	height: 2.6665rem;
+	line-height: 2.6665rem;
+	display: flex;
+	align-items: center;
+}
+.footer ul li div img {
+	/*width: 33%;*/
+	width: 1.7rem;
+	margin: 0 auto;
+}
+.footer ul li p {
+	text-align: center;
+	height: 1.8rem;
+	line-height: 1.8rem;
+	font-size: 0.99rem;
+	color: #222222;
+}
+.footer ul li.active p {
+	color: #f64d35;
+}
+::-webkit-input-placeholder {
+	color: #ccc;
+}
+/* Firefox 4-18 */
+:-moz-placeholder {
+	color: #ccc;
+}
+/* Firefox 19-50 */
+::-moz-placeholder {
+	color: #ccc;
+}
+/* - Internet Explorer 10?C11
+   - Internet Explorer Mobile 10-11 */
+:-ms-input-placeholder {
+	color: #ccc !important;
+}
+/* Edge (also supports ::-webkit-input-placeholder) */
+::-ms-input-placeholder {
+	color: #ccc;
+}
+/* CSS Working Draft */
+::placeholder {
+	color: #ccc;
+}
+
+.zx-div{
+
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .4)
+}
+
+
+.zx-div .select-div {
+	width: 18rem;
+	margin: 30vh auto 0 auto;
+	background: #fff;
+	text-align: center;
+	padding: 0.5rem;
+	box-shadow: 5px 5px 5px 5px rgb(102 96 96 / 50%);
+	border-radius: 0.3rem;
+}
+
+.zx-div .select-div>p {
+	border-radius: 0.3rem;
+	background-color: #f74c32;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: 1rem;
+	color: #fefefe;
+	text-align: center;
+	width: 8rem;
+	margin: 1rem auto;
+	box-shadow: 1px 1px 5px 5px rgb(181 172 172 / 50%);
+
+}
+
+.zx-div .select-div  img {
+	width: 1.5rem;
+	float: right;
+	margin-top: -0.7rem;
+	margin-right: -0.7rem;
+}
+
+.tip-span{
+
+	padding: 0 0.3rem;
+	color: #fff;
+	background: red;
+	border-radius: 0.5rem;
+	font-size: 0.5rem;
+	position: relative;
+	top: -0.5rem;
+}
+.gd-div{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	width: 100px;
+	padding: 20px;
+	text-align: center;
+}
+@media (min-width: 960px) {
+	html{
+		margin: 0 20% 0 20%;
+	}
+	.footer ul li {
+		border-top: 0.075rem solid #ebebeb;
+		padding-top: 0.55rem;
+		width: 12%;
+		float: left;
+	}
+}

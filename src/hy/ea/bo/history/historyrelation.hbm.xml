@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.history">
+	<class name="HistoryRelation" table="dt_history_relation">
+		<id length="50" name="Key">
+			<column length="50" name="Key" />
+			<generator class="uuid" />
+		</id>
+		 <property name="ID">
+        	<column name="ID" length="50"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+        <property name="organizationID">
+        	<column name="organizationID" length="50"/>
+        </property>
+         <property name="cashierBillsID">
+        	<column name="cashierBillsID" length="50"/>
+        </property>
+        <property name="archivesNum">
+			<column length="50" name="archivesNum" />
+		</property>
+         <property name="archivesDate">
+			<column  name="archivesDate" />
+		</property>
+		<property name="deparchivesNum">
+			<column length="50" name="deparchivesNum" />
+		</property>
+         <property name="deparchivesDate">
+			<column  name="deparchivesDate" />
+		</property>
+       </class>
+ </hibernate-mapping>

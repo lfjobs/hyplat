@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">          
+<hibernate-mapping package="hy.ea.bo.finance.BenDis">
+	<class name="JoinFans"  table="dtJoinFans">
+		<id length="50" name="jfKey">
+			<column length="50" name="jfKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="jfID">
+			<column length="50" name="jfID" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="state">
+			<column length="2" name="state"><comment>00:正常</comment></column>
+		</property>
+		<property name="source">
+			<column length="10" name="source"><comment>来源</comment></column>
+		</property>
+		<property name="zaccount">
+			<column length="20" name="zaccount"><comment>谁的粉丝</comment></column>
+		</property>
+		<property name="faccount">
+			<column length="20" name="faccount"><comment>粉丝 有可能为空，没有注册</comment></column>
+		</property>
+		<property name="zsccId">
+			<column length="50" name="zsccId"><comment>谁的粉丝</comment></column>
+		</property>
+		<property name="fsccId">
+			<column length="50" name="fsccId"><comment>粉丝 有可能为空，没有注册</comment></column>
+		</property>
+		<property name="staffid">
+			<column length="50" name="staffid"><comment>粉丝人员id</comment></column>
+		</property>
+		
+		<property name="fansDate">
+			<column length="50" name="fansDate"><comment>添加粉丝时间</comment></column>
+		</property>
+		<property name="company">
+			<column length="100" name="company"><comment>关注的公司名、称</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

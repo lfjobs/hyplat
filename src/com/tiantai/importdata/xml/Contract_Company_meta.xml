@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<import-mapping>
+	<entity  type="SHDWGL(YX)"  table="dtContactCompany"  className="hy.ea.bo.company.ContactCompany">
+		<field order="0" name="序号"  column=""  property="" comment="序号列不需要导入" needImport="false"/>
+		<field order="1" name="公司名称"  column=""  property="companyName" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="250"></pattern>
+			</validator>			
+		</field>
+		<field order="2" name="公司地址"  column=""  property="address" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="520"></pattern>
+			</validator>			
+		</field>
+		<field order="3" name="具体地址"  column=""  property="companyAddr" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="256"></pattern>
+			</validator>			
+		</field>
+		<field order="4" name="公司电话"  column=""  property="companyTel" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="250"></pattern>
+			</validator>			
+		</field>
+		<field order="5" name="负责人"  column=""  property="cresponsible" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="250"></pattern>
+			</validator>			
+		</field>
+		<field order="6" name="负责人电话"  column=""  property="responsibleTel" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="250"></pattern>
+			</validator>			
+		</field>
+		<field order="7" name="经营范围"  column=""  property="dealIn" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="256"></pattern>
+			</validator>			
+		</field>
+		<field order="8" name="行业类别"  column=""  property="industryType" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="256"></pattern>
+			</validator>			
+		</field>
+		<tableField name="主键"  column=""  property="ccompanyKey" comment="">
+			<generator type="uuid" />
+		</tableField>
+		<tableField name="系统ID"  column=""  property="ccompanyID" comment="">
+			<generator type="sysid" prefix="contactCompany"/>
+		</tableField>		
+	</entity>
+</import-mapping>

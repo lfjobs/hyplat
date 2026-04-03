@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package strict-method-invocation="false" name="extralflow-ntoken" namespace="/ea/extralflow" extends="struts-default">
+		<action name="ea_*" class="hy.ea.office.action.ExtralFlowAction" method="{1}">			
+			<result name="toFrameExtral">/page/ea/main/office_ea/extralDoc/extralFrame.jsp</result>
+		    <result name="draft">/page/ea/main/office_ea/extralDoc/extralRecieveList.jsp</result>
+		    <result name="dealed">/page/ea/main/office_ea/extralDoc/dealedList.jsp</result>
+		    <result name="examine">/page/ea/main/office_ea/extralDoc/auditList.jsp</result>
+		    <result name="seal">/page/ea/main/office_ea/extralDoc/sealList.jsp</result>
+		    <result name="completeaudit">/page/ea/main/office_ea/extralDoc/completeAuditList.jsp</result>
+		    <result name="completeseal">/page/ea/main/office_ea/extralDoc/completeSealList.jsp</result>
+		    <result name="settings">/page/ea/main/office_ea/extralDoc/settings.jsp</result>
+		    <result name="formallist">/page/ea/main/office_ea/corporationcode/stamp_jqm_cstaffs.jsp</result>
+		    <result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="extralflow-jsonajax" namespace="/ea/extralflow" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.ExtralFlowAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,47 @@
+* {
+	FONT-SIZE: 12px
+}
+BODY {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #e9e5e6; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: "ËÎÌו", Arial, Helvetica, sans-serif; COLOR: #666666; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+
+
+
+.logo {
+	width:781px; margin:auto; height:80px; margin-top:80px; text-align:left;
+}
+
+
+.main {
+	BACKGROUND-IMAGE: url(bg_03.gif); BACKGROUND-REPEAT: no-repeat; HEIGHT: 424px; width:781px; margin:auto;
+}
+
+.shipin {
+	width:233px; height:177px; margin-top:140px; margin-left:95px; float:left
+}
+
+.denglu {
+	width:200px; height:180px; margin-top:140px; margin-left:123px; float:left
+}
+
+
+.ziti {
+    HEIGHT: 30px; COLOR: #ff9900; width:68px; text-align:right; padding-right:2px;
+}
+
+
+
+
+.inputtxt {
+	BORDER: #c0c0c0 1px solid; width:120px;
+}
+.inputtxtcode {
+	BORDER: #c0c0c0 1px solid; width:50px;
+}
+
+A {
+	COLOR: red
+}
+.notice {
+	TEXT-ALIGN: center; LINE-HEIGHT: 26px; MARGIN: 0px auto; WIDTH: 781px; padding-top:10px;
+}

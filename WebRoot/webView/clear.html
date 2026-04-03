@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 微信 JS-SDK 如果不需要兼容小程序，则无需引用此 JS 文件。 -->  
+		<!-- <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.5.0.js"></script>  -->
+		<script src="jweixin-1.5.0.js"></script>
+		<!-- uni 的 SDK，必须引用。 -->  
+		<!-- <script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script> -->
+		<script src="uni.webview.1.5.2.js"></script>
+		
+		<title>退出登录</title>
+	</head>
+	<body>
+		<a href="#" id="claer">claer</a>
+		<br>
+		<a href="#" id="claerAll">claerAll</a>
+		<div style="width: 100%;line-height: 80vh;text-align: center;">
+			<a href="#" id="loginAgain">退出成功,请重新登录</a>
+		</div>
+		
+		<!-- <a href="#" id="btnNavIndex">登陆成功，如未跳转请点击</a> -->
+		<!-- <button id="btnNavIndex">登陆成功，如未跳转请点击</button> -->
+		<!-- <button id="btnNavLogin">Login</button> -->
+		<script>
+			//当前环境检测
+			document.addEventListener('UniAppJSBridgeReady', function() {
+				uni.getEnv(function(res) {
+					console.log('uni当前环境：' + JSON.stringify(res));
+					document.getElementById('claer').innerHTML = JSON.stringify(res);
+				})
+			})
+		</script>
+	</body>
+</html>

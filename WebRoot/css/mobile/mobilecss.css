@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+/* CSS Document */
+body {
+	font-size: 12px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+
+/* 定义有序列表的样式 */
+ul,li{
+	list-style-type:none;
+}
+
+a:link,a:visited,a:active {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:active {
+	color: #002f76;
+	font-weight: bold;
+}
+
+.bannb_01 {
+	background: url(../../images/mobile/dh_01bg.gif) repeat-x;
+	height: 27px;
+	width: 320;
+}
+
+.bannb_02 {
+	background: url(../../images/mobile/dh_02bg.gif) repeat-x;
+	height: 28px;
+	width: 320px;
+	color: #15448C;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+.txt01 {
+	color:#1E5494;
+	font-size:12px;
+	font-weight:bolder;
+    line-height:22px;
+	}
+.bannb_03 {
+	background: url(../../images/mobile/dh_03bg.gif) repeat-x;
+	height: 26px;
+	width: 320px;
+}
+
+.daohang {
+	width: 320px;
+	margin: 5px 0 0 0px;
+	float: left;
+	line-height: 20px;
+}
+
+.daohang ul {
+	margin: 0;
+	padding: 0;
+	line-height: 20px;
+}
+
+.li_zj {
+	background: url(../../images/mobile/r_4_07.gif) no-repeat;
+	width: 2px;
+	height: 14px;
+}
+
+.daohang ul li {
+	float: left;
+	margin-left: 5px;
+}
+
+.daohang ul li a {
+	line-height: 20px;
+	white-space: nowrap;
+	text-decoration: none;
+}
+
+.daohang ul li a:hover {
+	color: #002f76;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+.caidan {
+	width: 320px;
+	margin: 5px 0 0 0px;
+	float: left;
+	line-height: 20px;
+}
+
+.caidan ul {
+	margin: 0;
+	padding: 0;
+	line-height: 20px;
+}
+
+.li_caidan {
+	background: url(../../images/mobile/r_4_07.gif) no-repeat;
+	width: 2px;
+	height: 14px;
+	padding: 0px 3px;
+}
+
+.caidan ul li {
+	float: left;
+	margin-left: 6px;
+}
+
+.li_tianjia {
+	background: url(../../images/mobile/add.png) no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+.li_xiugai {
+	background: url(../../images/mobile/edit.png) no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+.li_shanchu {
+	background: url(../../images/mobile/close.png) no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+.td_bg01 {
+	height: 26px;
+	background-color: #ffffff;
+}
+
+.td_bg01 td {
+	border-top: 1px dotted #DDDDDD;
+	border-bottom: 1px dotted #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+}
+
+.td_bg02 {
+	height: 26px;
+	border-top: 1px dotted #DDDDDD;
+	background-color: #F4FFEF;
+	border-bottom: 1px dotted #DDDDDD;
+}
+
+.td_bg02 td {
+	border-bottom: 1px dotted #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+}
+
+.input {
+	border: 1px solid #a8c7ce;
+}

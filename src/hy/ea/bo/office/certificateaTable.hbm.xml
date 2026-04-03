@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CertificateaTable" table="dt_car_CertificateaTable">
+		<id length="50" name="certifikey">
+			<column length="50" name="certifikey" />
+			<generator class="uuid" />
+		</id>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="certifiID">
+			<column length="50" name="certifiID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="certificateaName">
+			<column length="50" name="certificateaName"/>
+		</property>
+		<property name="receivedate">
+			<column name="receivedate" />
+		</property>
+		<property name="effectivedate">
+			<column name="effectivedate" />
+		</property>
+		<property  name="certificateaNumber">
+			<column length="50" name="certificateaNumber" />
+		</property>
+		<property  name="giveorgan">
+			<column length="50" name="giveorgan" />
+		</property>
+		<property  name="certificateaISBN">
+			<column length="50" name="certificateaISBN" />
+		</property>
+		<property  name="copies">
+			<column length="50" name="copies" />
+		</property>
+		<property  name="verifierPeople">
+			<column length="50" name="verifierPeople" />
+		</property>
+		<property  name="engineNum">
+			<column length="50" name="engineNum" />
+		</property>
+		<property  name="frameNumber">
+			<column length="50" name="frameNumber" />
+		</property>
+		<property name="carPeople">
+			<column length="250" name="carPeople"/>
+		</property>
+		<property  name="carNum">
+			<column length="250" name="carNum" />
+		</property>
+		<property  name="carType">
+			<column length="50" name="carType" />
+		</property>
+	</class>
+</hibernate-mapping>

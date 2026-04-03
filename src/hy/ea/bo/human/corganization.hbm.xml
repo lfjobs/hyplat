@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="COrganization" table="dtCOrganization">
+		<id length="50" name="organizationKey">
+			<column length="50" name="organizationKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true" />
+		</property>
+		<property name="organizationName">
+			<column length="250" name="organizationName"
+				not-null="true" />
+		</property>
+		<property name="organizationNumber">
+			<column length="5" name="organizationNumber"
+				not-null="true" />
+		</property>
+		<property name="organizationPID">
+			<column length="50" name="organizationPID" not-null="true" />
+		</property>
+		<property name="organizationUrl">
+			<column length="250" name="organizationUrl"  />
+		</property>
+		<property name="organizationManager">
+			<column length="250" name="organizationManager" />
+		</property>
+		<property name="organizationPhone">
+			<column length="250" name="organizationPhone" />
+		</property>
+		<property name="Status">
+			<column length="2" name="Status" />
+		</property>
+		<property name="organizationDesc">
+			<column length="256" name="organizationDesc" />
+		</property>
+		<property name="organizationCreateDate">
+			<column name="organizationCreateDate"  />
+		</property>
+		<property name="ocode">
+			<column name="ocode"  />
+		</property>
+		<property name="opostCode">
+			<column name="opostCode"  />
+		</property>
+		<property name="opostName">
+			<column name="opostName"  />
+		</property>
+		<property name="odutiesName">
+			<column name="odutiesName"  />
+		</property>
+		<property name="opostRequirements">
+			<column name="opostRequirements"  />
+		</property>
+		<property name="ojobLocation">
+			<column name="ojobLocation" />
+		</property>
+		<property name="odutiesID">
+			<column name="odutiesID" />
+		</property>
+		<property  name="photoUrl">
+			<column length="256" name="photoUrl" />
+		</property>
+		<property  name="orgUrl">
+			<column length="256" name="orgUrl" />
+		</property>
+		<property  name="isWfj">
+			<column length="5" name="isWfj" />
+		</property>
+		<property  name="storageWFJ">
+			<column length="5" name="storageWFJ" /> 
+		</property>
+        <property  name="organizationLevel">
+            <column length="5" name="organizationLevel" />
+        </property>
+
+	</class>
+</hibernate-mapping>

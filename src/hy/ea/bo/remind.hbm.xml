@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="Remind" table="dtRemind">
+		<id length="50" name="remindKey">
+			<column length="50" name="remindKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="remindID">
+			<column length="50" name="remindID" />
+		</property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+         <property name="organizationID">
+        	<column name="organizationID" length="50"/>
+        </property>
+        <property name="circularType">
+			<column length="2" name="circularType" />
+		</property>
+        <property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="staffName">
+			<column name="staffName" length="250" />
+		</property>
+		<property name="circularTitle">
+			<column length="100" name="circularTitle" />
+		</property>
+		<property name="circularText">
+			<column length="1000" name="circularText" />
+		</property>
+		<property name="urlType">
+			<column length="50" name="urlType" />
+		</property>
+		<property name="detailedurl">
+			<column name="detailedurl" length="500"></column>
+		</property>
+		<property name="receiveDate">
+			<column name="receiveDate" sql-type="Date"></column>
+		</property>
+		<property name="remindType">
+			<column length="2" name="remindType" />
+		</property>
+		<property name="remindStatus">
+			<column length="2" name="remindStatus" />
+		</property>
+		<property name="addDate">
+			<column name="addDate" sql-type="Date"></column>
+		</property>
+	</class>
+</hibernate-mapping>

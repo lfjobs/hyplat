@@ -1,0 +1,161 @@
+@charset 'utf-8';
+
+.clearfix{
+    clear: both;
+}
+
+header{
+    width: 100%;
+    height: 45px;
+    /*position: fixed;*/
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #c6c6c6;
+    z-index: 9;
+}
+header ul{
+    padding: 0;
+    height: 100%;
+}
+header ul li{
+    float: left;
+    text-align: center;
+}
+header ul li:nth-child(2){
+    font-size: 5vw;
+}
+header ul li img{
+    width: 35%;
+    margin-top: 1rem;
+}
+.bill-de_head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+.bill-de_head div{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+.bill-de_head div img{
+    width: 100%;
+    height: 100%;
+}
+.bill-de_head span{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.bill-de_mil{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+.bill-de_mil p{
+    font-size: 31px;
+    word-wrap: break-word;
+}
+.bill-de_mil h5{
+    font-size: 15px;
+    padding-top: 5px;
+}
+.bill-de_mil2{
+    border-bottom: 1px solid #ddd;
+}
+.bill-de_mil2 li{
+    display: flex;
+    margin: 20px 0;
+}
+.bill-de_mil2 li p:nth-child(1){
+    width: 25%;
+    font-size: 16px;
+}
+.bill-de_mil2 li p:nth-child(2){
+    font-size: 16px;
+    width: 75%;
+    word-wrap: break-word;
+}
+.bill-de_mil2 li p span{
+    margin-left: 10px;
+}
+/*--bill-details end--*/
+
+/*--convert-bill--*/
+.con-bill_mil li{
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+}
+.con-bill_mil li p{
+    width: 100%;
+    font-size: 1.4rem;
+    color: #afacac;
+}
+.con-bill_mil li .con-bill_head{
+   width: 47px;
+    height: 47px;
+    /* border: 1px solid #ddd; */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.con-bill_mil li .con-bill_head img{
+    width: 100%;
+    height: 100%;
+}
+.con-bill_txt{
+    width: 50%;
+}
+.con-bill_txt h3{
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+}
+.zj{
+	font-size: 1.4rem;
+    line-height: 1.5;
+    color: #afacac;
+}
+.con-bill_txt p{
+    width: 100% !important;
+    font-size: 15px;
+    color: #666 !important;
+}
+
+#head_img{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+#head_img2{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+

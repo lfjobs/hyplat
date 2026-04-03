@@ -1,0 +1,224 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    font-size: 1rem;
+}
+body{margin:0 auto; background-color: #fff;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; color:#666; font-family:'微软雅黑';}
+img{border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #666;}
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+/*公共样式*/
+
+.clearfix{
+    clear: both;
+}
+header{
+    width: 100%;
+    height: 45px;
+    /*position: fixed;*/
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #c6c6c6;
+    z-index: 9;
+}
+header ul{
+    padding: 0;
+    height: 100%;
+}
+header ul li{
+    float: left;
+    text-align: center;
+}
+header ul li:nth-child(2){
+    font-size: 5vw;
+}
+header ul li img{
+    width: 35%;
+    margin-top: 1rem;
+}
+
+
+/*--friend-ranking 8.2--*/
+.frid_bg{
+    position: relative;
+    z-index: 2;
+}
+.frid_h3{
+    width: 5rem;
+    height: 3rem;
+    text-align: center;
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    margin-left: -2.5rem;
+}
+.frid_h3 a{
+    color: #e5593f;
+}
+.frid_text_{
+    width: 100%;
+    height: 70%;
+    background: #FFCC0C;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    overflow: auto;
+}
+.frid_text{
+    width: 88%;
+    height: 52%;
+    /* background: #FFCC0C; */
+    position: absolute;
+    border-radius: 5px;
+    bottom: 0;
+    left: 6%;
+    z-index: 2;
+    overflow: auto;
+}
+.frid_text table{
+    width: 100%;
+    background: #fff;
+    border-collapse: collapse;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.frid_text table tr{
+    border-top: none;
+}
+.frid_text table tr td{
+    border: 1px solid #c6c6c6;
+}
+.frid_text table tr td:nth-child(1){
+    width: 22%;
+    text-align: center;
+    border-left: none;
+    border-top: none;
+	border-right: none;
+    position: relative;
+    color: #000;
+}
+.frid_text table tr td:nth-child(2){
+    width: 50%;
+    text-align: center;
+    position: relative;
+    border-top: none;
+}
+.frid_text table tr td:nth-child(2) p{
+    max-width: 65%;
+    padding-left: 34%;
+    text-align: left;
+    text-indent: 0.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+}
+.frid_text table tr td:nth-child(3){
+    width: 25%;
+    text-align: center;
+    border-right: none;
+    border-top: none;
+}
+.frid_text table tr:nth-child(1) td:nth-child(3){
+    width: 25%;
+    color: #ffcc0c;
+}
+.frid_text table tr:nth-child(2) td:nth-child(3){
+    color: #c5c8d7;
+}
+.frid_text table tr:nth-child(3) td:nth-child(3){
+    color: #b07b82;
+}
+.frid_head{
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    border-radius: 50%;
+}
+.frid_head img{
+    width: 100%;
+    height: 100%;
+}
+.frid_img2{
+    position: absolute;
+    top: 34.5%;
+    width: 92%;
+    left: 4%;
+    z-index: 5;
+}
+
+.frid_img3{
+    width: 86%;
+    position: absolute;
+    top: 35%;
+    left: 7%;
+    z-index: 4;
+}
+#frid_tr{
+    height: 20px;
+    width: 100%;
+    background: #FFCC0C;
+}
+#frid_tr td{
+    border: none;
+    height: 20px !important;
+}
+::-webkit-scrollbar {
+    width:0;
+}
+
+/*--8.22--*/
+.frid_text_ #head{
+    position: absolute;
+    top: 35%;
+    margin: 0 auto;
+    width: 88%;
+    height: 50px;
+    background: #fff;
+    left: 6%;
+    overflow:hidden;
+    border-bottom:1px solid #c6c6c6;
+        z-index: 3;
+}
+.frid_text_ #head li{
+	float:left;
+	line-height:50px;
+	text-align:center;
+	border-right:1px solid #c6c6c6;
+	
+}
+.frid_text_ #head li:nth-child(1){
+	width:22.5%;
+}
+.frid_text_ #head li:nth-child(2){
+	width:51.5%;
+}
+.frid_text_ #head li:nth-child(3){
+	width:25%;
+	border-right:none;
+}
+@media (max-width: 374px){
+	.frid_text table tr td:nth-child(1) {
+	    width: 23%;
+	   
+	}
+	.frid_text table tr td:nth-child(2) {
+	    width: 51.5%;
+	}
+}
+/*--friend-ranking end--*/

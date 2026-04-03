@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human">
+    <class name="COSDimissionStaff" table="dtCOSDimissionStaff">
+        <id name="dimissionStaffKey" length="50" >
+        	<column name="dimissionStaffKey" length="50"/>
+        	<generator class="uuid" />
+        </id>
+        <property name="dimissionStaffID">
+        	<column name="dimissionStaffID"  length="50" />
+        </property>
+         <property name="companyID" >
+        	<column name="companyID" length="50"  />
+        </property>
+         <property name="staffID" >
+        	<column name="staffID" length="50"  />
+        </property>
+         <property name="dimissionDate" >
+        	<column name="dimissionDate"  />
+        </property>
+         <property name="dimissionCause" >
+        	<column name="dimissionCause" length="250"  />
+        </property>
+         <property name="issued" >
+        	<column name="issued" length="250"  />
+        </property>
+        <property name="dimissionStatus" >
+        	<column name="dimissionStatus" length="250"  />
+        </property>
+        <property name="handover" >
+            <column name="handover" length="250"  />
+        </property>
+        <property name="contractType" >
+            <column name="contractType" length="250"  />
+        </property>
+        <property name="dimissionStatusName" >
+            <column name="dimissionStatusName" length="250"  />
+        </property>
+        <property name="createDate">
+            <column name="CREATEDATE" length="250" />
+        </property>
+    </class>
+</hibernate-mapping>

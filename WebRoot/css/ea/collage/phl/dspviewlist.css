@@ -1,0 +1,474 @@
+.fl {
+	float: left
+}
+body{
+background: #ffffff;
+}
+.fr {
+	float: right
+}
+
+.content section.box {
+	position: relative;
+	height: 100vh;
+	overflow-y: hidden;
+	display: flex;
+	align-items: center
+}
+.content section.box{
+	background-color: #000;
+}
+.content section.box .nobox {
+	z-index: 10;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0);
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: -23%
+}
+.content section.box .player{
+	/*position: relative;*/
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+}
+img.video-img{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	z-index:0;
+}
+.content section.box .player video {
+	width: 100%;
+	z-index: 0;
+	object-fit:fill;
+}
+
+.content section.box .div-play {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -1.625rem;
+	margin-top: -1.625rem;
+	width: 3.25rem;
+	height: 3.25rem
+}
+.div-iosimg{
+	/*border-radius: 50%;*/
+}
+.content section.box .div-play img {
+	width: 100%
+}
+
+.content section.box .div-xiazai {
+	z-index: 20;
+	padding: .45rem 4%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 92%;
+	background-color: #373737
+}
+
+.content section.box .div-xiazai div:first-of-type {
+	padding-right: .625rem;
+	float: left
+}
+
+.content section.box .div-xiazai div:first-of-type img {
+	width: 2.1rem
+}
+
+.content section.box .div-xiazai div:nth-of-type(2) {
+	float: left
+}
+
+.content section.box .div-xiazai div:nth-of-type(2) p:first-of-type {
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .9rem;
+	color: #fff
+}
+
+.content section.box .div-xiazai div:nth-of-type(2) p:last-of-type {
+	height: .9rem;
+	line-height: .9rem;
+	font-size: .6rem;
+	color: #fff
+}
+
+.content section.box .div-xiazai div:last-of-type {
+	margin-top: .375rem;
+	float: right;
+	width: 3.625rem;
+	text-align: center;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: .55rem;
+	color: #222;
+	background-color: #fff;
+	border-radius: 1rem
+}
+
+.content section.box .bottom {
+	padding-left: .5rem;
+	position: absolute;
+	bottom: .5rem;
+	cursor: pointer;
+	z-index: 999;
+}
+
+.content section.box .bottom div:first-of-type {
+	width: 5.65rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 0.2rem!important;
+	cursor: pointer;
+}
+
+.content section.box .bottom div:first-of-type p:first-of-type {
+	float: left;
+	height: 1.575rem;
+	line-height: 1.575rem;
+	display: flex;
+	align-items: center;
+	padding: 0 .05rem 0 .3rem
+}
+
+.content section.box .bottom div:first-of-type p:first-of-type img {
+	width: .95rem;
+	margin-top:-0.2rem;
+}
+
+.content section.box .bottom div:first-of-type p:last-of-type {
+	float: left;
+	height: 1.575rem;
+	line-height: 1.575rem;
+	font-size: .55rem;
+	color: #fff
+}
+
+.content section.box .bottom div:last-of-type p:first-of-type {
+	height: 1.425rem;
+	line-height: 1.425rem;
+	font-size: .75rem;
+	color: #fff
+}
+
+.content section.box .bottom div:last-of-type p:last-of-type {
+	height: 1.375rem;
+	line-height: 1.375rem;
+	font-size: .65rem;
+	color: #fff
+}
+
+.content section.box .div-right {
+	padding-right: .375rem;
+	position: absolute;
+	right: 0;
+	bottom: .5rem;
+}
+
+.content section.box .div-right .div-01 {
+	text-align: center;
+	margin-bottom: 1.5rem;
+	width: 2rem;
+	height: 2rem;
+}
+.content section.box .div-right .div-01 .div-box{
+	position: relative;
+	width: 2rem;
+	height: 2rem;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.content section.box .div-right .div-01 .div-box img{
+	width: 2rem;
+	position: absolute;
+	left: 0;
+}
+.content section.box .div-right .div-01 .div-box img.imgtop{
+	top: -50%;
+}
+.content section.box .div-right .div-01 .div-box img.imgleft{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+}
+.content section.box .div-right .div-01 div.active img:first-of-type {
+	display: none
+}
+
+.content section.box .div-right .div-01 div.active img:last-of-type {
+	display: inline-block!important
+}
+
+.content section.box .div-right .div-01 div.div-img2 {
+	position: absolute;
+	top: 12.6%;
+	left: 0%;
+	width: 2rem;
+	text-align: center;
+}
+
+.content section.box .div-right .div-01 div.div-img2 img {
+	width: 1rem;
+	height: 1rem;
+	vertical-align: top;
+}
+
+.content section.box .div-right .div-01 div.div-img2 img:last-of-type {
+	display: none
+}
+
+.content section.box .div-right .div-02 {
+	padding-bottom: .75rem;
+	text-align: center
+}
+
+.content section.box .div-right .div-02 div.active img:first-of-type {
+	display: none
+}
+
+.content section.box .div-right .div-02 div.active img:last-of-type {
+	display: inline-block!important
+}
+
+.content section.box .div-right .div-02 div img {
+	width: 1.55rem;
+	height: 1.3rem
+}
+
+.content section.box .div-right .div-02 div img:last-of-type {
+	display: none
+}
+
+.content section.box .div-right .div-02 p {
+	height: 1.65rem;
+	line-height: 1.65rem;
+	font-size: .7rem;
+	color: #fff
+}
+
+.content section.box .div-right .div-03 {
+	padding-bottom: .75rem;
+	text-align: center
+}
+
+.content section.box .div-right .div-03 img {
+	width: 1.55rem
+}
+
+.content section.box .div-right .div-03 p {
+	height: 1.65rem;
+	line-height: 1.65rem;
+	font-size: .65rem;
+	color: #fff
+}
+
+.content section.box .div-right .div-04 {
+	padding-bottom: .75rem;
+	text-align: center;
+	cursor: pointer;
+}
+.content section.box .div-right .div-05 {
+	padding-bottom: .75rem;
+	text-align: center;
+	cursor: pointer;
+	z-index: 99999;
+}
+.content section.box .div-right .div-05 img {
+	width: 1.7rem
+}
+.content section.box .div-right .div-04 img {
+	width: 1.55rem
+}
+
+.content section.box .div-right .div-04 p {
+	height: 1.65rem;
+	line-height: 1.65rem;
+	font-size: .65rem;
+	color: #fff
+}
+
+.content .gengduo {
+	padding: 0 .5rem;
+}
+
+.content .gengduo>p {
+	height: 2.3rem;
+	line-height: 2.3rem;
+	font-size: .65rem;
+	color: #222
+}
+
+.content .gengduo ul li {
+	position: relative;
+	float: left;
+	width: 49.2%;
+	height: 11rem;
+	display: flex;
+	align-items: center;
+	/*background-color: #000;*/
+	overflow-y: hidden;
+	margin-bottom: 0.25rem;
+}
+
+.content .gengduo ul li img {
+	width: 100%
+}
+
+.content .gengduo ul li div {
+	position: absolute;
+	bottom: 3.5%;
+	left: 2%
+}
+
+.content .gengduo ul li div p {
+	float: left;
+	height: 1rem;
+	line-height: 1rem
+}
+
+.content .gengduo ul li div p:first-of-type {
+	display: flex;
+	align-items: center;
+	margin-right: .2rem
+}
+
+.content .gengduo ul li div p:first-of-type img {
+	width: .62rem
+}
+
+.content .gengduo ul li div p:last-of-type {
+	font-size: .55rem;
+	color: #fefefe
+}
+
+.content .gengduo ul li:nth-of-type(2n) {
+	float: right
+}
+
+.body-fenxiang {
+	overflow-y: hidden
+}
+
+.fenxiang {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0)
+}
+
+.fenxiang .box {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background-color: #221e1b;
+	border-top-left-radius: .8rem;
+	border-top-right-radius: .8rem
+}
+
+.fenxiang .box .fxd {
+	height: 3.1rem;
+	line-height: 3.1rem;
+	text-align: center;
+	font-size: .7rem;
+	color: #fefefe
+}
+
+.fenxiang .box ul {
+	padding-bottom: .625rem
+}
+
+.fenxiang .box ul li {
+	text-align: center;
+	width: 25%;
+	float: left
+}
+
+.fenxiang .box ul li img {
+	width: 53%
+}
+
+.fenxiang .box ul li p {
+	height: 1.7rem;
+	line-height: 1.7rem;
+	font-size: .6rem;
+	color: #fefefe
+}
+
+.fenxiang .box .qx {
+	text-align: center;
+	background-color: #545454;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: .65rem;
+	color: #fefefe
+}
+
+
+ /*会员中心弹窗*/
+.div-list {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .9);
+	z-index: 99;
+}
+
+.div-list .box ul {
+	padding-top: 35%;
+	float: right;
+	padding-right: 1rem
+}
+
+.div-list .box ul li {
+	padding-top: .25rem;
+	text-align: center
+}
+
+.div-list .box ul li div img {
+	width: 2.2rem
+}
+
+.div-list .box ul li p {
+	height: 2rem;
+	line-height: 2rem;
+	font-size: .6rem;
+	color: #fff
+}
+.content .fh{
+	margin-bottom: -1.6rem;
+	position: relative;
+	z-index: 999;
+	width: 1rem;
+	margin-left: 0.5rem;
+
+}
+
+.content .fh img{
+
+	width: 0.5rem;
+
+}
+
+@media (min-width: 960px) {
+
+	html {
+
+		margin: 0 20% 0 20%;
+	}
+
+	.content{
+		width:60%;
+	}
+}

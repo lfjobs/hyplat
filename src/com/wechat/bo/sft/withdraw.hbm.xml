@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="Withdraw" table="dt_sft_withdraw">
+		<comment>提现信息</comment>
+		<id length="50" name="wdkey">
+			<column length="50" name="wdkey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="wdid">
+			<column length="50" name="wdid" ><comment>业务主键</comment></column>
+		</property>
+		<property name="sub_mchid">
+			<column length="30" name="sub_mchid" ><comment>业务主键</comment></column>
+		</property>
+		<property name="out_request_no">
+			<column  name="out_request_no" length="32"><comment>商户提现单号 </comment></column>
+		</property>
+		<property name="amount">
+			<column length="10" name="amount" ><comment>提现金额</comment></column>
+		</property>
+		<property name="remark">
+			<column length="255" name="remark" ><comment>备注</comment></column>
+		</property>
+		<property name="bank_memo">
+			<column length="32" name="bank_memo" ><comment>银行附言</comment></column>
+		</property>
+		<property name="withdraw_id">
+			<column length="128" name="withdraw_id" ><comment>由微信支付返回的申请单号</comment></column>
+		</property>
+		<property name="status">
+			<column length="16" name="status" ><comment>预约提现单状态</comment></column>
+		</property>
+		<property name="create_time">
+			<column length="29" name="create_time" ><comment>提交预约时间</comment></column>
+		</property>
+		<property name="update_time">
+			<column length="29" name="update_time" ><comment>提现状态更新时间</comment></column>
+		</property>
+		<property name="reason">
+			<column length="255" name="reason" ><comment>失败原因</comment></column>
+		</property>
+		<property name="account_number">
+			<column length="4" name="account_number" ><comment>入账银行账号后四位</comment></column>
+		</property>
+		<property name="account_bank">
+			<column length="10" name="account_bank" ><comment>入账银行</comment></column>
+		</property>
+		<property name="sccid">
+			<column length="50" name="sccid" ><comment>操作人</comment></column>
+		</property>
+		<property name="oprdate">
+			<column  name="oprdate" ><comment>操作时间</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

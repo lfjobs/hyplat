@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="Document" table="DT_OA_DOCUMENT">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="255" />
+		</property>
+		<property name="docNum" type="java.lang.String">
+			<column name="docNum" length="36" />
+		</property>
+		<property name="formalNum" type="java.lang.String">
+			<column name="formalNum" length="200" />
+		</property>
+		<property name="numTime" type="java.lang.String">
+			<column name="numTime" length="36" />
+		</property>
+		<property name="numWord" type="java.lang.String">
+			<column name="numWord" length="36" />
+		</property>
+		<property name="numCode" type="java.lang.String">
+			<column name="numCode" length="36" />
+		</property>
+		<property name="docName" type="java.lang.String">
+			<column name="docName" length="36" />
+		</property>
+		<property name="title" type="java.lang.String">
+			<column name="title" length="500" />
+		</property>
+		<property name="theme" type="java.lang.String">
+			<column name="theme" length="100" />
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column name="createTime" length="7" />
+		</property>
+		<property name="updateTime" type="java.util.Date">
+			<column name="updateTime" length="7" />
+		</property>
+		<property name="passTime" type="java.util.Date">
+			<column name="passTime" length="7" />
+		</property>
+		<property name="fileType" type="java.lang.String">
+			<column name="fileType" length="1" />
+		</property>
+		<property name="docType" type="java.lang.String">
+			<column name="docType" length="2" />
+		</property>
+		<property name="specificTemplate" type="java.lang.String">
+			<column name="specificTemplate" length="50" />
+		</property>
+		<property name="emergencyType" type="java.lang.String">
+			<column name="emergencyType" length="10" />
+		</property>
+		<property name="haveAttach" type="java.lang.String">
+			<column name="haveAttach" length="1" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="1" />
+		</property>
+		<property name="drafterMessageStatus" type="java.lang.String">
+			<column name="drafterMessageStatus" length="3" />
+		</property>
+		<property name="round" type="java.lang.Long">
+			<column name="round" precision="22" scale="0" />
+		</property>
+		<property name="processInstanceId" type="java.lang.String">
+			<column name="processInstanceId" length="255" />
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50" />
+		</property>
+		<property name="organizationID" type="java.lang.String">
+			<column name="organizationID" length="50" />
+		</property>
+		<property name="deptIDofDrafter" type="java.lang.String">
+			<column name="deptIDofDrafter" length="50" />
+		</property>
+		<property name="drafterID" type="java.lang.String">
+			<column name="drafterID" length="50" />
+		</property>
+		<property name="drafterComment" type="java.lang.String">
+			<column name="drafterComment" length="500" />
+		</property>
+		<property name="commonComment" type="java.lang.String">
+			<column name="commonComment" length="500" />
+		</property>
+		<property name="appendComment" type="java.lang.String">
+			<column name="appendComment" length="500" />
+		</property>
+		<property name="draftTime" type="java.util.Date">
+			<column name="draftTime" length="7" />
+		</property>
+
+		<property name="companyIDofSubscriber"
+			type="java.lang.String">
+			<column name="companyIDofSubscriber" length="50" />
+		</property>
+		<property name="deptIDofSubscriber" type="java.lang.String">
+			<column name="deptIDofSubscriber" length="50" />
+		</property>
+		<property name="subscriberID" type="java.lang.String">
+			<column name="subscriberID" length="50" />
+		</property>
+		<property name="subscriberComment" type="java.lang.String">
+			<column name="subscriberComment" length="200" />
+		</property>
+		<property name="subscribeTime" type="java.util.Date">
+			<column name="subscribeTime" length="7" />
+		</property>
+
+		<property name="companyIDofSealer" type="java.lang.String">
+			<column name="companyIDofSealer" length="50" />
+		</property>
+		<property name="deptIDofSealer" type="java.lang.String">
+			<column name="deptIDofSealer" length="50" />
+		</property>
+		<property name="sealerID" type="java.lang.String">
+			<column name="sealerID" length="50" />
+		</property>
+		<property name="sealerComment" type="java.lang.String">
+			<column name="sealerComment" length="200" />
+		</property>
+		<property name="sealTime" type="java.util.Date">
+			<column name="sealTime" length="7" />
+		</property>
+
+		<property name="companyIDofPublisher" type="java.lang.String">
+			<column name="companyIDofPublisher" length="50" />
+		</property>
+		<property name="deptIDofPublisher" type="java.lang.String">
+			<column name="deptIDofPublisher" length="50" />
+		</property>
+		<property name="publisherID" type="java.lang.String">
+			<column name="publisherID" length="50" />
+		</property>
+		<property name="receiverCompanyID" type="java.lang.String">
+			<column name="receiverCompanyID" length="50" />
+		</property>
+		<property name="receiverDeptID" type="java.lang.String">
+			<column name="dreceiverDeptID" length="50" />
+		</property>
+		<property name="receiverID" type="java.lang.String">
+			<column name="receiverID" length="50" />
+		</property>
+		<property name="publisherComment" type="java.lang.String">
+			<column name="publisherComment" length="200" />
+		</property>
+		<property name="publishTime" type="java.util.Date">
+			<column name="publishTime" length="7" />
+		</property>
+		<property name="readTime" type="java.util.Date">
+			<column name="readTime" length="7" />
+		</property>
+		<property name="guidangTime" type="java.util.Date">
+			<column name="guidangTime" length="7" />
+		</property>
+		<property name="companyIDofSubscriber2"
+			type="java.lang.String">
+			<column name="companyIDofSubscriber2" length="50" />
+		</property>
+		<property name="startValidity" type="java.util.Date">
+			<column name="startValidity" length="7" />
+		</property>
+		<property name="endValidity" type="java.util.Date">
+			<column name="endValidity" length="7" />
+		</property>
+		<property name="deptIDofSubscriber2" type="java.lang.String">
+			<column name="deptIDofSubscriber2" length="50" />
+		</property>
+		<property name="subscriberID2" type="java.lang.String">
+			<column name="subscriberID2" length="50" />
+		</property>
+		<property name="fromMember" type="java.lang.String">
+			<column name="fromMember" length="50" />
+		</property>
+		<property name="social" type="java.lang.String">
+			<column name="social" length="50" />
+		</property>
+		<property name="groupCompanySn" type="java.lang.String">
+			<column name="groupCompanySn" length="50" />
+		</property>
+		<property name="module" type="java.lang.String">
+			<column name="module" length="20" />
+		</property>
+		<property name="tipStatus" type="java.lang.String">
+			<column name="tipStatus" length="4" />
+		</property>
+		<property name="examineResult" type="java.lang.String">
+			<column name="examineResult" length="20" />
+		</property>
+		<property name="partyA" type="java.lang.String">
+			<column name="partyA" length="50" />
+		</property>
+			<property name="partyB" type="java.lang.String">
+			<column name="partyB" length="50" />
+		</property>
+		<property name="partyAName" type="java.lang.String">
+			<column name="partyAName" length="50" />
+		</property>
+		<property name="partyBName" type="java.lang.String">
+			<column name="partyBName" length="50" />
+		</property>
+		
+		<property name="partyAstaff" type="java.lang.String">
+			<column name="partyAstaff" length="50" />
+		</property>
+			<property name="partyBstaff" type="java.lang.String">
+			<column name="partyBstaff" length="50" />
+		</property>
+		<property name="partyAstaffnames" type="java.lang.String">
+			<column name="partyAstaffnames" length="50" />
+		</property>
+			<property name="partyBstaffnames" type="java.lang.String">
+			<column name="partyBstaffnames" length="50" />
+		</property>
+		
+		<property name="staffIdentityCardA" type="java.lang.String">
+			<column name="staffIdentityCardA" length="50" />
+		</property>
+		<property name="staffIdentityCardB" type="java.lang.String">
+			<column name="staffIdentityCardB" length="50" />
+		</property>
+		<property name="projectName" type="java.lang.String">
+			<column name="projectName" length="50" />
+		</property>
+		<property name="journalNum" type="java.lang.String">
+			<column name="journalNum" length="50" />
+		</property>
+		<property name="archiveSite" type="java.lang.String">
+			<column name="archiveSite" length="500" />
+		</property>
+		<property name="archiveCustodian" type="java.lang.String">
+			<column name="archiveCustodian" length="50" />
+		</property>
+		<property name="scene" type="java.lang.String">
+			<column name="scene" length="2" />
+		</property>
+		<property name="applyNo" type="java.lang.String">
+			<column name="applyNo" length="50" />
+		</property>
+		<property name="delstatus" type="java.lang.String">
+			<column name="delstatus" length="2" />
+		</property>
+		<property name="barCode" type="java.lang.String">
+			<column name="barCode" length="13" />
+		</property>
+		<set name="attachFiles" inverse="true" lazy="true"
+			cascade="none">
+			<key>
+				<column name="documentKey" length="50" />
+			</key>
+			<one-to-many class="hy.ea.bo.office.DocumentFileAttach" />
+		</set>
+
+		<set name="subscribers" inverse="true" lazy="true"
+			cascade="all-delete-orphan">
+			<key>
+				<column name="documentKey" length="50" />
+			</key>
+			<one-to-many class="hy.ea.bo.office.DocumentAuditing" />
+		</set>
+
+		<property name="pdfUrl" type="java.lang.String">
+			<column name="pdfUrl" length="250" />
+		</property>
+	</class>
+</hibernate-mapping>

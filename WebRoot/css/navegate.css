@@ -1,0 +1,65 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+}
+
+a:link,a:visited,a:active {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:active {
+	color: #002f76;
+	font-weight: bold;
+}
+
+.roundedCorners {
+	width: 750px;
+	padding: 10px;
+	margin: auto;
+	background-color: #FFF;
+	border: 1px solid #CCE6F1;
+	/* Do rounding (native in Safari, Firefox and Chrome) */
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+.table03 {
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: bold;
+	margin-bottom:5px;
+}
+
+.table03 th {
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: bold;
+}
+
+.table03 td {
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: bold;
+}
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.colors{
+	border-bottom:1px dashed #FF0000;
+	padding:10px 0px;
+}

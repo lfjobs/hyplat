@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN""http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>往来单位管理</title>
+		<!-- 后勤管理 往来关系管理-->
+		<%@ page language="java" pageEncoding="UTF-8"%>
+		<%@ taglib uri="/struts-tags" prefix="s"%>
+		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+		<%
+			String path = request.getContextPath();
+			String basePath = request.getScheme() + "://"
+					+ request.getServerName() + ":" + request.getServerPort()
+					+ path + "/";
+		%>
+		<script src="<%=basePath%>js/jquery.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css"
+			href="<%=basePath%>js/jqModal/css/flexigrid_blue.css" />
+		<link rel="stylesheet" type="text/css"
+			href="<%=basePath%>js/jqModal/css/jqModal_blue.css" />
+		<script type="text/javascript" src="<%=basePath%>js/flexigrid.js"></script>
+		<link href="<%=basePath%>css/ea/validate.css" rel="stylesheet"
+			type="text/css" />
+		<script src="<%=basePath%>js/ea/validate.js" type="text/javascript"></script>
+		<script type="text/javascript" src="<%=basePath%>js/ea/ccodes_add.js"></script>
+		<script type="text/javascript"
+			src="<%=basePath%>js/ea/office_ea/contactcompany/telcontactconnection.js"></script>
+		<script type="text/javascript">
+			var contactConnectionID = '';
+			var companyName = '';
+			var basePath='<%=basePath%>';
+			var search='${search}';
+			var pNumber = 10;
+			var token = 0 ;  
+			var personurl='';
+			var notoken = 0;
+			var retoken=0;
+		</script>
+	</head>
+	<body>
+		<div style="font-size:12px;">
+			<form name="SearchForm" id="SearchForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					查询往来单位
+				</div>
+				<table width="396" id="cataffSearchTable">
+					<tr>
+						<td width="123" align="right">
+							单位名称：
+						</td>
+						<td width="261">
+							<input name="cview.companyName" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							单位责任人：
+						</td>
+						<td>
+							<input name="cview.cresponsible" />
+						</td>
+					</tr>
+					<tr>
+						<td width="123" align="right">
+							单位地址：
+						</td>
+						<td width="261">
+							<input name="cview.companyAddr" />
+						</td>
+					</tr>
+					<tr>
+						<td width="123" align="right">
+							单位往来关系：
+						</td>
+						<td width="261">
+							<s:select list="%{#request.connectionlist}"
+								id="contactConnections" listKey="codeValue"
+								listValue="codeValue" name="cview.contactConnections"
+								theme="simple" headerKey="" headerValue="全部"></s:select>
+						</td>
+					</tr>
+					<tr>
+						<td width="123" align="right">
+							行业类别：
+						</td>
+						<td width="261">
+							<s:select list="%{#request.typelist}" id="industryType"
+								listKey="codeValue" listValue="codeValue"
+								name="cview.industryType" theme="simple" headerKey=""
+								headerValue="全部"></s:select>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="button" class="input-button" id="tosearch"
+								value=" 查询 " />
+							<input name="search" type="hidden" value="search" />
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>电话打出语音查询</title> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="${base}/css/overlayer.css" />
+		<link href="${base}/css/ea/validate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="${base}/css/admin_main.css" />
+		<link rel="stylesheet" type="text/css" href="${base}/js/jqModal/css/flexigrid_blue.css" />
+		<link rel="stylesheet" type="text/css" href="${base}/js/jqModal/css/jqModal_blue.css" />
+
+		<script src="${base}/js/jquery.js" type="text/javascript"></script>
+		<script src="${base}/js/ea/validate.js" type="text/javascript"></script>
+		<script type="text/javascript" src="${base}/js/flexigrid.js"></script>
+		<script type="text/javascript" src="${base}/js/jqModal/jqDnR.js"></script>
+		<script type="text/javascript" src="${base}/js/jqModal/jqModal.js"></script>
+		<script src="${base}/page/ea/main/telrec/js/soundsOut.js" type="text/javascript"></script>
+		<script language="javascript" type="text/javascript" src="${base}/js/My97DatePicker/WdatePicker.js"></script>
+		<script type="text/javascript">
+		 var  basePath='${base}/';           
+         var  pNumber ='${pageNumber}';  
+         var  search='${search}';
+         var  telMessageID = '';
+         var  token=0;
+         var  type = '${type}';
+		</script>
+	</head>
+	<body>
+		<div class="main_main">
+			<table class="JQueryflexme">
+				<thead>
+					<tr class="tablewith">
+						<th width="20">
+							选择
+						</th>
+						<th width="20">
+							序号
+						</th>
+						<th width="60">
+							所属用户
+						</th>
+						<th width="120">
+							客户名称
+						</th>
+						<th width="90">
+							访问电话
+						</th>
+						<th width="140">
+							开始时间
+						</th>
+						<th width="140">
+							结束时间
+						</th>
+						<th width="200">
+							内容
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				    <#list pageForm.list as pre> 
+						<tr id="${pre[0].id}">
+							<td>
+								<input type="radio" name="a" class="JQuerypersonvalue"
+									value="${pre[0].id}" />
+							</td>
+							<td>${pre_index + 1}</td>
+							<td class="customUser" title="${pre[1].staffName }">
+								${pre[1].staffName }
+							</td>
+							<td class="customName" title="${pre[0].visitedUser }">
+								<input type="hidden" value="${pre[0].savePath }" />
+								${pre[0].visitedUser }
+							</td>
+							<td class="customTel">
+								${pre[0].telNumber }
+							</td>
+							<td class="beginTime">
+								${pre[0].beginTime }
+							</td>
+							<td class="endTime">
+								${pre[0].endTime}
+							</td>
+							<td class="content">
+								${pre[0].visitedContent}
+							</td>
+						</tr>
+					</#list>
+				</tbody>
+			</table>
+			<#assign actionPath="ea/tel/tel_soundOutRecords.jspa?">
+		    <#include "/page/ea/main/office_ea/check/page.html"/>
+		</div>
+
+		<!--搜索窗口 -->
+		<div class="jqmWindow" style="width: 460px; right: 25%;; top: 10%"
+			id="jqModelSearch">
+			<form name="postSearchForm" id="postSearchForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					查询信息
+					<div class="close">
+					</div>
+				</div>
+				<table width="450px" id="cataffSearchTable" cellspacing="5">
+					<tr>
+						<td align="right">
+							所属用户:
+						</td>
+						<td>
+							<input name="telOutRecord.user.staffName" id="telNumber" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							被访问电话:
+						</td>
+						<td>
+							<input name="telOutRecord.telNumber" id="telNumber" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							起始时间：
+						</td>
+						<td>
+							<input name="beginDate" id="beginDate" onfocus="date(this)" />
+							到
+							<input name="endDate" id="endDate" onfocus="date(this)" />
+						</td>
+					</tr>
+				</table>
+				<div align="center">
+					<input type="button" class="input-button" id="searchStaff"
+						value="  查询  " />
+					<input name="search" type="hidden" value="search" />
+					<input name="type" type="hidden" value="${type}" />
+				</div>
+			</form>
+		</div>
+		<iframe name="hidden" width="0" height="0"></iframe>
+
+	</body>
+</html>

@@ -1,0 +1,343 @@
+@charset "utf-8";
+
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch; /*兼容ios滑屏卡顿*/
+    -webkit-tap-highlight-color:transparent;/*去除手机浏览器点击时出现背景颜色*/
+}
+body{margin:0 auto;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0 0; font-size:12px; color:#666; font-family:'微软雅黑';outline: none;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none;background: none;  }
+a:active,a:hover { text-decoration: none;background: none; }
+a:focus{ outline: none;background: none;  }
+input{
+    outline: none;
+    -webkit-appearance: none; /*去除系统默认appearance的样式,常用于IOS下移除原生样式*/
+}
+
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
+
+
+/*--查看物流--*/
+.header{
+    border-bottom: 1px solid #ddd;
+}
+.header ul{
+    overflow: hidden;
+}
+.header ul li{
+    float: left;
+    text-align: center;
+    font-size: 0.7rem;
+}
+.header ul li:nth-child(1) img{
+    width: 0.5rem;
+    margin-top: -0.1rem;
+    vertical-align: middle;
+}
+.header ul li:nth-child(3) img{
+    width: 1rem;
+    margin-top: -0.1rem;
+    vertical-align: middle;
+}
+.content_hidden{
+    overflow: hidden;
+}
+.content{
+    overflow: auto;
+}
+.content .left{
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid #ddd;
+    margin: 0.8rem 0.7rem 0.7rem 0.7rem;
+}
+.content .mil{
+    overflow: hidden;
+    border-bottom: 15px solid #ddd;
+}
+.content .left img{
+    width: 100%;
+    height: 100%;
+}
+.content .right{
+    float: left;
+    margin: 0.7rem 0 0 0;
+    line-height: 1.5;
+}
+.content .right h3{
+    font-size: 0.65rem;
+    line-height: 1.8;
+}
+.content .right h3 span{
+    color: #10a650;
+    padding-left: 0.3rem;
+}
+.content .right h4{
+    font-size: 0.58rem;
+    color: #999;
+}
+.content .right h4 .tel{
+    color: #18a1ce;
+}
+
+/*--评价订单--*/
+.evaluate{
+
+}
+.evaluate .txt_con_{
+    position: relative;
+    height: 4rem;
+}
+.evaluate .txt_con{
+    width: 90%;
+    margin-left: 3%;
+    border: none;
+    border-top: 1px solid#ddd;
+    resize: none;
+    text-align: left;
+    padding: 0.3rem;
+    font-size: 0.6rem;
+    position: absolute;
+    z-index: 9;
+    background: none;
+}
+.evaluate .txt_con_ .note{
+    position: absolute;
+    top: 0.3rem;
+    left: 0.8rem;
+    color: #979797;
+    font-size: 0.6rem;
+}
+.eva{
+    padding: 0 0.5rem;
+}
+.eva .btn_{
+    text-align: center;
+}
+.eva #image_box{
+    width: 100%;
+}
+.options_ ul{
+    overflow: hidden;
+    margin: 0 0.5rem;
+    border-top: 1px solid #ddd;
+}
+.options_ ul li{
+    width: 33%;
+    height: 1.8rem;
+    float: left;
+    overflow: hidden;
+}
+.options_ ul li .imge{
+    width: 40%;
+    height: 1.8rem;
+    float: left;
+    text-align: right;
+}
+.options_ ul li .imge img{
+    height: 0.65rem;
+    margin: 0.575rem 0;
+    vertical-align: middle;
+}
+.options_ ul li .imge img:nth-child(1){
+    display: none;
+}
+.options_ ul .active .imge img:nth-child(1){
+    display: inline;
+}
+.options_ ul .active .imge img:nth-child(2){
+    display: none;
+}
+.options_ ul li p{
+    width: 60%;
+    height: 1rem;
+    line-height: 1rem;
+    margin: 0.4rem 0;
+    font-size: 0.6rem;
+    float: left;
+    text-indent: 0.3rem;
+}
+.options_ ul .active p{
+    color: #f23e1b;
+}
+.evaluate_btn{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+.evaluate_btn button{
+    width: 90%;
+    margin: 0.5rem 5%;
+    font-size: 0.65rem;
+    line-height: 1.8rem;
+    background: #ff3716;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.evaluate .grade{
+    border-top: 0.3rem solid #ddd;
+    padding: 0 0.5rem;
+
+
+}
+.evaluate .grade h3{
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding: 0.3rem 0;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+.evaluate .grade ul{
+    margin-bottom: 0.5rem;
+}
+.evaluate .grade ul li{
+    overflow: hidden;
+    padding: 0.1rem 0;
+}
+.evaluate .grade ul li h5{
+    height: 1rem;
+    line-height: 1rem;
+    float: left;
+    font-size: 0.6rem;
+    font-weight: 500;
+}
+.evaluate .grade ul li .star{
+    float: right;
+}
+.evaluate .grade ul li .star img{
+    width: 0.7rem;
+    height: 0.7rem;
+    vertical-align: middle;
+    margin-left: 0.2rem;
+}
+
+
+.shop_mil{
+    overflow: hidden;
+    background: #fff;
+}
+.shop_mil .left{
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid #ddd;
+    margin: 0.5rem;
+}
+.shop_mil .left img{
+    width: 100%;
+    height: 100%;
+}
+.shop_mil .txt{
+    width: 50%;
+    float: left;
+    margin: 0.5rem 0;
+}
+.shop_mil .txt h3{
+    font-size: 0.55rem;
+    line-height: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+.shop_mil .txt h4{
+    font-size: 0.55rem;
+    color: #9a9a9a;
+    line-height: 0.8rem;
+}
+.shop_mil .txt2{
+    width: 17%;
+    float: left;
+    margin: 0.5rem 0;
+    text-align: right;
+}
+.shop_mil .txt2 h3{
+    font-size: 0.5rem;
+    line-height: 0.8rem;
+    color: #f74c31;
+}
+.shop_mil .txt2 h3 span{
+    font-size: 0.6rem;
+}
+.shop_mil .txt2 h4{
+    font-size: 0.5rem;
+    margin-top: 1rem;
+}
+.shop_mil .txt2 h4 span{
+    font-size: 0.6rem;
+}
+.up_pic{
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+.up_pic .btn_{
+    width: 3rem;
+    height: 3rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-top: 0.5rem;
+}
+.up_pic .btn_ img{
+    width: 100%;
+    /*object-fit: cover;*/
+}
+.up_pic .btn_ input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.up_pic .upload_img{
+    width: 3.6rem;
+    height: 3.6rem;
+    overflow: hidden;
+    float: left;
+    margin-right: 0.3rem;
+    position: relative;
+}
+.up_pic .upload_img .img_box{
+    width: 3rem;
+    height: 3rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    overflow: hidden;
+    position: absolute;
+    border: 1px solid #ddd;
+}
+.up_pic .upload_img img{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    z-index: 1;
+}
+.up_pic .upload_img .del_upimg{
+    width: 1rem;
+    height: 1rem;
+    background: url("../../../../images/ea/finance/NewPhoneOrders/del.png") no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    z-index: 1;
+}
+
+
+/*--评价订单 end--*/

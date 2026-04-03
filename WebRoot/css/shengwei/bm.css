@@ -1,0 +1,67 @@
+/*报名选择*/
+.bm_kuang{width:90%; border:1px solid #CCC; margin:auto; background:#FFF; padding-top:10px;} 
+.bm_pic{width:90%; margin:auto; text-align:center;}
+.bm_font{width:80%; margin:auto; height:50px}
+.bm_font_xx{width:180px; float:left; height:20px; font-size:14px; text-align:left; color:#666; padding-top:5px;}
+.bm_font_jg{width:50px; float:right; height:20px; font-size:14px; text-align:right; color:#F30; padding-top:5px;}
+.bm_font_bz{width:100%; float:left; height:16px; font-size:14px;  color:#999; text-align:center;}
+.geduan{width:100%; height:10px;}
+.bm_wz{width:90%; font-size:18px; color:#666; text-indent:2em; line-height:22px; margin:auto; padding-bottom:30px;}
+
+/*报名填写*/
+.bm_tx_kuang{width:90%; border:1px solid #CCC; margin:auto; background:#FFF; padding-top:20px; padding-bottom:20px; border-radius:4px;}
+.bm_tx_bt{width:100%; text-align:center; background:#43ABE1; color:#FFF; font-size:14px; height:25px; padding-top:10px;}
+.bm_tx_zd{width:30%; float:left; text-align:right; font-size:14px; color:#666; height:30px; padding-top:5px;}
+.bm_tx_bd{width:70%; float:left; text-align:left; height:37px;}
+.bm_tx_bd1{width:100%; float:left; text-align:left; height:35px;}
+.bm_tx_zd2{width:30%; float:left; text-align:right; font-size:14px; color:#666; height:43px; padding-top:5px;}
+.bm_tx_bd2{width:70%; float:left; text-align:left; height:150px;}
+.bm_tx_bd_bd{width:80%; font-size:14px; color:#666; height:30px; border:1px solid #CCC; border-radius:0px;}
+.bm_tx_bd_bd2{width:80%; font-size:18px; color:#666; height:120px; border:1px solid #CCC; border-radius:0px;}
+.bm_tx_an{width:100%; height:30px; border-radius:1px; border:0; color:#FFF; font-size:14px; background:url(../../images/shengwei/an_bg.png);cursor:pointer;}
+.bm_tx_fxan{width:100%; height:30px; border-radius:1px; border:0; color:#FFF; font-size:14px; background:url(../../images/shengwei/an_bgfx.png);cursor:pointer;}
+.bm_tx_anbg{width:90%; margin:auto; height:30px}
+.bm_tx_fx{width:48%; float:left;}
+.bm_tx_pyq{width:48%; float:right;}
+.new{ display:none; padding-left:50px;}
+.bm_2{background: black;position: absolute;left: 0;top: 0;width: 100%; height:4500px; z-index: 100;opacity: 0.80;filter: alpha(opacity = 80);}
+.bm_2_con{position:fixed; width:100%; float:left;}
+.bm_2_div{width:100%; float:left;}
+.bm_2_div *{width:100%; float:left; }
+.bm_2_an{color:#000; height:40px; font-size:18px; background:url(../../images/shengwei/an_bg2.png); width:70%; margin-left:50px;}
+
+
+/*客户意见*/
+.yijian_k{width:90%; margin:auto;}
+.went{height:40px; font-size:16px; color:#039;}
+.meit{height:40px; text-indent:2em;}
+.xz_zi{font-size:16px;}
+
+
+/*新闻*/
+
+.new_kuang{margin:auto; width:90%;}
+.new_mt{border:1px solid #CCC; background:#FFF; padding-top:10px; padding-bottom:10px; margin-bottom:10px; text-indent:1em;} 
+.new_an1{float:left; width:48%;}
+.new_an2{float:right; width:48%;}
+.new_bt{width:90%; font-size:24px; color:#F30; text-align:center; padding-top:10px; margin:auto; padding-bottom:10px;}
+.bm_nr{width:90%; font-size:18px; color:#666; text-indent:2em; line-height:22px; margin:auto; padding-bottom:30px;}
+.new_fbt{width:90%; padding-top:10px; margin:auto; padding-bottom:10px;}
+.new_fbt2{float:left; width:50%; font-size:14px; color:#999; text-align:left;}
+
+/*培训*/
+.peixun_kuang{width:95%; margin:auto;}
+.peixun_heng{width:100%; float:left; margin-bottom:10px;}
+.peixun_dandu_l{width:50%; float:left; text-align:center;}
+.peixun_dandu_r{width:50%; float:right; text-align:center;}
+
+/*招聘*/
+.zhaopin_lan{width:90%; margin:auto;}
+.zhaopin_lan_nr{width:40%; float:left; height:24px; background:#F60; color:#FFF; font-size:14px; padding-top:6px; text-align:center;}
+.zhaopin_name{width:40%; float:left; height:30px; color:#09C; font-size:18px;}
+.zhaopin_other{width:30%; float:left; height:30px; color:#999; font-size:14px;}
+.zhaopin_font{width:90%; margin:auto; font-size:12px; text-indent:2em; line-height:20px; color:#666;}
+.zhaopin_biao{width:50%; float:left; height:30px; float:left;}
+.zhaopin_biao_1{width:30%; float:left; height:25px; background:#00AEFF; color:#FFF; text-align:center; padding-top:10px;}
+.zhaopin_biao_2{width:68%;  float:left; height:25px; background:#EEE; padding-top:10px; text-indent:1em; color:#666;}
+	

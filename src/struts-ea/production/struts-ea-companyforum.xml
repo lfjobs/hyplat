@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="companyforum-token" namespace="/ea/companyforum"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.forum.forumAction" method="{1}">
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>	
+			<result name="forumMessage">/page/ea/main/production/cprocedure/forum/companyForum.jsp</result>
+			<result name="myMessage">/page/ea/main/production/cprocedure/forum/cf_myForum.jsp</result>
+			<result name="myAttention">/page/ea/main/production/cprocedure/forum/cf_myAttention.jsp</result>
+			<result name="myFans">/page/ea/main/production/cprocedure/forum/cf_myFans.jsp</result>
+			<result name="otherAttention">/page/ea/main/production/cprocedure/forum/cf_OtherAttention.jsp</result>
+			<result name="otherFans">/page/ea/main/production/cprocedure/forum/cf_OtherFans.jsp</result>
+			<result name="replyParticulars">/page/ea/main/production/cprocedure/forum/cf_reply.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="companyforum-jsonajax" namespace="/ea/companyforum" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.forum.forumAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

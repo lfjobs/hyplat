@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.tiantai.wfj.bo.Pricechange" table="DT_PRICECHANGE" schema="HYPLAT">
+        <id name="pckey">
+            <column name="PCKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="pcid">
+            <column name="PCID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="comId">
+            <column name="COM_ID" sql-type="varchar2(50)" length="50">
+                <comment>公司id</comment>
+            </column>
+        </property>
+        <property name="sqid">
+            <column name="SQID" sql-type="varchar2(50)" length="50">
+                <comment>购物车id</comment>
+            </column>
+        </property>
+        <property name="ppid">
+            <column name="PPID" sql-type="varchar2(50)" length="50">
+                <comment>物品id</comment>
+            </column>
+        </property>
+        <property name="priceid">
+            <column name="PRICEID" sql-type="varchar2(50)" length="50">
+                <comment>原价格id</comment>
+            </column>
+        </property>
+        <property name="efPrice">
+            <column name="EF_PRICE" sql-type="varchar2(50)" length="50">
+                <comment>成本价</comment>
+            </column>
+        </property>
+        <property name="rePrice">
+            <column name="RE_PRICE" sql-type="varchar2(50)" length="50">
+                <comment>售价</comment>
+            </column>
+        </property>
+        <property name="brokerage">
+            <column name="BROKERAGE" sql-type="varchar2(50)" length="50">
+                <comment>业务佣金</comment>
+            </column>
+        </property>
+        <property name="proxySumPrice">
+            <column name="PROXY_SUM_PRICE" sql-type="varchar2(50)" length="50">
+                <comment>代理佣金和</comment>
+            </column>
+        </property>
+        <property name="pricestatus">
+            <column name="PRICESTATUS" sql-type="varchar2(50)" length="50">
+                <comment>价格种类 空或00：零售价 01：批发价 02：活动价 01：vip价格</comment>
+            </column>
+        </property>
+        <property name="sjdate">
+            <column name="SJDATE" sql-type="date">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="staffid">
+            <column name="STAFFID" sql-type="varchar2(50)" length="50">
+                <comment>变价人id</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

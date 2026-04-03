@@ -1,0 +1,173 @@
+html,body{
+    height:100%;
+    overflow:hidden;
+}
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+.sec-hide {
+    background: #f9f9f9;
+    padding-left: 0.5rem;
+    height:50px;
+}
+.content .sec-nav ul li {
+    text-align: center;
+    float: left;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: #958383;
+    padding: 0.1rem 0.4rem 0.1rem 0.3rem;
+    font-weight:bold;
+    margin-left:20px;
+}
+.level-title{
+    height:30px;
+}
+
+.div-level ul {
+    z-index: 9;
+    left: 0;
+    background-color: #fff;
+    height:30px;
+
+}
+.div-level-data ul {
+    margin:10px 0;
+}
+
+.sec-level-list ul li:nth-of-type(1) {
+    width: 30%;
+}
+.sec-level-list ul li:nth-of-type(2) {
+    width: 28%;
+}
+.sec-level-list ul li:nth-of-type(3) {
+    width: 20%;
+}
+.sec-level-list ul li:nth-of-type(4) {
+    width: 22%;
+}
+.sec-level-data ul li:nth-of-type(1) {
+    width: 28%;
+}
+.sec-level-data ul li:nth-of-type(2) {
+    width: 12%;
+}
+.sec-level-data ul li:nth-of-type(3) {
+    width: 24%;
+}
+.sec-level-data ul li:nth-of-type(4) {
+    width: 16%;
+}
+.sec-level-data ul li:nth-of-type(5) {
+    width: 20%;
+}
+.level-title ul li{
+    text-align: left;
+    float:left;
+    color: #177512de;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.div-level-data ul li{
+    width: 20%;
+    text-align: left;
+    float:left;
+    font-size: 15px;
+}
+
+.layui-form-item {
+    margin-top: 20px;
+    width: 80%;
+}
+.layui-btn{
+    width:100%;
+    background-color: #e64d3d;
+    border-top: 0.35rem solid #f8f8f8;
+    height: 53px;
+}
+.div-custom-set{
+    width:100%;
+    margin-bottom:0px;
+    margin-top:10px
+}
+.div-custom-set .layui-inline{
+    margin-bottom:0px
+}
+.div-custom-set .layui-inline .layui-input-inline{
+    width: 100px;
+    float:left;
+    margin-left:10px;
+}
+
+.div-custom-button{
+    width:100%;
+    margin-top:10px;
+    margin-bottom:0px;
+    border-top: 0.025rem solid #eee;
+}
+.div-custom-button .layui-input-block{
+    margin-left:0px;
+    min-height:53px
+}
+.layui-btn-save,.layui-btn-cancel{
+    background-color: #fff;
+    color:#666;
+    width:50%;
+    float:left;
+    margin-left:0 !important;
+    border-top: 0.35rem solid #f8f8f8;
+    height: 53px;
+    display: inline-block;
+    line-height: 38px;
+    padding: 0 18px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.layui-btn-cancel{
+    border-right: 0.025rem solid #eee;
+}
+
+@media screen and (max-width: 450px) {
+    .div-level{
+        padding:0px !important;
+    }
+
+
+}

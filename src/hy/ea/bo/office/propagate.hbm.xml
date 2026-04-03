@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office"> 
+	<class name="Propagate" table="dtPropagate">
+		<id length="50" name="propagateKey">
+			<column length="50" name="propagateKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="propagateID">
+			<column length="50" name="propagateID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="serialNumber">
+			<column length="250" name="serialNumber"/>
+		</property>
+		<property name="startDate">
+			<column  name="startDate" />
+		</property>
+		<property name="endDate">
+			<column  name="endDate" />
+		</property>
+		<property name="netName">
+			<column length="250" name="netName" />
+		</property>
+		<property name="subject">
+			<column length="250" name="subject" />
+		</property>
+		<property name="content">
+			<column length="250" name="content" />
+		</property>
+		<property name="cost">
+			<column length="250" name="cost" />
+		</property>
+		<property name="propagatePerson">
+			<column length="250" name="propagatePerson" />
+		</property>
+		<property name="approvePerson">
+			<column length="250" name="approvePerson" />
+		</property>
+		<property name="executePerson">
+			<column length="250" name="executePerson" />
+		</property> 
+	</class>
+</hibernate-mapping>

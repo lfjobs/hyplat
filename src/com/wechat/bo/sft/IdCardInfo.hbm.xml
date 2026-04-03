@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="IdCardInfo" table="dt_sft_IdCardInfo">
+	<comment>二级商户进件  ——经营者/法人身份证信息  </comment>
+		<id length="50" name="cardKey">
+			<column length="50" name="cardKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="cardId">
+			<column length="50" name="cardId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="id_card_copy">
+			<column length="200" name="id_card_copy" ><comment>身份证人像面照片</comment></column>
+		</property>
+		<property name="id_card_national">
+			<column length="200" name="id_card_national" ><comment>身份证国徽面照片 </comment></column>
+		</property>
+		<property name="id_card_name">
+			<column length="50" name="id_card_name" ><comment>身份证姓名</comment></column>
+		</property>
+		<property name="id_card_number">
+			<column length="50" name="id_card_number" ><comment>身份证号码 </comment></column>
+		</property>
+		<property name="id_card_address">
+			<column length="200" name="id_card_address" ><comment>身份证地址 </comment></column>
+		</property>
+		<property name="id_card_valid_time_begin">
+			<column length="50" name="id_card_valid_time_begin" ><comment>身份证开始时间</comment></column>
+		</property>
+		<property name="id_card_valid_time">
+			<column length="50" name="id_card_valid_time" ><comment>身份证有效期限</comment></column>
+		</property>
+		<property name="legal_tel">
+			<column length="11" name="legal_tel" ><comment>法人手机号</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

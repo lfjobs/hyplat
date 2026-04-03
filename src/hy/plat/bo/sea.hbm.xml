@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.plat.bo">
+	<class name="SEA" table="dtSEA">
+		<id name="eaKey">
+			<column length="50" name="eaKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="eaID">
+			<column length="50" name="eaID" unique="true" not-null="true" />
+		</property>
+		<property name="eaName">
+			<column length="50" name="eaName" not-null="true" />
+		</property>
+		<property name="eaUsegeDays">
+			<column length="2" name="eaUsegeDays" not-null="true" />
+		</property>
+		<property name="eaCreateDate">
+			<column name="eaCreateDate" not-null="true" />
+		</property>
+		<property name="eaUpdateDate">
+			<column name="eaUpdateDate" not-null="true" />
+		</property>
+		<property name="eaTeam">
+			<column length="50" name="eaTeam" not-null="true" />
+		</property>
+		<property name="eaType">
+			<column length="2" name="eaType" not-null="true" />
+		</property>
+		<property name="eaStatus">
+			<column length="2" name="eaStatus" not-null="true" />
+		</property>
+		<property name="eaDesc">
+			<column length="256" name="eaDesc" />
+		</property>
+		<property name="eaSort">
+			<column length="6" name="eaSort" />
+		</property>
+	</class>
+</hibernate-mapping>

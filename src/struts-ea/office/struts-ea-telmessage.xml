@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	
+	<package strict-method-invocation="false" name="telmessage-ntoken" namespace="/ea/telmessage"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.office.action.TelMessageAction" method="{1}">
+			 <result name="telmessageindex">/page/ea/main/office_ea/information/TelMessageIndex.jsp</result>
+			 <result name="telmessagelist">/page/ea/main/office_ea/information/TelMessage.jsp</result>
+			 <result name="listuser">/page/ea/main/office_ea/information/contactuser.jsp</result>
+			 <result name="success">/page/ea/success.jsp</result>
+			 <result name="fail">/page/ea/fail.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="responsibilities.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<!-- android客户端请求转发 -->
+			<result name="success_android" type="chain">
+			 	<param name="actionName">ea_getTelMessageAndroidList</param>
+			 	<param name="nameSpace">/ea/androidexpand</param>
+			 	<param name="isforward">01</param>
+			 </result>
+		</action>
+	</package>
+	
+	
+		<package strict-method-invocation="false" name="telmessage-token" namespace="/ea/telmessage"   extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.office.action.TelMessageAction" method="{1}">
+		      <result name="netdisklist">/page/ea/main/office_ea/information/NetDisk.jsp</result>
+		      <result name="telmessagelist">/page/ea/main/office_ea/information/TelMessage.jsp</result>
+		      <result name="invalid.token" type="chain">ea_goMessageIndex</result>
+		      
+		</action>
+	</package>
+	
+	
+	<package strict-method-invocation="false" name="telmessage-ntokens" namespace="/ea/telmessage"  extends="struts-default">
+		<action name="eas_*" class="hy.ea.office.action.TelMessageAction" method="{1}">
+			 <result name="listuser">/page/ea/main/office_ea/information/contactuser.jsp</result>
+			 <result name="telmessageindex">/page/ea/main/office_ea/information/TelMessageIndex.jsp</result>
+			 <result name="telmessagelist">/page/ea/main/office_ea/information/TelMessage.jsp</result>
+			  <result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="telmessage-android" namespace="/ea/telmessageandroid"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.office.action.TelMessageAction" method="{1}">
+			<!-- android客户端请求转发 -->
+			<result name="success_android" type="chain">
+			 	<param name="actionName">ea_getTelMessageAndroidList</param>
+			 	<param name="nameSpace">/ea/androidexpand</param>
+			 	<param name="isforward">${isforward}</param>
+			 </result>
+		</action>
+	</package>
+
+
+	<package strict-method-invocation="false" name="surl" namespace="/n"  extends="struts-default">
+		<action name="*" class="hy.ea.office.action.TelMessageAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="telmessage-jsonajax" namespace="/ea/telmessage" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.TelMessageAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+
+
+	<package strict-method-invocation="false" name="telmessage-sajax" namespace="/ea/mes" extends="json-default">
+		<action name="mes_ea_*"
+				class="hy.ea.office.action.TelMessageAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">results</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.finance.BenDis.OverdraftBill" table="DT_OVERDRAFT_BILL" schema="HYPLAT">
+        <id name="overdraftkey">
+            <column name="OVERDRAFTKEY" sql-type="varchar2(50)"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="overdraftid">
+            <column name="OVERDRAFTID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="journalnum">
+            <column name="JOURNALNUM" sql-type="varchar2(50)"/>
+        </property>
+        <property name="overdraftnum">
+            <column name="OVERDRAFTNUM" sql-type="varchar2(50)"/>
+        </property>
+        <property name="companyid">
+            <column name="COMPANYID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="purchaserid">
+            <column name="PURCHASERID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="purchasername">
+            <column name="PURCHASERNAME" sql-type="varchar2(50)"/>
+        </property>
+        <property name="staffid">
+            <column name="STAFFID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="staffname">
+            <column name="STAFFNAME" sql-type="varchar2(50)"/>
+        </property>
+        <property name="cashierbillsid">
+            <column name="CASHIERBILLSID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="adddate">
+            <column name="ADDDATE"/>
+        </property>
+        <property name="status">
+            <column name="STATUS" sql-type="varchar2(50)"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="ProductAgency" table="dtProductAgency">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="agencyID">
+			<column length="250" name="agencyID" />
+		</property>
+		<property name="productID">
+			<column length="250" name="productID" />
+		</property>
+		<property name="agencyCompanyID">
+			<column length="250" name="agencyCompanyID" />
+		</property>
+		<property name="agencyPartnerID">
+			<column length="250" name="agencyPartnerID" />
+		</property>
+		<property name="agencyShopID">
+			<column length="250" name="agencyShopID" />
+		</property>
+		<property name="agentID">
+			<column length="250" name="agentID" />
+		</property>
+		<property name="createTime">
+			<column length="250" name="createTime" />
+		</property>
+	</class>
+</hibernate-mapping>

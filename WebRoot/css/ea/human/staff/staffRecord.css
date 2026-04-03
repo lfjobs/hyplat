@@ -1,0 +1,76 @@
+
+body{
+	overflow:hidden;
+}
+.header {
+	background-color: #f74c32
+}
+
+.header ul {
+	padding: 0 .5rem
+}
+
+.header ul li {
+	float: left;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #fff
+}
+
+.header ul li:first-of-type {
+	width: 20%
+}
+
+.header ul li:first-of-type img {
+	width: .75rem
+}
+
+.header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center
+}
+
+.header ul li:nth-of-type(3) {
+	width: 20%;
+	text-align: right
+}
+.content .div-base-data{
+    overflow:hidden;
+}
+.content .div-base-data .div-staff-base{
+    height: 30px;
+    font-size: 15px;
+    padding: 5px 0 5px 15px;
+    float:left;
+}
+.content .div-base-data input {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .9rem;
+    color: #666 !important;
+    background-color: transparent;
+    border: 0;
+    width: 120px;
+}
+.content .div-base-data label{
+    width:75px;
+}
+.content .div-data{
+    padding:0px 15px 10px 15px
+}
+.content .div-data .div-data-title{
+    font-size:15px;
+}
+.content .div-data .div-record-data{
+    padding: 10px 15px;
+}
+.content .div-data .div-record-data label{
+    margin-left: 15px;
+    line-height:30px
+}
+@media (min-width: 960px) {
+	html{
+		margin: 0 20% 0 20%;
+	}
+}

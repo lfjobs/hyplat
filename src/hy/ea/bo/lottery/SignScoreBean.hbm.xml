@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.SignScoreBean" table="DT_SIGN_SCORE" schema="HYPLAT">
+        <comment>签到积分关联表</comment>
+        <id name="sckey">
+            <column name="sckey" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="scid">
+            <column name="scid" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>逻辑ID</comment>
+            </column>
+        </property>
+        <property name="activityId">
+            <column name="activity_id" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>活动ID</comment>
+            </column>
+        </property>
+        <property name="score">
+            <column name="score" sql-type="number(10)" precision="10" not-null="true">
+                <comment>消耗或者得到积分数量</comment>
+            </column>
+        </property>
+        <property name="count">
+            <column name="count" sql-type="number(10)" precision="10" not-null="true">
+                <comment>签到次数</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 微信 JS-SDK 如果不需要兼容小程序，则无需引用此 JS 文件。 -->  
+		<!-- <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.5.0.js"></script>  -->
+		<script src="jweixin-1.5.0.js"></script>
+		<!-- uni 的 SDK，必须引用。 -->  
+		<!-- <script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script> -->
+		<script src="uni.webview.1.5.2.js"></script>
+		
+		<title>登陆中</title>
+	</head>
+	<body>
+		<header style="width: 100%;text-align: center;">欢迎使用</header>
+		<div style="width: 100%;line-height: 80vh;text-align: center;">
+			<a href="#" id="btnNavIndex">账号安全检测中...</a>
+		</div>
+		<button id="webViewindex" style="opacity: 0;">index首页</button>
+		<script>
+			// 解析并提取name
+			function getUrlParameter(name) {
+				name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+				const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+				const results = regex.exec(location.search);
+				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+			}
+			
+			
+			//添加账号密码以及webview标识
+			function saveCredentialsToLocalStorage() {
+				const account = getUrlParameter('account');
+				const password = getUrlParameter('password');
+				localStorage.removeItem('autoLoginUser');
+				localStorage.removeItem('isWebview');
+
+				// 登录之后删除setLogOff
+				localStorage.removeItem('setLogOff')
+
+				if (account && password) {
+					const credential = `${account}|${password}`;
+					localStorage.setItem('autoLoginUser', credential);//写入账号密码
+					localStorage.setItem('isWebview',true);//写入webview标识
+					console.log('缓存写入成功')
+				} else {
+					console.log('链接不包含用户信息');
+				}
+			}
+			
+			saveCredentialsToLocalStorage();
+			
+			// 跳转登录页
+			document.getElementById('webViewindex').addEventListener('click', function() {
+				uni.switchTab({
+					url: '/pages/index/index'
+				})
+				console.log('点击跳转')
+			})
+			
+			document.addEventListener('UniAppJSBridgeReady', function() {
+				// 检测环境
+			    uni.getEnv(function(res) {  
+			        console.log('uni当前环境：' + JSON.stringify(res));  
+			    })
+				
+				const webViewNavigation=()=>{
+					window.location.href = 'https://impf2010.com/ea/mycenter/ea_exitLogin.jspa';
+					console.log('跳转')
+				}
+				
+				// 传递消息
+				uni.postMessage({
+				    data: {
+				        webViewMess: 'openWebView'  
+				    }
+				})
+				//延迟跳转
+				setTimeout(webViewNavigation,50)
+			});
+		</script>
+	</body>
+</html>

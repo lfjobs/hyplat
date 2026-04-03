@@ -1,0 +1,79 @@
+﻿@charset "utf-8";
+ CSS Document 
+
+body{ width:1000px; height:700px;/* border:1px solid #ccc; */margin:0 auto;}
+
+.adiv{ width:1000px; height:700px;margin:0 auto;background:url(../../../images/ea/finance/voucher/t_05.png) repeat-x top; border:1px solid #99bbe8;  /*border-top: 0px;font-weight: bold;*/display: block;
+       overflow: hidden; white-space: nowrap; position: relative;}
+.top_div{ color: #15428b;background-color:#B6CFED;height:30px;line-height:30px;padding-left:10px;font-weight:bold;font-size:15px;}
+.acip{background-color: #D2DFEF;width:100%;}
+.acip table{width:70%;height:26px;line-height:26px;}
+.acip td{text-align:center;}
+.acip td,td a{font-size:13px;text-decoration:none;color:#000;}
+.acip .div_b{background:url(../../../images/ea/finance/voucher/t_01.png) no-repeat center left;padding-left:20px;padding-right:8px; }
+.acip .div_x{background:url(../../../images/ea/finance/voucher/t_02.png) no-repeat center left;padding-left:20px;padding-right:8px; }
+.acip .div_s{background:url(../../../images/ea/finance/voucher/t_03.png) no-repeat center left;padding-left:20px;padding-right:8px; }
+.acip .div_ch{background:url(../../../images/ea/finance/voucher/t_04.png) no-repeat center left;padding-left:20px;padding-right:8px; }
+.acip tr td input[type=text]{width:60px;height:10px;line-height:10px;}
+.acip tr .div_bor{border-right:1px solid #fff;}
+
+/*导航条*/
+
+
+
+
+.bdiv {background: #ccc url(../../../images/ea/finance/voucher/t_06.gif) repeat-x top; position: relative; height:30px;border-bottom:1px solid #99bbe8;  overflow: hidden;}
+.nav{  float: left; clear: both; padding: 1px;}
+.bdiv_b{float: left;clear: both;padding: 1px; margin:0; padding-top:5px;display: block;cursor: pointer;}
+.bdiv_t{ background:url(../../../images/ea/finance/voucher/t_01.png) no-repeat center left;}
+
+.bdiv_h{float: left; height:22px; border-left: 1px solid #ccc;border-right: 1px solid #fff;margin:2px; }
+
+
+.xdiv{float: left; padding-top:5px;display: block;cursor: pointer;}
+.xdiv_x{ background:url(../../../images/ea/finance/voucher/t_02.png) no-repeat center left;}
+
+
+
+.sdiv{float: left; padding-top:5px;display: block;cursor: pointer;}
+.sdiv_s{ background:url(../../../images/ea/finance/voucher/t_03.png) no-repeat center left;}
+
+.pdiv{float: left; padding-top:5px;display: block;cursor: pointer;}
+.pdiv_p{ background:url(../../../images/ea/finance/voucher/t_04.png) no-repeat center left;}
+
+
+
+.main_t{/* border: 1px solid #ccc;*/ height:120px;width:800px; float:left;}
+.nav_t{ background:url(../../../images/ea/finance/voucher/t_05.png); height:30px;}
+.nav_s {height:30px;}
+.main_j{ float:left; height:120px;width:200px;margin-left:5px;border:1px solid #99bbe8;}
+
+
+
+table.border{border-collapse: collapse;border: 1px solid #ccc;text-align:center;}   
+/*
+    table.border thead td,table.set_border th{font-weight:bold;background-color:White;}   
+    */
+table.border tr:nth-child(even){background-color:#FFF;}   
+table.border td,table.border th{border:1px solid #C3C3C3;text-align:center;} 
+
+
+
+.fo_div{position:relative;font-size:14px;}
+table.border_t{border-collapse: collapse;border: 1px solid #ccc;text-align:left;}   
+/*
+table.border_t thead td,table.set_border th{font-weight:bold;background-color:White;}   
+*/
+table.border_t tr:nth-child(even){background-color:#FFF;}   
+table.border_t td,table.border th{border:1px solid #C3C3C3;text-align:center;} 
+
+
+
+
+
+
+
+
+
+
+

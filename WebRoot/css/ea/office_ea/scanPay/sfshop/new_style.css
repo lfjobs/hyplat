@@ -1,0 +1,208 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+}
+body{margin:0 auto; background-color: #fff;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; color:#666; font-family:'微软雅黑';}
+img{ cursor:pointer;border:none;vertical-align: middle;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #666;}
+a:active,a:hover { text-decoration: none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+input{
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+/*公共样式*/
+
+.clearfix{
+    clear: both;
+}
+
+/*--绑定成功--*/
+header{
+    width: 100%;
+    height: 45px;
+    /*position: fixed;*/
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #c6c6c6;
+    z-index: 9;
+}
+header ul{
+    padding: 0;
+    height: 100%;
+}
+header ul li{
+    float: left;
+    text-align: center;
+}
+header ul li:nth-child(2){
+    font-size: 0.8rem;
+}
+header ul li img{
+    width: 0.4rem;
+    margin-top: -0.15rem;
+    vertical-align: middle;
+}
+header ul li:nth-child(3) img {
+    width: 0.75rem;
+}
+.con{
+    overflow: auto;
+}
+.Binding{
+    text-align: center;
+}
+.Binding .congra{
+    width: 5rem;
+    padding: 3.5rem 0 0 0;
+}
+#download{
+	    width: 12rem;
+    height: 1.5rem;
+    border: none;
+    background: #ffe0b0;
+    color: #ff6116;
+    font-size: 0.6rem;
+    border-radius: 0.75rem;
+    margin-top: 3rem;
+    background-image: url(../../../../../images/ea/office/scanPay/sfshop/ico-download.png);
+    background-repeat: no-repeat;
+    background-size: 0.8rem;
+    background-position: 0.75rem 0.4rem;
+}
+/*--绑定成功 end--*/
+
+.cancel{
+    text-align: center;
+    padding-bottom: -0.2rem;
+}
+.cancel .gou{
+    width: 3rem;
+    padding: 1.5rem 0 0.5rem 0 ;
+}
+.cancel p{
+    color: #ff5500;
+    font-size: 1rem;
+}
+.cancel .txt{
+    font-size: 0.65rem;
+    color: #474747;
+    padding: 0.5rem 0 0 0;
+}
+.cancel_con{
+    padding: 0 0.5rem;
+}
+.cancel_con ul li{
+
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+.cancel_con ul li p{
+    width: 15%;
+    font-size: 0.65rem;
+    float: left;
+    line-height: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+.cancel_con ul li .ipt{
+    width: 85%;
+    float: left;
+    font-size: 0;
+    border-bottom: 1px solid #ddd;
+}
+.cancel_con ul li .ipt input{
+    width: 100%;
+    font-size: 0.65rem;
+    border: none;
+    line-height: 1.5rem;
+}
+.cancel_con ul li .ipt input::-webkit-input-placeholder{
+    color: #d0d0d0;
+}
+.cancel_con ul .verification .ipt{
+    width: 55%;
+}
+.cancel_con ul .verification #gain{
+    width: 30%;
+    float: left;
+    font-size: 0.65rem;
+    border: none;
+    border-radius: 0.3rem;
+    line-height: 1.5rem;
+    background-color: #ff5500;
+    color: #fff;
+}
+#confirm{
+    width: 100%;
+    font-size: 0.65rem;
+    line-height: 1.5rem;
+    background-color: #ff5500;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+}
+.send_btn {
+
+    /*width: 40%;
+    right: 0.5rem;
+
+    height: 1.8rem;
+    border: 0;
+    background: #f15e47;
+    color: #fff;
+    font-size: .64rem;*/
+}
+/*取餐号*/
+.Take{
+    width: 80%;
+    height: 5rem;
+    margin: 0.5rem auto 0.5rem auto;
+    background-image: url(../../../../../images/ea/office/scanPay/sfshop/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+}
+.Take .ta{
+    height: 2rem;
+    line-height: 3rem;
+    font-size: 0.6rem;
+    color: #ff6632;
+    letter-spacing: 3px;
+}
+.Take .ta span{
+    font-size: 0.8rem;
+}
+.Take .ke{
+    height: 3rem;
+    line-height: 2rem;
+    font-size: 0.7rem;
+    color: #7c7c7c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

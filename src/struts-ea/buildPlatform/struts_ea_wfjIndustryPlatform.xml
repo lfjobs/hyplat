@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="WfjIndustryPlatform-ntoken" namespace="/ea/WfjIndustryPlatform" extends="struts-default">
+		<action name="ea_*" class="WfjIndustryPlatformAction" method="{1}">
+			<result name="getIndustry">/page/ea/BuildPlatform/wfjIndustryPlatfrom/IndustryPlatfrom0.jsp</result>
+			<result name="Query01">/page/ea/BuildPlatform/wfjIndustryPlatfrom/IndustryPlatfrom1.jsp</result>
+			<result name="Query02">/page/ea/BuildPlatform/wfjIndustryPlatfrom/IndustryPlatfrom2.jsp</result>
+			<result name="Query03">/page/ea/BuildPlatform/wfjIndustryPlatfrom/IndustryPlatfrom3.jsp</result>
+			<result name="Query04">/page/ea/BuildPlatform/wfjIndustryPlatfrom/IndustryPlatfrom4.jsp</result>
+			<result name="AddPlatform">/page/ea/BuildPlatform/wfjIndustryPlatfrom/AddPlatform.jsp</result>
+			<result name="industry">/page/ea/BuildPlatform/wfjIndustryPlatfrom/platform.jsp</result>
+			<result name="reginst">/page/ea/BuildPlatform/wfjIndustryPlatfrom/regOk.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="WfjIndustryPlatform-sajax" namespace="/ea/WfjIndustryPlatform" extends="json-default">
+		<action name="sajax_ea_*" class="WfjIndustryPlatformAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

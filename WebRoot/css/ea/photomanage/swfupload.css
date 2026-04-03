@@ -1,0 +1,27 @@
+.box_bg{width:450px;height:60px;border:solid 2px #0099CC; position: absolute;display:none;background-color:#FFFFFF;  }
+.box_close{ position: absolute;right:5px;top:5px;cursor: pointer;}
+.box_bg table{margin-left:10px;}
+.box_bg table td{height:55px; padding: 0 2px;} 
+#file_name{width:290px;height:21px;padding:0 5px; line-height:21px;border:solid 1px #CCCCCC;}
+.realUpload{border:solid 1px #CCCCCC;width:45px;height:23px; background-color:#FFFFFF;}
+
+#divFileProgressContainer li{padding:5px;clear: both;width:98%;}
+#divFileProgressContainer li div{ float:left;padding:0 10px;}
+#divFileProgressContainer li div.swfupload_pic_name{width:15%;}
+.swfupload_pic_del{background:url(del.gif) no-repeat;display:inline-block;width:8px;height:8px;}
+#upload_content{width:100%;}
+
+.swfupload_main .swfupload_pic_name span {
+    bottom: 24px;
+    left: 0;
+    position: absolute;
+    z-index: 5;
+}
+.swfUpload_progressBarInProgress, .swfUpload_progressBarComplete, .swfUpload_progressBarError {
+    background-color: blue;
+    font-size: 0;
+    height: 5px;
+    margin-top: 12px;
+    width: 0;
+}
+.swfupload_main{display: none;}

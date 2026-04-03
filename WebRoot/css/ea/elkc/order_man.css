@@ -1,0 +1,135 @@
+@charset "utf-8";
+/*预约管理*/
+.fixed_wrap{position: fixed;width: 100%;top: 2.16rem;left: 0;background: #fff;z-index: 99;}
+.tab_wrap a{float: left;text-align: center;width: 50%;line-height: 1.8rem;font-size: .7rem;color: #343434;background: #eeeeee;height: 1.8rem;}
+.tab_wrap .tab_cur{background: #ff681e;color: #fff;}
+.search_wrap{text-align: center;padding: .4rem 0;border-bottom: 1px solid #eeeeee;height: 2.25rem;}
+.search_inp{width: 70%;height: 1.4rem;padding: .2rem .6rem;text-align: center;background: #eeeeee;border: 0;outline: 0;border-radius: .15rem;vertical-align: top;}
+.search_btn{display: inline-block;color: #ff681e;margin-left: .5rem;line-height: 1.4rem;vertical-align: top;}
+.jl_img{float: left;width: 3.8rem;height: 3.8rem;}
+.jl_wrap{}
+.jl_list{padding-top: 4.05rem}
+.jl_box{padding: .6rem;position: relative;}
+.jl_text{float:left;width: 11rem;padding: .5rem 3.5rem .5rem .6rem;height: 3rem;}
+.jl_name{line-height: 1rem;font-size: .683rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #373737;}
+.star_box{height: 1rem;}
+.star_box i{display: inline-block;width: .6rem;height: .6rem;background: url(../../../images/ea/elkc/star.png) no-repeat center;background-size: contain;vertical-align: middle;}
+.jl_btn{position: absolute;width: 3.2rem;line-height: 1.2rem;right: .6rem;text-align: center;background: #ff6600;color: #fff;font-size: .6rem;border-radius: .15rem;top: 50%;-webkit-transform: translate3d(0,-50%,0);transform: translate3d(0,-50%,0)}
+.jl_info_wrap{padding-top: 1.8rem;}
+.jl_info{padding: .8rem .6rem;}
+.jl_info_L{float: left;width: 5rem;height: 5rem;}
+.jl_info_R{float: left;width: 9.8rem;padding-left: .6rem;height: 5rem;}
+.jl_info_R li{font-size: .64rem;line-height: 1rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #373737;}
+.jl_time_wrap{background: #f6f6f6;padding: 0 .3rem;}
+.jl_time_date{text-align: center;line-height: 2rem;color: #ff681e;font-size: .73rem;}
+.time_box{float: left;width: 33.33%;padding: .3rem .25rem;position: relative;cursor: pointer;}
+.time_box span{display: inline-block;width: 100%;text-align: center;line-height: 1.2rem;border-radius: .15rem;border: 1px solid #525252;height: 1.3rem;font-size: .5rem;vertical-align: top;}
+.time_select{padding-bottom: .3rem;}
+.time_checkbox{position: absolute;left: -9999px;}
+.time_checkbox:checked+span{background: #ff681e;color: #fff;border: 1px solid #ff681e;}
+.time_checkbox:disabled+span{color: #c5c5c5;border: 1px solid #c5c5c5;}
+.order_btn{position: fixed;right: .3rem;bottom: 4rem;width: 2.2rem;height: 2.2rem;border-radius: 50%;background: #ff681e;color: #fff;line-height: 2.2rem;text-align: center;font-size: .64rem;}
+.su_popup{background: url(../../../images/ea/elkc/popup_img.png) no-repeat center;width: 16rem;height: 20rem;background-size: contain;position: relative;}
+.su_popup span{position: absolute;width: 8rem;top: 50%;-webkit-transform:translate3d(-50%,-50%,0);transform:translate3d(-50%,-50%,0);left: 50%;text-align: center;color: #ff2424;font-size: .76rem; }
+.popop_close{position: absolute;width: 1.2rem;height: 1.2rem;background: url(../../../images/ea/elkc/close_ico.png) no-repeat center;background-size: contain;bottom: 3rem;left: 50%;margin-left: -.6rem;}
+.day_box{float: left;width: 33.33%;padding: .2rem .3rem;position: relative;}
+.day_style{border: 1px solid #ff681e;font-size: .6rem;color: #ff681e;border-radius: .15rem;padding: .2rem 0;}
+.day_style span{display: inline-block;width: 100%;text-align: center;}
+.time_day{padding: .3rem .4rem;}
+.day_checkbox{position: absolute;left: -9999px;}
+.day_checkbox:checked+.day_style{background: #ff681e;color: #fff;}
+.order_time_wrap{padding-top: 1.8rem;}
+.days_jl_info{padding: .5rem .6rem;}
+.jl_type{font-size: .64rem;color: #373737;white-space: nowrap;}
+.days_jl_box{margin-bottom: .5rem;}
+.days_jl_box .time_select{background: #f6f6f6;padding: .3rem;}
+
+/*预约记录*/
+.rec_wrap{padding-left: .6rem;}
+.rec_box{position: relative;padding: .6rem 0;border-bottom: 1px solid #eeeeee;display: block;}
+.rec_img{float: left;width: 3rem;height: 3rem;margin-right: .6rem;}
+.rec_T{width: 7.8rem;float: left;height: 3rem;}
+.rec_name{line-height: 1.8rem;height: 1.8rem;}
+.rec_name span{display: inline-block;font-size: .73rem;color: #323232;}
+.rec_name i{display: inline-block;line-height: 1.3;font-size:.5rem;font-style: normal;background: #41b1ff;color: #fff;padding: 0 .4rem;margin-left: .4rem;}
+.rec_site{line-height: 1.2rem;font-size: .555rem;color: #989898;padding-left: .8rem;background: url(../../../images/ea/driving/elkc/rec_stie_ico.png) no-repeat left;background-size: .6rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.rec_btn{position: absolute;line-height: 1.2rem;top: 50%;right: .6rem;width: 3rem;text-align: center;font-size: .64rem;-webkit-transform: translate3d(0,-50%,0);transform: translate3d(0,-50%,0);white-space: nowrap;cursor: pointer;z-index: 9;}
+.rec_cancel,.rec_learning{color: #fff;background: #ff6600;border-radius: .15rem;}
+.rec_ready{color: #ff6600;}
+.state_ready .rec_name,.state_ready .rec_site{line-height: 1rem;height: 1rem;}
+.ready_time,.ready_display{line-height: 1rem;height: 1rem;font-size: .555rem;color: #ff6600;white-space: nowrap;}
+.ready_display{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.rec_no{color: #7c7c7c;}
+.cancel_popup{background: #ffffff;width: 12rem;text-align: center;color: #323232;border-radius: .3rem;}
+.c_p_tit{line-height: 1.8rem;border-bottom: 1px solid #eeeeee;font-size: .73rem;position: relative;}
+.c_p_close{position: absolute;width: .8rem;height: .8rem;background: url(../../../images/ea/driving/elkc/close_ico_b.png) no-repeat center;background-size: contain;right: .8rem;top: .5rem;}
+.c_p_list{padding: .6rem;}
+.c_p_list li{line-height: 1.1rem;font-size: .64rem;}
+.c_p_btn{line-height: 1.4rem;background: #ff6600;color: #fff;display: block;width: 4rem;font-size: .64rem;margin: 0 auto .6rem;border-radius: .15rem;}
+/*预约详情*/
+.o_det_box{padding: .4rem .6rem;border-bottom: .2rem solid #ededed;font-size: .64rem;color: #484848;line-height: 1.2rem;}
+.o_det_box li{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.o_det_box:last-child{border: 0;}
+.o_det_state{margin-top: 1rem;}
+.o_det_hint{padding: 0 .6rem;font-size: .64rem;color: #777777;}
+.hint_tit{text-align: center;line-height: 1.4rem;color: #ff1717;}
+.det_cancel,.det_learning{display: block;width: 3rem;margin: .3rem auto;text-align: center;line-height: 1.2rem;font-size: .64rem;background: #ff6600;color: #fff;border-radius: .15rem;}
+
+
+.outime{
+    background:#d2d2ce;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

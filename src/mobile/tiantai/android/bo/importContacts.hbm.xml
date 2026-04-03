@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="mobile.tiantai.android.bo">
+    <class name="ImportContacts" table="IMPORT_CONTACTS" schema="HYPLAT">
+        <id name="id" type="java.lang.String">
+            <column name="id" length="50" not-null="true"/>
+        </id>
+        <property name="isAssign" type="java.lang.String">
+            <column name="is_assign" length="50"/>
+        </property>
+        <property name="importerId" type="java.lang.String">
+            <column name="importer_id" length="50"/>
+        </property>
+        <property name="assignTo" type="java.lang.String">
+            <column name="assign_to" length="50"/>
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone" length="50"/>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="50"/>
+        </property>
+        <property name="importTime" type="java.lang.String">
+            <column name="import_time" length="50"/>
+        </property>
+        <property name="updateTime" type="java.lang.String">
+            <column name="update_time" length="50"/>
+        </property>
+        <property name="staffId" type="java.lang.String">
+            <column name="staff_id" length="50"/>
+        </property>
+        <property name="isCall" type="java.lang.String">
+            <column name="is_call" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

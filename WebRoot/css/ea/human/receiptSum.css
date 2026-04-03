@@ -1,0 +1,145 @@
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem;
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+header ul li:first-of-type {
+    width: 20%;
+}
+
+header ul li:first-of-type img {
+    width: .75rem;
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center;
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem;
+}
+
+.byDate {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+
+.byDate > div {
+    margin: 5px;
+}
+
+.date-inputs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.date-inputs input {
+    margin: 5px;
+    flex: 1 1 auto;
+}
+
+.date-inputs input[type="button"] {
+    flex: 0 0 auto;
+}
+
+.byDate input:last-of-type {
+    margin-left: 15px;
+    font-size: 15px;
+    color: #5f5454;
+    width: 40px;
+}
+
+.byDate div:first-of-type {
+    color: #5f5454;
+    font-size: 17px;
+}
+
+.byDate input {
+    border: 2px solid #787474;
+}
+
+.byProjectName {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+
+.byProjectName > div {
+    margin: 5px;
+}
+
+.projectName {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.projectName input[type="button"] {
+    flex: 0 0 auto;
+}
+
+.byProjectName input:last-of-type {
+    margin-left: 15px;
+    font-size: 15px;
+    color: #5f5454;
+    width: 40px;
+}
+
+.byProjectName div:first-of-type {
+    color: #5f5454;
+    font-size: 17px;
+}
+
+.byProjectName input {
+    border: 2px solid #787474;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-start; /* 调整为从左到右排列 */
+    align-items: center;
+    flex-wrap: nowrap; /* 禁止换行 */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto; /* 允许水平滚动 */
+    -webkit-overflow-scrolling: touch; /* 优化滚动效果 */
+    width: 100%; /* 确保容器宽度为100% */
+    color: #43433e;
+}
+
+.flex-container li {
+    flex: 0 0 auto; /* 每个li元素固定宽度 */
+    margin: 5px;
+    text-align: center;
+    min-width: 60px; /* 设置最小宽度 */
+}
+
+.sec-list {
+    overflow-x: auto; /* 允许水平滚动 */
+    -webkit-overflow-scrolling: touch; /* 优化滚动效果 */
+}

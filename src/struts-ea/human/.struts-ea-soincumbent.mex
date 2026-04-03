@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="soincumbentt-token" location="890,388" size="280,140">
+    <action name="t_ea_*" location="66,48" size="150,62">
+      <result name="to_incumbent">
+        <resourceEdge source="to_incumbent" routing="0" target="cstaff_incumbent.jsp" />
+      </result>
+      <result name="to_companyincumbent">
+        <resourceEdge source="to_companyincumbent" routing="0" target="company_incumbent.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="soincumbent-ntoken" location="225,108" size="560,280">
+    <action name="ea_*" location="206,65" size="150,167">
+      <result name="to_companyincumbent">
+        <resourceEdge source="to_companyincumbent" routing="0" target="company_incumbent.jsp" />
+      </result>
+      <result name="to_incumbent">
+        <resourceEdge source="to_incumbent" routing="0" target="cstaff_incumbent.jsp" />
+      </result>
+      <result name="to_postincumbent">
+        <resourceEdge source="to_postincumbent" routing="0" target="cstaffpost_incumbent.jsp" />
+      </result>
+      <result name="to_post">
+        <resourceEdge source="to_post" routing="0" target="staff_post.jsp" />
+      </result>
+      <result name="dimission_list">
+        <resourceEdge source="dimission_list" routing="0" target="cstaff_dimission.jsp" />
+      </result>
+      <result name="information">
+        <resourceEdge source="information" routing="0" target="StaffBasicInformation.jsp" />
+      </result>
+      <result name="showexcel" />
+    </action>
+  </package>
+  <package name="soincumbent-jsonajax" location="10,633" size="280,140">
+    <action name="sajax_ea_*" location="66,48" size="150,62">
+      <result name="success" />
+      <result name="to_incumbent">
+        <resourceEdge source="to_incumbent" routing="0" target="printroster.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="soincumbent-njsonajax" location="375,632" size="180,71">
+    <action name="sajax_n_ea_*" location="16,24" size="150,41">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="cstaff_incumbent.jsp" path="/page/ea/main/human/office/production/cstaff_incumbent.jsp" location="955,220" size="150,55" />
+  <webResource name="company_incumbent.jsp" path="/page/ea/main/human/office/company/company_incumbent.jsp" location="675,430" size="150,55" />
+  <webResource name="cstaffpost_incumbent.jsp" path="/page/ea/main/human/office/production/cstaffpost_incumbent.jsp" location="430,430" size="150,55" />
+  <webResource name="staff_post.jsp" path="/page/ea/main/human/office/production/staff_post.jsp" location="185,430" size="150,55" />
+  <webResource name="cstaff_dimission.jsp" path="/page/ea/main/human/office/production/cstaff_dimission.jsp" location="10,220" size="150,55" />
+  <webResource name="StaffBasicInformation.jsp" path="/page/ea/main/human/office/production/StaffBasicInformation.jsp" location="430,10" size="150,55" />
+  <webResource name="printroster.jsp" path="/page/ea/main/human/adance/printroster.jsp" location="75,815" size="150,55" />
+</Struts2Diagram>
+

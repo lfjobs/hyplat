@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="Meeting" table="dtMeeting">
+		<id length="50" name="meetingKey">
+			<column length="50" name="meetingKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="meetingID">
+			<column length="50" name="meetingID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="mtName">
+			<column length="250" name="mtName"/>
+		</property>
+		<property name="mtSubject">
+			<column length="256" name="mtSubject" />
+		</property>
+		<property name="mtOrganizationID">
+			<column length="250" name="mtOrganizationID" />
+		</property>
+		<property  name="mtDate">
+			<column  length="256" name="mtDate" />
+		</property>
+		<property  name="mtLeader">
+			<column   name="mtLeader" />
+		</property>
+		<property  name="mtStaff">
+			<column  length="2000" name="mtStaff" />
+		</property>
+		<property  name="mtAddr">
+			<column   name="mtAddr" />
+		</property>
+		<property  name="mtPlace">
+			<column  length="2000" name="mtPlace" />
+		</property>
+		<property  name="mtLog">
+			<column   name="mtLog" />
+		</property>
+		<property  name="mtStatus">
+			<column   name="mtStatus" />
+		</property>
+		<property  name="mtNotice">
+			<column   name="mtNotice" />
+		</property>
+		<property  name="mtFilePath">
+			<column   name="mtFilePath" />
+		</property>
+	</class>
+</hibernate-mapping>

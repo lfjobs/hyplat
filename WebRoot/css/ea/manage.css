@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {font-size: 14px;font-family: "宋体";}
+body,h3,ul,li,input{margin:0px;padding:0px;}
+/*tab设置*/
+ol li{margin: 8px;}
+#con {font-size: 12px; margin: 0px auto; width:auto;}
+#tags {padding-right: 0px;padding-left: 0px;padding-bottom: 0px;margin: 0px;width: 400px;padding-top: 0px;height: 24px;}
+#tags li {background: url(../../images/ea/human/img-4.gif) no-repeat left bottom; float: left; margin-right: 1px;list-style-type: none;height:24px;padding-left:5px;}
+#tags li a{padding-right:10px; padding-left: 10px;background: url(../../images/ea/human/img-4.gif) no-repeat right bottom;float: left; padding-bottom: 0px;line-height:24px;padding-top:0px;height: 24px; text-decoration: none; color:#F60; overflow:hidden;}
+#tags LI.emptyTag {background: none transparent scroll repeat 0% 0%; width: 4px;}
+#tags LI.selectTag {background-position:left top; margin-bottom: -2px; position: relative;height:24px; width:auto; overflow:hidden;}
+#tags LI.selectTag a {background-position:right top; color:#000; line-height:24px;height:24px;}
+#tagContent {border-right:#CCDCF3 1px solid;padding-right:1px;border-top:#CCDCF3 1px solid;padding-left:1px;padding-bottom:1px;border-left:#CCDCF3 1px solid;padding-top:1px;border-bottom:#CCDCF3 1px solid;background-color:#fff;}
+.tagContent {padding-right:5px;display:none;padding-left:5px; padding-bottom:5px;width:auto; color:#474747;padding-top:10px;height:auto;} 
+#tagContent div.selectTag {display:block;}
+/*内容设置*/
+
+#con table{border:1px solid #CCDCF3; border-bottom:none;border-right:none;}
+#con td{text-align:center; padding:5px 0px 5px 5px; font-size:12px;color:#000;border-bottom:1px solid #CCDCF3;border-right:1px solid #CCDCF3;}
+#con .left{text-align:left;}
+/*确定按钮设置*/
+.enter{ margin:0 auto; margin-top:5px; padding:0; width:60px;height:24px;}
+.enter a{ display:block; float:left;text-decoration:none; color:#000; margin-left:5px; background:url(../../images/ea/human/work_0.gif);padding-left:10px; line-height:23px;}
+.enter a span{ display:block;padding-right:10px; background:url(../../images/ea/human/work_0.gif) right top;}
+.enter a:hover{ background:url(../../images/ea/human/work_0-0.gif);}
+.enter a:hover span{background:url(../../images/ea/human/work_0-0.gif) right top;}

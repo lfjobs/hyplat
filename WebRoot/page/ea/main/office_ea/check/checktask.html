@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN""http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<title>车辆安全巡检任务</title> <#include
+		"page/ea/main/office_ea/check/js_css.html" />
+		<script type="text/javascript"
+			src="${base}/js/ea/office_ea/check/task.js"></script>
+		<script type="text/javascript">
+		 var  basePath='${base}';   
+		 var checktaskid = "";     
+		 var search = '${search}';
+		</script>
+		<style type="text/css">
+#jqModelAdd table td input {height：15px;
+	line-height: 15px;
+}
+
+.taskitem {
+	width: 200px;
+	height: 100px;
+	border: 1px solid #7F9DB9;
+	background: #FFFFFF;
+	overflow: auto;
+}
+
+#taskitemtbl {
+	border-collapse: collapse;
+	width: 100%;
+	white-space: nowrap;
+}
+
+#taskitemtbl td {
+	border: 1px solid #7F9DB9;
+}
+
+.delete {
+	background: url("${base}/images/gtk-del.png");
+	border: none;
+	width: 16px;
+	height: 16px;
+	cursor: hand;
+}
+</style>
+
+	</head>
+	<body>
+		<div class="main_main">
+			<table class="JQueryflexme">
+				<thead>
+					<tr class="tablewith">
+						<th width="40" align="center">
+							请选择
+						</th>
+						<th width="60" align="center">
+							序号
+						</th>
+						<th width="130" align="center">
+							任务名称
+						</th>
+						<th width="90" align="center">
+							创建人
+						</th>
+						<th width="150" align="center">
+							负责人
+						</th>
+						<th width="90" align="center">
+							确认人
+						</th>
+						<th width="200" align="center">
+							任务内容
+						</th>
+						<th width="150" align="center">
+							开始时间
+						</th>
+						<th width="150" align="center">
+							结束时间
+						</th>
+						<th width="70" align="center">
+							任务状态
+						</th>
+						<th width="70" align="center">
+							是否检查
+						</th>
+						<th width="90" align="center">
+							任务类型
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<#list pageForm.list as t>
+					<tr id="${t.checktaskid}">
+						<td>
+							<input type="radio" name="a" class="JQuerypersonvalue"
+								value="${t.checktaskid}" />
+							<span id="checktaskid" style="display: none;">${t.checktaskid}</span>
+							<span id="checkplanid" style="display: none;">${t.checkplanid}</span>
+						</td>
+						<td>
+							<span>${t_index+1}</span>
+						</td>
+						<td>
+							<span id="checktaskname">${t.checktaskname}</span>
+						</td>
+						<td>
+							<span id="operatorname">${t.operatorname}</span>
+						</td>
+						<td>
+							<span id="principalname">${t.principalname}</span>
+							<span id="principal" style="display: none;">${t.principal}</span>
+						</td>
+						<td>
+							<#if
+							t.confimername==""||t.confimername=null>尚未确认<#else>${t.confimername}</#if>
+							<span id="confimerid" style="display: none;">${t.confimerid}</span>
+						</td>
+						<td>
+							<span id="checked">${t.checked}</span>
+						</td>
+						<td>
+							<span id="starttime">${t.starttime}</span>
+						</td>
+						<td>
+							<span id="endtime">${t.endtime}</span>
+						</td>
+						<td>
+							<#if t.taskstatus==0> 未开始 <#elseif t.taskstatus==1> 进行中 <#else>
+							完成 </#if>
+							<span id="taskstatus" style="display:none;">${t.taskstatus}</span>
+						</td>
+						<td>
+							<#if t.checkflag==0>未检查 <#else>已检查 </#if>
+						</td>
+						<td>
+							<span id="tasktype">${t.tasktype}</span>
+						</td>
+
+					</tr>
+					</#list>
+				</tbody>
+			</table>
+		</div>
+		<#assign actionPath="ea/safetycheck/ea_task.jspa?"> <#include
+		"/page/ea/main/office_ea/check/page.html"/>
+
+
+		<!--添加窗口 -->
+		<div class="jqmWindow" style="width: 400px; right: 25%; top: 10%"
+			id="jqModelAdd">
+			<form name="postAddForm" id="postAddForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					<div id="title">
+						添加
+					</div>
+					<div class="close">
+					</div>
+				</div>
+				<center>
+				<table width="100%" cellpadding="5" cellspacing="5" id="addTable">
+					<tr>
+						<td align="right" style="width: 25%;">
+							任务名称：
+						</td>
+						<td align="left">
+							<input type="text" name="taskbean.checktaskname"
+								id="checktaskname" class="put3" />
+							<input type="hidden" name="taskbean.checktaskid" id="checktaskid" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							巡检计划：
+						</td>
+						<td align="left">
+							<select style="width: 141px;" name="taskbean.checkplanid"
+								id="planid" class="put3"></select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							负责人：
+						</td>
+						<td align="left">
+							<input type="text" name="taskbean.principalname"
+								id="principalname" class="put3" readonly />
+							<input name="taskbean.principal" id="principal" type="hidden" />
+							<img src="${base}/images/r_8_12.gif" style="cursor: hand;"
+								onclick="importGY('/ea/documentcommon/ea_getStaffformalList.jspa')" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							任务类型：
+						</td>
+						<td align="left">
+							<input type="text" name="taskbean.tasktype" id="tasktype" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							任务描述：
+						</td>
+						<td align="left">
+							<textarea cols="33" rows="3" name="taskbean.checked" id="checked"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							备选车辆：
+						</td>
+						<td align="left" style="white-space: nowrap;">
+							<table>
+								<tr>
+									<td>
+										<div class="taskitem">
+											<input type="hidden" value="" name="taskitembean.taskitemid"
+												id="taskitemid" />
+											<table id="taskitemtbl">
+												<thead>
+													<tr align='center'>
+														<td>
+															车牌号
+														</td>
+														<td>
+															操作
+														</td>
+													</tr>
+												</thead>
+												<tbody id="taskitemtbody"></tbody>
+											</table>
+										</div>
+									</td>
+									<td class="img">
+										<img src="${base}/images/r_8_12.gif"
+											style="float: right; cursor: hand;"
+											onclick="importGY('/ea/safetycheck/ea_point.jspa?type=task')" />
+									</td>
+								</tr>
+							</table>
+
+						</td>
+					</tr>
+
+					<tr>
+						<td align="center" colspan="2">
+
+							<input type="button" class="input-button" id="toSubmit"
+								value=" 确定 " />
+							<input type="button" class="input-button close" id="toCancel"
+								value=" 关闭 " />
+						</td>
+					</tr>
+				</table>
+				</center>
+			</form>
+		</div>
+
+		<!--搜索窗口 -->
+		<div class="jqmWindow" style="width: 300px; right: 25%; top: 10%"
+			id="jqModelSearch">
+			<form name="postSearchForm" id="postSearchForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					查询信息
+					<div class="close">
+					</div>
+				</div>
+				<table width="100%" cellpadding="5" cellspacing="10"
+					id="cataffSearchTable">
+					<tr>
+						<td align="right">
+							任务名称：
+						</td>
+						<td align="left">
+							<input type="text" name="taskbean.checktaskname" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<input type="button" class="input-button" id="tosearch"
+								value=" 查询 " />
+							<input name="search" type="hidden" value="search" />
+						</td>
+
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div id="socialJqm" class="jqmWindow"
+			style="width: 75%; height: 250px; absolute; display: none; left: 15%; top: 8%; z-index: 9999; background: #DAE7F6; overflow-y: hidden;">
+			<div style="background: #DAE7F6; margin-right: 500px;">
+				<input style="display: none;" id="checkopertionID" />
+				<input style="display: none;" id="checkopertionName" />
+				<input style="display: none;" id="childopertionName" />
+				<input style="display: none;" id="checkform" />
+				<input style="display: none;" id="addtype" value=""/>
+			</div>
+			<iframe name="daoRu" id="daoRu" width="100%" height="210px"
+				frameborder="0" style="overflow-x: hidden; overflow-y: auto;">
+			</iframe>
+			<div style="height: 28px; border: 1;">
+				<input type="hidden" value="" id="markid" />
+				<input type="button" class="input-button" id="DaoRuFanqd"
+					onclick="DaoruConfirm();" value=" 确定 "
+					style="cursor: hand; border: 1; margin-left: 400px; height: 25px; width: 60px" />
+				<input type="button" class="input-button" id="DaoRuFan"
+					onclick="cancelJqm();" value=" 关闭 "
+					style="cursor: hand; border: 1; margin-left: 40px; height: 25px; width: 60px" />
+			</div>
+
+		</div>
+		<!--JS遮罩层-->
+		<div id="fullbg"></div>
+		<iframe name="hidden" width="0" height="0"></iframe>
+	</body>
+</html>

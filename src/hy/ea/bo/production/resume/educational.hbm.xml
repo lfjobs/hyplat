@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.production.resume">
+	<class name="Educational" table="dtEducational">
+		<id length="50" name="educationKey">
+			<column length="50" name="educationKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="educationID">
+			<column length="50" name="educationID" not-null="true">
+				<comment>逻辑主键</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID">
+				<comment> 人员id</comment>
+			</column>
+		</property>
+		<property name="resumeID">
+			<column length="50" name="resumeID">
+				<comment>个人简历id</comment>
+			</column>
+		</property>
+		<property name="name">
+			<column length="50" name="name">
+				<comment>学校名称</comment>
+			</column>
+		</property>
+		<property name="admissionTime">
+			<column name="admissionTime">
+				<comment>入学时间</comment>
+			</column>
+		</property>
+		<property name="graduationTime">
+			<column name="graduationTime">
+				<comment>毕业时间</comment>
+			</column>
+		</property>
+		<property name="professionalName">
+			<column length="50" name="professionalName">
+				<comment>专业名称</comment>
+			</column>
+		</property>
+		<property name="education">
+			<column length="50" name="education">
+				<comment>学历学位</comment>
+			</column>
+		</property>
+		<property name="degree">
+			<column length="50" name="degree">
+				<comment>进度</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

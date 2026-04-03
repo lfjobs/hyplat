@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.RelationIntegralProductBean" table="DT_RELATION_INTEGRAL_PRODUCT" schema="HYPLAT">
+        <comment>积分产品关联</comment>
+        <id name="id">
+            <column name="RELATION_ID" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="poolId">
+            <column name="POOL_ID" sql-type="varchar2(50)" length="50" not-null="true">
+            <comment>奖品池ID</comment>
+            </column>
+        </property>
+        <property name="prizePoint">
+            <column name="PRIZE_POINT" sql-type="number(*)" precision="2147483646" not-null="true">
+                <comment>消耗积分抽奖积分</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

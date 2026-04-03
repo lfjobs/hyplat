@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.portmanage">
+	<!--接口详情表-->
+	<class name="PortParticulars" table="port_particulars">
+		<!--主键-->
+		<id length="50" name="portKey">
+			<column length="50" name="portKey" />
+			<generator class="uuid" /> 
+		</id>
+		<!--id-->
+		<property name="portId">
+			<column length="50" name="portId" />
+		</property>
+		<!--接口名称-->
+		<property name="portName">
+			<column length="250" name="portName" />
+		</property>
+		<!--接口地址URL-->
+		<property name="portUrl">
+			<column length="250" name="portUrl" />
+		</property>
+		<!--描述-->
+		<property name="portDescription">
+			<column length="250" name="portDescription"/>
+		</property>
+		<!--请求方式-->
+		<property name="portRequestType">
+			<column length="50" name="portRequestType"/>
+		</property>
+		<!--数据格式-->
+		<property name="dataFormat">
+			<column length="50" name="dataFormat"/>
+		</property>
+		<!--成功返回参数-->
+		<property name="successParameter">
+			<column length="50" name="successParameter"/>
+		</property>
+		<!--失败返回参数-->
+		<property name="failParameter">
+			<column length="50" name="failParameter"/>
+		</property>
+		<!--创建人id-->
+		<property name="portCreaterId">
+			<column length="50" name="portCreaterId"/>
+		</property>
+		<!--创建人-->
+		<property name="portCreaterName">
+			<column length="50" name="portCreaterName"/>
+		</property>
+		<!--创建时间-->
+		<property name="portCreatTime">
+			<column length="50" name="portCreatTime" />
+		</property>
+		<!--修改人id-->
+		<property name="portModifierId">
+			<column length="50" name="portModifierId"/>
+		</property>
+		<!--修改人-->
+		<property name="portModifierName">
+			<column length="50" name="portModifierName"/>
+		</property>
+		<!--修改时间-->
+		<property name="portModificationTime">
+			<column length="50" name="portModificationTime"/>
+		</property>
+		<!--文档id(外键)-->
+		<property name="documentsId">
+			<column length="50" name="documentsId"/>
+		</property>
+
+
+
+		
+	</class>
+</hibernate-mapping>

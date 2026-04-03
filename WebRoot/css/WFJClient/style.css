@@ -1,0 +1,401 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { color:#666; text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.more{ float: right; }
+.more a{ font-weight: normal; font-size: 12px; }
+.fl{ display: inline; float: left; } 
+.fr{ display: inline;  float: right; }
+.fixed:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }   
+.fixed { display: block; min-height: 1%; }   
+*html .fixed{ height: 1%; }    
+.clear {width:100%; display: block!important; float: none!important; clear: both; overflow: hidden; width: auto!important; height: 0!important; margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0; }
+.pos{ position:relative;}
+.black{ color: black;}
+/*公共样式*/
+
+/*index  iframe样式*/
+#indexTop{ position: style.css; top: 0px; left: 0px; z-index: 500; }
+#indexCon{position: absolute; top: 0px; left: 0px;}
+#indexBottom{ position: fixed; left: 0px; bottom: 0px;}
+/*index  iframe样式*/
+
+/*头部导航样式*/y
+#topbar,.topbar{position: absolute;left: 0;top: 0;width: 100%;height: 46px;background-color: #3294ef;z-index: 500;}
+.topbar_title {font-size: 20px;color: #ffffff;line-height: 20px;text-align: left;text-overflow: ellipsis;-o-text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+    margin: 0 auto;margin-left:60px;width: 50%;padding: 13px 0;font-weight: bold;}
+.topbar_back {position: absolute;left: 0;top: 0;width: 55px;height: 33px;overflow: hidden;padding-top: 6px;text-align: center;}
+#topbar img {width: 35px;height: 35px;}
+.topbar_menu {position: absolute;right: 0;top: 0;width: 50px;height: 35px;overflow: hidden;padding-top: 6px;text-align: center;font-size: 16px;color: #ffffff;line-height: 25px;}
+.topbar_refresh{position: absolute; right: 67px; top: 0px; width:52px; height:40px; overflow: hidden; padding-top: 6px; text-align: center;font-size: 16px; border-right: 1px solid #fff;}
+ ul.menuMore{ display:none; position: fixed; right: 5px; width: 70px; background-color:#3294ef; color: #fff;  z-index: 1; }
+ ul.menuMore li{float: left; width:70px; line-height: 30px;  border-top:1px dotted #111;}
+ ul.menuMore li a img{ float: left; width:25px; height: 25px; line-height: 30px; margin-top:2px;}
+ ul.menuMore li a span{ float:left; line-height: 30px; color: #fff; font-weight: bold; padding-left: 5px;}
+/*头部导航样式*/
+
+.con{ width:360px; margin: auto; background-color:#f0f0f0; }
+.con div.top_ad{ width:100%; height: 120px; line-height: 120px; color: #fff; text-align: center; background-color:#f39800; }
+div.floorNav{ width:100%; height: 46px; background-color: #fff; border-top: 1px solid #ccc; margin-top:5px;}
+/*底部导航样式*/
+div.fexBottom{ position: fixed; bottom: 0px; }
+div.fexBottom div{ width:25%; height: 46px; text-align: center; float: left;}
+div.fexBottom div img{ width:44px; height: 40px;}
+/*底部导航样式*/
+
+/*Login登录样式*/
+.con div.loginDiv{ width:90%; height: 120px; margin: auto; margin-top: 20px; background-color: #fff; border: 1px solid #ccc;border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.loginDiv div.user{ width:90%; height: 30px; margin: auto; line-height: 30px;padding-top:10px;  border-bottom: 1px solid #ccc;}
+.con div.loginDiv div.logintype{ width:90%; height: 30px; margin: auto; line-height: 30px;padding-top:10px;  border-bottom: 1px solid #ccc;}
+.con div.loginDiv div.pwd{ width:90%; height: 30px; margin: auto; line-height: 30px;margin-top:8px;}
+.con div.errormsg{padding:5px 0px 5px 17px;}
+.con div.loginDiv div img{width:20px; height: 20px; margin:5px; float: left;}
+.con div.loginDiv div input[type=text]{ width:250px; height: 28px; padding:2px; line-height: 28px; border: none; outline: none; }
+.con div.loginDiv div input[type=password]{ width:250px; height: 28px; padding:2px; line-height: 28px; border: none; outline: none; }
+.con div.errorLogin{ width:90%; height: 40px; line-height: 40px; margin: auto; }
+.con div.errorLogin p{ color: red; padding-left: 20px;}
+.con div.loginButton{ width:90%; height: 30px; line-height: 30px; color: #fff; text-align: center; margin: auto; background-color: #358cef; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; cursor: pointer;}
+.con div.loginA{ width:90%; height: 30px; line-height: 30px; margin: auto; }
+/*Login登录样式*/
+
+/*GoodsShow/ShopShow内容样式*/
+.con div.storeStarHeader{ width:100%; height: 40px; line-height: 40px; background-color: #ed1c43; }
+.con div.storeStarHeader span{ line-height: 40px; font-size: 14px; font-weight: bold; color: #fff; padding-left: 10px;}
+.con div.storeStarHeader d{ padding-right: 10px; letter-spacing: 4px; color: #fff; cursor: pointer;}
+.con div.storeStarContent{ width:100%; height: 154px; overflow: hidden; position: relative;}
+.con div.storeStarContent div.storeStar{position: absolute; left: 0px; top: 0px; width:684px; height: 154px;}
+.con div.storeStarContent div.store{ position: relative; width:100px; height: 140px; margin-left:14px; margin-top:10px; border:1px solid #ed1c42;}
+.con div.storeStarContent div.store img.storeLogo{ position: absolute; width:30px; height: 30px; right: 0px; top: 0px;}
+.con div.storeStarContent div.store img.store{ width:100px; height: 100px;}
+.con div.storeStarContent div.store img.star{ width:14px; height: 14px; float: left; margin-top:4px;}
+.con div.storeStarContent div.store p,.con div.storeStarContent div.store div{padding-left: 4px; }
+.con div.storeNav{ margin-top:12px; width:100%; height: 26px; line-height: 26px; color: #fff; background-color: #3fa0ed; }
+.con div.storeNav div.storeNavLi{ width:20%; height: 26px; line-height: 26px; text-align: center; cursor: pointer; color: #fff;}
+.con div.storeNav div.storeNavLiDis{ background-color: #9ad2f6; }
+.con div.storeContent{ width:100%; display: none;margin-bottom: 50px;}
+.con div.storeContentDis{ display: block;}
+.con div.storeContent div.store{ width:160px; height: 220px; margin-left:12px; margin-top:10px; border:1px solid #3fa0ed;}
+.con div.storeContent div.store img.store{ width:160px; height: 160px; float: left;}
+.con div.storeContent div.store div{float:left; width:100%; height:20px; line-height:30px;}
+.con div.storeContent div.store div img.star{float:left; width:20px; height:20px; }
+.con div.storeContent div.store div d{ width:40px; height:20px; line-height:20px; float:right;}
+.con div.storeContent div.store p,.con div.storeContent div.store span{ width:98%; height: 20px; overflow: hidden; float: left; line-height: 18px; padding-left: 4px;}
+.con div.storeContent div.store span{ color: #eca720;}
+.protype{ position:fixed;left:2%;bottom:7%; width:90%;height:90%; border: solid 1px #ddd;background: #eff}
+.protype td{  text-align: left;border-left:solid 25px #eff;border-bottom: 2px dotted #ddd; border-right: solid 5px #eff;
+  overflow: hidden;height:30px; line-height: 25px;font-family:"微软雅黑";font-size:14px;color:black;}
+/*GoodsShow/ShopShow内容样式*/
+
+
+/*GoodsShow/IndustriedShow2内容样式*/
+.con div.so{ width:100%; height: 40px; float: left; }
+.con div.so div.search{ position: relative; width:90%; height: 30px; margin:auto; margin-top: 5px; border:1px solid #ff8500; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; }
+.con div.so div.search input[type=text]{ position: absolute; left: 4px; top: 0px; width:270px; padding:2px; height: 26px; line-height: 26px; background-color: #f0f0f0; outline: none; border: none; }
+.con div.so div.search img{ position: absolute; right: 4px; width:42px; height:28px; margin-top:1px; }
+.con div.industriedAd{ width:95%; height:60px; }
+.con div.industriedAd div.industriedAdLeft{ width:80%; height: 50px; margin-top:5px; background-color: #7ecdf4; text-align: center; line-height: 50px; color: #fff;}
+.con div.industriedAd div.industriedAdRight{ margin-top:5px;}
+.con div.industriedAd div.industriedAdRight p{ color: #ff8500; text-decoration: underline; line-height: 25px; height: 25px; text-align: right;}
+.con div.industried{ width:90%;  margin:auto;}
+.con div.industried div.header{ width:100%; height: 30px; line-height: 30px;}
+.con div.industried div.header span,.con div.industried div.header d{ line-height: 20px; color: #fc5050; font-weight: bold;}
+.con div.industried div.header d{color: #3294ef;}
+.con div.industried div.industriedText{ text-align: center; border-radius: 4px; -moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.industried div.industriedText a{ color: #fff; font-weight: bold; font-size: 20px;}
+.con div.industried div.industriedAdmissions{ width:40%; height: 186px;line-height: 186px; background-color: #ec6c00; }
+.con div.industried div.industriedAccommodation{ width:28%; margin-left: 2%; height: 90px; line-height: 90px; background-color: #fabf03; }
+.con div.industried div.industriedSupermarket{ width:28%; margin-left: 2%; height: 90px; line-height: 90px; background-color: #e6002e; }
+.con div.industried div.industriedSales{ width:28%; margin-left: 2%; margin-top:2%; height: 90px; line-height: 90px; background-color: #169bd6; }
+.con div.industried div.industriedCar{  width:28%; margin-left: 2%; margin-top:2%; height: 90px; line-height: 90px; background-color: #15a83d;}
+.con div.industried div.industriedFood{ width:70%; margin-top:2%; height: 120px; line-height: 120px; background-color: #f39801;}
+.con div.industried div.industriedGarden{ width: 28%; margin-left: 2%; margin-top:2%; height: 120px; line-height: 120px; background-color: #abcd07;}
+.con div.industried div.secondsKill{ width:100%; height: 30px; line-height: 30px; background-color: #f39801; text-align: center;}
+.con div.industried div.secondsKill a{ color: #fff; font-size: 12px; font-weight: inherit;}
+/*GoodsShow/IndustriedShow2内容样式*/
+
+/*GoodsShow/IndustriedShow内容样式*/
+.wfjContent{ width:95%; margin:auto; }
+.wfjContent div.headerHr{ margin-top:10px; margin-bottom: 15px; width:100%; height:15px; text-align: center; border-bottom: 1px dotted #9ad2f6;  }
+.wfjContent div.headerHr span{position: relative; top:5px; height: 20px; line-height: 20px; font-size: 20px; font-weight: bold; background-color: #f0f0f0;}
+.wfjContent div.communicationOrWFJ{ width:100%; height: 90px; margin-top:20px;}
+.wfjContent div.communicationOrWFJ div.communication,.wfjContent div.communicationOrWFJ div.WFJ{width:50%; height: 90px; text-align: center; overflow: hidden;}
+.wfjContent div.communicationOrWFJ img{ width:40px; height: 40px; }
+.wfjContent div.communicationOrWFJ span{ width:100%; height: 30px; line-height: 30px; font-weight: bold; display: block;}
+.wfjContent div.ZLYQ{ width:100%; margin-top:20px;}
+.wfjContent div.ZLYQ div.NavLi{ width:25%; height: 90px; text-align: center; overflow: hidden; }
+.wfjContent div.ZLYQ div.NavLi img{width:40px; height: 40px; }
+.wfjContent div.ZLYQ div.NavLi span{ width:100%; height: 30px; line-height: 30px;display: block;}
+/*GoodsShow/IndustriedShow内容样式*/
+
+/*ShopOwner/ShopShow产品展示*/
+.con div.shopAd{ height: 30px; position: relative; }
+.con div.shopAd div.shopLogo{ width:54px; height: 54px; line-height: 54px; text-align: center; position: absolute; left: 15px; bottom: -27px; background-color: #fff;}
+.con div.shopAd div.shopLogo div.shopLogoDiv{ width:50px; height: 50px; line-height: 50px; text-align: center; background-color: #84ccc9; margin:2px; color: #fff; }
+.con p.shopName{ width:100px; line-height: 25px; height: 25px; padding-left:76px; color: #3fa0ed;}
+/*ShopOwner/ShopShow产品展示*/
+
+/*ShopOwner/ShopRegInfo*/
+.con div.shopRegInfo{ width:96%; margin:auto; margin-top:10px;}
+.con div.shopRegInfo div.shopInfo{ width:100%; height: 78px; }
+.con div.shopRegInfo div.shopInfo img.shopLogo{ position: relative; width:60px; height: 60px; line-height: 60px; margin-top:10px; margin-left:4px; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.shopRegInfo div.shopInfo h1{ margin-left:75px; margin-top:10px; height: 30px; line-height: 30px;}
+.con div.shopRegInfo div.shopInfo div{ margin-left:75px; height: 30px; line-height: 30px;}
+.con div.shopRegInfo div.shopInfo div img.shopStar{ width:15px; height: 15px;}
+.con div.shopRegInfo div.shopNav{ width:100%; height: 40px; border-top: 1px dotted #aaa; overflow: hidden;}
+.con div.shopRegInfo div.shopNav span{ display: block; width:20%; height: 40px; line-height: 40px; text-align: center; float: left; font-weight: bold;}
+.con div.shopRegInfo div.shopNav d{ display: block; width:80%; height: 40px; line-height: 40px; text-align: left; float: left; }
+/*ShopOwner/ShopRegInfo*/
+
+/*GoodsShow/GoodsDetail*/
+.con div.goodsImg{width:100%;margin-top: 2px;}
+.con div.goodsImg img{ width:100%;}
+.con div.goodsDetail{ width:94%; height: 30px; line-height: 30px; padding-left: 20px; overflow: hidden; border-bottom: 1px dotted #3fa0ed;}
+.con div.goodsDetail label{ color: red; font-weight: bold;}
+.con div.goodsDetail em{ padding-left: 20px; font-style: inherit;}
+.con div.goodsDetail em d{ color: red;}
+.con div.goodsDetail em img{ float: left; width:15px; height: 15px; margin-top:5px;}
+.con div.goodsDetail h1{ color: #3fa0ed; width:100px; float:left;}
+.con div.goods{ width:90%; margin:auto; margin-top:10px;}
+.con div.goods div.detailOrEvaluation{ width:121px; height: 32px; border: 1px solid #3fa0ed; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.goods div.detailOrEvaluation div.detailShow{ width:59px; height:30px; line-height: 30px; margin-top:1px; margin-left:1px; text-align: center; cursor: pointer; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; }
+.con div.goods div.detailOrEvaluation div.detailOrEvaluationDis{ background-color: #3fa0ed; color: #fff;}
+.con div.goods div.goodsDetailCon{ width:100%; margin-top:10px; display: none;}
+.con div.goods div.goodsDetailCon p.narrative{ line-height: 20px;}
+.con div.goods div.goodsDetailCon div.goodsDetailConHeader{ height: 30px; line-height: 30px; font-weight: bold; margin-top:10px; padding-left: 4px; font-size: 14px; border-left: 2px solid #3fa0ed;}
+.con div.goods div.goodsDetailCon div.specifications{ width:100%; margin-top:10px; line-height: 30px;}
+.con div.goods div.evaluationCon{ width:100%; display: none;}
+.con div.goods div.goodsDetailShow{ display: block;}
+.con div.goods div.evaluationCon div.evaluationConHeader{ width:100%; height:40px; margin-top:10px; }
+.con div.goods div.evaluationCon div.evaluationConHeader div.userPhoto{ width:15%; height: 40px;}
+.con div.goods div.evaluationCon div.evaluationConHeader div.userPhoto img{ width:40px; height: 40px; line-height: 34px; }
+.con div.goods div.evaluationCon div.evaluationConHeader div.userName{ width:85%; height:40px;}
+.con div.goods div.evaluationCon div.evaluationConHeader div.userName span{ float:left; display:block; width:90px; overflow: hidden; line-height: 40px; font-weight: bold; }
+.con div.goods div.evaluationCon div.evaluationConHeader div.userName img{ float:left; width:15px; height:15px; line-height: 40px; margin-top:10px;}
+.con div.goods div.evaluationCon div.evaluationConHeader div.userName d{ line-height: 40px;}
+.con div.goods div.evaluationCon div.evaluationDetail{ width:85%; line-height: 20px; }
+/*GoodsShow/GoodsDetail*/
+
+/*GoodsShow/GoodsSearch*/
+.con div.goodsSearchNav{ width:100%; height: 40px; line-height: 40px; background-color: #fff;}
+.con div.goodsSearchNav div.credibility,.con div.goodsSearchNav div.sales{ width:49%; height: 30px; line-height: 30px; margin-top:5px; text-align: center; cursor: pointer;}
+.con div.goodsSearchNav div.credibility{ border-right: 1px solid #666;}
+.con div.goodsSearchNum{ width:100%; height: 30px; line-height: 30px; text-align: center; border-bottom: 1px solid #ccc;}
+.con div.goodsSearchList{ width:90%; height: 120px; margin:auto; margin-top:10px;border-bottom: 1px solid #ccc;}
+.con div.goodsSearchList img.product{ width:90px; height: 120px;}
+.con div.goodsSearchList div.productDetail{ width:120px; height: 120px; overflow: hidden; margin-left: 10px;}
+.con div.goodsSearchList div.productDetail h1,.con div.goodsSearchList div.productDetail p,.con div.goodsSearchList div.productDetail div{ float: left; width:120px; height:40px; line-height: 40px;}
+.con div.goodsSearchList div.productDetail div img.star{ width:20px; height: 20px; margin-top:10px;}
+.con div.goodsSearchList div.productData{ margin-top:40px;}
+.con div.goodsSearchList div.productData p,.con div.goodsSearchList div.productData d{ line-height: 40px; }
+.con div.goodsSearchList div.productData p{ color: red;}
+/*GoodsShow/GoodsSearch*/
+
+/*CustomerOrder/Cart*/
+.con div.cart{width:100%; height:170px; background-color: #fff; margin-bottom: 10px; }
+.con div.cart div.cartHeader{ width:90%; height: 45px; margin: auto; border-bottom: 1px solid #ccc;}
+.con div.cart div.cartHeader a{ color: black;}
+.con div.cart div.selectImg{width:10%; height: 40px; line-height: 40px; overflow: hidden; }
+.con div.cart div.selectImg div.select{ width:20px; height: 20px; line-height: 20px; text-align: center; margin-top:10px; color: #aed8ff; cursor:pointer; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; }
+.con div.cart div.selectImg div.selectdis{ color: #fff; }
+.con div.cart div.cartHeader div.userName{ width:70%; height: 40px; line-height: 40px; overflow: hidden;}
+.con div.cart div.cartHeader div.editor{ width:18%; height: 20px; line-height: 20px; margin-top:10px; border-left: 1px solid #ccc; text-align: center; overflow: hidden; }
+.con div.cart div.cartCon{ width:90%; height: 80px; margin: auto; margin-top:15px;}
+.con div.cart div.cartCon div.cartContents{width:70%; height: 80px; overflow: hidden; }
+.con div.cart div.cartCon div.cartContents img{ width:70px; height: 70px;  float: left;}
+.con div.cart div.cartCon div.cartContents p{ width:135px; margin-left: 20px; margin-bottom: 10px; float: left; }
+.con div.cart div.cartCon div.cartContents d{ width:135px; margin-left: 20px; float: left; }
+.con div.cart div.cartPrice{ width:18%; height: 50px; margin-top:15px; overflow: hidden;}
+.con div.cart div.cartPrice p{ text-align: right;}
+.con div.cart div.allPrice{ width:90%; margin: auto; height: 30px; line-height: 30px; text-align: right;}
+.con div.cart div.allPrice d{ margin-left: 10px;}
+.con div.cart div.allPrice span{ font-size: 20px; color: black;}
+	.con div.cartFloor{ width:100%; height:50px; background:#fff;}
+	.con div.cartFloor div.confirm{ background-color:#5aabff; width:50px; height:30px; line-height:30px; margin-top:10px; margin-right:20px; color:#fff; text-align:center; cursor:pointer;border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+	.con div.cartFloor d ,.con div.cartFloor span{ color:#5aabff; line-height:50px; height:50px; font-size:18px; margin-right:10px;}
+	.con div.cartFloor div.selectImg div.select{ width:20px; height: 20px; line-height: 20px; text-align: center; margin-top:10px; color: #aed8ff; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; margin-left:20px; cursor:pointer;}
+	.con div.cartFloor div.selectImg div.selectdis{ color: #fff; }
+/*CustomerOrder/Cart*/
+
+/*CustomerOrder/MyWFJ*/
+.con div.myWFJName{ width:100%; height: 40px; background-color: #5cb7fe;margin-bottom: 10px;}
+.con div.myWFJName h1.me{ color: #fff; height: 20px;margin-left:10px; line-height: 40px; font-size: 14px;}
+.con div.myOrderData{ width:100%; border-bottom: 1px solid #ddd; background-color: #fff; }
+.con div.myOrderData div.orderData{ width:100%; height: 35px; line-height: 35px; border-top: 1px solid #ddd;}
+.con div.myOrderData div.orderData img{ width:15px; height: 15px; float: left; margin-left: 20px; margin-top:10px;}
+.con div.myOrderData div.orderData span{  margin-left: 10px; color: black;}
+.con div.myOrderData div.orderData d{ float: right; margin-right: 20px;}
+.con div.myOrderData div.myOrderDataNav{ float: left; width:100%; height: 30px; line-height: 30px;}
+.con div.myOrderData div.myOrderDataNav div.myNav{ width:19%; height: 30px; line-height: 30px; text-align: center; cursor: pointer; border-top: 1px solid #ddd;}
+.con div.myOrderData div.myOrderDataNav div.myNavColor{ color: #358cef;}
+.con div.cartOrder{width:100%; background-color: #fff; margin-top:10px;  }
+.con div.cartOrder div.cartHeader{ width:90%; height: 45px; margin: auto; border-bottom: 1px solid #ccc;}
+.con div.cartOrder div.cartHeader a{ color: black;}
+.con div.cartOrder div.selectImg{width:10%; height: 40px; line-height: 40px; overflow: hidden; }
+.con div.cartOrder div.selectImg div.select{ width:20px; height: 20px; line-height: 20px; text-align: center; margin-top:10px; color: #aed8ff; background-color: #aed8ff; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; }
+.con div.cartOrder div.selectImg div.selectdis{ color: #fff; background-color: #5aabff; }
+.con div.cartOrder div.cartHeader div.userName{ width:70%; height: 40px; line-height: 40px; overflow: hidden;}
+.con div.cartOrder div.cartHeader div.editor{ width:18%; height: 20px; line-height: 20px; margin-top:10px; border-left: 1px solid #ccc; text-align: center; overflow: hidden; }
+.con div.cartOrder div.cartCon{ width:90%; height: 80px; margin: auto; margin-top:15px;}
+.con div.cartOrder div.cartCon div.cartContents{width:70%; height: 80px; overflow: hidden; }
+.con div.cartOrder div.cartCon div.cartContents img{ width:70px; height: 70px;  float: left;}
+.con div.cartOrder div.cartCon div.cartContents p{ width:135px; margin-left: 20px; margin-bottom: 10px; float: left; }
+.con div.cartOrder div.cartCon div.cartContents d{ width:135px; margin-left: 20px; float: left; }
+.con div.cartOrder div.cartPrice{ width:18%; height: 40px; margin-top:15px; overflow: hidden;}
+.con div.cartOrder div.cartPrice p{ text-align: right;}
+.con div.cartOrder div.allPrice{ width:98%; margin: auto; height: 30px; line-height: 30px; text-align: left; border-bottom: 1px solid #ccc;}
+.con div.cartOrder div.allPrice1{ width:98%; margin: auto; height: 30px; line-height: 30px; text-align: left; }
+.con div.cartOrder div.allPrice d{ margin-left: 10px;}
+.con div.cartOrder div.allPrice1 d{ margin-left: 10px;}
+.con div.cartOrder div.allPrice span{ font-size: 20px; color: black;}
+.con div.cartOrder div.thisOrder{ width:90%; margin: auto; height: 40px; line-height: 40px; text-align: right; }
+.con div.cartOrder div.thisOrder a.payment{ width: 46px; line-height: 22px; height: 22px; text-align: center; color: #fff; margin-top:10px; margin-right: 10px; background-color: #358cef;  border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; cursor: pointer; }
+.con div.cartOrder div.thisOrder a.cancelOrder{ width: 58px; line-height: 20px; height: 20px; text-align: center; color: #666; margin-top:10px; margin-right: 10px; border: 1px solid #ddd;  border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; cursor: pointer;}
+/*CustomerOrder/MyWFJ*/
+
+
+/*CustomerOrder/OrderEvaluation*/
+.con div.evaluationGoods{ width:100%; background-color: #fff;height: 90px;}
+.con div.evaluationGoods div.evaluationGoodsCon{ width:90%; height: 70px; margin:auto; padding-top:10px; padding-bottom:10px;}
+.con div.evaluationGoods div.evaluationGoodsCon img.evaluationGoodsConImg{ width:70px; height: 70px; float: left;border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; }
+.con div.evaluationGoods div.evaluationGoodsCon p{ width:190px; overflow: hidden; float: left; height: 40px; line-height: 20px; margin-left: 10px; }
+.con div.evaluationGoods div.evaluationGoodsCon d{ width: 190px; height: 30px; line-height: 30px; margin-left: 10px; margin-top:5px; float: left;}
+.con div.evaluationCount{ width:90%; margin: auto; margin-top:10px;}
+.con div.evaluationCount div.credibility{ width:100%; height: 40px; line-height: 40px;}
+.con div.evaluationCount div.credibility div.score{ }
+.con div.evaluationCount div.credibility div.score span.fl{ display: block; width:20px; line-height: 20px; height: 20px; text-align: center; margin-top: 10px; font-weight: bold; background-color: #9ad2f6; color: #9ad2f6;border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; cursor: pointer;}
+.con div.evaluationCount div.credibility div.score span.dis{ background-color: #358cef; color: #fff;}
+.con div.evaluationCount div.credibility div.score d{ display: block; float:left;  height: 40px; line-height: 40px; margin-left: 5px; margin-right: 10px;}
+.con div.evaluationCount div.credibilityText{ position: relative; width:100%; height: 190px; line-height: 20px; border:1px solid #ccc; background-color: #fff; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.evaluationCount div.credibilityText textarea.txt{ width:100%; height: 180px;  line-height: 20px; border: none; outline: none; resize: none; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.evaluationCount div.credibilityText span{ position: absolute; right: 10px; bottom: 0px; line-height: 20px;}
+.con div.evaluationCount div.evaluationBtn{ width:100%; height: 30px; line-height: 30px; margin-top:10px; text-align: center; color: #fff; background-color: #169bd6; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; cursor: pointer;}
+/*CustomerOrder/OrderEvaluation*/
+
+/*CustomerOrder/LogisticsInfo*/
+.con div.logisticsBG{ width:100%; height: 110px; background-color: #dcdcdc;}
+.con div.logisticsBG>div.logistics{ width:90%; height: 110px; margin: auto;}
+.con div.logisticsBG>div.logistics>div.logisticsImg{ width:70px; height: 70px; margin-top:20px;}
+.con div.logisticsBG>div.logistics>div.logisticsImg>img{ width:70px; height: 70px;}
+.con div.logisticsBG>div.logistics>div.logisticsCon{ width:240px; height: 90px; margin-left:10px; overflow: hidden; margin-top:20px;}
+.con div.logisticsBG>div.logistics>div.logisticsCon h1{ margin-bottom: 20px;}
+.con div.logisticsBG>div.logistics>div.logisticsCon p{ line-height: 20px;}
+.con div.logisticsGoodDetailsBG{ width:100%; height: 140px; background-color: #fff; border-top:1px solid #ccc; margin-top: 20px;}
+.con div.logisticsGoodDetailsBG div.logisticsGoodDetails{ width:90%; height: 140px; margin:auto; }
+.con div.logisticsGoodDetailsBG div.logisticsGoodDetails h1{ width:100%; height: 40px; line-height: 40px; font-size: 12px; font-weight: normal; border-bottom:1px solid #ccc;}
+.con div.logisticsGoodDetailsBG div.logisticsGoodDetails div.logisticsProduct{ width:100%; height:70px; margin-top:10px; }
+.con div.logisticsGoodDetailsBG div.logisticsGoodDetails div.logisticsProduct img{ width:70px; height: 70px; float: left;}
+.con div.logisticsGoodDetailsBG div.logisticsGoodDetails div.logisticsProduct p{ width:180px; height: 60px; line-height: 20px; color: black; overflow: hidden; float: left; margin-left: 10px;}
+.con div.logisticsGoodDetailsBG div.logisticsGoodDetails div.logisticsProduct span{ display: block; width:40px; float: right; text-align: right; line-height: 20px; margin-top: 40px; }
+.con div.logisticsDetails{ width:100%; border-top:1px solid #ccc; margin-top:20px;}
+.con div.logisticsDetails div.logisticsDetailsCon{ width:90%; margin: auto;}
+.con div.logisticsDetails div.logisticsDetailsCon h1{ width:100%; height: 40px; line-height: 40px; border-bottom: 1px solid #ccc;}
+.con div.logisticsDetails div.logisticsDetailsCon div.logisticsDetailsNav{ width:100%; height: 60px; }
+.con div.logisticsDetails div.logisticsDetailsCon div.logisticsDetailsNav div.logisticsDetailsImg{ width:15%; height: 60px; overflow: hidden;}
+.con div.logisticsDetails div.logisticsDetailsCon div.logisticsDetailsNav div.logisticsDetailsImg img{ float: right; width:35px; height:60px;}
+.con div.logisticsDetails div.logisticsDetailsCon div.logisticsDetailsNav div.logisticsInformation{ width:85%; height: 40px; margin-top:10px; overflow: hidden; line-height: 20px;}
+.con div.logisticsDetails div.logisticsDetailsCon div.logisticsDetailsNav div.logisticsInformation p.first{ color: #358cef;}
+.con div.logisticsDetails div.logisticsDetailsCon div.logisticsDetailsNav div.logisticsInformation p.end{ color: #333;}
+/*CustomerOrder/LogisticsInfo*/
+
+/*CustomerOrder/OrderDetail*/
+.con div.shippingAddress{ width:100%; height:165px; margin:auto; margin-top: 10px; background-color: #fff; border-top: 4px dashed #358cef; }
+.con div.shippingAddress ul{width:95%;  margin:auto; margin-top: 5px; margin-left: 10px; }
+.con div.shippingAddress  ul,li{ float:left; height: 22px;line-height: 22px; }
+.con div.shippingAddress  input{ margin-left:10px ;height: 22px;line-height: 22px; }
+.con div.shippingAddress h1{ height: 40px; line-height: 40px;}
+.con div.shippingAddress h1 span{ padding-left:10px; padding-right:10px;}
+.con div.shippingAddress p{ padding-left: 10px; padding-right: 10px; height: 40px; line-height: 20px; overflow: hidden; }
+.con div.orderDetail{ width:100%; margin-top:10px; border-top:1px solid #ccc; background-color: #fff;}
+.con div.orderDetail div.orderDetailNav{ margin:auto; border-bottom: 1px solid #7ecdf4; width:90%; height: 40px; line-height: 40px;}
+.con div.orderDetail>div.orderDetailCon{ height:90px; line-height:normal; }
+.con div.orderDetail>div.orderDetailCon>div.orderDetailCon{ height: 80px; margin-top:10px; width:100%;}
+.con div.orderDetail>div.orderDetailCon>div.orderDetailCon img{ float: left; width:80px; height: 80px;}
+.con div.orderDetail>div.orderDetailCon>div.orderDetailCon div.orderHeader{ width:180px; height: 80px; margin-left: 10px;}
+.con div.orderDetail>div.orderDetailCon>div.orderDetailCon p.orderTitle{ width:100%; color: black; height: 28px; line-height: 25px; overflow: hidden;}
+.con div.orderDetail>div.orderDetailCon>div.orderDetailCon d{ height: 30px; line-height: 30px;}
+.con div.orderDetail>div.orderDetailCon>div.orderDetailCon div.orderPrice{ width:30px; height: 80px; line-height: 80px; color: black; margin-right: 5px;}
+.con div.orderDetail>div.orderDetailNav>div.buyCount{ margin-right: 10px; margin-top: 5px; width:92px; height: 30px; line-height: 30px; overflow: hidden; border: 1px solid #666;border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.orderDetail>div.orderDetailNav>div.buyCount span{ float: left; display: block; width:30px; height: 30px; line-height: 30px; cursor: pointer; font-size: 20px; font-weight: bold;  text-align: center; }
+.con div.orderDetail>div.orderDetailNav>div.buyCount d{ float: left; display: block; width:30px; height: 30px; line-height: 30px;  text-align: center; border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
+.con div.orderDetail>div.orderDetailNav>span.fr{ margin-left: 10px;}
+.con div.orderDetail>div.orderDetailNavFloor{ width:100%; height: 90px; border-bottom: 1px solid #ccc;}
+.con div.orderDetail>div.orderDetailNavFloor>div.message{ width:90%; height: 90px; margin: auto; }
+.con div.orderDetail>div.orderDetailNavFloor>div.message div.leaveMessage{ height: 50px; line-height: 50px;}
+.con div.orderDetail>div.orderDetailNavFloor>div.message div.leaveMessage input[type=text]{width:230px; height: 24px; padding:2px; border: 1px solid #ccc; line-height: 30px; outline: none;border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.orderDetail>div.orderDetailNavFloor>div.message span,.con div.orderDetail>div.orderDetailNavFloor>div.message d{ margin-left: 10px; line-height: 40px; color: red;}
+.con div.orderDetail>div.orderDetailNavFloor>div.message span{ margin-left: 0px;}
+.con div.orderDetail>div.orderFloor{ width:100%; height: 50px; line-height: 50px;}
+.con div.orderDetail>div.orderFloor>div.orderConfirm{ width:90%; height: 50px; margin:auto;}
+.con div.orderDetail>div.orderFloor>div.orderConfirm div.confirm{ width:56px; height: 30px; margin-top:12px; line-height: 30px; text-align: center; color: #fff; background-color: #358cef; cursor:pointer; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.orderDetail>div.orderFloor>div.orderConfirm d{ font-size: 20px; color: #358cef; margin-right:20px;}
+.con div.orderDetail>div.orderFloor>div.orderConfirm span{ color: #358cef;}
+.jqmWindow { display: none;font-size: 12px;position: absolute;background:#DAE7F6 repeat top; color: #333; border: 1px solid #99bbe8;}
+/*CustomerOrder/OrderDetail*/
+
+/*Customer/CustomerInfo*/
+.con div.customerInfo{ width:90%; line-height: 35px; margin: auto; margin-top:20px; }
+.con div.customerInfo div.info{ width:100%; height: 33px; line-height: 35px;}
+.con div.customerInfo div.info div.optionsNav{ width:28%; height: 35px; line-height: 35px; overflow: hidden;}
+.con div.customerInfo div.info div.optionsNav a.addAddress{ width:20px; height: 20px; line-height: 20px; text-align: center; color: #fff; margin-top: 10px; margin-right: 10px; font-size: 18px; display: block; background-color: #22c31e; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; }
+.con div.customerInfo div.info div.optionsCon{ position:relative; width:59%; height: 35px; line-height: 35px; overflow: hidden;}
+.con div.customerInfo div.info div.optionsOper{width:10%; height: 35px;  overflow: hidden;}
+.con div.customerInfo div.info div.optionsOper d{ display: block; width:100%; height: 30px; line-height: 30px; color:#f0f0f0;}
+.con div.customerInfo div.info div.optionsOper d.dis{ color: red;}
+.con div.customerInfo div.info div.optionsOper p{ width:100%; height: 20px; line-height: 20px; }
+.con div.customerInfo div.info div.optionsOper p a{ text-decoration: underline; color: #358cef;}
+.con div.customerInfo div.errorCustomer{ width:100%; height: 30px; line-height: 30px;}
+.con div.customerInfo div.errorCustomer p{ color: red;}
+.con div.customerInfo div.customerButton{ display: block; width:140px; height: 30px; margin: auto; margin-top:10px; background-color: #22c31e; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; text-align: center; color: #fff;cursor: pointer;}
+.con div.customerInfo div.customerButton a{ color: #fff;}
+/*Customer/CustomerInfo*/
+
+/*Customer/CustomerReg*/
+.con div.customerInfo div.info div.optionsCon input[type=text]{ width:90%; height: 24px; padding:2px; line-height: 30px; border:1px solid #ccc;border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; outline: none; }
+.con div.customerInfo div.info div.verification input[type=text]{ width:70px; float: left;margin-top: 5px;}
+.con div.customerInfo div.info div.verification img{ float: left;margin-top: 10px;margin-left: 5px;}
+/*Customer/CustomerReg*/
+
+/*CustomerOrder/addressManagement*/
+.con div.addressManagement{ width:90%; margin: auto;}
+.con div.addressManagement h1{ width:100%; height: 30px; line-height: 30px; }
+.con div.addressManagement h1 d.fl{ width:50%; overflow: hidden;}
+.con div.addressManagement .address{width:100%; height: 45px; line-height: 45px; margin-top:10px; border-bottom: 1px solid #ccc;}
+.con div.addressManagement div.address div.addressCon{width:85%; height: 45px;position:relative; overflow: hidden;}
+.con div.addressManagement div.address div.addressCon d{ line-height: 45px; }
+.con div.addressManagement div.address div.addressCon span{ display: none; line-height: 45px; width:40px; text-align: center; color: red;}
+.con div.addressManagement div.address div.addressCon span.dis{ display: block; float: left;}
+.con div.addressManagement div.address div.addressOper{ width:15%; height: 45px; line-height: 45px; overflow: hidden;}
+.con div.addressManagement div.address div.addressOper a{ display: block; text-align: center; line-height: 20px; width:100%; }
+.con div.addressManagement div.address div.addressOper a.up{ color: #3294ef; }
+.con div.addressManagement div.address div.addressOper a.def{ color: black;}
+.con div.addressManagement div.address div.addressOper a.dis{ display: none;}
+.con div.txtAddress{ width:80%; height: 160px; margin:auto; margin-top:100px;}
+.con div.txtAddress textarea.txt{ width:100%; height: 100px;  line-height: 20px; border: none; border: 1px solid #ccc; outline: none; resize: none; background-color: transparent; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+.con div.txtAddress div.sub{ width:100%; height: 30px; line-height: 30px; margin-top:20px; cursor: pointer; text-align: center; color: #fff; background-color: #358cef; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px;}
+/*CustomerOrder/addressManagement*/
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #fff;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #fff;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #fff;
+}

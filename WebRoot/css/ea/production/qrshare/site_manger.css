@@ -1,0 +1,141 @@
+@charset 'utf-8';
+.search_box{width: 14.8rem;margin: .5rem auto;background-color: #eeeeee;position: relative;border-radius: .2rem;height: 1.6rem;}
+.search{background-color: transparent;outline: 0;height: 1rem;position: absolute;z-index: 1;width: 100%;top: .3rem;left: 0;padding: 0 .6rem;border: 0;}
+.search_overly{position: absolute;width: 100%;top: 0;bottom: 0;left: 0;z-index:0;text-align: center;line-height: 1.6rem;color: #a4a4a4;font-size: .73rem;}
+.com_search{display: inline-block;width: .9rem;height: .9rem;vertical-align: text-bottom;background: url(../../../../images/WFJClient/Login/com_search.png) no-repeat center;background-size: contain;margin-right: .3rem;}
+.search_wrap{overflow: hidden;position: fixed;width: 100%;left: 0;top: 2.16rem;background: #fff;z-index: 999;border-bottom: 1px solid #e4e4e4;box-shadow: 0 .4rem 0 rgba(242,242,242,1);}
+.site_wrap{margin-top: 3rem;}
+.plate_num{float: left;width: 35%;font-size: .7rem;padding-left: .6rem;position: relative;font-weight: bold;}
+.plate_num i{position: absolute;width: .4rem;height: .4rem;top: .6rem;left: 0;border-radius: 50%;background: #78c85c}
+.sch_name{float: left;width: 65%;text-align: right;font-size: .6rem;}
+.site_tit{line-height: 1.6rem;color: #222222;border-bottom: 1px solid #eeeeee;}
+.site_box{padding: .4rem 0.6rem 0;border-bottom: .3rem solid #f2f2f2;display: block;}
+.site_time{float: left;width: 60%;color: #606060;font-size: .555rem;line-height: 1rem;height: 2rem;}
+.green{color: #78c85c}
+.red{color: #ff6600}
+.site_con{padding: .3rem 0;}
+.site_R{float: left;width: 40%;line-height: 1rem;height: 1rem;text-align: right;color: #2d2d2d;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.site_T{float: left;width: 40%;line-height: 1rem;height: 1rem;text-align: right;color: #FF660F;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.site_det_box dt{text-align: center;color: #373737;font-size: .81rem;line-height: 1rem;border-bottom: 1px dashed #dcdcdc;margin-bottom: 0.2rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.site_det_box div{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.site_det_box .site_address{color: #7b7b7b;font-size: .555rem;line-height: 1.6rem;}
+.site_det_box{width: 15.7rem;margin: 1.5rem auto;padding: .5rem 1rem 1.5rem;border: 1px dashed #dcdcdc;}
+.site_det_box span{font-size: .64rem;color: #363636;display: inline-block;line-height: 1.2rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.site_det_box dd{font-size: 0;}
+.dd_L{width: 35%;text-align: right;}
+.dd_R{width: 65%;text-align: left;padding-left: .5rem;}
+/*2017年5月24日 17:13:06 新增下拉菜单*/
+.search_box{width: 8rem;margin: .5rem .6rem;}
+.select_wrap{position: absolute;height: 1.6rem;width: 6.2rem;right: 0.6rem;top: .5rem;background-color: #eeeeee;border-radius: .2rem;}
+.select_box{line-height: 1.6rem;padding: 0 1.5rem 0 1rem;color: #232323;background: url(../images/arr_b_black.png) no-repeat 5rem center;background-size: .66rem;font-size: .683rem;}
+.search_wrap{overflow: visible;}
+.select_list{background: #eeeeee;color: #232323;margin-top: .2rem;display: none;}
+.select_list li{line-height: 1.5rem;border-bottom: 1px solid #fff;padding: 0 1.5rem 0 1rem;cursor: pointer;font-size: .6rem;}
+.select_list li:last-child{border: 0;}
+.pay{
+	
+	margin-top:-1rem;height:50px;text-align:center;display:none;
+}
+
+
+.jr{
+	color:green;
+}
+.lk{
+	
+	color:blue;
+}
+.yc{
+	
+	color:red;
+}
+.fee{
+
+	height:50px;text-align:center;
+	margin-bottom: 1rem;
+}
+.startdd{
+    padding-top:0.5rem;
+	height: 2rem;
+
+}
+.enddd{
+
+	height: 2rem;
+
+}
+
+.startdd input{
+
+	border: 1px solid #d7d4d4;
+	height: 1.3rem;
+	outline:none;
+
+}
+
+.enddd input{
+
+	border: 1px solid #d7d4d4;
+	height: 1.3rem;
+	outline:none;
+
+
+}
+.com_head {
+	z-index: 970;
+	display: flex;
+	justify-content: center;
+}
+
+.msh{
+	line-height: 2.16rem;
+	height: 2.16rem;
+	margin-right: -4rem;
+	margin-left: 1.5rem;
+}
+@media (min-width: 960px) {
+
+
+	body{
+
+		margin: 0 20% 0 20%;
+	}
+	.com_head{
+		margin: auto 20%;
+		width: 60%;
+
+	}
+	.search_wrap{
+		margin: auto 20%;
+		width: 60%;
+	}
+	.plate_num {
+
+		font-size: 1rem;
+
+	}
+
+	.com_head h1 {
+		font-size: 1rem;
+
+	}
+	.select_wrap {
+		right:78%;
+	}
+	.msh {
+		margin-right: -40%;
+		margin-left: 35%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

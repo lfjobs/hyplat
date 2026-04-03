@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<import-mapping>
+	<entity  type="QQJBXX"  table="dtqq"  className="hy.ea.bo.office.Qq">
+		<field order="0" name="序号"  column=""  property="" comment="序号列不需要导入" needImport="false"/>
+		<field order="1" name="QQ编号"  column="qqnum"  property="qqNum" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="2" name="姓名"  column="staffid"  property="staffID" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="3" name="QQ号"  column="qqsequence"  property="qqSequence" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="50"></pattern>
+			</validator>			
+		</field>
+		<field order="4" name="手机号"  column="qqtel"  property="qqTel" comment="" needImport="true">			
+			<validator name="String">
+					<pattern  type="length" maxLength="11"></pattern>
+			</validator>			
+		</field>
+		<tableField name="主键"  column="qqkey"  property="qqKey" comment="">
+			<generator type="uuid" />
+		</tableField>
+		<tableField name="系统ID"  column="qqid"  property="qqID" comment="">
+			<generator type="sysid" prefix="qq"/>
+		</tableField>
+		<tableField name="公司ID"  column="companyid"  property="companyID" comment="">
+			<generator type="sessionid"/>
+		</tableField>
+		<tableField name="机构ID"  column="organizationid"  property="organizationID" comment="">
+			<generator type="sessionid"/>
+		</tableField>
+	</entity>
+</import-mapping>

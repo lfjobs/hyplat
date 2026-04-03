@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0 ;
+
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family:"Microsoft Yahei";
+    color: #222;
+    background-color: #fff;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color:transparent;
+}
+ul,li,ol{list-style: none;}
+input,button{outline: none;cursor: pointer;-webkit-tap-highlight-color:transparent;-webkit-appearance: none;}
+a,a:link,a:focus,a:active,a:hover{outline: none;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+img{
+    vertical-align: middle;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+header ul{
+    overflow: hidden;
+    background-color: #f74c32;
+}
+header ul li{
+    height: 1.8rem;
+    line-height: 1.8rem;
+    float: left;
+    font-size: 0.7rem;
+    text-align: center;
+    color: #fff;
+}
+header ul li:nth-child(1) {
+    width: 15%;
+}
+header ul li:nth-child(2) {
+    width: 70%;
+}
+header ul li:nth-child(3) {
+    width: 15%;
+}
+
+.Payment{
+    background: url("../../../images/supermarket/Paym-bg.png")top no-repeat;
+    background-size: 100%;
+    background-color: #fd9d8e;
+    position: relative;
+}
+.Payment article{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.Payment article .head{
+    width: 100%;
+    height: 36%;
+    position: absolute;
+}
+.Payment article .money{
+    width: 7rem;
+    height: 3.5rem;
+    background-color: #ee8f80;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin: -2rem -7rem 0 0;
+    text-align: center;
+    color: #fff;
+    padding: 0.5rem 0;
+}
+.Payment article .money h2{
+    line-height: 2rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+.Payment article .money p{
+    line-height: 1rem;
+    font-size: 1.1rem;
+}
+.mode{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    text-align: center;
+}
+.mode h4{
+    line-height: 1.8rem;
+    font-size: 0.6rem;
+    background-color: #eee;
+    font-weight: 500;
+    padding: 0 0.5rem;
+    text-align: left;
+}
+.mode ul li{
+    height: 2.4rem;
+    line-height: 2.4rem;
+    overflow: hidden;
+    padding: 0 0.5rem;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+.mode ul li .logo{
+    float: left;
+    height: 1rem;
+    margin: 0.7rem 0.8rem 0 0;
+}
+/*.mode ul li:nth-child(3) .logo{*/
+    /*height: 0.8rem;*/
+    /*margin: 0.8rem 0.8rem 0 0;*/
+/*}*/
+.mode ul li .name{
+    float: left;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-align: left;
+}
+.mode ul li .gou{
+    width: 0.8rem;
+    height: 0.8rem;
+    float: right;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    margin: 0.8rem 0;
+    cursor: pointer;
+}
+.mode ul li .gou img{
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    margin-top: -0.4rem;
+    border: 1px solid #08bef5;
+    border-radius: 50%;
+    display: none;
+}
+.mode #sub{
+    width: 12rem;
+    line-height: 1.8rem;
+    border-radius: 0.3rem;
+    background-color: #f74c31;
+    font-size: 0.7rem;
+    color: #fff;
+    border: none;
+    margin: 0.5rem auto;
+}
+.alert_dh{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 99;
+}
+.alert_dh .zfz{
+    width: 10rem;
+    height: 7rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -4rem 0 0 -5rem;
+}
+.alert_dh .zfz img{
+    width: 2.5rem;
+    margin: 1rem 0;
+}
+.alert_dh .zfz p{
+    font-size: 0.75rem;
+}
+/*改的 2019.2.12*/
+.Payment2 {
+    background: url(../../../images/supermarket/Paym-bg2.png)top no-repeat;
+    background-size: 100%;
+    background-color: #fbf7f6 ;
+    position: relative;
+}
+.Payment2 article .money {
+    width: 9rem;
+    height: 3.5rem;
+    background-color: #fbf7f6;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: -2rem 0 0 0;
+    text-align: center;
+    color: #fff;
+    padding: 0.5rem 0;
+}
+.Payment2 article .money h2{
+    line-height: 2rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin: 0 0 0 0;
+    color: #000;
+}
+.Payment2 article .address{
+    width: 100%;
+    position: absolute;
+    top: 9.5rem;
+}
+.Payment2 article .address ul{
+    overflow: hidden;
+    padding: 0 1.5rem;
+    font-size: 0.5rem;
+}
+.Payment2 article .address ul li{
+    float: left;
+}
+.Payment2 article .address ul .right{
+    float: right;
+}
+.Payment2 article .address .map{
+    overflow: hidden;
+}
+.Payment2 article .address .map img{
+    height: 0.7rem;
+    float: left;
+    margin: 0.3rem 0.48rem;
+}
+.Payment2 article .address .map p{
+    width: 81%;
+    line-height: 1.3rem;
+    float: left;
+    font-size: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

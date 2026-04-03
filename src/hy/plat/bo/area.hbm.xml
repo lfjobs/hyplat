@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping package="hy.plat.bo">
+		<class name="Area" table="area">
+			<id name="rid">
+				<column length="50" name="rid" />
+			</id>
+			<property name="areaID">
+				<column length="50" name="areaID" not-null="true"><comment>父id</comment> </column>
+			</property>
+			<property name="area">
+				<column length="50" name="area" ><comment>地域名称</comment></column>
+			</property>
+			<property name="father">
+				<column length="50" name="father" ><comment>父类编码</comment></column>
+			</property>
+		</class>
+	</hibernate-mapping>

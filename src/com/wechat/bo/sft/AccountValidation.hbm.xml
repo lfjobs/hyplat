@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="AccountValidation" table="dt_sft_AccountValidation">
+	<comment>汇款账户验证信息</comment>
+		<id length="50" name="avKey">
+			<column length="50" name="avKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="avId">
+			<column length="50" name="avId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="account_name">
+			<column length="50" name="account_name" ><comment> 付款户名	 </comment></column>
+		</property>
+		<property name="account_no">
+			<column length="50" name="account_no" ><comment>付款卡号</comment></column>
+		</property>
+		<property name="pay_amount">
+			<column length="50" name="pay_amount" ><comment>汇款金额</comment></column>
+		</property>
+		<property name="destination_account_number">
+			<column length="50" name="destination_account_number" ><comment>收款卡号</comment></column>
+		</property>
+		<property name="destination_account_name">
+			<column length="50" name="destination_account_name" ><comment>收款户名</comment></column>
+		</property>
+		<property name="destination_account_bank">
+			<column length="50" name="destination_account_bank" ><comment>开户银行</comment></column>
+		</property>
+		<property name="city">
+			<column length="50" name="city" ><comment>省市信息</comment></column>
+		</property>
+		<property name="remark">
+			<column length="50" name="remark" ><comment>备注信息</comment></column>
+		</property>
+		<property name="deadline">
+			<column length="50" name="deadline" ><comment>汇款截止时间</comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

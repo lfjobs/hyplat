@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package strict-method-invocation="false" name="documentinfo-ntoken" namespace="/ea/documentinfo" extends="struts-default">
+		<action name="ea_*" class="hy.ea.office.action.DocumentInfoAction" method="{1}">			
+			<result name="draft">/page/ea/main/office_ea/document/documentDraftList.jsp</result>
+		    <result name="toCreate">/page/ea/main/office_ea/document/documentFlow.jsp</result>
+			<result name="toNewDoc">/page/ea/main/office_ea/document/documentNewDoc.jsp</result>
+			<result name="receiver">/page/ea/main/office_ea/document/documentDraftOthersList.jsp</result>
+			<result name="yessend">/page/ea/main/office_ea/document/documentYesSendList.jsp</result>
+			<result name="archive">/page/ea/main/office_ea/document/documentArchiveyes.jsp</result>
+			<result name="share">/page/ea/main/office_ea/document/documentShare.jsp</result>
+			<result name="track">/page/ea/main/office_ea/document/fileAuditTrack.jsp</result>
+			<result name="trackprint">/page/ea/main/office_ea/document/fileStatusTrack.jsp</result>
+			<result name="receivermobile">/page/ea/websuitMini/recivebox.jsp</result>
+			<result name="not_login">/page/ea/not_login.jsp</result>
+			<!-- 有操作的查看 -->
+			<result name="toApprovenoView">/page/ea/main/office_ea/document/ApprovenoView.jsp</result>
+			<result name="toStampnoView">/page/ea/main/office_ea/document/StampnoView.jsp</result>
+			<result name="toSendnoView">/page/ea/main/office_ea/document/SendnoView.jsp</result>
+			<result name="toReadnoView">/page/ea/main/office_ea/document/ReadnoView.jsp</result>
+			
+			<result name="toSendyesView">/page/ea/main/office_ea/document/SendyesView.jsp</result>		
+			
+			<!-- 无操作的查看 -->
+			<result name="toFinishedView">/page/ea/main/office_ea/document/finishedDocView.jsp</result>		
+			
+			
+			<result name="toSocialInfo">/page/ea/main/office_ea/document/doc_jqm_cstaffs.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="document.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="documentinfof-ntoken" namespace="/ea/documentinfof" extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.office.action.DocumentFlowAction" method="{1}">			
+			<result name="toFrame">/page/ea/main/office_ea/document/documentFrame.jsp</result>
+			
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="documentinfo-jsonajax" namespace="/ea/documentinfo" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.DocumentInfoAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

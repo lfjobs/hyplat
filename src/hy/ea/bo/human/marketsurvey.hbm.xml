@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="MarketSurvey" table="dtMarketSurvey">
+		<id length="50" name="marketSurveyKey">
+			<column length="50" name="marketSurveyKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="marketSurveyID">
+			<column length="50" name="marketSurveyID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true"/>
+		</property>
+		<property name="surveyName">
+			<column length="250" name="surveyName"/>
+		</property>
+		<property name="surveyForms">
+			<column length="250" name="surveyForms"/>
+		</property>
+		<property name="surveyContent">
+			<column length="250" name="surveyContent" />
+		</property>
+		<property  name="surveyTarget">
+			<column length="250" name="surveyTarget" />
+		</property>
+		<property  name="surveyRegional">
+			<column length="250" name="surveyRegional" />
+		</property>
+		<property  name="surveyResult">
+			<column length="250" name="surveyResult" />
+		</property>
+		<property  name="surveyEvaluation">
+			<column length="250" name="surveyEvaluation" />
+		</property>
+		<property  name="surveyBudget">
+			<column length="56" name="surveyBudget" />
+		</property>
+		<property  name="note">
+			<column length="256" name="note" />
+		</property>
+	</class>
+</hibernate-mapping>

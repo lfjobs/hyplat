@@ -1,0 +1,760 @@
+@charset "utf-8";
+
+/*author--薛帅*/
+
+
+/*5L5C系统管理后台 样式*/
+
+
+/*5L5C系统管理平台首页 开始*/
+
+.per_info_wrap {
+    display: block;
+    padding: .8rem .6rem;
+}
+
+.per_img {
+    float: left;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: .3rem
+}
+
+.per_text {
+    float: left;
+    width: 11.8rem;
+    padding-left: 1rem;
+    color: #f2881c;
+    line-height: 1rem;
+    font-size: .683rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.per_name {
+    line-height: 1.4rem;
+    font-size: .768rem;
+    font-weight: bold;
+    color: #171717;
+}
+
+.mem_hr {
+    border: 0;
+    height: .5rem;
+    background: -webkit-radial-gradient(center, #ffca97, #ff6600);
+    background: radial-gradient(center, #ffca97, #ff6600);
+    margin-bottom: 0
+}
+
+.nav_list {
+    display: block;
+    background: #fff;
+}
+
+.nav_list>i {
+    float: left;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: .2rem;
+    margin-left: .6rem;
+    margin-right: 1rem;
+    margin-top: .5rem;
+}
+
+i.company_info {
+    background: url(../../../../images/ea/production/officemanage/company_info.png) no-repeat center #4ea1e0;
+    background-size: 59%;
+}
+
+.nav_listR {
+    float: left;
+    width: 12rem;
+    height: 3.4rem;
+    line-height: 3.4rem;
+    color: #131313;
+    font-size: .768rem;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    padding-right: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nav_listR>i {
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    background: url(../../../../images/ea/production/officemanage/std_nav_arr.png) no-repeat center;
+    background-size: contain;
+    right: .8rem;
+    top: 1.3rem;
+}
+
+.nav_listR span {
+    position: absolute;
+    right: 1.8rem;
+    font-size: .6rem;
+    top: 0;
+    color: #d26565;
+}
+
+i.nav_list_01 {
+    background: url(../../../../images/ea/production/officemanage/nav_list01.png) no-repeat center #e870ae;
+    background-size: 55%;
+}
+
+i.nav_list_02 {
+    background: url(../../../../images/ea/production/officemanage/nav_list02.png) no-repeat center #58938e;
+    background-size: 55%;
+}
+
+i.nav_list_03 {
+    background: url(../../../../images/ea/production/officemanage/nav_list03.png) no-repeat center #8c97cb;
+    background-size: 55%;
+}
+
+i.nav_list_04 {
+    background: url(../../../../images/ea/production/officemanage/nav_list04.png) no-repeat center #fe6427;
+    background-size: 53%;
+}
+
+i.nav_list_05 {
+    background: url(../../../../images/ea/production/officemanage/nav_list05.png) no-repeat center #556fb5;
+    background-size: 55%;
+}
+
+i.nav_list_06 {
+    background: url(../../../../images/ea/production/officemanage/nav_list06.png) no-repeat center #6cb374;
+    background-size: 55%;
+}
+
+i.nav_list_07 {
+    background: url(../../../../images/ea/production/officemanage/nav_list07.png) no-repeat center #7ecef4;
+    background-size: 55%;
+}
+
+
+/*5L5C系统管理平台首页 结束*/
+
+
+/*顶部广告页 开始*/
+
+.AD_box {
+    width: 15rem;
+    margin: .6rem auto 0;
+    height: 5.74rem;
+    position: relative;
+}
+
+.AD_box input {
+    position: absolute;
+    left: -9999px;
+}
+
+.AD_box img {
+    width: 100%;
+    height: 100%;
+}
+
+.ad_dele {
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    background: url(../../../../images/ea/production/officemanage/ADimg_dele.png) no-repeat center;
+    background-size: contain;
+    top: -.3rem;
+    right: -.3rem;
+    z-index: 9;
+}
+
+.addimg_btn {
+    width: 15rem;
+    height: 5.74rem;
+    margin: 0 auto;
+    border: 1px dashed #8e8e8e;
+    text-align: left;
+    padding-left: 6.4rem;
+    line-height: 5.74rem;
+    font-size: .81rem;
+    background: url(../../../../images/ea/production/officemanage/add_ADimg.png) no-repeat 4rem;
+    background-size: 2rem;
+    color: #202020;
+    margin-top: .6rem;
+}
+
+.crop_wrap {
+    width: 100%;
+}
+
+.crop_wrap img {
+    width: 100%;
+}
+
+#confrim {
+    width: 30%;
+    position: fixed;
+    bottom: 1rem;
+    left: 35%;
+    background: #ff6600;
+    color: #fff;
+    font-size: .683rem;
+    text-align: center;
+    display: block;
+    line-height: 1.5rem;
+    border-radius: .1rem;
+    z-index: 99;
+}
+
+
+/*顶部广告页 结束*/
+
+
+/*基本资料认证 开始*/
+
+.auth_tab_wrap {
+    padding: .6rem 0;
+    border-bottom: .3rem solid #eeeeee;
+}
+
+.auth_tab {
+    float: left;
+    width: 50%;
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .683rem;
+    color: #666666;
+}
+
+.auth_tab span {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #cdcdcd;
+    color: #fff;
+    font-size: .683rem;
+    line-height: 1rem;
+}
+
+.auth_tab_cur {
+    color: #ff6600;
+}
+
+.auth_tab_cur span {
+    background: #ff6600;
+}
+
+.auth_list {
+    height: 2.6rem;
+    line-height: 2.6rem;
+    margin-left: .6rem;
+    border-bottom: 1px solid #d3d3d3;
+    font-size: .73rem;
+}
+
+.auth_list:first-child {
+    height: 3.4rem;
+    line-height: 3.4rem;
+}
+
+.auth_L {
+    float: left;
+    width: 40%;
+    color: #666666;
+}
+
+.auth_R {
+    float: left;
+    width: 60%;
+    position: relative;
+    text-align: right;
+}
+
+.logo_wrap {
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: 1px solid #c9c9c9;
+    overflow: hidden;
+    right: 1.8rem;
+    top: .5rem;
+}
+
+.logo_wrap input {
+    position: absolute;
+    top: 0;
+    width: 2.4rem;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 9;
+}
+
+.logo_wrap img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+i.auth_arrR {
+    display: inline-block;
+    width: .8rem;
+    height: .6rem;
+    background: url(../../../../images/ea/production/officemanage/std_nav_arr.png) no-repeat center;
+    background-size: contain;
+    margin-top: 1.4rem;
+    vertical-align: top;
+    margin-right: .6rem;
+}
+
+.auth_inp {
+    text-align: right;
+    font-size: .73rem;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding-right: .8rem;
+    vertical-align: middle;
+}
+
+.auth_btn {
+    display: block;
+    width: 8rem;
+    margin: 1.5rem auto;
+    background: #ff6600;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6rem;
+    border-radius: .15rem;
+}
+
+.license_img {
+    width: 10rem;
+    height: 13.3rem;
+    margin: 2rem auto;
+    background: url(../../../../images/ea/production/officemanage/license_bg.png) no-repeat center #f3f3f3;
+    background-size: 3rem;
+    position: relative;
+    border-radius: .15rem;
+    overflow: hidden;
+}
+
+.license_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.license_img input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    opacity: 0;
+    border: 0;
+    outline: 0;
+}
+
+
+/*公司新闻 开始*/
+
+.contain_hd {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 2.24rem;
+    font-size: .7rem;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.contain_hd_L {
+    color: #ff6600;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    width: 0;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: .5rem;
+}
+
+.contain_hd_L i {
+    width: .7rem;
+    height: .7rem;
+    background: url(../../../../images/ea/production/officemanage/no_select.png) no-repeat center;
+    background-size: contain;
+    margin-right: .5rem;
+    margin-left: .5rem
+}
+
+.contain_hd_R {
+    display: inline-block;
+    line-height: 2.24rem;
+    width: 3.20rem;
+    text-align: center;
+    border-left: 1px solid #dcdcdc;
+    color: #323232;
+}
+
+.contain_hd_R span:nth-child(1) {
+    display: block;
+}
+
+.contain_hd_R span:nth-child(2) {
+    display: none;
+}
+
+.contain_bd {
+    margin-top: .32rem;
+    margin-bottom: 4rem;
+}
+
+.contain_bd label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: .5rem;
+    height: 4.16rem;
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.checkbox_ico {
+    width: .7rem;
+    height: .7rem;
+    background: url(../../../../images/ea/production/officemanage/no_select.png) no-repeat center;
+    background-size: contain;
+    display: none;
+    margin-right: .3rem;
+}
+
+.checkbox input {
+    position: absolute;
+    left: -9999px;
+}
+
+.contain_fd {
+    padding: .5rem 0;
+    position: fixed;
+    z-index: 970;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid #bfbfbf;
+    display: none;
+}
+
+.dele_btn {
+    display: block;
+    padding: 0;
+    height: 2rem;
+    width: 5.28rem;
+    font-size: .7rem;
+    color: #272636;
+    border: 1px solid #bfbfbf;
+    border-radius: .1rem;
+    text-align: center;
+    line-height: 2rem;
+    margin-left: 1rem;
+}
+
+.dele_btn i {
+    display: inline-block;
+    width: .96rem;
+    height: 2rem;
+    background: url(../../../../images/ea/production/officemanage/dele_ico.png) no-repeat center;
+    background-size: contain;
+    margin-right: .3rem;
+    vertical-align: top;
+}
+
+.dele_btn span {
+    display: inline-block;
+    vertical-align: middle;
+    vertical-align: top
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+}
+
+.checkbox a {
+    display: block;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: 9;
+}
+
+.checkbox a.a_hidden {
+    display: none;
+}
+
+.edit .checkbox_ico {
+    display: block;
+}
+
+.edit .contain_fd {
+    display: block;
+}
+
+.edit .contain_hd_L {
+    margin-left: 0;
+    color: #41403f;
+}
+
+.edit .contain_hd_L i {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.edit .contain_hd_R span:nth-child(2) {
+    display: block;
+}
+
+.edit .contain_hd_R span:nth-child(1) {
+    display: none;
+}
+
+.contain_hd_L .checkbox_select {
+    background-image: url(../../../../images/ea/production/officemanage/select.png);
+    background-size: contain;
+}
+
+.checkbox_select {
+    background-image: url(../../../../images/ea/production/officemanage/select.png);
+    background-size: contain;
+}
+
+.news_box {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    width: 0;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: .7rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 4.16rem;
+    position: relative;
+}
+
+.new_imgbox {
+    width: 5rem;
+    height: 4rem;
+    border: 1px solid #b5b5b5;
+}
+
+.new_imgbox img {
+    width: 100%;
+    height: 100%;
+}
+
+.news_R {
+    height: 4.16rem;
+    width: 64%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin-left: 2%;
+    padding-right: .2rem;
+}
+
+.news_R h3 {
+    line-height: 1.5;
+    font-size: .65rem;
+    color: #3b3b3b;
+}
+
+.news_R p {
+    font-size: .5rem;
+    color: #616161;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+}
+
+.news_time {
+    position: absolute;
+    color: #a4a4a4;
+    font-size: .4rem;
+    bottom: -0.8rem;
+    right: 1.28rem;
+    line-height: .64rem;
+}
+
+.new_hr {
+    border: 0;
+    height: 1px;
+    margin: .64rem 0;
+}
+
+i.add_new_ico {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../../../../images/ea/production/officemanage/add_news.png) no-repeat center;
+    background-size: contain;
+}
+/*公司新闻 结束*/
+/*添加新闻 开始*/
+.mainimg_wrap{line-height: 3rem;padding: .6rem;background: url(../../../../images/ea/production/officemanage/std_nav_arr.png) no-repeat 15rem center;background-size: .4rem;color: #9d9d9d;border-bottom: 1px solid #dcdcdc;}
+.main_img{float: right;width: 4rem;height: 3rem;margin-right: 1rem;border: 1px solid #b5b5b5;background: url(../../../../images/ea/production/officemanage/default_img.png) no-repeat center #f4f4f4;background-size: 2.2rem;}
+.new_tit{width: 15rem;margin: 0.6rem auto;line-height: 2rem;font-size: .9rem;color: #313131;border-bottom: 1px solid #dcdcdc;}
+.new_tit input{width: 100%;border: 0;outline: 0;}
+.new_conwrap{overflow: hidden;}
+.new_content{min-height: 12rem;width: 15rem;margin: 0 auto;font-size: .64rem;color: #373737;padding-bottom: 4rem;}
+.new_content img{max-width:100%;display:block;margin:0 auto;padding: .3rem 0;}
+.new_footer{position: fixed;width: 100%;height: 2rem;text-align: center;line-height: 2rem;color: #63bdc5;font-size: .73rem;bottom: 0;left: 0;border-top: 1px solid #dcdcdc;background: #fbfbfb;}
+i.add_img{display: inline-block;width: 1.2rem;height: 2rem;vertical-align: top;background: url(../../../../images/ea/production/officemanage/add_img.png) no-repeat center;background-size: contain;margin-right: .3rem;}
+.new_footer input{position:absolute;left:0;top:0;opacity:0;width:100%;height:100%;z-index: 99;}
+/*添加新闻 结束*/
+/*公司简介文化 开始*/
+.com_img_wrap{height: 9.888rem;background: #939090;color: #fff;}
+.c_head_text{position: absolute;width: 100%;text-align: center;font-size: .73rem;top: 50%;transform: translateY(-50%);z-index: 9;}
+.c_head_text i{display: inline-block;width: 2.4rem;height: 2.4rem;background: url(../../../../images/ea/production/officemanage/camera.png) no-repeat center;background-size: contain;}
+.size{height: .3rem;background: #ededed;color: #bc825b;font-size: .683rem;margin-bottom: .6rem;padding-left: .6rem;}
+.com_culture .new_tit{margin-top: 0;}
+/*公司简介文化 结束*/
+/*联营商城（出售中、仓库中） 开始*/
+.p_tab_wrap a{color: #434343;font-size: .73rem;font-family: "hiraginosansgb w3","microsoft yahei","微软雅黑";float: left;width: 50%;text-align: center;line-height: 2rem;border-bottom: .3rem solid #f0f0f0;}
+.p_tab_wrap .p_tab_cur{color: #ff6600;position: relative;}
+.p_tab_wrap .p_tab_cur:after{content: '';position: absolute;bottom: 0;height: 2px;background: #ff4a00;left: 25%;right: 25%;}
+.p_box_bd{background: #fff;display: block}
+.p_L{width: 4.2rem;height: 4.2rem;float: left;margin: .5rem;}
+.p_R{float: left;width:10.1rem;margin: .5rem 0;height: 4.2rem;}
+.p_tit{font-size: .62rem;line-height: .9rem;color: #3d4245;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;}
+.p_price{line-height: 1.4rem;font-size: .768rem;color: #ff4a00;}
+.p_num{font-size: .6rem;color: #8b8b8b;line-height: 1rem}
+.p_num span{margin-right: .8rem}
+.p_box_fd{border-top: 1px solid #dbdbdb;background: #f8f8f8;border-bottom: 1px solid #dbdbdb;}
+.p_box_fd a{float: left;width: 33.33%;text-align: center;font-size:.64rem;margin: .3rem 0;color: #5a5a5a;line-height: 1rem;}
+.p_box_fd a:nth-child(2){border-left: 1px solid #dbdbdb;border-right: 1px solid #dbdbdb;}
+.p_box_fd a i{display: inline-block;width: 1rem;height: 1rem;vertical-align: text-bottom;margin-right: .3rem;margin-bottom: -.05rem;}
+.p_edit i{background: url(../../../../images/ea/production/officemanage/act_edit.png) no-repeat center;background-size: 80%;}
+.p_down i{background: url(../../../../images/ea/production/officemanage/down_ico.png) no-repeat center;background-size: 90%;}
+.p_up i{background: url(../../../../images/ea/production/officemanage/up_ico.png) no-repeat center;background-size: 90%;}
+.p_dele i{background: url(../../../../images/ea/production/officemanage/act_dele.png) no-repeat center;background-size: 80%;}
+.p_box{border-bottom: .5rem solid #f0f0f0;}
+.p_box:last-child{border-bottom: 0;}
+.tab_con:last-child{display: none;}
+/*2016年9月6日 14:26:31 改*/
+i.m_nav03 {
+    background: url(../../../../images/ea/production/officemanage/m_nav03.png) no-repeat center #ff6600;
+    background-size: 62%;
+}
+i.m_nav04 {
+    background: url(../../../../images/ea/production/officemanage/m_nav04.png) no-repeat center #e870ae;
+    background-size: 55%;
+}
+i.m_nav05 {
+    background: url(../../../../images/ea/production/officemanage/m_nav05.png) no-repeat center #34afc9;
+    background-size: 56%;
+}
+.culture_con{padding-top: .5rem;}
+
+/* 2016年9月13日09:58:02 修改公司新闻编辑 样式 */
+.wrap_contain{padding-top:2.24rem;}
+.contain_hd{position:fixed;width:100%;top:2.16rem;left:0;background:#fff;z-index:99;}
+#prompt div{
+				width: 70%;
+				background: rgba(0,0,0, 0.5);
+			}
+
+/*2016年9月21日11:55:49 添加*/
+#preview{
+	position: fixed;
+    top: 2.16rem;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 998;
+    background: #fff;
+}
+.yangshi{
+	overflow: scroll;
+    height: 100%;
+}
+.release{
+	position: absolute;
+    top: 50%;
+    font-size: 0.72rem;
+    margin-top: -0.54rem;
+    color: #707070;
+    right: 2.3rem;
+}
+/*信息推送 开始*/
+.push_bg{height: 8rem;background: url(../../../../images/ea/production/officemanage/save_succeed.png) no-repeat center;background-size: 65%;}
+.push_object{width: 8rem;display: block;line-height: 1.5rem;font-size: .64rem;text-align: center;margin: 1rem auto;background: url(../../../../images/ea/production/officemanage/arr_R_white.png) no-repeat 95% #68a0d4;background-size: .3rem;color: #fff;border-radius: .13rem;}
+.push_menu{background: #ffffff;padding:.3rem;border-radius: .3rem}
+.push_menu dd{width: 8rem;line-height: 1.8rem;text-align: center;border-bottom: 1px solid #dcdcdc;color: #353535;}
+.push_menu dd:last-child{border-bottom: 0;}
+
+/*2016年12月14日 10:25:31 基本资料页面合并*/
+.tab_box{
+	display: none;
+}
+/* 2016年12月22日09:51:37 公司认证添加审批人  */
+.auditor{border-top: .35rem solid #f7f7f7;border-bottom: .1px solid #e9e9e9;}
+.auditor_tit{line-height: 2rem;padding-left: .6rem;color: #303030;font-size: .768rem;}
+.auditor_wrap{margin: 0 .6rem;position: relative;padding-bottom: .8rem;}
+.auditor_box{position: relative;margin-bottom: .8rem;z-index: 9;}
+.auditor_img{width: 2rem;height: 2rem;border-radius: 50%;position: absolute;left: 0;top: .2rem;z-index: 9;}
+.auditor_con{width: 12.2rem;margin-left: 2.6rem;}
+.auditor_type{color: #242424;font-size: .555rem;padding-left: .3rem;}
+.auditor_details{background: #f3f5f8;font-size: 0;border-radius: .1rem;padding: .2rem 0;}
+.auditor_name{display: inline-block;color: #242424;font-size: .555rem;line-height: 1rem;width: 7rem;}
+.auditor_name i{display: inline-block;width: .7rem;height: .7rem;vertical-align: text-bottom;margin-left: .3rem;margin-right: .2rem;}
+.auditor_time{display: inline-block;width: 5.2rem;font-size: .5rem;color: #999999;line-height: 1rem;text-align: right;padding-right: .3rem;}
+.auditor_opinion{font-size: .555rem;margin-left: 1.2rem;margin-right: .5rem;line-height: 1rem;}
+/* .pass{background: url(../../../../images/ea/production/officemanage/pass.png) no-repeat center;background-size: contain;} */
+.reject{background: url(../../../../images/ea/production/officemanage/reject.png) no-repeat center;background-size: contain;}
+.no_pass{background: url(../../../../images/ea/production/officemanage/no-pass.png) no-repeat center;background-size: contain;}
+.auditor_wrap:after{content: '';position: absolute;top: 2.2rem;left: 1rem;bottom: 0;border-left: 1px dashed #b8b8b8;z-index: 0;}
+.opinion_text{border-top: .35rem solid #f7f7f7;border-bottom: .1px solid #e9e9e9;width: 100%;background: #fff;}
+.opinion_textarea{font-size: .63rem;color: #242424;width: 100%;border: 0;outline: 0;padding: .3rem .6rem;resize: none;height: 6rem;}
+.opinion_textarea::-webkit-input-placeholder{color: #828282;}
+.auditor_btn{padding: 1.2rem 0 1.5rem;border-top: .35rem solid #f7f7f7}
+.auditor_btn a{float: left;width: 4.4rem;text-align: center;margin-left: .7rem;color: #fff;font-size: .7rem;line-height: 1.8rem;border-radius: .15rem;}
+.reject_btn{background: #4ab75c;}
+.nopass_btn{background: #aaaaaa;}
+.pass_btn{background: #6179af;}
+/*2016年12月15日 18:06:53 修改审批样式*/
+.auditor_type span{display: inline-block;width: 50%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-size: .555rem;}
+.auditor_type{font-size: 0;}
+.auditor_com{font-size: .555rem;padding-left: .3rem;line-height: 1.2rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis}
+
+
+ /*公司认证-审核状态  */
+.state_ico{width: 4rem;height: 4rem;background: url(../../../../images/ea/production/officemanage/pass.png) no-repeat center;background-size: contain;margin: 5rem auto 0;}
+.nopass_ico{width: 4rem;height: 4rem;background: url(../../../../images/ea/production/officemanage/no_pass.png) no-repeat center;background-size: contain;margin: 5rem auto 0;}
+.ing_ico{width: 4rem;height: 4rem;background: url(../../../../images/ea/production/officemanage/ing.png) no-repeat center;background-size: contain;margin: 5rem auto 0;}
+.state_text{font-size: .73rem;color: #676767;text-align: center;margin-top: 2rem;line-height: 1.5rem;}
+.again_up{display: block;width: 5rem;text-align: center;line-height: 1.5rem;background: #ff6600;color: #fff;margin: 5rem auto 0;border-radius: .15rem;} 

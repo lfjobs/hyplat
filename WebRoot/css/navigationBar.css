@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* css document */
+.footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	background-color: #fff;
+}
+.footer ul li {
+	border-top: 0.075rem solid #ebebeb;
+	padding-top: 0.55rem;
+	width: 20%;
+	float: left;
+}
+.footer ul li div {
+	height: 2.6665rem;
+	line-height: 2.6665rem;
+	display: flex;
+	align-items: center;
+}
+.footer ul li div img {
+	/*width: 33%;*/
+	width: 1.7rem;
+	margin: 0 auto;
+}
+.footer ul li p {
+	text-align: center;
+	height: 1.8rem;
+	line-height: 1.8rem;
+	font-size: 0.99rem;
+	color: #222222;
+}
+.footer ul li.active p {
+	color: #f64d35;
+}
+.pc-box {
+	min-width: 100%;
+	width: 100%;
+	margin: 0 auto
+}
+
+
+.pc-box .div-box header {
+	background-color: #f74c31
+}
+
+.pc-box .div-box header ul {
+	padding: 0 20px
+}
+
+.pc-box .div-box header ul li {
+	float: left;
+	height: 3.4rem;
+	line-height: 3.4rem;
+	font-size: 1.2rem;
+	color: #fff
+}
+
+.pc-box .div-box header ul li:nth-of-type(1) {
+	width: 20%
+}
+
+.pc-box .div-box header ul li:nth-of-type(1) img {
+	width: 0.8rem
+}
+
+.pc-box .div-box header ul li:nth-of-type(2) {
+	text-align: center;
+	width: 60%
+}
+
+.pc-box .div-box header ul li:nth-of-type(3) {
+	width: 20%;
+	float: right
+}
+
+.pc-box .div-box .container .ul-con li {
+	padding: 0 20px;
+	border-bottom: 1px solid #eee
+}
+
+.pc-box .div-box .container .ul-con li p {
+	padding: 25px 0
+}
+
+.pc-box .div-box .container .ul-con li p a {
+	display: inline-block;
+	height: 34px;
+	line-height: 34px;
+	font-size: 22px;
+	color: #999
+}
+
+.pc-box .div-box .container .ul-con li p:first-of-type {
+	float: left;
+	padding-right: 1rem;
+	font-size: 1.1rem;
+	color: #000
+}
+
+.pc-box .div-box .container .ul-con li p:last-of-type {
+	width: 370px;
+	float: left;
+	font-size: 1rem;
+	color: #999
+}
+
+.pc-box .div-box .container .ul-con li .div-more {
+	float: right
+}

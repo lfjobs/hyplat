@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+body {font-size:12px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top:0px;
+
+}
+table{
+font-size:12px;}
+
+#body_02{
+border:#a8c7ce 1px solid;
+width:100%;
+font-size:12px;
+float:left;
+
+}
+
+.btn02{
+background:url(../../../images/ea/human/staff_post/act_btn00.gif) no-repeat;
+width:70px;
+height:24px;
+cursor:pointer;
+border:solid 0px #111;
+font-size: 12px;
+margin:0 20 0 0px;
+}
+
+.input01{width:180px;height:21px;padding-top:2px;border:1px solid #7F9DB9;color:#1E5494;
+}
+.txt00{ font-size:13px; color:#ff0000;font-weight:bold;vertical-align:middle;}
+.txt01 {
+	color:#1E5494;
+	font-size:12px;
+	font-weight:bolder;
+    line-height:22px;
+	}
+.txt02{ font-size:12px; color:#000000;vertical-align:middle;}
+.link01{font-size: 12px;color: #1E5494;text-decoration: none;font-weight:bold;}
+.link02{font-size: 12px;color: #1E5494;text-decoration: none;}
+
+.list_add01{
+background:url(../../../images/ea/human/staff_post/005.gif) no-repeat;
+height:16px;
+width:16px;
+line-height:26px;}
+
+.bannb_01{
+background:url(../../../images/ea/human/staff_post/bg_01.gif) repeat-x;
+height:27px;
+width:100%;
+}
+
+
+.divbg{height:33px;overflow:hidden;clear:both;background:url(../../../images/ea/human/staff_post/tx_02.gif) repeat-x;list-style-image: none;list-style-type: none;font-size: 14px;color: #ffffff;line-height: 24px;}
+.clear {clear:both; height:26px; line-height:26px; font-size:0;border-bottom:#c2cfd8 1px dotted;}
+
+
+.text_tree{
+width:200px;
+height:396px;
+border:solid 1px #a8c7ce;
+padding-left:4px;
+padding-top:4px;}
+
+
+.right_dan{
+width:43px;
+height:24px;
+background:url(../../../images/ea/human/staff_post/right.jpg) no-repeat;
+float:left;
+text-align:center;
+cursor:pointer;}
+
+.left_dan{width:43px;
+height:24px;
+background:url(../../../images/ea/human/staff_post/fy_02.gif) no-repeat;
+float:left;
+text-align:center;
+margin-top:10px;
+cursor:pointer;}
+.right_suang{
+width:43px;
+height:24px;
+background:url(../../../images/ea/human/staff_post/down_right.gif) no-repeat;
+float:left;
+text-align:center;
+margin-top:10px;
+cursor:pointer;}
+.left_suang{width:43px;
+height:24px;
+background:url(../../../images/ea/human/staff_post/down_list.gif) no-repeat;
+float:left;
+text-align:center;
+margin-top:10px;
+cursor:pointer;}

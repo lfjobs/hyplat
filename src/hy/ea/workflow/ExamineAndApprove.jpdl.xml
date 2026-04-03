@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="ExamineAndApprove" xmlns="http://jbpm.org/4.4/jpdl">
+	<start g="183,1,48,48" name="start1">
+		<transition g="-53,-17" name="to draft" to="draft" />
+	</start>
+	<task g="161,83,92,52" name="draft" assignee="#{drafter}">
+		<transition g="-137,-17" name="to Examine and Approve" to="Examine and Approve" />
+	</task>
+	<task g="139,188,140,52" name="Examine and Approve">
+		<assignment-handler class="hy.ea.workflow.AssignDocFlowTask">
+			<field name="task">
+				<string value="approve" />
+			</field>
+		</assignment-handler>
+		<transition g="331,216;330,104:-53,-17" name="Reject" to="draft" />
+		<transition g="-65,-17" name="Not Approve" to="cancel1" />
+		<transition g="-44,1" name="to Seal" to="Seal" />
+	</task>
+	<end g="107,330,48,48" name="cancel1" state="dissent" />
+	<task g="335,249,92,52" name="Seal">
+		<assignment-handler class="hy.ea.workflow.AssignDocFlowTask">
+			<field name="task">
+				<string value="seal" />
+			</field>
+		</assignment-handler>
+		<transition g="-48,5" name="to Publish" to="Publish" />
+		<transition name="to Not Publish" to="end1" g="-47,-17" />
+	</task>
+	<task g="500,321,92,52" name="Publish">
+		<assignment-handler class="hy.ea.workflow.AssignDocFlowTask">
+			<field name="task">
+				<string value="publish" />
+			</field>
+		</assignment-handler>
+		<transition g="-47,-17" name="to read" to="read" />
+	</task>
+	<end g="295,379,48,48" name="end1" state="notPublish" />
+	<custom g="608,333,92,52" class="hy.ea.workflow.MultiReadActivity" name="read">
+		<transition g="-47,-17" name="to finish" to="finish" />
+	</custom>
+	<end g="638,433,48,48" name="finish" state="finished" />
+</process>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office"> 
+	<class name="TquickMessage" table="dt_TQuickMessage">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property  name="qmsID" type="java.lang.String">
+			<column  length="50" name="qmsID" />
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="content" type="java.lang.String">
+			<column length="3000" name="content"/>
+		</property>
+		<property name="createrID" type="java.lang.String">
+			<column length="50" name="createrID" />
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column length="50" name="createTime" />
+		</property>
+		<property name="titleName" type="java.lang.String">
+			<column length="100" name="titleName"/>
+		</property>
+		<property name="surl" type="java.lang.String">
+			<column length="2000" name="surl"/>
+		</property>
+		<property name="cate" type="java.lang.String">
+			<column length="50" name="cate"/>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="hy.ea.bo.human.salary.SalaryLevelList" table="DT_HR_SALARY_LEVEL_LIST">
+		<id length="50" name="levelListKey" >
+			<column length="50" name="LEVEL_LIST_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="levelListId" >
+			<column length="50" name="LEVEL_LIST_ID" not-null="true"/>
+		</property>
+		<property name="companyId" >
+			<column length="50" name="COMPANY_ID"/>
+		</property>
+		<property name="levelSerial" >
+			<column length="250" name="LEVEL_SERIAL"/>
+		</property>
+		<property name="levelName" >
+			<column length="250" name="LEVEL_NAME"/>
+		</property>
+		<property name="levelNum" >
+			<column length="250" name="LEVEL_NUM"/>
+		</property>
+		<property name="createStaffId" >
+			<column length="50" name="CREATE_STAFF_ID" />
+		</property>
+		<property name="createDate">
+			<column length="50" name="CREATE_DATE" />
+		</property>
+
+	</class>
+</hibernate-mapping>

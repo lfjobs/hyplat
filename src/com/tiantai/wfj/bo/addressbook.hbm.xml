@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="AddressBook" table="dtaddressbook">
+		<id length="50" name="abkey">
+			<column length="50" name="abkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="abid">
+			<column length="250" name="abid" />
+		</property>
+			<property name="abphone">
+			<column length="250" name="abphone" />
+		</property>	
+		<property name="abphonename">
+			<column length="250" name="abphonename" />
+		</property>
+		<property name="abWhetherwfj">
+			<column length="250" name="abWhetherwfj" />
+		</property>
+		<property name="abGrouping">
+			<column length="50" name="abGrouping" />
+		</property>
+			<property name="abABid">
+			<column length="50" name="abABid" />
+		</property>
+	
+		<property name="abuserphone">
+			<column length="250" name="abuserphone" />
+		</property><property name="abdata">
+			<column length="50" name="abdata" />
+		</property>
+	</class>
+</hibernate-mapping>

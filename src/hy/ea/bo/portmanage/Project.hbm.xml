@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.portmanage">
+	<!--接口管理项目表-->
+	<class name="Project" table="project">
+		<!--主键-->
+		<id length="50" name="projectKey">
+			<column length="50" name="projectKey" />
+			<generator class="uuid"/>
+		</id>
+		<!--项目id-->
+		<property name="projectId">
+			<column length="50" name="projectId" />
+		</property>
+		<!--项目名称-->
+		<property name="projectName">
+			<column length="250" name="projectName" />
+		</property>
+		<!--项目URL-->
+		<property name="projectUrl">
+			<column length="250" name="projectUrl" />
+		</property>
+		<!--项目描述-->
+		<property name="projectDescription">
+			<column length="250" name="projectDescription"/>
+		</property>
+		<!--创建人id-->
+		<property name="projectCreaterId">
+        	<column name="projectCreaterId" length="50" />
+        </property>
+		<!--创建人-->
+		<property name="projectCreaterName">
+        	<column name="projectCreaterName" length="50" />
+        </property>
+		<!--创建时间-->
+		<property name="projectCreatTime">
+			<column length="50" name="projectCreatTime"/>
+		</property>
+		<!--修改人id-->
+		<property name="projectModifierId">
+			<column name="projectModifierId" length="50" />
+		</property>
+		<!--修改人-->
+		<property name="projectModifierName">
+			<column name="projectModifierName" length="50" />
+		</property>
+		<!--修改时间-->
+		<property name="projectModificationTime">
+			<column length="50" name="projectModificationTime"/>
+		</property>
+
+		
+	</class>
+</hibernate-mapping>

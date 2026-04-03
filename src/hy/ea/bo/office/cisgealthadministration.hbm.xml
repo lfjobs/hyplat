@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="COSHealthAdministration" table="dtCOSHealthAdministration">
+		<id length="50" name="healthAdministrationKey">
+			<column length="50" name="healthAdministrationKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="healthAdministrationID">
+			<column length="50" name="healthAdministrationID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true"/>
+		</property>
+		<property name="scope">
+			<column length="250" name="scope"/>
+		</property>
+		<property name="scopeName">
+			<column length="250" name="scopeName"/>
+		</property>
+		<property name="principal">
+			<column length="250" name="principal"/>
+		</property>
+		<property name="examiner">
+			<column length="250" name="examiner" />
+		</property>
+		<property  name="assessment">
+			<column length="250" name="assessment" />
+		</property>
+		<property  name="remark">
+			<column length="250" name="remark" />
+		</property>
+	</class>
+</hibernate-mapping>

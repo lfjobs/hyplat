@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="ExaminationRoomCharge" table="DT_ExaminationRoomCharge">
+		<id length="50" name="erckey">
+			<column length="50" name="erckey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ercID">
+			<column length="50" name="ercID">
+				<comment>主键</comment>
+			</column>
+		</property>
+		<property  name="erId">
+			<column length="50" name="erId">
+				<comment>考场id</comment>
+			</column>
+		</property>
+		<property  name="staffID">
+			<column length="50" name="staffID">
+				<comment>责任人ID</comment>
+			</column>
+		</property>
+		<property  name="staffName">
+			<column length="50" name="staffName">
+				<comment>责任人</comment>
+			</column>
+		</property>
+		<property  name="CompanyID">
+			<column length="50" name="CompanyID">
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property  name="chargeNumber">
+			<column length="50" name="chargeNumber">
+				<comment>收费编号</comment>
+			</column>
+		</property>
+		<property  name="goodsID">
+			<column length="50" name="goodsID">
+				<comment>收费物品id</comment>
+			</column>
+		</property>
+		<property  name="startUsing">
+			<column length="10" name="startUsing">
+				<comment>00:启用,01:未启用,02:已删除</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

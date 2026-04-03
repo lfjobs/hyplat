@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.finance.BenDis.TCuscomProduct" table="T_CUSCOM_PRODUCT" schema="HYPLAT">
+        <id name="cpkey">
+            <column name="CPKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="cpid">
+            <column name="CPID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="ppid">
+            <column name="PPID" sql-type="varchar2(50)" length="50"><comment>产品id</comment></column>
+        </property>
+        <property name="sjdate">
+            <column name="SJDATE" sql-type="date"><comment>时间</comment></column>
+        </property>
+        <property name="sccsid">
+            <column name="SCCSID" sql-type="varchar2(50)" length="50"><comment>代理商id</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

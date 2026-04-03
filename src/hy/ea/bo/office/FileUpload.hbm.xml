@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="FileUpload" table="DT_OA_File_Upload">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="fileUploadId" type="java.lang.String">
+			<column name="fileUploadId" length="50" />
+		</property>
+		<property name="companyId" type="java.lang.String">
+			<column name="companyId" length="50" />
+		</property>
+		<property name="companyName" type="java.lang.String">
+			<column name="companyName" length="50" />
+		</property>
+		<property name="fileUploadName" type="java.lang.String">
+			<column name="fileUploadName" length="200" />
+		</property>
+		<property name="fileUploadSize" type="java.lang.String">
+			<column name="fileUploadSize" length="50" />
+		</property>
+		<property name="uploadPersonId" type="java.lang.String">
+			<column name="uploadPersonId" length="50" />
+		</property>
+		<property name="uploadPersonName" type="java.lang.String">
+			<column name="uploadPersonName" length="50" />
+		</property>
+		<property name="uploadTime" type="java.util.Date">
+			<column name="uploadTime" length="7" />
+		</property>
+		<property name="fileUploadPath" type="java.lang.String">
+			<column name="fileUploadPath" length="300" />
+		</property>
+		<property name="typeFolder" type="java.lang.String">
+			<column name="typeFolder" length="10" />
+		</property>
+		<many-to-one name="fileFolder" class="hy.ea.bo.office.FileFolder" lazy="false" cascade="save-update" fetch="join" >
+			<column name="fileFolderKey" length="50" />
+		</many-to-one>
+		<many-to-one name="fileCabinet" class="hy.ea.bo.office.FileCabinet" lazy="false" cascade="save-update" fetch="join" >
+			<column name="fileCabinetKey" length="50" />
+		</many-to-one>
+		<property name="saveDirectory" type="java.lang.String">
+			<column name="saveDirectory" length="50" />
+		</property>
+		<property name="iconPath" type="java.lang.String">
+			<column name="iconPath" length="200" />
+		</property>
+	</class>
+</hibernate-mapping>

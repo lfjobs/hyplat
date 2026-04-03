@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+html,body{
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none;  /*webkit浏览器*/
+    -ms-user-select: none;   /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;      /*文本不可选*/
+    -webkit-overflow-scrolling: touch; /*兼容ios滑屏卡顿*/
+    -webkit-tap-highlight-color:transparent;/*去除手机浏览器点击时出现背景颜色*/
+    font-size: 25px;
+    max-width: 100%;
+}
+a{
+    text-decoration: none;/*去除下划线*/
+    -webkit-tap-highlight-color:transparent;/*是一个不规范的属性，去除a标签点击时出现的背景颜色*/
+    outline: none;
+    color: #000;
+}
+li,span,input,textarea{
+    outline: none;  /*去除点击input出现的边框颜色*/
+    -webkit-appearance: none; /*去除系统默认appearance的样式,常用于IOS下移除原生样式*/
+    cursor: pointer;
+}
+select{
+    outline: none;
+}
+img{
+    -webkit-tap-highlight-color:transparent;/*去除点击有背景颜色*/
+    vertical-align: middle;/*图片垂直居中*/
+    object-fit: cover;/*图片不变形平铺居中*/
+}
+ul,li,ol{list-style: none;}
+::-webkit-scrollbar {
+    width: 0;/*去滚动条*/
+}
+
+.header{
+    height: 2rem;
+    line-height: 2rem;
+    overflow: hidden;
+}
+.header li{
+    float: left;
+    text-align: center;
+}
+.header li:nth-child(1){
+    width: 15%;
+    height: 0.8rem;
+}
+.header li:nth-child(1) img{
+    height: 1rem;
+}
+.header li:nth-child(2){
+    width: 70%;
+    font-size: 0.7rem;
+}
+.header li:nth-child(3){
+    width: 15%;
+}
+.header li:nth-child(3) img{
+    width: 0.8rem;
+}
+.bug-nav{
+    width: 1000%;
+    overflow: hidden;
+    color: #222;
+    font-size: 0.5rem;
+    background: -webkit-linear-gradient(#f4f4f4,#fff);
+    background: -o-linear-gradient(#f4f4f4,#fff);
+    background: -moz-linear-gradient(#f4f4f4,#fff);
+    background: linear-gradient(#f4f4f4,#fff);
+}
+.bug-nav-box{
+    /*overflow-y: hidden;*/
+    width: 100%;
+    overflow-x: scroll;
+    height: 2.5rem;
+}
+.bug-nav li{
+    padding: 0 0.5rem;
+    line-height: 2rem;
+    float: left;
+    text-align: center;
+}
+.bug-nav .active{
+    color: #f74c32;
+}
+.bug-nav2{
+    overflow: hidden;
+    background-color: #f2f2f2;
+    color: #222;
+    font-size: 0.5rem;
+    padding: 0 12%;
+}
+.bug-nav2 li{
+    /*width: 16%;*/
+    line-height: 2rem;
+    float: left;
+    text-align: center;
+}
+.bug-con{
+    overflow: auto;
+    height: 21rem;
+}
+.bug-con ul{
+    overflow: hidden;
+}
+.bug-con ul li{
+    overflow: hidden;
+    padding: 0.5rem 3% 0.5rem 3%;
+    border-bottom: 1px solid #f2f2f2;
+}
+.bug-con ul li div{
+    float: left;
+}
+.bug-con ul li h5{
+    font-size: 0.7rem;
+    line-height: 1.3rem;
+}
+.bug-con ul li h5 img{
+    width: 0.25rem;
+    float: right;
+    margin-top: 2.5%;
+}
+.bug-con ul li p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 50%;
+    float: left;
+    font-size: 0.55rem;
+    padding: 0.1rem 0;
+}
+.bug-con ul li .un span{
+    color: #ed0000;
+}
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+}
+footer ul{
+    overflow: hidden;
+    padding: 0.5rem 6%;
+}
+footer ul li{
+    width: 20%;
+    text-align: center;
+    float: left;
+}
+footer ul li img{
+    width: 60%;
+}
+footer ul li h5{
+    font-weight: 400;
+    font-size: 0.5rem;
+    padding: 0.5rem 0;
+}
+aside{
+    padding-top: 0.2rem;
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+    padding-bottom: 0.55rem;
+    float: left;
+}
+aside img{
+    width: 1rem;
+    margin: 0 auto;
+}
+aside.aside_yes .img_no{
+    display: none;
+}
+aside.aside_yes .img_yes{
+    display: block;
+}
+aside.aside_no .img_yes{
+    display: none;
+}
+aside.aside_no .img_no{
+    display: block;
+}
+.footer-p{
+    text-align: center;
+    padding:0 0 1rem 0;
+}
+.footer-p input{
+    width: 88%;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    background-color: #4792f7;
+    border: 0;
+    border-radius: 0.15rem;
+    color: #fff;
+    font-size: 0.6rem;
+}

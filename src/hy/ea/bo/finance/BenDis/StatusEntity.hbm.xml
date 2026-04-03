@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.finance.BenDis.StatusEntity" table="DT_STATUS" schema="HYPLAT">
+        <id name="statekey">
+            <column name="STATEKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="jnumorder">
+            <column name="JNUMORDER" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="stordid">
+            <column name="STORDID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="supplierstatus">
+            <column name="SUPPLIERSTATUS" sql-type="varchar2(50)"/>
+        </property>
+        <property name="paystatus">
+            <column name="PAYSTATUS" sql-type="varchar2(50)"/>
+        </property>
+        <property name="cashierbillsid">
+            <column name="CASHIERBILLSID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="xddate">
+            <column name="XDDATE"/>
+        </property>
+        <property name="jhdate">
+            <column name="JHDATE"/>
+        </property>
+        <property name="fhdate">
+            <column name="FHDATE"/>
+        </property>
+        <property name="shdate">
+            <column name="SHDATE"/>
+        </property>
+        <property name="yhdate">
+            <column name="YHDATE"/>
+        </property>
+        <property name="fzdate">
+            <column name="FZDATE"/>
+        </property>
+    </class>
+</hibernate-mapping>

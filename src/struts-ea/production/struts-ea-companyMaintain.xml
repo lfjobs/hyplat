@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="companyMaintain-token" namespace="/ea/companyMaintain"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.officemanage.CompanyMaintainAction" method="{1}">
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>	
+		    <result name="shoveSend">/page/ea/main/production/cprocedure/officemanage/queryNews.jsp</result>
+			<result name="queryNews">/page/ea/main/production/cprocedure/officemanage/addNews.jsp</result>
+			<result name="allNews">/page/ea/main/production/cprocedure/officemanage/queryNews.jsp</result>
+			<result name="saveOrUpdateNews">/page/ea/main/production/cprocedure/officemanage/androidShoveSend.jsp</result>
+			<result> 
+				<param name="contentType">
+					applicationnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="productslaunch.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="companyMaintain-jsonajax" namespace="/ea/companyMaintain" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.officemanage.CompanyMaintainAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office.face">
+	<class name="PublicMenuThree" table="DT_PUBLIC_MENU_THREE">
+		<id length="50" name="menuKey">
+			<column length="50" name="MENU_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="menuId">
+			<column length="50" name="MENU_ID" />
+		</property>
+		 <property name="menuTitle">
+        	<column name="MENU_TITLE" length="50"/>
+        </property>
+         <property name="menuUrl">
+        	<column name="MENU_URL" length="50"/>
+        </property>
+        <property name="menuSort">
+			<column length="10" name="MENU_SORT" />
+		</property>
+        <property name="menuLevel">
+			<column length="10" name="MENU_LEVEL" />
+		</property>
+		<property name="menuParentId">
+			<column length="50" name="MENU_PARENT_ID" />
+		</property>
+	</class>
+</hibernate-mapping>

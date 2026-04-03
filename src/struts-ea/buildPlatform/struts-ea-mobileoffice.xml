@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="mobileoffice-ntoken" namespace="/mobile/office" extends="struts-default">
+		<action name="mobileoffice_*" class="MobileOfficeAction" method="{1}">
+			<result name="login">/page/ea/BuildPlatform/MobileOfficeLogin.jsp</result>
+			<result name="resourceSystem">/page/ea/BuildPlatform/ResourceSystem.jsp</result>
+			<result name="appOperation">/page/ea/BuildPlatform/AppOperation.jsp</result>
+			<result name="fastApplication">/page/ea/BuildPlatform/FastApplication.jsp</result>
+			<result name="mobileLogin">/page/ea/BuildPlatform/MobileOfficeLogin.jsp</result>
+			<result name="CoachingManagement">/page/ea/BuildPlatform/CoachingManagement.jsp</result>
+			<result name="StudentManagement">/page/ea/BuildPlatform/StudentManagement.jsp</result>
+			<result name="studentInformation">/page/ea/main/driving/elkc/studentInformation.jsp</result>
+			<result name="ymobileLogin">/page/ea/BuildPlatform/YmobileOfficeLogin.jsp</result>
+			<result name="queryPeriod">/page/ea/BuildPlatform/queryPeriod.jsp</result>
+			<result name="periodDetails">/page/ea/BuildPlatform/periodDetails.jsp</result>
+			<result name="learningProcess">/page/ea/BuildPlatform/learningProcess.jsp</result>
+			<result name="drivingPic">/page/ea/BuildPlatform/drivingPic.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="mobileoffice-ajax" namespace="/mobile/office" extends="json-default">
+		<action name="sajax_ea_*" class="MobileOfficeAction" method="{1}">
+				<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EmployCondition" table="dt_car_condition">
+		<id length="50" name="conditionkey">
+			<column length="50" name="conditionkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="conditionID">
+			<column length="50" name="conditionID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="currentsituation">
+			<column length="50" name="currentsituation"/>
+		</property>
+		<property name="conectTime">
+			<column name="conectTime" />
+		</property>
+		<property name="assignmentMoney" >
+			<column name="assignmentMoney"/>
+		</property>
+		<property  name="buyName">
+			<column length="50" name="buyName" />
+		</property>
+		<property  name="buytelphone">
+			<column length="50" name="buytelphone" />
+		</property>
+		<property  name="certificatenum">
+			<column length="50" name="certificatenum" />
+		</property>
+		<property  name="trackNumber">
+			<column length="50" name="trackNumber" />
+		</property>
+		<property  name="remark">
+			<column length="50" name="remark" />
+		</property>
+			<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property  name="frameNum">
+			<column length="250" name="frameNum" />
+		</property>
+		<property  name="carNum">
+			<column length="250" name="carNum" />
+		</property>
+		<property  name="carType">
+			<column length="250" name="carType" />
+		</property>
+		<property  name="carPeople">
+			<column length="250" name="carPeople" />
+		</property>
+	</class>
+</hibernate-mapping>

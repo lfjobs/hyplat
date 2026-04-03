@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">          
+<hibernate-mapping package="hy.ea.bo.finance.BenDis">
+	<class name="RefundAddress"  table="dtRefundAddress">
+	<comment>退货地址管理</comment>
+		<id length="50" name="raddressKey">
+			<column length="50" name="raddressKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="raddressId">
+			<column length="50" name="raddressId" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="rname">
+			<column length="50" name="rname"><comment>退货人姓名</comment></column>
+		</property>
+			<property name="companyId">
+			<column length="50" name="companyId"><comment>公司id</comment></column>
+		</property>
+		<property name="rtel">
+			<column length="50" name="rtel"><comment>接收人手机</comment></column>
+		</property>
+		<property  name="rarea">
+			<column length="50" name="rarea"><comment>退货地区</comment></column>
+		</property>
+		<property  name="rstreet">
+			<column length="50" name="rstreet"><comment>退货街道</comment></column>
+		</property>
+		<property  name="rpostcode">
+			<column  name="rpostcode"><comment>邮编</comment></column>
+		</property>
+		<property  name="rphone">
+			<column length="50" name="rphone"><comment>用户电话</comment></column>
+		</property>
+		<property name="rremark">
+			<column length="50" name="rremark"><comment>备注</comment></column>
+		</property>
+		<property name="status">
+			<column length="2" name="status"><comment>00默认地址  01其他地址</comment></column>
+		</property>
+		<property name="rtype">
+			<column length="1" name="rtype" default="0"><comment>0:默认退货地址1:发货地址</comment></column>
+		</property>
+    </class>
+</hibernate-mapping>

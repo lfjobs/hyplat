@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.DrivingSchool.elyc">
+    <class name="TbElycTeacherEvaluate" table="Tb_Elyc_Teacher_Evaluate">
+        <id length="50" name="etKey">
+            <column length="50" name="etKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="etId" type="java.lang.String">
+            <column name="etId"  length="50" ><comment>逻辑ID</comment></column>
+        </property>
+        <property name="studentId" type="java.lang.String">
+            <column name="studentId"  length="50" ><comment>学员ID</comment></column>
+        </property>
+        <property name="teacherId" type="java.lang.String">
+            <column name="teacherId"  length="50" ><comment>教练ID</comment></column>
+        </property>
+        <property name="totalScore" type="java.lang.Integer">
+            <column name="totalScore"><comment>创建时间</comment></column>
+        </property>
+        <property name="serviceScore" type="java.lang.Integer">
+            <column name="serviceScore"><comment>教学水平星星数</comment></column>
+        </property>
+        <property name="teachleveScore" type="java.lang.Integer">
+            <column name="teachleveScore"  length="50" ><comment>创建人ID</comment></column>
+        </property>
+        <property name="evaluateType" type="java.lang.String">
+            <column name="evaluateType"  length="1" ><comment>评价类型 0 1 2;//好评 ，中评，差评，通过星星数计算出来的1-4差评；5-7中评；8-10，好评</comment></column>
+        </property>
+        <property name="evaluateContent" type="java.lang.String">
+            <column name="evaluateContent"  length="250" ><comment>评价文字内容</comment></column>
+        </property>
+        <property name="evaluateDate" type="java.util.Date">
+            <column name="evaluateDate"  length="50" ><comment>评价日期</comment></column>
+        </property>
+        <property name="orderRecordId" type="java.lang.String">
+            <column name="orderRecordId"  length="50" ><comment>学员预约记录ID也就是教练课程ID</comment></column>
+        </property>
+
+    </class>
+</hibernate-mapping>

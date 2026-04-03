@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffFamilyMember" table="dt_hr_staff_familymember">
+		<id length="50" name="memberKey">
+			<column length="50" name="memberKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="memberID">
+			<column length="50" name="memberID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="memberName">
+			<column length="250" name="memberName"/>
+		</property>
+		<property name="memberRelationship">
+			<column length="250" name="memberRelationship"/>
+		</property>
+		<property name="memberBirthDay">
+			<column length="250" name="memberBirthDay" />
+		</property>
+		<property  name="memberCompanyName">
+			<column length="250" name="memberCompanyName" />
+		</property>
+		<property  name="memberPosition">
+			<column length="250" name="memberPosition" />
+		</property>
+		<property  name="memberDuties">
+			<column length="250" name="memberDuties" />
+		</property>
+		<property  name="memberAddress">
+			<column length="250" name="memberAddress" />
+		</property>
+		<property  name="memberPhone">
+			<column length="250" name="memberPhone" />
+		</property>
+		<property  name="memberDesc">
+			<column length="250" name="memberDesc" />
+		</property>
+		
+		
+		<property  name="postType">
+			<column length="250" name="postType" />
+		</property>
+		<property  name="workPhone">
+			<column length="250" name="workPhone" />
+		</property>
+		<property  name="reference">
+			<column length="250" name="reference" />
+		</property>
+		<property  name="referenceCode">
+			<column length="250" name="referenceCode" />
+		</property>
+		<property  name="referenceTime">
+			<column length="250" name="referenceTime" />
+		</property>
+	</class>
+</hibernate-mapping>

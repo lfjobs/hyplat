@@ -1,0 +1,325 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+}
+body{margin:0 auto; background-color: #fff;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; color:#666; font-family:'微软雅黑';outline: none;}
+img{ cursor:pointer;border:none;vertical-align: middle; -webkit-tap-highlight-color:transparent;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #666;}
+a:active,a:hover { text-decoration: none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+input{
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color:transparent;
+}
+i{
+    -webkit-tap-highlight-color:transparent;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+/*公共样式*/
+
+.clearfix{
+    clear: both;
+}
+
+
+header{
+    width: 100%;
+    height: 45px;
+    /*position: fixed;*/
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #c6c6c6;
+    z-index: 9;
+}
+header ul{
+    padding: 0;
+    height: 100%;
+}
+header ul li{
+    float: left;
+    text-align: center;
+    font-size: 0.5rem;
+}
+header ul li:nth-child(2){
+    font-size: 0.8rem;
+}
+header ul li img{
+    width: 0.4rem;
+    margin-top: -0.15rem;
+    vertical-align: middle;
+}
+header ul li:nth-child(3) img {
+    width: 0.75rem;
+}
+.content .con{
+    overflow: auto;
+}
+
+/*--新建会议活动--*/
+.Meeting ul li .img_box{
+    width: 3rem;
+    height: 3rem;
+    float: right;
+    position: relative;
+    overflow: hidden;
+}
+.Meeting ul li .img_box img{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    z-index: 1;
+}
+.Meeting ul li .img_box input {
+    opacity: 0;
+    width: 3rem;
+    margin-top: 1.5rem;
+    position: absolute;
+    z-index: 9;
+    top: 0;
+}
+.Meeting{
+
+}
+.Meeting ul{
+    border-bottom: 0.3rem solid #f5f5f5;
+}
+.Meeting_ ul{
+    border-bottom: 0 solid #f5f5f5;
+}
+.Meeting ul li{
+    overflow: hidden;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+.Meeting ul li .left{
+    width: 30%;
+    line-height: 1rem;
+    font-size: 0.65rem;
+}
+.Meeting ul li .img_box{
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    float: right;
+}
+.Meeting ul .Meet_img .right_{
+    height: 1rem;
+    float: right;
+    margin: 1rem 0 1rem 0.5rem;
+}
+.Meet_img{
+
+}
+.Meeting ul .Meet_img .left{
+    line-height: 3rem;
+}
+.Meeting ul li .right{
+    width: 70%;
+    font-size: 0.65rem;
+
+}
+.Meeting ul li .right p{
+    line-height: 1rem;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.Meeting ul .Meet_list .right p{
+    width: 9rem;
+    line-height: 1rem;
+    float: left;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ }
+.Meeting ul .Meet_list .right input{
+    width: 9rem;
+    line-height: 1rem;
+    font-size: 0.65rem;
+    border: none;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.Meeting ul .Meet_list .right .txt_p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+}
+.Meeting ul li .right_{
+    height: 0.8rem;
+    float: right;
+    margin: 0.1rem 0;
+}
+.content .btn{
+    height: 2.5rem;
+    text-align: center;
+}
+.content .btn input{
+    width: 80%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    background-color: #6788d5;
+    border: none;
+    color: #fff;
+    font-size: 0.65rem;
+    border-radius: 0.15rem;
+    margin: 0.5rem 0;
+}
+/*--新建会议活动 end--*/
+
+/*--报名价格--*/
+#add_mess{
+    width: 4rem;
+    height: 1rem;
+    border: 1px dashed #6788d5;
+    float: right;
+    background-color: #fff;
+    color: #6788d5;
+    font-size: 0.6rem;
+    border-radius: 0.1rem;
+}
+.Meeting ul .ticket_prices .left{
+    color: #6788d5;
+}
+.Meeting ul .ticket_prices .right p{
+    line-height: 1rem;
+    color: #666;
+}
+.Meeting ul .commission .left{
+    color: #ff6600;
+}
+.Meeting ul .commission .right p{
+    color: #666;
+}
+.Meeting ul .commission .right .det{
+    height: 0.6rem;
+    float: right;
+    margin: 0.2rem 0;
+}
+.no{
+    text-align: center;
+    margin: 3rem 0 0 0;
+}
+.no p{
+    color: #b3b3b3;
+    font-size: 0.65rem;
+}
+
+/*--报名价格 end--*/
+
+/*--会议主场--*/
+.Meeting ul .Meet_det .right p{
+    width: 9rem;
+    float: left;
+}
+.Meeting ul .Meet_det .right .det{
+    height: 0.6rem;
+    float: right;
+    margin: 0.2rem 0;
+}
+.Meeting ul .Meet_det .right input{
+    width: 9rem;
+    line-height: 1rem;
+    font-size: 0.65rem;
+    border: none;
+    color: #000;
+}
+/*--会议主场 end--*/
+
+/*--会议时间--*/
+.Meeting ul li .right .time_s{
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.65rem;
+    border: none;
+    color: #000;
+}
+/*--会议时间 end--*/
+
+/*--协办单位--*/
+.Meeting ul .Meet_det2 .right{
+    width: 100%;
+}
+.Meeting ul .Meet_det2 .right input{
+    width: 13.5rem;
+}
+/*--协办单位 end--*/
+
+/*--产品分类--*/
+header ul .redact{
+    float: left;
+    text-align: center;
+    font-size: 0.6rem;
+    cursor: pointer;
+    /*color: #ff6e31;*/
+}
+header ul #save{
+    text-align: center;
+    font-size: 0.6rem;
+    color: #ff6e31;
+    cursor: pointer;
+}
+.product li{
+    overflow: hidden;
+    padding: 0 1rem;
+}
+.product li .txt{
+    border-bottom: 1px solid #ddd;
+    letter-spacing: 1px;
+}
+.product li .txt input{
+    width: 12rem;
+    line-height: 1rem;
+    font-size: 0.65rem;
+    border: none;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 1rem 0;
+}
+.product li .txt .right{
+    height: 0.8rem;
+    float: right;
+    margin: 1.1rem 0;
+}
+.add{
+    width: 7rem;
+    height: 2rem;
+    font-size: 0.7rem;
+    color: #9ada6c;
+    background-color: #fff;
+    border: 1px solid #9ada6c;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: none;
+    position: fixed;
+    bottom: 2%;
+    left: 28%;
+}
+/*--产品分类 end--*/

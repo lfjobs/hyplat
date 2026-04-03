@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666; font-family:'华文黑体';}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;padding-right:0.5rem;}
+.wfj_width{ width:92%; margin:0 auto;}
+.wfj_phwidth{ width:95%; margin:0 auto;}
+.bgcolorFFF{ background-color:#FFF;}
+/*公共样式*/
+
+
+/*------------------------------------------------wfj12_004-----------------------------------------------*/
+.wfj12_004 .wfj12_004_width{ width:94%; margin:0 auto;}
+
+.wfj_top{ width:100%; margin:0 auto; background-color:#FFF; overflow:hidden;}
+.wfj_top ul li{ float:left; text-align:center; color:#000;}
+.wfj_top ul li img{vertical-align:middle;}
+
+.wfj12_004 .wfj12_004_content{ width:100%; overflow:hidden; clear:both; float:left;}
+.wfj12_004 .wfj12_004_hidden{ overflow:auto;}
+.wfj12_004 .wfj12_004_con{ width:100%; margin:0 auto; clear:both; float:left;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title{ width:100%; background-color:#FFF; height:50px; line-height:50px;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title .wfj12_004_height{ width:100%;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title ul li{ float:left;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title ul li img{ vertical-align:middle;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title ul #choice{ width:10%; text-align:center;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title ul #choice img{ width:60%; height:auto;margin-top:5%;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title ul .title{
+    width:75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title ul .title a{ text-align:center; height:24px; line-height:24px; color:#000; padding:5px 10px;font-weight:500;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title ul .change{ width:14%; border-left:1px solid #333; text-align:center;}
+.wfj12_004 .wfj12_004_con .wfj12_004_title ul .change a{ color:#000;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product{ width:97%; clear:both; float:left;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div div{ float:left;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_choice{ width:15%; text-align:center;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_choice img{ width:40%;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_proimg{
+    width:25%;
+    overflow: hidden;
+    position: relative;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_proimg img{
+    width:95%;
+    height: 100%;
+    object-fit: cover;}
+
+.wfj12_004_proimg .cx,.wfj12_004_proimg .vip,.wfj12_004_proimg .tj{
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    overflow: hidden;
+    width: 4rem;
+    height: 4rem;
+}
+.wfj12_004_proimg .cx::after,.wfj12_004_proimg .vip::after,.wfj12_004_proimg .tj::after {
+    position: absolute;
+    font-size: .3rem;
+    color: #fff;
+    transform: rotate(-45deg);
+    top: .15rem;
+}
+.wfj12_004_proimg .cx i,.wfj12_004_proimg .vip i,.wfj12_004_proimg .tj i{
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    margin-left: -2rem;
+    margin-top: -2rem;
+    transform: rotate(45deg);
+    background: #f7c246;
+}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_proimg span.cx::after {
+     content: "促销";
+ }
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_proimg span.vip::after {
+    content: "vip";
+}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_proimg span.tj::after {
+    content: "特价";
+}
+
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_proInfo{ width:60%;}
+
+
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_changedelete{ width:60%;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div div span{ color:#F74C31;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_changedelete .wfj12_004_nums{ width:70%;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_changedelete .wfj12_004_nums ul{ clear:both; margin-bottom:10px;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_changedelete .wfj12_004_nums .borders li{ float:left; text-align:center; width:30%; text-align:center; cursor:pointer;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_changedelete .wfj12_004_nums .borders #nums input{ width:100%; text-align:center;border:none; background-color:#F0F0F0;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_changedelete .wfj12_004_delete{ width:30%; text-align:center; background-color:#F74C31; cursor:pointer;}
+.wfj12_004 .wfj12_004_con .wfj12_004_product div .wfj12_004_changedelete .wfj12_004_delete ul li{ color:#FFF;}
+
+.wfj12_004 .wfj12_004_bottom{ width:100%; position:fixed; bottom:0; background-color:#F9F9F9;}
+.wfj12_004 .wfj12_004_bottom div div{ float:left;}
+.wfj12_004 .wfj12_004_bottom div ul li{ float:left;}
+.wfj12_004 .wfj12_004_bottom div ul li img{ width:40%; vertical-align:middle;}
+.wfj12_004 .wfj12_004_bottom div .wfj12_004_allchecked{ text-align:center;width:25%;}
+.wfj12_004 .wfj12_004_bottom div .wfj12_004_allmoney{width:40%;}
+.wfj12_004 .wfj12_004_bottom div .wfj12_004_allmoney ul li span{ color:#F74C31;}
+.wfj12_004 .wfj12_004_bottom div .wfj12_004_commit{width:35%; text-align:center; background-color:#F74C31; color:#FFF; cursor:pointer;}
+.kgwc{
+
+    text-align: center;
+    margin-top:50%;
+}
+.cu {
+    width: 3.6rem;
+}
+.ordercommit{
+    width: 25%;
+    text-align: center;
+    background-color: #EE9A00;
+    color: #FFF;
+    cursor: pointer;
+
+
+}
+
+/*------------------------------------------------wfj12_004 end-----------------------------------------------*/
+
+
+
+.wfj_top ul{height:3.6rem;line-height:3.6rem;border-bottom:1px solid #E5E5E5;}
+.wfj_top ul li{height:3.6rem;line-height:3.6rem;float:left;}
+.wfj_top ul li{
+	width:10%;
+}
+.wfj_top ul li:nth-of-type(2){
+	width:75%;
+	font-size:1.45rem;
+}
+.wfj_top ul li:nth-of-type(3){
+	width:15%;
+}
+.wfj_top ul li a img{
+	width:1rem;
+}
+.wfj_top ul li>img{
+	height: 2.5rem;
+    width: 2.6rem;
+}
+
+
+

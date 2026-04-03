@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="FileManage" table="dtFileManagee">
+		<id length="50" name="fileManageKey">
+			<column length="50" name="fileManageKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="fileManageID">
+			<column length="50" name="fileManageID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="fileManageDate">
+			<column name="fileManageDate"/>
+		</property>
+		<property name="documentTitle">
+			<column length="250" name="documentTitle"/>
+		</property>
+		<property name="planUnit">
+			<column length="50" name="planUnit" />
+		</property>
+		<property name="frontUnit">
+			<column length="250" name="frontUnit" />
+		</property>
+		<property  name="blastMainUnit">
+			<column length="250" name="blastMainUnit" />
+		</property>
+		<property  name="copyUnit">
+			<column length="250" name="copyUnit" />
+		</property>
+		<property  name="fileRescriptumAttitude">
+			<column length="250" name="fileRescriptumAttitude" />
+		</property>
+		<property  name="fileType">
+			<column length="250" name="fileType" />
+		</property>
+		<property  name="fileAccessories">
+			<column length="256" name="fileAccessories" />
+		</property>
+		<property  name="fileArincipal">
+			<column length="250" name="fileArincipal" />
+		</property>
+		<property  name="shares">
+			<column length="2" name="shares" />
+		</property>
+		<property  name="fileArincipalID">
+			<column length="50" name="fileArincipalID" />
+		</property>
+		<property  name="groupCompanySn">
+			<column length="50" name="groupCompanySn" />
+		</property>
+		<property  name="remark">
+			<column length="250" name="remark" />
+		</property>
+		<property name="shareDate" type="java.util.Date">
+			<column name="shareDate" length="7"/>
+		</property>
+	</class>
+</hibernate-mapping>

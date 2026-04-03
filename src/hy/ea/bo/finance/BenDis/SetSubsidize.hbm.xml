@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.finance.BenDis.SetSubsidize" table="DT_SET_SUBSIDIZE" schema="HYPLAT">
+        <id name="sskey">
+            <column name="SSKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="ssid">
+            <column name="SSID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="companyid">
+            <column name="COMPANYID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="codeNum">
+            <column name="CODENUM" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="gtid">
+            <column name="GTID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="stid">
+            <column name="STID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="totalPct">
+            <column name="TOTAL_PCT" sql-type="number(4,2)" not-null="true"/>
+        </property>
+        <property name="wholesalepct">
+            <column name="wholesale_PCT" sql-type="number(4,2)" not-null="true"/>
+        </property>
+        <property name="xfPct">
+            <column name="xf_Pct" sql-type="number(4,2)"/>
+        </property>
+        <property name="xbPct">
+            <column name="xb_pct" sql-type="number(4,2)"/>
+        </property>
+        <property name="fsPct">
+            <column name="fs_Pct" sql-type="number(4,2)"/>
+        </property>
+        <!--<property name="fbPct">
+            <column name="fb_Pct" sql-type="number(2)" not-null="true"/>
+        </property>-->
+        <property name="flPct">
+            <column name="fl_Pct" sql-type="number(4,2)" not-null="true"/>
+        </property>
+        <property name="slPct">
+            <column name="sl_Pct" sql-type="number(4,2)" not-null="true"/>
+        </property>
+        <property name="adddate">
+            <column name="ADDDATE" sql-type="date" not-null="true"/>
+        </property>
+        <property name="staffid">
+            <column name="STAFFID" sql-type="varchar2(50)" not-null="true"/>
+        </property>
+        <property name="stutas">
+            <column name="STUTAS" sql-type="varchar2(10)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

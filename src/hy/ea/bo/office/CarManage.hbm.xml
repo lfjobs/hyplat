@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarManage" table="DT_CARMANAGE">
+		<id length="50" name="carmkey">
+			<column length="50" name="carmkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="carmID">
+			<column length="50" name="carmID">
+				<comment>主键</comment>
+			</column>
+		</property>
+		<property name="carNumber">
+			<column length="50" name="carNumber">
+				<comment>车牌号</comment>
+			</column>
+		</property>
+		<property name="indate">
+			<column length="50" name="indate">
+				<comment>车辆进入时间</comment>
+			</column>
+		</property>
+		<property name="outdate">
+			<column length="50" name="outdate">
+				<comment>车辆出去时间</comment>
+			</column>
+		</property>
+		<property name="money">
+			<column length="50" name="money">
+				<comment>总收费</comment>
+			</column>
+		</property>
+		<property name="time">
+			<column length="50" name="time">
+				<comment>总时间</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column length="50" name="status">
+				<comment>状态</comment>
+			</column>
+		</property>
+		<property name="equipmentNumber">
+			<column length="50" name="equipmentNumber">
+				<comment>设备编号</comment>
+			</column>
+		</property>
+		<property name="equipin">
+			<column length="50" name="equipin">
+				<comment>进入设备编号</comment>
+			</column>
+		</property>
+		<property name="equipout">
+			<column length="50" name="equipout">
+				<comment>出去设备编号</comment>
+			</column>
+		</property>
+		<property name="picture">
+			<column length="250" name="picture">
+				<comment>车牌图</comment>
+			</column>
+		</property>
+		<property name="carmNumber">
+			<column length="50" name="carmNumber">
+				<comment>收费编号</comment>
+			</column>
+		</property>
+		<property name="serialNumber">
+			<column length="50" name="serialNumber">
+				<comment>停车流水号</comment>
+			</column>
+		</property>
+		<property name="panorama">
+			<column length="250" name="panorama">
+				<comment>全景图</comment>
+			</column>
+		</property>
+		<property name="model">
+			<column length="50" name="model">
+				<comment>录入类型</comment>
+			</column>
+		</property>
+		<property name="numberType">
+			<column length="2" name="numberType">
+				<comment>车牌类型</comment>
+			</column>
+		</property>
+		<property name="createdate">
+			<column length="50" name="createdate">
+				<comment>录入时间</comment>
+			</column>
+		</property>
+		<property name="chargeType">
+			<column length="50" name="chargeType">
+				<comment>收费类型</comment>
+			</column>
+		</property>
+			<property name="chargeState">
+			<column length="2" name="chargeState">
+				<comment>收费具体00 未支付，01:包月或包年 01：积分金币  02：扫码支付 03：现金支付</comment>
+			</column>
+		</property>
+		<property name="chargeState1">
+			<column length="2" name="chargeState1">
+				<comment>收费具体00 未支付，01:包月或包年 01：积分金币  02：扫码支付 03：现金支付</comment>
+			</column>
+		</property>
+		<property name="journalNum">
+			<column length="50" name="journalNum">
+				<comment>订单号</comment>
+			</column>
+		</property>
+			<property name="parksId">
+			<column length="50" name="parksId">
+				<comment>停车位ID</comment>
+			</column>
+		</property>
+			<property name="open">
+			<column length="1" name="open">
+				<comment>是否抬过杆</comment>
+			</column>
+		</property>
+		<property name="open1">
+			<column length="1" name="open1">
+				<comment>进入的时候抬过杆没</comment>
+			</column>
+		</property>
+		<property name="auditStatus">
+			<column length="2" name="auditStatus">
+				<comment>审核状态 默认空或者为自动审核 ，00 未提交审核，01 提交审核  02 人工审核通过 03 人工审核不通过</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="hy.ea.bo.human.MoneyEmpower" table="DT_MONEY_EMPOWER">
+		<id length="50" name="empowerKey" >
+			<column length="50" name="EMPOWER_KEY" />
+			<generator class="uuid" />
+		</id>
+
+		<property name="empowerId" >
+			<column length="50" name="EMPOWER_ID" not-null="true"/>
+		</property>
+
+		<property name="empowerName" >
+			<column length="250" name="EMPOWER_NAME"/>
+		</property>
+
+		<property name="ccomType" >
+			<column length="250" name="CCOM_TYPE"/>
+		</property>
+
+		<property  name="status">
+			<column length="2" name="STATUS" not-null="true"/>
+		</property>
+
+		<property  name="empowerDesc">
+			<column length="250" name="EMPOWER_DESC" />
+		</property>
+
+		<property  name="createTime" type="java.util.Date">
+			<column length="50" name="CREATE_TIME" />
+		</property>
+
+
+
+	</class>
+</hibernate-mapping>

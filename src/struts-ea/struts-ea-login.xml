@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<package strict-method-invocation="false" name="ea-login" namespace="/ea" extends="base">
+		<action name="login" class="hy.ea.action.CLoginAction"
+			method="login">
+			<result name="failed">/page/ea/index.jsp?ct=${companyIdentifier}</result>
+			<result name="success" type="redirect">
+				/page/ea/main.jsp?imgLog=1
+			</result>
+			
+			<result name="activityLogin">/page/mobile/activity/activity_publish.jsp?weixinCompanyId=${weixinCompanyId}</result>
+			<result name="activityLoginFaild">/page/mobile/activity/activity_publishLogin.jsp</result>
+		</action>
+		<action name="loginMini" class="hy.ea.action.CLoginAction"
+			method="loginMini">
+			<result name="successMini" type="redirect">/page/ea/websuitMini/mobileofficemain.jsp</result>
+			<result name="failed">/page/ea/index.jsp?ct=${companyIdentifier}</result>
+			</action>
+		
+		<action name="loginwebkit" class="hy.ea.action.CLoginAction"
+			method="login">
+			<result name="failed">/page/ea/index.jsp?ct=${companyIdentifier}</result>
+			<result name="success" type="redirect">
+				/page/ea/mobile_main.jsp?imgLog=1
+			</result>
+		</action>
+		<action name="actLogin" class="hy.ea.action.CLoginAction"
+			method="actLogin">
+			<result name="activityLogin">/page/mobile/activity/activity_publish.jsp?weixinCompanyId=${weixinCompanyId}</result>
+			<result name="activityLoginFaild">/page/mobile/activity/activity_publishLogin.jsp</result>
+			
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ea-login1" namespace="/ea" extends="base">
+		<action name="login1" class="hy.ea.action.CLoginAction"
+			method="login">
+			<result name="failed">/page/ea/index.jsp?ct=${companyIdentifier}</result>
+			<result name="success" type="redirect">
+				/page/ea/main.jsp?imgLog=2
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="login-token" namespace="/ea/login" extends="base">
+		<action name="ea_*" class="hy.ea.action.CLoginAction"
+			method="{1}">
+			<result name="failed" type="redirect">
+				/page/ea/index.jsp?ct=${companyIdentifier}
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ea-login-main" namespace="/ea" extends="ea">
+		<action name="login_main_*"
+			class="hy.ea.action.CLoginMainAction" method="{1}">
+			<!--<result name="failed" type="redirect">
+				/page/ea/system_error.jsp
+			</result>
+			-->
+			<result name="failed" >
+				/page/ea/not_login.jsp
+			</result>
+			<result name="nologin" type="redirect">
+				/page/ea/index.jsp?ct=${companyIdentifier}
+			</result>
+			<result name="to_main_top">/page/ea/main_top.jsp</result>
+			<result name="to_main_left">/page/ea/main_left.jsp</result>
+			<result name="to_mobile_top">
+				/page/ea/mobile_top.jsp
+			</result>
+		</action>
+
+	</package>
+	<package strict-method-invocation="false" name="login-sajax" namespace="/ea"
+		extends="json-default">
+		<action name="ajax_ea_*"
+			class="hy.ea.action.CLoginAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ea-login-sajax" namespace="/ea"
+		extends="json-default">
+		<action name="ajax_login_ea_*"
+			class="hy.ea.action.CLoginMainAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.finance">
+    <class name="ProductPackaging" table="dt_ProductPackaging">
+        <comment>产品包装表（产品表）</comment>
+        <id length="50" name="ppKey">
+            <column length="50" name="ppKey"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="ppID">
+            <column length="50" name="ppID">
+                <comment>业务主键</comment>
+            </column>
+        </property>
+        <property name="goodsID">
+            <column length="50" name="goodsID">
+                <comment>物品ID</comment>
+            </column>
+        </property>
+        <property name="companyID">
+            <column length="50" name="companyID">
+                <comment>公司ID</comment>
+            </column>
+        </property>
+        <property name="organizationID">
+            <column length="50" name="organizationID">
+                <comment>部门ID</comment>
+            </column>
+        </property>
+        <property name="staffID">
+            <column length="50" name="staffID">
+                <comment>责任人ID</comment>
+            </column>
+        </property>
+        <property name="staffName">
+            <column length="50" name="staffName">
+                <comment>责任人名称</comment>
+            </column>
+        </property>
+        <property name="amendStaffID">
+            <column length="50" name="amendStaffID">
+                <comment>修改人ID</comment>
+            </column>
+        </property>
+        <property name="sccid">
+            <column length="50" name="sccid">
+                <comment>账号ID</comment>
+            </column>
+        </property>
+        <property name="shangjiastatus">
+            <column length="50" name="shangjiastatus">
+                <comment>0已经出售中1为已经下架</comment>
+            </column>
+        </property>
+        <property name="ppstatus">
+            <column length="50" name="ppstatus">
+                <comment>0 为 可代理 1为不可代理 2未处理</comment>
+            </column>
+        </property>
+        <property name="goodsName">
+            <column name="goodsName" length="250">
+                <comment>物品名称</comment>
+            </column>
+        </property>
+        <property name="quantity">
+            <column length="250" name="quantity">
+                <comment>数量</comment>
+            </column>
+        </property>
+        <property name="price">
+            <column length="250" name="price">
+                <comment>单价</comment>
+            </column>
+        </property>
+        <property name="pptype">
+            <column length="250" name="pptype">
+                <comment>01微信的产品发布</comment>
+            </column>
+
+        </property>
+        <property name="yjstatus">
+            <column name="yjstatus" length="50">
+                <comment>零售价佣金状态，01:已设置佣金，00:未设置佣金</comment>
+            </column>
+        </property>
+        <property name="ppEnterprise">
+            <column length="250" name="ppEnterprise">
+                <comment>企业商城;01</comment>
+            </column>
+        </property>
+        <property name="ppDifferential">
+            <column length="250" name="ppDifferential">
+                <comment>微分金商场01</comment>
+            </column>
+        </property>
+        <property name="ppDifferentialshop">
+            <column length="250" name="ppDifferentialshop">
+                <comment>微分金店01</comment>
+            </column>
+        </property>
+        <property name="ppWeb">
+            <column length="250" name="ppWeb">
+                <comment>网站商城01</comment>
+            </column>
+        </property>
+        <property name="ppOther">
+            <column length="250" name="ppOther">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ppwhether">
+            <column length="250" name="ppwhether">
+                <comment>是否可被直接购买</comment>
+            </column>
+        </property>
+        <property name="ppcestuer">
+            <column length="250" name="ppcestuer">
+                <comment>1未进行产品测试,2测试合格,3测试不合格</comment>
+            </column>
+        </property>
+        <property name="money">
+            <column length="250" name="money">
+                <comment>金额（成本价）</comment>
+            </column>
+        </property>
+        <property name="weight">
+            <column length="250" name="weight">
+                <comment>重量</comment>
+            </column>
+        </property>
+        <property name="manualUrl">
+            <column length="250" name="manualUrl">
+                <comment>说明书url</comment>
+            </column>
+        </property>
+        <property name="propagandaUrl">
+            <column length="250" name="propagandaUrl">
+                <comment>宣传url</comment>
+            </column>
+        </property>
+        <property name="fileUrl">
+            <column length="500" name="fileUrl">
+                <comment>公司文件url</comment>
+            </column>
+        </property>
+        <property name="packagingDate">
+            <column name="packagingDate">
+                <comment>包装日期</comment>
+            </column>
+        </property>
+        <property name="parentId">
+            <column length="50" name="parentId">
+                <comment>配件的父id</comment>
+            </column>
+        </property>
+        <property name="image">
+            <column length="250" name="image">
+                <comment>产品主题图片</comment>
+            </column>
+        </property>
+        <property name="showweixin">
+            <column length="50" name="showweixin">
+                <comment>是否在微商店显示0否 01是</comment>
+            </column>
+        </property>
+        <property name="weiDianType">
+            <column length="100" name="weiDianType">
+                <comment>商品类别</comment>
+            </column>
+        </property>
+        <property name="certificateCost">
+            <column length="250" name="certificateCost">
+                <comment>考核办证费</comment>
+            </column>
+        </property>
+        <property name="stockSize">
+            <column precision="8" scale="0" name="stockSize">
+                <comment>库存数量</comment>
+            </column>
+        </property>
+        <property name="monthSales">
+            <column precision="8" scale="0" name="monthSales">
+                <comment>月销量</comment>
+            </column>
+        </property>
+        <property name="productDetail">
+            <column length="500" name="productDetail">
+                <comment>在线宣传</comment>
+            </column>
+        </property>
+        <property name="xmtype">
+            <column length="50" name="xmtype">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="xmtypename">
+            <column length="50" name="xmtypename">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="remark">
+            <column length="1000" name="remark">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <property name="goodsNum">
+            <column length="50" name="goodsNum">
+                <comment>物品编号</comment>
+            </column>
+        </property>
+        <property name="standard">
+            <column length="50" name="standard">
+                <comment>规格</comment>
+            </column>
+        </property>
+        <property name="type">
+            <column length="50" name="type">
+                <comment>类型</comment>
+            </column>
+        </property>
+        <property name="virtual">
+            <column length="2" name="virtual">
+                <comment>虚拟物品 00 否 01 是</comment>
+            </column>
+        </property>
+        <property name="sorting">
+            <column precision="8" scale="0" name="sorting">
+                <comment>排序</comment>
+            </column>
+        </property>
+        <property name="logo">
+            <column length="250" name="logo">
+                <comment>LOGO图片</comment>
+            </column>
+        </property>
+        <property name="departmentState">
+            <column length="30" name="departmentState">
+                <comment>部门状态</comment>
+            </column>
+        </property>
+        <property name="projectType">
+            <column length="30" name="projectType">
+                <comment>产品类型</comment>
+            </column>
+        </property>
+        <property name="fiveClear">
+            <column length="200" name="fiveClear">
+                <comment>5C 1 _人事,2_办公室,3——财务,4——教务处,5-营销</comment>
+            </column>
+        </property>
+        <property name="updateUser">
+            <column length="250" name="updateUser">
+                <comment>合格不合格操作人</comment>
+            </column>
+        </property>
+        <property name="photo">
+            <column length="250" name="photo">
+                <comment>产品图</comment>
+            </column>
+        </property>
+        <property name="giveNumber">
+            <column length="250" name="giveNumber">
+                <comment>赠送积分数</comment>
+            </column>
+        </property>
+        <property name="createTime">
+            <column length="250" name="createTime">
+                <comment>发布时间</comment>
+            </column>
+        </property>
+        <property name="tradeCode">
+            <column length="50" name="tradeCode">
+                <comment>行业</comment>
+            </column>
+        </property>
+        <property name="producttype">
+            <column length="50" name="producttype">
+                <comment>项目产品分类</comment>
+            </column>
+        </property>
+        <property name="parentName">
+            <column length="50" name="parentName">
+                <comment>配件的父Name;</comment>
+            </column>
+        </property>
+        <property name="productCode">
+            <column length="50" name="productCode">
+                <comment>项目产品编号</comment>
+            </column>
+        </property>
+        <property name="tradeName">
+            <column length="200" name="tradeName">
+                <comment>行业全名</comment>
+            </column>
+        </property>
+        <property name="barCode">
+            <column length="50" name="barCode">
+                <comment>条码</comment>
+            </column>
+        </property>
+        <property name="model">
+            <column length="50" name="model">
+                <comment>型号</comment>
+            </column>
+        </property>
+        <property name="brand">
+            <column length="50" name="brand">
+                <comment>品牌</comment>
+            </column>
+        </property>
+        <property name="variableID">
+            <column length="20" name="variableID">
+                <comment>单位</comment>
+            </column>
+        </property>
+        <property name="subjectName">
+            <column length="50" name="subjectName">
+                <comment>科目名称</comment>
+            </column>
+        </property>
+        <property name="subjectID">
+            <column length="50" name="subjectID">
+                <comment>科目ID</comment>
+            </column>
+        </property>
+        <property name="tradeID">
+            <column length="50" name="tradeID">
+                <comment>行业ID</comment>
+            </column>
+        </property>
+        <property name="delStatus">
+            <column length="2" name="delStatus">
+                <comment>删除状态</comment>
+            </column>
+        </property>
+        <property name="productstate">
+            <column length="2" name="productstate">
+                <comment>生产流程状态</comment>
+            </column>
+        </property>
+        <property name="yjdate">
+            <column name="yjdate"/>
+        </property>
+        <property name="yjstaid">
+            <column length="50" name="yjstaid"/>
+        </property>
+        <property name="yjstaname">
+            <column length="50" name="yjstaname"/>
+        </property>
+        <property name="hierarchical">
+            <column length="50" name="hierarchical">
+                <comment>层次结构</comment>
+            </column>
+        </property>
+        <property name="category">
+            <column length="50" name="category">
+                <comment>是否为组装产品</comment>
+            </column>
+        </property>
+        <property name="accessories">
+            <column length="50" name="accessories">
+                <comment>是否为组装产品</comment>
+            </column>
+        </property>
+        <property name="field">
+            <column length="10" name="field">
+                <comment>是否为字段</comment>
+            </column>
+        </property>
+        <property name="primaryField">
+            <column length="100" name="primaryField">
+                <comment>一级字段格式</comment>
+            </column>
+        </property>
+        <property name="twoLevelField">
+            <column length="100" name="twoLevelField">
+                <comment>二级字段格式</comment>
+            </column>
+        </property>
+
+        <property name="assemble">
+            <column length="100" name="assemble">
+                <comment>存在下级的产品</comment>
+            </column>
+        </property>
+        <property name="temporary">
+            <column length="10" name="temporary">
+                <comment>用于上传图片记忆0：未发布，1：发布成功 ljc</comment>
+            </column>
+        </property>
+        <property name="qualified">
+            <column length="10" name="qualified">
+                <comment>用于产品是否合格ljc 0不合格，1合格</comment>
+            </column>
+        </property>
+        <property name="review">
+            <column length="10" name="review">
+                <comment>用于区别会员分享是否展示</comment>
+            </column>
+        </property>
+        <property name="carModel">
+            <column length="100" name="carModel">
+                <comment>教练车品牌</comment>
+            </column>
+        </property>
+        <property name="platform">
+            <column length="20" name="platform">
+                <comment>若该产品是平台，用于存储平台返回值</comment>
+            </column>
+        </property>
+        <property name="categoryId">
+            <column length="50" name="categoryId">
+                <comment>关联驾校产品分类表的分类id</comment>
+            </column>
+        </property>
+        <property name="categoryName">
+            <column length="50" name="categoryName">
+                <comment>关联驾校产品分类表的分类名称</comment>
+            </column>
+        </property>
+        <property name="isScale">
+            <column length="1" name="isScale">
+                <comment>0:是：1否</comment>
+            </column>
+        </property>
+        <property name="invNum">
+            <column length="50" name="invNum">
+                <comment>初始库存</comment>
+            </column>
+        </property>
+        <property name="ccompanyID">
+            <column length="50" name="ccompanyID">
+                <comment>供应商往来单位ID</comment>
+            </column>
+        </property>
+        <property name="wholesaleStatus">
+            <column length="50" name="wholesaleStatus">
+                <comment>批发价佣金状态，01:已设置佣金，00:未设置佣金</comment>
+            </column>
+        </property>
+        <property name="vipStatus">
+            <column length="50" name="vipStatus">
+                <comment>vip价佣金状态，01:已设置佣金，00:未设置佣金</comment>
+            </column>
+        </property>
+        <property name="activityStatus">
+            <column length="50" name="activityStatus">
+                <comment>活动价佣金状态，01:已设置佣金，00:未设置佣金</comment>
+            </column>
+        </property>
+        <property name="gradeid">
+            <column length="50" name="gradeid">
+                <comment>产品等级id</comment>
+            </column>
+        </property>
+        <property name="gradeName">
+            <column length="50" name="gradeName">
+                <comment>产品等级</comment>
+            </column>
+        </property>
+        <property name="depotID">
+            <column length="50" name="depotID">
+                <comment>入库仓库id</comment>
+            </column>
+        </property>
+
+        <property name="depotName">
+            <column length="50" name="depotName">
+                <comment>入库仓库名称</comment>
+            </column>
+        </property>
+
+        <property name="depotCoding">
+            <column length="50" name="depotCoding">
+                <comment>入库仓库编号</comment>
+            </column>
+        </property>
+
+        <property name="stanpro">
+            <column length="1" name="stanpro">
+                <comment>0:是：1否</comment>
+            </column>
+        </property>
+
+        <property name="singleWeight">
+            <column length="50" name="singleWeight">
+                <comment>单件重量 单位：KG</comment>
+            </column>
+        </property>
+
+        <property name="paytype">
+            <column length="50" name="paytype">
+                <comment>
+                    交易类型
+                    01：公开交易
+                    11: 厂家,
+                    12: 批发,
+                    13: 零售,
+                    14: 货柜自提,
+                    15: 配送电商,
+                    16: 门店自助
+                    02：针对交易
+                    21: 厂家,
+                    22: 批发,
+                    23: 零售,
+                    24: 往来企业,
+                    25: 往来个人
+                </comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN""http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<title>车辆信息</title> 
+    <#include "/page/ea/main/office_ea/check/js_css.html">
+<script type="text/javascript" src="${base}/js/ea/office_ea/check/car.js"></script>
+<script type="text/javascript">
+	var basePath = '${base}';
+	var carID = "";
+	var search = '${search}';
+</script>
+</head>
+<body>
+	<div class="main_main">
+		<table class="JQueryflexme">
+			<thead>
+				<tr>
+					<th width="40" align="center">选择</th>
+					<th width="40" align="center">序号</th>
+					<th width="100" align="center">车牌号</th>
+					<th width="100" align="center">责任人</th>
+					<th width="150" align="center">车型</th>
+					<th width="100" align="center">发动机号</th>
+					<th width="100" align="center">车架号</th>
+					<th width="100" align="center">注册登记日期</th>
+					<th width="100" align="center">当前状态</th>
+					<th width="100" align="center">加盟状态</th>
+				</tr>
+			</thead>
+			<tbody>
+				<#list pageForm.list as c>
+				<tr id="${c.carID}">
+					<td><input type="checkbox" name="a" class="JQuerypersonvalue"
+						value="${c.carID}" />
+					</td>
+					<td><span>${c_index+1}</span>
+					</td>
+					<td><span id="carNum">${c.carNum}</span>
+					</td>
+					<td><span id="staffName">${c.staffName}</span>
+					</td>
+
+
+					<td><span id="carType">${c.carType}</span>
+					</td>
+					<td><span id="engineNum">${c.engineNum}</span>
+					</td>
+
+					<td><span id="carFrameNum">${c.carFrameNum}</span>
+					</td>
+					<td><span id="registrationDate">${c.registrationDate}</span>
+					</td>
+					<td><span id="state3">${c.state3}</span>
+					</td>
+					<td><span id="state1">${c.state1}</span> <span id="carID"
+						style="display: none">${c.carID}</span></td>
+				</tr>
+				</#list>
+			</tbody>
+		</table>
+		<#assign actionPath="ea/safetycheck/ea_car.jspa?"> 
+		<#include "/page/ea/main/office_ea/check/page.html"/>
+	</div>
+	<!--搜索窗口 -->
+	<div class="jqmWindow" style="width: 300px; right: 25%; top: 10%"
+		id="jqModelSearch">
+		<form name="postSearchForm" id="postSearchForm" method="post">
+			<input type="submit" name="submit" style="display: none" />
+			<div class="drag">
+				查询信息
+				<div class="close"></div>
+			</div>
+			<table width="100%" cellpadding="5" cellspacing="10"
+				id="cataffSearchTable">
+				<tr>
+					<td align="right">车牌号：</td>
+					<td align="left">
+					    <input type="text" name="carbean.carNum" />
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+					    <input type="button" class="input-button" id="tosearch" value=" 查询 " /> 
+						<input name="search" type="hidden" value="search" />
+				    </td>
+
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

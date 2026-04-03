@@ -1,0 +1,58 @@
+﻿body{ 
+    background: #ffffff;
+ }
+.main1{ 
+    display:none;
+    position: absolute;
+    text-align: left;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+
+}
+
+.main1 div {
+    border-bottom: 1px solid #F8F8FF;
+    padding: 10px 10px;
+}
+.main1 img{
+ width:1.6rem;
+}
+.kexuan_main{
+ background-color: #f5f5f5;
+
+}
+
+.initials ul{
+    background: none; 
+}
+.sort_letter{
+   margin-bottom:10px;
+}
+.clear{
+  clear:both;
+}
+.hot_city .hot_city_lis, .ding_city .ding_main_lis {
+       float: left;
+    border-radius: 1rem;
+    padding: 0.2rem 1rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+    font-size: 15px;
+    background: #f3f3f3;
+        
+}
+
+.ding_city .ding_main_lis {
+    border:1px solid #FF6600;
+    background: #fff;
+    color:#FF6600;
+        
+}
+.kexuan .xuan_lis {
+width: 29%;
+    margin-bottom: 1.5rem;
+}
+.xuan_head{
+margin-right:2rem;
+}

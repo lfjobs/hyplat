@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<banks>
+	<bank>
+		<name>中国农业银行</name>
+		<short>ABC</short>
+	</bank>
+	<!-- <bank>
+		<name>中国银行</name>
+		<short>BOC</short>
+	</bank>
+	<bank>
+		<name>中国建设银行</name>
+		<short>CCB</short>
+	</bank>
+	<bank>
+		<name>中国工商银行</name>
+		<short>ICBC</short>
+	</bank>
+	<bank>
+		<name>交通银行</name>
+		<short>BCM</short>
+	</bank>
+	<bank>
+		<name>中国民生银行</name>
+		<short>CMBC</short>
+	</bank>
+	<bank>
+		<name>招商银行</name>
+		<short>CMB</short>
+	</bank>
+	<bank>
+		<name>中国光大银行</name>
+		<short>CEB</short>
+	</bank>
+	<bank>
+		<name>深圳发展银行</name>
+		<short>SDB</short>
+	</bank>  -->		
+</banks>

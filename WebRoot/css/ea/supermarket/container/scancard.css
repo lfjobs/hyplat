@@ -1,0 +1,361 @@
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+header {
+	background-color: #f74c32
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #fff
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+
+header ul li:nth-of-type(3) {
+	width: 20%;
+	text-align: right
+}
+.main-content{
+	font-size:1.1rem;
+}
+.main-content .p-img{
+	margin: 2rem auto 0rem auto;
+	text-align: center
+}
+.main-content .p-img img{
+	width: 8rem;
+}
+
+.main-content .p-img1{
+	margin: 5rem auto 0rem auto;
+	text-align: center
+}
+.main-content .p-img1 img {
+	width: 5rem;
+}
+.main-content .p-title{
+	text-align: center;
+	margin: 3rem;
+	font-weight:bold;
+	font-size:1.3rem;
+}
+
+.main-content .p-detail{
+	text-align: center;
+	margin: 3rem;
+
+}
+
+.main-content .p-detail input{
+	width: 15rem;
+	border: 1px solid #4c4c4c;
+	height: 2rem;
+
+}
+
+.div-tingyong {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .4)
+}
+
+.div-tingyong .box {
+	width: 21rem;
+	margin: 30vh auto 0 auto
+}
+
+.div-tingyong .box>p {
+	border-top-left-radius: .3rem;
+	border-top-right-radius: .3rem;
+	background-color: #f74c32;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: 1rem;
+	color: #fefefe;
+	text-align: center;
+	position: relative
+}
+
+.div-tingyong .box>p img {
+	position: absolute;
+	width: 1.5rem;
+	top: -8%;
+	right: -2%
+}
+
+.div-tingyong .box .div-box p {
+	background-color: #fff;
+	height: 5rem;
+	line-height: 5rem;
+	font-size: 1rem;
+	color: #222;
+	text-align: center;
+	border-bottom: 0.025rem solid #eee;
+}
+
+.div-tingyong .box .div-box div p {
+	background-color: #fff;
+	width: 50%;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #222;
+	text-align: center
+}
+
+.div-tingyong .box .div-box div p:nth-of-type(1) {
+	border-bottom-left-radius: .3rem;
+	color: #666;
+	position: relative
+}
+
+.div-tingyong .box .div-box div p:nth-of-type(1):before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: .025rem;
+	right: .025rem;
+	background-color: #eee
+}
+
+.div-tingyong .box .div-box div p:nth-of-type(2) {
+	border-bottom-right-radius: .3rem
+}
+
+.txtNum {
+	width: 30rem;
+	height: 3.75rem;
+	letter-spacing: 4rem;
+	text-indent: 30px;
+	border: 1px solid #000;
+	font-size: 38px;
+}
+#srk{
+	width: 30.5rem!important;
+	height: 2.75rem!important;
+	margin-top: 0.5%!important;
+}
+#srk i{
+	width: 1px;
+	height: 60px;
+	background-color: #000;
+	display: block;
+	position: absolute;
+	top: 0;
+}
+#srk .i-1{
+	left: 5rem;
+}
+#srk .i-2{
+	left: 10rem;
+}
+#srk .i-3{
+	left: 15rem;
+}
+#srk .i-4{
+	left:20rem;
+}
+#srk .i-5{
+	left:25rem;
+}
+
+/*购物卡支付*/
+#mm-name{
+	display: none;
+}
+.card-text {
+	margin-top: 2%;
+}
+.card-g {
+	width: 22rem;
+	margin: 2% auto 0 auto;
+}
+.jp {
+	margin: 0.5% auto 0 auto;
+}
+.mm-text li {
+	width: 862px;
+	line-height: 70px;
+	font-size: 40px;
+	margin: 0.2rem auto;
+	text-align: left;
+	overflow: hidden;
+	text-indent: 130px;
+}
+.mm-text .oop input {
+	width: 40%;
+}
+.mm-text .oop{
+	padding-left: 330px;
+	text-indent: 0;
+}
+/*刷购物卡*/
+.card header img {
+	width: 23.5rem;
+	height: 70%;
+	position: absolute;
+	left: 10%;
+	top: 20%;
+}
+.card header p {
+	width: 48%;
+	position: absolute;
+	right: 0;
+	top: 40%;
+	line-height: 65px;
+	font-size: 32px;
+	color: #fff;
+}
+.card header p span{
+	font-size: 46px;
+}
+.card-text {
+	margin-top: 5%;
+}
+.card-text li {
+	line-height: 70px;
+	font-size: 40px;
+	text-align: center;
+	overflow: hidden;
+}
+.card-text li span{
+	font-size: 50px;
+	color: #ff0202;
+}
+.card-g{
+	width: 45rem;
+	height: 62px;
+	margin: 5% auto 0 auto;
+	overflow: hidden;
+}
+.card-g p{
+	line-height: 62px;
+	float: left;
+	font-size: 45px;
+}
+.card-g input{
+	width: 480px;
+	height: 60px;
+	letter-spacing: 10px;
+	text-indent: 15px;
+	border: 1px solid #000;
+	font-size: 25px;
+	float: left;
+}
+
+#mm-name{
+	font-size: 50px;
+	font-weight: 500;
+	margin: 70px 0 0 0;
+}
+
+.mm-p {
+	font-size: 2rem;
+	margin: 10px 0;
+	text-align: center;
+}
+
+ .mm-text{
+	margin-top: 0!important;
+}
+ .mm-text li{
+	margin: -0.3rem auto!important;
+}
+.mm-text .p {
+	margin-top: 0!important;
+}
+.jp tr input{
+	width: 155px;
+	height: 100px;
+	font-size: 45px;
+	background-color: #f74c32;
+	color: #fff;
+	border: none;
+}
+#ButtonDel, #ButtonClear {
+	font-size: 26px;
+}
+ .jp{
+	margin-top: 3%!important;
+}
+#btnEnter {
+	width: 100%;
+}
+@media screen and (max-width: 800px) and (min-width:800px) {
+	header ul li {
+		float: left;
+		height: 4rem;
+		line-height: 4.5rem;
+		font-size: 1.5rem;
+		color: #fff;
+	}
+	.content {
+		font-size: 1.8rem;
+	}
+
+
+	.div-tingyong .box {
+		width: 25rem;
+
+	}
+	.div-tingyong .box>p {
+
+		font-size: 1.5rem;
+
+	}
+
+	.div-tingyong .box .div-box p {
+
+		font-size: 1.5rem;
+
+	}
+
+	.div-tingyong .box .div-box div p {
+
+		font-size: 1.5rem;
+
+	}
+	.main-content .p-title {
+		font-size: 1.8rem;
+	}
+	.main-content .p-detail {
+		font-size: 1.7rem;
+	}
+	.main-content .p-detail input {
+		width: 18rem;
+		height: 2.3rem;
+		font-size:1.8rem;
+	}
+
+
+}

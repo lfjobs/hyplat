@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="LogLock" table="dtLogLock">
+		<id length="50" name="logLockkey">
+			<column length="50" name="logLockkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="logLockID">
+			<column length="50" name="logLockID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="staffName">
+			<column length="50" name="staffName"/>
+		</property>
+		
+		<property name="startDate">
+			<column  name="startDate" />
+		</property>
+		<property name="endDate">
+			<column  name="endDate"/>
+		</property>
+		<property  name="lockDate">
+			<column  name="lockDate" />
+		</property>
+		<property  name="status">
+			<column length="2" name="status" />
+		</property>
+	</class>
+</hibernate-mapping>

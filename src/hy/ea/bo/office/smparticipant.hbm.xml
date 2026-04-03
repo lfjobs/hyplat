@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="SMParticipant" table="dtSMParticipant">
+		<id length="50" name="partiKey">
+			<column length="50" name="partiKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="partiID">
+			<column length="50" name="partiID"/>
+		</property>
+		<property name="meetingID">
+			<column length="50" name="meetingID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="organizationName">
+			<column length="50" name="organizationName"/>
+		</property>
+		<property name="post">
+			<column length="50" name="post"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="staffName">
+			<column length="50" name="staffName" />
+		</property>
+		<property  name="isAttend">
+			<column length="5" name="isAttend" />
+		</property>
+		<property  name="unAttendCause">
+			<column length="250" name="unAttendCause" />
+		</property>
+		<property  name="isLate">
+			<column length="5" name="isLate" />
+		</property>
+		<property  name="lateCause">
+			<column length="250" name="lateCause" />
+		</property>
+		<property  name="isSpeak">
+			<column  length="4" name="isSpeak" />
+		</property>
+		<property  name="speakContent">
+			<column  length="256" name="speakContent" />
+		</property>
+		<property  name="phoneNumber">
+			<column  length="11" name="phoneNumber" />
+		</property>
+		<property  name="email">
+			<column  length="50" name="email" />
+		</property>
+		<property  name="qq">
+			<column  length="20" name="qq" />
+		</property>
+		<property  name="recordDate">
+			<column  length="20" name="recordDate" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

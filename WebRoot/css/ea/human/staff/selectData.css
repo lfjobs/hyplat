@@ -1,0 +1,304 @@
+.header {
+    background-color: #f74c32
+}
+
+.header ul {
+    padding: 0 .5rem
+}
+
+.header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #fff
+}
+
+.header ul li:first-of-type {
+    width: 20%
+}
+
+.header ul li:first-of-type img {
+    width: .75rem
+}
+
+.header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+.header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right
+}
+.header li{
+    list-style-type:none !important;
+}
+.spd-content .dtd-oa-search-bar {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 42px;
+    line-height: 1;
+    font-size: 14px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding:10px 10px 0px 10px;
+}
+.spd-content .dtd-oa-search-bar-input {
+    border: 1px solid rgb(145 125 88 / 50%);
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 25px 4px 30px;
+    border-radius: 4px;
+}
+.spd-content .dtd-oa-search-bar-icon-wrapper {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 40%;
+    margin-top: 2px;
+    line-height: 16px;
+    text-align: center;
+    margin-left:5px;
+}
+.query-data{
+    left:10px;
+}
+.close-data{
+    right:20px;
+}
+.select-spd-data{
+    border-bottom: 1px solid #e2e2e2;
+    padding: 10px;
+}
+#selectBox{
+    overflow-y:auto;
+    overflow-x:hidden;
+    height:560px;
+}
+.div-mask-list li {
+    padding: .6rem;
+    border-bottom: 1px solid #e2e2e2;
+    text-align: justify;
+    font-size: .9rem;
+    line-height: 1.45rem;
+    text-align:center;
+    display:flex;
+    height:20px;
+}
+.selected-child {
+    width: 20%;
+    border-left: 1px solid #cfbdc1;
+    color: #c33820;
+}
+
+.express-data-box {
+    position: absolute;
+    bottom: -100%;
+    z-index: 15;
+    width: 100%;
+    background-color: #fff;
+    color: #4d525d;
+}
+
+.spd-content .div-bottom {
+    display: flex;
+    height: 40px;
+}
+.layui-layer-content{
+    overflow:hidden !important;
+}
+.express-eject-box #ejectList {
+    overflow-y: scroll;
+}
+.express-eject-box {
+    position: absolute;
+    z-index: 15;
+    width: 100%;
+    height:100%;
+    background-color: #fff;
+    color: #4d525d;
+    overflow:hidden;
+}
+.express-eject-box header {
+    /*position: relative;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    display: block;
+    background-color: #fff;*/
+    position: relative;
+    line-height: 50px;
+    font-size: 18px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+    text-align: center;
+}
+.express-eject-box header h3 {
+    margin: 0 1.675rem;
+    text-align: center;
+    font-size: .8rem;
+    line-height: 2.25rem;
+    font-weight:bold;
+}
+.express-eject-box header .select-btn {
+    position: absolute;
+    right: 55px;
+    top: 0;
+    height: 100%;
+    padding: 0 15px;
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.express-eject-box header .submit {
+    left: auto;
+    right: 0;
+    color: #007bff;
+}
+.express-eject-box header .icon-close{
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background-size: .675rem .675rem;
+    width: 1.675rem;
+    height: 2.25rem;
+    font-size:25px;
+
+}
+
+
+.eject-list li {
+    padding: .6rem;
+    border-bottom: 1px solid #e2e2e2;
+    text-align: justify;
+    font-size: .9rem;
+    line-height: 1.45rem;
+    text-align:center;
+    height:20px;
+    display:block;
+}
+.express-eject-box li {
+    list-style: auto !important;
+}
+
+.delete-class .layui-layer-title{
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+    background-color: #f74c32;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    color: #fefefe;
+    position: relative;
+    padding-left:30%;
+}
+.delete-class .layui-layer-content {
+    font-size: 1rem !important;
+    text-align: center;
+    line-height: 40px !important;
+}
+.delete-class .layui-layer-btn .layui-layer-btn0 {
+    border-color: #fff;
+    background-color: #fff;
+    color: #666;
+    border-right: 0.025rem solid #eee;
+}
+.delete-class .layui-layer-btn{
+    border-top: 0.025rem solid #eee;
+}
+.delete-class .layui-layer-btn{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.delete-class .layui-layer-btn a{
+    margin:0 !important;
+    padding:0 !important;
+    border: 0px solid #dedede !important;
+    width:50%;
+    height:3rem;
+    line-height:3rem;
+    font-size:1rem;
+    text-align:center;
+}
+.express-data-box {
+    position: absolute;
+    bottom: -100%;
+    z-index: 15;
+    width: 100%;
+    background-color: #fff;
+    color: #4d525d;
+}
+.express-data-box header {
+    position: relative;
+    border-top: 1px solid #e2e2e2;
+    display: block; background-color: #fff;
+}
+
+.express-data-box header h3 {
+    margin: 0 1.675rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 2.5rem;
+}
+.express-data-box header .close-mask,.submit-mask {
+    position: absolute;
+    top: 0;
+    width: 1.675rem;
+    height: 2.25rem;
+}
+
+.express-data-box article {
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.express-data-box .submit-mask {
+    right: 0;
+    width: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 6px;
+    color:#c33820;
+}
+.express-data-box .close-mask {
+    font-size: 20px !important;
+    font-weight: bold;
+    margin-top: 6px;
+}
+/*.layui-tab-title .layui-this:after {
+    height:31px !important;
+}*/
+#sdfp-selectBox {
+    overflow-x: auto;
+    overflow-y: hidden;
+    float: left;
+    width: 100%;
+    margin:10px 0px 0px 10px;
+}
+.sdfp-data-title{
+    height:30px;
+}
+.div-sdfp-data ul {
+    background-color: #fff;
+    height: 30px;
+    margin: 10px 0;
+}
+.sdfp-data-title ul li {
+    text-align: left;
+    float: left;
+    color: #177512de;
+    font-size: 15px;
+    font-weight: 600;
+}
+.sdfp-data-list ul li {
+    width: 20%;
+    text-align: left;
+    float: left;
+    font-size: 16px;
+    height: 100%;
+}

@@ -1,0 +1,81 @@
+
+html,body{
+	height:100%;
+	width:100%;
+	overflow:hidden;
+}
+header {
+	background-color: #f74c32
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #fff
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center
+}
+
+header ul li:nth-of-type(3) {
+	width: 20%;
+	text-align: right
+}
+.content{
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	padding:10px;
+}
+.dtd-oa-search-bar {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: 32px;
+	line-height: 1;
+	font-size: 14px;
+	box-sizing: border-box;
+	border-radius: 6px;
+	padding:10px
+}
+.dtd-oa-search-bar-input {
+	border: 1px solid rgba(126, 134, 142, .16);
+	caret-color: #fff !important;
+	border: 1px solid rgb(145 125 88 / 50%);
+	font-size: 14px !important;
+	line-height: 1.5 !important;
+	color: #fff !important;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 4px 25px 4px 30px;
+	border-radius: 4px;
+	line-height: 22px;
+	caret-color:auto;
+}
+.dtd-oa-search-bar-icon-wrapper {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: 50%;
+	left: 10px;
+	margin-top: 2px;
+	line-height: 16px;
+	text-align: center;
+	margin-left:5px;
+}

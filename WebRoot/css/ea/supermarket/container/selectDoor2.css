@@ -1,0 +1,328 @@
+@charset "utf-8";
+
+.bgff {
+    background-color: #fff
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.db {
+    display: block
+}
+
+.w100 {
+    width: 100%
+}
+
+.hover {
+    cursor: pointer
+}
+
+.fixed_top {
+    position: fixed;
+    top: 0;
+    left: 0
+}
+
+.fixed_bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0
+}
+
+body,
+html {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch
+}
+
+body {
+    margin: 0 auto;
+    background-color: #fff;
+    width: 100%
+}
+
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+iframe,
+input,
+li,
+menu,
+p,
+section,
+select,
+table,
+td,
+textarea,
+th,
+ul {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: '微软雅黑'
+}
+
+img {
+    cursor: pointer;
+    border: none;
+    vertical-align: middle
+}
+
+li,
+ol,
+ul {
+    list-style: none
+}
+
+a,
+a:link {
+    text-decoration: none;
+    color: #666
+}
+
+a:active,
+a:hover {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+a:focus {
+    outline: 0
+}
+
+.txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.txt_2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.txt_3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+input {
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+::-webkit-scrollbar {
+    width: 0
+}
+
+header {
+
+}
+
+header ul {
+    background-color: #f74c31;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .75rem;
+    justify-content: space-between;
+    color: #fff;
+    padding: 0 0.5rem;
+}
+
+header ul li {
+
+}
+
+header ul li:first-of-type a img {
+    width: 0.6rem;
+}
+
+header ul li:first-of-type {
+    width: 20%;
+}
+
+header ul li:nth-of-type(2) {
+
+}
+
+header ul li:last-of-type {
+    width: 20%;
+}
+
+.container {
+    font-size: 0.7rem;
+}
+
+.p-id {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1rem;
+    padding: 0.5rem 0 0.25rem 0;
+}
+
+.p-name {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1rem;
+    padding: 0.25rem 0 0.5rem 0;
+}
+
+.p-id span {
+    display: inline-block;
+}
+
+.p-select {
+    text-align: center;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    font-weight: 600;
+}
+
+.div-txt {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-txt .left, .div-txt .right {
+    width: 48%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    font-weight: bold;
+}
+
+.div-txt .left {
+    color: #f74c31;
+}
+
+.div-txt .right {
+    color: #008000;
+}
+
+.door {
+    padding: 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div-door-01 {
+    width: 30%;
+    margin: 0 1.5%;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    /* border-bottom: 0.1rem solid #eee; */
+}
+
+.p-01 {
+    padding: 0.25rem 0;
+    color: #f74c31;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.door-img {
+    margin-top: -0.5rem;
+    padding-bottom: 0.5rem;
+    height: 7.5rem;
+}
+
+.door-img img {
+    width: 100%;
+}
+
+.door-img img {
+
+}
+
+.door-img .img-open {
+    display: none;
+}
+
+.door-img.active .img-close {
+    display: none;
+}
+
+.door-img.active .img-open {
+    display: block;
+}
+
+.div-btn-door, .div-btn-lock {
+    margin: 0 auto;
+    width: 3.3rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    border-radius: 0.4rem;
+    /* background-color: #008000; */
+    border: 0.1rem solid #008000;
+    text-align: center;
+    /* color: #fff; */
+    color: #008000;
+    box-shadow: 0 0 0 0.05rem #ccc;
+}
+
+.div-btn-door.active, .div-btn-lock.active {
+    /* background-color: #f74c31; */
+    border-color: #f74c31;
+    color: #f74c31;
+}
+
+.lock-img {
+    padding: 1.5rem 0 0.5rem 0;
+}
+
+.lock-img img {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.lock-img .unlock {
+    display: none;
+}
+
+.lock-img.active .lock {
+    display: none;
+}
+
+.lock-img.active .unlock {
+    display: block;
+}
+
+.div-btn-lock {
+
+}

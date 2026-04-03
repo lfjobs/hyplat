@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.drive">
+	<class name="DriveBuyRecord" table="dtDriveBuyRecord">
+		<id length="50" name="brkey">
+			<column length="50" name="brkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="brid">
+			<column length="50" name="brid"><comment>ID</comment></column>
+		</property>
+		<property name="drivelicType">
+			<column length="5" name="drivelicType"><comment> 驾照类型 e.g. C1 A2...</comment></column>
+		</property>
+		<property name="mainpname">
+			<column length="50" name="mainpname"><comment> 主产品名称</comment></column>
+		</property>
+		<property name="mainpid">
+			<column   length="50"  name="mainpid"><comment>主产品ID</comment></column>
+		</property>
+		<property name="subpname">
+			<column  length="50"  name="subpname"><comment>子产品名称</comment></column>
+		</property>
+		<property name="subpid">
+			<column length="50"  name="subpid"><comment>子产品ID</comment></column>
+		</property>
+		<property name="cartype">
+			<column length="30"  name="cartype"><comment>车辆类型</comment></column>
+		</property>
+		<property name="studyplace">
+			<column length="50"  name="studyplace"><comment>学习场地</comment></column>
+		</property>
+		<property name="clientserv">
+			<column length="50"  name="clientserv"><comment>客服</comment></column>
+		</property>
+		<property name="manager">
+			<column length="50" name="manager"><comment>主管</comment></column>
+		</property>
+		<property name="clientservID">
+			<column length="50"  name="clientservID"><comment>客服</comment></column>
+		</property>
+		<property name="managerID">
+			<column length="50" name="managerID"><comment>主管</comment></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID"><comment>订单ID</comment></column>
+		</property>
+		<property name="staffid">
+			<column length="50" name="staffid"><comment>用户ID</comment></column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"><comment>公司ID</comment></column>
+		</property>
+		<property name="createDate">
+			<column  name="createDate"><comment>付款时间</comment></column>
+		</property>
+		<property name="state">
+			<column  length="2" name="state"><comment>是否付款 01未付款  00已付款</comment></column>
+		</property>
+		
+		
+		
+	</class>
+</hibernate-mapping>

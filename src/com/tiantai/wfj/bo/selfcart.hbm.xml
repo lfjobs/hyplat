@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="com.tiantai.wfj.bo.SelfCart" table="DT_selfCart" schema="HYPLAT" dynamic-insert="true">
+	<comment>购物车</comment>
+		<id length="50" name="cartKey" type="java.lang.String">
+			<column length="50" name="cart_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="cartId" type="java.lang.String">
+			<column length="50" name="cart_Id" >
+			</column>
+		</property>
+		<property name="posNum" type="java.lang.String">
+			<column name="posNum" length="50">
+			<comment>人员Id</comment>
+			</column>
+		</property>
+		<property name="pid" type="java.lang.String">
+			<column length="50" name="pid" >
+			<comment>商品ID</comment>
+			</column>
+		</property>
+
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="companyId" >
+			<comment>商品对应的公司ID</comment>
+			</column>
+		</property>
+		<property name="itemNum" type="java.lang.String">
+			<column length="50" name="itemNum" >
+			<comment>商品的数量</comment>
+			</column>
+		</property>
+		<property name="sendNum" type="java.lang.String">
+			<column length="50" name="sendNum" >
+				<comment>需要配送的商品的数量</comment>
+			</column>
+		</property>
+		<property name="journalNum" type="java.lang.String">
+			<column length="50" name="journalNum" >
+				<comment>订单号</comment>
+			</column>
+		</property>
+		<property name="payjournalNum" type="java.lang.String">
+			<column length="50" name="payjournalNum" >
+				<comment>多公司多个订单，共有付款订单号</comment>
+			</column>
+		</property>
+		<property name="comID" type="java.lang.String">
+			<column length="50" name="comID" >
+				<comment>超市</comment>
+			</column>
+		</property>
+		<property name="goodsName" type="java.lang.String">
+		<column length="50" name="goodsName" >
+			<comment>商品名称</comment>
+		</column>
+	</property>
+		<property name="barCode" type="java.lang.String">
+		<column length="50" name="barCode" >
+			<comment>条码</comment>
+		</column>
+	</property>
+		<property name="price" type="java.lang.String">
+		<column length="10" name="price" >
+			<comment>单价</comment>
+		</column>
+	</property>
+		<property name="oripri" type="java.lang.String">
+			<column length="10" name="oripri" >
+				<comment>原价</comment>
+			</column>
+		</property>
+		<property name="costmoney" type="java.lang.String">
+			<column length="10" name="costmoney" >
+				<comment>单价成本</comment>
+			</column>
+		</property>
+		<property name="pritype" type="java.lang.String">
+			<column length="1" name="pritype" >
+				<comment>价格类型 0或者null零售订单  1：批发价格 2：VIP  3. 普通活动 4.特价活动</comment>
+			</column>
+		</property>
+		<property name="specNum" type="java.lang.String">
+			<column length="10" name="specNum" >
+				<comment>更多规格数量</comment>
+			</column>
+		</property>
+		<property name="ssprice" type="java.lang.String">
+			<column length="50" name="ssprice" >
+				<comment>实收</comment>
+			</column>
+		</property>
+		<property name="zlprice" type="java.lang.String">
+			<column length="50" name="zlprice" >
+				<comment>找零</comment>
+			</column>
+		</property>
+		<property name="cardNum" type="java.lang.String">
+			<column length="50" name="cardNum" >
+				<comment>购物卡号</comment>
+			</column>
+		</property>
+		<property name="stardard" type="java.lang.String">
+			<column length="50" name="stardard" >
+				<comment>规格</comment>
+			</column>
+		</property>
+		<property name="activityID">
+			<column length="50" name="activityID"><comment>促销活动ID</comment></column>
+		</property>
+		<property name="relateID" type="java.lang.String">
+			<column length="50" name="relateID" >
+				<comment>关联订单号的统一编号</comment>
+			</column>
+		</property>
+		<property name="sgrId" type="java.lang.String">
+			<column length="50" name="sgrId" >
+				<comment>扫描记录ID</comment>
+			</column>
+		</property>
+		<property name="variableID">
+			<column length="20" name="variableID">
+				<comment>单位</comment>
+			</column>
+		</property>
+		<property name="deptId">
+			<column length="50" name="deptId">
+				<comment>库房ID</comment>
+			</column>
+		</property>
+		<property name="deptName">
+			<column length="50" name="deptName">
+				<comment>库房名称</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

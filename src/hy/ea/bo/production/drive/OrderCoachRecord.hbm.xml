@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.production.drive">
+	<class name="OrderCoachRecord" table="dtOrderCoachRecord">
+		<id length="50" name="ocrKey">
+			<column length="50" name="ocrKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ocrId">
+			<column length="50" name="ocrId"><comment>ID</comment></column>
+		</property>
+		<property name="orderDate">
+			<column  name="orderDate"><comment>预约时间</comment></column>
+		</property>
+		<property name="wotiStrdate">
+			<column   length="50"  name="wotiStrdate"><comment>每节课时间开始时间</comment></column>
+		</property>
+		<property name="wotiEnddate">
+			<column  name="wotiEnddate"><comment>每节课时间结束时间</comment></column>
+		</property>
+		<property name="staffcid">
+			<column length="50" name="staffcid"><comment>教练人员ID</comment></column>
+		</property>
+		<property name="staffstID">
+			<column length="50"  name="staffstID"><comment>学员人员ID</comment></column>
+		</property>
+		<property name="stustate">
+			<column length="2"  name="stustate"><comment>学员状态;//e.g. 00:未开始;01:学员签到，02：学员签退;03:学员已取消预约</comment></column>
+		</property>
+		<property name="stuqdDate">
+			<column name="stuqdDate"><comment>学员签到时间</comment></column>
+		</property>
+		<property name="stuqtDate">
+			<column name="stuqtDate"><comment>学员签退日期</comment></column>
+		</property>
+		<property name="stuqxDate">
+			<column name="stuqxDate"><comment>学员取消预约时间</comment></column>
+		</property>
+		<property name="coachsate">
+			<column length="2" name="coachsate"><comment>教练状态;//e.g. 00:未开始；01:教练签到;02:教练签退；03:教练被取消预约</comment></column>
+		</property>
+		<property name="coaqdDate">
+			<column name="coaqdDate"><comment>教练签到时间</comment></column>
+		</property>
+		<property name="coaqtDate">
+			<column name="coaqtDate"><comment>教练签退日期</comment></column>
+		</property>
+
+		<property name="stuqdArea">
+			<column length="200"  name="stuqdArea"><comment>学员签到地址</comment></column>
+		</property>
+	    <property name="stuqtArea">
+			<column length="200"  name="stuqtArea"><comment>学员签退地址</comment></column>
+		</property>
+			<property name="coaqdArea">
+			<column length="200"  name="coaqdArea"><comment>教练签到地址</comment></column>
+		</property>
+			<property name="coaqtArea">
+			<column length="200"  name="coaqtArea"><comment>价廉签退地址</comment></column>
+		</property>
+		<property name="wotyID">
+			<column length="50"  name="wotyID"><comment>价廉签退地址</comment></column>
+		</property>
+		 <property name="subject">
+                <column name="subject" length="50" ><comment>科目</comment></column>
+            </property>
+         <property name="content">
+                <column name="content" length="300" ><comment>科目内容</comment></column>
+        </property>
+        <property name="trainArea">
+			<column length="500" name="trainArea"><comment>培训场地</comment></column>
+		</property>	
+		  <property name="cartype">
+                <column name="cartype" length="50" ><comment>车型,e.g.宝马，桑塔纳</comment></column>
+        </property>
+           <property name="drivelictype">
+                <column name="drivelictype" length="50" />
+           </property>
+
+	</class>
+</hibernate-mapping>

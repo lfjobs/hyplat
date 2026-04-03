@@ -1,0 +1,34 @@
+package hy.ea.service;
+
+import hy.ea.bo.CLogBook;
+import hy.ea.bo.CMenu;
+
+import java.util.List;
+
+public interface CMenuService {
+	
+	/**
+	 * 根据ID(Not Key)得到CMenu信息
+	 * @param companyID
+	 * @param menuID
+	 * @return
+	 */
+	CMenu getMenuByID(String companyID,String menuID);
+	
+	/**
+	 * 根据ID(Not Key)删除CMenu及相关信息
+	 * @param companyID
+	 * @param logBook
+	 * @param menuID
+	 */
+	void deleteMenuByID(String companyID,CLogBook logBook, String menuID);
+	
+	/**
+	 * 根据eaID得到此ea下所有的CMenu
+	 * @param companyID
+	 * @param eaID
+	 * @return
+	 */
+	List<CMenu> getMenuListByEaID(String companyID,String eaID);
+	
+}

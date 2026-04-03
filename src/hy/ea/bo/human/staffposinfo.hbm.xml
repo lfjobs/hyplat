@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffPosInfo" table="dt_hr_StaffPosInfo">
+		<comment>登陆位置信息</comment>
+		<id name="spiKey" length="50">
+			<column name="spiKey" length="50" />
+			<generator class="uuid" />
+		</id>
+		<property name="spiID">
+			<column name="spiID" length="50" not-null="true" >
+					<comment>逻辑ID</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column name="staffID" length="50">
+				<comment>人的ID</comment>
+			</column>
+		</property>
+		<property name="posDate">
+			<column  name="posDate">
+				<comment>登陆更新定位时间</comment>
+			</column>
+		</property>
+		<property name="ip">
+			<column length="30" name="ip">
+				<comment>ip</comment>
+			</column>
+		</property>
+		<property name="longitude">
+			<column  name="longitude">
+				<comment>经度</comment>
+			</column>
+		</property>
+		<property name="latitude">
+			<column  name="latitude">
+				<comment>纬度</comment>
+			</column>
+		</property>
+		<property name="source">
+			<column length="20" name="source">
+				<comment>来源默认wfjapp</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

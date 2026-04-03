@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="WxMonthAccount" table="dtWxMonthAccount">
+		<id length="50" name="wxaKey">
+			<column length="50" name="wxaKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="wxaId">
+			<column name="wxaId" length="50"/>
+		</property>
+		<property name="companyID">
+			<column name="companyID" length="50"><comment>公司ID</comment></column>
+		</property>
+		<property name="sr">
+			<column name="sr" length="50"><comment>总收入</comment></column>
+		</property>
+		<property name="zc">
+			<column name="zc" length="50"><comment>支出</comment></column>
+		</property>
+		<property name="ye">
+			<column name="ye" length="50"><comment>支出</comment></column>
+		</property>
+		<property name="month">
+			<column name="month" length="10"><comment>月份</comment></column>
+		</property>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.LotteryRecordBean" table="DT_LOTTERY_RECORD" schema="HYPLAT">
+        <comment>抽奖记录</comment>
+        <id name="recordId">
+            <column name="RECORD_ID" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="lotteryMan">
+            <column name="LOTTERY_MAN" sql-type="varchar2(50)" length="50" not-null="true">
+            <comment>抽奖人id</comment>
+            </column>
+        </property>
+        <property name="recordDate">
+            <column name="RECORD_DATE" sql-type="timestamp(6)" not-null="true">
+                <comment>日期</comment>
+            </column>
+        </property>
+        <property name="lotteryResult">
+            <column name="LOTTERY_RESULT" sql-type="varchar2(10)" length="10" not-null="true">
+                <comment>抽奖结果</comment>
+            </column>
+        </property>
+        <property name="lotteryStyle">
+            <column name="LOTTERY_STYLE" sql-type="varchar2(10)" length="10" not-null="true">
+                <comment>抽奖类型</comment>
+            </column>
+        </property>
+        <property name="activityId">
+            <column name="activity_Id" sql-type="varchar2(50)" length="50">
+                <comment>活动id</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

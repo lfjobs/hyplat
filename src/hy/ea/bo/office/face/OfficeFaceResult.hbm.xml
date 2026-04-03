@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hy.ea.bo.office.face.OfficeFaceResult" table="OFFICE_FACE_RESULT">
+		<id length="50" name="id">
+			<column length="50" name="id" />
+			<generator class="uuid" />
+		</id>
+		<property name="personId" type="string">
+			<column length="50" name="PERSON_ID" />
+		</property>
+		<property name="deviceSN">
+			<column length="50" name="DEVICE_SN" />
+		</property>
+		<property  name="inoutFlag">
+			<column length="250" name="INOUT_FLAG" />
+		</property>
+		<property  name="snapImage">
+			<column length="250" name="SNAP_IMAGE" />
+		</property>
+		<property  name="snapTime">
+			<column length="250" name="SNAP_TIME" />
+		</property>
+		<property  name="personName">
+			<column length="250" name="PERSON_NAME" />
+		</property>
+		<property  name="createTime">
+			<column length="250" name="CREATE_TIME" />
+		</property>
+		<property  name="status">
+			<column length="250" name="STATUS" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CardInfo" table="dt_Car_CardInfo">
+		<id length="50" name="cardInfoKey">
+			<column length="50" name="cardInfoKey"/>
+			<generator class="uuid" />
+		</id>
+		<property name="ID">
+			<column length="50" name="ID"/>
+		</property>
+		<property name="cardCode">
+			<column length="50" name="cardCode"/>
+		</property>
+		<property name="validityTime">
+			<column length="50" name="validityTime"/>
+		</property>
+		<property name="status">
+			<column length="50" name="status"/>
+		</property>
+		<property name="statesType">
+			<column length="50" name="statesType"/>
+		</property>
+		<property name="cardType">
+			<column length="250" name="cardType"/>
+		</property>	
+		<property name="metaInfo">
+			<column length="50" name="metaInfo"/>
+		</property>
+		<property name="carInfomation">
+			<column length="50" name="carInfomation"/>
+		</property>
+		<property name="createUser">
+			<column length="50" name="createUser"/>
+		</property>
+		<property name="createTime">
+			<column length="50" name="createTime"/>
+		</property>	
+		<property name="descs">
+			<column length="250" name="descs"/>
+		</property>
+		<property name="synData">
+			<column length="50" name="synData"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>	
+	</class>
+</hibernate-mapping>

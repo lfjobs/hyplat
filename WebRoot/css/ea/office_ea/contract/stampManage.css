@@ -1,0 +1,372 @@
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+header {
+	background-color: #f74c32
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #fff
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center
+}
+
+header ul li:nth-of-type(3) {
+	width: 20%;
+	text-align: right
+}
+
+.content .sec-search {
+	margin: .5rem .1rem;
+	padding: 0 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+}
+
+.content .sec-search div:nth-of-type(2) input {
+	width: 2.6rem;
+	height: 1.6rem;
+	background: #faf8f8;
+	border: 1px solid #d1d1d1;
+	margin-left:0.5rem;
+}
+
+.content .sec-search .box {
+	background-color: #f6f6f6;
+	border-radius: 1rem;
+	width:80%;
+}
+
+.content .sec-search .box label {
+	display: flex;
+	align-items: center;
+	height: 2rem;
+	line-height: 2rem;
+	float: left;
+	width: 1.75rem;
+	text-align: center
+}
+
+.content .sec-search .box label img {
+	margin-left: .65rem;
+	width: .85rem;
+}
+
+.content .sec-search .box input {
+	float: left;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	font-size: .85rem;
+	color: #222;
+	border: 0;
+	background-color: transparent;
+	width: 80%;
+}
+
+.content .sec-list ul {
+	padding: 0 1.25rem 0.5rem;
+}
+
+.content .sec-list ul li {
+	float: left;
+	width: 70px;
+	text-align: center
+}
+
+.content .sec-list ul div,p {
+	display:inline-block;
+}
+
+.content .sec-list ul li img {
+	width: .9rem
+}
+
+.content .sec-list ul li p {
+	height: 1.75rem;
+	line-height: 1.75rem;
+	font-size: .85rem;
+	color: #222
+}
+
+.content .ul-con {
+	border-top: .025rem solid #eee
+}
+
+.content .ul-con li {
+	padding: .5rem .5rem;
+	border-bottom: .025rem solid #eee
+}
+
+.content .ul-con li div img {
+	padding-left: .125rem;
+	padding-top: .3rem;
+	float: left;
+	width: 1.2rem;
+}
+
+.content .ul-con li .div-left {
+	float: left;
+	width: 65%;
+	padding-left:0.2rem;
+}
+
+.content .ul-con li .div-left p {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	float: left;
+	font-size: .85rem;
+	color: #222
+}
+
+.content .ul-con li .div-left p:nth-of-type(1) {
+	height: 1.25rem;
+	line-height: 1.25rem
+}
+
+.content .ul-con li .div-left p:nth-of-type(2) {
+	height: 2rem;
+	line-height: 2rem;
+	font-size: .58rem;
+	color: #222
+}
+
+.content .ul-con li .div-right {
+	float: right;
+	width:25%;
+	text-align: center
+}
+
+.content .ul-con li .div-right p:nth-of-type(1) {
+	font-size: .8rem;
+	color: #555;
+	height: 1.25rem;
+	line-height: 1.25rem
+}
+
+.content .ul-con li .div-right p:nth-of-type(2) {
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .58rem;
+	color: #fea164
+}
+
+.content .ul-con li .div-right .p-tg {
+	color: #23c495!important
+}
+
+.content .ul-con li.li-color .div-left p {
+	color: #f74c32
+}
+
+.div-tingyong {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .4)
+}
+
+.div-tingyong .box {
+	width:  280px;
+	margin: 30vh auto 0 auto
+}
+
+.div-tingyong .box>p {
+	border-top-left-radius: .3rem;
+	border-top-right-radius: .3rem;
+	background-color: #f74c32;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: .65rem;
+	color: #fefefe;
+	text-align: center;
+	position: relative;
+	width:100%;
+}
+
+.div-tingyong .box>p img {
+	position: absolute;
+	width: .95rem;
+	top: -8%;
+	right: -2%
+}
+
+.div-tingyong .box .div-box p {
+	background-color: #fff;
+	height: 3.6rem;
+	line-height: 3.6rem;
+	font-size: .65rem;
+	color: #222;
+	text-align: center;
+	border-bottom: .025rem solid #eee;
+	width:100%;
+}
+
+.div-tingyong .box .div-box div p {
+	background-color: #fff;
+	width: 50%;
+	height: 2.3rem;
+	line-height: 2.3rem;
+	font-size: .65rem;
+	color: #222;
+	text-align: center
+}
+
+.div-tingyong .box .div-box div p:nth-of-type(1) {
+	border-bottom-left-radius: .3rem;
+	color: #666;
+	position: relative
+}
+
+.div-tingyong .box .div-box div p:nth-of-type(1):before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: .025rem;
+	right: .025rem;
+	background-color: #eee
+}
+
+.div-tingyong .box .div-box div p:nth-of-type(2) {
+	border-bottom-right-radius: .3rem
+}
+
+.div-shanchu {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .4)
+}
+
+.div-shanchu .box {
+	width: 280px;
+	margin: 30vh auto 0 auto
+}
+
+.div-shanchu .box>p {
+	border-top-left-radius: .3rem;
+	border-top-right-radius: .3rem;
+	background-color: #f74c32;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: .85rem;
+	color: #fefefe;
+	text-align: center;
+	position: relative;
+	width: 100%;
+}
+
+.div-shanchu .box>p img {
+	position: absolute;
+	width: .95rem;
+	top: -8%;
+	right: -2%
+}
+
+.div-shanchu .box .div-box p {
+	background-color: #fff;
+	height: 3.6rem;
+	line-height: 3.6rem;
+	font-size: .85rem;
+	color: #222;
+	text-align: center;
+	border-bottom: .025rem solid #eee;
+	width: 100%;
+}
+
+.div-shanchu .box .div-box div p {
+	background-color: #fff;
+	width: 50%;
+	height: 2.3rem;
+	line-height: 2.3rem;
+	font-size: .85rem;
+	color: #222;
+	text-align: center
+}
+
+.div-shanchu .box .div-box div p:nth-of-type(1) {
+	border-bottom-left-radius: .3rem;
+	color: #666;
+	position: relative
+}
+
+.div-shanchu .box .div-box div p:nth-of-type(1):before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: .025rem;
+	right: .025rem;
+	background-color: #eee
+}
+
+.div-shanchu .box .div-box div p:nth-of-type(2) {
+	border-bottom-right-radius: .3rem
+}
+
+.content .sec-list ul li div.sex {
+	height: 2rem;
+	line-height: 2rem;
+	float: left;
+	padding-right: .3rem
+}
+
+.content .ul-con li div.sex .img-01 {
+	display: inline-block;
+}
+.content .ul-con li div.sex .img-02 {
+	display: none;
+}
+.content .ul-con li div.sex img {
+	width: 1.5rem;
+}
+.content .ul-con li.active div.sex .img-01 {
+	display: none
+}
+
+.content .ul-con li.active div.sex .img-02 {
+	display: inline-block
+}
+
+@media (min-width: 960px) {
+
+	.back-li {
+
+		visibility: hidden;
+
+	}
+
+
+}

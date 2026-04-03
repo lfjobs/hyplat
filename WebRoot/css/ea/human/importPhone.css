@@ -1,0 +1,130 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+.sec-list {
+    z-index: 99;
+    height: 100%;
+    padding: 0 5px;
+}
+
+.active {
+    background-color: #dd40284f !important;
+    color: white;
+    font-size: 12px;
+}
+
+.btn-submit {
+    border-radius: 15px;
+    background-color: #f74c32;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.but {
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-title1 {
+    height: 5px;
+}
+
+.input-box1 input[type="text"] {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #bab2b2;
+    border-radius: 15px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: white;
+    color: #121212;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input-box1 {
+    align-items: center;
+    border-radius: 15px;
+    padding: 8px 12px;
+    border-width: 3px;
+}
+.data-ul {
+    display: flex; /* 启用 Flexbox 布局 */
+    justify-content: space-between; /* 子元素均匀分布 */
+    align-items: center; /* 垂直居中对齐 */
+    padding: 0; /* 移除默认的内边距 */
+    margin: 0; /* 移除默认的外边距 */
+    list-style: none; /* 移除列表样式 */
+    height: 40px; /* 设置高度 */
+    border-bottom: 2px solid #ece4e4;
+}
+
+.data-ul li {
+    flex: 1; /* 每个子项占据相等的空间 */
+    padding: 10px; /* 内边距 */
+}
+
+.data-ul li:last-child {
+    text-align: end;
+    color: #f74c32;;
+}
+input[disabled] {
+    color: #666;
+}
+
+@media screen and (max-width: 450px) {
+
+}

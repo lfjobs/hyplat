@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human.salaryNew">
+	<class name="SalaryItem" table="dtSalaryItem" >
+		<comment>薪资单元项目点</comment>
+
+		<id length="50" name="stkey">
+			<column length="50" name="stkey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="stID">
+			 <column length="50" name="stID" >
+				 <comment>逻辑主键</comment>
+			 </column>
+        </property>
+		 <property name="suID">
+			 <column length="50" name="suID" >
+				 <comment>工资单元ID</comment>
+			 </column>
+        </property>
+		<property name="companyID">
+			<column length="50" name="companyID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="itemName">
+			<column length="250" name="itemName" >
+				<comment>项目点名称</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column length="2" name="status" >
+				<comment>项目点状态 00 正常 01 作废  99 删除</comment>
+			</column>
+		</property>
+		<property name="seq">
+			<column length="10" name="seq" >
+				<comment>报表排列顺序</comment>
+			</column>
+		</property>
+		<property name="createDate">
+			<column  name="createDate" >
+				<comment>创建日期</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column  length="50" name="staffID" >
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property  name="realName">
+			<column  length="50" name="realName" >
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="isPreset">
+			<column  length="2" name="isPreset" >
+				<comment>是否是预设的，00预设  01 自定义</comment>
+			</column>
+		</property>
+		<property name="statisRules">
+			<column  length="10" name="statisRules" >
+				<comment>统计规则  + 还是 -  0 或者只是显示如序号和级别名称</comment>
+			</column>
+		</property>
+		<property name="sorterID">
+			<column length="50" name="sorterID" >
+				<comment>排序人ID</comment>
+			</column>
+		</property>
+		<property name="sortDate">
+			<column  name="sortDate" >
+				<comment>排序时间</comment>
+			</column>
+		</property>
+		<property name="delerID">
+			<column length="50" name="delerID" >
+				<comment>删除人ID</comment>
+			</column>
+		</property>
+		<property name="delDate">
+			<column  name="delDate" >
+				<comment>删除时间</comment>
+			</column>
+		</property>
+		<property name="updateID">
+			<column length="50" name="updateID" >
+				<comment>修改人ID</comment>
+			</column>
+		</property>
+		<property name="updateDate">
+			<column  name="updateDate" >
+				<comment>修改日期</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

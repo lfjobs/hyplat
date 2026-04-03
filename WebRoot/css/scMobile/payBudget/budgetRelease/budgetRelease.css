@@ -1,0 +1,431 @@
+@charset "utf-8";
+.bgff {
+	background-color: #fff
+}
+
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+.db {
+	display: block
+}
+
+.w100 {
+	width: 100%
+}
+
+.hover {
+	cursor: pointer
+}
+
+.fixed_top {
+	position: fixed;
+	top: 0;
+	left: 0
+}
+
+.fixed_bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0
+}
+
+body,
+html {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	-webkit-overflow-scrolling: touch
+}
+
+body {
+	margin: 0 auto;
+	background-color: #fff;
+	width: 100%
+}
+
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+input,
+li,
+menu,
+p,
+section,
+select,
+span,
+table,
+td,
+textarea,
+th,
+ul {
+	margin: 0 0;
+	padding: 0 0;
+	font-family: '微软雅黑'
+}
+
+img {
+	cursor: pointer;
+	border: none;
+	vertical-align: middle
+}
+
+li,
+ol,
+ul {
+	list-style: none
+}
+
+a,
+a:link {
+	text-decoration: none;
+	color: #666
+}
+
+a:active,
+a:hover {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+a:focus {
+	outline: 0
+}
+
+.left {
+	float: left
+}
+
+.right {
+	float: right
+}
+
+.txt {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.txt_2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.txt_3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+input {
+	outline: 0;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+::-webkit-scrollbar {
+	width: 0
+}
+
+.clearfix:after,
+.clearfix:before {
+	content: "";
+	display: table
+}
+
+.clearfix:after {
+	clear: both;
+	overflow: hidden
+}
+
+.clearfix {
+	zoom: 1
+}
+
+::-webkit-input-placeholder {
+	color: #ccc
+}
+
+:-moz-placeholder {
+	color: #ccc
+}
+
+::-moz-placeholder {
+	color: #ccc
+}
+
+:-ms-input-placeholder {
+	color: #ccc
+}
+
+header ul li {
+	float: left;
+	width: 10%;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	font-size: .85rem;
+	color: #222
+}
+
+header ul li:first-of-type img {
+	margin-left: .95rem;
+	width: .5rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 80%;
+	text-align: center
+}
+
+header ul li:nth-of-type(3) img {
+	width: 1rem
+}
+
+.content nav ul {
+	background-color: #f2f2f2
+}
+
+.content nav ul li {
+	text-align: center;
+	width: 33%;
+	height: 2.1rem;
+	line-height: 2.1rem;
+	font-size: .7rem;
+	color: #222;
+	float: left
+}
+
+.content nav ul li.active {
+	color: #ef2323
+}
+
+.content section.nav_2 ul {
+	width: 60%;
+	margin: 0 auto
+}
+
+.content section.nav_2 ul li {
+	width: 33%;
+	float: left;
+	text-align: center;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content section.con_jh {
+	padding: 0 .55rem
+}
+
+.content section.con_jh ul li label {
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: .55rem;
+	color: #222
+}
+
+.content section.con_jh ul li input {
+	border: 0
+}
+
+.content section.con_jh ul li>p {
+	float: left;
+	width: 50%
+}
+
+.content section.con_jh ul li>p input {
+	font-size: .55rem;
+	color: #222;
+	width: 45%
+}
+
+.content section.con_jh ul li>div {
+	width: 50%;
+	float: left;
+	height: 1.5rem;
+	line-height: 1.5rem
+}
+
+.content section.con_jh ul li>div label {
+	display: block;
+	float: left
+}
+
+.content section.con_jh ul li>div>p {
+	display: inline-block;
+	width: 38%;
+	font-size: .55rem;
+	color: #222;
+	background-color: transparent
+}
+
+.content section.con_jh ul li>div>p>span {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.content section.con_jh ul li>div img {
+	float: right;
+	width: .6rem;
+	margin-top: 7.5%
+}
+
+.content section.con_jh ul li .p_gs input {
+	width: 70%
+}
+
+.content section.con_jh ul .p_xz_left img {
+	margin-right: .55rem
+}
+
+.content section.con_jh ul li.djxh input {
+	width: 70%
+}
+
+.content #tab_wpgl ul.ul_con {
+	padding-top: 1rem
+}
+
+.content #tab_wpgl ul.ul_con li aside {
+	padding-top: 10%;
+	width: 10%;
+	float: left
+}
+
+.content #tab_wpgl ul.ul_con li aside img {
+	width: .9rem;
+	margin: 0 auto
+}
+
+.content #tab_wpgl ul.ul_con li aside.aside_yes .img_no {
+	display: none
+}
+
+.content #tab_wpgl ul.ul_con li aside.aside_yes .img_yes {
+	display: block
+}
+
+.content #tab_wpgl ul.ul_con li aside.aside_no .img_yes {
+	display: none
+}
+
+.content #tab_wpgl ul.ul_con li aside.aside_no .img_no {
+	display: block
+}
+
+.content #tab_wpgl ul.ul_con li section {
+	width: 90%;
+	float: left
+}
+
+.content #tab_wpgl ul.ul_con li section div {
+	float: left;
+	margin-right: .5rem;
+	border-radius: .25rem;
+	border: .025rem solid #ccc;
+	width: 4.25rem;
+	height: 4.25rem
+}
+
+.content #tab_wpgl ul.ul_con li section div img {
+	width: 4.25rem
+}
+
+.content #tab_wpgl ul.ul_con li section ul {
+	padding-bottom: .6rem;
+	width: 66%;
+	float: left
+}
+
+.content #tab_wpgl ul.ul_con li section ul li {
+	font-size: .6rem;
+	color: #444
+}
+
+.content #tab_wpgl ul.ul_con li section ul li.img_no1 {
+	line-height: .9rem;
+	height: 1.5rem;
+	font-size: .75rem;
+	color: #222
+}
+
+.content #tab_wpgl ul.ul_con li section ul li.img_no2,
+.content #tab_wpgl ul.ul_con li section ul li.img_no3 {
+	height: .75rem;
+	line-height: .75rem
+}
+
+.content #tab_wpgl ul.ul_con li section ul li.img_no3 span {
+	float: left;
+	display: block;
+	width: 5.5rem
+}
+
+.content #tab_wpgl ul.ul_con li section ul li.img_no4 {
+	height: 1.45rem;
+	line-height: 1.45rem
+}
+
+.content #tab_wpgl ul.ul_con li section ul li.img_no4 p {
+	float: left
+}
+
+.content #tab_wpgl ul.ul_con li section ul li.img_no4 p:first-of-type {
+	width: 5.5rem
+}
+
+.content #tab_wpgl ul.ul_con li section ul li.img_no4 span {
+	color: #e21a1a
+}
+
+.div_scroll {
+	overflow-y: scroll
+}
+
+section.button {
+	padding: 1.5rem 0 1.5rem 0;
+	width: 100%
+}
+
+section.button p {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: .15rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
+	font-size: .6rem;
+	color: #fff;
+	background-color: #4792f7
+}
+
+.body_yc {
+	height: 100%;
+	overflow-y: hidden
+}

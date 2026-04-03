@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="BeginningBalance" table="dtBeginningBalance">
+		<id length="50" name="BeginningBalanceKey">
+			<column length="50" name="BeginningBalanceKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="BeginningBalanceID">
+			<column length="50" name="BeginningBalanceID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="cashBalance">
+			<column length="250" name="cashBalance" />
+		</property>
+		<property name="bankBalance">
+			<column length="250" name="bankBalance" />
+		</property>
+		<property name="payablesBalance">
+			<column length="250" name="payablesBalance" />
+		</property>
+		<property name="receivablesBalance">
+			<column length="250" name="receivablesBalance" />
+		</property>
+		<property name="bbtype">
+			<column length="2" name="bbtype" />
+		</property>
+		<property name="Customizedate">
+			<column name="Customizedate" />
+		</property>
+	</class>
+</hibernate-mapping>

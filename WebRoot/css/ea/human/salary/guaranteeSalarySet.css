@@ -1,0 +1,130 @@
+html,body{
+    height:100%;
+    overflow:hidden;
+}
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+.layui-form-label{
+    padding-left:15px !important;
+    text-align:left;
+    width:165px;
+}
+
+.div-form{
+    padding:10px 5px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.salary-data-set .layui-form-label {
+    width:120px
+}
+.salary-data-set .layui-input-block {
+    margin-left:150px
+}
+.layui-input{
+    border: 0px solid #fff;
+    border-bottom: 0.025rem solid #ab9191;
+}
+.layui-btn{
+    width:100%;
+    background-color: #e64d3d;
+    border-top: 0.35rem solid #f8f8f8;
+    height: 53px;
+}
+.layui-form-item {
+    margin-bottom:10px !important
+}
+.form-label {
+    float: left;
+    display: block;
+    padding: 9px 15px;
+    line-height: 20px;
+    text-align: right;
+    font-weight:400;
+}
+.label-explain{
+    width:100%;
+    text-align: left;
+    margin-left: 10px;
+    padding: 5px;
+    color: #9b8f8f;
+}
+.level-data{
+    margin-bottom:0 !important;
+}
+.item-input{
+    display:none;
+}
+.item-input .layui-form-label{
+    padding:15px 0px 0px 15px;
+
+}
+.set-block{
+    min-width:200px;
+}
+.label-remark{
+    font-weight: 300;
+    font-size: 13px;
+    padding: 0px 15px !important;
+    width: 100%;
+    color: #857777;
+}
+
+.div-form{
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.layui-input{
+    text-align:center;
+}
+.layui-btn-save, .layui-btn-cancel {
+    background-color: #fff;
+    color: #333;
+    width: 50%;
+    float: left;
+    margin-left: 0 !important;
+    border-top: 0.35rem solid #f8f8f8;
+    height: 53px;
+    display: inline-block;
+    line-height: 38px;
+    padding: 0 18px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}

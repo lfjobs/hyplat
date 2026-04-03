@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+body table tr td{
+	text-align: center;
+	height: 50px;
+	width: 50px;
+}
+body{
+	font-family: '微软雅黑';
+}
+body table div img{
+	 cursor: pointer;
+}
+/*默认背景图标*/
+ body .na_back_img {
+	background-image: url("../images/sytemicon/default.png");
+	background-repeat: no-repeat;
+	background-position: top;
+	height: 39px;
+    margin-top: 0;
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+}
+/*无背景图标*/
+ body .none_back_img {	
+	height: 38px;
+    margin-top: 0;
+    width: 80px;
+    cursor: pointer;
+    text-align: center;
+}
+/*水平箭头*/
+body .na_back_img_jt_hx {
+	background-image: url("../images/jiatou_03.gif");
+	background-repeat: no-repeat;
+	margin-top: 0px;
+	height: 30px;
+	width: 50px;
+	text-align: center;
+}
+
+body .na_back_img_ks {
+	background-image: url("../images/sytemicon/default.png");
+	background-repeat: no-repeat;
+	background-position: top;
+	height: 39px;
+    margin-top: 0;
+    width: 80px;
+    text-align: center;
+} 
+body .na_back_img_jt_xx {
+	background-image: url("../images/jiatou_02.gif");
+	background-repeat: no-repeat;
+	margin-top: 0;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+}
+body .na_back_img_jt_xs {
+	background-image: url("../images/jiatou_01.gif");
+	background-repeat: no-repeat;
+	margin-top: 0;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+}
+body .center_a {
+	text-align: center;
+	height: 28px;
+	width: 100px;
+	white-space:nowrap;
+	margin-top: 8px;
+}
+body td {
+	font-size: 12px;
+	text-align: left;
+}
+.d td{
+	width:110px;
+}

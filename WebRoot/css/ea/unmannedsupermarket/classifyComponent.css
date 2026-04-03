@@ -1,0 +1,274 @@
+/* 容器整体 */
+.industry-item {
+    list-style: none;
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    background: #f7f9fc;
+    color: #333;
+}
+
+
+/* ========== 可点击层级（核心层） ========== */
+.level-3,
+.level-4 {
+    background: linear-gradient(135deg, #e6f4ff, #f0f7ff);
+    color: #1677ff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(22, 119, 255, 0.15);
+}
+
+/* 左侧高亮条（视觉重点） */
+.level-3::before,
+.level-4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    border-radius: 2px;
+    background: #1677ff;
+}
+
+
+
+
+    /* ========== 子级 / 不可点击层级 ========== */
+.level-5,
+.level-6 {
+    background: #fafafa;
+    color: #999;
+    cursor: default;
+}
+
+/* 禁用 Hover 位移 */
+.level-5:hover,
+.level-6:hover {
+    transform: none;
+    background: #fafafa;
+}
+
+/* ========== 层级缩进（非常重要） ========== */
+.level-3 {
+    padding-left: 18px;
+}
+
+.level-5 {
+    padding-left: 38px;
+}
+
+.level-6 {
+    padding-left: 48px;
+}
+
+.level-1,
+.level-2,
+.level-3 {
+    cursor: default;
+}
+
+.level-1:hover,
+.level-2:hover,
+
+
+/* 只有子级（level > 3）才有交互感 */
+
+.level-5:hover,
+.level-6:hover {
+    background: #f0f7ff;
+    transform: translateX(4px);
+}
+
+
+.level-5:active,
+.level-6:active {
+    transform: scale(0.97);
+}
+
+/* 鼠标指针区分 */
+
+.level-5,
+.level-6 {
+    cursor: pointer;
+}
+
+
+/*                                            根节点                                          */
+/* ===============================
+   亮白主色 Catalog
+   =============================== */
+.industry-catalog {
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+
+    /* 主色亮白 */
+    background: #ffffff;
+    color: #212121;
+
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    font-family: "Roboto", "Noto Sans SC", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    /* 阴影：轻微浮起感 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    touch-action: manipulation;
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* ===============================
+   轻微亮色渐变装饰（不覆盖全背景）
+   =============================== */
+.industry-catalog::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* 点缀高度 */
+    background: linear-gradient(
+            90deg,
+            rgba(66, 165, 245, 0.35),
+            rgba(30, 136, 229, 0)
+    );
+    border-radius: 3px 3px 0 0;
+}
+
+
+/* ===============================
+   Hover / Active 反馈
+   =============================== */
+.industry-catalog:hover {
+    background: #f9fbff; /* 极淡蓝白高亮 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.industry-catalog:active {
+    background: #eef4ff; /* 按下反馈 */
+}
+
+/* ===============================
+   滚动优化（如果列表长）
+   =============================== */
+.industry-catalog {
+
+    overscroll-behavior: contain;
+}
+
+.industry-catalog::-webkit-scrollbar {
+    width: 6px;
+}
+
+.industry-catalog::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+}
+
+.industry-catalog::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/*返回和搜索*
+ */
+
+/* ===============================
+   整体 Modal */
+.menu-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    overflow: auto; /* 不滚动，随 modal 滚动 */
+    -webkit-overflow-scrolling: touch; /* 移动端平滑滚动 */
+    z-index: 999;
+    display: none;
+}
+
+/* ---------------------------
+   Modal 内容区
+   --------------------------- */
+.menu-content {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: auto; /* 不滚动，随 modal 滚动 */
+
+}
+
+/* ===============================
+   头部固定 */
+.menu-header {
+    position: sticky; /* 顶部固定 */
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: #ffffff;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* 防止 header 收缩 */
+}
+
+/* 返回按钮 */
+.menu-back {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    color: #1a73e8; /* Material 蓝色 */
+    user-select: none;
+}
+
+/* ===============================
+   搜索框固定在头部下方 */
+.div-search {
+    position: sticky; /* 保持在顶部下面 */
+    top: 40px; /* 头部高度约50px，可调整 */
+    z-index: 9;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0; /* 防止收缩 */
+}
+
+/* 搜索框样式 */
+.div-search input {
+    width: 80%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #cfd8dc;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.div-search input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.15);
+}
+
+
+.menu-body {
+    padding: 12px 16px;
+    overflow: auto; /* 不滚动，随 modal 滚动 */
+}
+

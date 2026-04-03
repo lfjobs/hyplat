@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="suminfo-ntoken" namespace="/ea/suminfo"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.SumInfoAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="list">/page/ea/main/human/cstaff/sum_info/suminfo.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="suminfo.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+</struts>

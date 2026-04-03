@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hy.ea.bo.DrivingSchool.elyc.TbElycOrderRecord" table="TB_Elyc_Order_Record" schema="HYPLAT">
+        <id length="50" name="etKey">
+            <column length="50" name="etKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="etoId" type="java.lang.String">
+            <column name="etoId"  length="50" ><comment>逻辑ID</comment></column>
+        </property>
+        <property name="studentId" type="java.lang.String">
+            <column name="studentId"  length="50" ><comment>关联学员ID</comment></column>
+        </property>
+        <property name="staffId" type="java.lang.String">
+            <column name="staffId"  length="50" ><comment>人员ID</comment></column>
+        </property>
+        <property name="studentName" type="java.lang.String">
+            <column name="studentName"  length="50" ><comment>关联学员姓名</comment></column>
+        </property>
+        <property name="studentPhone" type="java.lang.String">
+            <column name="studentPhone"  length="50" ><comment>学员电话</comment></column>
+        </property>
+        <property name="studentNum" type="java.lang.String">
+            <column name="studentNum"  length="50" ><comment>学员身份证号</comment></column>
+        </property>
+        <property name="teacherId" type="java.lang.String">
+            <column name="teacherId"  length="50" ><comment>关联教练ID</comment></column>
+        </property>
+        <property name="teacherName" type="java.lang.String">
+            <column name="teacherName"  length="50" ><comment>关联教练Name</comment></column>
+        </property>
+        <property name="teacherNum" type="java.lang.String">
+            <column name="teacherNum"  length="50" ><comment>关联教练Name</comment></column>
+        </property>
+        <property name="teacherPhone" type="java.lang.String">
+            <column name="teacherPhone"  length="50" ><comment>关联教练电话</comment></column>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status"  length="1" ><comment>/正常已约1 已取消2  3已学完  4已评价 5超时关闭</comment></column>
+        </property>
+        <property name="source" type="java.lang.String">
+            <column name="source"  length="1" ><comment>预约来源：0;微分金app 1：e路快车app 2:微信</comment></column>
+        </property>
+        <property name="subject" type="java.lang.String">
+            <column name="subject"  length="10" ><comment>预约科目</comment></column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId"  length="50" ><comment>驾校ID</comment></column>
+        </property>
+        <property name="detailId" type="java.lang.String">
+            <column name="detailId"  length="50" ><comment>预约时间段ID</comment></column>
+        </property>
+        <property name="hours" type="java.lang.Double">
+            <column name="hours"  length="50" ><comment>时长</comment></column>
+        </property>
+        <property name="lessionStartTime" type="java.util.Date">
+            <column name="lessionStartTime"  ><comment>课程开始时间</comment></column>
+        </property>
+        <property name="lessionEndTime" type="java.util.Date">
+            <column name="lessionEndTime" ><comment>课程结束时间</comment></column>
+        </property>
+        <property name="orderTime" type="java.util.Date">
+            <column name="orderTime" ><comment>预约时间</comment></column>
+        </property>
+        <property name="replaceTeacherId" type="java.lang.String">
+            <column name="replaceTeacherId"  length="50" ><comment>替班教练</comment></column>
+        </property>
+        <property name="replaceTeacherName" type="java.lang.String">
+            <column name="replaceTeacherName"  length="50" ><comment>替班教练姓名</comment></column>
+        </property>
+        <property name="cancelTime" type="java.util.Date">
+            <column name="cancelTime"  ><comment>取消时间</comment></column>
+        </property>
+        <property name="actualCheckInTime" type="java.util.Date">
+            <column name="actualCheckInTime"  ><comment>实际签到时间</comment></column>
+        </property>
+        <property name="actualCheckOutTime" type="java.util.Date">
+            <column name="actualCheckOutTime"  ><comment>实际签退时间</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

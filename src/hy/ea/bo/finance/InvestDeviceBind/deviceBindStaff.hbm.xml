@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.InvestDeviceBind">
+	<class name="DeviceBindStaff" table="dt_devicebind_staff">
+		<id length="50" name="dbsKey">
+			<column length="50" name="dbsKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="dbsId">
+			<column length="50" name="dbsId" >
+			<comment>主键</comment>
+			</column>
+		</property>
+		<property name="dbsDbId">
+			<column length="100" name="dbsDbId" >
+			<comment>设备绑定表外键(dt_DeviceBind)</comment>
+			</column>
+		</property>
+		<property name="dbsStaffId">
+			<column length="100" name="dbsStaffId" >
+			<comment>人员外键(dt_hr_Staff)</comment>
+			</column>
+		</property>
+		<property name="dbsSccId">
+			<column length="100" name="dbsSccId" >
+			<comment>微分金账号外键(t_Eshop_Cuscom)</comment>
+			</column>
+		</property>
+		<property name="dbsDate">
+			<column length="50" name="dbsDate">
+			<comment>添加时间</comment>
+			</column>
+		</property>
+		<property name="dbsStatus">
+			<column length="100" name="dbsStatus" >
+			<comment>停用启用状态1.启用，0.停用</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

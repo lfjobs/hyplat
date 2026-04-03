@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="PersonalRelation" table="dtPersonalRelation">
+		<id name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="id">
+			<column length="50" name="id" not-null="true" />
+		</property>
+		<property  name="userid">
+			<column length="50" name="userid" />
+		</property>
+		<property name="friendid">
+			<column length="50" name="friendid"  />
+		</property>
+		<property name="addtime">
+			<column  name="addtime"  />
+		</property>
+	</class>
+</hibernate-mapping>

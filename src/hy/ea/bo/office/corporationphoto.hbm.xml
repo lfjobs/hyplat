@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CorporationPhoto" table="dtCorporationPhoto">
+		<id length="50" name="corporationPhotoKey">
+			<column length="50" name="corporationPhotoKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="corporationPhotoID">
+			<column length="50" name="corporationPhotoID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="corporationPhotoCode">
+			<column length="250" name="corporationPhotoCode"/>
+		</property>
+		<property name="corporationPhotoName">
+			<column length="250" name="corporationPhotoName"/>
+		</property>
+		<property name="corporationPhotoDepict">
+			<column length="250" name="corporationPhotoDepict" />
+		</property>
+		<property name="shootingYear">
+			<column length="250" name="shootingYear" />
+		</property>
+		<property  name="PhotoFile">
+			<column length="256" name="PhotoFile" />
+		</property>
+		<property  name="remark">
+			<column  name="remark" />
+		</property>
+	</class>
+</hibernate-mapping>

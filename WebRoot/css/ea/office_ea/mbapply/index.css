@@ -1,0 +1,477 @@
+@charset "utf-8";
+.bgff {
+	background-color: #fff
+}
+
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+.db {
+	display: block
+}
+
+.w100 {
+	width: 100%
+}
+
+.hover {
+	cursor: pointer
+}
+
+.fixed_top {
+	position: fixed;
+	top: 0;
+	left: 0
+}
+
+.fixed_bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0
+}
+
+body,
+html {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	-webkit-overflow-scrolling: touch
+}
+
+body {
+	margin: 0 auto;
+	background-color: #fff;
+	width: 100%
+}
+
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+input,
+label,
+li,
+menu,
+option,
+p,
+section,
+select,
+table,
+td,
+textarea,
+th,
+ul {
+	margin: 0 0;
+	padding: 0 0;
+	font-family: '微软雅黑'
+}
+
+img {
+	cursor: pointer;
+	border: none;
+	vertical-align: middle
+}
+
+li,
+ol,
+ul {
+	list-style: none
+}
+
+a,
+a:link {
+	text-decoration: none;
+	color: #666
+}
+
+a:active,
+a:hover {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+a:focus {
+	outline: 0
+}
+
+.left {
+	float: left
+}
+
+.right {
+	float: right
+}
+
+.txt {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.txt_2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.txt_3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+::-webkit-scrollbar {
+	width: 0
+}
+
+.clearfix:after,
+.clearfix:before {
+	content: "";
+	display: table
+}
+
+.clearfix:after {
+	clear: both;
+	overflow: hidden
+}
+
+.clearfix {
+	zoom: 1
+}
+
+body {
+	background-color: #f8f8f8
+}
+
+body header {
+	border-bottom: 1px solid #eee;
+	width: 100%
+}
+
+body header div {
+	width: 1319px;
+	margin: 0 auto 39px auto;
+	padding: 20px 0 0 60px
+}
+
+body header div h2 {
+	text-align: center;
+	width: 135px;
+	border-bottom: 2px solid #8aafe3;
+	font-weight: 400;
+	height: 58px;
+	line-height: 58px;
+	font-size: 21px;
+	color: #8aafe3
+}
+
+body .content {
+	padding-top: 39px;
+	padding-bottom: 39px;
+	width: 1319px;
+	margin: 0 auto
+}
+
+body .content>section.sec001 {
+	padding: 33px 60px 0 60px;
+	background-color: #fff;
+	border: 1px solid #eee;
+	margin-bottom: 14px
+}
+
+body .content>section.sec001 .left>h3 {
+	height: 72px;
+	line-height: 72px;
+	font-size: 24px;
+	color: #222;
+	font-weight: 400
+}
+
+body .content>section.sec001 .left>p {
+	height: 71px;
+	line-height: 71px;
+	font-size: 18px;
+	color: #222
+}
+
+body .content>section.sec001 .left>section p {
+	float: left;
+	height: 75px;
+	line-height: 75px;
+	font-size: 18px;
+	color: #222
+}
+
+body .content>section.sec001 .left>section img {
+	height: 70px;
+	margin-left: 28px
+}
+
+body .content>section.sec001 .right {
+	margin-top: 25px;
+	width: 118px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #8aafe3;
+	text-align: center
+}
+
+body .content>section.sec001 .box .left>section p {
+	float: left;
+	height: 75px;
+	line-height: 75px;
+	font-size: 18px;
+	color: #222
+}
+
+body .content>section.sec001 .box .left>section div {
+	float: left
+}
+
+body .content>section.sec001 .box .left>section img {
+	height: 70px;
+	margin-left: 28px
+}
+
+body .content>section.sec001 .div-buchong {
+	line-height: 45px
+}
+
+body .content>section.sec001 .footer {
+	padding: 66px 0 39px 0
+}
+
+body .content>section.sec001 .footer>div {
+	width: 410px;
+	margin: 0 auto
+}
+
+body .content>section.sec001 .footer>div p {
+	text-align: center;
+	float: left;
+	width: 178px;
+	border: 1px solid #8aafe3;
+	height: 43px;
+	line-height: 43px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #8aafe3
+}
+
+body .content>section.sec001 .footer>div p:last-of-type {
+	float: right;
+	color: #8aafe3;
+	background-color: #fff
+}
+
+body .content>section.sec002 {
+	padding: 33px 60px 30px 60px;
+	background-color: #fff;
+	border: 1px solid #eee;
+	margin-bottom: 14px
+}
+
+body .content>section.sec002 .right {
+	margin-top: 25px;
+	width: 118px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #8aafe3;
+	text-align: center
+}
+
+body .content>section.sec002>h3 {
+	height: 72px;
+	line-height: 72px;
+	font-size: 24px;
+	color: #222;
+	font-weight: 400
+}
+
+body .content>section.sec002>p {
+	height: 75px;
+	line-height: 75px;
+	font-size: 18px;
+	color: #222
+}
+
+body .content>section.sec002>p>label {
+	float: left;
+	font-size: 18px;
+	color: #222;
+	padding-right: 20px
+}
+
+body .content>section.sec002>p>input {
+	width: 900px;
+	padding-left: 20px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 18px;
+	color: #222;
+	border: 1px solid #ddd
+}
+
+body .content>section.sec002>p>select {
+	padding-left: 20px;
+	width: 900px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 18px;
+	color: #222;
+	border: 1px solid #ddd
+}
+
+body .content>section.sec002>p textarea {
+	margin-top: 26px;
+	padding: 15px;
+	width: 933px;
+	height: 145px;
+	border: 1px solid #ddd;
+	font-size: 18px;
+	color: #222;
+	line-height: 40px
+}
+
+body .content>section.sec002 .p-textarea {
+	height: auto
+}
+
+body .content>section.sec002>.sec-tupian>p {
+	float: left;
+	height: 71px;
+	line-height: 71px;
+	font-size: 18px;
+	color: #222;
+	padding-right: 20px
+}
+
+body .content>section.sec002>.sec-tupian>div {
+	padding-bottom: 5px;
+	position: relative
+}
+
+body .content>section.sec002>.sec-tupian>div input {
+	opacity: 0;
+	position: absolute;
+	width: 30%;
+	height: 100%
+}
+
+body .content>section.sec002>.sec-riqi {
+	height: 71px;
+	line-height: 71px
+}
+
+body .content>section.sec002>.sec-riqi>p {
+	float: left;
+	height: 71px;
+	line-height: 71px;
+	font-size: 18px;
+	color: #222;
+	padding-right: 20px
+}
+
+body .content>section.sec002>.sec-riqi div>input[type=text] {
+	margin-top: 13px;
+	float: left;
+	text-align: center;
+	width: 226px;
+	height: 44px;
+	line-height: 44px;
+	font-size: 18px;
+	color: #222;
+	border: 1px solid #ddd
+}
+
+body .content>section.sec002>.sec-riqi div>label {
+	float: left
+}
+
+body .content>section.sec002>.sec-riqi div>label img {
+	width: 22px;
+	margin: 0 17px 0 17px
+}
+
+body .content>section.sec002>.sec-riqi div section {
+	float: left;
+	display: flex;
+	align-items: center
+}
+
+body .content>section.sec002>.sec-riqi div section>input[type=radio] {
+	width: 35px;
+	zoom: 125%
+}
+
+.center,
+.center2 {
+	text-align: center
+}
+
+.center p,
+.center2 p {
+	width: 100px;
+	line-height: 80px;
+	margin: 0;
+	font-size: 16px
+}
+
+.liandong .btn {
+	display: none!important
+}
+
+.liandong>label {
+	height: 75px;
+	line-height: 75px;
+	float: left;
+	font-size: 18px;
+	color: #222;
+	padding-right: 20px
+}
+
+.liandong>div {
+	margin-right: 15px;
+	float: left;
+	margin-top: 16px
+}
+
+.liandong>div span:first-of-type {
+	padding-left: 10px
+}
+
+.liandong>input {
+	padding-left: 10px;
+	margin-top: 16px;
+	float: left;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	color: #222;
+	border: 1px solid #ddd
+}

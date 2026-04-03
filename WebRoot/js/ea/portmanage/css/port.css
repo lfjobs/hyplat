@@ -1,0 +1,349 @@
+.bgff {
+    background-color: #fff
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.db {
+    display: block
+}
+
+.w100 {
+    width: 100%
+}
+
+.hover {
+    cursor: pointer
+}
+
+body {
+    padding: 52px 0 0 300px
+}
+
+form {
+    width: 1160px
+}
+
+form>div:first-of-type p {
+    float: left;
+    text-align: center;
+    background-color: #dae7f6;
+    width: 136px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #222
+}
+
+form>div:first-of-type input {
+    float: right;
+    width: 110px;
+    background-color: #00b2f4;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fff;
+    border: 0;
+    border-radius: 5px
+}
+
+form>div:first-of-type input:hover {
+    background-color: #c0e0f5
+}
+
+form>section:first-of-type {
+    padding: 30px 0 20px 0
+}
+
+form>section:first-of-type>div {
+    float: left
+}
+
+form>section:first-of-type>div select {
+    border-radius: 5px;
+    width: 140px;
+    height: 40px;
+    font-size: 16px;
+    color: #333
+}
+
+form>section:first-of-type>div:nth-of-type(2) {
+    margin: 0 40px 0 40px
+}
+
+form>section:first-of-type>input {
+    border: 1px solid #ddd;
+    padding-left: 18px;
+    width: 775px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #999
+}
+
+form>section:first-of-type>input:focus {
+    border-color: #00b2f4
+}
+
+form>input:first-of-type {
+    padding-left: 1.5%;
+    border: 1px solid #ddd;
+    width: 98.26%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #999
+}
+
+form>input:first-of-type:focus {
+    border-color: #00b2f4
+}
+
+form>textarea:first-of-type {
+    resize: none;
+    margin: 19px 0 50px 0;
+    border: 1px solid #ddd;
+    padding-left: 1.5%;
+    line-height: 40px;
+    height: 88px;
+    width: 98.26%;
+    font-size: 18px;
+    color: #999
+}
+
+form>textarea:focus {
+    border-color: #00b2f4
+}
+
+form>p:first-of-type {
+    text-align: center;
+    background-color: #dae7f6;
+    width: 136px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 30px
+}
+
+form>section:nth-of-type(2)>menu:nth-of-type(2n-1):not(.hed) {
+    background-color: #f5ffef
+}
+
+form>section:nth-of-type(2)>menu:hover:not(.hed) {
+    background-color: #eee!important
+}
+
+form>section:nth-of-type(2)>menu:first-of-type {
+    padding-bottom: 14px;
+    border: 0
+}
+
+form>section:nth-of-type(2)>menu:first-of-type li {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #00b2f4;
+    border-right: 1px solid #fff;
+    padding-left: 10px;
+    text-align: center
+}
+
+form>section:nth-of-type(2)>menu:first-of-type li:first-of-type {
+    width: 160px
+}
+
+form>section:nth-of-type(2)>menu:first-of-type li:nth-of-type(2) {
+    width: 150px
+}
+
+form>section:nth-of-type(2)>menu:first-of-type li:nth-of-type(3) {
+    width: 260px
+}
+
+form>section:nth-of-type(2)>menu:first-of-type li:nth-of-type(4) {
+    width: 68px;
+    padding-left: 0;
+    text-align: center
+}
+
+form>section:nth-of-type(2)>menu:first-of-type li:nth-of-type(5) {
+    width: 240px
+}
+
+form>section:nth-of-type(2)>menu:first-of-type li:last-of-type {
+    width: 226px;
+    border-left: 0
+}
+
+form>section:nth-of-type(2)>menu:not(.hed) {
+    position: relative;
+    border: 1px dashed #e3e5e1
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li {
+    float: left
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li input {
+    background-color: transparent
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:first-of-type {
+    width: 163px;
+    padding-left: 7px
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:first-of-type input {
+    border: 0;
+    width: 80%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #222
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(2) {
+    width: 160px
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(2) div {
+    text-align: center;
+    margin-top: 3px;
+    height: 40px;
+    line-height: 40px
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(2) div select {
+    border-radius: 5px;
+    font-size: 18px;
+    color: #222;
+    width: 100px;
+    height: 30px
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(3) {
+    width: 263px;
+    padding-left: 7px
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(3) input {
+    border: 0;
+    width: 80%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #222
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(4) {
+    height: 38px;
+    line-height: 38px;
+    line-height: 43px;
+    text-align: center;
+    width: 68px
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(5) {
+    height: 38px;
+    line-height: 38px;
+    width: 243px;
+    padding-left: 7px
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(5) input {
+    border: 0;
+    width: 80%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #222
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(6) {
+    padding-left: 7px;
+    height: 38px;
+    line-height: 38px;
+    width: 223px
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:nth-of-type(6) input {
+    border: 0;
+    width: 90%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #222
+}
+
+form>section:nth-of-type(2)>menu:not(.hed)>li:last-of-type {
+    position: absolute;
+    right: 11px;
+    top: 7px
+}
+
+form>p:last-of-type {
+    height: 64px;
+    line-height: 64px;
+    width: 120px
+}
+
+form>p:last-of-type img {
+    float: left;
+    padding-top: 20px;
+    display: inline-block
+}
+
+form>p:last-of-type span {
+    display: block;
+    padding-left: 34px;
+    font-size: 18px;
+    color: #222
+}
+
+form>section:last-of-type div:first-of-type {
+    width: 216px;
+    padding-bottom: 10px
+}
+
+form>section:last-of-type div:first-of-type p {
+    float: left;
+    background-color: #f4f4f4;
+    border: 1px solid #999;
+    text-align: center;
+    width: 48%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #222
+}
+
+form>section:last-of-type div:first-of-type p:first-of-type {
+    border-right: 0
+}
+
+form>section:last-of-type div:first-of-type .p_active {
+    background-color: #fff
+}
+
+form>section:last-of-type div:last-of-type textarea {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 148px;
+    font-size: 18px;
+    color: #222;
+    resize: none;
+    background-color: #f9f9f9
+}
+
+form>section:last-of-type div:last-of-type textarea:focus {
+    border-color: #00b2f4
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.salaryNew">
+	<class name="SalaryLevel" table="dtSalaryLevel" >
+		<comment>薪资级别</comment>
+		<id length="50" name="slkey">
+			<column length="50" name="slkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="slID">
+			<column length="50" name="slID" >
+				<comment>逻辑主键</comment>
+			</column>
+		</property>
+		<property name="num">
+			<column length="50" name="num" >
+				<comment>同一条级别相同的编号</comment>
+			</column>
+		</property>
+		<property name="stID">
+			<column length="50" name="stID" >
+				<comment>项目点ID</comment>
+			</column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="itemValue">
+			<column length="250" name="itemValue" >
+				<comment>项目值</comment>
+			</column>
+		</property>
+		<property name="seq">
+			<column length="10" name="seq" >
+				<comment>报表排列顺序</comment>
+			</column>
+		</property>
+		<property name="createDate">
+			<column  name="createDate" >
+				<comment>创建日期</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column  length="50" name="staffID" >
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+		<property  name="realName">
+			<column  length="50" name="realName" >
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="isPreset">
+			<column  length="2" name="isPreset" >
+				<comment>是否是预设的，00预设  01 自定义</comment>
+			</column>
+		</property>
+
+
+	</class>
+</hibernate-mapping>

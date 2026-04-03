@@ -1,0 +1,61 @@
+	.popMain{
+		width: 900px;
+		background-color:#000;
+		filter:alpha(opacity=100);
+		background-color: rgba(0, 0, 0, 0.5);
+		padding:10px;
+		border-radius:5px;
+		display:none;
+	}
+	.choose-box{
+		border: 1px solid #005EAC;
+		width:898px;
+		background-color:white;
+	}
+	.choosetitle{
+		background:#009DD9;
+		color: white;
+		padding: 4px 10px 5px;
+		font-size: 14px;
+		font-weight: 700;
+		margin: 0;
+	}
+	.choosetitle span{
+		font-family: Tahoma, Verdana, STHeiTi, simsun, sans-serif;
+	}
+
+	.chooseborder{
+		margin:5px 8px 10px 8px;
+		border: 1px solid #C3C3C3;
+	}
+
+
+	.chooseborder{
+		overflow-x: hidden;
+		overflow-y: auto;
+		height: 400px;
+	}
+
+
+	.choose-box-bottom{
+		background: #F0F5F8;
+		padding: 8px;
+		text-align: right;
+		border-top: 1px solid #CCC;
+		height:40px;
+	}
+	.choose-box-bottom input{
+		vertical-align: middle;
+		text-align: center;
+		background-color:#009DD9;
+		color:white;
+		border-top: 1px solid #B8D4E8;
+		border-left: 1px solid #B8D4E8;
+		border-right: 1px solid #114680;
+		border-bottom: 1px solid #114680;
+		cursor: pointer;
+		width: 60px;
+		height: 25px;
+		margin-top: 6px;
+		margin-right: 6px;
+	}

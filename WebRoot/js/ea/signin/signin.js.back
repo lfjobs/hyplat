@@ -1,0 +1,814 @@
+const SSD_MOBILENETV1 = 'ssd_mobilenetv1'
+const TINY_FACE_DETECTOR = 'tiny_face_detector'
+let selectedFaceDetector = SSD_MOBILENETV1
+
+// ssd_mobilenetv1 options
+let minConfidence = 0.5
+
+// tiny_face_detector options
+let inputSize = 128
+let scoreThreshold = 0.5
+
+function getFaceDetectorOptions() {
+    return selectedFaceDetector === SSD_MOBILENETV1 ? new faceapi.SsdMobilenetv1Options({minConfidence}) : new faceapi.TinyFaceDetectorOptions({
+        inputSize,
+        scoreThreshold
+    });
+}
+
+function loadCurrentFaceDetectionNet() {
+    const nets = [
+        faceapi.nets.faceRecognitionNet.loadFromUri(basePath + 'js/face-api/weights'),
+        // faceapi.nets.faceExpressionNet.loadFromUri(basePath + 'js/face-api/weights'),
+        // faceapi.nets.faceLandmark68Net.loadFromUri(basePath + 'js/face-api/weights'),
+        // faceapi.nets.faceLandmark68TinyNet.loadFromUri(basePath + 'js/face-api/weights'),
+        faceapi.nets.ssdMobilenetv1.loadFromUri(basePath + 'js/face-api/weights'),
+        // faceapi.nets.tinyFaceDetector.loadFromUri(basePath + 'js/face-api/weights'),
+        // faceapi.nets.mtcnn.loadFromUri(basePath + 'js/face-api/weights'),
+        //faceapi.nets.tinyYolov.loadFromUri(basePath + 'js/face-api/weights')
+    ];
+    return Promise.all(nets);
+}
+
+function getCurrentFaceDetectionNet() {
+    if (selectedFaceDetector === SSD_MOBILENETV1) {
+        return faceapi.nets.ssdMobilenetv1
+    }
+    if (selectedFaceDetector === TINY_FACE_DETECTOR) {
+        return faceapi.nets.tinyFaceDetector
+    }
+}
+
+function isFaceDetectionModelLoaded() {
+    return !!getCurrentFaceDetectionNet().params
+}
+
+// ======================================================================================================================
+//                                                  人脸识别检测主任务
+// ======================================================================================================================
+let videoEl = null;
+
+async function startFaceDetection() {
+    // load face detection model
+    // await changeFaceDetector(TINY_FACE_DETECTOR)
+    // changeInputSize(128)
+    // await loadCurrentFaceDetectionNet();
+
+    // try to access users webcam and stream the images
+    // to the video element
+    // navigator.mediaDevices.enumerateDevices()
+    //     .then((mdis) => {
+    //         const deviceId = mdis.findLast((mdi) => mdi.kind === "videoinput");
+    navigator.mediaDevices.getUserMedia({video: {}})
+        .then(function (stream) {
+            // 将获取到的媒体流设置到 video 元素上
+            videoEl.srcObject = stream;
+            videoEl.addEventListener("loadedmetadata", onPlay);
+            videoEl.play();
+        })
+        .catch(function (reason) {
+            log("Error: " + reason);
+            alert("Error: " + reason);
+        });
+    // })
+    // .catch((reason)=>{
+    //     log("Error: " + reason);
+    //     alert("Error: " + reason);
+    // })
+}
+
+function stopFaceDetection() {
+    clearTimeout(playTimer);
+    // videoEl.removeEventListener("loadedmetadata", onPlay);
+    videoEl.pause();
+}
+
+// ======================================================================================================================
+//                                                  播放器播放监听
+// ======================================================================================================================
+
+let playTimer = null;
+
+async function onPlay() {
+    log("Video is playing ->.");
+
+    if (videoEl.paused || videoEl.ended || !isFaceDetectionModelLoaded()) {
+        log("Video is paused or ended or detection model not loaded, retry in 200ms later.");
+        playTimer = setTimeout(() => onPlay(), 200);
+        return;
+    }
+
+    log("Get face Detector options .")
+    const options = getFaceDetectorOptions();
+
+    const ts = Date.now();
+
+    log("Detect single face:")
+    const faceData = await faceapi.detectSingleFace(videoEl, options);
+
+    log("Update time stats .")
+    updateTimeStats(Date.now() - ts);
+
+    if (!faceData) {
+        log("No face detected o(╥﹏╥)o.");
+        clearDetectBox();
+        playTimer = setTimeout(() => onPlay(), 200);
+        return;
+    }
+
+    log("Face detected: " + faceData);
+
+    if (faceData) {
+        // 绘制检测盒子
+        log("Draw detected face outer box .");
+        drawDetectBox(faceData);
+    }
+
+    if (faceData._score > 0.85) {
+        // 处理检测到的人脸数据
+        log("Process face data . 啤酒");
+        await drawPreview(faceData);
+        const retry = await processFaceData(faceData)
+            .catch((reason) => {
+                openFailedDialog(reason);
+            });
+        if (retry) {
+            playTimer = setTimeout(() => onPlay(), 200);
+        }
+    } else {
+        log("Face data score less than 0.85 .");
+        playTimer = setTimeout(() => onPlay(), 200);
+    }
+    log("Video is stoping <-.");
+}
+
+// ======================================================================================================================
+//                                                  性能提示
+// ======================================================================================================================
+let forwardTimes = []
+
+function updateTimeStats(timeInMs) {
+    forwardTimes = [timeInMs].concat(forwardTimes).slice(0, 30)
+    const avgTimeInMs = forwardTimes.reduce((total, t) => total + t) / forwardTimes.length
+    document.getElementById("time").innerText = (`${Math.round(avgTimeInMs)} ms/`)
+    document.getElementById("fps").innerText = (`${faceapi.utils.round(1000 / avgTimeInMs)}`)
+}
+
+// ======================================================================================================================
+//                                                  人脸检测框
+// ======================================================================================================================
+let detectOverlayEl = null;
+let detectOverlayContext = null;
+
+function drawDetectBox(faceData) {
+    const dims = faceapi.matchDimensions(detectOverlayEl, videoEl, true);
+    faceapi.draw.drawDetections(detectOverlayEl, faceapi.resizeResults(faceData, dims));
+}
+
+function clearDetectBox() {
+    detectOverlayContext.clearRect(0, 0, 1024, 1024);
+}
+
+// ======================================================================================================================
+//                                                  人脸信息预览
+// ======================================================================================================================
+let facePreviewOverlayEl = null;
+let facePreviewEl = null;
+
+// ======================================================================================================================
+//                                                  随机提示
+// ======================================================================================================================
+
+let tipsEl = null;
+let randomTipsTimer = null;
+
+function showRandomTips() {
+    if (!randomTipsTimer) {
+        randomTipsTimer = setInterval(() => {
+            const tipsText = ["正在检测人脸", "请勿遮挡面部", "光线太暗无法正常识别", "请摘下口罩"];
+            tipsEl.innerText = tipsText[(Math.random() * (tipsText.length - 1)).toFixed(0)];
+        }, 2000);
+    }
+}
+
+function hideRandomTips() {
+    if (randomTipsTimer) {
+        clearInterval(randomTipsTimer);
+    }
+}
+
+// ======================================================================================================================
+//                                                  处理检测到的人脸数据
+// ======================================================================================================================
+let faceEntityId;
+let ossFileUrl;
+
+async function processFaceData(faceData) {
+    return new Promise(async (resolve, reject) => {
+        const videoEl = document.getElementById('input-video');
+
+        // 上传人脸识别到的图片到阿里云检测质量
+        log("Upload detected face to aliyun and recognition face.")
+        let uploadResult = await uploadFace(videoEl, faceData)
+            .catch((reason) => {
+                reject(reason)
+            });
+
+        if (uploadResult.score < 80) {
+            log("==人脸分数小于80==");
+            resolve(true);
+            return;
+        }
+
+        ossFileUrl = uploadResult.ossFileUrl;
+
+        // 根据照片搜索人脸信息
+        log("==根据照片搜索人脸信息==");
+        const searchResult = await searchFace(ossFileUrl)
+            .catch((reason) => {
+                reject(reason)
+            });
+
+        if (searchResult) {
+            log(`searchResult -> ${searchResult}`);
+            log(`entityId -> ${searchResult.entityId}`);
+            log(`faceId -> ${searchResult.faceId}`);
+            log(`score -> ${searchResult.score}`);
+            log(`extraData -> ${searchResult.extraData}`);
+            log(`entityId -> ${searchResult.entityId}`);
+        }
+
+        // 如果没有搜索到人脸信息
+        if (searchResult && searchResult.score >= 0.8) {
+            log("==搜索到人脸信息==");
+            // 如果搜索到人脸信息，
+            faceEntityId = searchResult.entityId;
+            // 使用人脸信息获取加入的公司
+            await getJoinedCompaniesAndSign();
+        } else {
+            log("==未搜索到人脸信息==");
+            // 无人脸信息，保存一张人脸到样本库 并且 在系统中和手机号绑定
+            if (window.confirm("没有在系统中搜索到你的人脸信息，是否现在添加到人脸数据库？")) {
+                // 将当前人脸ID和微分金账号绑定
+                openBindDialog();
+            }
+        }
+        resolve(false);
+        closeFaceRecognitionDialog();
+    });
+}
+
+async function drawPreview(faceData) {
+    const {x, y, width, height} = faceData.box;
+    const regionsToExtract = [new faceapi.Rect(x, y, width, height)]
+    // // actually extractFaces is meant to extract face regions from bounding boxes
+    // // but you can also use it to extract any other region
+    const canvases = await faceapi.extractFaces(videoEl, regionsToExtract);
+    facePreviewOverlayEl.style.display = "inline";
+    facePreviewEl.src = canvases[0].toDataURL();
+    // facePreviewEl.src = faceData;
+}
+
+function clearPreview() {
+    facePreviewOverlayEl.style.display = "none";
+    facePreviewEl.src = null;
+}
+
+async function uploadFace(videoEl, detectResult) {
+    return new Promise((resolve, reject) => {
+        const {x, y, width, height} = detectResult.box;
+        const regionsToExtract = [new faceapi.Rect(x, y, width, height)]
+        // // actually extractFaces is meant to extract face regions from bounding boxes
+        // // but you can also use it to extract any other region
+        faceapi.extractFaces(videoEl, regionsToExtract)
+            .then((canvases) => {
+                canvases[0].toBlob(async (blob) => {
+
+                    const uploadResult = await uploadFile(blob)
+                        .catch((reason) => {
+                            reject(reason);
+                        });
+
+                    let localFileUrl = basePath + uploadResult.url;
+                    // alert(localFileUrl)
+                    // localFileUrl = "https://hyplat.oss-cn-shanghai.aliyuncs.com/ab922acf-8451-44ba-98a9-4c44f63974dc%20%281%29.jpg";
+                    const recognizeFaceResult = await recognizeFace(localFileUrl)
+                        .catch((reason) => {
+                            log(reason)
+                            reject(reason);
+                        });
+                    resolve(recognizeFaceResult);
+                });
+            });
+    });
+}
+
+/**
+ * 上传图片到服务器
+ * @param blob
+ * @returns {Promise<any>}
+ */
+function uploadFile(blob) {
+    var formData = new FormData();
+    formData.append('file', blob, "face.jpg");
+    return new Promise(async (resolve, reject) => {
+        $.ajax({
+            url: `${basePath}/mobile/fileupload?mode=signface`,
+            type: 'POST',
+            data: formData,
+            contentType: false, // 必须设置为false，因为是FormData对象
+            processData: false, // 必须设置为false，用于对data参数进行序列化处理
+            async: false,
+            success: function (response) {
+                resolve({
+                    url: response
+                })
+            },
+            error: function (xhr, status, error) {
+                reject({
+                    message: "人脸信息上传失败，请刷脸重试！"
+                });
+            }
+        });
+    });
+}
+
+/**
+ * 验证上传的照片质量
+ * @param blob
+ * @returns {Promise<void>}
+ */
+function recognizeFace(localFileUrl) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "POST",
+            url: `${basePath}/ea/signin/sajax_recognizeFace.jspa?localFileUrl=${btoa(localFileUrl)}`,
+            async: false,
+            dataType: "json",
+            success: function (response) {
+                resolve(JSON.parse(response));
+            },
+            error: function (xhr, status, error) {
+                reject(JSON.parse(xhr.responseText));
+            }
+        });
+    });
+}
+
+function addFace(ossFileUrl) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "POST",
+            url: `${basePath}ea/signin/sajax_addFace.jspa?ossFileUrl=${btoa(ossFileUrl)}`,
+            async: false,
+            dataType: "json",
+            success: function (response) {
+                resolve(JSON.parse(response));
+            },
+            error: function (xhr, status, error) {
+                reject(JSON.parse(xhr.responseText));
+            }
+        });
+    });
+}
+
+function searchFace(ossFileUrl) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "POST",
+            url: `${basePath}ea/signin/sajax_searchFace.jspa?ossFileUrl=${btoa(ossFileUrl)}`,
+            async: false,
+            dataType: "json",
+            success: function (response) {
+                resolve(JSON.parse(response));
+            },
+            error: function (xhr, status, error) {
+                reject(JSON.parse(xhr.responseText));
+            }
+        });
+    });
+}
+
+/**
+ * ================= 获取验证码 ===================
+ *
+ */
+let captcha;
+let resendInterval;
+let count = 0;
+
+function sendCaptcha() {
+    var mobile = $("#mobile").val();
+    if (mobile == "") {
+        alert("手机号不能为空");
+        return false;
+    }
+    var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
+    if (!reg.test(mobile)) {
+        alert("请输入正确11位手机号码！");
+        return false;
+    }
+    // 发送短信
+    $.ajax({
+        type: "POST",
+        url: basePath + "/ea/android/sajax_ea_getduanxin.jspa?pahe=" + mobile,
+        async: false,
+        dataType: "json",
+        success: function (data) {
+            log(data)
+            captcha = data.returna
+            startCountdown();
+        },
+        error: function (xhr, status, error) {
+            alert("验证码发送失败，请稍后再试！");
+            startCountdown();
+        }
+    });
+}
+
+function startCountdown() {
+    if (resendInterval) {
+        clearInterval(resendInterval);
+    }
+
+    count = 60
+    resendInterval = setInterval(resendCountdown, 1000);
+}
+
+function resendCountdown() {
+    const sendButton = document.getElementById("sendCaptchaButton");
+
+    if (count < 1) {
+        clearInterval(resendInterval);
+        sendButton.innerText = "获取验证码"
+        return;
+    }
+
+    sendButton.innerText = `${count}`;
+
+    count = count - 1;
+}
+
+/**
+ * 绑定人脸Id和微分金手机号
+ * 1、上传样本
+ * 2、绑定样本ID和账号
+ */
+async function submitBind() {
+    var mobile = $("#mobile").val();
+    if (mobile == "") {
+        alert("手机号不能为空");
+        return false;
+    }
+
+    var code = $("#captcha").val();
+    log(code + "-" + captcha)
+    if (code == "") {
+        alert("请填写验证码");
+        return false;
+    } else if (code !== captcha) {
+        alert("验证码不正确");
+        return false;
+    }
+
+    // 添加样本库
+    const addResult = await addFace(ossFileUrl)
+        .catch((reason) => {
+            openFailedDialog(reason)
+        });
+    log("==创建样本库，上传人脸数据==");
+    log(addResult.entityId);
+    log(addResult.faceId);
+    log(addResult.qualitieScore);
+    // 设置当前人脸识别后的faceId
+    faceEntityId = addResult.entityId;
+
+    log("==绑定样本ID到手机号==");
+    const bindResult = await bindFaceEntityId(faceEntityId, mobile)
+        .catch((reason) => {
+            openFailedDialog(reason);
+        });
+
+    log("==关闭绑定窗口==");
+    closeBindDialog();
+
+    // 选择加入的公司并签到
+    log("==选择加入的公司并签到==");
+    await getJoinedCompaniesAndSign()
+        .catch((reason) => {
+            openFailedDialog(reason);
+        });
+}
+
+function bindFaceEntityId(faceEntityId, mobile) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: `${basePath}ea/signin/sajax_bindFaceEntityId.jspa`,
+            type: "post",
+            data: {
+                faceEntityId: faceEntityId,
+                mobile: mobile
+            },
+            dataType: "json",
+            async: false,
+            success: function (response) {
+                log("人脸信息绑定数字地球账号成功!")
+                speechOutputForAndroid("人脸信息绑定数字地球账号成功！");
+                resolve(response);
+            },
+            error: function (xhr, status, error) {
+                const errorData = JSON.parse(xhr.responseText);
+                reject(errorData);
+            }
+        });
+    });
+}
+
+// ======================================================================================================================
+//                                                  选择签到公司
+// ======================================================================================================================
+let companies = []
+
+async function getJoinedCompaniesAndSign() {
+    companies = await getCompanies();
+    if (companies.length === 1) {
+        const {account, companyId} = companies[0];
+        signIn(faceEntityId, companyId);
+    } else {
+        openCompaniesPickerDialog();
+    }
+}
+
+function getCompanies() {
+    const url = `${basePath}ea/signin/sajax_findCompanies.jspa?faceEntityId=${faceEntityId}`;
+    return fetch(url, {
+        method: "get"
+    })
+        .then((response) => response.json())
+        .catch((error) => {
+            alert("人脸识别失败")
+        })
+}
+
+
+// ======================================================================================================================
+//                                                  签到
+// ======================================================================================================================
+
+/**
+ * ================= 完成签到 ===================
+ * @param account
+ * @param companyId
+ */
+function signIn(faceEntityId, companyId) {
+    $.ajax({
+        url: `${basePath}ea/signin/sajax_signIn.jspa?faceEntityId=${faceEntityId}&companyId=${companyId}`,
+        type: "get",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            var signDate = data.signDate;
+            var signCount = data.signCount;
+            var staffName = data.staffName;
+            try {
+                // 打开成功页面
+                const signResult = {staffName, signCount, companyName: selectedCompany.companyName, signDate};
+                openSuccessDialog(signResult);
+                speechOutputForAndroid("签到成功");
+            } catch (error) {
+                log("语音播放失败");
+            }
+        }
+    });
+}
+
+// ============================================================================================
+//                                      窗口操作
+// ============================================================================================
+
+// 开大人脸识别窗口
+function openFaceRecognitionDialog() {
+    var dialog = document.getElementById('faceRecognitionDialog');
+    dialog.showModal();
+
+    initFaceRecognitionElements();
+    startFaceDetection();
+    showRandomTips();
+}
+
+function initFaceRecognitionElements() {
+    // 初始化用于展示人脸识别框展示的canvas
+    if (!detectOverlayEl) {
+        videoEl = document.getElementById("input-video");
+        detectOverlayEl = document.getElementById("detected-box-overlay");
+        detectOverlayContext = detectOverlayEl.getContext('2d');
+        detectOverlayContext.clientWidth = videoEl.clientWidth * devicePixelRatio;
+        detectOverlayContext.clientHeight = videoEl.clientHeight * devicePixelRatio;
+    }
+
+    if (!tipsEl) {
+        tipsEl = document.getElementById("tips");
+    }
+
+    if (!facePreviewEl) {
+        facePreviewOverlayEl = document.querySelector(".detected-face-preview-overlay");
+        facePreviewEl = document.querySelector(".face-preview");
+    }
+}
+
+// 开启人脸识别窗口
+function closeFaceRecognitionDialog() {
+    var dialog = document.getElementById('faceRecognitionDialog');
+    // 清除Dialog中的控件
+    stopFaceDetection();
+    hideRandomTips();
+    clearDetectBox();
+    clearPreview();
+    // 清除定时任务
+    dialog.close();
+}
+
+// 打开绑定手机号窗口
+function openBindDialog() {
+    var dialog = document.getElementById('bindDialog');
+    dialog.showModal();
+}
+
+function closeBindDialog() {
+    var dialog = document.getElementById('bindDialog');
+    dialog.close();
+}
+
+let selectedCompany;
+
+// 打开公司选择窗口
+function openCompaniesPickerDialog() {
+    var dialog = document.getElementById('companiesPickerDialog');
+    dialog.showModal();
+
+    renderCompanyList();
+}
+
+function closeCompaniesPickerDialog() {
+    var dialog = document.getElementById('companiesPickerDialog');
+    dialog.close();
+}
+
+function renderCompanyList() {
+    var dialog = document.getElementById('companiesPickerDialog');
+
+    selectCompany(0)
+
+    const list = [];
+    companies.map((company, index, array) => {
+        const item = `
+            <div class="company-item ${company.isActive ? 'active' : ''}" onclick="onCompanySelect('${index}')">
+                ${company.companyName}
+            </div>
+        `;
+        list.push(item);
+    });
+
+    dialog.querySelector(".content").innerHTML = `<div class="company-wrapper">
+                <div class="company-list">${list.join("")}</div>
+                <button type="button" onclick="submitAttendanceSignIn()">确认签到</button>
+            </div>`;
+}
+
+function onCompanySelect(index) {
+    selectCompany(index)
+    renderCompanyList();
+}
+
+function submitAttendanceSignIn() {
+    if (!selectedCompany) {
+        alert("请选择要签到的公司！");
+        return;
+    }
+    closeCompaniesPickerDialog();
+    const {account, companyId} = selectedCompany;
+    signIn(faceEntityId, companyId);
+}
+
+function selectCompany(index) {
+    for (let i = 0; i < companies.length; i++) {
+        companies[i].isActive = false
+    }
+    companies[index].isActive = true
+    selectedCompany = companies[index]
+}
+
+// 打开签到成功窗口
+function openSuccessDialog(signResult) {
+    var dialog = document.getElementById('successDialog');
+    dialog.showModal();
+
+    const {staffName, signCount, companyName, signDate} = signResult;
+
+    dialog.querySelector(".content").innerHTML = `
+        <img class="big-icon" src="${basePath}images/home/img-2.png"/>
+        <div class="list">
+            <div class="item"><label>签到人：</label><span>${staffName}</span></div>
+            <div class="item"><label>今日签到：</label><span>${signCount + 1}次</span></div>
+            <div class="item"><label>签到公司：</label><span> ${companyName} </span></div>
+            <div class="item"><label>签到时间：</label><span> ${signDate}</span></div>
+        </div>
+    `
+
+    setTimeout(() => {
+        closeAll();
+    }, 5000)
+}
+
+function closeSuccessDialog() {
+    var dialog = document.getElementById('successDialog');
+    dialog.close();
+}
+
+// 打开签到失败窗口
+function openFailedDialog(reason) {
+    var dialog = document.getElementById('failedDialog');
+    dialog.querySelector(".subtitle").innerText = reason.message;
+    dialog.showModal();
+
+    setTimeout(() => {
+        closeAll();
+    }, 5000);
+}
+
+function closeFailedDialog() {
+    var dialog = document.getElementById('failedDialog');
+    dialog.querySelector(".subtitle").innerText = "";
+    dialog.close();
+}
+
+function closeAll() {
+    closeFaceRecognitionDialog();
+    closeBindDialog();
+    closeCompaniesPickerDialog();
+    closeSuccessDialog();
+    closeFailedDialog();
+    window.location.reload();
+}
+
+//
+function speechOutputForAndroid(text) {
+    try {
+        Android.speechOutputForAndroid(text);
+    } catch (e) {
+        log(e)
+    }
+}
+
+// 展示当前时间
+function showRealTime() {
+    const formatedDate = dayjs().format('YYYY年MM月DD日 dddd H:mm:ss') // '25/01/2019'
+    document.querySelector(".date").innerText = formatedDate;
+    setInterval(showRealTime, 1000);
+}
+
+// 添加加载完成后事件
+document.addEventListener("DOMContentLoaded", async (event) => {
+    showRealTime();
+
+    // const loadingDialog = document.querySelector('#loadingDialog');
+    // const signinButton = document.querySelector('#signface');
+    //
+    // loadingDialog.showModal();
+    // loadingDialog.disabled = true;
+    //
+    // await loadCurrentFaceDetectionNet()
+    //     .then((data) => {
+    //         log("模型加载完成")
+    //         loadingDialog.disabled = false;
+    //         loadingDialog.close();
+    //
+    //         signinButton.addEventListener('click', async (event) => {
+    //             if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    //                 await openFaceRecognitionDialog();
+    //             } else {
+    //                 alert('你的浏览器不支持 getUserMedia API');
+    //             }
+    //         });
+    //     })
+    //     .catch((reason) => {
+    //         log(reason)
+    //         alert("模型加载失败，请联系软件提供商。");
+    //     });
+
+    const signinButton = document.querySelector('#signface');
+    signinButton.addEventListener('click', async (event) => {
+        try {
+            Android.showFaceDetectDialog();
+        } catch (e) {
+            alert("打开人脸识别失败.")
+        }
+    });
+});
+
+// helper function to print strings to html document as a log
+function log(...txt) {
+    console.log(...txt); // eslint-disable-line no-console
+    const div = document.getElementById('log');
+    if (div) div.innerHTML = `${txt}`;
+}

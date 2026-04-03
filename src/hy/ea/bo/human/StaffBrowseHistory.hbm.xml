@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffBrowseHistory" table="dt_hr_StaffBrowseHistory">
+		<id length="50" name="sbhkey">
+			<column length="50" name="sbhkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="sbhid">
+			<column length="50" name="sbhid"/>
+		</property>
+		<property name="sccid">
+			<column length="50" name="sccid" />
+		</property>
+		<property name="modes">
+			<column length="1" name="modes" />
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID"/>
+		</property>
+		<property name="ppidzx">
+			<column length="50" name="ppidzx"/>
+		</property>
+		<property name="videoID">
+			<column length="50" name="videoID" />
+		</property>
+		<property name="ppidsp">
+			<column length="50" name="ppidsp" />
+		</property>
+		<property  name="appName">
+			<column length="10" name="appName" />
+		</property>
+
+		<property  name="createDate">
+			<column  name="createDate" />
+		</property>
+
+	</class>
+</hibernate-mapping>

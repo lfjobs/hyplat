@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocComplaint" table="DT_OA_DOCCOMPLAINT">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="Id" type="java.lang.String">
+			<column name="Id" length="50" />
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="50"/>
+		</property>
+		<property name="code" type="java.lang.String">
+			<column name="code" length="50" />
+		</property>
+		<property name="complaintCompany" type="java.lang.String">
+			<column name="complaintCompany" length="50" />
+		</property>
+		<property name="responsibilitor" type="java.lang.String">
+			<column name="responsibilitor" length="50" />
+		</property>
+		<property name="telphone" type="java.lang.String">
+			<column name="telphone" length="50" />
+		</property>
+		<property name="userName" type="java.lang.String">
+			<column name="userName" length="50" />
+		</property>
+		<property name="complaintTime" type="java.util.Date">
+			<column name="complaintTime" />
+		</property>
+		<property name="docPath" type="java.lang.String">
+			<column name="docPath" length="50" />
+		</property>
+		<property name="statusPic" type="java.lang.String">
+			<column name="statusPic" length="50" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="50" />
+		</property>
+		<property name="suggestion" type="java.lang.String">
+			<column name="suggestion" length="200" />
+		</property>
+		<property name="reply" type="java.lang.String">
+			<column name="reply" length="200" />
+		</property>
+		<property name="delstatus" type="java.lang.String">
+			<column name="delstatus" length="10" />
+		</property>
+		<property name="auditTime" type="java.util.Date">
+			<column name="auditTime" />
+		</property>
+
+	</class>
+</hibernate-mapping>

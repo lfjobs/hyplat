@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocumentPublish" table="DT_OA_DOCUMENT_PUB">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="pubId" type="java.lang.String">
+			<column name="pubId" length="50" />
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="255" />
+		</property>
+		<property name="companyId" type="java.lang.String">
+			<column name="companyId" length="50" />
+		</property>
+		<property name="title" type="java.lang.String">
+			<column name="title" length="50" />
+		</property>
+		<property name="publisher" type="java.lang.String">
+			<column name="publisher" length="50" />
+		</property>
+		<property name="publisherID" type="java.lang.String">
+			<column name="publisherID" length="50" />
+		</property>
+		<property name="pubTime" type="java.util.Date">
+			<column name="pubTime" length="20" />
+		</property>
+		<property name="wordUri" type="java.lang.String">
+			<column name="wordUri" length="4000" />
+		</property>
+		<property name="web" type="java.lang.String">
+			<column name="web" length="20" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

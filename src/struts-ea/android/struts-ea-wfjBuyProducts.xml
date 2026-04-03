@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="buyp-token" namespace="/ea/buyproducts" extends="struts-default">
+		
+		<action name="ea_*" class="com.tiantai.wfj.front.WfjEbuyProductsAction" method="{1}">
+			<result name="login">/page/WFJClient/Login.jsp?loginPage=login</result>
+			<result name="cart">/page/WFJClient/CustomerOrder/Cart.jsp</result>			
+			<result name="mywfj">/page/WFJClient/CustomerOrder/MyWFJ.jsp</result>
+			<result name="myOrder">/page/WFJClient/GoodsShow/myWfjNav.jsp</result>
+			<result name="wfjgrzj">/page/WFJClient/CustomerOrder/wfjgrzj.jsp</result>
+			<result name="sucOrd">/page/WFJClient/suc/sucOrd.jsp</result>
+			<result name="companyReg">/page/WFJClient/Customer/CompanyReg.jsp</result>
+			<result name="shopReg">/page/WFJClient/Customer/ShopReg.jsp</result>
+		    <result name="wechats">/page/WFJClient/CustomerOrder/jsapi_demo.jsp</result>
+			<result name="comOrders">/page/WFJClient/CustomerOrder/ComOrder.jsp</result>
+			<result name="queryForm">/page/conacts/receipt/loadsite.jsp</result>
+			
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ajax-token" namespace="/ea/buyproducts" extends="json-default">
+		
+		<action name="ajax_ea_*" class="com.tiantai.wfj.front.WfjEbuyProductsAction" method="{1}">
+			<result type="json">  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

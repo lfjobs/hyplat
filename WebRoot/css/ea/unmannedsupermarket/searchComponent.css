@@ -1,0 +1,28 @@
+:root{
+    --search-w: 220px; /* 🔧 搜索框固定宽度，你可修改 */
+    --search-h: 36px;
+    --search-bg: #F7F7F7;
+}
+
+.search-box{
+    flex: 1;  /* ← 让搜索框占据中间空间 */
+    display: flex;
+    height: var(--search-h);
+    width: var(--search-w);  /* ← 固定大小 */
+    background: var(--search-bg);
+    padding: 0 10px ;
+    border-radius: 4px; /* ←🔴 圆角在这里，改成你想要的值 */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+.search-icon{
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.search-input{
+    border: none;
+    outline: none;
+    flex: 1;
+}

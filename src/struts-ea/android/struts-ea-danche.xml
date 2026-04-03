@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package strict-method-invocation="false" name="danche-token" namespace="/ea/danche" extends="struts-default">
+        <action name="ea_*" class="mobile.tiantai.android.action.DanCheAction"  method="{1}">
+            <result name="danchebao">/page/WFJClient/danche/DanCheBao.jsp</result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="danche-sajax" namespace="/ea/danche" extends="json-default">
+        <action name="sajax_ea_*" class="mobile.tiantai.android.action.DanCheAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <param name="contentType">text/html</param>
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

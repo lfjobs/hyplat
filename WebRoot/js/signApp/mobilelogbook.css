@@ -1,0 +1,68 @@
+/* CSS Document */
+
+body{
+	font-family:"\9ED1\4F53";
+}
+#showLogDiv{
+	position:absolute;
+	top:50px;
+	left:0px;
+}
+#titleDiv{
+	height:43px;
+	width:400px;
+	position:fixed;
+	top:0px;
+	left:0px;
+	_position:absolute;
+	_top:expression(offsetParent.scrollTop);
+	_left:expression(0);
+   	z-index:1000; 
+} 
+#title{
+	width:242px;
+	font-size:12px;
+	background-color:#C4D8F1;
+}
+.in{
+	border-width:1;
+	border-style:outset;
+	border-color:#FFFFFF;
+}
+.titlefont{
+	font-size:12px;
+	color:#15428B;
+	font-weight:bold;
+}
+.address{
+	width:242px;
+	background-color:#F5FFEF;
+}
+.tablefont{
+	font-size:8px;
+}
+.font{
+	font-size:10px;
+}
+.model{
+	display:none;
+}  
+/*
+	line-height:24px;
+	overflow:hidden;
+	margin:5px;
+	display:block;
+	padding-right:7px;
+*/
+
+
+
+.todaydate
+{
+	width:52px;
+	/*text-overflow:clip;*/
+	white-space:nowrap;
+	overflow:hidden;
+	/*display:block;*/
+	display:inline-block;
+}

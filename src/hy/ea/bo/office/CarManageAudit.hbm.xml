@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarManageAudit" table="DT_CarManageAudit">
+		<id length="50" name="cmakey">
+			<column length="50" name="cmakey" />
+			<generator class="uuid" />
+		</id>
+		<property name="cmaID">
+			<column length="50" name="cmaID">
+				<comment>主键</comment>
+			</column>
+		</property>
+		<property name="carmID">
+			<column length="50" name="carmID">
+				<comment>carmanage表ID</comment>
+			</column>
+		</property>
+		<property name="carNumber">
+			<column length="50" name="carNumber">
+				<comment>车牌号</comment>
+			</column>
+		</property>
+		<property name="indate">
+			<column  name="indate">
+				<comment>免费开始时间</comment>
+			</column>
+		</property>
+		<property name="outdate">
+			<column  name="outdate">
+				<comment>免费截止时间</comment>
+			</column>
+		</property>
+
+		<property name="status">
+			<column length="2" name="status">
+				<comment>状态</comment>
+			</column>
+		</property>
+		<property name="createDate">
+			<column  name="createDate">
+				<comment>提交审核时间</comment>
+			</column>
+		</property>
+		<property name="auditDate">
+			<column  name="auditDate">
+				<comment>审核时间</comment>
+			</column>
+		</property>
+		<property name="auditStatus">
+			<column length="2" name="auditStatus">
+				<comment>状态</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID">
+				<comment>提交审核人</comment>
+			</column>
+		</property>
+		<property name="posNum">
+			<column length="50" name="posNum">
+				<comment>如果是终端机</comment>
+			</column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID">
+				<comment>提交审核人公司</comment>
+			</column>
+		</property>
+		<property name="sealID">
+			<column length="50" name="sealID">
+				<comment>签章人</comment>
+			</column>
+		</property>
+
+		<property name="siteId">
+			<column length="50" name="siteId">
+				<comment>场地ID</comment>
+			</column>
+		</property>
+		<property name="siteName">
+			<column length="50" name="siteName">
+				<comment>场地名称</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

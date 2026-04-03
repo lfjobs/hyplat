@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="hy.ea.bo.production.scmanage">
+	<class name="DSVideo" table="dt_DSVideo">
+		<comment>短视频</comment>
+		<id length="50" name="dsKey">
+			<column length="50" name="dsKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="videoID">
+			<column length="50" name="videoID" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="ppid">
+			<column length="50" name="ppid" >
+			<comment>如果是文章中发布的视频会有ppid</comment>
+			</column>
+		</property>
+        <property name="vodID">
+            <column length="32" name="vodID" >
+                <comment>视频点播服务（VOD）videoId</comment>
+            </column>
+        </property>
+        <property name="vodProvider">
+            <column length="32" name="vodProvider" >
+                <comment>视频点播服务提供商</comment>
+            </column>
+        </property>
+		<property name="videoURL">
+			<column length="500" name="videoURL" >
+			<comment>视频URL</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" >
+			<comment>发布人</comment>
+			</column>
+		</property>
+	<property name="state">
+			<column length="2" name="state" >
+			<comment>00：公开；01:好友可见 03：私密：仅自己可以看,09：删除</comment>
+			</column>
+		</property>
+
+		<property name="titleName">
+			<column length="500" name="titleName" >
+			<comment>标题 ，如果是文章中发布的视频直接取文章的标题</comment>
+			</column>
+		</property>
+			<property name="isTop">
+			<column length="2" name="isTop" >
+			<comment>00 不是：01置顶</comment>
+			</column>
+		</property>
+		<property name="coverImgUrl">
+			<column length="500" name="coverImgUrl" >
+			<comment>封面图</comment>
+			</column>
+		</property>
+
+		<property name="readnum">
+		    <column   name="readnum">
+			<comment>被阅读量</comment>
+			</column>
+		</property>
+		<property name="createDate">
+		    <column   name="createDate">
+			<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="pid">
+			<column length="50" name="pid" >
+				<comment>封面图</comment>
+			</column>
+		</property>
+
+		<property name="location">
+			<column   length="200" name="location">
+				<comment>location</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

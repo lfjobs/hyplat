@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="croleallot-token" namespace="/ea/croleallot"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.action.CRoleAllotAction" method="{1}">
+			<result name="failed">/page/ea/main/crole/crole_allot.jsp</result>
+			<result name="success">/page/ea/main/crole/crole_allot.jsp</result>
+			<result name="invalid.token">/page/ea/main/crole/crole_allot.jsp</result>
+			<!-- 管理员           多人权限分配快速通道页面 -->
+			<result name="success_extend">/page/ea/main/crole/crole_allot_extend.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="croleallot-ntoken" namespace="/ea/croleallot" extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.action.CRoleAllotAction" method="{1}">
+			<result name="success">/page/ea/main/crole/crole_allot.jsp</result>
+			<!-- 管理员           多人权限分配快速通道页面 -->
+			<result name="success_extend">/page/ea/main/crole/crole_allot_extend.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="croleallot-sajax" namespace="/ea/croleallot" extends="json-default">
+		<action name="ajax_roleallot_ea_*" class="hy.ea.action.CRoleAllotAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+	
+</struts>

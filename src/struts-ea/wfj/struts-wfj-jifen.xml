@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+    
+<struts>
+	<package strict-method-invocation="false" name="jifen-token" namespace="/ea/jifen"  extends="struts-default">
+		<action name="ea_*" class="wfjJifenAction" method="{1}">
+			<result name="toAddGuize">/page/WFJClient/Distribution/toAddGuize.jsp</result>
+			
+			<result name="aaa">/daifu/batch/BatchSer.jsp</result>
+			<result name="bbb">/daifu/batch/Response.jsp</result>
+			<result name="ccc">/daifu/batch/VerifyFail.jsp</result>
+		</action>
+	</package>
+</struts>

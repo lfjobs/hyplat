@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.nwa.tbank.bo">
+	<class name="BankAccount" table="T_ACCOUNT">
+		<id length="50" name="pkey">
+			<column length="32" name="pkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="accid" type="java.lang.String">
+			<column name="accid" length="50" />
+		</property>
+		<property name="account" type="java.lang.String">
+			<column name="account" length="50" />
+		</property>
+		<property name="banksx" type="java.lang.String">
+			<column name="banksx" length="10" />
+		</property>
+		<property name="provcode" type="java.lang.String">
+			<column name="provcode" length="4" />
+		</property>
+		<property name="currency" type="java.lang.String">
+			<column name="currency" length="4" />
+		</property>
+		<property name="bindto" type="java.lang.String">
+			<column name="bindto" length="1" />
+		</property>
+		<property name="orgid" type="java.lang.String">
+			<column name="orgid" length="50" />
+		</property>
+		<property name="orgname" type="java.lang.String">
+			<column name="orgname" length="50" />
+		</property>
+		<property name="companyid" type="java.lang.String">
+			<column name="companyid" length="50" />
+		</property>
+		<property name="companyname" type="java.lang.String">
+			<column name="companyname" length="100" />
+		</property>
+		<property name="responser" type="java.lang.String">
+			<column name="responser" length="50" />
+		</property>
+		<property name="accounttype" type="java.lang.String">
+			<column name="accounttype" length="10" />
+		</property>
+		<property name="accountowner" type="java.lang.String">
+			<column name="accountowner" length="50" />
+		</property>
+		<property name="relation" type="java.lang.String">
+			<column name="relation" length="20" />
+		</property>
+		<property name="cdate" type="java.sql.Date">
+			<column name="cdate"  />
+		</property>
+		<property name="mdate" type="java.sql.Date">
+			<column name="mdate"  />
+		</property>
+		
+	</class>
+</hibernate-mapping>

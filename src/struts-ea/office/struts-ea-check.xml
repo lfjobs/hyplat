@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="check-token" namespace="/ea/safetycheck"   extends="base">
+	    <!-- 巡检计划 -->
+		<action name="ea_*" class="hy.ea.office.action.CheckAction" method="{1}">
+		      <result name="plan" type="freemarker">/page/ea/main/office_ea/check/checkplan.html</result>
+		      <result name="task" type="freemarker">/page/ea/main/office_ea/check/checktask.html</result>
+		      <result name="taskitem" type="freemarker">/page/ea/main/office_ea/check/checkresults.html</result>
+		      <result name="point" type="freemarker">/page/ea/main/office_ea/check/checkpoint.html</result>
+		       <result name="point_list" type="freemarker">/page/ea/main/office_ea/check/point_list.html</result>
+		      <result name="pointitem" type="freemarker">/page/ea/main/office_ea/check/checkpointitem.html</result>
+		      <result name="results" type="freemarker">/page/ea/main/office_ea/check/checkresults.html</result>
+		      <result name="car" type="freemarker">/page/ea/main/office_ea/check/checkCar.html</result>
+		      <result name="chart" type="freemarker">/page/ea/main/office_ea/check/checkchart.html</result>
+		      <result name="success">/page/ea/success.jsp</result> 
+		</action>
+		
+	</package>	
+	
+	
+	<package strict-method-invocation="false" name="check-jsonajax" namespace="/ea/safetycheck"
+		extends="json-default">
+		<action name="sajax_ea_*"
+			class="hy.ea.office.action.CheckAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

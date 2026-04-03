@@ -1,0 +1,126 @@
+/*--lx 2016.6.27--*/
+
+ul,
+ol,
+li,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+ul,
+ol {
+    list-style: none outside none;
+}
+.clearfix {
+    zoom: 1;
+}
+/*弹窗 开始*/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.overlay_block{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #303030;
+    opacity: 0;
+}
+.active {
+    z-index: 99999;
+    opacity: 1;
+}
+
+.modal {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) scale(0.815);
+    transform: translate3d(0, 0, 0) scale(0.815);
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.modal.modal-in {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+
+/*弹窗 结束*/
+
+
+
+/*输入验证码弹窗*/
+.popup_pay {
+    display: none;
+}
+.popup_pay div{
+    line-height: 1.5;
+}
+.clearfix:after {
+    content: "\00A0";
+    display: block;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+.pay_inp {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    line-height: normal;
+}
+.popup_pay{background: #fff;width: 12rem;border-radius: .3rem;position: relative;}
+.close_btn{float: right;width: 2.1rem;height: 1.8rem;background: url(../../../images/ea/finance/BenDis/close.png) no-repeat center; background-size: .6rem;border-left: 1px solid #b7b7b7;}
+
+.popup_code{background: #fff;width: 12rem;border-radius: .3rem;display: none;}
+
+
+
+.pay_hd{padding: .2rem 0;border-bottom: 2px solid #cdcdcd;}
+.pay_hd span{display: inline-block;line-height: 1.8rem;width:8rem;font-size:.81rem;color: #212121;padding-left: 1.6rem;}
+.pay_bd{text-align: center;}
+.rmb_ico{color: #ff6600;font-size: .81rem;}
+.pay_bd{padding: .6rem  0;border-bottom: 2px solid #cdcdcd;}
+.sum_num{font-size: 1.5rem;color: #ff6600;}
+.pay_text{color: #282727;font-size: .73rem;line-height: 1.5rem;}
+.pay_label{border: 2px solid #dcdcdc;width: 11.1rem;box-sizing:content-box;margin: .6rem auto;cursor: pointer;}
+.pay_label li{float: left;width: 1.8rem;height: 1.8rem;border-right: 1px solid #eeeeee;cursor: pointer;}
+.pay_label li:last-child{border: 0;}
+.pay_inp{position: absolute;left: -9999px;opacity: 0}
+.pass{background: url(../../../images/ea/finance/BenDis/dot.png) no-repeat center;background-size: .5rem;}
+#prompt div{
+    width: 70%;
+    background: rgba(0,0,0, 0.5);
+}

@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body{margin:0;padding:0;font-family:"华文黑体";font-size:14px;color:#fff; background:#eeeeee;}
+div,form,input,select,p,table,h1,h2,h3,h4,h5,h6,ul,ol,li,th,td,dl,dt,dd,span{margin:0;padding:0;font-weight:inherit;font-style:inherit;font-size:100%;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:bold;}
+ul, ol, dl, dt, dd {list-style: none outside none;}
+a{text-decoration:none;color:#fff;outline:none;star:expression(this.onFocus=this.blur());transition: all 1s ease 0s;}
+*html,*html{background-image:url(about:blank);background-attachment:fixed}
+a:hover{color:#1b7fdd;text-decoration:underline;}
+table{border-collapse:collapse;}
+img{border:none;}
+em,i{font-style:normal;}
+*{margin:0px; padding:0px;}
+input{outline:none;font-size:16px;font-family:Microsoft YaHei,Arial,Helvetica,sans-serif,Regular;}
+select{outline:none;}
+textarea{outline:none;}
+area{outline:none;star:expression(this.onFocus=this.blur())}
+.clear{clear:both;}
+
+
+body,.main{ width:100%; height:100%;  margin:0 auto;}
+.header img,article img,.add img{ width:100%; height:100%;}
+/*header*/
+.top{ background:#eeeeee; width:100%; height:25px;}
+.header{ background:#f74c31; width:100%; height:45px; line-height:45px; text-align:center; font-size:18px; color:#fbfbfb; }
+.header .back{ float:left; margin-left:5%; margin-top:10px; width:15px; height:25px;}
+.header .add{ width:25px; height:25px; float:right; margin-right:5%; margin-top:10px; visibility:hidden;}
+.header .add:hover{cursor: pointer;}
+/**/
+article{ width:100%; color:#585858;}
+article ul li{ width:100%; height:50px; background:#ffffff; margin-bottom:2px; font-size:16px; line-height:50px; color:#585858;}
+article ul li:hover{background: #CCCCCC;}
+article ul li .pic{ width:30px; height:30px; margin:10px 10% 10px 5%; float:left;}
+article ul li .more{ width:24px; height:24px; margin:10px 5%; float:right;}
+article ul li .more img{ width:12px; height:24px; margin:0 6px;}
+.bottom{ background:#eeeeee; width:100%; height:50px;}
+
+
+
+
+@media screen and (min-width: 600px) {
+	.top{ height:50px;}
+	.header{ height:100px; line-height:100px; font-size:36px;}
+	.header .back{ margin-top:20px; width:30px; height:50px;}
+	.header .add{ width:50px; height:50px; margin-top:20px;}
+	article ul li,.tan ul li{ height:100px; margin-bottom:5px; font-size:32px; line-height:100px;}
+	article ul li .pic{ width:60px; height:60px; margin: 20px 10% 20px 5%;}
+	article ul li .more{ width:48px; height:48px; margin: 20px 5%;}
+	article ul li .more img{ width:24px; height:48px; margin:0 12px;}
+	.bottom{ height:100px;}
+	.add_1 .tan h3{line-height: 3.5em;font-size: 2.5em;}
+	}

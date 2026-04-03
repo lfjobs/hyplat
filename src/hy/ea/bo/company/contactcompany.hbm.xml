@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="ContactCompany" table="dtContactCompany"> 
+		<id length="50" name="ccompanyKey">
+			<column length="50" name="ccompanyKey" ><comment>公司主键</comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" not-null="true" ><comment>公司外键</comment></column>
+			 
+			</property>
+		 <property name="companyName">
+        	<column name="companyName" length="250" ><comment>公司名称</comment></column>
+        </property>
+		<property name="shopname">
+			<column name="shopname" length="100"><comment>县或者区</comment></column>
+		</property>
+        	<property name="address">
+        	<column name="address" length="250"><comment>公司地址id</comment></column>
+        </property>
+        <property name="companyAddr">
+        	<column name="companyAddr" length="256"><comment>具体地址</comment></column>
+        </property>
+		<property name="pname">
+			<column name="pname" length="100"><comment>省份</comment></column>
+		</property>
+		<property name="cityname">
+			<column name="cityname" length="100"><comment>市</comment></column>
+		</property>
+		<property name="adname">
+			<column name="adname" length="100"><comment>县或者区</comment></column>
+		</property>
+		<property name="street">
+			<column name="street" length="256"><comment>街道地址</comment></column>
+		</property>
+		<property name="companyTel">
+			<column length="250" name="companyTel"><comment>公司电话</comment></column>
+		</property>
+		<property name="cresponsible">
+			<column length="250" name="cresponsible"><comment>负责人</comment></column>
+		</property>
+		<property name="sex">
+			<column length="2" name="sex"><comment>负责人性别</comment></column>
+		</property>
+		<property name="responsibleTel">
+			<column length="250" name="responsibleTel" ><comment>负责人电话</comment></column>
+		</property>
+		<property name="representative">
+			<column length="250" name="representative" ><comment>法人代表</comment></column>
+		</property>
+		<property name="idCard">
+			<column length="250" name="idCard" ><comment>法人身份证号码</comment></column>
+		</property>
+		<property name="remark">
+			<column length="256" name="remark" ><comment>备注信息</comment></column>
+		</property>
+		<property name="dealIn">
+			<column length="256" name="dealIn" ><comment>经营范围</comment></column>
+		</property>
+		<property name="industryType">
+			<column length="256" name="industryType" ><comment>行业类别</comment></column>
+		</property>
+		<property name="gdcate">
+			<column length="50" name="gdcate" ><comment>一级分类</comment></column>
+		</property>
+		<property name="gdcode">
+			<column length="50" name="gdcode" ><comment>一级分类ID</comment></column>
+		</property>
+		<property name="gdcate2">
+			<column length="50" name="gdcate2" ><comment>二级分类</comment></column>
+		</property>
+		<property name="gdcode2">
+			<column length="50" name="gdcode2" ><comment>二级分类ID</comment></column>
+		</property>
+		<property name="custStatus">
+			<column length="4" name="custStatus" ><comment>单位状态</comment></column>
+		</property>
+		<property name="entryPersonnel">
+			<column length="250" name="entryPersonnel"><comment>信息录入人员姓名</comment></column>
+		</property>
+		<property name="entryoName">
+			<column length="250" name="entryoName"><comment>录入部门</comment></column>
+		</property>
+		<property name="accountID">
+			<column name="accountID" length="50"><comment>账号</comment></column>
+		</property>
+		<property name="accountName">
+			<column length="50" name="accountName"><comment>账号人员姓名</comment></column>
+		</property>
+		<property name="brandInfo">
+			<column length="800" name="brandInfo"><comment>品牌</comment></column>
+		</property>
+		<property name="comPurpose">
+			<column length="50" name="comPurpose"><comment>公司宗旨</comment></column>
+		</property>
+		<property name="logoPath">
+			<column name="logoPath" length="250"><comment>公司logo小图片 45*45</comment></column>
+		</property>
+		<property name="jjPath">
+			<column name="jjPath" length="250"><comment>公司简介小图片 230*138</comment></column>
+		</property>
+		<property name="webstatus">
+			<column name="webstatus" length="5"><comment>网站状态</comment></column>
+		</property>
+		<property name="companyWeb">
+			<column name="companyWeb" length="200"><comment>公司网址</comment></column>
+		</property>
+		<property name="erweimaImage">
+			<column name="erweimaImage" length="500"><comment>公司二维码</comment></column>
+		</property>
+		<property name="qrCodePath">
+			<column name="qrCodePath" length="500"><comment>公司名片二维码</comment></column>
+		</property>
+		<property name="comPro">
+			<column name="comPro" length="50"><comment> 公司性质e.g.国企，民营等</comment></column>
+		</property>
+		<property name="comScale">
+			<column name="comScale" length="50"><comment>公司规模 e.g. 20人以下，20-99人等</comment></column>
+		</property>
+		<property name="pmCodePath">
+			<column name="pmCodePath" length="500"><comment>公司公众号二维码图片路径</comment></column>
+		</property>
+		<property name="authState">
+			<column name="authState" length="5"><comment>认证状态00:未认证,01:认证审核中,02:已认证</comment></column>
+		</property>
+		<property name="pcState">
+			<column name="pcState" length="5"><comment>1个人0元加入null公司0元加入</comment></column>
+		</property>
+
+		<property name="jingdu">
+			<column name="jingdu" length="50"><comment>公司的经纬度坐标</comment></column>
+		</property>
+
+        <property name="accuracy">
+            <column name="accuracy" length="50"><comment>公司的经度坐标</comment></column>
+        </property>
+        <property name="dimension">
+            <column name="dimension" length="50"><comment>公司的纬度坐标</comment></column>
+        </property>
+        <property name="industryId">
+            <column name="industryId" length="50"><comment>行业id</comment></column>
+        </property>
+		<property name="gdID">
+			<column name="gdID" length="50"><comment>高德地图获取的POIS的ID</comment></column>
+		</property>
+		<property name="applyID">
+			<column length="50" name="applyID" ><comment>二级商户进件</comment></column>
+		</property>
+		<property name="companyCode">
+			<column length="50" name="companyCode" ><comment>公司编码</comment></column>
+		</property>
+		<property name="seqs">
+			<column length="50" name="seqs" ><comment>排序</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

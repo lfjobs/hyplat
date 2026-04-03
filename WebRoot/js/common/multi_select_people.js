@@ -1,0 +1,299 @@
+$(document).ready(function() {
+var url1 = basePath
+			+ "ea/documentcommon/sajax_ea_getAllCompanyByCurrent.jspa?date="
+			+ new Date().toLocaleString();
+	$.ajax({
+		url : url1,
+		type : "get",
+		dataType : "json",
+
+		success : function cbf(data) {
+			var member = eval("(" + data + ")");
+			var nologin = member.nologin;
+			if (nologin) {
+				document.location.href = basePath + "page/ea/not_login.jsp";
+			}
+			var oList = member.companylist;;
+			var data = new Array();
+			var result = "<ul id='browser' class='filetree'><li><span class='folder'>集团机构树</span>";
+			for (var i = 0; i < oList.length; i++) {
+				data[i] = {
+					id : oList[i].companyID,
+					text : oList[i].companyName
+				};
+				result += "<ul><li onclick='javascript:childMenu(\""
+						+ data[i].id + "\")' title='"
+						+ data[i].text 
+						+ "' class='curor expandable closed'><span class='folder'>" + data[i].text
+						+ "</span><ul id='"+data[i].id+"'>";
+				result += "</ul></li></ul>";
+				
+
+			}
+			result+="</li></ul>";
+			$(result).appendTo("#addTreess");
+		    $("#browser").treeview();
+
+		},
+		error : function cbf(data) {
+			alert("数据获取失败！");
+		}
+	});
+
+	
+	$("#leftfields").dblclick(function() {
+				var left_vo, right_vo, vos, i;
+				vos = document.getElementsByName('leftfields');
+
+				if (vos == null)
+					return false;
+				left_vo = vos[0];
+				vos = document.getElementsByName('rightfields');
+				if (vos == null)
+					return false;
+				right_vo = vos[0];
+				for (i = 0; i < left_vo.options.length; i++) {
+					if (left_vo.options[i].selected) {
+						var no = new Option();
+						no.value = left_vo.options[i].value;
+						no.text = left_vo.options[i].text;
+						right_vo.options[right_vo.options.length] = no;
+					}
+				}
+
+				// 设为要可选状态
+
+				for (i = 0; i < right_vo.options.length; i++) {
+					right_vo.options[i].selected = true;
+				}
+
+				return true;
+			});
+
+	$("#rightfields").dblclick(function() {
+				var vos, right_vo, i;
+				vos = document.getElementsByName('rightfields');
+				if (vos == null)
+					return false;
+				right_vo = vos[0];
+				for (i = right_vo.options.length - 1; i >= 0; i--) {
+					if (right_vo.options[i].selected) {
+						// alert(i);
+						right_vo.options.remove(i);
+					}
+				}
+				// 设为要可选状态
+
+				for (i = 0; i < right_vo.options.length; i++) {
+					right_vo.options[i].selected = true;
+				}
+
+				return true;
+			});
+
+	$("#query_add").click(function() {
+				$("#leftfields").dblclick();
+			});
+
+	$("#query_delete").click(function() {
+				$("#rightfields").dblclick();
+			});
+
+		// ///////////////////////////////////////////////以上为固定功能//////////////////////////////////////////////////////////
+
+});
+
+
+	function childMenu(companyID) {// 2级
+		if($("ul#"+companyID+">li").length>0){
+			return;
+		}
+		var url2 = basePath
+				+ "ea/documentcommon/sajax_ea_getAllOrganizations.jspa?date="
+				+ new Date().toLocaleString();
+		$.ajax({
+			url : encodeURI(url2),
+			type : "post",
+			async : false,
+			dataType : "json",
+			data : {
+				companyID : companyID
+			},
+			success : function cbf(data) {
+
+				/** **添加部门列表** */
+
+				var member = eval("(" + data + ")");
+				var orglist = member.orgaizationlist;
+				var data = new Array();
+				var result="";
+				for (var i = 0; i < orglist.length; i++) {
+					data[i] = {
+					id : orglist[i].organizationID,
+					text : orglist[i].organizationName
+				    };
+					result += "<li onclick='javascript:getPerson(\""
+								+ companyID + "\",\"" + data[i].id + "\")' title='"
+								+ data[i].text
+								+ "'><a href='#'><span id='"
+								+ data[i].id
+								+ "' class='folder curor'>"
+								+ data[i].text + "</span></a></li>";
+				}
+				
+				$(result).appendTo("#"+companyID);
+
+			},
+			error : function cbf(data) {
+				alert("数据获取失败！");
+			}
+		});
+
+	}
+
+function getPerson(company, org) {
+	var url = basePath
+			+ "ea/documentcommon/sajax_ea_getPersonByDept.jspa?date="
+			+ new Date();
+	$.ajax({
+				url : encodeURI(url),
+				type : "post",
+				async : true,
+				dataType : "json",
+				data : {
+					"currentCompanyID" : company,
+					"checkOrgID" : org
+				},
+				success : function cbf(data) {
+					var member = eval("(" + data + ")");
+					var persons = member.stafflist;
+					var str = "";
+					for (var i = 0; i < persons.length; i++) {
+						var obj = persons[i];
+
+						str += "<option value='" + obj.staffID + "-" + company
+								+ "-" + org + "'>" + obj.staffName + "("
+								+ obj.staffCode + ")</option>";
+					}
+					$("#leftfields").html(str);
+				}
+			});
+}
+
+// 点击确定按钮
+function submit() {
+	var lengths = document.getElementById("rightfields").options.length;// 下拉项的长度
+	var strid = "";
+	var strname = "";
+	var flag = true;
+	for (var i = 0; i < lengths; i++) {
+		flag = true;
+		for (var j = i + 1; j < lengths; j++) {
+			var stri = document.getElementById("rightfields").options[i].value;
+			var strj = document.getElementById("rightfields").options[j].value;
+			if (stri == strj) {
+				flag = false;
+				break;
+			}
+		}
+		if (flag == true) {
+			strid += document.getElementById("rightfields").options[i].value;
+			strid += ",";
+			strname += document.getElementById("rightfields").options[i].text;
+			strname += "|";
+
+		}
+	}
+	var ret = new Object();
+	var zfStatus = "";
+	var loadStatus = "";
+	var printStatus = "";
+	var shareStatus = "";
+	var pubStatus = "";
+	if ($("#zfStatus").attr("checked") == true) {
+		zfStatus = "on";
+	}
+	if ($("#loadStatus").attr("checked") == true) {
+		loadStatus = "on";
+	}
+	if ($("#printStatus").attr("checked") == true) {
+		printStatus = "on";
+	}
+	if ($("#shareStatus").attr("checked") == true) {
+		shareStatus = "on";
+	}
+	if ($("#pubStatus").attr("checked") == true) {
+		pubStatus = "on";
+	}
+	strid = strid.substring(0, strid.length - 1);
+	ret.strid = strid;
+	ret.strname = strname;
+	ret.zfStatus = zfStatus;
+	ret.loadStatus = loadStatus;
+	ret.printStatus = printStatus;
+	ret.shareStatus = shareStatus;
+	ret.pubStatus = pubStatus;
+	window.returnValue = ret;
+	if (strid == "") {
+			alert("请选择人员");
+			return;
+		}
+	if (type == "sendyes"||type=="zhuanfa") {
+		var url2 = basePath
+				+ "ea/documentflow/sajax_n_ea_rePublishDocument.jspa";
+		$.ajax({
+					url : encodeURI(url2),
+					type : "post",
+					async : false,
+					dataType : "json",
+					data : {
+						readers : strid,
+						docId : docId,
+						zfStatus : zfStatus,
+						type : type,
+						loadStatus : loadStatus,
+						printStatus : printStatus,
+						shareStatus : shareStatus,
+						pubStatus : pubStatus
+					},
+					success : function cbf(data) {
+						var member = eval("(" + data + ")");
+						var re = member.result;
+						if (re == "")
+							alert("发送成功！");
+						else if (re == "fail") {
+							alert("文档已结束任务，无法再发送！");
+						} else {
+							alert(re + "已存在该文档，无需再分发，其余已发送成功！");
+						}
+					},
+					error : function cbf(data) {
+						alert("数据获取失败！");
+					}
+				});
+
+	}
+	
+	if (type == "sendno1") {
+	  if (confirm("确定分发？")) {
+	  	    $("#pubForm #load").val(loadStatus);
+			$("#pubForm #print").val(printStatus);
+			$("#pubForm #share").val(shareStatus);
+			$("#pubForm #pub").val(pubStatus);
+			$("#pubForm #transfer").val(zfStatus);
+			$("#pubForm #readers").val(strid);
+			$("#pubForm #docID").val(docId);
+		$("#pubForm").attr("target", "hidden").attr(
+				"action",
+				basePath + "ea/documentflow/ea_publishDocument.jspa?date="
+						+ new Date());
+		document.pubForm.submit.click();
+		alert("操作成功！");
+		
+	   }
+	}
+	
+	window.close();
+
+}
+

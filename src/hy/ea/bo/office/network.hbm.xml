@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="NetWork" table="dtNetWork">
+		<id length="50" name="netWorkKey">
+			<column length="50" name="netWorkKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="netWorkID">
+			<column length="50" name="netWorkID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="netWorkAddress">
+			<column length="250" name="netWorkAddress"/>
+		</property>
+		<property name="netWorkName">
+			<column length="250" name="netWorkName"/>
+		</property>
+		<property name="netWorkCode">
+			<column length="250" name="netWorkCode" />
+		</property>
+		<property name="netWorkPassword">
+			<column length="250" name="netWorkPassword" />
+		</property>
+		<property  name="amendPassword">
+			<column length="250" name="amendPassword" />
+		</property>
+		<property  name="admin">
+			<column length="250" name="admin" />
+		</property>
+	</class>
+</hibernate-mapping>

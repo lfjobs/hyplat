@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN""http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+
+		<#assign s=JspTaglibs["/WEB-INF/struts-tags.tld"]>
+		<title>车辆安全巡检点</title> <#include
+		"/page/ea/main/office_ea/check/js_css.html">
+		<script type="text/javascript"
+			src="${base}/js/ea/office_ea/check/point.js"></script>
+
+		<script type="text/javascript">
+		 var  basePath='${base}';   
+		 var checkpointid = "";     
+		 var search = '${search}';
+		</script>
+		<style type="text/css">
+#jqModelAdd table td input {height：15px;
+	line-height: 15px;
+}
+
+.delete {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+}
+
+.pointitem {
+	width: 45%;
+	float: right;
+	overflow: auto;
+	height: 200px;
+}
+
+.item {
+	float: left;
+	width: 55%;
+}
+
+.caritem {
+	width: 180px;
+	height: 100px;
+	border: 1px solid #7F9DB9;
+	background: #FFFFFF;
+	overflow: auto;
+}
+
+#caritemtbl {
+	border-collapse: collapse;
+	width: 100%;
+	white-space: nowrap;
+}
+
+#caritemtbl td {
+	border: 1px solid #7F9DB9;
+}
+
+.delete {
+	background: url("${base}/images/gtk-del.png");
+	border: none;
+	width: 16px;
+	height: 16px;
+	cursor: hand;
+}
+</style>
+	</head>
+	<body>
+		<div>
+			<table class="JQueryflexme">
+				<thead>
+					<tr>
+						<th width="40" align="center">
+							选择
+						</th>
+						<th width="150" align="center">
+							车牌号/检查点/检查项
+						</th>
+						<th width="200" align="center">
+							芯片号
+						</th>
+						<th width="150" align="center">
+							是否启用
+						</th>
+						<th width="150" align="center">
+							操作
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<#list pageForm.list as p >
+					<tr id="${p[0]}" class="level1">
+						<td>
+							<input type="radio" name="a" class="JQuerypersonvalue"
+								value="${p[0]}" />
+						</td>
+						<td>
+							<div style="text-align: left;">
+								<img src="${base}/images/add_s.png" class="add" />
+								<span id="carNum">${p[1]}</span>
+							</div>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							&nbsp;
+						</td>
+
+					</tr>
+
+
+					<tr id="kelong" style="display: none;">
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							<div style="text-align: left;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<img src="${base}/images/add_s.png" />
+								<span id="checkpointname"></span>
+							</div>
+						</td>
+						<td>
+							<span id="chip"></span>
+						</td>
+						<td>
+							<span id="creator" style="display: none"></span>
+							<span id="useflag"></span>
+						</td>
+						<td>
+							<div style="text-align: center;" class="operate">
+
+							</div>
+
+						</td>
+
+					</tr>
+
+					<tr id="kelong2" style="display: none;" class="level3">
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							<div style="text-align: left;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<img src="${base}/images/sub_s.png" />
+								<span id="checkpointitemname"></span>
+							</div>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							<div style="text-align: center;" class="operate">
+
+							</div>
+
+						</td>
+
+					</tr>
+					</#list>
+				</tbody>
+			</table>
+			<#assign actionPath="ea/safetycheck/ea_point.jspa?"> <#include
+			"/page/ea/main/office_ea/check/page.html"/>
+
+
+		</div>
+
+
+
+		<!--添加窗口 -->
+		<div class="jqmWindow" style="right: 25%; top: 10%" id="jqModelAdd">
+			<form name="postAddForm" id="postAddForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					<div id="title">
+						添加
+					</div>
+					<div class="close">
+					</div>
+				</div>
+				<div id="item">
+					<center>
+					<table width="100%" cellpadding="5" cellspacing="5" id="addTable">
+						<tr>
+							<td align="right" style="width: 100px;">
+								检查点名称：
+							</td>
+							<td align="left">
+								<input type="text" name="pointbean.checkpointname"
+									id="checkpointname" class="put3" />
+								<input type="hidden" name="pointbean.checkpointid"
+									id="checkpointid" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								车牌号：
+							</td>
+							<td align="left" style="white-space: nowrap;">
+								<table>
+									<tr>
+										<td>
+											<div class="caritem">
+												<input type="hidden" value="" name="pointbean.devicetypeid"
+													id="caritemid" />
+												<table id="caritemtbl">
+													<thead>
+														<tr align='center'>
+															<td>
+																车牌号
+															</td>
+															<td>
+																操作
+															</td>
+														</tr>
+													</thead>
+													<tbody id="caritemtbody"></tbody>
+												</table>
+											</div>
+										</td>
+										<td class="img">
+											<img src="${base}/images/r_8_12.gif"
+												style="float: right; cursor: hand;"
+												onclick="importGY('/ea/safetycheck/ea_car.jspa')" />
+										</td>
+									</tr>
+								</table>
+
+							</td>
+						</tr>
+
+						<tr>
+							<td align="right">
+								检查项：
+							</td>
+							<td align="left">
+								<input type="button" value=" 添加检查项 " class="input-button"
+									id="clicktaskitem" />
+
+								<input type="hidden" id="deletepointitemid" value=""
+									name="deletepointitemid" />
+							</td>
+						</tr>
+						<tr>
+							<td align="center" colspan="2">
+
+								<input type="button" class="input-button" id="toSubmit"
+									value=" 确定 " />
+								<input type="button" class="input-button close" id="toCancel"
+									value=" 关闭 " />
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="pointitem">
+					<table width="100%" cellpadding="0" cellspacing="5"
+						id="pointitemtbl">
+
+					</table>
+				</div>
+
+			</form>
+			<iframe width="1" height="1" name="loadcab" id="loadcab"></iframe>
+		</div>
+
+		<!--搜索窗口 -->
+		<div class="jqmWindow" style="width: 300px; right: 25%; top: 10%"
+			id="jqModelSearch">
+			<form name="postSearchForm" id="postSearchForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					查询信息
+					<div class="close">
+					</div>
+				</div>
+				<table width="100%" cellpadding="5" cellspacing="10"
+					id="cataffSearchTable">
+					<tr>
+						<td align="right">
+							检查点名称：
+						</td>
+						<td align="left">
+							<input type="text" name="pointbean.checkpointname" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<input type="button" class="input-button" id="tosearch"
+								value=" 查询 " />
+							<input name="search" type="hidden" value="search" />
+						</td>
+
+					</tr>
+				</table>
+			</form>
+		</div>
+
+
+
+		<!--发芯片窗口 -->
+		<div class="jqmWindow" style="width: 420px; right: 25%; top: 10%"
+			id="jqModelChip">
+			<form name="postChipForm" id="postChipForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					发芯片
+					<div class="close">
+					</div>
+				</div>
+				<table width="100%" cellpadding="0" cellspacing="5">
+					<thead>
+						<tr>
+							<th align="center" width="20%">
+								检查点名称
+							</th>
+							<th align="center" width="40%">
+								芯片
+							</th>
+							<th align="center" width="30%">
+								操作
+							</th>
+						</tr>
+					</thead>
+					<tbody id="fchip">
+					</tbody>
+				</table>
+				<div style="text-align: center; margin-top: 10px;">
+					<input type="button" class="input-button" id="submitchip"
+						value=" 提交 " />
+					<input type="button" class="input-button close" value=" 关闭 " />
+					<input type="hidden" value="" id="chippos" />
+				</div>
+				<iframe width="1" height="1" name="loadcab" id="loadcab"></iframe>
+			</form>
+		</div>
+
+
+		<!--编辑检查点窗口 -->
+		<div class="jqmWindow" style="width: 300px; right: 25%; top: 10%"
+			id="jqModelEditPoint">
+			<form name="postPointEditForm" id="postPointEditForm" method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					编辑检查点
+					<div class="close">
+					</div>
+				</div>
+				<table width="100%" cellpadding="5" cellspacing="10">
+					<tr>
+						<td align="right">
+							检查点名称：
+						</td>
+						<td align="left">
+							<input type="text" name="pointbean.checkpointname" id="pointname" />
+							<input type="hidden" name="pointbean.checkpointid" id="pointid" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							是否启用：
+						</td>
+						<td align="left">
+							<select name="pointbean.useflag" id="useflags">
+								<option value='0'>
+									启用
+								</option>
+								<option value='1'>
+									停用
+								</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<input type="button" class="input-button" id="submitpoint"
+								value=" 确定 " />
+						</td>
+
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<!-- 编辑检查项 -->
+		<div class="jqmWindow" style="width: 300px; right: 25%; top: 10%"
+			id="jqModelEditItem">
+			<form name="postPointItemEditForm" id="postPointItemEditForm"
+				method="post">
+				<input type="submit" name="submit" style="display: none" />
+				<div class="drag">
+					编辑检查项
+					<div class="close">
+					</div>
+				</div>
+				<table width="100%" cellpadding="5" cellspacing="10">
+					<tr>
+						<td align="right">
+							检查项名称：
+						</td>
+						<td align="left">
+							<input type="text" name="pointitembean.checkpointitemname"
+								id="pointitemname" />
+							<input type="hidden" name="pointitembean.checkpointitemid"
+								id="pointitemid" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<input type="button" class="input-button" id="submititem"
+								value=" 确定 " />
+						</td>
+
+					</tr>
+				</table>
+			</form>
+		</div>
+
+
+		<div id="socialJqm" class="jqmWindow"
+			style="width: 75%; height: 250px; absolute; display: none; left: 15%; top: 8%; z-index: 9999; background: #DAE7F6; overflow-y: hidden;">
+			<div style="background: #DAE7F6; margin-right: 500px;">
+				<input style="display: none;" id="checkopertionID" />
+				<input style="display: none;" id="checkopertionName" />
+				<input style="display: none;" id="childopertionName" />
+				<input style="display: none;" id="checkform" />
+				<input style="display: none;" id="addtype" value="" />
+			</div>
+			<iframe name="daoRu" id="daoRu" width="100%" height="210px"
+				frameborder="0" style="overflow-x: hidden; overflow-y: auto;">
+			</iframe>
+			<div style="height: 28px; border: 1; align: center;">
+				<input type="hidden" value="" id="markid" />
+				<input type="button" class="input-button" id="DaoRuFanqd"
+					onclick="DaoruConfirm();" value=" 确定 "
+					style="cursor: hand; border: 1; height: 25px; width: 60px" />
+				<input type="button" class="input-button" id="DaoRuFan"
+					onclick="cancelJqm();" value=" 关闭 "
+					style="cursor: hand; border: 1; height: 25px; width: 60px" />
+			</div>
+
+		</div>
+		<!--JS遮罩层-->
+		<div id="fullbg"></div>
+		<iframe name="hidden" width="0" height="0"></iframe>
+	</body>
+</html>

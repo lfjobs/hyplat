@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="Activities" table="dtActivities">
+	<comment>个人活动-公司活动</comment>
+		<id length="50" name="activitiesKey">
+			<column length="50" name="activitiesKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="activitiesID">
+			<column length="150" name="activitiesID" not-null="true"/>
+		</property>
+		<property name="title">
+			<column name="title" length="100"><comment>活动标题</comment></column>
+		</property>
+		<property name="describe">
+			<column name="describe" length="1000"><comment>活动描述</comment></column>
+		</property>
+		<property name="picture">
+			<column name="picture" length="2000"><comment>活动图片</comment></column>
+		</property>
+		<property name="releaseTime">
+			<column name="releaseTime"><comment>发布日期</comment></column>
+		</property>
+		<property name="type">
+			<column name="type" length="10"><comment>类型00公司01个人</comment></column>
+		</property>
+		<property name="ccompanyId">
+			<column name="ccompanyId" length="100"><comment>往来单位ID</comment></column>
+		</property>
+		<property name="staffId">
+			<column name="staffId" length="100"><comment>往来个人ID</comment></column>
+		</property>
+		<property name="author">
+			<column name="author" length="20"><comment>作者</comment></column>
+		</property>
+		<property name="shareLink">
+			<column name="shareLink" length="200"><comment>分享链接</comment></column>
+		</property>
+		<property name="category">
+			<column name="category" length="20"><comment>类别</comment></column>
+		</property>
+		<property name="txturl">
+			<column name="txturl" length="500"><comment>txt路径</comment></column>
+		</property>
+		</class>
+</hibernate-mapping>                                   

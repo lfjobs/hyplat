@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="ProductInspection" table="dtInspection">
+		<id length="50" name="proInspectionKey">
+			<column length="50" name="proInspectionKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="proInspectionID">
+			<column length="200" name="proInspectionID"  ><comment>业务主键</comment></column>
+		</property>
+		<property name="proAssemblyID">
+			<column length="200" name="proAssemblyID"  ><comment>组装ID</comment></column>
+		</property>
+		<property name="qualifiedQuantity">
+			<column length="200" name="qualifiedQuantity"  ><comment>合格数量</comment></column>
+		</property>
+		<property name="unqualifiedQuantity">
+			<column length="200" name="unqualifiedQuantity"  ><comment>不合格数量</comment></column>
+		</property>
+		<property name="inspectionManID">
+			<column length="200" name="inspectionManID"  ><comment>检验人ID</comment></column>
+		</property>
+		<property name="inspectionManName">
+			<column length="200" name="inspectionManName"  ><comment>检验人名称</comment></column>
+		</property>
+		<property name="inspectionTime">
+			<column length="200" name="inspectionTime"  ><comment>检验时间</comment></column>
+		</property>
+		<property name="singleID">
+			<column length="200" name="singleID"  ><comment>制单人ID</comment></column>
+		</property>
+		<property name="singleName">
+			<column length="200" name="singleName"  ><comment>制单人名称</comment></column>
+		</property>
+		<property name="singleTime">
+			<column length="200" name="singleTime"  ><comment>制单时间</comment></column>
+		</property>
+		<property name="status">
+			<column length="200" name="status"  ><comment>状态</comment></column>
+		</property>
+		<property name="remarks">
+			<column length="200" name="remarks"  ><comment>备注</comment></column>
+		</property>
+		<property name="residualQuantity">
+			<column length="200" name="residualQuantity"  ><comment>合格剩余数量，用于成品入库</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

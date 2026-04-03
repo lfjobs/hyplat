@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="BsimTest" table="production_BsimTest">
+		
+		<id length="50" name="bsimTestkey">
+            <column length="50" name="bsimTestkey" not-null="true"/>
+			<generator class="uuid" />
+		</id>
+		<property name="bsimTestId" not-null="true">
+
+			<column length="50" name="bsimTestId"><comment>逻辑ID</comment></column>
+
+		</property>
+		<property name="id">
+
+			<column length="50" name="id"><comment>产品ID</comment></column>
+
+		</property>
+		<property name="industryClassification">
+
+			<column length="50" name="industryClassification"><comment>行业分类</comment></column>
+
+		</property>
+		<property name="productClassification">
+
+			<column length="50" name="productClassification"><comment>产品分类</comment></column>
+
+		</property>
+		<property name="itemNumber">
+
+			<column length="50" name="itemNumber"><comment>项目产品编号</comment></column>
+
+		</property>
+		<property name="goodBar">
+
+			<column length="50" name="goodBar"><comment>条码</comment></column>
+
+		</property>
+		<property name="goodName">
+
+			<column length="50" name="goodName"><comment>产品名称</comment></column>
+
+		</property>
+		<property name="goodStandard">
+
+			<column length="50" name="goodStandard"><comment>规格</comment></column>
+
+		</property>
+		<property name="price">
+
+			<column length="50" name="price"><comment>单价</comment></column>
+
+		</property>
+		<property name="btnumber">
+
+			<column length="50" name="btnumber"><comment>数量</comment></column>
+
+		</property>
+		<property name="yieldnumber">
+
+			<column length="50" name="yieldnumber"><comment>合格数</comment></column>
+
+		</property>
+		<property name="noyieldnumber">
+
+			<column length="50" name="noyieldnumber"><comment>不合格数</comment></column>
+
+		</property>
+		<property name="money">
+
+			<column length="50" name="money"><comment>金额</comment></column>
+
+		</property>
+		<property name="auditTime">
+
+			<column length="50" name="auditTime"><comment>审核时间</comment></column>
+
+		</property>
+		<property name="auditor">
+
+			<column length="50" name="auditor"><comment>审核人姓名</comment></column>
+
+		</property>
+		<property name="auditorId">
+
+			<column length="50" name="auditorId"><comment>审核人ID</comment></column>
+
+		</property>
+		<property name="companyId">
+
+			<column length="50" name="companyId"><comment>公司ID</comment></column>
+
+		</property>
+		<property name="companyName">
+
+			<column length="50" name="companyName"><comment>公司名称</comment></column>
+
+		</property>
+		<property name="organizationId">
+
+			<column length="50" name="organizationId"><comment>部门ID</comment></column>
+
+		</property>
+		<property name="organizationName">
+
+			<column length="50" name="organizationName"><comment>部门名称</comment></column>
+
+		</property>
+		<property name="status">
+
+			<column length="50" name="status"><comment>状态    02:合格  03：不合格</comment></column>
+
+		</property>	
+		<property name="category">
+			<column length="50" name="category"><comment>产品类型</comment></column>
+		</property>
+		<property name="fiveClear">
+			<column length="100" name="fiveClear"><comment>组织机构</comment></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

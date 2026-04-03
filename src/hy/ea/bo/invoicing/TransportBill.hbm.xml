@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.invoicing.TransportBill" table="DT_TRANSPORT_BILL" schema="HYPLAT">
+        <id name="transportkey">
+            <column name="TRANSPORTKEY" sql-type="varchar2(50)"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="transportid">
+            <column name="TRANSPORTID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="journalnum">
+            <column name="JOURNALNUM" sql-type="varchar2(50)"/>
+        </property>
+        <property name="transportnum">
+            <column name="TRANSPORTNUM" sql-type="varchar2(50)"/>
+        </property>
+        <property name="companyid">
+            <column name="COMPANYID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="purchaserid">
+            <column name="PURCHASERID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="purchasername">
+            <column name="PURCHASERNAME" sql-type="varchar2(50)"/>
+        </property>
+        <property name="pickingid">
+            <column name="PICKINGID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="pichingname">
+            <column name="PICHINGNAME" sql-type="varchar2(50)"/>
+        </property>
+        <property name="sellermessage">
+            <column name="SELLERMESSAGE" sql-type="varchar2(50)"/>
+        </property>
+        <property name="cashierbillsid">
+            <column name="CASHIERBILLSID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="adddate">
+            <column name="ADDDATE"/>
+        </property>
+        <property name="status">
+            <column name="STATUS" sql-type="varchar2(50)"/>
+        </property>
+    </class>
+</hibernate-mapping>

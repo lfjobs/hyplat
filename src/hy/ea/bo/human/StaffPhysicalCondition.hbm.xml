@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffPhysicalCondition" table="dt_hr_staff_PhysicalCondition">
+		<id length="50" name="conditionrKey">
+			<column length="50" name="conditionrKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="conditionrID">
+			<column length="50" name="conditionrID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="examinationTime">
+			<column length="250" name="examinationTime"/>
+		</property>
+		<property name="examinationHospital">
+			<column length="250" name="examinationHospital"/>
+		</property>
+		<property name="bloodType">
+			<column length="250" name="bloodType" />
+		</property>
+		<property  name="weight">
+			<column length="250" name="weight" />
+		</property>
+		<property  name="height">
+			<column length="250" name="height" />
+		</property>
+		<property  name="conditions">
+			<column length="250" name="conditions" />
+		</property>
+		<property  name="communicableDiseases">
+			<column length="250" name="communicableDiseases" />
+		</property>
+		<property  name="auditor">
+			<column length="250" name="auditor" />
+		</property>
+		<property  name="conditionDesc">
+			<column length="250" name="conditionDesc" />
+		</property>
+		<property  name="verifyTime">
+			<column length="250" name="verifyTime" />
+		</property>
+		
+		<property  name="details">
+			<column length="250" name="details" />
+		</property>
+		<property  name="indicator">
+			<column length="250" name="indicator" />
+		</property>
+		<property  name="normal">
+			<column length="250" name="normal" />
+		</property>
+		<property  name="doctorAdvice">
+			<column length="250" name="doctorAdvice" />
+		</property>
+		<property  name="doctorName">
+			<column length="250" name="doctorName" />
+		</property>
+		<property  name="referenceCode">
+			<column length="250" name="referenceCode" />
+		</property>
+		<property  name="orderedIndicator">
+			<column length="250" name="orderedIndicator" />
+		</property>
+		<property  name="photo">
+			<column length="256" name="photo" />
+		</property>
+	</class>
+</hibernate-mapping>

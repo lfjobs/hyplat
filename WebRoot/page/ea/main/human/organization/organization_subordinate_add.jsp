@@ -1,0 +1,306 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="cache-control" content="no-cache">
+		<title>组织机构——人事</title>
+		<%@ page language="java" pageEncoding="UTF-8"%>
+		<%@ taglib uri="/struts-tags" prefix="s"%>
+		<%
+			String path = request.getContextPath();
+			String basePath = request.getScheme() + "://"
+					+ request.getServerName() + ":" + request.getServerPort()
+					+ path + "/";
+		%>
+		<script src="<%=basePath%>js/jquery.js" type="text/javascript"></script>
+		<link href="<%=basePath%>css/ea/validate.css" rel="stylesheet" type="text/css" />
+		<script src="<%=basePath%>js/ea/validate.js"  type="text/javascript"></script>
+		<link href="<%=basePath%>/css/ea/organization.css" rel="stylesheet"
+			type="text/css">
+			<!--tree-->
+		<link rel="stylesheet" href="<%=basePath%>js/tree/common/css/style.css" type="text/css" media="screen" />
+		<script  src="<%=basePath%>js/tree/codebase/dhtmlxcommon.js"></script>
+		<script  src="<%=basePath%>js/tree/codebase/dhtmlxtree.js"></script>
+		<link rel="STYLESHEET" type="text/css" href="<%=basePath%>js/tree/codebase/dhtmlxtree.css" />
+		<!-- jqmodal -->
+		<link rel="stylesheet" type="text/css"
+			href="<%=basePath%>js/jqModal/css/flexigrid_blue.css" />
+		<link rel="stylesheet" type="text/css"
+			href="<%=basePath%>js/jqModal/css/jqModal_blue.css" />
+		<script type="text/javascript" src="<%=basePath%>js/flexigrid.js"></script>
+		<script language="javascript" type="text/javascript"
+			src="<%=basePath%>js/My97DatePicker/WdatePicker.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/jqModal/jqDnR.js"></script>
+		<script type="text/javascript"
+			src="<%=basePath%>js/jqModal/jqModal.js"></script>
+	</head>
+<script type="text/javascript">
+
+$(function(){
+	$("#tosave").click(function(){
+		$(".put3").trigger("blur");
+        if ($("form .error").length) {
+            return;
+        }
+        var opid = '${organization.organizationPID}';//被修改对象的上级id
+        var newopid = $('#PID').val();//新的上级id
+        var oid = '${organization.organizationID}';//本身id
+        if (opid != "" && opid != newopid) {
+            window.parent.tree.moveItem(oid, 'item_child', newopid);
+        }
+        $("#organizationform").attr("action","<%=basePath%>ea/organization/t_ea_subordinateSave.jspa?pageNumber=${pageNumber}&organizationID=" + parent.treeid);
+		document.organizationform.submit.click();
+	});
+	$("#goback").click(function(){
+		window.location.href = "<%=basePath%>ea/organization/ea_subordinateList.jspa?pageNumber=${pageNumber}&organizationID=" + parent.treeid;
+	});
+});
+
+ //选择机构责任人        
+function searchCoach(){
+	 var parm = $('#PID').val();
+	 var url = "ea/cosincumbent/ea_getStaffForCashier.jspa?checkOrgID="+ parm + "&title1=title1";
+	 getValueForParm('practise','partnerName',url);
+}
+
+function getValueForParm(attachTable,parm,url){ //打开页面
+	 $("#myform",$("#jqmWindow2")).attr("value",attachTable);
+	 $("#parm",$("#jqmWindow2")).attr("value",parm);
+  	 $("#ifr").attr("src",basePath+url);
+  	 $("#jqmWindow2").jqmShow();
+}
+
+$(document).ready(function() {
+	$("#isBack").click(function(){// 返回
+       $("#jqmWindow2").jqmHide();
+    }); 
+   
+	$("#isSubmit").click(function(){// 确定
+		var myfrom =$("#myform",$("#jqmWindow2")).attr("value");
+		var parm = $("#parm",$("#jqmWindow2")).attr("value");
+	 	
+		var value1 = window.frames["ifr"].opertionID;//弹出框的页面必须声明opertionID这个参数接收id
+		if(value1 == ""){
+			alert("请选择");
+			return;
+		}
+		
+		var value2 = window.frames["ifr"].$('tr#'+value1).find("span#"+parm).text();//弹出框的页面存在于span中才取得到
+		if(parm != "")
+		 $("#"+parm,$("#"+myfrom)).attr("value",value2).trigger("blur");
+		 
+		$("#ifr").attr("src","");
+        $("#jqmWindow2").jqmHide();
+    });
+});
+
+</script>
+<body>
+<form name="organizationform" method="post" id="organizationform"><input type="submit" name="submit" style="display:none"/>
+		<input  name="organization.organizationKey"  type="hidden"  value="${organization.organizationKey}"/>
+		<input  name="organization.organizationCreateDate" type="hidden" value="${organization.organizationCreateDate }" />
+		<input  name="organization.organizationID" type="hidden"  id="organizationID" value="${ organization.organizationID}"/>
+		<input type="hidden" name="organization.organizationPID" id="PID" value="${ organization.organizationPID}"/>	
+<table width="100%" height="68" border="0" align="center" cellpadding="0" cellspacing="2">
+  <tr>
+    <td align="left" valign="top">
+      <div class="right">
+    	<div class="qh_gg_nav">&nbsp;添加/修改</div> 
+          <table width="100%" id="practise"　border="0" align="center" cellpadding="0"
+						cellspacing="0">
+              <tr>
+              <td width="20%" height="20" align="right" class="td_bg"> 机构序号： </td>
+              <td class="td_bg"><input name="organization.organizationNumber" class="input01" type="TEXT"  size="24" value="${organization.organizationNumber}" maxlength="3"/>              </td>
+            </tr>
+            <tr>
+              <td height="20" align="right" class="td_bg"> 机构编号： </td>
+              <td class="td_bg"><input name="organization.ocode" type="TEXT" maxlength="50"
+									class="input01" id="ocode" size="24" value="${organization.ocode }" contentEditable="false" /> <span ><font color="#0000FF">自动生成</font></span>      </td>
+            </tr>
+            <tr>
+              <td height="20" align="right" class="td_bg"> 部门名称： </td>
+              <td class="td_bg">
+              	<input name="organization.organizationName" type="TEXT" maxlength="50"
+					class="input01 put3 ckTextLength" id="organizationName" size="24" value="${organization.organizationName }"/>
+				<a href="#" onclick="getValueForParm('practise','organizationName','ea/organization/ea_getRegistAll.jspa');">选择</a>
+			  </td>
+			</tr>
+			<tr>
+              <td height="20" align="right" class="td_bg"> 部门负责人： </td>
+		      <td class="td_bg">
+			    <span>
+				  <input type="text" id="partnerName" name="organization.organizationManager"
+					 readonly="readonly" value="${organization.organizationManager}" size="24"/>
+				<a href="#" onclick="searchCoach();">选择</a>
+				</span>
+		      </td>
+            </tr>
+            <tr>
+              <td height="20" align="right" class="td_bg">负责内容：</td>
+              <td class="td_bg"><s:select list="%{#request.SInterfaceList}"  listKey="interfaceUrl" id="interfaceUrl" listValue="interfaceName"  name="organization.organizationUrl" theme="simple" > </s:select></td>
+            </tr>
+                    <tr>
+                      <td  height="30" align="right" class="td_bg"> 所属上级机构： </td>
+                     <td class="td_bg" id="upper"><input type="text" id="oraganizationName" name="organization.oraganizationName" readonly="readonly" value="${porganization.organizationName }"/><a href="#" onclick="javascript:getPID()"><img src="<%=basePath %>images/up.jpg" style="border: 0;"/></a>
+                     <%--<select id="organizationPID"  name="organization.organizationPID" listKey="organizationID"  listValue="organizationName" theme="simple"></select>
+                      --%></td>
+                    </tr>
+                    <!-- 
+         <tr>
+              <td height="20" align="right" class="td_bg"> 岗位编号： </td>
+              <td class="td_bg"><input name="organization.opostCode" type="TEXT" maxlength="50"
+									class="input01 " id="opostCode" size="24" value="${organization.opostCode }" contentEditable="false" readonly="readonly"/>
+            </tr>
+            <tr>
+              <td height="20" align="right" class="td_bg"> 岗位名称： </td>
+              <td class="td_bg"><input name="organization.opostName" type="TEXT" maxlength="50"
+									class="input01 put3 ckTextLength" id="opostName" size="24" value="${organization.opostName }"/>              </td>
+            </tr>
+            <tr>
+              <td height="20" align="right" class="td_bg"> 职务名称： </td>
+              <td class="td_bg"><input name="organization.odutiesName" type="TEXT" maxlength="50"
+									class="input01 put3 ckTextLength" id="odutiesName" size="24" value="${organization.odutiesName }"/>              </td>
+            </tr>
+            <tr>
+              <td height="20" align="right" class="td_bg">岗位要求： </td>
+              <td class="td_bg"><input name="organization.opostRequirements" type="TEXT" maxlength="50"
+									class="input01 put3 ckTextLength" id="opostRequirements" size="24" value="${organization.opostRequirements}"/>              </td>
+            </tr>
+            <tr>
+              <td height="20" align="right" class="td_bg"> 工作地点： </td>
+              <td  class="td_bg"><input name="organization.ojobLocation" type="TEXT" maxlength="50"
+									class="input01 put3 ckTextLength" id="ojobLocation" size="24" value="${organization.ojobLocation}"/>              </td>
+            </tr>   -->
+                        <tr>
+              <td height="20" align="right" class="td_bg">机构职责： </td>
+              <td  class="td_bg"><textarea style="height: 100px; width: 500px;" class="input01 ckTextLength" id="desc"  maxlength="250"
+									name="organization.organizationDesc" >${organization.organizationDesc }</textarea></td>
+            </tr>
+            
+            <tr>
+              <td height="20" align="center" class="td_bg">&nbsp;</td>
+              <td height="39" align="left" class="td_bg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="ACT_btn" id="tosave"
+									value=" 保存 " />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="button" class="ACT_btn" id="goback"
+									value=" 取消 " />
+            </tr>
+          
+          </table>
+          <s:token></s:token>
+        </div>
+      </td>
+  </tr>
+</table>
+</form>
+<div style="display:none;width: 210px; height: 240px;position: absolute;top: 24.5%;left: 20%;z-index: 4 ; background-color:#e1ecfc; filter : Alpha(opacity=100);"
+				id="jqModel"></div>
+<input type="text" style="display: none;" id="treeid" />
+<input type="text" style="display: none;" id="parentid" />
+<input type="text" style="display: none;" id="treename" />
+<input type="text" style="display: none;" id="parentname" />
+<input type="text" style="display: none;" id="unitsID" />
+
+<iframe name="hidden" frameborder="0" noresize="noresize" border="0" framespacing="0" height="0"></iframe>
+	<div id="jqmWindow2" class="jqmWindow"
+		style="width: 95%; height: 400px; absolute; display: none; left: 1%; top: 1%; background: #eff">
+		<div style="background: #efg; margin-right: 500px;">
+			<input style="display: none;" id="myform" />
+			<input style="display: none;" id="parm" />
+		</div>
+		<iframe name="ifr" id="ifr" width="100%" height="380px"
+			frameborder="0"></iframe>
+		<div align="center">
+			<input type="button" class="input-button" id="isSubmit" value=" 确定 "
+				style="cursor: hand" />
+			<input type="button" class="input-button" id="isBack" value=" 关闭 "
+				style="cursor: hand" />
+		</div>
+	</div>
+  </body>
+  
+<script>
+$(".jqmWindow").jqm({
+       modal: true,// 限制输入（鼠标点击，按键）的对话  
+       overlay: 20 // 遮罩程度%  
+   }).jqmAddClose('.close')// 添加触发关闭的selector  
+//		.jqDrag('.drag');// 添加拖拽的selector
+	var basePath="<%=basePath%>";
+	var companyID='${company.companyID}'; 
+	var companyName='${company.companyName}';
+	var parentID;
+	var treeid = null;
+	var treename;
+	var parentid;
+	var parentname;
+	var organizationid;
+	var tree;
+	var me = document.getElementById("oraganizationName").value;
+    var outme = document.getElementById("organizationName").value;
+	tree = new dhtmlXTreeObject("jqModel", "100%", "100%", 0);
+	tree.enableDragAndDrop(false);
+	tree.enableHighlighting(1);
+	tree.enableCheckBoxes(0);
+	tree.enableThreeStateCheckboxes(false);
+	tree.setSkin(basePath + 'js/tree/dhx_skyblue');
+	tree.setImagePath(basePath + "js/tree/codebase/imgs/");
+	tree.loadXML(basePath + "js/tree/common/tree_b.xml");
+	tree.insertNewChild("0", companyID, companyName, 0, 0, 0, 0);
+	$.ajaxSetup({async:false});
+	tree.setOnClickHandler(function() {
+		getDatas();
+	});
+	tree.setOnDblClickHandler(function(){
+					$("#PID").attr("value",treeid);
+					$("#oraganizationName").attr("value",treename);
+					$("#jqModel").hide();
+	
+	});
+function getPID() {
+    	if(document.getElementById("jqModel").style.display=="none"){
+    		$("img","#upper").attr("src","<%=basePath %>images/down.jpg");
+			$("#jqModel").show();
+		}else{
+			$("img","#upper").attr("src","<%=basePath %>images/up.jpg");
+			$("#jqModel").hide();
+		}
+}
+function getDatas(){
+	treeid = tree.getSelectedItemId();
+	treename = tree.getItemText(treeid);
+	parentid = tree.getParentId(treeid);
+	parentname = tree.getItemText(parentid);
+	tree.deleteChildItems(treeid);
+	var url1 = basePath + "ea/organization/sajax_ea_getOrganizationList.jspa?organizationID="+treeid+"&date="+new Date().toLocaleString();
+		$.ajax({
+			url: encodeURI(url1),
+			type: "get",
+			async: true,
+			dataType: "json",
+			success: function cbf(data){
+					var member = eval("(" + data + ")");
+					var nologin = member.nologin;
+                  	if(nologin){
+                  		document.location.href =basePath+"page/ea/not_login.jsp";
+                    }
+					var organizationList = member.organizationList;
+					if (null == organizationList) {
+						return;
+					}
+					for (var i = 0; i < organizationList.length; i++) {
+						if( outme != "" && outme==organizationList[i].organizationName){
+							continue;	
+						}
+						
+						tree.insertNewChild(treeid,
+								organizationList[i].organizationID,
+								organizationList[i].organizationName,
+								0, 0, 0, 0);
+
+					}
+			},
+			error: function cbf(data){
+			alert("数据获取失败！")
+			}
+		});
+}
+</script>
+</html>

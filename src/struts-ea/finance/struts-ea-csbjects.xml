@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	 <package strict-method-invocation="false" name="csbjects-token" namespace="/ea/csbjects"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.finance.action.CSubjectsAction" method="{1}">
+		<result name="to_set">/page/ea/main/ccode/ccodes_edit.jsp</result>
+            <result name="csbjectslist">/page/ea/main/finance/production/csubejsts/csubejst_list.jsp</result>
+            <result name="invalid.token" type="redirectAction">ea_getCsubejstsListAll</result>
+		</action>
+	</package> 
+	<package strict-method-invocation="false" name="csbjects-ntoken" namespace="/ea/csbjects"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.finance.action.CSubjectsAction" method="{1}">
+		    <result name="csbjects_manager">/page/ea/main/ccode/ccodes_manger.jsp</result>
+			<result name="to_set">/page/ea/main/finance/production/csubejsts/csubejst_list.jsp</result>
+			<result name="csbjectslist">/page/ea/main/finance/production/csubejsts/csubejst_list.jsp</result>
+			<result name="balancelist">/page/ea/main/finance/invoicing/voucher/balance.jsp</result>
+			<result name="topage">/page/ea/main/finance/invoicing/voucher/AccountBalance_search.jsp</result>
+			<result name="tocpage">/page/ea/main/finance/invoicing/voucher/CAccountBalance_search.jsp</result>
+			<result name="report">/page/ea/main/finance/invoicing/voucher/AccountBalance_list.jsp</result>
+			<result name="toAdd">/page/ea/main/finance/production/csubejsts/csubejst_add.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="csbjects-sajax" namespace="/ea/csbjects" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.finance.action.CSubjectsAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+</struts>

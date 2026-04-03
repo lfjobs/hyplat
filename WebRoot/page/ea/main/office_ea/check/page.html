@@ -1,0 +1,50 @@
+<style type="text/css">
+  .papeborder{border:1px solid #dddddd;border-top-color:#7c7c7c;width:25px; height:12px;vertical-align:middle;}
+  .txt_00{ font-size:12px; color:#ff0000;vertical-align:middle;}
+  .txt_01{font-size:14px; color:#333;text-decoration:none;vertical-align:middle;}
+  img.link_01 {vertical-align:middle}
+</style>
+<script type="text/javascript">
+	var pageNumber = 1;
+	function goPageNumber() {
+		var pageNumber = $("#pageNumber").attr("value");
+		document.location.href = "${base}/${actionPath}search=${search}&type=${type}&staffID=${staffID}&telcodetype=${telcodetype}&pageSize=${pageSize}&pageNumber="
+				+ pageNumber;
+	}
+	function isNumber() {
+		if (isNaN($("#pageNumber").attr("value"))) {
+			alert('请输入数字！');
+			$("#pageNumber").attr("value", 1);
+		}
+	}
+</script>
+<div style="border:#c5cec9 1px solid;margin:1px 0 0 0px;" align="center">
+		<table>
+			<tr>
+	          <td align="center" bgcolor="f0f0f0">
+	          		<span class="txt_01">共</span><span class="txt_00">&nbsp;${pageForm.pageCount}&nbsp;</span><span class="txt_01">页</span>&nbsp;&nbsp;&nbsp;
+	          		|&nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_01">共</span><span class="txt_00">&nbsp;${pageForm.recordCount}&nbsp;</span><span class="txt_01">条</span>&nbsp;&nbsp;&nbsp; 
+	          		|&nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_01">第</span>&nbsp;<span class="txt_00">${pageForm.pageNumber}&nbsp;</span><span class="txt_01">页</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	          		<span class="txt_01">[</span>
+	          
+	          <#if pageForm.pageNumber??>
+	          <a href="${base}/${actionPath}search=${search}&type=${type}&staffID=${staffID}&telcodetype=${telcodetype}&pageSize=${pageSize}&pageNumber=1" ><img border="0" class="link_01" src="${base}/js/jqModal/css/images_blue/Home01.gif"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	          <a href="${base}/${actionPath}search=${search}&type=${type}&staffID=${staffID}&telcodetype=${telcodetype}&pageSize=${pageSize}&pageNumber=${pageForm.pageNumber-1}"><img border="0" class="link_01" src="${base}/js/jqModal/css/images_blue/pre01.gif"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				      
+	          <#else>
+	          <span><img border="0" class="link_01" src="${base}/js/jqModal/css/images_blue/Home02.gif"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				      
+	          <span><img border="0" class="link_01" src="${base}/js/jqModal/css/images_blue/pre02.gif"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				      
+	          </#if>
+
+				<input name="pageForm.pageNumber" id="pageNumber" size="4" value="${pageForm.pageNumber}" onblur="isNumber()" class="papeborder" />
+				<a href="#" onmouseup="javascript:goPageNumber();" id="goPageNumber" ><img border="0" class="link_01" src="${base}/js/jqModal/css/images_blue/go01.gif"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					<#if pageForm.pageNumber < pageForm.pageCount >
+					<a href="${base}/${actionPath}search=${search}&type=${type}&staffID=${staffID}&telcodetype=${telcodetype}&pageSize=${pageSize}&pageNumber=${pageForm.pageNumber + 1}"><img border="0" class="link_01" src="${base}/js/jqModal/css/images_blue/next01.gif"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<#else>
+					<span ><img border="0" class="link_01" src="${base}/js/jqModal/css/images_blue/next02.gif"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</#if>
+					<span class="txt_01">]</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			  <span class="txt_01">每页显示</span><span class="txt_00">${pageForm.pageSize}</span><span class="txt_01">条</span></td>
+          </tr>
+		</table>
+        </div>

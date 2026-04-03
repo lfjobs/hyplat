@@ -1,0 +1,144 @@
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+header {
+    background-color: #f74c32;
+}
+header ul {
+    padding: 0 0.5rem;
+}
+header ul li {
+    float: left;
+    height: 3.4rem;
+    line-height: 3.4rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+header ul li:first-of-type {
+    width: 20%;
+}
+header ul li:first-of-type img {
+    width: 0.45rem;
+}
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center;
+}
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: 0.6rem;
+}
+header ul li:nth-of-type(3) img {
+    width: 1.5rem;
+}
+.content > ul li {
+    padding: 0 0.5rem;
+}
+.content > ul li .div-img {
+    float: left;
+}
+.content > ul li .div-img img {
+    width: 3.5rem;
+    margin: 0.5rem 0.6rem 0.5rem 0;
+}
+.content > ul li .div-right {
+    border-bottom: 0.025rem solid #efefef;
+}
+.content > ul li .div-right .div-left {
+    float: left;
+    padding-top: 0.5rem;
+}
+.content > ul li .div-right .div-left p:nth-of-type(1) {
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: #252525;
+}
+.content > ul li .div-right .div-left p:nth-of-type(2) {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 0.8rem;
+    color: #a8a8a8;
+}
+.content > ul li .div-right .right {
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1rem;
+    color: #a8a8a8;
+}
+.content .content-bottom {
+    height: 3rem;
+}
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+}
+.footer ul li {
+    border-top: 0.075rem solid #ebebeb;
+    padding-top: 0.55rem;
+    width: 20%;
+    float: left;
+}
+.footer ul li div {
+    height: 2.6665rem;
+    line-height: 2.6665rem;
+    display: flex;
+    align-items: center;
+}
+.footer ul li div img {
+    /*width: 33%;*/
+    width: 1.7rem;
+    margin: 0 auto;
+}
+.footer ul li p {
+    text-align: center;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    font-size: 0.99rem;
+    color: #222222;
+}
+.footer ul li.active p {
+    color: #f64d35;
+}
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+/* Firefox 4-18 */
+:-moz-placeholder {
+    color: #ccc;
+}
+/* Firefox 19-50 */
+::-moz-placeholder {
+    color: #ccc;
+}
+/* - Internet Explorer 10?C11
+   - Internet Explorer Mobile 10-11 */
+:-ms-input-placeholder {
+    color: #ccc !important;
+}
+/* Edge (also supports ::-webkit-input-placeholder) */
+::-ms-input-placeholder {
+    color: #ccc;
+}
+/* CSS Working Draft */
+::placeholder {
+    color: #ccc;
+}
+
+@media (min-width: 960px) {
+    html{
+        margin: 0 20% 0 20%;
+    }
+    .footer ul li {
+        border-top: 0.075rem solid #ebebeb;
+        padding-top: 0.55rem;
+        width: 12%;
+        float: left;
+    }
+}

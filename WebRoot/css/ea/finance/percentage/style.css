@@ -1,0 +1,333 @@
+*{
+    margin: 0;
+    padding: 0 ;
+}
+html{
+    min-width: 1366px;
+    min-height: 768px;
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-family:"Microsoft Yahei";
+    color: #222;
+    background-color: #fff;
+}
+ul,li,ol{list-style: none;}
+input,button,img{outline: none;cursor: pointer;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+a,a:link,a:focus,a:active,a:hover{outline: none;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
+section{
+    width: 1286px;
+    margin: 0 auto;
+}
+article{
+    width: 100%;
+    height: 100%;
+}
+/*业务佣金设置*/
+.commission header{
+    line-height: 100px;
+    font-size: 30px;
+    color: #15428b;
+    text-align: center;
+    letter-spacing: 10px;
+}
+.commission figure .head{
+    overflow: hidden;
+}
+.commission figure .head input{
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    background-color: #e4f1fa;
+    border: none;
+    float: right;
+    margin-left: 5px;
+}
+.commission figure .grid-1{
+    overflow: hidden;
+    margin: 30px 0;
+}
+.commission figure .grid-1 .left{
+    overflow: hidden;
+}
+.commission figure .grid-1 .left li{
+    overflow: hidden;
+    float: left;
+}
+.commission figure .grid-1 .left li p{
+    width: 78px;
+    line-height: 32px;
+    float: left;
+}
+.commission figure .grid-1 .left li input{
+    width: 118px;
+    height: 30px;
+    border: 1px solid #dcdcdc;
+}
+.commission figure .tab{
+    height: 320px;
+    margin: 25px 0 0 0;
+    font-size: 15px;
+}
+.commission figure .tab .tit{
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+.commission figure .tab thead th{
+    line-height: 60px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #e4f1fa;
+}
+.commission figure .tab-box{
+    max-height: 350px;
+    border-bottom: 1px solid #ddd;
+    overflow: auto;
+}
+.tab:last-of-type .tab-box{
+    max-height: 350px;
+    border-bottom: 1px solid #ddd;
+    overflow: visible;
+}
+.commission figure .tab-box table{
+    border-collapse: collapse;
+}
+.commission figure .tab-box td{
+    height: 58px;
+}
+.commission figure .tab-box table tr{
+    border: 1px solid #ddd;
+}
+.commission figure .tab-box table tr:first-child{
+    border-top: none;
+}
+.commission figure .tab-box table tr:last-child{
+    border-bottom: none;
+}
+.commission figure .tab-box input{
+    width: 84px;
+    height: 32px;
+    border: 1px solid #ddd;
+    text-align: center;
+    margin-right: 3px;
+    font-size: 15px;
+}
+.commission figure .tab-box span{
+    font-weight: 600;
+    padding: 0 2px;
+    letter-spacing: 2px;
+}
+.commission figure .tab-box .tr-1{
+    width: 122px;
+    text-indent: 30px;
+}
+.commission figure .tab-box .tr-2{
+    width: 89px;
+}
+.commission figure .tab-box .tr-3{
+    width: 89px;
+}
+.commission figure .tab-box .tr-4{
+    width: 89px;
+}
+.commission figure .tab-box .tr-5{
+    width: 89px;
+}
+.commission figure .tab-box .tr-6{
+    width: 89px;
+}
+.commission figure .tab-box .tr-7{
+    width: 89px;
+}
+.commission figure .tab-box .tr-8{
+    width: 89px;
+}
+.commission figure .tab-box .tr-9{
+    width: 89px;
+}
+.commission figure .tab-box .sign{
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 2px;
+    letter-spacing: 5px;
+}
+.commission figure .tab-box td:last-child{
+    text-align: left;
+}
+.commission figure .footer{
+    line-height: 25px;
+    font-size: 16px;
+    overflow: hidden;
+    margin-top: 50px;
+}
+.commission figure .footer li{
+    float: left;
+    margin-right: 30px;
+}
+.commission figure .footer li input{
+    line-height: 25px;
+    font-size: 16px;
+    letter-spacing: 5px;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+.commission figure .footer li:last-child input{
+    width: 275px;
+    letter-spacing: 2px;
+}
+/*业务佣金设置 end*/
+
+/*展示价格百分比设置*/
+.percentum{
+    width: 1280px;
+}
+.percentum figure .tab{
+    height: 368px;
+    overflow: hidden;
+}
+.percentum figure .tab:last-of-type{
+    height: 130px;
+    overflow: visible;
+}
+.percentum figure .tab_{
+    max-height: 380px;
+    border: 1px solid #ddd;
+}
+.percentum .tab table{
+    border-collapse: collapse;
+}
+.percentum .tab tr{
+    height: 60px;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.percentum .tab tr:last-child{
+    border-bottom: none;
+}
+.percentum .tab tr td{
+    text-align: center;
+}
+.percentum .tab tr .td-1{
+    width: 230px;
+    background-color: #e4f1fa;
+}
+.percentum .tab tr .td-2{
+    width: 24px;
+    font-size: 24px;
+    color: #15428b;
+}
+.percentum .tab tr .td-3{
+    width: 130px;
+}
+.percentum .tab tr .td-3 input{
+    width: 95px;
+    height: 33px;
+    font-size: 15px;
+    margin-left: 15px;
+    text-align: center;
+}
+.percentum .tab tr .td-4{
+    width: 37px;
+    font-size: 15px;
+}
+.percentum .tab tr .td-5{
+    width: 120px;
+    font-size: 24px;
+    color: #15428b;
+}
+.percentum .tab tr .td-6{
+    width: 68px;
+}
+.percentum .tab tr .td-7{
+    width: 158px;
+    font-size: 24px;
+    color: #15428b;
+}
+.percentum .tab tr .td-8{
+    width: 148px;
+    text-align: left;
+    text-indent: 10px;
+}
+.alert_{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+.alert{
+    width: 465px;
+    height: 240px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e4f1fa;
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    margin: -120px 0 0 -233px;
+    text-align: center;
+
+}
+.alert h3{
+    line-height: 92px;
+    font-size: 30PX;
+    font-weight: 500;
+    color: #15428b;
+}
+.alert p{
+    line-height: 44px;
+    font-size: 20px;
+}
+.alert .btn{
+    overflow: hidden;
+}
+.alert .btn input{
+    width: 122px;
+    height: 48px;
+    border: none;
+    font-size: 20px;
+    border-radius: 3px;
+    background-color: #fff;
+    margin: 20px 30px 0 30px;
+}
+.tab_div{
+    position: relative;
+    height:30px;
+    line-height: 30px;
+}
+.tab_div p{
+    font-size: 18px;
+}
+.tab_div div{
+    position: absolute;
+    top:4px;
+    left:106px;
+}
+.input_top{
+    position: relative;
+}
+.input_top input[type='button']{
+    position: absolute;
+    top:0px;
+    left:150px;
+}
+/*展示价格百分比设置 end*/

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.tao">
+	<class name="Cate" table="tao_cate">
+		<id length="50" name="cateKey">
+			<column length="50" name="cateKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="cateID">
+			<column length="50" name="cateID" not-null="true" ><comment></comment></column>
+		</property>
+		<property name="catename">
+			<column length="50" name="catename" ><comment>类目名称</comment></column>
+		</property>
+		 <property name="parentId">
+        	<column name="parentId" length="50" ><comment>父ID</comment></column>
+        </property>
+         <property name="orders">
+        	<column name="orders" length="10" ><comment>排序</comment></column>
+        </property>
+         <property name="type">
+        	<column name="type" length="20" ><comment>类型</comment></column>
+        </property>
+          <property name="companyId">
+        	<column name="COMPANYID" length="50" ><comment>公司ID公司表业务主键</comment></column>
+        </property>
+        <property name="status">
+        	<column name="STATUS" length="20" ><comment>00：可用   01 ： 不可用</comment></column>
+        </property>
+        <property name="hierarchy">
+        	<column name="HIERARCHY" length="20" ><comment>层次结构</comment></column>
+        </property>	
+	</class>
+</hibernate-mapping>

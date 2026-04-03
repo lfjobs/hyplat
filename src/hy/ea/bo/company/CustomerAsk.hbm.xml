@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="CustomerAsk" table="dtCustomerAsk"> 
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="askID">
+			<column length="50" name="askID" not-null="true" />
+		</property>
+		<property name="staffID">
+        	<column name="staffID" length="250" />
+        </property>
+		 <property name="customerName">
+        	<column name="customerName" length="250" />
+        </property>
+        	<property name="linkman">
+        	<column name="linkman" length="250"/>
+        </property>
+        <property name="phone">
+        	<column name="phone" length="256"/>
+        </property>
+		<property name="sax">
+			<column length="250" name="sax"/>
+		</property>
+		<property name="qq">
+			<column length="250" name="qq"/>
+		</property>
+		<property name="wxNumber">
+			<column length="250" name="wxNumber"/>
+		</property>
+		<property name="content">
+			<column length="250" name="content"/>
+		</property>
+		<property name="createTime">
+			<column length="250" name="createTime"/>
+		</property>
+		<property name="askType">
+			<column length="250" name="askType"/>
+		</property>
+		<property name="answerTime">
+			<column length="250" name="answerTime"/>
+		</property>
+	</class>
+</hibernate-mapping>

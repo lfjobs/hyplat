@@ -1,0 +1,186 @@
+#rrq {
+	display: none;
+	line-height: normal;
+}
+
+.rrq-main {
+	border: 1px solid #9ed5ff;
+	background-color: #ffffff;
+	width: 118px;
+	font-size: 12px;
+	padding-bottom: 11px;
+}
+
+.rrq-banner {
+	height: 40px;
+	background-color: #37aaff;
+	position: relative;
+	cursor: pointer;
+}
+
+.rrq-title {
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	padding: 6px 5px;
+	margin: 0px;
+	margin-left: 5px;
+	width: 80px;
+}
+
+.rrq-logo {
+	position: absolute;
+	left: 90px;
+	bottom: 0px;
+	margin: 0px;
+	width: 48px;
+	height: 48px;
+}
+
+.rrq-arrow {
+	display: none;
+	background-color: #37aaff;
+	color: #ffffff;
+	font-size: 20px;
+	font-family: Simsun;
+	width: 20px;
+	height: 8px;
+	line-height: 18px;
+	position: absolute;
+	bottom: -8px;
+	left: 50px;
+}
+
+.rrq-content {
+	padding-left: 0px;
+	margin: 6px 0px 0px 0px;
+	list-style-type: none;
+}
+
+.rrq-content li {
+	position: relative;
+}
+
+.rrq-ques-list {
+	padding: 4px 5px 4px 8px;
+	position: relative;
+}
+
+.rrq-ques {
+	color: #444444;
+	line-height: 18px;
+	cursor: pointer;
+}
+
+.rrq-important {
+	color: #ff4400;
+}
+
+.rrq-ques-open .rrq-ques-list {
+	background-color: #ebf6ff;
+	padding: 3px 5px 3px 9px;
+	width: 105px;
+	left: -1px;
+	z-index: 2;
+	box-shadow: 3px 3px 3px #CCCCCC;
+	border: solid 1px;
+	border-left: none;
+}
+
+.rrq-detail {
+	display: none;
+	color: #5E5E5E;
+	background-color: #ebf6ff;
+	position: absolute;
+	right: 118px;
+	top: 0px;
+	margin: 0px;
+	padding: 15px 25px;
+	line-height: 180%;
+	z-index: 1;
+	border: solid 1px;
+	box-shadow: 3px 3px 3px #CCCCCC;
+}
+
+.rrq-answer {
+	max-height: 280px;
+	width: 560px;
+	overflow: auto;
+}
+
+.rrq-detail .list-remark {
+	list-style-image:
+		url(http://img02.taobaocdn.com/tps/i2/T1kyO5XaliXXXXXXXX-11-15.png)
+}
+
+.rrq-detail p {
+	margin: 0px;
+}
+
+.rrq-detail img {
+	max-width: 486px;
+}
+
+.rrq-detail a {
+	color: #5382AA;
+	text-decoration: none;
+}
+
+.rrq-detail a:hover {
+	text-decoration: underline;
+}
+
+.rrq-ques-open .rrq-ques {
+	color: #000000;
+}
+
+.rrq-ques-open .rrq-important {
+	color: #ff4400;
+}
+
+.rrq-ques-open .rrq-detail {
+	display: block;
+}
+
+.rrq-detail-close {
+	background:
+		url(http://gtms03.alicdn.com/tps/i3/TB1kC90GVXXXXaRXXXXZBWn.VXX-12-12.png)
+		no-repeat 3px 3px;
+	cursor: pointer;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	right: 5px;
+	top: 17px;
+}
+
+.rrq-feedback {
+	text-align: right;
+	padding-top: 10px;
+}
+
+.rrq-good,.rrq-bad {
+	margin-left: 10px;
+	padding-left: 15px;
+	cursor: pointer;
+	background:
+		url(http://img01.taobaocdn.com/tps/i1/T17xS5XXRkXXXXXXXX-13-39.png)
+		no-repeat;
+}
+
+.rrq-bad {
+	background-position: 0px -26px;
+}
+
+.rrq-more {
+	background-color: #37aaff;
+	width: 120px;
+	line-height: 12px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	margin-top: 4px;
+	text-align: center;
+	padding: 14px 0px;
+	cursor: pointer;
+}

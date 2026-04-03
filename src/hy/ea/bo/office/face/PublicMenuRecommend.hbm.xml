@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office.face">
+	<class name="PublicMenuRecommend" table="DT_PUBLIC_MENU_RECOMMEND">
+		<id length="50" name="recommendKey">
+			<column length="50" name="RECOMMEND_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="recommendId">
+			<column length="50" name="RECOMMEND_ID" />
+		</property>
+		 <property name="menuId">
+        	<column name="MENU_ID" length="50"/>
+        </property>
+         <property name="staffId">
+        	<column name="STAFF_ID" length="50"/>
+        </property>
+        <property name="updateTime">
+			<column length="10" name="UPDATE_TIME" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,334 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+.sec-hide {
+    background: #f9f9f9;
+    padding-left: 0.5rem;
+    height: 120px;
+}
+
+.content .sec-nav ul li {
+    text-align: center;
+    float: left;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: #958383;
+    padding: 0.1rem 0.4rem 0.1rem 0.3rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.sec-list {
+    z-index: 99;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.data-title {
+    height: 30px;
+}
+
+.div-sec-data ul {
+    z-index: 9;
+    left: 0;
+    background-color: #fff;
+    height: 30px;
+    margin: 10px 0;
+}
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgb(51 48 48 / 40%);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+    height: 35%;
+    margin-top: 700px;
+}
+
+.modal-footer {
+    display: flex;
+    color: #0a84ff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 20px;
+    border-top: 1px solid #ccc;
+    font-size: 17px;
+}
+
+/* 按钮样式 */
+.btn-cancel, .btn-confirm {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    border-radius: 15px;
+    padding: 10px 12px;
+    color: white;
+    background-color: #f74c32;
+    text-align: center;
+    font-size: 15px;
+}
+
+.but {
+    padding: 5px 12px;
+}
+
+.center-items {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.operate {
+    display: flex;
+    gap: 0.9rem;
+    padding-top: 40px;
+}
+
+.scrollable {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0; /* Add a border for better visibility */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.scrollable::-webkit-scrollbar {
+    height: 3px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border: none;
+    /*border-radius: 3px;*/
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Adjust the width of each column */
+.data-ul li:nth-child(1) {
+    flex: 0 0 11%;
+}
+
+
+
+.input-box {
+    align-items: center;
+    border-radius: 15px;
+    padding: 8px 12px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: #c9c0c0;
+}
+
+.green-color {
+    color: #77bf22;;
+}
+
+.input-1 {
+    display: block;
+    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.input-box2 {
+    padding: 8px 12px;
+    padding-left: 25px;
+    font-size: 15px;
+    color: #a29595;
+}
+
+/* 设置 placeholder 文字的颜色为紫色 */
+.input-1::placeholder {
+    color: #656265;
+    text-align: center; /* 如果需要 placeholder 文字居中 */
+}
+.data-title1 {
+    height: 5px;
+}
+
+.select-container {
+    margin: 8px auto;
+    width: 100%;
+}
+
+.select-container select {
+    width: 100%;
+    border-radius: 200px;
+    padding: 10px;
+    color: #9494a3;
+    border: 2px solid #ccc;
+    /* border-radius: 4px; */
+    /* box-sizing: border-box; */
+    /* -webkit-appearance: none; */
+    -moz-appearance: none;
+    /* appearance: none; */
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwaDI0djI0SDBoMTR2MTRINDB2MTRIMHoiLz4KPC9zdmc+) right center / 16px no-repeat white;
+}
+
+.select-container select:focus {
+    outline: none;
+    color: #9494a3;
+}
+
+.select-container select option {
+    padding: 10px;
+    background-color: white;
+    display: block; /* 确保每个选项占据一行 */
+}
+
+.select-container select option:checked {
+    background-color: #b7b8bb;
+}
+
+.input-box1 input[type="text"] {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #bab2b2;
+    border-radius: 15px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: white;
+    color: #121212;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input-box1 {
+    align-items: center;
+    border-radius: 15px;
+    padding: 8px 12px;
+    border-width: 3px;
+}
+
+.input-box1 input[type="text"]:focus {
+    border-color: #cacdd0;
+    outline: none;
+}
+
+
+
+.save_btn {
+    display: block;
+    width: 70%;
+    margin: 16px auto;
+    padding: 8px 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.1s;
+    background-color: rgb(230, 78, 64);
+    color: white;
+    border-radius: 100px;
+}
+.category-li {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 40px; /* 固定高度 */
+    font-size: 16px;
+    border-bottom: 1px solid #ccc; /* 添加底部边框 */
+}
+
+.category-li:last-child {
+    border-bottom: none; /* 最后一个元素去掉下划线 */
+}
+
+.data-div3 {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* border-radius: inherit; */
+    border-radius: 20px;
+}
+.data-ul {
+    display: flex; /* 启用 Flexbox 布局 */
+    justify-content: space-between; /* 子元素均匀分布 */
+    align-items: center; /* 垂直居中对齐 */
+    padding: 0; /* 移除默认的内边距 */
+    margin: 0; /* 移除默认的外边距 */
+    list-style: none; /* 移除列表样式 */
+    background-color: #f9f9f9; /* 背景颜色 */
+    height: 40px; /* 设置高度 */
+}
+
+.data-ul li {
+    flex: 1; /* 每个子项占据相等的空间 */
+    text-align: center; /* 文本居中 */
+    padding: 5px; /* 内边距 */
+}
+input[disabled] {
+    color: #666;
+}
+
+@media screen and (max-width: 450px) {
+
+}

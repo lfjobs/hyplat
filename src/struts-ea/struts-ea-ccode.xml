@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<package strict-method-invocation="false"  name="ccode-token" namespace="/ea/ccode"  extends="struts-default">
+		<action name="t_ea_*" class="hy.ea.action.CCodeAction" method="{1}">
+			<result name="ccode_manager">/page/ea/main/ccode/ccodes_edit.jsp</result>
+			<result name="codelist">/page/ea/main/ccode/ccodes_list.jsp</result>
+			<result name="otherList">/page/ea/main/ccode/other_list.jsp</result>
+			<result name="basic_manager">/page/ea/main/navigation/basic/base_menu.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false"  name="ccode-ntoken" namespace="/ea/ccode"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.action.CCodeAction" method="{1}">
+			<result name="sortchildren">/page/ea/main/ccode/ccodes_sortchildren.jsp</result>
+			<result name="ccode_manager">/page/ea/main/ccode/ccodes_manger.jsp</result>
+			<result name="basic_manager">/page/ea/main/navigation/basic/base_menu.jsp</result>
+			<result name="to_set">/page/ea/main/ccode/ccodes_edit.jsp</result>
+			<result name="otherList">/page/ea/main/ccode/other_list.jsp</result>
+			<result name="codelist">/page/ea/main/ccode/ccodes_list.jsp</result>
+			<result name="ccodes_five">/page/ea/main/ccode/ccodes_five.jsp</result>
+		</action>
+	</package>
+	<!--接口管理模块始-->
+	<package strict-method-invocation="false" name="ccode-ntoken-pm" namespace="/ea/ccode1"  extends="struts-default">
+		<action name="ea_pm_*" class="hy.ea.action.PManageAction" method="{1}">
+			<!--项目管理-->
+			<result name="portmanage_project">/page/ea/main/portmanage/portmanage_project.jsp</result>
+			<result name="failed" >/page/ea/not_login.jsp</result>
+			<!--api文档管理-->
+			<result name="portmanage_documents">/page/ea/main/portmanage/portmanage_documents.jsp</result>
+			<!--接口及参数管理-->
+			<result name="portmanage_port">/page/ea/main/portmanage/portmanage_port.jsp</result>
+			<result name="portUpdate">/page/ea/main/portmanage/portmanage_portUpdate.jsp</result>
+		</action>
+	</package>
+
+	<package strict-method-invocation="false"  name="ccode-ntoken-pm-sajax" namespace="/ea/ccode1"  extends="json-default">
+		<action name="sajax_pm_*" class="hy.ea.action.PManageAction" method="{1}">
+			<!-- 返回类型为json 在json-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+
+		</action>
+	</package>
+	<!--接口管理模块终-->
+
+	<package strict-method-invocation="false"  name="ccode-sajax" namespace="/ea/ccode" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.action.CCodeAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+
+		</action>
+	</package>
+</struts>

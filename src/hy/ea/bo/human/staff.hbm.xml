@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human">
+    <class name="Staff" table="dt_hr_Staff">
+        <id name="staffKey" length="50">
+            <column name="staffKey" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="staffID">
+            <column name="staffID" length="50" not-null="true" />
+        </property>
+        <property name="groupCompanySn">
+            <column name="groupCompanySn" length="50"/>
+        </property>
+        <property name="staffStatus">
+            <column name="staffStatus" length="2"/>
+        </property>
+        <property name="status">
+            <column name="status" length="50"/>
+        </property>
+        <property name="staffCode">
+            <column name="staffCode" length="250"/>
+        </property>
+        <property name="recordCode">
+            <column name="recordCode" length="250"/>
+        </property>
+        <property name="vipno">
+            <column name="vipno" length="10"/>
+        </property>
+        <property name="chipid">
+            <column name="chipid" length="250"/>
+        </property>
+        <property name="staffName">
+            <column name="staffName" length="250"/>
+        </property>
+        <property name="realname">
+            <column name="realname" length="250"/>
+        </property>
+        <property name="editDate">
+            <column name="editDate"/>
+        </property>
+        <property name="usedNmae">
+            <column name="usedNmae" length="250"/>
+        </property>
+        <property name="staffsm">
+            <column name="staffsm" length="250"/>
+        </property>
+        <property name="staffupf">
+            <column name="staffupf" length="250"></column>
+        </property>
+        <property name="sex">
+            <column name="sex" length="50"/>
+        </property>
+        <property name="nativePlace">
+            <column name="nativePlace" length="250"/>
+        </property>
+        <property name="nationality">
+            <column name="nationality" length="250"/>
+        </property>
+        <property name="staffAddress">
+            <column name="staffAddress" length="250"/>
+        </property>
+        <property name="nation">
+            <column name="nation" length="250"/>
+        </property>
+        <property name="staffIdentityCard">
+            <column name="staffIdentityCard" length="250"/>
+        </property>
+        <property name="province">
+            <column name="province" length="250"/>
+        </property>
+        <property name="city">
+            <column name="city" length="250"/>
+        </property>
+        <property name="passportNum">
+            <column name="passportNum" length="250"/>
+        </property>
+        <property name="address">
+            <column name="address" length="250"/>
+        </property>
+        <property name="referenceOrganization">
+            <column name="referenceOrganization" length="250"/>
+        </property>
+        <property name="reference">
+            <column name="reference" length="250"/>
+        </property>
+        <property name="referenceCode">
+            <column name="referenceCode" length="250"/>
+        </property>
+        <property name="weixin">
+            <column name="weixin" length="50"/>
+        </property>
+        <property name="position">
+            <column name="position" length="50"/>
+        </property>
+        <property name="verifyTime">
+            <column name="verifyTime" length="250"/>
+        </property>
+        <property name="staffDesc">
+            <column name="staffDesc" length="250"/>
+        </property>
+        <property name="birthday">
+            <column name="birthday" length="250"/>
+        </property>
+        <property name="photo">
+            <column name="photo" length="250"/>
+        </property>
+        <property name="politicsStatus">
+            <column name="politicsStatus" length="250"/>
+        </property>
+        <property name="culturalDegree">
+            <column name="culturalDegree" length="250"/>
+        </property>
+        <property name="marriage">
+            <column name="marriage" length="50"/>
+        </property>
+        <property name="health">
+            <column name="health" length="250"/>
+        </property>
+        <property name="bankNum">
+            <column name="bankNum" length="250"/>
+        </property>
+        <property name="userName">
+            <column name="userName" length="50"/>
+        </property>
+        <property name="password">
+            <column name="password" length="50"/>
+        </property>
+        <property name="staus">
+            <column name="staus" length="50"/>
+        </property>
+        <property name="price">
+            <column name="price" length="50"/>
+        </property>
+        <property name="source">
+            <column name="source" length="50"/>
+        </property>
+        <property name="activityId">
+            <column name="activityId" length="50"/>
+        </property>
+        <property name="entryPersonnel">
+            <column length="250" name="entryPersonnel"/>
+        </property>
+        <property name="accountID">
+            <column name="accountID" length="50"/>
+        </property>
+        <property name="accountName">
+            <column length="50" name="accountName"/>
+        </property>
+        <property name="industryType">
+            <column length="50" name="industryType"/>
+        </property>
+        <property name="staffPost">
+            <column length="150" name="staffPost"/>
+        </property>
+        <property name="localAreaValue">
+            <column length="150" name="localAreaValue"/>
+        </property>
+        <property name="educationValue">
+            <column length="150" name="educationValue"/>
+        </property>
+        <property name="whereCompany">
+            <column length="150" name="whereCompany"/>
+        </property>
+        <property name="headimage">
+            <column length="150" name="headimage"/>
+        </property>
+        <property name="photoBack">
+            <column length="150" name="photoBack"/>
+        </property>
+        <property name="provinceAddress">
+            <column length="150" name="provinceAddress"/>
+        </property>
+        <property name="importPerson">
+            <column length="150" name="importPerson"/>
+        </property>
+        <property name="unitCompany">
+            <column length="150" name="unitCompany"/>
+        </property>
+        <property name="photoPositive">
+            <column length="150" name="photoPositive"/>
+        </property>
+        <property name="qrCodePath">
+            <column length="150" name="qrCodePath"/>
+        </property>
+        <property name="sccid">
+            <column length="150" name="sccid"/>
+        </property>
+        <property name="brief">
+            <column length="500" name="brief"/>
+        </property>
+        <property name="facePicture">
+            <column length="500" name="facePicture"/>
+        </property>
+        <property name="workYear">
+            <column length="500" name="workYear"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>

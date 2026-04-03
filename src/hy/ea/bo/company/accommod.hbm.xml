@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="Accommod" table="DT_Accommod">
+		<id length="50" name="accommodKey">
+			<column length="50" name="accommodKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="accommodID">
+			<column length="50" name="accommodID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="hotelName">
+			<column length="250" name="hotelName" />
+		</property>
+		<property name="stars">
+			<column length="250" name="stars" />
+		</property>
+		<property name="roomType">
+			<column length="250" name="roomType" />
+		</property>
+		<property name="roomPrice">
+			<column length="250" name="roomPrice" />
+		</property>
+		<property name="roomDisPrice">
+			<column length="250" name="roomDisPrice" />
+		</property>
+		<property name="roomAgrPrice">
+			<column length="250" name="roomAgrPrice" />
+		</property>
+		<property name="floor">
+			<column length="250" name="floor" />
+		</property>
+		<property name="bedNum">
+			<column length="250" name="bedNum" />
+		</property>
+		<property name="bedOccNum">
+			<column length="250" name="bedOccNum" />
+		</property>
+		<property name="remarks">
+			<column length="250" name="remarks" />
+		</property>
+		<property name="createName">
+			<column length="250" name="createName" />
+		</property>
+		<property name="createDate">
+			<column  length="250" name="createDate" />
+		</property>
+		<property name="updateName">
+			<column length="250" name="updateName" />
+		</property>
+		<property name="updateDate">
+			<column  length="250" name="updateDate" />
+		</property>		
+		
+	</class>
+</hibernate-mapping>

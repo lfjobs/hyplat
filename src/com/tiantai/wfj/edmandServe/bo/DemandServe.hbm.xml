@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.tiantai.wfj.edmandServe.bo.DemandServe" table="DT_DEMAND_SERVE" schema="HYPLAT">
+        <comment>抢单管理</comment>
+        <id name="dskey" type="java.lang.String">
+            <column name="DSKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="dsid"  type="java.lang.String">
+            <column name="DSID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="dscomid"  type="java.lang.String">
+            <column name="DSCOMID" sql-type="varchar2(50)" length="50"><comment>抢单人员公司id</comment></column>
+        </property>
+        <property name="dsddid"  type="java.lang.String">
+            <column name="DSDDID" sql-type="varchar2(50)" length="50"><comment>需求详情id</comment></column>
+        </property>
+        <property name="dscid"  type="java.lang.String">
+            <column name="dscid" sql-type="varchar2(50)" length="50"><comment>关联id (来源不同关联表不同,来源1:抢单主体是个人关联staff 2:抢单主体是企业关联company)</comment></column>
+        </property>
+
+        <property name="dstype" type="java.lang.String">
+            <column name="dstype" sql-type="varchar2(5)" length="50"><comment>dstype</comment></column>
+        </property>
+        <property name="dssccid"  type="java.lang.String">
+            <column name="DSSCCID" sql-type="varchar2(50)" length="50"><comment>抢单人员微分金帐号id</comment></column>
+        </property>
+        <property name="dsdate"  type="java.util.Date">
+            <column name="DSDATE" sql-type="date"><comment>抢单时间</comment></column>
+        </property>
+        <property name="dsstatus"  type="java.lang.String">
+            <column name="DSSTATUS" sql-type="varchar2(5)" length="5"><comment>状态 0：正常 1：通过 2：移除</comment></column>
+        </property>
+        <property name="dsaddress" type="java.lang.String">
+            <column name="DSADDRESS" sql-type="varchar2(100)" length="100"><comment>地址</comment></column>
+        </property>
+        <property name="coordinate" type="java.lang.String">
+            <column name="COORDINATE" sql-type="varchar2(50)" length="50"><comment>地址经纬度</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

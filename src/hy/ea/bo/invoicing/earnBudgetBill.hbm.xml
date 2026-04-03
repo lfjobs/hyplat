@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="EarnBudgetBill" table="dt_inv_ebb">
+		<id length="50" name="ebbKey">
+			<column length="50" name="ebbKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ebbID">
+			<column length="50" name="ebbID" />
+		</property>
+		<property name="groupCompanySn">
+			<column length="50" name="groupCompanySn" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="companyName">
+        	<column name="companyName" length="250"/>
+        </property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="organizationName">
+			<column length="50" name="organizationName"/>
+		</property>
+		<property  name="companyBankNum">
+			<column length="250" name="companyBankNum" />
+		</property>
+		<property  name="pieces">
+			<column length="50" name="pieces" />
+		</property>
+		<property  name="billStatus">
+			<column length="50" name="billStatus" />
+		</property>
+		<property  name="cstaffID">
+			<column length="50" name="cstaffID" />
+		</property>
+		<property  name="cstaffName">
+			<column length="250" name="cstaffName" />
+		</property>
+		<property  name="cstaffRelationship">
+			<column length="50" name="cstaffRelationship" />
+		</property>
+		<property  name="userAccountNum">
+			<column length="50" name="userAccountNum" />
+		</property>
+		<property name="reference">
+			<column name="reference" length="250" />
+		</property>
+		<property name="staffIdentityCard">
+			<column name="staffIdentityCard" length="250" />
+		</property>
+		<property name="referenceCode">
+			<column name="referenceCode" length="250" />
+		</property>
+		<property name="referenceOrganization">
+			<column name="referenceOrganization" length="250" />
+		</property>
+		<property name="staffAddress">
+			<column name="staffAddress" length="250" />
+		</property>
+		
+		<property  name="ccompanyID">
+			<column length="50" name="ccompanyID" />
+		</property>
+		<property  name="ccompanyName">
+			<column length="250" name="ccompanyName" />
+		</property>
+		<property  name="ccompanyRelationship">
+			<column length="250" name="ccompanyRelationship" />
+		</property>
+		<property  name="accountNum">
+			<column length="50" name="accountNum" />
+		</property>
+		<property name="companyAddr">
+        	<column name="companyAddr" length="256"/>
+        </property>
+        <property name="companyTel">
+			<column length="250" name="companyTel"/>
+		</property>
+		<property name="cresponsible">
+			<column length="250" name="cresponsible"/>
+		</property>
+		<property name="responsibleTel">
+			<column length="250" name="responsibleTel" />
+		</property>
+		<property name="industryType">
+			<column length="256" name="industryType" />
+		</property>
+		
+		<property  name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property  name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+		<property name="staffCode">
+			<column name="staffCode" length="250" />
+		</property>
+		
+		<property  name="billsType">
+			<column length="250" name="billsType" />
+		</property>
+		<property  name="billNum">
+			<column length="250" name="billNum" />
+		</property>
+		<property  name="billsDate">
+			<column name="billsDate" sql-type="Date"/>
+		</property>
+		<property  name="billStaffID">
+			<column length="50" name="billStaffID" />
+		</property>
+		<property  name="billStaffName">
+			<column length="250" name="billStaffName" />
+		</property>
+		
+		<property  name="billComppanyID">
+			<column length="50" name="billComppanyID" />
+		</property>
+		<property  name="billCompanyName">
+			<column length="250" name="billCompanyName" />
+		</property>
+		
+		<property  name="billDeptID">
+			<column length="50" name="billDeptID" />
+		</property>
+		<property  name="billDeptName">
+			<column length="250" name="billDeptName" />
+		</property>
+		<property name="year">
+			<column name="year" length="50" />
+		</property>
+		<property name="sztype">
+			<column name="sztype" length="3" />
+		</property>
+		<property name="budgetName">
+			<column name="budgetName" length="50" />
+		</property>
+		<property name="goodsCoding">
+			<column length="250" name="goodsCoding" />
+		</property>
+		<property name="goodsName">
+			<column length="250" name="goodsName" />
+		</property>
+		<property name="defaultStorage">
+			<column length="250" name="defaultStorage" />
+		</property>
+		<property name="mnemonicCode">
+			<column length="250" name="mnemonicCode" />
+		</property>
+		<property name="standard">
+			<column length="250" name="standard" />
+		</property>
+		<property name="typeID">
+			<column length="250" name="typeID" />
+		</property>
+		<property name="model">
+			<column length="250" name="model" />
+		</property>
+		<property name="variableID">
+			<column length="250" name="variableID" />
+		</property>
+		<property name="acquiescestandard">
+			<column length="250" name="acquiescestandard" />
+		</property>
+		<property name="discountMoney">
+			<column length="250" name="discountMoney" />
+		</property>
+		<property name="afterDiscount">
+			<column length="250" name="afterDiscount" />
+		</property>
+		<property name="dataDepotID">
+			<column length="50" name="dataDepotID" />
+		</property>
+		<property name="dataDepotName">
+			<column length="250" name="dataDepotName" />
+		</property>
+		<property name="bankDepotID">
+			<column length="50" name="bankDepotID" />
+		</property>
+		<property name="bankDepotName">
+			<column length="250" name="bankDepotName" />
+		</property>
+	</class>
+</hibernate-mapping>

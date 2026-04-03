@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="ContactConnection" table="dtContactConnection"> 
+		<id length="50" name="contactConnectionKey">
+			<column length="50" name="contactConnectionKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="contactConnectionID">
+			<column length="50" name="contactConnectionID" not-null="true" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true" />
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" not-null="true" />
+		</property>
+		 <property name="contactConnections">
+        	<column name="contactConnections" length="250" />
+        </property>
+	</class>
+</hibernate-mapping>

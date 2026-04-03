@@ -1,0 +1,2902 @@
+/*! Sell 2015-09-17 11:00 */
+h1,h2,h3,h4 {
+	margin: 0;
+	padding: 0;
+	font-size: 14px
+}
+
+em {
+	font-style: normal
+}
+
+.none {
+	display: none
+}
+
+.ic-btn {
+	width: 78px;
+	height: 25px;
+	border: 0;
+	font-size: 14px;
+	font-weight: 700;
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/ic_btn.png)
+		no-repeat;
+	cursor: pointer
+}
+
+.ic-btn-blue {
+	color: #FFF;
+	background-position: 0 0
+}
+
+.ic-btn-blue:hover {
+	background-position: -80px 0
+}
+
+.ic-btn-gray {
+	color: #000;
+	background-position: 0 -25px
+}
+
+.ic-btn-gray:hover {
+	background-position: -80px -25px
+}
+
+.box {
+	position: relative;
+	zoom: 1
+}
+
+.box .hd,.box .rc-bt,.box .rc-bt span,.box .rc-tp,.box .rc-tp span {
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/box_bg.png)
+		no-repeat
+}
+
+.box .rc-bt,.box .rc-tp {
+	display: block;
+	width: 100%;
+	height: 4px;
+	position: relative
+}
+
+.box .rc-bt span,.box .rc-tp span {
+	float: right;
+	width: 4px;
+	height: 4px
+}
+
+.box .rc-tp {
+	background-position: -3px 0;
+	margin-bottom: -4px
+}
+
+.box .rc-bt {
+	background-position: -3px -3px;
+	margin-top: -4px
+}
+
+.box .rc-bt span {
+	background-position: 0 -3px
+}
+
+.box .hd {
+	height: 28px;
+	border: solid #c1dbff;
+	border-width: 1px 1px 0;
+	background-color: #e1eefe;
+	background-position: 0 -89px;
+	background-repeat: repeat-x;
+	padding: 0 10px
+}
+
+.box .hd h3 {
+	font: 700 14px/28px arial, sans-serif;
+	color: #004d80
+}
+
+.box .bd {
+	border: 1px solid #c1dbff;
+	padding: 10px;
+	background: #FFF
+}
+
+.box .form-tip {
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	line-height: 28px;
+	line-height: 30px;
+	padding: 0 10px 0 0
+}
+
+.box .form-tip em {
+	color: red;
+	font-style: normal
+}
+
+#head {
+	width: auto
+}
+
+.publish-title h2,dl.hint dt {
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/ic_bg.png) 500px
+		500px no-repeat
+}
+
+.publish-title {
+	zoom: 1
+}
+
+.publish-title:after {
+	display: block;
+	visibility: hidden;
+	clear: both;
+	height: 0;
+	content: "\0020"
+}
+
+.publish-title {
+	height: 74px
+}
+
+.type-a h2 {
+	background-position: 0 -70px
+}
+
+.type-b h2 {
+	background-position: 0 -24px
+}
+
+.publish-title h2 {
+	float: left;
+	width: 161px;
+	height: 44px;
+	margin: 15px 10px 15px 22px;
+	padding: 0
+}
+
+.publish-title h2 span {
+	display: none
+}
+
+.publish-title .hint {
+	float: left;
+	margin-top: 28px
+}
+
+dl.hint {
+	zoom: 1
+}
+
+dl.hint:after {
+	display: block;
+	visibility: hidden;
+	clear: both;
+	height: 0;
+	content: "\0020"
+}
+
+dl.hint {
+	border: 1px solid #FFCA80;
+	padding: 4px 8px;
+	background-color: #FFFEE2
+}
+
+dl.hint dt {
+	float: left;
+	padding-left: 17px;
+	background-position: -433px -25px;
+	font-weight: 700;
+	line-height: 16px
+}
+
+dl.hint dd {
+	float: left;
+	line-height: 16px
+}
+
+.result-box h2 {
+	font: 700 16px/26px arial, sans-serif;
+	color: #004d80;
+	border-bottom: 3px solid #a7cbff;
+	margin: 28px 0 30px
+}
+
+.result {
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/result_warn.png)
+		14px 0 no-repeat;
+	padding-left: 90px;
+	line-height: 22px;
+	color: #333;
+	padding-bottom: 40px;
+	padding-top: 8px
+}
+
+.result-box .result {
+	margin: 20px 0 0 20px
+}
+
+.result-warn {
+	background-image:
+		url(//assets.alicdn.com/apps/sell/1.0/img/result_warn.png)
+}
+
+.result-ok {
+	background-image:
+		url(//assets.alicdn.com/apps/sell/1.0/img/result_ok.png)
+}
+
+.result strong {
+	font-weight: 700;
+	font-size: 14px
+}
+
+.result a {
+	text-decoration: underline
+}
+
+.result-box-gametrd {
+	margin-top: 30px
+}
+
+.result-box-gametrd h4 {
+	color: #f6661d;
+	margin-bottom: 8px
+}
+
+.result-box-gametrd li {
+	margin-bottom: 12px
+}
+
+.result-box-gametrd li strong {
+	font-size: 12px
+}
+
+.result-box-gametrd li p {
+	margin-left: 17px
+}
+
+.tips {
+	overflow: hidden;
+	zoom: 1
+}
+
+.tips h5 {
+	float: left;
+	width: 129px;
+	height: 51px;
+	text-indent: -9999px
+}
+
+.tips div {
+	padding: 8px 12px
+}
+
+.tips div strong {
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 6px;
+	display: block
+}
+
+.tips div li {
+	font-weight: 700;
+	margin: 4px 0
+}
+
+.tips div a {
+	font-weight: 400;
+	margin: 0 3px;
+	text-decoration: underline
+}
+
+.tips-error h5 {
+	position: absolute;
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/tips_error.png) 0
+		19px no-repeat;
+	margin-left: -129px
+}
+
+.tips-error {
+	border: 1px solid #ff6500;
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/tips_error.png)
+		-129px 0 repeat-y;
+	padding-left: 129px
+}
+
+.tb-login-now {
+	position: absolute;
+	top: -450px;
+	left: -227px;
+	width: 450px;
+	height: 307px;
+	z-index: 9999;
+	background: #fafafa;
+	border: 1px solid #aaa;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
+	-o-box-shadow: 3px 3px 3px rgba(0, 0, 0, .2)
+}
+
+.tb-login-now-close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 17px;
+	height: 17px;
+	background: url(//img.alicdn.com/tps/i1/T1k.tYXadGXXXXXXXX-146-77.png)
+		-132px 0 no-repeat
+}
+
+.tb-login-now .tb-skin {
+	width: 410px;
+	height: 270px;
+	background: #fafafa;
+	border: 1px solid #fff
+}
+
+.feedback .fb-item,.share-opt dd a {
+	background: url(//img.alicdn.com/tps/i4/T19_KbXdxoXXXXXXXX-16-89.png)
+		-999em -999em no-repeat
+}
+
+.feedback {
+	background: url(//img.alicdn.com/tps/i1/T1.DKbXdxoXXXXXXXX-40-40.png)
+		12px 16px no-repeat;
+	border-top: 1px solid #BBD3F6;
+	padding: 25px 20px 20px 60px;
+	margin-top: 20px
+}
+
+.feedback .fb-tips {
+	margin-top: 15px;
+	width: 550px;
+	padding: 10px;
+	border: 1px solid #e2e2e2;
+	background: #f6f6f6;
+	color: #aaa
+}
+
+.feedback .fb-tips a {
+	background: url(//img.alicdn.com/tps/i1/T1B5atXi4tXXXXXXXX-130-100.png)
+		0 -50px no-repeat;
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	width: 130px;
+	text-align: center;
+	color: #fff;
+	margin-right: 5px
+}
+
+.feedback .fb-tips a:hover {
+	background-position: 0 -75px;
+	text-decoration: none
+}
+
+.feedback .fb-tips-first {
+	margin-bottom: 10px
+}
+
+.feedback .fb-tips-first a {
+	background-position: 0 0
+}
+
+.feedback .fb-tips-first a:hover {
+	background-position: 0 -25px
+}
+
+.feedback .fb-item {
+	background-position: -12px -78px;
+	margin: 15px 0;
+	padding-left: 10px
+}
+
+.feedback .fb-item em {
+	color: #aaa;
+	font-family: '\5b8b\4f53';
+	margin: 0 5px
+}
+
+.feedback .share-opt {
+	margin-top: 50px
+}
+
+.feedback .share-opt dd,.feedback .share-opt dt {
+	display: inline
+}
+
+.feedback .share-opt dd a {
+	padding-left: 18px;
+	margin: 0 3px;
+	display: inline-block;
+	zoom: 1
+}
+
+.feedback .share-opt .tb-tjh {
+	background-position: 0 -53px
+}
+
+.feedback .share-opt .tb-sina {
+	background-position: 0 -18px
+}
+
+.feedback .share-opt .tb-renren {
+	background-position: 0 1px
+}
+
+.feedback .share-opt .tb-kaixin {
+	background-position: 0 -35px
+}
+
+.feedback .copy {
+	margin-top: 8px
+}
+
+.feedback .copy input {
+	border: 1px solid #ccc;
+	padding: 3px 0;
+	width: 337px
+}
+
+.feedback .copy input,.feedback .copy p {
+	color: #aaa;
+	display: inline
+} /*! Sell 2015-09-17 11:00 */
+#newEditorContainer textarea {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: 0 0
+}
+
+#J_ItemEditor,.ke-gecko .form li span,.ke-trident4 .form li span,.ke-trident5 .form li span,.ke-trident6 .form li span,.ke-webkit .form li span
+	{
+	display: block
+}
+
+.ke-compact .form li span {
+	display: inline
+}
+
+.ke-compact .form li .ke-editor-tools span {
+	display: block
+}
+
+.ke-compact #J_ItemEditor {
+	display: inline
+}
+
+#newEditorContainer .ke-editor-status span,#newEditorContainer .ke-select,#newEditorContainer .ke-select-drop,#newEditorContainer .ke-select-drop-wrap,#newEditorContainer .ke-select-text,#newEditorContainer .ke-select-wrap,#newEditorContainer .ke-toolbar-separator
+	{
+	display: inline-block
+}
+
+#newEditorContainer .ke-toolbar-image {
+	display: none
+}
+
+.ke-editor-wrap {
+	zoom: 1
+}
+
+.jiyoujiaTips {
+	background-color: #ffffe6;
+	border: 1px solid #ffcc7f;
+	color: #36c;
+	line-height: 1.5;
+	padding: 10px
+}
+
+.ke-editor-status span {
+	display: inline-block
+}
+
+.ke-gecko .ke-select-drop-wrap {
+	margin-bottom: 10px
+}
+
+.hidden {
+	display: none !important
+}
+
+.box h5 {
+	padding: 9px 0 9px 18px;
+	font-weight: 700
+}
+
+.item-desc-diy {
+	position: relative;
+	zoom: 1
+}
+
+.ke-editor-tools .ke-toolbar-download,.ke-editor-tools .ke-toolbar-tbtemplate,.ke-guid-tip .ke-tip-close,.ke-guid-tip s
+	{
+	background: url(//img.alicdn.com/tps/i4/T1_h9uXj8jXXXXXXXX-186-20.png)
+		-999em -999em no-repeat;
+	height: 20px
+}
+
+.ke-editor-tools .ke-toolbar-tbtemplate {
+	background-position: 0 0;
+	width: 86px
+}
+
+.ke-editor-tools .ke-toolbar-download {
+	background-position: -91px 0;
+	width: 66px
+}
+
+.ke-guid-tip {
+	position: absolute;
+	right: 47px;
+	top: 63px;
+	width: 322px
+}
+
+.ke-guid-tip .ke-tip-box {
+	border: 1px solid #40B3FF;
+	background-color: #E6F5FF;
+	padding: 10px 10px 30px;
+	line-height: 1.5
+}
+
+.ke-guid-tip .ke-tip-box p {
+	display: inline
+}
+
+.ke-guid-input {
+	position: absolute;
+	bottom: 10px;
+	right: 14px;
+	white-space: nowrap
+}
+
+.ke-guid-input a,.ke-guid-input input,.ke-guid-input label {
+	vertical-align: middle
+}
+
+.ke-guid-tip .ke-guid-input label {
+	float: none;
+	width: auto;
+	vertical-align: middle;
+	color: gray;
+	margin-left: 3px
+}
+
+.ke-guid-tip s {
+	background-position: -158px -13px;
+	position: absolute;
+	line-height: 0;
+	font-size: 0;
+	width: 14px;
+	height: 8px;
+	display: block;
+	top: -6px;
+	left: 200px
+}
+
+.ke-guid-link {
+	position: absolute;
+	right: -25px;
+	width: 18px;
+	text-align: center;
+	background-color: #E5F5FF;
+	border: 1px solid #C1DBFF;
+	padding: 10px 3px
+}
+
+.ke-guid-link a:hover {
+	text-decoration: none
+}
+
+.ke-guid-required-tip {
+	background: url(//assets.alicdn.com/sys/common/img/msg_bg.png) 2px -95px
+		no-repeat #fff5e6;
+	border: 1px solid #ff8c40;
+	padding: 5px 5px 5px 22px;
+	width: 325px;
+	margin-top: 5px;
+	float: left
+}
+
+textarea {
+	margin: 3px 5px 2px;
+	padding: 3px 2px 0 3px;
+	width: 50%;
+	height: 5em;
+	font-size: 12px;
+	border: 1px solid #a7a6aa;
+	background: url(//assets.alicdn.com/app/ic/img/input-bg.png) no-repeat
+		#fff
+}
+
+input {
+	color: #666;
+	font-size: 12px;
+	background: url(//assets.alicdn.com/app/ic/img/input-bg.png) no-repeat
+		#fff
+}
+
+input.text {
+	margin: 0 0 0 5px;
+	padding: 3px 2px 0 3px;
+	height: 16px;
+	border: 1px solid #a7a6aa
+}
+
+input.pure-text {
+	background: 0 0;
+	border: 1px solid #fff;
+	color: #333
+}
+
+input.checkbox {
+	margin: 0 4px 0 5px;
+	height: 18px;
+	vertical-align: middle;
+	background: 0 0
+}
+
+input.radio {
+	margin: 0 4px 0 5px;
+	height: 24px;
+	vertical-align: middle;
+	background: 0 0
+}
+
+input.align-right {
+	text-align: right
+}
+
+.form select {
+	margin: 0 4px 0 5px;
+	padding: 1px 1px 0 2px;
+	border: 1px solid #a7a6aa;
+	font-size: 12px
+}
+
+.form {
+	zoom: 1;
+	margin-bottom: 10px
+}
+
+.form:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+.form ul {
+	zoom: 1
+}
+
+.form li {
+	clear: left;
+	margin-bottom: 8px
+}
+
+.form li div.msg-left {
+	margin-left: 24px
+}
+
+.form li div.msg-left a {
+	margin-left: 8px
+}
+
+.form label {
+	float: left;
+	width: 112px;
+	text-align: right;
+	color: #404040;
+	padding-right: 8px;
+	line-height: 1.2;
+	padding-top: 4px;
+	zoom: 1
+}
+
+.form label b {
+	font-weight: 400;
+	color: #40d9ff
+}
+
+.form li span {
+	overflow: hidden;
+	zoom: 1
+}
+
+.form li span.prop-tips {
+	display: inline;
+	color: gray;
+	margin-left: 12px
+}
+
+.form li span.noun-hint-trigger {
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 16px;
+	background: url(//img.alicdn.com/tps/i8/T1BXNwXoFHXXXXXXXX-12-12.png)
+		right 50% no-repeat
+}
+
+.noun-hint-box {
+	background-image:
+		url(//img.alicdn.com/tps/i1/T1oV4wXj4HXXXXXXXX-344-71.png);
+	position: absolute;
+	width: 344px;
+	height: 71px;
+	overflow: hidden
+}
+
+.noun-hint-box .close-btn {
+	position: absolute;
+	cursor: pointer;
+	display: block;
+	width: 10px;
+	height: 10px;
+	right: 8px;
+	top: 5px;
+	overflow: hidden
+}
+
+.noun-hint-box p {
+	line-height: 1.2;
+	padding: 10px 25px 0 10px
+}
+
+.text-tip-img {
+	background: url(//img.alicdn.com/tps/i2/T1FS5mXahDXXXXXXXX-89-13.png)
+		3px 2px no-repeat
+}
+
+.tool-tip-box {
+	position: absolute;
+	width: 290px;
+	height: 35px;
+	overflow: hidden
+}
+
+.tool-tip-header {
+	background-image:
+		url(//img.alicdn.com/tps/i1/T1oV4wXj4HXXXXXXXX-344-71.png);
+	width: 270px;
+	height: 20px;
+	background-position: -50px 0;
+	line-height: 1.2;
+	padding: 10px 25px 0 5px
+}
+
+.tool-tip-bottom {
+	background-image:
+		url(//img.alicdn.com/tps/i1/T1oV4wXj4HXXXXXXXX-344-71.png);
+	width: 270px;
+	height: 15px;
+	background-position: 60px -1202px
+}
+
+.tool-tip-box .shut-btn {
+	position: absolute;
+	cursor: pointer;
+	display: block;
+	width: 10px;
+	height: 10px;
+	right: 5px;
+	top: 5px;
+	overflow: hidden
+}
+
+.form li span.prop-tips:after {
+	content: "";
+	display: inline
+}
+
+.form li span em {
+	position: absolute;
+	margin: 0 0 0 -8px;
+	font-style: normal;
+	color: red;
+	line-height: 24px;
+	font-size: 12px;
+	font-family: simsun
+}
+
+.form li span .text {
+	width: 193px
+}
+
+.form li span .text-error {
+	border: 1px solid red
+}
+
+.form li span .disabled {
+	background: #ECE9D8
+}
+
+.form li span .text-short {
+	width: 100px
+}
+
+.form li span .text-shorter {
+	width: 60px
+}
+
+.form li span ul.ul-radio li {
+	padding-top: 1px
+}
+
+.form li span .text-long {
+	width: 400px
+}
+
+.form li span .noun-hint-box {
+	position: absolute
+}
+
+.form li span ul {
+	zoom: 1
+}
+
+.form li.face-value {
+	position: relative
+}
+
+.form li span .module-property li span li,.form li span li {
+	float: left;
+	clear: none;
+	margin: 0 20px 0 0;
+	white-space: nowrap;
+	zoom: 1
+}
+
+.form li span .module-property li {
+	float: none;
+	margin: 0 20px 18px 0;
+	clear: left
+}
+
+.form li span .tips {
+	margin-left: 5px;
+	color: #404040
+}
+
+.form li span .module-property li span li label,.form li span li label {
+	float: none;
+	width: auto;
+	padding-right: 0;
+	padding-top: 0;
+	line-height: 1.8
+}
+
+.form li span .module-property li span li label {
+	white-space: nowrap
+}
+
+.form li span .module-property li label {
+	float: left;
+	width: 110px;
+	padding-right: 8px;
+	line-height: 1.2;
+	padding-top: 4px
+}
+
+.form li span .module-property li label.label-title {
+	white-space: normal
+}
+
+.form li span .module-property li span {
+	zoom: 1;
+	width: 490px
+}
+
+.form li span .module-property li span .preview {
+	width: 90px;
+	height: 91px;
+	overflow: hidden
+}
+
+.form li span .module-property li span .preview span {
+	width: 86px;
+	height: 86px;
+	padding-left: 0;
+	overflow: hidden;
+	zoom: 1
+}
+
+.submit {
+	text-align: left;
+	padding: 20px 0 60px 92px
+}
+
+.submit .ic-btn {
+	margin: 0 7px
+}
+
+.alipay-intro {
+	margin: 50px 0 0;
+	text-align: center;
+	line-height: 20px
+}
+
+.alipay-intro span {
+	color: #f60
+}
+
+.form li.used-desc {
+	width: 250px
+}
+
+.form li.used-desc em {
+	margin-left: 20px;
+	color: #999
+}
+
+#item-publish h3,#product-edit h3 {
+	padding-left: 18px;
+	background: url(//assets.alicdn.com/app/ic/img/product_edit_h3.png) 0
+		44% no-repeat;
+	zoom: 1 !important
+}
+
+.page-feedback-msg {
+	margin: 0 10px;
+	zoom: 1
+}
+
+.page-feedback-msg h3 {
+	padding-left: 10px !important;
+	background: none !important
+}
+
+#item-publish .bd {
+	padding: 0;
+	overflow: hidden;
+	zoom: 1;
+	background: url(//assets.alicdn.com/app/ic/img/product_search_bd.png)
+		198px 0 repeat-y
+}
+
+#item-publish .bd-sub {
+	float: left;
+	width: 198px
+}
+
+#item-publish .bd-main {
+	padding: 10px 0;
+	float: right;
+	overflow: hidden;
+	border-left: 1px solid #c1dbff;
+	width: 749px
+}
+
+#item-publish .bd-sub {
+	padding: 10px 0
+}
+
+#item-publish h5 {
+	padding-left: 10px
+}
+
+#item-publish .bd-main h5 {
+	font-size: 14px;
+	color: #404040;
+	float: left
+}
+
+#item-publish .bd-main .hint {
+	float: left;
+	margin: 0 0 11px 51px;
+	width: 540px
+}
+
+#item-publish .bd-sub h5 {
+	color: #404040;
+	font-size: 12px
+}
+
+.bd-main label {
+	width: 86px
+}
+
+#item-publish .bd-sub ul {
+	padding: 0 10px
+}
+
+#item-publish .bd-sub li {
+	margin-bottom: 4px
+}
+
+#J_module-property .cphelp_content {
+	margin-left: 123px;
+	white-space: normal;
+	color: #a6a6a6
+}
+
+#J_module-property .cphelp_content a {
+	padding-left: 4px;
+	color: #36c
+}
+
+.module-upload .act a,.module-upload .overview,.module-upload .overview li,.module-upload .preview,.module-upload .upload .file
+	{
+	background: url(//assets.alicdn.com/app/ic/img/module_upload.png)
+		no-repeat
+}
+
+.module-form {
+	overflow: hidden;
+	zoom: 1;
+	margin-left: 107px;
+	margin-bottom: 10px
+}
+
+.module-form .skin {
+	float: left;
+	background: #f8f8f8;
+	border: 1px solid #ececec;
+	overflow: hidden;
+	padding: 10px 0 10px 10px
+}
+
+.form li span .module-form {
+	margin-left: 5px;
+	margin-right: 10px
+}
+
+.form li span .module-form .skin {
+	float: none;
+	zoom: 1
+}
+
+.module-property .skin {
+	padding-bottom: 0
+}
+
+.module-upload .skin {
+	position: relative;
+	padding-top: 26px
+}
+
+.module-upload .tip {
+	position: absolute;
+	left: 10px;
+	top: 4px
+}
+
+.module-upload .overview {
+	float: left;
+	width: 128px;
+	background-position: 105px 34px
+}
+
+.module-upload .overview div {
+	width: 98px;
+	height: 98px;
+	background: #ffd9c0;
+	border: 1px solid #ffc097
+}
+
+.module-upload .overview ul {
+	padding: 1px 0 0 1px
+}
+
+.module-upload .overview li {
+	float: left;
+	margin-right: 2px;
+	background-position: -32px -20px
+}
+
+.module-upload .overview li.s1 {
+	background-position: -32px 0
+}
+
+.module-upload .overview li a {
+	float: left;
+	width: 18px;
+	height: 20px;
+	text-indent: -9999px;
+	overflow: hidden
+}
+
+.module-upload .list {
+	float: left;
+	position: relative;
+	overflow: hidden;
+	width: 670px
+}
+
+.module-upload .list ul {
+	width: 1000px
+}
+
+.module-upload .list li {
+	float: left;
+	width: 90px;
+	margin-right: 5px;
+	position: relative
+}
+
+.module-upload .preview {
+	vertical-align: middle;
+	text-align: center;
+	width: 88px;
+	height: 88px;
+	border: 1px solid #cfcfcf;
+	overflow: hidden;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale
+		);
+	background-position: 20px -80px;
+	background-color: #fff;
+	font-family: arial
+}
+
+.module-upload .s .preview {
+	background-position: 16px -131px
+}
+
+.module-upload .c .preview {
+	background-position: -9999px 0
+}
+
+.module-upload .f .preview {
+	border-color: #ffc097
+}
+
+.module-upload .preview img {
+	max-width: 88px;
+	max-height: 88px;
+	vertical-align: middle
+}
+
+.module-upload .upload .file {
+	margin-top: 7px;
+	width: 90px;
+	height: 20px;
+	overflow: hidden;
+	background-position: -32px -40px;
+	display: block;
+	cursor: pointer
+}
+
+.module-upload .upload .file:hover {
+	background-position: -32px -60px
+}
+
+.module-upload .upload input {
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	width: 100px;
+	height: 40px;
+	font-size: 40px;
+	direction: rtl;
+	cursor: pointer
+}
+
+.module-upload .act {
+	display: none;
+	position: absolute;
+	left: 1px;
+	top: 64px;
+	width: 73px;
+	height: 18px;
+	padding: 7px 0 0 15px;
+	overflow: hidden;
+	zoom: 1;
+	background: #c1dbff;
+	opacity: .8;
+	filter: alpha(opacity = 80)
+}
+
+.module-upload .a .act {
+	display: block
+}
+
+.module-upload .act a {
+	float: left;
+	width: 11px;
+	height: 11px;
+	text-indent: -9999px;
+	overflow: hidden;
+	margin-right: 10px
+}
+
+.module-upload .act a.left {
+	background-position: -55px -3px
+}
+
+.module-upload .f .act a.left {
+	background-position: -55px -14px
+}
+
+.module-upload .act a.right {
+	background-position: -66px -3px
+}
+
+.module-upload .l .act a.right {
+	background-position: -66px -14px
+}
+
+.module-upload .act a.del {
+	background-position: -77px -3px
+}
+
+.ul-color-lump {
+	display: table-cell;
+	display: inline-block
+}
+
+.ul-color-lump li {
+	overflow: hidden;
+	margin: 0 5px 5px 0 !important;
+	line-height: 22px !important
+}
+
+.tb-color td span.tb-color-lump,.ul-color-lump li label {
+	width: 14px !important;
+	height: 14px;
+	display: -moz-inline-block;
+	display: inline-block;
+	overflow: hidden;
+	text-indent: -9999px;
+	line-height: 1.3;
+	vertical-align: middle;
+	border: 1px solid #e4e4e4;
+	text-align: left
+}
+
+.ul-color-lump li.c-all label {
+	display: inline;
+	width: auto !important;
+	height: auto;
+	border: 0;
+	text-indent: 0
+}
+
+.tb-color td span.tb-color-lump {
+	text-indent: 0
+}
+
+.tb-color td span.tb-color-lump b {
+	display: none
+}
+
+.tb-color td span.c-000000,.ul-color-lump .c-000000 label {
+	background: #000
+}
+
+.tb-color td span.c-666666,.ul-color-lump .c-666666 label {
+	background: #666
+}
+
+.tb-color td span.c-e4e4e4,.ul-color-lump .c-e4e4e4 label {
+	background: #e4e4e4
+}
+
+.tb-color td span.c-4b0082,.ul-color-lump .c-4b0082 label {
+	background: indigo
+}
+
+.tb-color td span.c-800080,.ul-color-lump .c-800080 label {
+	background: purple
+}
+
+.tb-color td span.c-dda0dd,.ul-color-lump .c-dda0dd label {
+	background: plum
+}
+
+.tb-color td span.c-990000,.ul-color-lump .c-990000 label {
+	background: #900
+}
+
+.tb-color td span.c-ff0000,.ul-color-lump .c-ff0000 label {
+	background: red
+}
+
+.tb-color td span.c-ffb6c1,.ul-color-lump .c-ffb6c1 label {
+	background: #ffb6c1
+}
+
+.tb-color td span.c-ffa500,.ul-color-lump .c-ffa500 label {
+	background: orange
+}
+
+.tb-color td span.c-ffff00,.ul-color-lump .c-ffff00 label {
+	background: #ff0
+}
+
+.tb-color td span.c-ffffb1,.ul-color-lump .c-ffffb1 label {
+	background: #ffffb1
+}
+
+.tb-color td span.c-855b00,.ul-color-lump .c-855b00 label {
+	background: #855b00
+}
+
+.tb-color td span.c-d2691e,.ul-color-lump .c-d2691e label {
+	background: #d2691e
+}
+
+.tb-color td span.c-bdb76b,.ul-color-lump .c-bdb76b label {
+	background: #bdb76b
+}
+
+.tb-color td span.c-5d762a,.ul-color-lump .c-5d762a label {
+	background: #5d762a
+}
+
+.tb-color td span.c-008000,.ul-color-lump .c-008000 label {
+	background: green
+}
+
+.tb-color td span.c-98fb98,.ul-color-lump .c-98fb98 label {
+	background: #98fb98
+}
+
+.tb-color td span.c-041690,.ul-color-lump .c-041690 label {
+	background: #041690
+}
+
+.tb-color td span.c-0000ff,.ul-color-lump .c-0000ff label {
+	background: #00f
+}
+
+.tb-color td span.c-1eddff,.ul-color-lump .c-1eddff label {
+	background: #1eddff
+}
+
+.tb-color td span.c-ffffff,.ul-color-lump .c-ffffff label {
+	background: #fff
+}
+
+.tb-color td span.c-transparent,.ul-color-lump .c-transparent label {
+	background: url(//assets.alicdn.com/ark/img/color-bg.gif) center -20px
+		no-repeat
+}
+
+.tb-color td span.c-assortment,.ul-color-lump .c-assortment label {
+	background: url(//assets.alicdn.com/ark/img/color-bg.gif) center 0
+		no-repeat
+}
+
+.tb-color td span.outofstock,.ul-color-lump .outofstock label {
+	background: url(//assets.alicdn.com/ark/img/outofstock.gif) no-repeat
+}
+
+.tb-color {
+	border-collapse: separate;
+	border: solid #e1e1e1;
+	border-width: 1px 0 0 1px;
+	margin: 5px 0 5px 5px
+}
+
+.tb-color td,.tb-color th {
+	border: solid #e1e1e1;
+	border-width: 0 1px 1px 0;
+	border-left: 1px solid #fff
+}
+
+.tb-color th {
+	text-align: center;
+	padding: 5px 0
+}
+
+.tb-color thead th {
+	background: #f0f0f0
+}
+
+.tb-color td {
+	padding: 5px 10px
+}
+
+.tb-color td .text {
+	width: 56px !important
+}
+
+.tb-color td .text-code {
+	width: 100px !important
+}
+
+.tb-color td a {
+	margin-left: 8px
+}
+
+.tb-color th strong {
+	font-weight: 700
+}
+
+.ul-text label {
+	margin-left: 5px
+}
+
+.ul-text li {
+	height: 26px
+}
+
+.ul-radio {
+	margin-top: -1px
+}
+
+.ul-radio .radio {
+	margin-top: -3px
+}
+
+.ul-radio-vertical li {
+	float: none !important
+}
+
+.ul-radio-vertical li .text {
+	vertical-align: middle;
+	background: #fff
+}
+
+.ul-radio-vertical li .text.disabled,.ul-radio-vertical li .text:disabled
+	{
+	background: #ece9d8
+}
+
+.ul-checkbox {
+	margin-top: -1px;
+	overflow: hidden
+}
+
+.ul-checkbox li {
+	padding-top: 1px
+}
+
+.msg .promoted-tip {
+	background-color: #FFF3F3;
+	border: 1px solid #FF8080;
+	height: 18px;
+	line-height: 18px;
+	background-position: 3px -47px
+}
+
+.submit-tips {
+	color: #F60;
+	margin-top: -15px;
+	padding: 8px;
+	position: relative;
+	text-align: left
+}
+
+.ul-checkbox input.checkbox {
+	margin-top: -3px
+}
+
+.ul-food {
+	width: 507px;
+	background: #f8f8f8;
+	border: 1px solid #ececec
+}
+
+.ul-food li {
+	position: relative;
+	width: 106px;
+	padding: 12px 0 0 19px;
+	height: 98px;
+	margin: 0 !important
+}
+
+.ul-food li label {
+	text-align: left !important
+}
+
+.ul-food li input {
+	position: absolute;
+	left: 0;
+	top: 12px
+}
+
+.ul-food li img {
+	position: absolute;
+	left: 18px;
+	top: 34px
+}
+
+.form li span .ul-radio li,.form li span .ul-select li {
+	margin-right: 10px
+}
+
+#freight-template {
+	margin-left: 22px;
+	padding-left: 22px;
+	background: url(//assets.alicdn.com/app/ic/img/icon_freight.png) 2px 3px
+		no-repeat
+}
+
+#freight-template button {
+	vertical-align: middle
+}
+
+#freightcod-template {
+	margin-left: 22px;
+	padding-left: 22px;
+	background: url(//assets.alicdn.com/sys/common/icon/trade/item_cod.png)
+		2px 4px no-repeat
+}
+
+.shop-cat-list {
+	border: 1px solid #e4e4e4;
+	padding: 3px;
+	height: 135px;
+	overflow: auto;
+	margin-right: 10px;
+	width: 637px
+}
+
+.shop-cat-list li {
+	float: none !important;
+	margin: 0 !important
+}
+
+.shop-cat-list li ul {
+	margin-left: 20px
+}
+
+.tip-pop-content {
+	display: none
+}
+
+.tippop {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 500px;
+	background: #e4efff;
+	padding: 3px;
+	border: 1px solid #c1dbff;
+	font-size: 12px;
+	line-height: 1.6
+}
+
+.tippop .skin {
+	background: #fff;
+	padding: 8px
+}
+
+.tippop .close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 9px;
+	height: 9px;
+	background: url(//assets.alicdn.com/app/ic/img/ic_close.png) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden
+}
+
+.tippop .skin strong {
+	font-weight: 700
+}
+
+.alert {
+	float: left;
+	line-height: 16px;
+	padding: 2px 5px;
+	margin: 3px 0 0 5px;
+	border: 1px solid #40B3FF;
+	background: #E5F5FF;
+	color: #404040
+}
+
+.alert-error {
+	background: #FFF2F2;
+	border-color: #FF8080
+}
+
+.alert-tips {
+	border: 0;
+	background: 0 0;
+	color: gray;
+	padding: 2px 0
+}
+
+.tips {
+	margin: 0 10px
+}
+
+.alert-prompt {
+	margin-bottom: 2px;
+	margin-right: 10px;
+	border: 1px solid #40B3FF;
+	padding: 3px 0 3px 25px;
+	width: 706px;
+	background: url(//assets.alicdn.com/sys/common/img/msg_bg.png) 3px
+		-148px no-repeat #E5F5FF
+}
+
+#prompt {
+	display: block;
+	visibility: hidden;
+	height: 0;
+	line-height: 0
+}
+
+.re-upload-pic {
+	padding: 12px 20px 0
+}
+
+.re-upload-pic-btn {
+	display: inline-block;
+	margin-right: 12px;
+	width: 67px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	background: url(//img.alicdn.com/tps/i3/T1Hk0VXmpKXXXXXXXX-67-24.png)
+		no-repeat;
+	color: #404040
+}
+
+.re-upload-pic-btn:hover {
+	color: #404040;
+	text-decoration: none
+}
+
+#product-info .pic {
+	margin: 0 10px
+}
+
+#product-info .pic img {
+	width: 118px;
+	height: 118px;
+	border: 1px solid #ccc;
+	margin-bottom: 8px
+}
+
+#product-info .preview {
+	margin-top: 12px
+}
+
+.itempic-single {
+	margin-left: 5px;
+	overflow: hidden;
+	zoom: 1;
+	padding-left: 98px;
+	padding-bottom: 8px;
+	height: 88px
+}
+
+.itempic-single .preview {
+	position: absolute;
+	margin-left: -98px;
+	background: #fff !important
+}
+
+.itempic-single .preview span {
+	background-image: url(//assets.alicdn.com/app/ic/img/module_upload.png);
+	background-position: 20px -80px;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	overflow: hidden;
+	border: 1px solid #cfcfcf;
+	margin-right: 8px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 88px;
+	height: 88px;
+	font-family: arial;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale
+		)
+}
+
+.itempic-single .s span {
+	background-position: 16px -131px
+}
+
+.itempic-single .c span {
+	background-position: -9999px 0
+}
+
+.itempic-single .preview img {
+	max-width: 88px;
+	max-height: 88px;
+	vertical-align: middle
+}
+
+.itempic-single .uploader {
+	padding: 34px 0 0
+}
+
+.itempic-single input.file {
+	width: auto !important;
+	background: 0 0;
+	margin-bottom: 3px
+}
+
+.yui-skin-sam .yui-editor-container ul li {
+	float: none
+}
+
+.yui-editor-panel label input,.yui-toolbar-subcont input {
+	background: #fff
+}
+
+.yui-toolbar-colors span em {
+	margin: 0 !important;
+	position: static !important
+}
+
+.form li .yui-toolbar-groupitem span {
+	overflow: visible
+}
+
+#editor_wrapper {
+	margin-left: 5px
+}
+
+#editor_wrapper li {
+	clear: none;
+	margin: 0
+}
+
+#editor_wrapper ul {
+	float: left
+}
+
+#editor_wrapper .bd,#editor_wrapper li {
+	zoom: 0
+}
+
+#editor_wrapper textarea {
+	margin: 0;
+	padding: 0;
+	background: 0 0
+}
+
+#editor_wrapper .yui-toolbar-subcont {
+	padding: 0 0 .35em 5px
+}
+
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-fontname {
+	width: 105px !important
+}
+
+.alert span {
+	display: inline !important
+}
+
+.alert span.H {
+	color: #404040 !important
+}
+
+.form li span table.tb-color em {
+	margin: -3px 0 0 -8px
+}
+
+#J_form {
+	line-height: 1.3
+}
+
+#autoDiv1 {
+	line-height: 1.25
+}
+
+.upload-pic {
+	margin: 0 10px 10px 5px
+}
+
+.upload-pic .tabs {
+	position: relative;
+	padding-left: 22px;
+	overflow: hidden;
+	zoom: 1
+}
+
+.upload-pic .tabs li {
+	float: left;
+	width: auto;
+	margin-top: 3px;
+	margin-right: 3px;
+	background: red
+}
+
+.upload-pic .tabs .selected {
+	margin-top: 0
+}
+
+.upload-pic .tabs li a,.upload-pic .tabs li span {
+	background:
+		url(//assets.alicdn.com/apps/sell/1.0/img/upload_pic_tabs.png)
+		no-repeat
+}
+
+.upload-pic .tabs li span {
+	float: left;
+	margin: 0;
+	background-color: #e8f2fe
+}
+
+.upload-pic .tabs li a {
+	float: left;
+	line-height: 23px;
+	color: #424240;
+	padding: 0 9px;
+	border-bottom: 1px solid #add2ff;
+	background-position: right -30px
+}
+
+.upload-pic .tabs .selected span {
+	background-position: 0 -60px;
+	background-color: #fff
+}
+
+.upload-pic .tabs .selected a {
+	line-height: 26px;
+	color: #000;
+	font-weight: 700;
+	border-bottom-color: #fff;
+	background-position: right -90px
+}
+
+.upload-pic .tabs li a:hover {
+	text-decoration: none
+}
+
+.upload-pic .panel {
+	zoom: 1;
+	margin-top: -1px;
+	background: #fff;
+	border: 1px solid #add2ff;
+	padding: 8px
+}
+
+.upload-pic .panel iframe {
+	background: #ccc
+}
+
+.pic-manager .side,.pic-manager .side li,.pic-manager .upload a,.upload-manager .act span,.upload-manager .preview,.upload-video .upload
+	{
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/upload_sets.png)
+		no-repeat
+}
+
+.pic-manager {
+	padding-left: 128px;
+	min-height: 120px
+}
+
+.pic-manager .side {
+	position: absolute;
+	margin-left: -128px;
+	width: 128px;
+	background-position: 105px 34px
+}
+
+.upload-manager-new .pic-manager .side {
+	position: absolute;
+	margin-left: -128px;
+	margin-top: 15px;
+	width: 128px;
+	background-position: 105px 34px
+}
+
+.pic-manager .side div {
+	width: 98px;
+	height: 98px;
+	background: #ffd9c0;
+	border: 1px solid #ffc097
+}
+
+.pic-manager .side div p {
+	color: gray;
+	line-height: 20px;
+	margin: 6px
+}
+
+.pic-manager .side ul {
+	padding: 1px 0 0 1px
+}
+
+.pic-manager .side li {
+	float: left;
+	margin-right: 2px;
+	background-position: -32px -20px;
+	text-indent: -9999px;
+	width: 18px;
+	height: 20px
+}
+
+.pic-manager .side li.s1 {
+	background-position: -32px 0
+}
+
+.pic-manager .main {
+	width: 490px;
+	overflow: hidden
+}
+
+.upload-manager-new .pic-manager .main .pic-info {
+	color: #F60;
+	padding: 0 0 4px
+}
+
+.pic-manager .main ul {
+	overflow: hidden;
+	zoom: 1;
+	width: 1000px
+}
+
+.pic-manager .main li {
+	float: left;
+	position: relative;
+	width: 90px;
+	margin-right: 10px
+}
+
+.pic-manager .main span {
+	display: block
+}
+
+.upload-pic .tips-image {
+	color: #aaa
+}
+
+.upload-manager-new .pic-manager .desc,.upload-manager-new .pic-manager .examp,.upload-manager-new .pic-manager .examp .mask
+	{
+	display: table-cell;
+	vertical-align: middle;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	width: 88px;
+	height: 88px;
+	font-family: arial
+}
+
+.upload-manager-new .pic-manager .examp {
+	margin: 1px
+}
+
+.upload-manager-new .pic-manager .examp .mask {
+	background-color: #fff;
+	opacity: .85;
+	filter: alpha(opacity = 85);
+	z-index: 3
+}
+
+.upload-manager-new .pic-manager .desc {
+	top: 26px;
+	height: auto;
+	z-index: 5
+}
+
+.upload-manager-new .pic-manager .support .examp,.upload-manager-new .pic-manager .unsupport .examp
+	{
+	visibility: hidden
+}
+
+.pic-manager .preview {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 88px;
+	height: 88px;
+	line-height: 88px;
+	font-family: arial;
+	border: 1px solid #cfcfcf;
+	overflow: hidden;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale
+		);
+	background-position: 20px -120px;
+	background-color: #fff
+}
+
+.upload-manager-new .pic-manager .preview {
+	display: block;
+	vertical-align: middle;
+	text-align: center;
+	width: 88px;
+	height: 88px;
+	line-height: 88px;
+	font-family: arial;
+	border: 1px solid #cfcfcf;
+	overflow: hidden;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale
+		);
+	background-position: -999em -999em;
+	background-color: #fff
+}
+
+.pic-manager .unsupport .preview {
+	background-position: 16px -171px
+}
+
+.pic-manager .support .preview {
+	background-position: -9999px 0
+}
+
+.pic-manager .first .preview {
+	border-color: #ffc097
+}
+
+.pic-manager .preview img {
+	max-width: 88px;
+	max-height: 88px;
+	vertical-align: middle
+}
+
+.panel-net .main .upload {
+	display: none
+}
+
+.pic-manager .upload a {
+	margin-top: 7px;
+	width: 90px;
+	height: 20px;
+	overflow: hidden;
+	background-position: -32px -40px;
+	display: block;
+	cursor: pointer
+}
+
+.pic-manager .upload a.hover,.pic-manager .upload a:hover {
+	background-position: -32px -60px
+}
+
+.pic-manager .upload input {
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	width: 100px;
+	height: 40px;
+	font-size: 40px;
+	direction: rtl;
+	cursor: pointer
+}
+
+.upload-manager .main .act {
+	display: none;
+	position: absolute;
+	left: 1px;
+	top: 64px;
+	width: 71px;
+	height: 18px;
+	padding: 7px 0 0 17px;
+	overflow: hidden;
+	zoom: 1;
+	background: #c1dbff;
+	opacity: .8;
+	filter: alpha(opacity = 80)
+}
+
+.upload-video .main .act {
+	width: 65px;
+	padding: 7px 0 0 55px;
+	top: 66px
+}
+
+.pic-manager .main .support:hover .act,.pic-manager .main .unsupport:hover .act,.pic-manager .main li.hover .act,.upload-video-ed .hover .act
+	{
+	display: block
+}
+
+.upload-manager .main .act span {
+	float: left;
+	margin-right: 10px;
+	width: 11px;
+	height: 11px;
+	text-indent: -999em;
+	cursor: pointer
+}
+
+.upload-manager .act .moveleft {
+	background-position: -55px -3px
+}
+
+.upload-manager .act .moveright {
+	background-position: -66px -3px
+}
+
+.upload-manager .act .del {
+	background-position: -77px -3px
+}
+
+.upload-manager .first .moveleft {
+	background-position: -55px -14px
+}
+
+.upload-manager .last .moveright {
+	background-position: -66px -14px
+}
+
+.upload-manager .main p {
+	font-weight: 700;
+	margin-bottom: 6px
+}
+
+.upload-manager .main p span {
+	display: inline;
+	color: #f50
+}
+
+.upload-video {
+	position: relative;
+	margin: 0 0 0 5px
+}
+
+.upload-video .preview {
+	width: 120px;
+	height: 90px;
+	border: 1px solid #cfcfcf;
+	overflow: hidden;
+	background-position: 36px -230px
+}
+
+.upload-video .upload {
+	margin: 7px 0 0 15px;
+	width: 90px;
+	height: 20px;
+	overflow: hidden;
+	background-position: -32px -80px;
+	display: block;
+	text-align: center;
+	color: #404040;
+	cursor: pointer
+}
+
+.upload-video .upload-hover,.upload-video .upload:hover {
+	text-decoration: none;
+	background-position: -32px -100px
+}
+
+.editor {
+	padding-left: 5px
+}
+
+.editor select,.editor textarea {
+	margin-left: 0
+}
+
+.error-info {
+	background-color: #FFF2F2;
+	border: 1px solid #FF8080;
+	clear: both;
+	margin: 0 9px 12px 100px;
+	padding: 6px 12px
+}
+
+.error-info ul li {
+	margin: 6px 0 0
+}
+
+.error-info .diy-dot {
+	background-color: #404040;
+	float: left;
+	height: 3px;
+	margin: 7px 5px;
+	width: 3px
+}
+
+.gametrd span {
+	overflow: visible !important
+}
+
+.gametrd .hint {
+	position: absolute;
+	margin: -50px 0 0 132px;
+	width: 296px;
+	height: 28px;
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/gametrd_hint.png)
+		no-repeat;
+	line-height: 20px;
+	padding-left: 8px
+}
+
+.gametrd .hint strong {
+	font-weight: 400;
+	color: #fe0002
+}
+
+.gametrd .hint a.close {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 11px;
+	height: 11px;
+	text-indent: -99em;
+	overflow: hidden
+}
+
+.gametrd .module-form {
+	margin-left: 98px !important
+}
+
+.gametrd .module-form p {
+	margin-bottom: 16px
+}
+
+.gametrd .module-form p a {
+	margin: 0 6px
+}
+
+.gametrd .module-form ul {
+	margin-top: 24px
+}
+
+.gametrd .module-form li .prop-tips {
+	position: absolute;
+	width: 290px !important
+}
+
+.gametrd .module-form li.line {
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+	border-top: 1px solid #ccc;
+	margin: 12px 60px 12px 48px
+}
+
+.gametrd .module-form .prop-tips {
+	padding-left: 0
+}
+
+.gametrd .module-form span {
+	padding-left: 119px;
+	width: auto
+}
+
+.gametrd .module-form div.alert-error {
+	float: none; ]
+	*float: left
+}
+
+.gametrd .module-form label {
+	white-space: normal
+}
+
+.yui-overlay,.yui-panel-container {
+	visibility: hidden;
+	position: absolute;
+	z-index: 2
+}
+
+* html body.masked select {
+	visibility: hidden
+}
+
+* html div.yui-panel-container select {
+	visibility: inherit
+}
+
+.mask {
+	z-index: 1;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-moz-opacity: .3;
+	opacity: .3;
+	filter: alpha(opacity = 30);
+	background-color: #000
+}
+
+.yui-panel {
+	visibility: hidden;
+	border-collapse: separate;
+	position: relative;
+	left: 0;
+	top: 0;
+	font: 1em arial;
+	border: 1px solid #ffe0b2;
+	z-index: 1;
+	overflow: hidden;
+	background: #fff5e5;
+	padding: 3px
+}
+
+.yui-panel .bd {
+	overflow: hidden;
+	padding: 0;
+	background: #FFF
+}
+
+.yui-panel .close {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	background: url(//assets.alicdn.com/app/ic/img/ic_close.png) no-repeat;
+	width: 9px;
+	height: 9px;
+	text-indent: -999em;
+	overflow: hidden
+}
+
+.yui-panel h3 {
+	font: 700 12px/20px arial;
+	margin: 12px 0 20px 20px
+}
+
+.yui-panel .steps {
+	padding-left: 30px
+}
+
+.yui-panel .steps li {
+	float: left;
+	position: relative;
+	width: 142px;
+	height: 104px;
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/gametrd_steps.png)
+		no-repeat
+}
+
+.yui-panel .steps li em {
+	position: absolute;
+	left: 5px;
+	top: 6px;
+	width: 20px;
+	text-align: center;
+	color: #FFF;
+	font-family: verdana;
+	font-size: 11px
+}
+
+.yui-panel .steps li span {
+	position: absolute;
+	left: 18px;
+	top: 32px;
+	color: #EF882C;
+	font-weight: 700;
+	line-height: 22px;
+	width: 80px;
+	text-align: center
+}
+
+.yui-panel .desc {
+	margin: 28px 32px 20px 40px;
+	border-bottom: 2px dashed #ccc;
+	padding-bottom: 20px
+}
+
+.yui-panel .act {
+	margin: 12px 0 0 40px
+}
+
+.yui-panel .btn {
+	margin-right: 8px
+}
+
+.yui-panel .waiting h3 {
+	font-size: 14px;
+	margin: 70px 0 40px 40px
+}
+
+.yui-panel .waiting p {
+	margin: 0 32px 20px 40px;
+	padding-bottom: 20px;
+	line-height: 30px;
+	border-bottom: 2px dashed #ccc
+}
+
+.yui-panel .intro {
+	overflow: hidden;
+	zoom: 1;
+	color: #404040;
+	line-height: 18px;
+	margin-top: 10px;
+	background: url(//img.alicdn.com/tps/i1/T1MwVlXf8KHJNXXXXX-2-152.png)
+		309px 0 no-repeat
+}
+
+.yui-panel .intro div {
+	width: 266px;
+	float: left;
+	padding-left: 54px;
+	padding-top: 25px
+}
+
+.yui-panel .intro .dan {
+	background: url(//img.alicdn.com/tps/i1/T1zgVlXiRKHJNXXXXX-24-24.png)
+		23px 25px no-repeat
+}
+
+.yui-panel .intro .bao {
+	background: url(//img.alicdn.com/tps/i1/T1j3VlXnNKHJNXXXXX-24-24.png)
+		23px 25px no-repeat
+}
+
+.yui-panel .prom_head {
+	height: 120px
+}
+
+.yui-panel .id-auth div {
+	margin-top: 60px;
+	padding-left: 137px;
+	line-height: 22px;
+	background: url(//img.alicdn.com/tps/i1/T1MM0lXeLMHJNXXXXX-90-61.png)
+		22px 0 no-repeat
+}
+
+.open-shop {
+	width: 630px;
+	border: 1px solid #E4F0FE;
+	background-color: #F3F8FF;
+	color: #333;
+	text-align: center;
+	padding: 12px 0 10px;
+	margin: 5px 0
+}
+
+.open-shop strong {
+	font-weight: 400;
+	font-size: 12px
+}
+
+.open-shop a {
+	display: block;
+	height: 43px;
+	width: 173px;
+	background:
+		url(//assets.alicdn.com/apps/sell/1.0/img/publish_success.png)
+		no-repeat;
+	text-indent: 9999px;
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 11px auto 0
+}
+
+.open-shop a:hover {
+	background-position: 0 -48px
+}
+
+#Freight .ul-radio li {
+	margin-bottom: 5px
+}
+
+#Freight .ul-radio li .button {
+	padding: 0 3px;
+	overflow: visible
+}
+
+#Freight .ul-radio li .prop-tips {
+	display: inline-block;
+	vertical-align: middle
+}
+
+#Freight .ul-radio .use-cod {
+	margin-top: 10px;
+	padding-top: 5px;
+	border-top: 1px solid #ccc
+}
+
+#Freight .ul-radio .use-cod .checkbox {
+	margin-left: 6px
+}
+
+#Freight .ul-radio .use-cod .select-mod .cod-tips {
+	margin-left: 22px;
+	padding-left: 22px;
+	background: url(//img.alicdn.com/tps/i1/T1JgBbXnBvXXXXXXXX-690-50.png)
+		4px -32px no-repeat
+}
+
+#J_AgreementEditor .ks-editor span {
+	display: block
+}
+
+#J_AgreementEditor .ks-editor em {
+	position: static;
+	color: #404040;
+	font-weight: 700;
+	font-family: "Tahoma,Helvetica,Arial,'\u5b8b\u4f53',sans-serif";
+	margin: 0;
+	line-height: 1
+}
+
+.tourism-approve {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	font-size: 14px;
+	text-align: center;
+	position: fixed;
+	z-index: 199997;
+	padding-top: 180px
+}
+
+.tourism-approve iframe {
+	width: 100%;
+	height: 500px;
+	position: absolute;
+	left: 0;
+	filter: Alpha(opacity = 0)
+}
+
+.tourism-approve .mask {
+	background-color: #000;
+	opacity: .5;
+	filter: Alpha(opacity = 50);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 199998;
+	display: block
+}
+
+.tourism-approve .dialog {
+	margin: 0 auto;
+	width: 650px;
+	z-index: 199999;
+	position: relative;
+	border: 4px solid #fff5cc;
+	background-color: #fff;
+	color: #404040;
+	text-align: left
+}
+
+.tourism-approve .dialog .wrapper {
+	margin: 48px 38px
+}
+
+.tourism-approve .dialog h3 {
+	margin-bottom: 40px
+}
+
+.tourism-approve .dialog p {
+	text-indent: 2em;
+	font-size: 12px
+}
+
+.tourism-approve .dialog .btns {
+	border-top: 2px dashed #bfbfbf;
+	padding-top: 20px;
+	margin-top: 40px
+}
+
+.tourism-approve .dialog .btns span {
+	margin-right: 10px
+}
+
+.tourism-approve .dialog a.close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+	font-family: Verdana, Arial, sans-serif;
+	color: gray;
+	font-size: 9px;
+	font-weight: 700;
+	line-height: 9px
+}
+
+.tourism-approve .dialog a.close:hover {
+	text-decoration: none;
+	color: #f60
+}
+
+.config-3c {
+	margin-bottom: 10px;
+	padding-left: 122px;
+	line-height: 25px
+}
+
+.config-3c .msg {
+	margin-left: -5px
+}
+
+.official_3cbox {
+	color: #F60;
+	line-height: 20px;
+	padding-top: 2px;
+	overflow: hidden;
+	width: 75%
+}
+
+.form li .official_3cbox {
+	margin-right: 0
+}
+
+.official_3cbox cite {
+	white-space: normal
+}
+
+.form li .tips-3c {
+	display: inline-block;
+	position: relative;
+	top: 5px
+}
+
+.form li .tips-3c span {
+	display: inline-block
+}
+
+.gt2-guide-popup,.gt2-guide-popup .close,.gt2-guide-popup .go {
+	background-image:
+		url(//img.alicdn.com/tps/i6/T1yiBsXj0bXXXXXXXX-506-350.png);
+	background-repeat: no-repeat
+}
+
+.gt2-guide-popup {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1000;
+	width: 506px;
+	height: 108px;
+	padding-top: 170px;
+	overflow: hidden;
+	margin: -142px 0 0 -255px;
+	background-color: #fff;
+	background-position: 0 0;
+	border: 2px solid #b3d1ff
+}
+
+.gt2-guide-popup .bd {
+	background-color: transparent
+}
+
+.gt2-guide-popup h3,.gt2-guide-popup ol {
+	display: none
+}
+
+.gt2-guide-popup a {
+	margin-left: 30px;
+	color: #04d;
+	outline: 0
+}
+
+.gt2-guide-popup .go {
+	display: block;
+	width: 150px;
+	height: 58px;
+	margin-top: 25px;
+	overflow: hidden;
+	text-indent: -150px;
+	background-position: 0 -293px
+}
+
+.gt2-guide-popup .close {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	text-indent: -100px;
+	background-position: -195px -287px;
+	cursor: pointer
+}
+
+.ident-3c {
+	padding: 0 5px 10px 10px;
+	color: #f60
+}
+
+.ident-3c s {
+	float: left;
+	margin: 3px 3px 0 -3px;
+	width: 16px;
+	height: 30px;
+	background: url(//img.alicdn.com/tps/i7/T1g9BqXoJfXXXXXXXX-16-16.png)
+		no-repeat
+}
+
+.form li .standard p.tips {
+	margin: 5px;
+	color: #f60
+}
+
+.info-rectify {
+	margin: 5px 10px;
+	padding: 3px 0;
+	border-top: 1px solid #E6E6E6
+}
+
+.rectify-detail {
+	margin: 60px 90px 0
+}
+
+.rectify-detail textarea {
+	width: 98%;
+	margin: 10px 0 0;
+	color: #666;
+	height: 10em
+}
+
+.rectify-detail .submit {
+	text-align: left;
+	padding-left: 15px
+}
+
+.naked .tips {
+	border: none;
+	background-color: transparent;
+	margin: 0
+}
+
+.rc-bt {
+	clear: both
+}
+
+#cod-on-seller {
+	border: 1px solid #b7cceb;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 1px 1px 3px #ccc;
+	-webkit-box-shadow: 1px 1px 3px #ccc;
+	box-shadow: 1px 1px 3px #ccc;
+	padding: 5px;
+	margin-top: 10px;
+	margin-left: 5px
+}
+
+#cod-on-seller p {
+	padding: 3px 3px 3px 1em;
+	background-color: #f3feed
+}
+
+.tip-tort-bar {
+	position: relative;
+	margin: 5px 10px 0;
+	border: 1px solid #40b3ff;
+	padding: 5px 10px 5px 24px;
+	width: 544px;
+	height: 14px;
+	line-height: 12px;
+	background: url(//assets.alicdn.com/sys/common/img/msg_bg.png) 3px
+		-146px no-repeat #e6f5ff
+}
+
+.second-tort-bar {
+	margin: -5px 10px 15px 5px
+}
+
+.tip-tort-bar .view-tort-info {
+	display: block;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	padding-right: 6px;
+	width: 60px
+}
+
+.pic-manager .tort .preview {
+	border: 1px solid #40b3ff
+}
+
+.tip-tort {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	border-bottom: #40b3ff 1px solid;
+	padding: 3px 0 3px 24px;
+	background: url(//assets.alicdn.com/sys/common/img/msg_bg.png) 3px
+		-148px no-repeat #e6f5ff;
+	width: 64px;
+	height: 14px;
+	line-height: 12px
+}
+
+.tort-dialog {
+	color: #404040;
+	margin: 0;
+	opacity: 1;
+	width: 365px;
+	background: url(//img.alicdn.com/tps/i8/T1C5xyXmRXXXXXXXXX-38-38.png);
+	overflow: hidden;
+	padding: 8px;
+	position: absolute;
+	z-index: 10000
+}
+
+.tort-dialog .wrapper {
+	border: 1px solid #818181;
+	z-index: 10001;
+	opacity: 1;
+	height: auto
+}
+
+.tort-dialog .bd {
+	background: #FFF;
+	overflow: hidden;
+	padding: 5px 43px 40px;
+	text-align: center
+}
+
+.tort-publish .bd {
+	padding: 5px 30px 28px;
+	text-align: left
+}
+
+.tort-publish .bd p {
+	text-indent: 24px
+}
+
+.tort-dialog .show-tort-img {
+	margin: 20px 0;
+	overflow: auto
+}
+
+.tort-dialog .tort-img {
+	float: left;
+	width: 135px;
+	text-align: center
+}
+
+.tort-dialog .tort-img img {
+	display: block;
+	margin: 0 auto;
+	border: 1px solid #999;
+	width: 90px;
+	height: 90px
+}
+
+.tort-dialog .hd {
+	background-color: #FFF;
+	height: 23px;
+	padding: 5px;
+	overflow: hidden
+}
+
+.tort-dialog .hd .close-btn {
+	background: url(//img.alicdn.com/tps/i2/T1EFClXbleXXXXXXXX-12-140.png)
+		5px -80px no-repeat;
+	width: 22px;
+	height: 22px;
+	margin-right: 7px;
+	float: right;
+	display: block;
+	text-indent: -9999px
+}
+
+.tort-dialog .hd .close-btn:hover {
+	background-position: 5px -121px
+}
+
+.tort-dialog .bd .close-btn,.tort-dialog .cancel-publish,.tort-dialog .continue-publish
+	{
+	display: block;
+	margin: 0 auto 20px;
+	padding: 3px 0 0;
+	width: 80px;
+	height: 22px;
+	background: url(//assets.alicdn.com/apps/sell/1.0/img/ic_btn.png) bottom
+		left no-repeat;
+	color: #404040
+}
+
+.tort-dialog .bd .close-btn:hover,.tort-dialog .cancel-publish:hover,.tort-dialog .continue-publish:hover
+	{
+	background-position: bottom right;
+	color: #404040;
+	text-decoration: none
+}
+
+.tort-dialog .cancel-publish,.tort-dialog .continue-publish {
+	float: left;
+	text-align: center
+}
+
+.tort-dialog .continue-publish {
+	margin: 0 30px 0 55px
+}
+
+.tort-publish .bd .operate {
+	margin-top: 24px;
+	padding-bottom: 40px
+}
+
+.tort-dialog .report-tort {
+	font-family: '\u5b8b\u4f53', Tahoma, Helvetica, Arial, sans-serif
+}
+
+.form li .stack-type label {
+	float: none;
+	display: inline;
+	padding-right: 2px;
+	width: auto
+}
+
+.form li .stack-type span.stack-type-notes {
+	display: inline-block;
+	vertical-align: text-top;
+	color: gray
+}

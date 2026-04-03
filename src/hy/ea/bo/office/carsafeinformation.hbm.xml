@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarSafeInformation" table="dt_Car_CarSafeInformation">
+		<id length="50" name="carSafeKey">
+			<column length="50" name="carSafeKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="carSafeID">
+			<column length ="50" name="carSafeID"/>
+		</property>
+		<property name="carID">
+			<column length ="50" name="carID"/>
+		</property>
+		<property name="accidentTime">
+			<column name="accidentTime"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="accidentpass">
+			<column length="250" name="accidentpass"/>
+		</property>
+		<property name="directlossmoney">
+			<column length="18" name="directlossmoney" />
+		</property>
+		<property name="indirectlossmoney">
+			<column length="18" name="indirectlossmoney" />
+		</property>
+		<property  name="disposeidea">
+			<column length="350" name="disposeidea" />
+		</property>
+		<property name="accidentdutypeople">
+			<column length="50" name="accidentdutypeople"/>
+		</property>
+		<property name="disposepeople">
+			<column length="50" name="disposepeople"/>
+		</property>
+		<property name="accidentrecordpeople">
+			<column length="50" name="accidentrecordpeople" />
+		</property>
+		<property name="disposeTime">
+			<column name="disposeTime" />
+		</property>
+		<property name="accidentbox">
+			<column length="50" name="accidentbox" />
+		</property>
+		<property name="certificatenum">
+			<column length="50" name="certificatenum" />
+		</property>
+		<property name="accidentPicture">
+			<column length="50" name="accidentPicture" />
+		</property>
+		<property name="carType">
+			<column length="250" name="carType"/>
+		</property>
+		<property name="carNum">
+			<column length="250" name="carNum"/>
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property name="carPeople">
+			<column length="250" name="carPeople"/>
+		</property>
+	</class>
+</hibernate-mapping>

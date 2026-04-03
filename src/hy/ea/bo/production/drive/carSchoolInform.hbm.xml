@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.drive">
+	<class name="CarSchoolInform" table="dtCarSchoolInform">
+		<id length="50" name="csiKey">
+			<column length="50" name="csiKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="csiId">
+			<column length="50" name="csiId"><comment>ID</comment></column>
+		</property>
+		<property name="ppId">
+			<column length="50" name="ppId"><comment> 通知信息Id</comment></column>
+		</property>
+		<property name="companyId">
+			<column length="50" name="companyId"><comment>公司Id</comment></column>
+		</property>
+		<property name="staffid">
+			<column length="50" name="staffid"><comment>用户Id</comment></column>
+		</property>
+		<property name="state">
+			<column length="2"  name="state"><comment>00 01是否读取</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<include file="struts-ea/office/struts-ea-logistics.xml" />
+	<include file="struts-ea/office/struts-ea-coshealthadministration.xml" />
+	<include file="struts-ea/office/struts-ea-carinformation.xml" />
+	<include file="struts-ea/office/struts-ea-carbaseinfo.xml" />
+	<include file="struts-ea/office/struts-ea-cosafforest.xml" />
+	<include file="struts-ea/office/struts-ea-coselectrictity.xml" />
+	<include file="struts-ea/office/struts-ea-coswater.xml" />
+	<include file="struts-ea/office/struts-ea-carmaintain.xml" />
+	<include file="struts-ea/office/struts-ea-capitalconstruction.xml" />
+	<include file="struts-ea/office/struts-ea-cosonduty.xml" />
+	<include file="struts-ea/office/struts-ea-carmaintain.xml" />
+	<include file="struts-ea/office/struts-ea-capitalconstruction.xml" />
+	<include file="struts-ea/office/struts-ea-keymanage.xml" />
+	<include file="struts-ea/office/struts-ea-paygrademodulation.xml" />
+	<include file="struts-ea/office/struts-ea-stafftransfer.xml" />
+	<include file="struts-ea/office/struts-ea-informbills.xml" />
+	<include file="struts-ea/office/struts-ea-staffmeeting.xml" />
+	<include file="struts-ea/office/struts-ea-videoroom.xml" />
+	<include file="struts-ea/office/struts-ea-meetingroom.xml" />
+	<include file="struts-ea/office/struts-ea-carbills.xml" />
+	<include file="struts-ea/office/struts-ea-cardreader.xml" />
+	<include file="struts-ea/office/struts-ea-cardmanage.xml" />
+	<include file="struts-ea/office/struts-ea-archivemanage.xml" />
+	<include file="struts-ea/office/struts-ea-archivelocation.xml" />
+	<include file="struts-ea/office/struts-ea-archivecheck.xml" />
+	<include file="struts-ea/office/struts-ea-archivecatalogue.xml" />
+	<include file="struts-ea/office/struts-ea-extralflow.xml" />
+	<include file="struts-ea/office/struts-ea-enterpriselogo.xml" />
+	<include file="struts-ea/office/struts-ea-enterprisespirit.xml" />
+	<include file="struts-ea/office/struts-ea-auditprocedure.xml" />
+	<include file="struts-ea/office/struts-ea-enterpriseculture.xml" />
+	<include file="struts-ea/office/struts-ea-enterpriseidea.xml" />
+	<include file="struts-ea/office/struts-ea-enterpriseagreement.xml" />
+	<include file="struts-ea/office/struts-ea-enterprisegoal.xml" />
+	<include file="struts-ea/office/struts-ea-enterprisemanage.xml" />
+	<include file="struts-ea/office/struts-ea-enterprisemanner.xml" />
+	<include file="struts-ea/office/struts-ea-enterprisereport.xml" />
+	<include file="struts-ea/office/struts-ea-enterprisemeritorious.xml" />
+	<include file="struts-ea/office/struts-ea-qq.xml" />
+	<include file="struts-ea/office/struts_ea_piaowuManager.xml" />
+	<include file="struts-ea/office/struts-ea-netdisk.xml" />
+	<include file="struts-ea/office/struts-ea-certificate.xml" />
+	<include file="struts-ea/office/struts-ea-addressip.xml" />
+	<include file="struts-ea/office/struts-ea-domainname.xml" />
+	<include file="struts-ea/office/struts-ea-documentflow.xml" />
+	<include file="struts-ea/office/struts-ea-documentsummary.xml" />
+	<include file="struts-ea/office/struts-ea-documentinfo.xml" />
+	<include file="struts-ea/office/struts-ea-contract.xml" />
+	<include file="struts-ea/office/struts-ea-documentcommon.xml" />
+	<include file="struts-ea/office/struts-ea-docunfinish.xml" />
+	<include file="struts-ea/office/struts-ea-documenttemplate.xml" />
+	<include file="struts-ea/office/struts-ea-zoffice.xml" />
+	<include file="struts-ea/office/struts-ea-filecabinet.xml" />
+	<include file="struts-ea/office/struts-ea-photoboxmanager.xml" />
+	<include file="struts-ea/office/struts-ea-photomanager.xml" />
+	<include file="struts-ea/office/struts-ea-registration.xml" />
+	<include file="struts-ea/office/struts-ea-contacttype.xml" />
+	<include file="struts-ea/office/struts-ea-publicTelephone.xml" />
+	<include file="struts-ea/office/struts-ea-network.xml" />
+	<include file="struts-ea/office/struts-ea-networkantivirus.xml" />
+	<include file="struts-ea/office/struts-ea-filemanage.xml" />
+	<include file="struts-ea/office/struts-ea-networkfax.xml" />
+	<include file="struts-ea/office/struts-ea-meeting.xml" />
+ 	<include file="struts-ea/office/struts-ea-email.xml" />
+	<include file="struts-ea/office/struts-ea-enterprisevideo.xml" />
+	<include file="struts-ea/office/struts-ea-enterprisecitation.xml" />
+ 	<include file="struts-ea/office/struts-ea-corporationphoto.xml" />	
+ 	<include file="struts-ea/office/struts-ea-enterpriseart.xml" />
+ 	<include file="struts-ea/office/struts-ea-corporationphoto.xml" />
+ 	<include file="struts-ea/office/struts-ea-enterprisestamp.xml" />
+	<include file="struts-ea/office/struts-ea-stamplog.xml" />
+	<include file="struts-ea/office/struts-ea-propagate.xml" />
+	<include file="struts-ea/office/struts-ea-inoutpropagate.xml" />
+
+	<include file="struts-ea/office/struts-ea-schedule.xml" />
+	<include file="struts-ea/office/struts-ea-tasknotice.xml" />
+	<include file="struts-ea/office/struts-ea-completeallter.xml" />
+	<include file="struts-ea/office/struts-ea-track.xml" />
+	<include file="struts-ea/office/struts_ea_companytrack.xml" />
+	<include file="struts-ea/office/struts-ea-collectpersonal.xml" />
+	<include file="struts-ea/office/struts-ea-collectunit.xml" />
+	<include file="struts-ea/office/struts-ea-telmessage.xml" />
+	<!-- 办公室形象管理 -->
+	<include file="struts-ea/office/struts_ea_officeImageManager.xml" />
+	<!-- 车辆状态管理 -->
+	<include file="struts-ea/office/struts-ea-carstatus.xml" />
+	<!-- 车牌号管理 -->
+	<include file="struts-ea/office/struts-ea-carnamber.xml" />
+	<!--车辆安全信息  -->
+	<include file="struts-ea/office/struts-ea-carsafeinformation.xml"/>
+	<!--车辆资产信息  -->
+	<include file="struts-ea/office/struts-ea-carassetcinformation.xml"/>
+	<!--车辆证件信息  -->
+	<include file="struts-ea/office/struts-ea-certificateinfo.xml"/>
+	<!--车辆使用信息  -->
+	<include file="struts-ea/office/struts-ea-employcondition.xml"/>
+	<!-- 安全检测 -->
+	<include file="struts-ea/office/safe/struts-ea-oasafeinspectinfo.xml" />
+	<include file="struts-ea/office/safe/struts-ea-oasafeKind.xml" />
+	<!-- 印章管理控制 -->
+	<include file="struts-ea/office/struts-ea-enterprisestampsave.xml" />
+	<!-- 客户管理 -->
+	<include file="struts-ea/office/struts-ea-customerdata.xml" />
+	<include file="struts-ea/office/struts-ea-customerservice.xml" />
+	<!-- 企业注册管理 -->
+	<include file="struts-ea/office/struts-ea-companyregist.xml" />
+	<!-- 车辆管理 -->
+	<include file="struts-ea/office/struts-ea-carinvoice.xml" />
+	<!-- 机动车行驶证管理 -->
+	<include file="struts-ea/office/struts-ea-carmotorcar.xml" />
+	<!-- 道路运输证管理 -->
+	<include file="struts-ea/office/struts-ea-carroad.xml" />
+	<!-- 车辆准载座位管理 -->
+	<include file="struts-ea/office/struts-ea-carquasi.xml" />
+	<!-- 车辆准载座位管理 -->
+	<include file="struts-ea/office/struts-ea-carshuttle.xml" />
+	<!-- 车辆购置税务证管理 -->
+	<include file="struts-ea/office/struts-ea-carpurchase.xml" />
+	<!-- 车辆瓶使用登记证管理 -->
+	<include file="struts-ea/office/struts-ea-carbottle.xml" />
+	<!-- 车辆违章信息明细管理 -->
+	<include file="struts-ea/office/struts-ea-carviolate.xml" />
+	<include file="struts-ea/office/struts-ea-carpurchasetax.xml" />
+	<include file="struts-ea/office/struts-ea-carinsurance.xml" />
+	<include file="struts-ea/office/struts-ea-carareview.xml" />
+	<include file="struts-ea/office/struts-ea-carcng.xml" />
+	<!-- 安全巡检 -->
+	<include file="struts-ea/office/struts-ea-check.xml" />
+	<!-- 现场会议 -->
+	<include file="struts-ea/office/struts-ea-dtconference.xml" />
+	<!-- 车辆安全卫生检查信息 -->
+	<include file="struts-ea/office/struts-ea-safetyhealth.xml" />
+	
+	<include file="struts-ea/office/struts-ea-dtconferenceorg.xml" />
+	<!-- <include file="struts-ea/office/struts-ea-dtconferenceready.xml" /> -->
+	<include file="struts-ea/office/struts-ea-cater.xml" />
+
+    <include file="struts-ea/office/struts-ea-mappointment.xml" />
+
+
+	<include file="struts-ea/office/struts-ea-merchanetsregis.xml" />
+
+	<!--人脸识别-->
+	<include file="struts-ea/office/struts-ea-face.xml" />
+</struts>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<include file="struts-ea/invoicing/struts-ea-warning.xml" />
+	<!-- 采购订单 -->
+	<include file="struts-ea/invoicing/struts_ea_purchase.xml" />
+	<!-- 采购订单 -->
+	<include file="struts-ea/invoicing/struts_ea_purchase1.xml" />	
+	<!-- 仓库管理 -->
+	<include file="struts-ea/invoicing/struts-ea-warehouse.xml" />
+	<!-- 预算 -->
+	<include file="struts-ea/invoicing/struts_ea_costsheet.xml" />
+	<!-- 项目 -->
+	<include file="struts-ea/invoicing/struts_ea_projectmanage.xml" />
+	<!-- 收入预算 -->
+	<include file="struts-ea/invoicing/struts_ea_earnbudget.xml" />
+	<!-- 预算审核 -->
+	<include file="struts-ea/invoicing/struts_ea_budgetapprovedby.xml" />
+	<!-- 进销存 入库 -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingstorage.xml" />
+	<!-- 进销存 入库（新） -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingnewstorage.xml" />
+	<!-- 调拨入库 -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingallocationstorage.xml" />
+	<!-- 进销存 出库 -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingwarehousing.xml" />
+	<!-- 进销存 库存 -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingstock.xml" />
+	<!-- 进销存 出库 -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingsales.xml" />
+	<!-- 进销存 出库(新) -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingsalesnew.xml" />
+	<!-- 调拨出库 -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingallocation.xml"/>
+	<!-- 领用出库 -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingreceive.xml"/>
+	<!-- 归还出库 -->
+	<include file="struts-ea/invoicing/struts-ea-invoicingreceivestorage.xml"/>
+	<!-- 进销存 报损 -->
+	<include file="struts-ea/invoicing/struts-ea-break.xml" />
+	<!-- 产品预算 -->
+	<include file="struts-ea/invoicing/struts_ea_budproduct.xml" />
+	<!-- 个人仓库 -->
+	<include file="struts-ea/invoicing/struts-ea-personalwarehouse.xml" />
+	<!-- 资产负债表内容设定 -->
+	<include file="struts-ea/invoicing/struts-ea-debttoassets.xml" />
+	<!-- 会计期间 -->
+	<include file="struts-ea/invoicing/struts-ea-fisperiod.xml" />
+	<!-- 凭证录入管理 -->
+	<include file="struts-ea/invoicing/struts-ea-voucher.xml" />
+	<!-- 年度结转-->
+	<include file="struts-ea/invoicing/struts-ea-dycoturn.xml" />
+	<!-- 凭证类别 -->
+	<include file="struts-ea/invoicing/struts-ea-voucherCategory.xml" />
+	<!-- 凭证总账报表以及明细报表 -->
+	<include file="struts-ea/invoicing/struts-ea-vaccount.xml" />
+	<!-- 凭证序时账报表 -->
+	<include file="struts-ea/invoicing/struts-ea-vsequence.xml" />
+	<!-- 财务初始化 -->
+	<include file="struts-ea/invoicing/struts-ea-initialization.xml" />
+	<!-- 预算金额 -->
+	<include file="struts-ea/invoicing/struts-ea-cashtime.xml" />
+	<!-- 月结 -->
+	<include file="struts-ea/invoicing/struts_ea_mco.xml" />
+	<!-- 资产负债 -->
+	<include file="struts-ea/invoicing/struts_ea_ccpbsgl.xml" />
+	<!-- 财务库存 -->
+	<include file="struts-ea/invoicing/struts-ea-financialInventory.xml" />
+	<!-- 盘库 -->
+	<include file="struts-ea/invoicing/struts-ea-checkinv.xml" />
+	<!-- 库存调整 -->
+	<include file="struts-ea/invoicing/struts-ea-invadjustment.xml" />
+	<!--初始库存-->
+	<include file="struts-ea/invoicing/struts-ea-initialize.xml" />
+	<!--入库-->
+	<include file="struts-ea/invoicing/struts-ea-rukubill.xml" />
+</struts>

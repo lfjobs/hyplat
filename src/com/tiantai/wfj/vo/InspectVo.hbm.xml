@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.vo">
+    <class name="InspectVo" table="VIEW_INSPECTVO">
+        <id length="50" name="sikey" type="java.lang.String">
+            <column length="50" name="sikey" />
+        </id>
+        <property name="siID" type="java.lang.String">
+            <column length="50" name="siID"/>
+        </property>
+        <property name="nfcID" type="java.lang.String">
+            <column length="50" name="nfcID">
+                <comment>NFC芯片绑定安全点id NfcChip</comment>
+            </column>
+        </property>
+        <property name="illustrate" type="java.lang.String">
+            <column length="250" name="illustrate">
+                <comment>说明</comment>
+            </column>
+        </property>
+        <property name="sn" type="java.lang.String">
+            <column name="sn" length="50">
+                <comment>序列号</comment>
+            </column>
+        </property>
+        <property name="model" type="java.lang.String">
+            <column length="50" name="model" >
+                <comment>标签类型</comment>
+            </column>
+        </property>
+        <property name="ln" type="java.lang.Integer">
+            <column name="ln" length="50">
+                <comment>安全点编号</comment>
+            </column>
+        </property>
+        <property name="oaskName" type="java.lang.String">
+            <column name="oaskName" length="50">
+                <comment>安全类别名称</comment>
+            </column>
+        </property>
+        <property name="en" type="java.lang.String">
+            <column name="en" length="50">
+                <comment>设备编号 如：车牌号</comment>
+            </column>
+        </property>
+        <property name="bindLocation" type="java.lang.String">
+            <column length="50" name="bindLocation" default="00">
+                <comment>芯片绑定公司地点 如：厨房、仓库、下水道、车间、财务处等</comment>
+            </column>
+        </property>
+        <property name="bindDate" type="java.util.Date">
+            <column name="bindDate" sql-type="date">
+                <comment>绑定日期</comment>
+            </column>
+        </property>
+        <property name="siType" type="java.lang.String">
+            <column length="4" name="siType" default="02">
+                <comment>类型  00：红  01：黄  02：绿</comment>
+            </column>
+        </property>
+        <property name="companyID" type="java.lang.String">
+            <column length="50" name="companyID">
+                <comment>公司id</comment>
+            </column>
+        </property>
+        <property name="companyName" type="java.lang.String">
+            <column length="50" name="companyName">
+                <comment>公司名称</comment>
+            </column>
+        </property>
+        <property name="staffID" type="java.lang.String">
+            <column length="50" name="staffID">
+                <comment>负责人id</comment>
+            </column>
+        </property>
+        <property name="staffName" type="java.lang.String">
+            <column length="50" name="staffName">
+                <comment>负责人</comment>
+            </column>
+        </property>
+        <property name="siDate">
+            <column name="siDate">
+                <comment>巡逻时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

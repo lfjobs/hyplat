@@ -1,0 +1,70 @@
+.collect{
+	width: 100%;
+	height: 100%;
+}
+.stair{
+    width: 280px;
+	height: 450px;
+    margin: 10% auto;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+.second{
+	margin: 5% auto;
+	width: 90%;
+	height: 97%;
+}
+.three-level-one{
+	height: 7%;
+	border-bottom: 1px solid #ccc;
+    border-collapse: collapse;
+    text-align: center;
+}
+.three-level-two{
+	height: 12%;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+    border-collapse: collapse;
+}
+.three-level-three{
+	height: 60%;
+	border-bottom: 1px solid #ccc;
+    border-collapse: collapse;
+}
+.three-level-four{
+	height: 20%;
+}
+.pyatyi-one{
+	margin-top: 10px;
+	font-size: 16px;
+}
+.pyatyi-two{
+	font-size: 8px;
+    margin-top: 5px;
+}
+
+.three-level-two{
+	font-size: 11px;
+	line-height: 27px;
+}
+.three-level-three table{
+	margin-top: 7% ;
+	height: 86%;
+}
+.three-level-three table tr :nth-child(odd){
+	font-size: 12px;
+	text-align: right;
+	padding-left: 10px;
+	padding-bottom: 5px;
+}
+.three-level-three table tr :nth-child(even){
+	font-size: 10px;
+	text-align: left;
+	padding-bottom: 5px;
+	border-bottom:1px dashed  #000;
+}
+
+.three-level-four{
+	font-size: 1px;
+	line-height: 15px;
+}

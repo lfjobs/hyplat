@@ -1,0 +1,223 @@
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+header {
+    background-color: #f74c32;
+}
+header ul {
+    padding: 0 0.5rem;
+}
+header ul li {
+    float: left;
+    height: 3.4rem;
+    line-height: 3.4rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+header ul li:first-of-type {
+    width: 20%;
+}
+header ul li:first-of-type img {
+    width: 0.45rem;
+}
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center;
+}
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: 0.6rem;
+}
+header ul li:nth-of-type(3) img {
+    width: 0.15rem;
+}
+header ul li:nth-of-type(3) img:first-of-type {
+    margin-right: 0.25rem;
+}
+.content .div-search {
+    background-color: #f8f8f8;
+    padding: 0.625rem 0.65rem;
+}
+.content .div-search .search-box {
+    border-radius: 50rem;
+    background-color: #ececec;
+}
+.content .div-search .search-box .div-left {
+    float: left;
+}
+.content .div-search .search-box .div-left p {
+    height: 2rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+.content .div-search .search-box .div-left p img {
+    width: 1rem;
+}
+.content .div-search .search-box input {
+    float: left;
+    border: 0;
+    background-color: transparent;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: #6b6b6b;
+}
+.content .ul-list li {
+    padding-top: 1rem;
+    width: 25%;
+    float: left;
+}
+.content .ul-list li div {
+    padding-top: 0.25rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+}
+.content .ul-list li div img {
+    width:1.7rem;
+    margin: 0 auto;
+}
+.content .ul-list li p {
+    text-align: center;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: #222222;
+}
+.content .communication .div-Indexes {
+    position: fixed;
+    z-index: 9;
+    right: 2%;
+    top: 30vh;
+}
+.content .communication .div-Indexes ul li {
+    height: 0.9rem;
+    line-height: 0.9rem;
+    font-size: 1rem;
+    color: #696969;
+}
+.content .communication .div-communication {
+    background-color: #f8f8f8;
+    padding: 0 0.7rem;
+}
+.content .communication .ul-communication {
+    padding: 0 0.65rem;
+}
+.content .communication .ul-communication li {
+    border-bottom: 0.025rem solid #eeeeee;
+}
+.content .communication .ul-communication li .div-img {
+    float: left;
+    height: 4rem;
+    line-height: 4rem;
+    display: flex;
+    align-items: center;
+    padding-right: 0.5rem;
+}
+.content .communication .ul-communication li .div-img img {
+    width: 2.5rem;
+}
+.content .communication .ul-communication li .div-right {
+    float: left;
+}
+.content .communication .ul-communication li .div-right .div-top {
+    padding-top: 0.5rem;
+}
+.content .communication .ul-communication li .div-right .div-top p {
+    padding-right: 0.5rem;
+    float: left;
+    height: 2rem;
+    line-height:2rem;
+    font-size: 1rem;
+    color: #000000;
+}
+.content .communication .ul-communication li .div-right .div-bottom p {
+    padding-right: 1.2rem;
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.9rem;
+    color: #cbcbcb;
+}
+.content .communication .ul-communication li .div-right .div-bottom p:last-of-type {
+    padding: 0;
+}
+.content .content-bottom {
+    height: 5rem;
+}
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+}
+.footer ul li {
+    border-top: 0.075rem solid #ebebeb;
+    padding-top: 0.55rem;
+    width: 20%;
+    float: left;
+}
+.footer ul li div {
+    height: 2.6665rem;
+    line-height: 2.6665rem;
+    display: flex;
+    align-items: center;
+}
+.footer ul li div img {
+    /*width: 33%;*/
+    width: 1.7rem;
+    margin: 0 auto;
+}
+.footer ul li p {
+    text-align: center;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    font-size: 0.99rem;
+    color: #222222;
+}
+.footer ul li.active p {
+    color: #f64d35;
+}
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+/* Firefox 4-18 */
+:-moz-placeholder {
+    color: #ccc;
+}
+/* Firefox 19-50 */
+::-moz-placeholder {
+    color: #ccc;
+}
+/* - Internet Explorer 10?C11
+   - Internet Explorer Mobile 10-11 */
+:-ms-input-placeholder {
+    color: #ccc !important;
+}
+/* Edge (also supports ::-webkit-input-placeholder) */
+::-ms-input-placeholder {
+    color: #ccc;
+}
+/* CSS Working Draft */
+::placeholder {
+    color: #ccc;
+}
+
+@media (min-width: 960px) {
+    html{
+        margin: 0 20% 0 20%;
+    }
+    .footer ul li {
+        border-top: 0.075rem solid #ebebeb;
+        padding-top: 0.55rem;
+        width: 12%;
+        float: left;
+    }
+}

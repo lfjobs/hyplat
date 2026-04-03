@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                                   
+<hibernate-mapping package="hy.ea.bo.production.scmanage">
+	<class name="UserReadVideo" table="dt_UserReadVideo">
+		<comment>用户观看视频情况</comment>
+		<id length="50" name="urvKey">
+			<column length="50" name="urvKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="urvID">
+			<column length="50" name="urvID" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="vedioID">
+			<column length="50" name="vedioID" >
+			<comment>视频ID</comment>
+			</column>
+		</property>
+		
+		<property name="staffID">
+			<column length="50" name="staffID" >
+			<comment>阅读用户ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

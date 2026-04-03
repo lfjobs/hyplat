@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="CSubjects" table="dtcsubjects">
+		<id length="50" name="subjectsKey">
+			<column length="50" name="subjectsKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="subjectsID">
+        	<column name="subjectsID" length="50"/>
+        </property>
+        <property name="subjectsPID">
+        	<column name="subjectsPID" length="50"/>
+        </property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+         <property name="subjectsNumbers">
+        	<column name="subjectsNumbers" length="250"/>
+        </property>
+         <property name="subjectsName">
+        	<column name="subjectsName" length="250"/>
+        </property>
+		<property name="subjectsStatus">
+			<column length="250" name="subjectsStatus" />
+		</property>
+		<property name="subjectsCategory">
+			<column length="50" name="subjectsCategory" />
+		</property>
+		<property name="subjectsDirection">
+			<column length="10" name="subjectsDirection"/>
+		</property>
+		<property name="subjectsAccounts">
+			<column length="10" name="subjectsAccounts"/>
+		</property>
+		<property name="currentLevel">
+        	<column name="currentLevel" length="250"/>
+        </property>
+	</class>
+</hibernate-mapping>

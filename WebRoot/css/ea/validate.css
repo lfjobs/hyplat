@@ -1,0 +1,5 @@
+.error{background:url(../../images/ea/login/cuo_01.gif);background-repeat:no-repeat;color: red;font-size: 12px;margin-left: 5px;}
+.corect{background:url(../../images/ea/login/dui_01.gif) ;background-repeat:no-repeat;margin-left: 5px;}
+.tooltip{background:url(../../images/ea/login/prompt.gif);background-repeat:no-repeat; size:20px; color: blue;font-size: 12px;margin-left: 5px;}
+.tex{margin-left: 20px;}
+.newerror{background-repeat:no-repeat;background-color: red;}

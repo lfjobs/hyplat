@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<include file="struts-ea/android/struts-ea-android.xml" />
+	<include file="struts-ea/android/struts-ea-elkc.xml" />
+	<include file="struts-ea/android/struts-ea-androidexpand.xml" />
+	<include file="struts-ea/android/struts-ea-androiddoc.xml" />
+	<include file="struts-ea/android/struts-ea-androidjobplan.xml" />
+	<include file="struts-ea/android/struts-ea-androidlogbook.xml" />
+	<include file="struts-ea/android/struts-ea-microletter.xml" />
+	<include file="struts-ea/android/struts-ea-microlettercontent.xml" />
+	<include file="struts-ea/android/struts-ea-namecard.xml" />
+	<include file="struts-ea/android/struts-ea-activity.xml" />
+	<include file="struts-ea/android/struts-ea-shengwei.xml" />
+	<include file="struts-ea/android/struts-ea-wechatMenu.xml" />
+	<include file="struts-ea/android/struts-ea-wfjRegister.xml" />
+	<include file="struts-ea/android/struts-ea-wfjCustomer.xml" />
+	<include file="struts-ea/android/struts-ea-wfjShop.xml" />
+	<include file="struts-ea/android/struts-ea-wfjPlatform.xml" />
+	<include file="struts-ea/android/struts-ea-vipcenter.xml" />
+	<include file="struts-ea/android/struts-ea-wfjlogin.xml" />
+	<include file="struts-ea/android/struts-ea-digitalmall.xml"/>
+	<include file="struts-ea/android/struts-ea-productslaunch.xml"/>
+	<include file="struts-ea/android/struts-ea-wfjBuyProducts.xml" />
+	<include file="struts-ea/android/struts-ea-aoffice.xml"/>
+	<include file="struts-ea/android/struts-ea-acheck.xml"/>
+	<include file="struts-ea/android/struts-ea-awork.xml"/>
+	<include file="struts-ea/android/struts-ea-atravel.xml"/>
+	<include file="struts-ea/android/struts-ea-atelmessage.xml"/>
+	<include file="struts-ea/android/struts-ea-wfjDataHandle.xml"/>
+	<include file="struts-ea/android/struts-ea-workmessage.xml" />
+	<include file="struts-ea/android/struts-ea-wfjmeetingactivity.xml" />
+	<include file="struts-ea/android/struts-ea-danche.xml" />
+	<include file="struts-ea/android/struts-ea-wechatty.xml" />
+	<!--<include file="struts-ea/android/struts-ea-wholesalemall.xml" />-->
+
+    <include file="struts-ea/android/struts-ea-mycenter.xml" />
+    <include file="struts-ea/android/struts-ea-office5l5c.xml" />
+    <include file="struts-ea/android/struts-ea-mescom.xml" />
+	<include file="struts-ea/android/struts-ea-earthindex.xml" />
+	<include file="struts-ea/android/struts-ea-ProductsMmanag.xml"/>
+	<include file="struts-ea/android/struts-ea-wechatmini.xml"/>
+
+</struts>

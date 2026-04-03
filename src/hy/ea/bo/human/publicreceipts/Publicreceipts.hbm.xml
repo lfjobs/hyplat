@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.publicreceipts">
+	<class name="Publicreceipts" table="dtPublicreceipts">
+		<id length="50" name="prKey">
+			<column length="50" name="prKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="prID">
+			<column length="50" name="prID" />
+		</property>
+		<property name="pcompanyID">
+			<column length="50" name="pcompanyID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="voucherNum">
+			<column length="250" name="voucherNum" />
+		</property>
+		<property  name="principal">
+			<column length="250" name="principal" />
+		</property>
+		<property  name="principalID">
+			<column length="250" name="principalID" />
+		</property>
+		<property  name="principalOrganizationID">
+			<column length="50" name="principalOrganizationID" />
+		</property>
+		<property  name="type">
+			<column length="50" name="type" />
+		</property>
+		<property  name="applyDate">
+			<column length="50" name="applyDate" />
+		</property>
+		<property  name="firstAuditor">
+			<column length="50" name="firstAuditor" />
+		</property>
+		<property  name="secondAuditor">
+			<column length="50" name="secondAuditor" />
+		</property>
+		<property  name="finalAuditor">
+			<column length="50" name="finalAuditor" />
+		</property>
+		<property  name="receiptsStatus">
+			<column length="50" name="receiptsStatus" />
+		</property>
+		<property  name="operator">
+			<column length="250" name="operator" />
+		</property>
+		<property  name="accessory">
+			<column length="250" name="accessory" />
+		</property>
+		<property  name="accountinformID">
+			<column length="250" name="accountinformID" />
+		</property>
+		<property  name="refundSccid">
+			<column length="250" name="refundSccid" />
+		</property>
+		<property  name="accountinform">
+			<column length="250" name="accountinform" />
+		</property>
+		<property  name="custype">
+			<column length="250" name="custype" />
+		</property>
+		<property  name="firstAuditComments">
+			<column length="500" name="firstAuditComments" />
+		</property>
+		<property  name="secondAuditComments">
+			<column length="500" name="secondAuditComments" />
+		</property>
+		<property  name="refundDate">
+			<column name="refundDate" sql-type="date"/>
+		</property>
+	</class>
+</hibernate-mapping>

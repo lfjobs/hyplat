@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="ProductionDocuments" table="dtProDocuments">
+		<id length="50" name="proDocumentsKey">
+			<column length="50" name="proDocumentsKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="proDocumentsID">
+			<column length="200" name="proDocumentsID"  ><comment>业务主键</comment></column>
+		</property>
+		<property name="companyID">
+			<column length="200" name="companyID"  ><comment>公司ID</comment></column>
+		</property>
+		<property name="companyName">
+			<column length="200" name="companyName"  ><comment>公司名称</comment></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="200" name="cashierBillsID"  ><comment>订单</comment></column>
+		</property>
+		<property name="goodsBillsID">
+			<column length="200" name="goodsBillsID"  ><comment>物品单据</comment></column>
+		</property>
+		<property name="proDate">
+			<column length="200" name="proDate"  ><comment>单据时间</comment></column>
+		</property>
+		<property name="batchNumber">
+			<column length="200" name="batchNumber"  ><comment>批次号</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="200" name="staffID"  ><comment>责任人ID</comment></column>
+		</property>
+		<property name="staffName">
+			<column length="200" name="staffName"  ><comment>责任人名称</comment></column>
+		</property>
+		<property name="inputID">
+			<column length="200" name="inputID"  ><comment>制单人ID</comment></column>
+		</property>
+		<property name="inputName">
+			<column length="200" name="inputName"  ><comment>制单人名称</comment></column>
+		</property>
+		<property name="status">
+			<column length="200" name="status"  ><comment>状态</comment></column>
+		</property>
+		<property name="type">
+			<column length="200" name="type"  ><comment>类型</comment></column>
+		</property>
+		<property name="contactUserID">
+			<column length="200" name="contactUserID"  ><comment>往来个人ID</comment></column>
+		</property>
+		<property name="contactUserName">
+			<column length="200" name="contactUserName"  ><comment>往来个人名称</comment></column>
+		</property>
+		<property name="reference">
+			<column length="200" name="reference"  ><comment>往来个人电话</comment></column>
+		</property>
+		<property name="superposition">
+			<column length="200" name="superposition"  ><comment></comment></column>
+		</property>
+		<property name="category">
+			<column length="200" name="category"  ><comment>类别</comment></column>
+		</property>
+		<property name="fiveClear">
+			<column length="200" name="fiveClear"  ><comment>组织机构</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

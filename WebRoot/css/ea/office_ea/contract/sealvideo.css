@@ -1,0 +1,71 @@
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+
+header {
+	background-color: #f74c32;
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #ffffff
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center
+}
+
+header ul li:nth-of-type(3) {
+	width: 20%;
+	text-align: right;
+	font-size: .6rem
+}
+
+.content {
+	padding-top: .75rem
+}
+
+.content p{
+
+	text-align: center;
+	margin-top: 50%;
+	font-size: .9rem;
+
+}
+.content video{
+
+	width: 100%;
+}
+@media (min-width: 960px) {
+	.content{
+		width: 800px;
+		margin: 2rem auto;
+		border: 1px solid #efeaea;
+		text-align: center;
+	}
+
+	.content video {
+		width: 80%;
+	}
+}

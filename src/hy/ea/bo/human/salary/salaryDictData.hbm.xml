@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="hy.ea.bo.human.salary.SalaryDictData" table="DT_HR_SALARY_DICT_DATA">
+		<id length="50" name="dictKey" >
+			<column length="50" name="DICT_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="dictId" >
+			<column length="50" name="DICT_ID" not-null="true"/>
+		</property>
+
+		<property name="dictType" >
+			<column length="50" name="DICT_TYPE"/>
+		</property>
+		<property name="dictName" >
+			<column length="50" name="DICT_NAME"/>
+		</property>
+		<property name="dictValue" >
+			<column length="50" name="DICT_VALUE"/>
+		</property>
+
+		<property name="companyId" >
+			<column length="50" name="COMPANY_ID"/>
+		</property>
+
+		<property name="createStaffId" >
+			<column length="50" name="CREATE_STAFF_ID" />
+		</property>
+		<property name="createDate">
+			<column length="50" name="CREATE_DATE" />
+		</property>
+
+	</class>
+</hibernate-mapping>

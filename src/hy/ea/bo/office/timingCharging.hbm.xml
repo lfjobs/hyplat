@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="TimingCharging" table="DT_TimingCharging">
+		<id length="50" name="tcKey">
+			<column length="50" name="tcKey" />
+			<generator class="uuid" />
+		</id> 
+		<property name="tcId">
+			<column length="50" name="tcId">
+				<comment>主键</comment>
+			</column>
+		</property>
+		<property name="carNumber">
+			<column length="50" name="carNumber">
+				<comment>车牌号</comment>
+			</column>
+		</property>
+		<property name="siteId">
+			<column length="50" name="siteId">
+				<comment>场地id</comment>
+			</column>
+		</property>
+		<property name="staffId">
+			<column length="50" name="staffId">
+				<comment>人员id</comment>
+			</column>
+		</property>
+		<property name="remark">
+			<column length="100" name="remark">
+				<comment>备注</comment>
+			</column>
+		</property>
+		<property name="startDate">
+			<column length="50" name="startDate">
+				<comment>开始时间</comment>
+			</column>
+		</property>
+		<property name="endDate">
+			<column length="50" name="endDate">
+				<comment>结束时间</comment>
+			</column>
+		</property>
+		<property name="journalnum">
+			<column length="50" name="journalnum">
+				<comment>订单序列号</comment>
+			</column>
+		</property>
+		<property name="state">
+			<column length="50" name="state">
+				<comment>00:已付款,01:未付款</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

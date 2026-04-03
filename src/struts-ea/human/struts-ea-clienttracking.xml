@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="clientTracking-token"  namespace="/ea/clientTracking" extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.ClientTrackingAction" method="{1}">
+			<result name="clientTrack">/page/ea/main/human/office/SersonnelSystem/clientTracking.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="invalid.token">/page/ea/main/human/cstaff/cstaff_clientTracking.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="clientTracking-ntoken" namespace="/ea/clientTracking" extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.ClientTrackingAction" method="{1}">
+			<result name="firstpage">/page/ea/main/marketing/FileTrackService.jsp</result>
+			<result name="cFirstpage">/page/ea/main/marketing/CFileTrackService.jsp</result>
+			<result name="gFirstpage">/page/ea/main/marketing/GFileTrackService.jsp</result>
+			<result name="clientTrack">/page/ea/main/human/office/SersonnelSystem/clientTracking.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="clientTracking.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="clientTracking-jsonajax" namespace="/ea/clientTracking" extends="ea-sajax">
+		<action name="sajax_ea_*" class="hy.ea.human.action.ClientTrackingAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

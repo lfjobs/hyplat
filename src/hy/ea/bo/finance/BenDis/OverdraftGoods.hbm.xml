@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.finance.BenDis.OverdraftGoods" table="DT_OVERDRAFT_GOODS" schema="HYPLAT">
+        <id name="ogkey">
+            <column name="OGKEY" sql-type="varchar2(50)"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="ogid">
+            <column name="OGID" sql-type="varchar2(50)"  not-null="true"/>
+        </property>
+        <property name="overdraftid">
+            <column name="OVERDRAFTID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="goodsid">
+            <column name="GOODSID" sql-type="varchar2(50)"/>
+        </property>
+        <property name="goodname">
+            <column name="GOODNAME" sql-type="varchar2(50)"/>
+        </property>
+        <property name="unit">
+            <column name="UNIT" sql-type="varchar2(50)"/>
+        </property>
+        <property name="quantity">
+            <column name="QUANTITY" sql-type="varchar2(50)"/>
+        </property>
+        <property name="unitprice">
+            <column name="UNITPRICE" sql-type="varchar2(50)"/>
+        </property>
+        <property name="totalprices">
+            <column name="TOTALPRICES" sql-type="varchar2(50)"/>
+        </property>
+        <property name="goodstype">
+            <column name="GOODSTYPE" sql-type="varchar2(50)"/>
+        </property>
+        <property name="ppid">
+            <column name="PPID" sql-type="varchar2(50)"/>
+        </property>
+    </class>
+</hibernate-mapping>

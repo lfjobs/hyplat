@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.tiantai.wfj.edmandServe.bo.businessTypeStaff" table="DT_BUSINESSTYPE_STAFF" schema="HYPLAT"  dynamic-insert="true">
+        <comment>行业人员关联表</comment>
+        <id name="bskey" type="java.lang.String">
+            <column name="bskey" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="bsid" type="java.lang.String">
+            <column name="bsid" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="bsStaffid" type="java.lang.String">
+            <column name="bsstaffid" sql-type="varchar2(50)" length="50"><comment>人员id</comment></column>
+        </property>
+        <property name="btypeId" type="java.lang.String">
+            <column name="btypeId" sql-type="varchar2(50)" length="50"><comment>行业id</comment></column>
+        </property>
+        <property name="clickNum" type="integer">
+            <column name="clickNum" sql-type="number(4)" length="4"><comment>点击数</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

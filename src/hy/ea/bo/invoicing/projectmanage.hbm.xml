@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="ProjectManage" table="dt_projectmanage">
+		<id length="50" name="proKey">
+			<column length="50" name="proKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="proID">
+			<column length="50" name="proID" />
+		</property>
+		<property name="projectCode">
+			<column length="50" name="projectCode" />
+		</property>
+		<property name="projectName">
+			<column length="50" name="projectName" />
+		</property>
+		<property name="pprojectName">
+			<column length="50" name="pprojectName" />
+		</property>
+		<property name="xmtype">
+			<column length="50" name="xmtype" />
+		</property>
+		<property name="xmtypename">
+			<column length="50" name="xmtypename"/>
+		</property>
+		<property name="content">
+        	<column name="content" length="250" />
+        </property>
+		<property name="startDate">
+			<column length="50" name="startDate" />
+		</property>
+		<property  name="endDate">
+			<column length="50" name="endDate" />
+		</property>
+		<property name="createDate">
+			<column length="50" name="createDate" />
+		</property>
+		<property name="updateDate">
+			<column length="50" name="updateDate" />
+		</property>
+		<property  name="companyName">
+			<column length="20" name="companyName" />
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		
+		<property  name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property  name="organizationName">
+			<column length="50" name="organizationName" />
+		</property>
+		<property  name="createID">
+			<column length="50" name="createID" />
+		</property>
+		<property  name="createName">
+			<column length="50" name="createName" />
+		</property>
+		<property  name="createCode">
+			<column length="50" name="createCode" />
+		</property>
+		<property  name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property  name="staffName">
+			<column length="50" name="staffName" />
+		</property>
+		<property  name="staffCode">
+			<column length="250" name="unitPrice" />
+		</property>
+		
+		<property  name="ydsocre">
+			<column length="50" name="ydsocre" />
+		</property>
+		<property  name="jfscore">
+			<column length="50" name="jfscore" />
+		</property>
+		<property  name="kfscore">
+			<column length="50" name="kfscore" />
+		</property>
+		<property  name="sdscore">
+			<column length="50" name="sdscore" />
+		</property>
+	    <property  name="attachUrl">
+			<column length="250" name="attachUrl" />
+		</property>
+		<property name="titles">
+			<column name="titles" length="200" />
+		</property>
+		<property name="docIds">
+			<column name="docIds" length="200" />
+		</property>
+		<property name="pproID">
+			<column length="50" name="pproID" />
+		</property>
+		<property name="status">
+			<column length="10" name="status" />
+		</property>
+		<property name="submittime">
+			<column length="50" name="submittime" />
+		</property>
+		<property name="audittime">
+			<column length="50" name="audittime" />
+		</property>
+		<property name="remark">
+			<column length="500" name="remark" />
+		</property>
+		<property name="levels">
+			<column length="20" name="levels" />
+		</property>
+		<property name="levelNumber">
+			<column length="50" name="levelNumber" />
+		</property>
+			<property name="pcode">
+			<column length="50" name="pcode" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

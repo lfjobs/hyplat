@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="WfjJifenDetail" table="DT_WFJ_JIFEN_DETAIL" schema="HYPLAT" dynamic-insert="true">
+	<comment>积分明细表</comment>
+		<id length="50" name="jifenDetailKey" type="java.lang.String">
+			<column length="50" name="JIFEN_DETAIL_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="jifenDetailId" type="java.lang.String">
+			<column length="50" name="JIFEN_DETAIL_ID" >
+			</column>
+		</property>
+		<property name="jifenDetailName" type="java.lang.String">
+			<column length="100" name="JIFEN_DETAIL_NAME" >
+			<comment>记录内容</comment>
+			</column>
+		</property>
+		<property name="jifenDetailDate" type="java.util.Date">
+			<column name="JIFEN_DETAIL_DATE" >
+			<comment>记录时间</comment>
+			</column>
+		</property>
+		<property name="jifenDetailScore" type="java.lang.String">
+			<column length="9" name="JIFEN_DETAIL_SCORE" default="0">
+			<comment>记录积分量</comment>
+			</column>
+		</property>
+		<property name="jifenDetailState" type="java.lang.Integer">
+			<column length="1" name="JIFEN_DETAIL_STATE" default="0">
+			<comment>0：规则来源1:佣金来源</comment>
+			</column>
+		</property>
+		<property name="wfjGuizeId" type="java.lang.String">
+			<column length="50" name="WFJ_GUIZE_ID" >
+			<comment>规则外键</comment>
+			</column>
+		</property>
+		<property name="wfjJifenId" type="java.lang.String">
+			<column length="50" name="WFJ_JIFEN_ID" >
+			<comment>微分金积分外键</comment>
+			</column>
+		</property>
+		<property name="wfjCashId" type="java.lang.String">
+			<column length="50" name="wfj_cash_id" >
+			<comment>金币出入库单据id</comment>
+			</column>
+		</property>
+		<property name="wfjOrderId" type="java.lang.String">
+			<column length="50" name="wfjOrderId" >
+				<comment>订单ID</comment>
+			</column>
+		</property>
+		<property name="wfjGoodId" type="java.lang.String">
+			<column length="50" name="wfj_good_id" >
+			<comment>订单物品单据id</comment>
+			</column>
+		</property>
+		<property name="redPacketId" type="java.lang.String">
+			<column length="50" name="redPacketId" >
+			<comment>红包id</comment>
+			</column>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column length="50" name="status" >
+			<comment>状态  0：正常  1：作废</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="AddressIP" table="dtAddressIP">
+		<id length="50" name="ipKey">
+			<column length="50" name="ipKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ipID">
+			<column length="50" name="ipID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="ipCode">
+			<column length="250" name="ipCode"/>
+		</property>
+		<property name="userName">
+			<column length="250" name="userName" />
+		</property>
+		<property name="computerModel">
+			<column length="250" name="computerModel" />
+		</property>
+		<property  name="ipAddress">
+			<column length="250" name="ipAddress" />
+		</property>
+	</class>
+</hibernate-mapping>

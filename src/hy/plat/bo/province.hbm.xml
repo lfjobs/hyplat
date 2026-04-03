@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.plat.bo">
+    <class name="Province" table="province">
+        <id name="sid">
+            <column length="50" name="sid" />
+        </id>
+        <property name="provinceID">
+            <column length="50" name="provinceID" not-null="true"><comment>父id</comment> </column>
+        </property>
+        <property name="province">
+            <column length="50" name="province" ><comment>地域名称</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

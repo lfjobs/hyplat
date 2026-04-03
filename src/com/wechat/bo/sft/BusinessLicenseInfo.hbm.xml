@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="BusinessLicenseInfo" table="dt_sft_BusinessLicenseInfo">
+	<comment>二级商户进件——营业执照/登记证书信息</comment>
+		<id length="50" name="bliKey">
+			<column length="50" name="bliKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="bliID">
+			<column length="50" name="bliID" ><comment>业务主键</comment></column>
+		</property>
+		<property name="business_license_copy">
+			<column length="200" name="business_license_copy" ><comment>证件扫描件</comment></column>
+		</property>
+		<property name="business_license_number">
+			<column length="50" name="business_license_number" ><comment>证件注册号</comment></column>
+		</property>
+		<property name="merchant_name">
+			<column length="50" name="merchant_name" ><comment>商户名称</comment></column>
+		</property>
+		<property name="legal_person">
+			<column length="50" name="legal_person" ><comment>经营者/法定代表人姓名 </comment></column>
+		</property>
+		<property name="company_address">
+			<column length="50" name="company_address" ><comment>注册地址</comment></column>
+		</property>
+		<property name="business_time">
+			<column length="50" name="business_time" ><comment>营业期限</comment></column>
+		</property>
+		<property name="business_license_name">
+			<column length="500" name="business_license_name" ><comment>证件名称</comment></column>
+		</property>
+		<property name="business_scope">
+			<column length="500" name="business_scope" ><comment>经营范围</comment></column>
+		</property>
+		<property name="annual">
+			<column length="500" name="annual" ><comment>年审管理</comment></column>
+		</property>
+		<property name="issueUnit">
+			<column length="500" name="issueUnit" ><comment>发证单位</comment></column>
+		</property>
+		<property name="auditor">
+			<column length="50" name="auditor" ><comment>审核人</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

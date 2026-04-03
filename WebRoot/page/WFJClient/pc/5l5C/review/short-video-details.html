@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userDTO-scalable=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>短视频</title>
+</head>
+<body class="h-screen">
+<script src="../../../../../js/dynamic-tab/dynamic-tab.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/plugin/quarterOfYear.min.js"></script>
+<script>dayjs.extend(window.dayjs_plugin_quarterOfYear)</script>
+<div class="flex flex-col h-screen">
+
+    <div id="toolbar" class="flex flex-row items-center justify-between w-full">
+
+    </div>
+
+    <div class="m-4 space-y-4">
+        <video class="bg-red-500 w-full aspect-video rounded-lg w-auto"></video>
+
+        <div class="text-gray-500 text-red-500">基本信息</div>
+
+        <div class="flex flex-row space-x-2 items-center w-full">
+            <span class="text-gray-500">标题</span>
+            <div>食物界有自己的混凝土</div>
+        </div>
+
+        <div class="flex flex-row space-x-2 items-center w-full">
+            <span class="text-gray-500">描述</span>
+            <div>这是短视频的描述信息</div>
+        </div>
+
+        <div class="flex flex-row space-x-2 items-center w-full">
+            <span class="text-gray-500">作者</span>
+            <div>张三</div>
+        </div>
+
+        <div class="flex flex-row space-x-2 items-center w-full">
+            <span class="text-gray-500">创建时间</span>
+            <div>2024-01-01 12:00:00</div>
+        </div>
+
+        <div class="text-gray-500 text-red-500">视频带货</div>
+        <div>
+            <div class="flex flex-row space-x-2 items-center w-full">
+                <img src="" class="w-12 h-12">
+                <div>
+                    <div class="text-sm text-gray-700">L298N电机驱动板模块直流步进电机马达智能车机器人配件TB6612FNG</div>
+                    <div class="text-xs text-gray-500">L298N电机驱动板模块</div>
+                </div>
+                <span class="text-red-500 font-medium">￥12.80</span>
+            </div>
+            <div class="flex flex-row space-x-2 items-center w-full">
+                <img src="" class="w-12 h-12">
+                <div>
+                    <div class="text-sm text-gray-700">L298N电机驱动板模块直流步进电机马达智能车机器人配件TB6612FNG</div>
+                    <div class="text-xs text-gray-500">L298N电机驱动板模块</div>
+                </div>
+                <span class="text-red-500 font-medium">￥12.80</span>
+            </div>
+        </div>
+
+        <div class="text-gray-500 text-red-500">咨询服务</div>
+        <div>
+
+        </div>
+    </div>
+</div>
+<script>
+    const toolbar = new Toolbar("toolbar", {
+        title: "短视频详情",
+        actions: [],
+        onClick: (id) => {
+            console.log(id);
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+       <!-- 这里因为多token的问题,我没有继承ea-token 但是手动设置了防止重复提交.所以还是走了t_ea_*这样的url -->
+	<package strict-method-invocation="false" name="cstaff-token" namespace="/ea/cstaff"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.CStaffAction" method="{1}">
+		      <result name="list">/page/ea/main/human/cstaff/cstaff_info.jsp</result>
+		      <result name="success">/page/ea/success.jsp</result> 
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="cstaff-ntoken" namespace="/ea/cstaff"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.CStaffAction" method="{1}">
+			<result name="list">/page/ea/main/human/cstaff/cstaff_info.jsp</result>
+			<result name="fileList">/page/ea/main/marketing/FileMarketSurvey.jsp</result>
+			<result name="gFileList">/page/ea/main/marketing/GFileMarketSurvey.jsp</result>
+			<result name="cFileList">/page/ea/main/marketing/CFileMarketSurvey.jsp</result>
+			<result name="to_cstaff">/page/ea/main/human/cstaff/cstaff_information.jsp</result>
+			<result name="tochoseperson">/page/ea/main/human/attendance_work/leave_add_choseperson.jsp</result>
+			<result name="tochosepersongoout">/page/ea/main/human/attendance_work/go_out_add_choseperson.jsp</result>
+			<result name="tochosepersonbussiness">/page/ea/main/human/attendance_work/travel_add_choseperson.jsp</result>
+			<result name="getBasicInformation">/page/ea/main/human/cstaff/cstaff_people.jsp</result>
+			<result name="toprintpeople">/page/ea/main/human/cstaff/cstaff_people_copy.jsp</result>
+			<result name="getUtilInformation">/page/ea/main/human/cstaff/cstaff_util.jsp</result>
+			<result name="toprintutil">/page/ea/main/human/cstaff/cstaff_util_copy.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			 <result name="input">/page/ea/main/human/cstaff/cstaff_info.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="staff.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="cstaff-jsonajax" namespace="/ea/cstaff" extends="ea-sajax">
+		<action name="sajax_ea_*" class="hy.ea.human.action.CStaffAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+           <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="cstaff-njsonajax" namespace="/ea/cstaff" extends="json-default">
+		<action name="sajax_n_ea_*" class="hy.ea.human.action.CStaffAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+           <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

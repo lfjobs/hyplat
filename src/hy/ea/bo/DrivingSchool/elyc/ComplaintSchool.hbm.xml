@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.DrivingSchool.elyc">
+    <class name="ComplaintSchool" table="tb_elyc_Complaint_School" schema="HYPLAT">
+        <id length="50" name="clKey">
+            <column length="50" name="clKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="clId" type="java.lang.String">
+            <column name="clId"  length="50" ><comment>逻辑ID</comment></column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId"  length="50" ><comment>所属驾校</comment></column>
+        </property>
+        <property name="teacherId" type="java.lang.String">
+            <column name="teacherId"  ><comment>教练</comment></column>
+        </property>
+        <property name="studentId" type="java.lang.String">
+            <column name="studentId"  length="50" ><comment>学员</comment></column>
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content"  length="500" ><comment>学员投诉内容</comment></column>
+        </property>
+        <property name="staffId" type="java.lang.String">
+            <column name="staffId"  length="500" ><comment>学员staffId</comment></column>
+        </property>
+        <property name="companyReply" type="java.lang.String">
+            <column name="companyReply"  length="500" ><comment>驾校回复</comment></column>
+        </property>
+        <property name="complaintDate" type="java.util.Date">
+            <column name="complaintDate"  length="500" ><comment>投诉时间</comment></column>
+        </property>
+        <property name="studentName" type="java.lang.String">
+            <column name="studentName"  length="500" ><comment>学员姓名</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

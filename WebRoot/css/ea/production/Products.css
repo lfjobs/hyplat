@@ -1,0 +1,826 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+body{margin: 0 auto;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #000;}
+a:active,a:hover { text-decoration: none;background: #fff;}
+a:focus{ outline: none;background: #fff; }
+input,button{
+    outline: none;
+}
+.clearfix{
+    clear: both;
+} 
+.body{
+    background: #f3f3f3;
+}
+
+/*--个人简历--*/
+.res_top{
+    background-color: #fff;
+}
+.res_top ul{
+    line-height: 2.5;
+    padding: 0 10px;
+}
+.res_top ul li{
+    line-height: 45px;
+    float: left;
+    font-size: 0.7rem;
+    text-align: center;
+}
+.res_top ul li:nth-child(1){
+    width: 16%;
+    text-align: left;
+}
+.res_top ul li:nth-child(1) a{
+
+}
+.res_top ul li:nth-child(2){
+    width: 68%;
+
+}
+.res_top ul li:nth-child(3){
+    width: 16%;
+    font-size: 0.55rem;
+}
+.res_top ul li img{
+    height: 30px;
+    padding-top: 0.3rem;
+}
+.res_bot{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.res_bot_grd{
+    text-align: center;
+}
+.res_bot_touxiang{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin: 10px auto;
+    overflow: hidden;
+}
+.res_bot_touxiang img{
+    width: 100%;
+    height: 100%;
+}
+.res_bot_grd p{
+    font-size: 0.7rem;
+}
+.res_bot_grd button{
+    width: 6rem;
+    height: 1.5rem;
+    background: none;
+    border: 2px solid #B9E7FF;
+    border-radius: 2rem;
+    background-color: white;
+    font-size: 0.75rem;
+    color: #5BC6FF;
+    font-weight: 500;
+    margin: 15px 0;
+}
+.res_bot_grd2{
+    width: 95%;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+}
+.res_bot_grd2 p{
+    width: 50%;
+    float: left;
+    font-size: 0.6rem;
+    color: #6C6C6C;
+}
+.res_bot_grd2 p:nth-child(2){
+
+}
+.res_bot_mil{
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+.res_bot_mil div:nth-child(1){
+    width: 50%;
+    font-size: 0.7rem;
+    float: left;
+}
+.res_bot_mil div:nth-child(1) span{
+    color: #FF6600;
+}
+.res_bot_mil div:nth-child(2){
+    width: 50%;
+    font-size: 0.7rem;
+    float: left;
+    text-align: right;
+    color: #B8B8B8;
+}
+.res_bot_mil div:nth-child(2) img{
+    width: 0.35rem;
+    padding: 0 0 0 10px;
+}
+/*--个人简历结束--*/
+
+/*--简历详情--*/
+.res-det_grd{
+
+}
+.res-det_mil p {
+    width: 100%;
+    font-size: 0.7rem;
+    float: none;
+    padding: 0;
+    color: #000;
+    line-height: 2;
+}
+.res-det_mil p span {
+    color: #9C9C9C;
+}
+.res-det_mil {
+    padding: 0 0 1rem 0;
+    border-bottom: 10px solid #f3f3f3;
+}
+.res-det_grd p:nth-child(2) {
+    text-align: left;
+}
+.res-det_mil-2{
+    padding: 1rem 0 1rem 0;
+    border-bottom: 10px solid #f3f3f3;
+}
+.res-det_mil-2 p {
+    width: 100%;
+    font-size: 0.7rem;
+    float: none;
+    padding: 0;
+    color: #000;
+    line-height: 2;
+}
+.res-det_mil-2 p:first-child{
+    padding: 0 0 0.7rem 0;
+}
+.res-det_mil-2 p span {
+    color: #9C9C9C;
+}
+.res-det_mil-3 p {
+    width: 100%;
+    font-size: 0.7rem;
+    float: none;
+    padding: 0;
+    color: #000;
+    line-height: 1.5;
+}
+.res-det_grd .res-det_mil-3 .res-det_txt{
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+}
+.res-det_txt p:first-child {
+    padding: 0;
+}
+.res-det_grd .res-det_mil-2 .res-det_txt2{
+    width: 100%;
+    padding: 15px 0;
+}
+.res-det_txt2 p{
+    text-align: left;
+    line-height: 1.5;
+    font-size: 0.7rem;
+}
+.res-det_txt2 p:nth-child(1){
+    font-size: 0.6rem;
+    padding: 0;
+}
+.res-det_txt2 p:nth-last-child(1){
+    text-align: left;
+    color: #9C9C9C;
+    font-size: 0.5rem;
+}
+.res-det_mil-4{
+    padding: 1rem 0 3rem 0;
+}
+/*--简历详情结束--*/
+
+/*--隐私设置--*/
+.pri-set_grd{
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px 0;
+    border-bottom: 1px solid #E2E2E2;
+}
+.pri-set_grd p{
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+.pri-set_div{
+    width: 50%;
+    float: left;
+}
+.pri-set_div div{
+    width: 3rem;
+    height: 1rem;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    float: right;
+    overflow: hidden;
+}
+.pri-set_div div p{
+    text-align: center;
+    height: 100%;
+    font-size: 0.5rem;
+    line-height: 2;
+}
+.pri-set_p{
+    background: #fff;
+}
+
+.pri-set_p2{
+    background: #9ECCE2;
+    color: #fff;
+}
+.pri-set_grd2 p{
+    width: 100%;
+    color: #7D7D7D;
+    float: none;
+    padding: 0.6rem 0;
+
+}
+.pri-set_grd2 p:nth-child(1){
+    background: url("../imges/gou.png") 14rem 0.8rem no-repeat;
+    background-size: 0.9rem;
+}
+.pri-set_grd2 img{
+    width: 0.9rem;
+    float: right;
+}
+/*--隐私设置结束--*/
+
+/*--求职意向--*/
+.job-int_mil div:nth-child(1) {
+    width: 28%;
+    font-size: 0.7rem;
+    float: left;
+}
+.job-int_mil div:nth-child(2) {
+    width: 72%;
+    font-size: 0.7rem;
+    float: left;
+    text-align: right;
+    color: #B8B8B8;
+}
+.job-int_mil2 div:nth-child(1) span {
+    color: #000;
+}
+.job-int_gzxz{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+
+    z-index: 999;
+    display: none;
+}
+.job-int_d{
+    background: #fff;
+}
+.job-int_d3{
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+.job-int_d3-2{
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+.job-int_d1{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+}
+.job-int_d1 button{
+    width: 20%;
+    padding: 5px 15px;
+    float: left;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 15px 15%;
+    color: #FF6600;
+
+}
+.job-int_d1 button:nth-child(2){
+    background: #FF6600;
+    color: #fff;
+    border: 1px solid #ddd;
+}
+.job-int_d2 p{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 15px 10px;
+    background: url("../imges/gou2_.png") 14rem 14px no-repeat;
+    background-size: 26px;
+    border-bottom: 1px solid #f3f3f3;
+}
+.job-int_d2 p:nth-child(1){
+    background: url("../imges/gou2.png") 14rem 12px no-repeat;
+    background-size: 28px;
+}
+.job-int_d2 img{
+
+}
+
+.job-int_qzzt{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    display: none;
+}
+
+/*--求职意向结束--*/
+
+/*--期望薪资--*/
+.sal{
+    width: 95%;
+    margin: 0 2.5% 3rem 2.5%;
+}
+.sal p{
+    font-size: 16px;
+    padding: 25px 15px 0 15px;
+    border-bottom: 1px solid #f3f3f3;
+}
+/*--期望薪资结束--*/
+
+/*--自我评价--*/
+.self-ass div{
+    width: 100%;
+    margin: 0 auto;
+}
+.self-ass div textarea{
+    width: 95%;
+    padding: 0.5rem 2.5%;
+    border: none;
+    outline: none;
+    font-size: 0.7rem;
+
+}
+.self-ass div p{
+    text-align: right;
+    font-size: 0.65rem;
+    width: 90%;
+    margin: 0 auto;
+}
+.self-ass div p span{
+    color: #E91616;
+}
+/*--自我评价结束--*/
+
+/*--教育背景--*/
+.edu-bg_mil{
+    width: 95%;
+    margin: 25px 0;
+    background: #fff;
+    padding: 0 2.5%;
+}
+.edu-bg_mil button{
+    width: 90%;
+    font-size: 0.7rem;
+    color: #fff;
+    background: #FF6600;
+    border: none;
+    padding: 0.5rem;
+    margin: 0;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+}
+.edu-bg_mil p{
+    font-size: 0.55rem;
+    color: #666;
+    padding: 10px 0;
+}
+.edu-bg_mil h5{
+    font-size: 0.7rem;
+    padding: 5px 0;
+}
+.edu-bg_mil h5 img{
+    width: 0.45rem;
+    float: right;
+    padding: 0.1rem;
+}
+/*--教育背景结束--*/
+
+/*--添加教育背景--*/
+.ipt{
+    width: 75%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    font-size: 0.6rem;
+}
+.ipt_1{
+
+    width: 3.4rem;
+    border: none;
+    text-align: right;
+    font-size: 0.6rem;
+}
+#datecancle2{
+    position: absolute;
+    background: #dcdddd;
+    right: 20px;
+}
+/*--添加教育背景结束--*/
+
+/*--岗位名称搜索--*/
+.gw_serach{
+
+}
+.gw_serach input{
+    width: 100%;
+    border: none;
+    font-size: 0.6rem;
+    text-indent: 1em;
+    border-bottom: 2px solid #ddd;
+    line-height: 3;
+}
+.gw_serach div{
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+}
+.gw_serach div p{
+    font-size: 0.6rem;
+    float: left;
+}
+.gw_serach div img{
+    width: 0.7rem;
+    float: left;
+    padding: 0.1rem 0.3rem 0 0;
+}
+#gw_ser{
+    display: none;
+}
+#gw_ser ul li{
+    width: 100%;
+    padding: 0.1rem 0;
+}
+/*--岗位名称搜索结束--*/
+
+/*--行业搜索--*/
+.alert_div{
+    width: 100%;
+    text-align: center;
+
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+.alert{
+    width: 30%;
+    position: absolute;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.47);
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin: 60% 30%;
+    font-size: 0.7rem;
+}
+.header_c{
+    line-height: 0 !important;
+}
+.header_c .search_k {
+    display: inline-block;
+    height: 30px;
+    width: 95%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-top: 7px;
+    border: 1px solid #d5d5d5;
+}
+.header_c .search_k input{
+    height: 100%;
+    border: none;
+    background: url("../imges/search999.png") 0 5px no-repeat;
+    background-size: 20px;
+    text-indent: 1.6em;
+}
+.ipt2{
+    background: url("../imges/search999.png") 0 5px no-repeat !important;
+    background-size: 20px !important;
+}
+.yixuan {
+    padding: 0 0.5rem;
+    background: #eee;
+}
+.xuan_head {
+    line-height: 2.5;
+    margin-left: 0.3rem;
+    font-size: 0.7rem;
+}
+.xia {
+    margin: 0.7rem 0 0 0;
+    float: right;
+    width: 46px;
+    padding: 10px 0;
+    background: url("../imges/xia.png")no-repeat;
+    background-size: 20px;
+}
+.xuan_hangye {
+    overflow: hidden;
+    padding-bottom: 0.1rem;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid #f3f3f3;
+}
+.xuan_lis {
+    float: left;
+    border: 1px solid #aaa;
+    border-radius: 1rem;
+    padding: 0 0.7rem 0.2rem 0.7rem;
+    line-height: 1;
+    background: #fff;
+    margin: 0.1rem 0.2rem;
+}
+.yixuan .xuan_lis>span {
+    clear: both;
+    color: #FF6600;
+    margin-right: 0.2rem;
+    font-size: 0.7rem;
+}
+.xuan_lis img {
+    height: 0.7rem;
+}
+.xuan_lis span{
+    font-size: 0.7rem;
+}
+.xianshi{
+    display: none;
+    transform:rotate(90deg);
+}
+.shang{
+    margin: 0.7rem 0 0 0;
+    float: right;
+    width: 46px;
+    padding: 10px 0;
+    background: url("../imges/shang.png")no-repeat;
+    background-size: 20px;
+}
+.quxiao{
+    display: none;
+}
+.xhy .xuan_lis{
+    width: 3.3rem;
+    text-align: center;
+    float: left;
+    border: none;
+    border-radius: 1rem;
+    padding: 0 0.7rem 0.2rem 0.7rem;
+    line-height: 0.8;
+    background: #f3f3f3;
+    margin: 0.5rem 0.1rem;
+}
+/*--行业搜索结束--*/
+
+/*--职位搜索--*/
+.xhy .job-search{
+    width: 100%;
+    border: none;
+    font-size: 0.7rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+.xhy .job-search2{
+    width: 95%;
+    margin: 0 auto;
+}
+#market{
+    width: 95%;
+    margin: 0 auto;
+}
+.job-search img{
+    width: 1rem;
+    float: left;
+    padding: 0 1rem 0 0;
+}
+.job-search ul{
+    width: 100%;
+    padding-left: 30%;
+    background: #f3f3f3;
+}
+.job-search ul li{
+    padding: 0.3rem;
+}
+.market{
+    display: none;
+}
+.servicet_img_1{
+    display: block;
+}
+.service_img_2{
+    display: none;
+}
+.market_img_2{
+    display: none;
+    margin-left: 2.5%;
+}
+.market_img_1{
+    display: block;
+    margin-left: 2.5%;
+}
+.market-1_img_2{
+    display: none;
+
+}
+.market-1_img_1{
+    display: block;
+}
+.public_img_2{
+    display: none;
+}
+.public_img_1{
+    display: block;
+}
+.img{
+    float: left;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 1rem 0 0;
+    background: url("../imges/gou2_.png") no-repeat;
+    background-size: 100%;
+}
+.img2{
+    float: left;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 1rem 0 0;
+    background: url("../imges/chan_07.png") no-repeat;
+    background-size: 100%;
+}
+.mar_xia {
+    margin: 0.3rem 0 0 0;
+    float: right;
+    width: 46px;
+    padding: 10px 0;
+    background: url("../imges/xia.png")no-repeat;
+    background-size: 20px;
+}
+.ser_xia {
+    margin: 0.3rem 0 0 0;
+    float: right;
+    width: 46px;
+    padding: 10px 0;
+    background: url("../imges/xia.png")no-repeat;
+    background-size: 20px;
+}
+.shang2 {
+    margin: 0.3rem 0 0 0;
+    float: right;
+    width: 46px;
+    padding: 10px 0;
+    background: url("../imges/shang.png")no-repeat;
+    background-size: 20px;
+}
+/*--职位搜索结束--*/
+
+/*--选择商品--*/
+.search_shop{
+    text-align: center;
+    background: #f3f3f3;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    top: 45px;
+}
+.search_shop input{
+    width: 90%;
+    border: none;
+    font-size: 18px;
+    text-align: left;
+    padding: 5px 0;
+    margin: 10px 0;
+    text-indent: 1em;
+}
+.search_shop div{
+    position: absolute;
+    top: 17px;
+    left: 43%;
+}
+.search_shop div img{
+    width: 1rem;
+    float: left;
+}
+.search_shop div p{
+    font-size: 0.6rem;
+    float: left;
+}
+.shop_lie{
+    background-color: #fff;
+    margin-top: 55px;
+    margin-bottom: 100px;
+}
+.shop_grd{
+  /*  background: url("../imges/gou2-.png") 14rem  no-repeat;*/
+    background-size: 1rem;
+    height: 5rem;
+}
+.shop_grd2{
+    background: url("../imges/gou2.png") 14rem  no-repeat;
+    background-size: 1rem;
+}
+.shop_grd img{
+    width: 25%;
+    height: 80%;
+    float: left;
+    padding: 0.3rem;
+}
+.shop_txt{
+    width: 50%;
+    height: 4rem;
+    float: left;
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+.shop_txt2{
+    border: none;
+}
+.shop_txt p:nth-child(1){
+    width: 100%;
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+}
+.shop_txt p{
+    font-size: 0.7rem;
+    padding-top: 0.2rem;
+}
+.shop_txt p span{
+    color: #ff6600;
+}
+.shop_img{
+    width: 10%;
+    float: left;
+    margin-top: 1.8rem;
+}
+.shop_img img{
+    width: 1rem;
+    padding: 0 0 0 0;
+    margin-left: 20px;
+}
+.shop_img1{
+    display: none;
+}
+.shop_img2{
+    display: block;
+}
+.shop_img4{
+    display: none;
+}
+.footer{
+    position: fixed;
+    background-color: #474747;
+    width: 100%;
+    bottom: 0;
+}
+.footer div{
+    width: 65%;
+    float: left;
+}
+.footer p{
+    color: #C7C7C7;
+    font-size: 0.7rem;
+    padding: 0 1rem;
+    line-height: 3.5;
+    text-align: left;
+}
+.footer button{
+    width: 35%;
+    float: left;
+    /* height: 100%; */
+    background: #FCA937;
+    border: none;
+    font-size: 0.7rem;
+    padding: 0 1rem;
+    line-height: 3.5;
+}
+/*--选择商品结束--*/
+
+@media (max-width: 360px) {
+    .pri-set_div div p {
+        line-height: 1.8;
+    }
+}
+#prompt div{
+				width: 70%;
+				background: rgba(0,0,0, 0.5);
+			}
+	

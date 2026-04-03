@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+<package strict-method-invocation="false" name="tel-ntoken" namespace="/ea/tel" extends="struts-default">
+		<action name="tel_*" class="hy.tel.action.TelRecordAction" method="{1}">	 
+			<result name="soundsIn" type="freemarker">/page/ea/main/telrec/soundsIn.html</result>	 
+			<result name="soundsOut" type="freemarker">/page/ea/main/telrec/soundsOut.html</result>
+			<result name="company" type="freemarker">/page/ea/main/telrec/company.html</result>
+			<result name="person" type="freemarker">/page/ea/main/telrec/person.html</result>
+			<!-- <result name="telInOutList" type="freemarker">/page/ea/main/telrec/personList.html</result> -->
+			<!-- <result name="telInOutCompanyList">/page/ea/main/telrec/companyList.jsp</result> -->
+			<result name="returnsVisit" type="freemarker">/page/ea/main/telrec/outCall.html</result>
+			<result name="success">/page/ea/success.jsp</result>			
+			<result name="toPrint" type="freemarker">/page/ea/main/telrec/toPrint.html</result>
+			<result name="infoDealCenter" type="freemarker">/page/ea/main/telrec/infoDealCenter.html</result>
+			<result name="showTelInOutExcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="tel_InOut.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	 <package strict-method-invocation="false" name="tel-jsonajax" namespace="/ea/tel" extends="struts-default">
+		<action name="sajax_tel_*" class="hy.tel.action.TelRecordAction" method="{1}">			
+		</action>
+	</package>
+</struts>

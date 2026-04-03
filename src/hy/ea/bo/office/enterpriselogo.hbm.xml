@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EnterpriseLogo" table="dtEnterpriseLogo">
+		<id length="50" name="logoKey">
+			<column length="50" name="logoKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="logoID">
+			<column length="50" name="logoID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="logoType">
+			<column length="50" name="logoType" />
+		</property>
+		<property  name="logoPhoto">
+			<column length="256" name="logoPhoto" />
+		</property>
+		<property  name="author">
+			<column length="250" name="author" />
+		</property>
+		<property  name="logoNote">
+			<column length="250" name="logoNote" />
+		</property>
+	</class>
+</hibernate-mapping>

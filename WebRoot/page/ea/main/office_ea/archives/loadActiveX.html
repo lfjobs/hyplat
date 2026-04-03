@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>loadActiveX.xhtml</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+
+		<object classid="clsid:35D4C13E-4704-4762-B5B9-036E56A8FB75"
+			codebase="Archives.cab#version=1,0,1,23" width="1" height="1"
+			id="Archives" name="Archives">
+		</object>
+		<script type="text/javascript"> 
+
+			if (window.parent.document.getElementById("chipids")) {
+				window.parent.document.getElementById("chipids").value = "";
+			}
+			if (window.parent.document.getElementById("chipidss")) {
+				window.parent.document.getElementById("chipidss").value = "";
+			}
+			document.Archives.OpenPort();
+			document.Archives.GetDatas();
+			function GetTagId(values) {
+				 
+				if (values) { 
+					if (window.parent.document.getElementById("chipids")) {
+						window.parent.document.getElementById("chipids").value = values;
+					}
+					if (window.parent.document.getElementById("chipidss")) {
+						window.parent.document.getElementById("chipidss").value = values;
+					}
+					document.Archives.ClosePort();
+				}
+			}
+		</script>
+	</body>
+</html>

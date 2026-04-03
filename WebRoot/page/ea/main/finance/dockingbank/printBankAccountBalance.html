@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>打印银行账户余额</title>
+	
+    <meta http-equiv="keywords" content="打印,银行,账户余额">
+    <meta http-equiv="description" content="打印银行账户余额">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">    
+	
+	<script type="text/javascript" src="../../../../../js/jquery.js"></script>
+	
+    <style type="text/css">
+	<!--
+		* {
+	margin:0;
+	padding:0;
+		}	
+		span {
+			font-size: 12px;
+			margin-right: 30px;
+		}
+		table { width:100%; border-top:1px solid #000; border-left:1px solid #000; }
+		table td {border-right:1px solid #000; border-bottom:1px solid #000; width:136px; height:25px;}	
+	-->
+    </style>
+    
+    <script type="text/javascript">				
+		$(document).ready(function(){			
+			$("#accountBalanceBean-accType").html($("#accountBalanceBean-accType",window.opener.document).html());
+			$("#accountBalanceBean-accSts").html($("#accountBalanceBean-accSts",window.opener.document).html());
+			$("#accountBalanceBean-frzAmt").html($("#accountBalanceBean-frzAmt",window.opener.document).html());
+			$("#accountBalanceBean-frzBal").html($("#accountBalanceBean-frzBal",window.opener.document).html());
+			$("#accountBalanceBean-valUDLmt").html($("#accountBalanceBean-valUDLmt",window.opener.document).html());
+			$("#accountBalanceBean-valMonthLmt").html($("#accountBalanceBean-valMonthLmt",window.opener.document).html());
+			$("#accountBalanceBean-valDayLmt").html($("#accountBalanceBean-valDayLmt",window.opener.document).html());
+			$("#accountBalanceBean-lastAvailBal").html($("#accountBalanceBean-lastAvailBal",window.opener.document).html());
+			$("#accountBalanceBean-lastBal").html($("#accountBalanceBean-lastBal",window.opener.document).html());
+			$("#accountBalanceBean-availBal").html($("#accountBalanceBean-availBal",window.opener.document).html());
+			$("#accountBalanceBean-bal").html($("#accountBalanceBean-bal",window.opener.document).html());
+			$("#accountName").html($("#accountName",window.opener.document).val());
+			
+			var d = new Date();			
+			var s = d.getFullYear() + "-" + (d.getMonth()+1) + "-" ;
+				s = s + (d.getDate()<10?"0"+d.getDate():d.getDate()) + " " ;
+			    s = s + (d.getHours()<10?"0"+d.getHours():d.getHours()) + ":" ;
+				s = s + (d.getMinutes()<10?"0"+d.getMinutes():d.getMinutes()) + ":" ;
+				s = s + (d.getSeconds()<10?"0"+d.getSeconds():d.getSeconds());				
+			$("#shijian").html(s);
+		});		
+	</script>
+		
+</head>
+  
+  <body>
+  	<div style="width:544px; margin:0 auto; ">
+  	<div height="50px"><span>&nbsp;</span></div>  	
+    <table align="center" cellpadding="0px" cellspacing="0px" id="stafftable" style="" name="stafftable"> 
+	    <tr>
+	    	<td align="right"><span>账户性质：</span></td>
+	    	<td><span id="accountBalanceBean-accType" name="accountBalanceBean-accType"></span></td>
+	    	<td height="37" align="right"><span>账户状态：</span></td>
+	    	<td><span id="accountBalanceBean-accSts"></span></td>
+	    </tr>
+	    <tr>
+	    	<td align="right"><span >人工冻结金额：</span></td>
+	    	<td><span id="accountBalanceBean-frzAmt"></span></td>
+	    	<td height="37" align="right"><span >自动冻结金额：</span></td>
+	    	<td><span id="accountBalanceBean-frzBal"></span></td>
+	    </tr>
+	    <tr>
+	      <td align="right"><span>限制可用额：</span></td>
+	      <td><span id="accountBalanceBean-valUDLmt"></span></td>
+	      <td align="right"><span>当月可用额：</span></td>
+	      <td><span id="accountBalanceBean-valMonthLmt"></span></td>
+      </tr>
+	    <tr>
+	      <td align="right"><span>当日可用额：</span></td>
+	      <td><span id="accountBalanceBean-valDayLmt"></span></td>
+	      <td align="right"><span>上日可用余额：</span></td>
+	      <td><span id="accountBalanceBean-lastAvailBal"></span></td>
+      </tr>
+	    <tr>
+	      <td align="right"><span>上日余额：</span></td>
+	      <td><span id="accountBalanceBean-lastBal"></span></td>
+	      <td align="right"><span>可用余额：</span></td>
+	      <td><span id="accountBalanceBean-availBal"></span></td>
+      </tr>
+	    <tr>
+	      <td align="right"><span>余额：</span></td>
+	      <td colspan="3"><span id="accountBalanceBean-bal">&nbsp;</span></td>
+      </tr>	    
+   </table>	
+   <div style="text-align:right; width:544px; height:60px;  margin-left:auto; margin-right:auto; margin-top:20px;"><span>&nbsp;办理人：</span><span id="accountName">&nbsp;</span><span>时间：</span><span id="shijian">&nbsp;</span></div>
+  </div>
+  </body>
+</html>

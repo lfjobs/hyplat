@@ -1,0 +1,136 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { color:#666; text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.more{ float: right; }
+.more a{ font-weight: normal; font-size: 12px; }
+.fl{ display: inline; float: left; } 
+.fr{ display: inline;  float: right; }
+.fixed:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }   
+.fixed { display: block; min-height: 1%; }   
+*html .fixed{ height: 1%; }    
+.clear {width:100%; diplay: block!important; float: none!important; clear: both; overflow: hidden; width: auto!important; height: 0!important; margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0; }
+.pos{ position:relative;}
+.black{ color: black;}
+/*公共样式*/
+
+/*index  iframe样式*/
+#indexTop{ position: fixed; top: 0px; left: 0px; z-index: 500; }
+#indexCon{position: absolute; top: 0px; left: 0px;}
+#indexBottom{ position: fixed; left: 0px; bottom: 0px;}
+/*index  iframe样式*/
+
+
+/*新建头部导航样式*/
+.ttopbar{width:360px;margin:auto; height:55px;background-color: #3294ef;}
+.ttopbar .lfloat{float:left;}
+.ttopbar .lwei{float:left; padding-top:20px; padding-left:10px;}
+.ttopbar li .return{width:40px; padding-left:10px; padding-top:5px; height:auto;}
+.ttopbar li .font{ font-size:16px; color:#fff; font-weight:bold;}
+.ttopbar .lshu{float:left; width:1px; background-color:#fff;height:55px;}
+.ttopbar li .refresh{width:40px; padding-left:10px; padding-top:5px; height:auto; padding-right:10px;}
+.ttopbar li .more{width:40px;padding-top:5px;padding-right:10px; height:auto;}
+/*新建头部导航样式*/
+
+/*新建底部导航样式*/
+.BottomHomeCartMine{width:360px;margin:auto;padding-left:40px;}
+.BottomHomeCartMine .listyle{float:left;width:25%;text-align:center;}
+.BottomHomeCartMine .image{float:left;width:40px;text-align:center;}
+/*新建底部导航样式*/
+
+/*Page/mobile/wxZhaopin/Jobs_Reception*/
+.Jobs_Reception{width:360px;margin:auto;}
+.Jobs_Reception .title{width:100%;margin:auto; font-size:24px;background-color:#42ABE1;text-align:center;color:#fff;height:48px; line-height:48px;font-weight:bold;}
+.Jobs_Reception .divPic{width: 88%; margin: auto; background-color: #fff; height: 32px; line-height: 32px; margin-top: 12px;}
+.Jobs_Reception .divPic img{padding-left: 20px; width: 6px; height: auto;}
+.Jobs_Reception .divPic label{padding-left: 12px; font-weight: bold;}
+/*Page/mobile/wxZhaopin/Jobs_Reception*/
+
+/*Page/mobile/wxZhaopin/Jobs_Backstage*/
+.Jobs_Backstage{width:360px;margin:auto;}
+.Jobs_Backstage .clboth{clear:both;float:left;}
+.Jobs_Backstage .title{width:100%;margin:auto; font-size:24px;background-color:#42ABE1;text-align:center; color:#fff;height:48px; line-height:48px;font-weight:bold;}
+.Jobs_Backstage .content{width:90%;margin:auto;background-color:#ffffff;}
+.Jobs_Backstage .content .padd{width:90%;margin:auto;}
+.Jobs_Backstage .job_info{clear:both;float: left;font-size:14px;background-color:#FF6600;margin-top:10px; margin-bottom:10px; width:28%;text-align:center;height:26px;line-height:26px;color:#ffffff;font-weight:bold;}
+.Jobs_Backstage .job_name{clear:both; font-size:16px;color:#00AFFF;font-weight:bold;float:left; width:33%;}
+.Jobs_Backstage .staff{float:left; width:33%;}
+.Jobs_Backstage .job_claim{float:left; width:49%;}
+.Jobs_Backstage .job_claim .fleft{clear:both; float:left; width:30%;background-color:#00AFFF;color:#ffffff;text-align:center;padding-top:5px;padding-bottom:5px;}
+.Jobs_Backstage .job_claim .fclaim{ float:left; width:60%;background-color:#E6E6E6;color:#646464;padding-top:5px;padding-bottom:5px;padding-left:5px;}
+.Jobs_Backstage .content .padd p{text-indent:2em;padding-bottom:3px;}
+/*Page/mobile/wxZhaopin/Jobs_Backstage*/
+
+
+/*GoodsShow/MarketShop内容样式*/
+.fl{ display: inline; float: left; } 
+.con{ width:360px; margin: auto; background-color:#f0f0f0; }
+.con div.so{ width:100%; height: 40px; float: left; }
+.con div.so div.search{ position: relative; width:90%; height: 30px; margin:auto; margin-top: 5px; border:1px solid #ff8500; border-radius: 4px;-moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px; }
+.con div.so div.search input[type=text]{ position: absolute; left: 4px; top: 0px; width:270px; padding:2px; height: 26px; line-height: 26px; background-color: #f0f0f0; outline: none; border: none; }
+.con div.so div.search img{ position: absolute; right: 4px; width:42px; height:28px; margin-top:1px; }
+.con .DifferentialGoldTitle{clear: both; background-color: #ED1C43; width: 100%; height: 35px; margin-top: 10px;}
+.con .DifferentialGoldTitle .tit{color: #ffffff; font-size: 16px; padding-top: 8px; font-weight:bold; padding-left: 15px;}
+.con .tbl{clear:both; border-bottom: 1px solid #76B4F1;}
+.con .tbl .tdi{margin-top: 15px; width: 20%; text-align: right;}
+.con .tbl .tdi .img{width: 65px; height: auto; padding-left: 10px; padding-top: 10px;}
+.con .tbl .dian{margin-top: 15px; width: 40%; padding-left: 10px;}
+.con .tbl .dian .fon{padding: 3px 0px 14px 10px; font-size: 15px; font-family: 微软雅黑; color: #000000;}
+.con .tbl .dian a{color: #A1A1A1; padding-left: 10px;text-decoration:underline;}
+.con .tbl .register{margin-top: 15px; width: 40%; text-align: right; padding-right: 20px;}
+.con .tbl .register .register_time{padding-bottom: 15px; padding-top: 5px;}
+.con .tbl .register .register_name{color: #FF8500;}
+/*GoodsShow/MarketShop内容样式*/
+
+
+/*GoodsShow/GoodsSource内容样式*/
+.GoodsSource{clear: both; width: 100%; margin-top: 10px; margin-bottom: 10px;}
+.GoodsSource div{width: 49%; text-align: center; float: left; border: 1px solid #808080;}
+.GoodsSource div .names{float: left; width: 50%; padding-top: 5px; text-align: right; padding-right: 5px;}
+.GoodsSource div .lfloat{float: left;}
+.GoodsSource div img{padding-top: 5px; padding-bottom: 5px; height: 14px;}
+.con .tbl .rfloat{float:right;}
+.con .tbl .rfloat .names{padding-top: 20px; float: left;}
+.con .tbl .rfloat .num{padding-top: 20px; float: right; padding-left: 15px;padding-right:10px;}
+.con .tbl .rfloat .ptop{padding-top: 48px;}
+.con .tbl .rfloat .ptop .pright{ padding-right: 5px;}
+.con .tbl .rfloat .ptop .lfloat{float: left; padding-right: 5px;}
+.con .tbl .rfloat .ptop .lfloat img{width: 12px;}
+.con .tbl .rfloat .ptop .choice{float: right;padding-right:10px;}
+/*GoodsShow/GoodsSource内容样式*/
+
+/*GoodsShow/GoodsCategory内容样式*/
+div.storeStarHeader span.category{ width:46px; display:block; float:left;}
+.con div.top_shop{ width:90%; margin: auto;}
+.con div.top_shop div.shopInfo{ margin-top: 20px; width:100%;}
+.con div.top_shop div.shopInfo div.shopLogo{ width: 54px; height: 54px; line-height: 54px; text-align: center; background-color: #fff;}
+.con div.top_shop div.shopInfo div.shopLogo div.shopLogoDiv{ width: 50px; height: 50px; line-height: 50px; text-align: center;  background-color: #84ccc9; margin: 2px; color: #fff;}
+.con div.top_shop div.shopInfo p.shopName{float: left; width:100px; height: 54px; line-height: 54px; padding: 4px;}
+.con div.top_shop div.shopInfo div.fr{ color: #3fa0ed; margin-top:30px; line-height: 24px; cursor: pointer;}
+.con div.top_shop div.so div.search{ width:240px; margin: 0px; margin-top: 5px;}
+.con div.top_shop div.so div.search input[type=text]{ width:180px;}
+.con div.top_shop div.so div.upAddress{ width:70px; color: #fff; background-color: #ff8500; height: 32px; line-height: 32px; margin-top: 5px; text-align: center; cursor: pointer;}
+.con div.storeCategory div.asc{ width:93%; height: 30px; margin:auto; margin-top: 10px; border: 1px solid #ddd;}
+.con div.storeCategory div.asc span{ width:33%; height: 30px; line-height: 30px; text-align: center; cursor: pointer; }
+.con div.storeCategory div.asc span.fl{border-right: 1px solid #ddd; }
+.con div.storeCategory{ overflow: auto; height: auto; }
+.con div.storeCategory div.store p>d{ width:14px; height: 14px; background-color: #358cef; margin-right: 10px; float: right;}
+.con div.storeCategory div.store div{line-height: 23px; overflow: hidden;}
+.con div.storeCategory div.store div span{ float: right; margin-right: 4px;}
+.con div.storeStarContent div.store{ position: relative; width:100px; height: 140px; margin-left:14px; margin-top:10px; border:1px solid #ed1c42;}
+.con div.storeStarContent div.store img.store{ width:100px; height: 100px;}
+/*GoodsShow/GoodsCategory内容样式*/
+
+

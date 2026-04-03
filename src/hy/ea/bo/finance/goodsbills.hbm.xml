@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="GoodsBills" table="dtGoodsBills">
+		<id length="50" name="goodsBillsKey">
+			<column length="50" name="goodsBillsKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="goodsBillsID">
+        	<column name="goodsBillsID" length="50"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+        <property name="companyBankNum">
+        	<column name="companyBankNum" length="250"><comment>公司银行账号</comment></column>
+        </property>
+        <property name="inventoryID">
+			<column length="50" name="inventoryID"><comment>库存表id</comment></column>
+		</property>
+		 <property name="cashierBillsID">
+        	<column name="cashierBillsID" length="50"><comment>单据ID</comment></column>
+        </property>
+        <property name="stockinvID">
+        	<column name="stockinvID" length="50"><comment>库存盘点外键</comment></column>
+        </property>
+        <property name="goodsnumber">
+        	<column name="goodsnumber" length="50"><comment>物品在仓库中的序号</comment></column>
+        </property>
+        <property name="goodsNomber">
+        	<column name="goodsNomber" length="50"><comment>物品在账单中的排列序号</comment></column>
+        </property>
+		<property name="subjectsID">
+			<column length="50" name="subjectsID"><comment>科目管理ID</comment></column>
+		</property>
+		<property name="identifyingCode">
+			<column length="250" name="identifyingCode" ><comment>标识条码 世标条码</comment></column>
+		</property>
+		<property name="moneySpent">
+			<column length="250" name="moneySpent"><comment>用款原因</comment></column>
+		</property>
+			<property name="companytopshangjo">
+			<column length="250" name="companytopshangjo"><comment>上级代理或者公司ID</comment></column>
+		</property>
+			<property name="hytype">
+			<column length="250" name="hytype"><comment>个人购买会员类型</comment></column>
+		</property>
+		<property name="subjectsName">
+			<column length="250" name="subjectsName" ><comment>科目管理名称</comment></column>
+		</property>
+		<property name="startDate">
+			<column  name="startDate"><comment>款源日期</comment></column>
+		</property>
+		<property name="endDate">
+			<column  name="endDate"><comment>报账日期</comment></column>
+		</property>
+		<property name="batchNumber">
+			<column length="250" name="batchNumber" not-null="false"><comment>批号或期号</comment></column>
+		</property>
+		<property name="periodDate">
+			<column  name="periodDate" not-null="false"><comment>有效日期</comment></column>
+		</property>
+		<property name="remindedContent">
+			<column length="250" name="remindedContent" not-null="false"><comment>提醒内容</comment></column>
+		</property>
+		<property name="costType">
+			<column length="250" name="costType"><comment>费用类别</comment></column>
+		</property>
+		<property name="goodsVariableID">
+			<column length="250" name="goodsVariableID"><comment>单位</comment></column>
+		</property>
+		<property name="goodsStatus">
+			<column length="250" name="goodsStatus"><comment>归档状态</comment></column>
+		</property>
+		<property name="logistics">
+			<column length="250" name="logistics"><comment>物流方式</comment></column>
+		</property>
+		<property name="payType">
+			<column length="250" name="payType"><comment>付款方式</comment></column>
+		</property>
+		<property name="weight">
+			<column length="250" name="weight"><comment>重量</comment></column>
+		</property>
+		<property name="boxStandard">
+			<column length="250" name="boxStandard"><comment> 箱规格 类别</comment></column>
+		</property>
+		<property name="goodsID">
+			<column length="50" name="goodsID"><comment>物品ID</comment></column>
+		</property>
+		<property name="priceManage">
+			<column length="250" name="priceManage"><comment>单价管理</comment></column>
+		</property>
+		<property name="quantity">
+			<column length="250" name="quantity"><comment>数量</comment></column>
+		</property>
+		<property name="fhnum">
+			<column length="250" name="fhnum"><comment>待商家送货数量</comment></column>
+		</property>
+		<property name="xcnum">
+			<column length="250" name="xcnum"><comment>现场已拿数量</comment></column>
+		</property>
+		<property name="price">
+			<column length="250" name="price"><comment>单价</comment></column>
+		</property>
+		<property name="money">
+			<column length="250" name="money"><comment>总价</comment></column>
+		</property>
+		<property name="rebate">
+			<column length="50" name="rebate"><comment>折扣</comment></column>
+		</property>
+		<property name="rebatePrice">
+			<column length="250" name="rebatePrice"><comment>折后价</comment></column>
+		</property>
+		<property name="depotID">
+			<column length="50" name="depotID"><comment>库房ID</comment></column>
+		</property>
+		<property name="depotName">
+			<column length="250" name="depotName"><comment>库房名称</comment></column>
+		</property>
+		<property name="depotType">
+			<column length="250" name="depotType"><comment>库房类别</comment></column>
+		</property>
+		<property name="loan">
+			<column length="250" name="loan"><comment>借方金额</comment></column>
+		</property>
+		<property name="forLoan">
+			<column length="250" name="forLoan"><comment>贷方金额</comment></column>
+		</property>
+		<property name="direction">
+			<column length="250" name="direction"><comment>方向</comment></column>
+		</property>
+		<property name="balance2">
+			<column length="250" name="balance2"><comment>报表余额</comment></column>
+		</property>
+		<property name="balance">
+			<column length="250" name="balance"><comment>余额</comment></column>
+		</property> 
+		<property name="status">
+			<column length="2" name="status"><comment>状态</comment></column>
+		</property>
+		
+	    <property name="registrationDate">
+			<column name="registrationDate"><comment>（款源时间）登记时间 培训</comment></column>
+		</property>
+		<property name="accompanyDate">
+			<column name="accompanyDate"><comment>（入账日期）培训时间 培训</comment></column>
+		</property>
+		<property name="reason">
+			<column length="250" name="reason"><comment> 原因 测试</comment></column>
+		</property>
+		<property name="projectDec" type="string">
+			<column name="projectDec"><comment> 项目文件路劲 收集</comment></column>
+		</property>
+		<property name="attachmentPath">
+			<column length="250" name="attachmentPath"><comment>附件 收集</comment></column>
+		</property>
+		<property name="remark">
+			<column length="250" name="remark"><comment>备注 收集</comment></column>
+		</property>
+		<property name="workSite">
+			<column length="250" name="workSite"><comment>工作地点</comment></column>
+		</property>
+		<property name="serviceWay">
+			<column length="250" name="serviceWay"><comment>服务方式</comment></column>
+		</property>
+		<property name="serviceContent">
+			<column length="250" name="serviceContent"><comment>服务内容</comment></column>
+		</property>
+		<property name="serviceReason">
+			<column length="250" name="serviceReason"><comment>跟踪原因</comment></column>
+		</property>
+		<property name="dealStatus">
+			<column length="250" name="dealStatus"><comment>处理状态</comment></column>
+		</property>
+		<property name="entryTime">
+			<column name="entryTime"><comment>录入时间</comment></column>
+		</property>
+		<property name="billsNumbers">
+			<column length="250" name="billsNumbers"><comment>票据编号</comment></column>
+		</property>
+		<property name="reasonThing">
+			<column length="250" name="reasonThing"><comment>摘要</comment></column>
+		</property>
+		<property name="otherAmount">
+			<column length="250" name="otherAmount"><comment> 其他金额</comment></column>
+		</property>
+		<property name="ebdID">
+			<column length="50" name="ebdID"><comment>产品明细ID</comment></column>
+		</property>
+		<property name="ebbID">
+			<column length="50" name="ebbID"><comment>产品明细ID</comment></column>
+		</property>
+		<property name="canstatus">
+			<column length="10" name="canstatus"><comment>是否作废</comment></column>
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID"><comment>往来单位ID</comment></column>
+		</property>
+		
+		<property name="ccompanyName">
+			<column length="50" name="ccompanyName"><comment>往来单位</comment></column>
+		</property>
+		
+		<property name="connectID">
+			<column length="50" name="connectID"><comment>往来个人ID</comment></column>
+		</property>
+		
+		<property name="connectName">
+			<column length="50" name="connectName"><comment>往来个人name</comment></column>
+		</property>
+		
+		<property name="isSelected">
+			<column length="5" name="isSelected"><comment>比价后是否被选中</comment></column>
+		</property>
+		<property name="goodsNum">
+			<column length="250" name="goodsNum"><comment>品名编号</comment></column>
+		</property>
+		<property name="goodsName">
+			<column length="250" name="goodsName"><comment>物品名称</comment></column>
+		</property>
+		<property name="typeID">
+			<column length="250" name="typeID"><comment>物品类别</comment></column>
+		</property>
+		<property name="standard">
+        	<column name="standard" length="250"><comment>品牌规格</comment></column>
+        </property>
+        
+        <property name="sortCode">
+			<column length="250" name="sortCode"><comment>统一分类条码</comment></column>
+		</property>
+		<property  name="kcStatus">
+			<column length="250" name="kcStatus"><comment>状态</comment></column>
+		</property>
+		<property  name="goodstatus">
+			<column length="250" name="goodstatus"><comment>状态</comment></column>
+		</property>
+		<property  name="storageQuantity">
+			<column length="50" name="storageQuantity" sql-type="number"><comment>未入库数量</comment></column>
+		</property>
+		<property  name="reQuantity">
+			<column length="250" name="reQuantity"  sql-type="number"><comment>收货数量</comment></column>
+		</property>
+		<property  name="isQualify">
+			<column length="250" name="isQualify" sql-type="number"><comment>物品合格数量</comment></column>
+		</property>
+		<property name="targetStart">
+			<column length="15" name="targetStart"><comment>目标起时间</comment></column>
+		</property>
+		<property name="targetEnd">
+			<column length="15" name="targetEnd"><comment>目标止时间</comment></column>
+		</property>
+		<property name="targetDeptID">
+			<column length="50" name="targetDeptID"><comment>目标部门ID</comment></column>
+		</property>
+		<property name="targetDeptName">
+			<column length="50" name="targetDeptName"><comment>目标部门name</comment></column>
+		</property>
+		<property name="targetSalerID">
+			<column length="50" name="targetSalerID" ><comment>目标业务员ID</comment></column>
+		</property>
+		<property name="targetSalerName">
+			<column length="50" name="targetSalerName"><comment>目标业务员Name</comment></column>
+		</property>
+		
+		<property name="studentCode">
+			<column length="50" name="studentCode"><comment>报开学号</comment></column>
+		</property>
+		<property name="studentPeriods">
+			<column length="50" name="studentPeriods"><comment>学员期数</comment></column>
+		</property>
+		<property name="schoolopendate" >
+			<column name="schoolopendate"><comment>报开学时间</comment></column>
+		</property>
+			<property name="tiaoPrice">
+			<column length="50" name="tiaoPrice" ><comment>调整单价</comment></column>
+		</property>
+		<property name="tiaoQuantity" >
+			<column length="50" name="tiaoQuantity" ><comment>调整数量</comment></column>
+		</property>
+		<property name="tiaoMoney" >
+			<column length="50" name="tiaoMoney"><comment>调整金额</comment></column>
+		</property>
+		<property name="planGoodsBillsID" >
+			<column length="50" name="planGoodsBillsID"><comment>实际收入中预算的外键</comment></column>
+		</property>
+		<property name="realMoney">
+			<column length="250" name="realMoney"><comment>本次收款</comment></column>
+		</property>
+		<property name="costmoney">
+			<column length="250" name="costmoney" />
+		</property>
+		<property name="photoFileName">
+			<column length="250" name="photoFileName" ><comment></comment></column>
+		</property>
+		<property name="ppID">
+			<column length="50" name="ppID"><comment>产品ID</comment></column>
+		</property>
+		<property name="alreadyMoney">
+			<column length="250" name="alreadyMoney" ><comment>已收款</comment></column>
+		</property>
+		<property name="futureMoney">
+			<column length="250" name="futureMoney" ><comment>未收款</comment></column>
+		</property>
+		<property name="tradeNo">
+			<column length="50" name="tradeNo"><comment>支付宝交易号</comment></column>
+		</property>
+		<property name="profitMargin">
+			<column length="50" name="profitMargin"><comment>利润率</comment></column>
+		</property>
+		<property name="profitAmount">
+			<column length="50" name="profitAmount"><comment>利润金额</comment></column>
+		</property>
+		<property name="pretium">
+			<column length="50" name="pretium"><comment>销售价</comment></column>
+		</property>
+		<property name="supplierID">
+			<column length="50" name="supplierID"><comment>供应商ID</comment></column>
+		</property>
+		<property name="supplier">
+			<column length="50" name="supplier"><comment>供应商</comment></column>
+		</property>
+		<property name="supplierStaffID">
+			<column length="50" name="supplierStaffID"><comment>供应商负责人ID</comment></column>
+		</property>
+		<property name="supplierStaffName">
+			<column length="50" name="supplierStaffName"><comment>供应商负责人名称</comment></column>
+		</property>
+		<property name="supplierStaffTelephone">
+			<column length="50" name="supplierStaffTelephone"><comment>供应商负责人电话</comment></column>
+		</property>
+		<property name="proInspectionID">
+			<column length="50" name="proInspectionID"><comment>生产时考核检验ID</comment></column>
+		</property>
+		<property name="category">
+			<column length="50" name="category"><comment>产品类型</comment></column>
+		</property>
+		<property name="premiums">
+			<column length="50" name="premiums"><comment>是否是奖品  0或null:否  1:是  </comment></column>
+		</property>
+		<property name="fiveClear">
+			<column length="50" name="fiveClear"><comment>该产品在生产所属部门</comment></column>
+		</property>
+
+		<property name="areappid">
+			<column length="50" name="areappid"><comment>记录购买省县村代理详细区域产品id</comment></column>
+		</property>
+
+		<property name="pricetype">
+			<column length="1" name="pricetype"><comment>价格类型 0或者null零售订单  1：批发价格 2：VIP  3. 普通活动 4.特价活动</comment></column>
+		</property>
+
+		<property name="activityID">
+			<column length="50" name="activityID"><comment>促销活动ID</comment></column>
+		</property>
+
+		<property name="barCode">
+			<column length="250" name="barCode"><comment>条码</comment></column>
+		</property>
+		<property name="gradeid">
+			<column length="50" name="gradeid"><comment>等级id</comment></column>
+		</property>
+		<property name="gradeName">
+			<column length="50" name="gradeName"><comment>等级名称</comment></column>
+		</property>
+		<property name="invInvenQuantity">
+			<column length="300" name="invInvenQuantity"><comment>库存</comment></column>
+		</property>
+		<property name="tradeName">
+			<column length="200" name="tradeName"><comment>行业名称</comment></column>
+		</property>
+		<property name="tradeID">
+			<column length="50" name="tradeID"><comment>行业id</comment></column>
+		</property>
+		<property name="tradeCode">
+			<column length="300" name="tradeCode"><comment>行业编码</comment></column>
+		</property>
+		<property name="producttype">
+			<column length="50" name="producttype"><comment>项目分类</comment></column>
+		</property>
+		<property name="productCode">
+			<column length="50" name="productCode"><comment>项目分类编号</comment></column>
+		</property>
+		<property name="isScale">
+			<column length="10" name="isScale"><comment>是否云计称重</comment></column>
+		</property>
+		<property name="unitofmeasurecode">
+			<column length="10" name="unitofmeasurecode"><comment>计价单位</comment></column>
+		</property>
+		<property name="logoPath">
+			<column length="300" name="logopath"><comment>品牌logo路径</comment></column>
+		</property>
+		<property name="brand">
+			<column length="50" name="brand"><comment>品牌名称</comment></column>
+		</property>
+		<property name="guigeType">
+			<column length="50" name="guigeType"><comment>规格类型</comment></column>
+		</property>
+		<property name="unitPrice">
+			<column length="50" name="unitPrice"><comment>单价</comment></column>
+		</property>
+		<property name="amount">
+			<column length="50" name="amount"><comment>金额</comment></column>
+		</property>
+		<property name="goodsPurpose">
+			<column length="50" name="goodsPurpose"><comment>物品用途</comment></column>
+		</property>
+		<property name="guigeTypeId">
+			<column length="30" name="guigeTypeId"><comment>规格类型id</comment></column>
+		</property>
+		<property name="goodsPurposeId">
+			<column length="50" name="goodsPurposeId"><comment>物品用途id</comment></column>
+		</property>
+		<property name="guigeTypeValue">
+			<column length="50" name="guigeTypeValue"><comment>规格类型总值</comment></column>
+		</property>
+		<property name="serviceStartDate">
+			<column name="SERVICESTARTDATE" length="50"></column>
+		</property>
+		<property name="serviceEndDate">
+			<column name="SERVICEENDDATE" length="50"></column>
+		</property>
+	</class>
+</hibernate-mapping>

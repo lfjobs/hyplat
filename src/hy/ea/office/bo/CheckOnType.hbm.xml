@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.office.bo">
+	<class name="CheckOnType" table="DT_CHECKON_TYPE" schema="HYPLAT" dynamic-insert="true">
+	<comment>考勤类别</comment>
+		<id length="50" name="checkOnTypeId" type="java.lang.String">
+			<column length="50" name="CHECKON_TYPE_ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="checkOnTypeName" type="java.lang.String">
+			<column length="20" name="CHECKON_TYPE_NAME" >
+				<comment>考勤类别名</comment>
+			</column>
+		</property>
+		<property name="checkOnTypeSerial" type="java.lang.String">
+			<column length="10" name="CHECKON_TYPE_SERIAL" >
+				<comment>考勤类别序号</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
+

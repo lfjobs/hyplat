@@ -1,0 +1,66 @@
+@charset 'utf-8';
+/*扫码付款*/
+.QR_pay_wrap{background: #f6f6f6;}
+.QR_pay_box{background: #fff;padding: 1rem 0 .3rem;text-align: center;}
+.head_img{display: block;margin: 0 auto .5rem;width: 3rem;height: 3rem;border-radius: .3rem;}
+.QR_pay_box span{font-size: .683rem;color: #2c2c2c;line-height: 1.5rem;}
+.QRpay_inp_wrap{border-top: 2px dashed #eaeaea;margin: .6rem 1rem;padding-top: .3rem;}
+.qrpay_tit{text-align: left;line-height: 1.5rem;font-size: .64rem;letter-spacing: 1px;color: #2c2c2c;}
+.QRpay_inp_box{height: 2.8rem;position: relative;overflow: visible;}
+.QRpay_inp_box span{position: absolute;left: 0;line-height: 2.8rem;font-size: 1.4rem;color: #2c2c2c;z-index: 9;}
+/*.QRpay_inp{line-height: 1;height: 1.2rem;position: absolute;width: 100%;left: 0;padding-left: 2rem;background: transparent;border: 0;outline: 0;z-index: 1;top: .8rem;font-size: 1.2rem;color: #020202;}*/
+.QRpay_inp{height: 2rem;position: absolute;width: 100%;left: 0;background: transparent;border: 0;outline: 0;z-index: 1;top: .4rem;font-size: 1rem;color: #020202;padding: .4rem 0 .4rem 2rem;}
+.QRpay_btn{display: block;text-align: center;line-height: 2rem;width: 14rem;margin: 1rem auto;outline: 0;border: 0;font-size: .8rem;background: #ff6e31;color: #fff;border-radius: .15rem;}
+.QRpay_btn:disabled{color: #bdbdbd;background: #dddddd;}
+.payways_wrap{background: #fff;position: fixed;bottom: 0;width: 100%;left: 0;padding: 0 .8rem 2rem;z-index: 999;-webkit-transform: translate3d(0,100%,0);transform: translate3d(0,100%,0);transition: transform .2s, -webkit-transform .2s;}
+.payways_tit{line-height: 2rem;font-size: .6rem;color: #020202; }
+.pay_way{color: #020202;font-size: .68rem;line-height: 2.8rem;display: block;padding-left: 2.6rem;border-bottom: 1px solid #ebebeb;}
+.ways_zfb{background: url(../../../images/contacts/restaurant/scanCodePay/zfb.png) no-repeat left;background-size: 1.6rem;}
+.ways_wx{background: url(../../../images/contacts/restaurant/scanCodePay/wx.png) no-repeat left;background-size: 1.6rem;}
+.ways_yhk{background: url(../../../images/contacts/restaurant/scanCodePay/yhk.png) no-repeat left;background-size: 1.6rem;}
+.pay_way span{display: block;background: url(../../../images/contacts/restaurant/scanCodePay/arr_r.png) no-repeat 10.8rem;background-size: .38rem;}
+.show{-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0)}
+.completed_wrap{text-align: center;padding-top: 1.5rem;}
+.completed_wrap img{width: 3.5rem;height: 3.5rem;margin-bottom: .8rem;}
+.completed_wrap span{width: 100%;display: block;line-height: 1.5rem;}
+.completed_wrap span:nth-child(2){color: #2c2c2c;font-size: .88rem;}
+.completed_wrap span:nth-child(3){color: #737373;font-size: .683rem;}
+.completed_btn{color: #ff6e31;letter-spacing:2px;font-size: .64rem;}
+.loading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index:30002 ;
+    text-align:center;
+    background: rgba(0, 0, 0, 0);
+    display:none;
+}
+
+.loading img{
+
+    margin-top:120%;
+}
+.QRpay_btn3{
+    border-radius: 2rem;
+    background-color: #ffc033;
+    color: #222;
+    border: 1px solid #ffc033;
+    height: 2rem;
+    display: block;
+    text-align: center;
+    line-height: 2rem;
+    width: 14rem;
+    margin: 1rem auto;
+    outline: 0;
+    /*border: 0;*/
+    font-size: .8rem;
+}
+
+
+
+
+
+
+
+
+

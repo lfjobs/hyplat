@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CardReader" table="dt_Card_CardReader">
+		<id length="50" name="cardReaderKey">
+			<column length="50" name="cardReaderKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="code">
+			<column length="50" name="code"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="orienType">
+			<column length="50" name="orienType"/>
+		</property>
+		<property name="positionCode">
+			<column length="50" name="positionCode"/>
+		</property>
+		<property name="positionName">
+			<column length="250" name="positionName" />
+		</property>	
+	</class>
+</hibernate-mapping>

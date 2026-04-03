@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.tel.bo">
+	<class name="TelInRecord" table="dt_tel_TelInRecord"
+		schema="HYPLAT">
+		<comment>customType:1 个人 2企业 isDeal：0未处理；1：处理</comment>
+		<id name="id" type="string">
+			<column name="id" length="50" not-null="true" />
+		</id>
+		<property name="customName" type="string">
+			<column name="customName" length="50" not-null="true" />
+		</property>
+		<property name="telNumber" type="string">
+			<column name="telNumber" length="50" not-null="true" />
+		</property>
+		<property name="customType" type="string">
+			<column name="customType" length="50" not-null="true" />
+		</property>
+		<property name="customId" type="string">
+			<column name="customId" length="50" not-null="true" />
+		</property>
+		<property name="recordType" type="string">
+			<column name="recordType" length="20" not-null="true" />
+		</property>
+		<property name="recordContent" type="string">
+			<column name="recordContent" length="500" not-null="true" />
+		</property>
+		<many-to-one name="user" column="userId"
+			class="hy.ea.bo.human.Staff" lazy="false">
+		</many-to-one>
+		<property name="recodeDate" type="java.util.Date">
+			<column name="recodeDate" length="50" not-null="true" />
+		</property>
+		<!-- <property name="isDeal" type="long">
+			<column name="isDeal" precision="22" scale="0" />
+		</property>
+		<property name="dealUser" type="string">
+			<column name="dealUser" length="50" />
+		</property>
+		<property name="dealDate" type="java.util.Date">
+			<column name="dealDate" />
+		</property>
+		<property name="dealContent" type="string">
+			<column name="dealContent" length="500" />
+		</property> -->
+		<property name="isDel" type="long">
+			<column name="isDel" precision="22" scale="0"
+				not-null="true" />
+		</property>
+		<property name="company" type="string" not-null="true">
+			<column name="company" length="50" />
+		</property>
+		<property name="beginTime" type="java.util.Date">
+			<column name="beginTime" length="50" />
+		</property>
+		<property name="endTime" type="java.util.Date">
+			<column name="endTIme" length="50" />
+		</property>
+		<property name="savePath" type="string">
+			<column name="savePath" length="50" />
+		</property>
+		 <property name="telcodeType" type="string" >
+            <column name="telcodeType" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>

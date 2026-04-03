@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="GamJeom" table="dtGamJeom">
+		<id length="50" name="gamJeomKey">
+			<column length="50" name="gamJeomKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="gamJeomID">
+			<column length="50" name="gamJeomID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="deptID">
+			<column length="50" name="deptID"/>
+		</property>
+		<property name="principal">
+			<column length="250" name="principal" />
+		</property>
+		<property name="voucherNum">
+			<column length="250" name="voucherNum" />
+		</property>
+		<property  name="accessory">
+			<column length="256" name="accessory" />
+		</property>
+		<property  name="gamJeomNum">
+			<column length="250" name="gamJeomNum" />
+		</property>
+		<property  name="jobName">
+			<column length="250" name="jobName" />
+		</property>
+		<property  name="postName">
+			<column length="250" name="postName" />
+		</property>
+		<property  name="deductPoint">
+			<column  length="250"  name="deductPoint" />
+		</property>
+		<property  name="execute">
+			<column  length="250"  name="execute" />
+		</property>
+		<property  name="gamJeomDate">
+			<column   name="gamJeomDate" />
+		</property>
+         <property  name="deptPrincipal">
+			<column  length="250" name="deptPrincipal" />
+		</property>
+		 <property  name="gamJeomMoney">
+			<column  length="250" name="gamJeomMoney" />
+		</property>
+		<property  name="myriad">
+			<column length="250" name="myriad" />
+		</property>	
+		<property name="thousand">
+			<column length="250" name="thousand"/>
+		</property>
+		<property name="hundred">
+			<column length="250" name="hundred"/>
+		</property>
+		<property name="ten">
+			<column length="250" name="ten" />
+		</property>
+		<property  name="unit">
+			<column length="250" name="unit" />
+		</property>
+		<property  name="horn">
+			<column length="250" name="horn" />
+		</property>
+		<property  name="point">
+			<column length="250" name="point" />
+		</property>
+		
+		<property  name="gamJeomReason">
+			<column length="256" name="gamJeomReason" />
+		</property>	
+		<property  name="idea">
+			<column length="256" name="idea" />
+		</property>
+		
+		<property name="manager">
+			<column length="250" name="manager"/>
+		</property>
+		<property name="president">
+			<column length="250" name="president"/>
+		</property>
+		<property name="deptCharge">
+			<column length="250" name="deptCharge" />
+		</property>
+		<property  name="headCharge">
+			<column length="250" name="headCharge" />
+		</property>
+		<property  name="verify">
+			<column length="250" name="verify" />
+		</property>
+		<property  name="financeVerify">
+			<column length="250" name="financeVerify" />
+		</property>
+		
+		<property  name="accounting">
+			<column length="250" name="accounting" />
+		</property>
+		<property  name="allAccounting">
+			<column length="250" name="allAccounting" />
+		</property>
+		<property  name="cashier">
+			<column length="250" name="cashier" />
+		</property>
+		<property  name="allCashier">
+			<column length="250" name="allCashier" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">          
+<hibernate-mapping package="hy.ea.bo.finance.BenDis">
+	<class name="PhoneBill"  table="dt_phone_bill_vo">
+		<id length="50" name="cashierBillsKey">
+			<column length="50" name="cashierBillsKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="journalNum">
+			<column length="50" name="journalNum"><comment>订单编号</comment></column>
+		</property>
+		<property name="priceSub">
+			<column length="50" name="priceSub"><comment>价钱总和</comment></column>
+		</property>
+		<property  name="trade_no">
+			<column length="50" name="trade_no"><comment>公司ID</comment></column>
+		</property>
+		<property  name="contactUserID">
+			<column length="50" name="contactUserID"><comment>用户ID</comment></column>
+		</property>
+		<property  name="ctUserName">
+			<column  name="ctUserName"><comment>用户Name</comment></column>
+		</property>
+		<property name="billsType">
+			<column length="20" name="billsType"><comment>单据类别</comment></column>
+		</property>
+		<property name="cashierdate">
+			<column name="cashierdate"><comment>制单时间</comment></column>
+		</property>
+		<property name="sccid">
+			<column name="oa_sccid"><comment>用户账号id</comment></column>
+		</property>
+		<property name="fkStatus">
+			<column length="50" name="fkStatus"><comment>状态 00:已付款 01:未付款 02:已出库正在物流 03:用户已收货 04:已分配金币 05:申请退货    06:同意退货   07:退货中 08:确认收货09:转账确认</comment></column>
+		</property>
+		<property name="companyid">
+			<column length="50" name="companyid"><comment>供货商id</comment></column>
+		</property>
+		<property name="companyName">
+			<column length="50" name="companyName"><comment>供货商名称</comment></column>
+		</property>
+		<property name="projectName">
+			<column length="200" name="projectname"><comment>项目名称</comment></column>
+		</property>
+		<property name="wfStatus4">
+			<column length="2" name="wfStatus4"><comment>在线支付:00微信支付，01，支付宝支付，02银联支付 03:线下转账</comment></column>
+		</property>
+		<property name="extendedTime">
+			<column length="2" name="extendedTime"><comment>收货延长时间</comment></column>
+		</property>
+		<property name="sellSccid">
+			<column length="50" name="sell_sccid"><comment>商家账号sccId</comment></column>
+		</property>
+		<property name="sellAccount">
+			<column length="11" name="sell_account"><comment>商家账号account</comment></column>
+		</property>
+		<property name="sellStaffName">
+			<column length="20" name="sell_staffname"><comment>商家账户姓名</comment></column>
+		</property>
+		<property name="remark">
+			<column length="500" name="remark"><comment>备注留言</comment></column>
+		</property>
+		<property name="privateRoom">
+			<column length="200" name="privateRoom"><comment>餐桌</comment></column>
+		</property>
+		<property name="mealNum">
+			<column length="10" name="mealNum"><comment>取餐号</comment></column>
+		</property>
+		<property name="supplierstatus">
+			<column length="50" name="supplierstatus"><comment>供应商状态/采购商状态  00:订单初始 01:拣货 02：发货 03：送货 04：物流 05:签收 06：收货 07：验货 08：入库 09：分金币</comment></column>
+		</property>
+		<property name="paystatus">
+			<column length="50" name="paystatus"><comment>支付状态 01：未支付 02：欠款 03：已支付</comment></column>
+		</property>
+		<property name="cgscomid">
+			<column length="50" name="cgscomid"><comment>采购商公司id</comment></column>
+		</property>
+		<property name="cgscomname">
+			<column length="50" name="cgscomname"><comment>采购商公司名称</comment></column>
+		</property>
+		<property name="receivename">
+			<column length="50" name="receivename"><comment>收货人</comment></column>
+		</property>
+		<property name="receivetel">
+			<column length="50" name="receivetel"><comment>收货电话</comment></column>
+		</property>
+		<property name="receiveaddress">
+			<column length="50" name="receiveaddress"><comment>收货地址</comment></column>
+		</property>
+		<property name="goodsCoding">
+			<column length="250" name="goodsCoding"><comment>设备编号</comment></column>
+		</property>
+		<property name="goodsName">
+			<column length="250" name="goodsName"><comment>设备名称</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

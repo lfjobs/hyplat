@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="overtime-ntoken"  namespace="/ea/overtime"  extends="base">
+		<action name="ea_*" class="com.mysl.action.administrative.OvertimeApplyAction" method="{1}">
+			<result name="list">/page/mysl/administrative/overtimeApplyList.jsp</result>
+			<result name="details">/page/mysl/administrative/overtimeApplyDetails.jsp</result>
+			<result name="printPreview">/page/mysl/administrative/overtimePrintPreview.jsp</result>
+			<result name="rankedit">/page/ea/main/office_ea/StaffRank_edit.jsp</result>
+			<result name="printrank">/page/ea/main/office_ea/staffRankPrint.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			<result name="excel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="overtime.xls"
+				</param>
+
+			</result>
+			<!-- 审核 -->
+			<result name="auditPunishment">/page/ea/main/office_ea/Publicreceipts.jsp</result>
+			<!-- 审核查看 -->
+			<result name="editRew">/page/ea/main/office_ea/GamJeomEdit.jsp</result>
+			<!-- 将罚单打印 -->
+			<result name="printRew">/page/ea/main/office_ea/GamJeomPrint.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="overtime-jsonajax" namespace="/ea/overtime" extends="json-default">
+		<action name="sajax_ea_*" class="com.mysl.action.administrative.OvertimeApplyAction" method="{1}">
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="drivem-token" namespace="/ea/drivem"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.drive.DriveManageAction" method="{1}">
+		      <result name="success">/page/ea/success.jsp</result>
+		      <result name="stuindex">/page/ea/main/production/cprocedure/drive/jx_studentIndex.jsp</result>
+		      <result name="teaindex">/page/ea/main/production/cprocedure/drive/jx_teacherIndex.jsp</result>
+		      <result name="stubase">/page/ea/main/production/cprocedure/drive/jx_studentBase.jsp</result>
+		      <result name="myorder">/page/ea/main/production/cprocedure/drive/jx_orderlist.jsp</result>
+		      <result name="immeorder">/page/ea/main/production/cprocedure/drive/jx_immeorder.jsp</result>
+		      <result name="teadetail">/page/ea/main/production/cprocedure/drive/jx_orderteainfo.jsp</result>
+		      <result name="orderdetail">/page/ea/main/production/cprocedure/drive/jx_orderdetail.jsp</result>
+		      <result name="comments">/page/ea/main/production/cprocedure/drive/jx_teacomment.jsp</result>
+		      <result name="addcoms">/page/ea/main/production/cprocedure/drive/jx_addcomment.jsp</result>
+		      <result name="myorderdetail">/page/ea/main/production/cprocedure/drive/jx_myorderdetail.jsp</result>
+		      <result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>	
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="drivem-jsonajax" namespace="/ea/drivem" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.drive.DriveManageAction" method="{1}">
+
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

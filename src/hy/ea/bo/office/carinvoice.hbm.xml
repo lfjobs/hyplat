@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarInvoice" table="DT_Car_Invoice">
+		<id length="50" name="invoiceKey">
+			<column length="50" name="invoiceKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="invoiceID">
+			<column length="50" name="invoiceID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="carID">
+			<column length="50" name="carID" />
+		</property>
+		<property name="invoiceCode">
+			<column length="250" name="invoiceCode" />
+		</property>
+		<property name="invoiceDate">
+			<column name="invoiceDate" />
+		</property>
+		<property name="purchaseUnits">
+			<column length="250" name="purchaseUnits" />
+		</property>
+		<property name="purchaseCode">
+			<column length="250" name="purchaseCode" />
+		</property>
+		<property name="brandModel">
+			<column length="250" name="brandModel" />
+		</property>
+		<property name="origin">
+			<column length="250" name="origin" />
+		</property>
+		<property name="salesName">
+			<column length="250" name="salesName" />
+		</property>
+		<property name="salesAddress">
+			<column length="250" name="salesAddress" />
+		</property>
+		<property name="remarks">
+			<column length="250" name="remarks" />
+		</property>
+		<property  name="carType">
+			<column length="250" name="carType" />
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property  name="carNum">
+			<column length="250" name="carNum" />
+		</property>
+		<property  name="carpeople">
+			<column length="250" name="carpeople" />
+		</property>
+	</class>
+</hibernate-mapping>

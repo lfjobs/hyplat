@@ -1,0 +1,50 @@
+.clicked {
+    background-color: #f17000;
+    color: #fff;
+    font-weight: 600;
+    /*border-radius: 6px;*/
+    padding: 2px 8px;
+}
+#detail-v{
+    padding: 30px;
+}
+#detail-v .item{
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+th{
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black; /* 设置边框为1像素宽的黑色实线 */
+    border-collapse: collapse; /* 边框合并 */
+}
+
+
+
+ #table-v{
+     margin-top: 30px;
+     text-align: center;
+     width:1200px; height:225px; overflow:auto;
+ }
+
+
+.content {
+    /*margin-top: 20px;*/
+}
+
+#date-v{
+    padding: 10px;
+    background-color: #b7b7b7;
+    border-radius: 10px;
+}
+
+#date-v .item {
+
+    font-size: 16px;
+    line-height: 26px;
+    display: inline-block;
+    margin-right: 10px;
+}

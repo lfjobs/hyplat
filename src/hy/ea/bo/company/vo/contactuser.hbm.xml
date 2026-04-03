@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company.vo">
+	<class name="ContactUser" table="view_conuser"> 
+		<id length="50" name="relationKey">
+			<column length="50" name="relationKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="relationID">
+			<column length="50" name="relationID" not-null="true" />
+		</property>
+		<property name="staffID">
+        	<column name="staffID"  length="50"  not-null="true"/>
+        </property>
+       <property name="companyID">
+        	<column name="companyID"  length="50"  not-null="true"/>
+        </property>
+         <property name="staffCode" >
+        	<column name="staffCode" length="250"  />
+        </property>
+        
+          <property name="recordCode" >
+        	<column name="recordCode" length="250"  />
+        </property>
+          <property name="birthday" >
+        	<column name="birthday"  />
+        </property>
+          <property name="photo" >
+        	<column name="photo" length="250"  />
+        </property>
+        <property name="staffName" >
+        	<column name="staffName" length="250"  />
+        </property>
+        <property name="usedNmae" >
+        	<column name="usedNmae" length="250"  />
+        </property>
+        <property name="sex" >
+        	<column name="sex" length="250"  />
+        </property>
+        <property name="nativePlace" >
+        	<column name="nativePlace" length="250"  />
+        </property>
+         <property name="nationality" >
+        	<column name="nationality" length="250"  />
+        </property>
+         <property name="staffAddress" >
+        	<column name="staffAddress" length="250"  />
+        </property>
+        <property name="nation" >
+        	<column name="nation" length="250"  />
+        </property>
+        <property name="staffIdentityCard" >
+        	<column name="staffIdentityCard" length="250"  />
+        </property>
+        <property name="referenceOrganization" >
+        	<column name="referenceOrganization" length="250"  />
+        </property>
+        <property name="reference" >
+        	<column name="reference" length="250"  />
+        </property>
+        <property name="referenceCode" >
+        	<column name="referenceCode" length="250"  />
+        </property>
+        <property name="verifyTime" >
+        	<column name="verifyTime" length="250"  />
+        </property>
+        <property name="staffDesc" >
+        	<column name="staffDesc" length="250"  />
+        </property>
+         <property name="relation" >
+        	<column name="relation" length="250"  />
+        </property>
+	</class>
+</hibernate-mapping>

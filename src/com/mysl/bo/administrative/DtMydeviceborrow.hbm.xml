@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mysl.bo.administrative.DtMydeviceborrow" table="dt_Mydeviceborrow" schema="HYPLAT">
+        <id name="key" type="java.lang.String">
+            <column name="key" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="id" type="java.lang.String">
+            <column name="id" length="50" />
+        </property>
+        <property name="companyname" type="java.lang.String">
+            <column name="companyname" length="50" />
+        </property>
+        <property name="companyid" type="java.lang.String">
+            <column name="companyid" length="50" />
+        </property>
+        <property name="organizationname" type="java.lang.String">
+            <column name="organizationname" length="50" />
+        </property>
+        <property name="organizationid" type="java.lang.String">
+            <column name="organizationid" length="50" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" length="50" />
+        </property>
+        <property name="staffid" type="java.lang.String">
+            <column name="staffid" length="50" />
+        </property>
+        <property name="staffname" type="java.lang.String">
+            <column name="staffname" length="50" />
+        </property>
+        <property name="addtime" type="java.util.Date">
+            <column name="addtime"/>
+        </property>
+        <property name="serialNumber" type="java.lang.String">
+            <column name="serialNumber" length="50" />
+        </property>
+        <property name="dvname" type="java.lang.String">
+            <column name="dvname" length="50" />
+        </property>
+        <property name="dvnum" type="java.lang.String">
+            <column name="dvnum" length="10" />
+        </property>
+        <property name="dvuse" type="java.lang.String">
+            <column name="dvuse" length="50" />
+        </property>
+        <property name="dvusername" type="java.lang.String">
+            <column name="dvusername" length="50" />
+        </property>
+        <property name="dvuserid" type="java.lang.String">
+            <column name="dvuserid" length="50" />
+        </property>
+        <property name="dvusetime" type="java.util.Date">
+            <column name="dvusetime"/>
+        </property>
+         <property name="dvbacktime" type="java.util.Date">
+            <column name="dvbacktime"/>
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="remarks" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

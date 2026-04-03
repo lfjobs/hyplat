@@ -1,0 +1,206 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "华文黑体";
+    font-size: 12px;
+    color: #000;
+    background: #fff;
+}
+
+div, form, input, select, p, table, h1, h2, h3, h4, h5, h6, ul, ol, li, th, td, dl, dt, dd, span {
+    margin: 0;
+    padding: 0;
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+ul, ol, dl, dt, dd {
+    list-style: none outside none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+    star: expression(this.onFocus=this.blur());
+    transition: all 1s ease 0s;
+}
+
+* html, * html {
+    background-image: url(about:blank);
+    background-attachment: fixed
+}
+
+a:hover {
+    color: #1b7fdd;
+    text-decoration: underline;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+img {
+    border: none;
+}
+
+em, i {
+    font-style: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+input {
+    outline: none;
+    font-family: Microsoft YaHei, Arial, Helvetica, sans-serif, Regular;
+}
+
+select {
+    outline: none;
+}
+
+textarea {
+    outline: none;
+}
+
+area {
+    outline: none;
+    star: expression(this.onFocus=this.blur())
+}
+
+.clear {
+    clear: both;
+}
+
+/*公共样式*/
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*-----------头部 ---------------*/
+.top {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ebebeb;
+    color: #fff;
+    border-bottom: 1px #c9c9c9 solid;
+}
+
+.top ul li {
+    float: left;
+    text-align: center;
+    color: #4b4b4b;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.top ul li img {
+    vertical-align: middle;
+}
+
+/*-----------add---------------*/
+.add {
+    width: 100%;
+    box-shadow: 1px 2px 2px black;
+    overflow: hidden;
+}
+
+.add button {
+    margin: 0 auto;
+    width: 60%;
+    display: block;
+    background: #fff;
+    color: #ee6731;
+    border: 1px #ee6731 solid;
+}
+
+.line {
+    background: #d8d8d8;
+    width: 100%;
+    box-shadow: 1px 2px 1px 1px #817f7f inset;
+}
+
+/*-----------content---------------*/
+.content {
+    width: 100%;
+    overflow: auto;
+    background: #f8f8f8;
+}
+
+.content li {
+    float: left;
+    width: 100%;
+    background: #fff;
+}
+
+.content li h5 {
+    float: left;
+    margin-left: 4%;
+    width: 26%;
+    color: #9a9a9a;
+}
+
+.content li input {
+    float: left;
+    width: 66%;
+    border: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+     overflow: hidden;
+    font-family: "华文黑体";
+    color: #282828;
+}
+
+.content li select {
+    float: left;
+    width: 66%;
+    border: none;
+    font-family: "华文黑体";
+    color: #282828;
+}
+
+.content .del {
+    background: #fff;
+    color: red;
+    width: 100%;
+}
+
+.content .del p {
+    padding-left: 4%;
+}
+
+.xt {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    float: left;
+}
+
+#location_p, #location_c, #location_d {
+    background: transparent;
+}
+
+@media (min-width: 533px) and (max-width: 535px) {
+    .wfj11_016_top li {
+        font-size: 20px !important;
+    }
+
+    .add button {
+        height: 40.05px !important;
+        line-height: 40.05px !important;
+    }
+}

@@ -1,0 +1,63 @@
+
+.font(@fot, @clo){
+	font-size:@fot;
+	color: @clo;
+}
+.hei(@hei){
+	height: @hei;
+	line-height: @hei;
+}
+.fl{
+	float: left;
+}
+.fr {
+    float: right
+}
+body{
+	
+}
+header{
+	background-color: #f74c30;
+	ul{
+		padding: 0 0.5rem;
+		li{
+			.fl;
+			.hei(2.2rem);
+			.font(0.7rem, #ffffff);
+		}
+		li:first-of-type{
+			width:20%;
+			img{
+				width: 0.45rem;
+			}
+		}
+		li:nth-of-type(2){
+			width:58%;
+			text-align: center;
+		}
+		li:nth-of-type(3){
+			width:20%;
+			text-align: right;
+		}
+	}
+}
+.content{
+	p{
+		text-align: center;
+	}
+	.p-img{
+		padding-top: 30%;
+		padding-bottom: 0.2rem;
+		img{
+			width: 5rem;
+		}
+	}
+	.p-jg{
+		.hei(2rem);
+		.font(0.75rem, #222222);
+	}
+	.p-txt{
+		.hei(1rem);
+		.font(0.6rem, #807f7f);
+	}
+}

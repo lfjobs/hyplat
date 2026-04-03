@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EnterpriseGoal" table="dtEnterpriseGoal">
+		<id length="50" name="goalKey">
+			<column length="50" name="goalKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="goalID">
+			<column length="50" name="goalID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="enterpriseName">
+			<column length="250" name="enterpriseName" />
+		</property>
+		<property  name="goalContent">
+			<column length="256" name="goalContent" />
+		</property>
+		<property  name="goalNote">
+			<column length="250" name="goalNote" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="seller-ntoken" namespace="/ea/seller"
+		extends="struts-default">
+		<action name="ea_*" class="SellerOrderAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="list">/page/ea/main/finance/NewPhoneOrders/sellerOrder/Myorder.jsp</result>
+			<result name="update">/page/ea/main/finance/NewPhoneOrders/sellerOrder/updateAddress.jsp</result>
+			<result name="CashBill">/page/ea/main/finance/NewPhoneOrders/sellerOrder/CashBill.jsp</result>
+			<result name="Receipt">/page/ea/main/finance/NewPhoneOrders/sellerOrder/Receipt.jsp</result>
+			<result name="updADDRESS">/page/ea/main/finance/NewPhoneOrders/sellerOrder/updateAddress.jsp</result>
+			<result name="Myorder">/page/ea/main/finance/NewPhoneOrders/sellerOrder/deliveryOrder.jsp</result>
+			<result name="ReceiptOrder">/page/ea/main/finance/NewPhoneOrders/sellerOrder/ReceiptOrder.jsp</result>
+			<result name="ReturnOrder">/page/ea/main/finance/NewPhoneOrders/sellerOrder/returnOrder/myReturnOrder.jsp</result>
+			<result name="liveryOk">/page/ea/main/finance/NewPhoneOrders/sellerOrder/goPlay.jsp</result>
+			<result name="livery">/page/ea/main/finance/NewPhoneOrders/sellerOrder/goPlay.jsp</result>
+			<result name="liveryNo">/page/ea/main/finance/NewPhoneOrders/sellerOrder/gotoNo.jsp</result>
+			<result name="getWuliuDetails">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/viewLogistics.jsp</result>
+			<result name="OrderDetails">/page/ea/main/finance/NewPhoneOrders/sellerOrder/returnOrder/OrderDetails.jsp</result>
+			<result name="deliveryDetails">/page/ea/main/finance/NewPhoneOrders/sellerOrder/Office/deliveryDetails.jsp</result>
+			<result name="SendGoods">/page/ea/main/finance/NewPhoneOrders/sellerOrder/Office/sendGoods.jsp</result>
+			<result name="transporGoods">/page/ea/main/finance/NewPhoneOrders/sellerOrder/Office/transporGoods.jsp</result>
+			<!-- 小系统客户管理 -->
+			<result name="selllist">/page/ea/BuildPlatform/customerMangement/SellOrderManage.jsp</result>
+			<result name="customer">/page/ea/BuildPlatform/customerMangement/customerOrders.jsp</result>
+			<result name="BuyerOrder">/page/ea/main/finance/NewPhoneOrders/sellerOrder/Office/BuyerOrder.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="seller-sajaxs" namespace="/ea/seller" extends="json-default">
+		<action name="sajax_ea_*" class="SellerOrderAction" method="{1}">
+	<!-- 返回类型为json 在sjon-default中定义 -->  
+			<result type="json">  
+				<!-- root的值对应要返回的值的属性 -->    
+				<!-- 这里的result值即是 对应action中的 result -->  
+				<param name="root">result</param>  
+			</result>
+		</action>
+	</package>
+</struts>

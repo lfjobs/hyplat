@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="perinfor-token" namespace="/ea/perinfor"
+		extends="struts-default">
+		<action name="ea_*" class="hy.ea.websitemall.card.action.PersonalInformationAction"
+			method="{1}">
+			<result name="pageData_m">/page/ea/main/websitemall/card/android/personalInformation_list.jsp</result>
+			<result name="personalData_m">/page/ea/main/websitemall/card/android/personalInformation_data.jsp</result>
+			<result name="papersData_m">/page/ea/main/websitemall/card/android/personalInformation_papers_list.jsp</result>
+			<result name="paperInf_m">/page/ea/main/websitemall/card/android/personalInformation_papers_data.jsp</result>
+			<result name="mienList_m">/page/ea/main/websitemall/card/android/personalInformation_mien_list.jsp</result>
+			<result name="addMienData_m">/page/ea/main/websitemall/card/android/personalInformation_mien_add.jsp</result>
+			<result name="historyData_m">/page/ea/main/websitemall/card/android/personalInformation_history_list.jsp</result>
+			<result name="activityList_m">/page/ea/main/websitemall/card/android/personalInformation_activity_list.jsp</result>
+			<result name="activityData_m">/page/ea/main/websitemall/card/android/personalInformation_activity_add.jsp</result>
+			
+			<result name="addressList_m">/page/ea/main/websitemall/card/android/personalInformation_address_list.jsp</result>
+			<result name="addressDetails_m">/page/ea/main/websitemall/card/android/personalInformation_address_data.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+		
+		<!-- 
+			<result name="bankData_m">/page/ea/main/websitemall/card/android/personalInformation_bank_list.jsp</result>
+			<result name="addbankData_m">/page/ea/main/websitemall/card/android/personalInformation_bank_add.jsp</result>
+		 -->
+				
+			 <!-- 新版金币池银行卡信息 -->
+			<result name="bankData_m">/page/ea/main/finance/BenDis/Gold_Pool/wfj_bankcard.jsp</result>
+			<result name="addbankData_m">/page/ea/main/finance/BenDis/Gold_Pool/wfj_bankAdd.jsp</result>			
+		
+		
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="perinfor-jsonajax" namespace="/ea/perinfor"
+		extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.websitemall.card.action.PersonalInformationAction"
+			method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

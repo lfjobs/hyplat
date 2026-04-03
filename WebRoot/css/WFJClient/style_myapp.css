@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color:transparent;
+}
+body{margin:0 auto; background-color: #fff;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0 0; color:#666; font-family:'微软雅黑';}
+img{ cursor:pointer;border:none;vertical-align: middle;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #666;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+input{
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/*公共样式 end*/
+
+/*过年赚钱步骤*/
+.content_sign header{
+    position: fixed;
+    top: 0;
+}
+.content_sign header img{
+    width: 0.45rem;
+    margin: 0.45rem 0.5rem;
+}
+.bg{
+    width: 100%;
+}
+.content_sign .btn{
+    width: 4rem;
+    position: absolute;
+    top: 5.5rem;
+    left: 50%;
+    margin-left: -2rem;
+}
+
+@media screen and (max-height: 480px){
+
+}
+
+/*过年赚钱步骤 end*/

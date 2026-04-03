@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="score-ntoken" namespace="/ea/score"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.wage.WageScoreAction" method="{1}">
+		     <result name="itemList">/page/ea/main/human/wage/wageScore.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="score-jsonajax" namespace="/ea/score" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.wage.WageScoreAction" method="{1}">
+            <result type="json">  
+                <param name="root">result</param>
+            </result>
+		</action>
+	</package>
+</struts>

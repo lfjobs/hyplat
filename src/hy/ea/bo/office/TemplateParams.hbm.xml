@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="TemplateParams" table="DT_OA_DOC_TemplateParams">
+		<id length="50" name="tpKey">
+			<column length="50" name="tpKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="tpId" type="java.lang.String">
+			<column name="tpId" length="50" />
+		</property>
+		<property name="docID" type="java.lang.String">
+			<column name="docID" length="50" />
+		</property>
+		<property name="companyName" type="java.lang.String">
+			<column name="companyName" length="50" />
+		</property>
+		<property name="companyAddr" type="java.lang.String">
+			<column name="companyAddr" length="50" />
+		</property>
+		<property name="companyTel" type="java.lang.String">
+			<column name="companyTel" length="50" />
+		</property>
+		<property name="reference" type="java.lang.String">
+			<column name="reference" length="50" />
+		</property>
+		<property name="staffIdentityCard" type="java.lang.String">
+			<column name="staffIdentityCard" length="50" />
+		</property>
+		<property name="referrerAddress" type="java.lang.String">
+			<column name="referrerAddress" length="500" />
+		</property>
+		<property name="subjectType" type="java.lang.String">
+			<column name="subjectType" length="50" />
+		</property>
+		<property name="productName" type="java.lang.String">
+			<column name="productName" length="50" />
+		</property>
+		<property name="money" type="java.lang.String">
+			<column name="money" length="50" />
+		</property>
+		<property name="dmoney" type="java.lang.String">
+			<column name="dmoney" length="50" />
+		</property>
+		<property name="staffName" type="java.lang.String">
+			<column name="staffName" length="50" />
+		</property>
+		<property name="validateYear" type="java.lang.String">
+			<column name="validateYear" length="4" />
+		</property>
+		<property name="year" type="java.lang.String">
+			<column name="year" length="4" />
+		</property>
+		<property name="month" type="java.lang.String">
+			<column name="month" length="2" />
+		</property>
+		<property name="days" type="java.lang.String">
+			<column name="days" length="2" />
+		</property>
+		<property name="lldate" type="java.lang.String">
+			<column name="lldate" length="2" />
+		</property>
+		<property name="scdate" type="java.lang.String">
+			<column name="scdate" length="2" />
+		</property>
+		<property name="cnxsite" type="java.lang.String">
+			<column name="cnxsite" length="250" />
+		</property>
+		<property name="site" type="java.lang.String">
+			<column name="site" length="250" />
+		</property>
+
+		<property  name="managementFees">
+			<column length="10" name="managementFees" >
+				<comment>管理费</comment>
+			</column>
+		</property>
+		<property  name="operatingFee">
+			<column length="10" name="operatingFee" >
+				<comment>操作费</comment>
+			</column>
+		</property>
+		<property  name="dmanagementFees">
+			<column length="50" name="dmanagementFees" >
+				<comment>大写管理费</comment>
+			</column>
+		</property>
+		<property  name="doperatingFee">
+			<column length="50" name="doperatingFee" >
+				<comment>大写操作费</comment>
+			</column>
+		</property>
+		<property  name="operatingStaffName">
+			<column length="50" name="operatingStaffName" >
+				<comment>操作费收款人</comment>
+			</column>
+		</property>
+		<property  name="cashierBillsID">
+			<column length="50" name="cashierBillsID" >
+				<comment>订单ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

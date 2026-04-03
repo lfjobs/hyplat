@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocStaff" table="DT_OA_DocStaff">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="id" type="java.lang.String">
+			<column name="id" length="50" >
+			   <comment>id</comment>
+			</column>
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="50" >
+				<comment>公文ID</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column name="staffID" length="50" >
+				<comment>人员</comment>
+			</column>
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50" >
+				<comment>公司</comment>
+			</column>
+		</property>
+		<property name="contractType" type="java.lang.String">
+			<column name="contractType" length="5" >
+				<comment>合同类型</comment>
+			</column>
+		</property>
+		<property name="contractTypeName" type="java.lang.String">
+			<column name="contractTypeName" length="50" >
+				<comment>合同类型名称</comment>
+			</column>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="50" >
+				<comment>状态 00 正常 99 已经删除</comment>
+			</column>
+		</property>
+        <property name="contractSource" type="java.lang.String">
+            <column name="contractSource" length="50" >
+                <comment>合同来源（01：入职；02：离职）</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

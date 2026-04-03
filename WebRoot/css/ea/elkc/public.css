@@ -1,0 +1,238 @@
+/*公用类1.0
+   适用于豪德天沐各项目前端样式   
+   2015年9月10日 李进
+*/
+
+/*rest*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body,button, select, textarea {
+    font: 14px Microsoft YaHei, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+li{
+    list-style:none;
+}
+
+
+h1 {
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4, h5, h6 {
+    font-size: 100%;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a:link{
+    color:#1d1d1d;
+    text-decoration: none;
+}
+a:visited{
+    color:#1d1d1d;
+    text-decoration: none;
+    }
+a:hover {
+    color:#1d1d1d;
+    text-decoration: underline;
+}
+fieldset, img {
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.claer{
+    clear:both;
+    }
+.error{
+    color:#e70000;
+    }
+    
+/*文本框*/
+.textBox-10{
+    width:10%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-10:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+
+.textBox-20{
+    width:20%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-20:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+.textBox-30{
+    width:30%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-30:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+.textBox-40{
+    width:40%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-40:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+.textBox-50{
+    width:50%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-50:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+.textBox-60{
+    width:60%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-60:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+.textBox-70{
+    width:70%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-70:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+.textBox-80{
+    width:80%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-80:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+.textBox-90{
+    width:90%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-90:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+.textBox-100{
+    width:100%;
+    padding:5px;
+    border:1px solid #cbcbcb;
+    }
+.textBox-100:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+}
+textarea:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+    }
+input:focus{
+    border-color: #95C8F1;
+    box-shadow: 0 0 4px #95C8F1;
+    }
+
+/*按钮*/
+
+.blueBtn{
+    min-width:100px;
+    padding:7px 15px 7px 15px;
+    text-align:center;
+    color:#fff;
+    background:#1487d2;
+    border-radius:1px;
+    border:none;
+    cursor:pointer;
+    }
+.greyBtn{
+    min-width:100px;
+    padding:6px 15px 6px 15px;
+    text-align:center;
+    color:#1d1d1d;
+    background:#cdcdcd;
+    border-radius:1px;
+    border:none;
+    cursor:pointer;
+    }
+.closeBtn{
+    width:127px;
+    height:37px;
+    line-height:37px;
+    color:#FFF;
+    border:none;
+    background:url(../images/close.png) no-repeat;
+    cursor:pointer;
+    text-align:center;
+    padding-left:27px;
+    font-size:16px;
+    }
+.saveBtn{
+    width:127px;
+    height:37px;
+    line-height:37px;
+    color:#FFF;
+    border:none;
+    background:url(../images/save.png) no-repeat;
+    cursor:pointer;
+    text-align:center;
+    padding-left:27px;
+    font-size:16px;
+    }
+    
+/*表格*/
+.Table{
+    border-collapse:collapse;
+    border:1px solid #e3e3e3;
+    }
+.Table td,th{
+    border:solid #e3e3e3;
+    border-width:0 1px 1px 0;
+    }
+.Table td{
+    padding:10px;
+    text-align:left;
+    font-size:14px;
+    line-height:23px;
+    text-align:center;
+    }
+.Table th{
+    padding:10px;
+    font-size:14px;
+    background:#eaeaea;
+    text-align:center;
+    font-weight:100;
+    }

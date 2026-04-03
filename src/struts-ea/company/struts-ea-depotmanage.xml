@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <package strict-method-invocation="false" name="depotmanage-token" namespace="/ea/depotmanage" extends="ea-token">
+        <action name="t_ea_*" class="hy.ea.company.action.DepotManageAction" method="{1}">
+            <result name="list">/page/ea/main/depotmanage/depotmanage_list.jsp</result>
+        </action>
+    </package>
+
+    <package strict-method-invocation="false" name="depotmanage-ntoken" namespace="/ea/depotmanage" extends="ea-ntoken">
+        <action name="ea_*" class="hy.ea.company.action.DepotManageAction" method="{1}">
+            <result name="succ">/page/ea/success.jsp</result>
+            <result name="sortchildren">/page/ea/main/depotmanage/depotmanage_sortchildren.jsp</result>
+            <result name="listDepotmanage">/page/ea/main/depotmanage/depotmanage_list.jsp</result>
+            <result name="tree">/page/ea/main/depotmanage/depotmanage_manger.jsp</result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="depotmanagemobile-ntoken" namespace="/ea/depotmanagemobile"
+             extends="struts-default">
+        <action name="ea_*" class="hy.ea.company.action.DepotManageMobileAction" method="{1}">
+            <result name="succ">/page/ea/success.jsp</result>
+            <result name="view">/page/WFJClient/pc/5l5C/office/inventory/depotManageMobileAdd.jsp</result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="depotmanage-sajax" namespace="/ea/depotmanage"
+             extends="json-default">
+        <action name="sajax_ea_*" class="hy.ea.company.action.DepotManageAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="sajax_mobile_*" class="hy.ea.company.action.DepotManageMobileAction" method="{1}">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+
+</struts>

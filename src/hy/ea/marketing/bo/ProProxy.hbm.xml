@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.marketing.bo.ProProxy" table="DT_PRO_PROXY" schema="HYPLAT">
+        <id name="pkey">
+            <column name="PKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="pid">
+            <column name="PID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="ppid">
+            <column name="PPID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="sjdate">
+            <column name="SJDATE" sql-type="date"/>
+        </property>
+        <property name="typePpid">
+            <column name="TYPE_PPID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="agenttype">
+            <column name="AGENTTYPE" sql-type="varchar2(10)" length="10"/>
+        </property>
+        <property name="investcomid">
+            <column name="INVESTCOMID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="agentstate">
+            <column name="AGENTSTATE" sql-type="varchar2(10)" length="10"/>
+        </property>
+        <property name="texturl">
+            <column name="TEXTURL" sql-type="varchar2(200)" length="200"/>
+        </property>
+        <property name="state">
+            <column name="STATE" sql-type="varchar2(10)" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

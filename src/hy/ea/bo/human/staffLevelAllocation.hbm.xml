@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffLevelAllocation" table="DT_HR_STAFF_LEVEL_ALLOCATION">
+		<id name="levelAllocationKey" length="50">
+			<column name="LEVEL_ALLOCATION_KEY" length="50" />
+			<generator class="uuid" />
+		</id>
+		<property name="levelAllocationId">
+			<column name="LEVEL_ALLOCATION_ID" length="50" not-null="true" />
+		</property>
+		<property name="staffId">
+			<column name="STAFF_ID" length="50"/>
+		</property>
+		<property name="staffName">
+			<column name="STAFF_NAME" length="50" />
+		</property>
+		<property name="salaryLevelIdOld">
+			<column name="SALARY_LEVEL_ID_OLD" length="50" />
+		</property>
+		<property name="salaryLevelId">
+			<column name="SALARY_LEVEL_ID" length="50" />
+		</property>
+		<property name="remark">
+			<column name="REMARK" length="250" />
+		</property>
+		<property name="createStaffId">
+		   <column name="CREATE_STAFF_ID" length="50"/>
+		</property>
+		<property name="createStaffName">
+			<column name="CREATE_STAFF_NAME" length="250" />
+		</property>
+		<property name="createDate">
+			<column name="CREATE_DATE" length="250" />
+		</property>
+		<property name="status">
+			<column name="STATUS" length="250" />
+		</property>
+		<property name="examineProcessId">
+			<column name="EXAMINE_PROCESS_ID"/>
+		</property>
+		<property name="companyId">
+			<column name="COMPANY_ID"/>
+		</property>
+
+		
+	</class>
+</hibernate-mapping>

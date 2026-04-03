@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="RecentContact" table="DT_OA_RecentContact">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="id" type="java.lang.String">
+			<column name="id" length="50" />
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column name="staffID" length="50" />
+		</property>
+		<property name="sstaffID" type="java.lang.String">
+			<column name="sstaffID" length="50" />
+		</property>
+		<property name="staffName" type="java.lang.String">
+			<column name="staffName" length="50" />
+		</property>
+		<property name="scompanyID" type="java.lang.String">
+			<column name="scompanyID" length="50" />
+		</property>
+		<property name="sorgID" type="java.lang.String">
+			<column name="sorgID" length="50" />
+		</property>
+		<property name="scompanyName" type="java.lang.String">
+			<column name="scompanyName" length="50" />
+		</property>
+		<property name="sorgName" type="java.lang.String">
+			<column name="sorgName" length="50" />
+		</property>
+		<property name="source" type="java.lang.String">
+			<column name="source" length="2" />
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="createDate"  />
+		</property>
+		<property name="telphone" type="java.lang.String">
+			<column name="telphone" length="11" />
+		</property>
+		<property name="oprState" type="java.lang.String">
+			<column name="oprState" length="15" />
+		</property>
+	</class>
+</hibernate-mapping>

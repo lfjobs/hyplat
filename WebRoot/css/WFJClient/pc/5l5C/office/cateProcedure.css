@@ -1,0 +1,156 @@
+header {
+    background-color: #f74c32;
+    position: fixed;
+    width: 100%;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+.pos-top {
+    position: fixed;
+    top: 3rem;
+    width: 100%;
+    height: 100%;
+}
+.pos-top .sec-serch {
+    background-color: #fff;
+}
+.pos-top .box-fh {
+    background-color: #fff;
+}
+
+.ul-tab {
+    padding: 0 1.5rem 0.625rem 1.5rem;
+    border-bottom: 0.025rem solid #e9e9e9;
+}
+.ul-tab li {
+    float: left;
+}
+.ul-tab2 li {
+    float: left;
+}
+.ul-tab li p {
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.1rem;
+    color: #666666;;
+   /*// border-bottom: 0.075rem solid #fff;*/
+}
+.ul-tab2 li p {
+    text-align: center;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    font-size: 1rem;
+    color: #1e1e1e;
+    border-bottom: 0.075rem solid #fff;
+}
+li p.active {
+    font-weight:bold;
+    color: #575656;
+    /*border-bottom: 2px solid #4e4e4e;*/
+}
+.ul-tab li:last-of-type {
+    float: right;
+}
+.box-fh {
+    width: 100%;
+    /*overflow-x: scroll;*/
+    height: 3rem;
+    border-bottom: 0.025rem solid #e9e9e9;
+}
+.ul-tab-fh {
+    padding: 0 0.5rem;
+    border: 0;
+}
+.ul-tab-fh li {
+    /*padding: 0 0.2rem;*/
+    width: 25%;
+}
+.ul-tab-fh li:last-of-type {
+    float: left;
+}
+.box-fh2 {
+    height: 100%;
+    clear: both;
+    padding-top: 0.5rem
+}
+.box-fh2 .nav-div{
+
+    width: 20%;
+    float: left;
+    text-align: left;
+    padding: 0.1rem 1rem;
+}
+.box-fh2 .nav-div li{
+
+    height: 2rem;
+    line-height: 2rem;
+    white-space: nowrap;
+}
+
+
+.box-fh2 .nav-div li p{
+
+    display: inline;
+    padding: 0 0.5rem;
+}
+
+.box-fh2 .nav-div li p.actived{
+
+    border-right: 3px solid red;
+
+}
+.box-fh2 .main-div{
+    width:70%;
+    float:left;
+
+}
+
+iframe {
+    margin: 0px;
+    width: 100%;
+
+}
+
+@media (min-width: 960px) {
+
+    .box-fh2 .nav-div {
+        width: 5%;
+        text-align: right;
+    }
+    .box-fh2 .main-div {
+        width: 90%;
+    }
+}
+

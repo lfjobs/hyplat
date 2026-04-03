@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="FaceRec" table="dt_FaceRec">
+		<comment>人脸闸机设备</comment>
+		<id length="50" name="frkey" type="java.lang.String">
+			<column length="50" name="frkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="frId" type="java.lang.String">
+			<column length="50" name="frId" >
+
+			</column>
+		</property>
+		<property name="sn" type="java.lang.String">
+			<column name="sn" length="50">
+				<comment>设备编号</comment>
+			</column>
+		</property>
+		<property name="name" type="java.lang.String">
+			<column length="50" name="name" >
+				<comment>设备名称</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column name="staffID" length="50">
+				<comment>负责人ID</comment>
+			</column>
+		</property>
+		<property name="staffName" type="java.lang.String">
+			<column name="staffName" length="50">
+				<comment>负责人姓名</comment>
+			</column>
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column length="50" name="companyID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="state" type="java.lang.String">
+			<column length="1" name="state" >
+				<comment>0正常使用状态，1：已停用</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>添加日期</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

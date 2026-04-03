@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="Company" table="dtCompany">
+		<id length="50" name="companyKey">
+			<column length="50" name="companyKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="companyID">
+			<column length="50" name="companyID" unique="true" not-null="true"><comment>公司表业务主键</comment></column>
+		</property>
+		<property name="companyPID">
+			<column length="50" name="companyPID" not-null="true"><comment>父公司业务主键</comment></column>
+		</property>
+		<property name="companyMID">
+			<column length="50" name="companyMID"><comment>负责管理此公司ID</comment></column>
+		</property>
+		<property name="districtID">
+			<column length="50" name="districtID"  ><comment>地址表业务主键</comment></column>
+		</property>
+		<property name="companyIdentifier">
+			<column length="250" name="companyIdentifier" not-null="true" unique="true" ><comment>组织机构名</comment></column>
+		</property>
+		<property name="companyName">
+			<column length="250" name="companyName" not-null="true" ><comment>公司名称</comment></column>
+		</property>
+		<property name="ccomtype">
+			<column length="250" name="ccomtype"  ><comment>0大型 1中型  2小型  3微型  4微小型   5供应商</comment></column>
+		</property>
+		<property name="companyRegisterDate">
+			<column name="companyRegisterDate" not-null="true" ><comment>注册时间</comment></column>
+		</property>
+		<property name="companyLicenseCount">
+			<column length="2" name="companyLicenseCount" not-null="true" ><comment></comment></column>
+		</property>
+		<property  name="companyStatus">
+			<column length="2" name="companyStatus" not-null="true" ><comment>00表示正常  01表示不正常</comment></column>
+		</property>
+		<property  name="companyType">
+			<column length="2" name="companyType" ><comment>00表示企业01表示客户11未付费12已付费</comment></column>
+		</property>
+		<property  name="groupCompanySn">
+			<column length="50" name="groupCompanySn" not-null="true" ><comment></comment></column>
+		</property>
+		<property name="isst">
+			<column length="1" name="isst" ><comment>是否为驾校</comment></column>
+		</property>
+		<property  name="showwechat">
+			<column length="50" name="showwechat"><comment>是否显示在微信</comment></column>
+		</property>
+		<property  name="industryType">
+			<column length="250" name="industryType" ><comment>注册公司行类别</comment></column>
+		</property>
+		<property  name="comType">
+			<column length="10" name="comType" ><comment>魏科增加:供应商02  代理商 03    合伙人05</comment></column>
+		</property>
+		<property name="accumulated">
+			<column length="100" name="accumulated"><comment>累积盈亏科目</comment></column>
+		</property>
+		<property name="bookCurrency">
+			<column length="4" name="bookCurrency"><comment>记账币别</comment></column>
+		</property>
+		<property name="codeID">
+			<column length="50" name="codeID"><comment>币别ID</comment></column>
+		</property>
+		<property name="subjectsID">
+			<column length="50" name="subjectsID"><comment>科目ID</comment></column>
+		</property>
+		<property name="industryId">
+			<column length="50" name="industryId"><comment>行业ID</comment></column>
+		</property>
+		<property name="totalSales">
+			<column  length = "10" name="totalSales">
+				<comment>公司总销量</comment>
+			</column>
+		</property>
+		<property name="shopname">
+			<column name="shopname" length="100"><comment>店铺地址</comment></column>
+		</property>
+		<property name="pname">
+			<column name="pname" length="100"><comment>省份</comment></column>
+		</property>
+		<property name="cityname">
+			<column name="cityname" length="100"><comment>市</comment></column>
+		</property>
+		<property name="adname">
+			<column name="adname" length="100"><comment>县或者区</comment></column>
+		</property>
+		<property name="street">
+			<column name="street" length="256"><comment>街道地址</comment></column>
+		</property>
+		<property name="gdID">
+			<column name="gdID" length="50"><comment>高德地图获取的POIS的ID</comment></column>
+		</property>
+		<property name="accuracy">
+			<column name="accuracy" length="50"><comment>公司的经度坐标</comment></column>
+		</property>
+		<property name="dimension">
+			<column name="dimension" length="50"><comment>公司的纬度坐标</comment></column>
+		</property>
+		<property name="brandInfo">
+			<column length="800" name="brandInfo"><comment>品牌</comment></column>
+		</property>
+		<property name="hxID">
+			<column length="50" name="hxID"><comment>环信聊天群ID</comment></column>
+		</property>
+		<property name="gdcate">
+			<column length="50" name="gdcate" ><comment>一级分类</comment></column>
+		</property>
+		<property name="gdcode">
+			<column length="50" name="gdcode" ><comment>一级分类ID</comment></column>
+		</property>
+		<property name="gdcate2">
+			<column length="50" name="gdcate2" ><comment>二级分类</comment></column>
+		</property>
+		<property name="gdcode2">
+			<column length="50" name="gdcode2" ><comment>二级分类ID</comment></column>
+		</property>
+		<property name="withDrawNum">
+			<column length="2" name="withDrawNum" ><comment>提现账户</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

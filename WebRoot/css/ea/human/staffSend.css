@@ -1,0 +1,93 @@
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem;
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+header ul li:first-of-type {
+    width: 20%;
+}
+
+header ul li:first-of-type img {
+    width: .75rem;
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center;
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem;
+}
+.title {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 创建两列，每列占据一半的空间 */
+}
+
+.isSend, .noSend {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    font-size: 18px; /* 根据需要调整字体大小 */
+    height: 30px; /* 设置高度 */
+    color: #414343;
+}
+.clicked {
+    background-color: #c1c5bd;; /* 被选中的背景色 */
+}
+.sec-list {
+    z-index: 99;
+    height: 100%;
+    padding: 0 10px;
+}
+.div-sec-data ul {
+    z-index: 9;
+    left: 0;
+    background-color: #fff;
+    height: 30px;
+    margin: 10px 0;
+}
+.data-list ul li {
+    font-size: 16px;
+}
+.average-distribution {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.average-distribution li {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.average-distribution li:first-child {
+    margin-left: 0;
+}
+
+.average-distribution li:last-child {
+    margin-right: 0;
+}

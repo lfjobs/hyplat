@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office"> 
+	<class name="ShortUrl" table="dt_ShortUrl">
+		<id length="50" name="sukey">
+			<column length="50" name="sukey" />
+			<generator class="uuid" />
+		</id>
+		<property  name="suId" type="java.lang.String">
+			<column  length="50" name="suId">
+				<comment>逻辑逐渐</comment>
+			</column>
+		</property>
+		<property name="surl" type="java.lang.String">
+			<column length="2000" name="surl">
+				<comment>短链</comment>
+			</column>
+		</property>
+		<property name="curl" type="java.lang.String">
+			<column length="2000" name="curl">
+				<comment>长链</comment>
+			</column>
+		</property>
+		<property name="seq" type="java.lang.String">
+			<column length="50" name="seq" >
+				<comment>序号</comment>
+			</column>
+		</property>
+
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>创建人</comment>
+
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.DrivingSchool.TbSysGeography" table="TB_SYS_GEOGRAPHY" schema="HYPLAT">
+        <id length="50" name="geKey">
+            <column length="50" name="geKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="geoBh" type="java.lang.String">
+            <column name="GEO_BH" length="12"><comment>区域编号</comment></column>
+        </property>
+        <property name="geoName" type="java.lang.String">
+            <column name="GEO_NAME" length="100" ><comment>区域名称</comment></column>
+        </property>
+        <property name="geoLevel" type="java.lang.String">
+            <column name="GEO_LEVEL" length="10" ><comment>区域级别</comment></column>
+        </property>
+        <property name="parentBh" type="java.lang.String">
+            <column name="PARENT_BH"  length="12" ><comment>上级编号</comment></column>
+        </property>
+        <property name="latitude" type="java.lang.Long">
+            <column name="LATITUDE" length="15" ><comment>经度</comment></column>
+        </property>
+        <property name="longitude" type="java.lang.Long">
+            <column name="LONGITUDE" length="15"><comment>纬度</comment></column>
+        </property>
+        <property name="persons" type="java.lang.Long">
+            <column name="PERSONS"  length="20"><comment>人口数</comment></column>
+        </property>
+        <property name="floorarea" type="java.lang.Long">
+            <column name="FLOORAREA" length="15" ><comment>占地面积</comment></column>
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION"  length="300" ><comment>描述</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

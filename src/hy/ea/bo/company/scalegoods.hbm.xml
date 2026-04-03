@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="ScaleGoods" table="dtScaleGoods">
+		<id length="50" name="sgKey" >
+			<column length="50" name="sgKey" ><comment>逻辑主键</comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="sgID" type="java.lang.String">
+			<column length="50" name="sgID" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="goodsID" type="java.lang.String">
+			<column length="50" name="goodsID"><comment>物品ID</comment></column>
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column length="50" name="companyID"><comment>公司业务主键</comment></column>
+		</property>
+
+		<property name="unitOfMeasureCode" type="java.lang.String">
+			<column  length="6"  name="unitOfMeasureCode" ><comment>KGM：元/千克PCS：计数</comment></column>
+		</property>
+		<property name="plu" type="java.lang.Integer" >
+			<column   name="plu" ><comment>商品号只有称重的有</comment></column>
+		</property>
+		<property name="alternativeItemID" type="java.lang.String">
+			<column  length="13"  name="alternativeItemID" ><comment>货号</comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,396 @@
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+header {
+	background-color: #f74c30
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: .65rem;
+	color: #fff
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .45rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center
+}
+
+header ul li:nth-of-type(3) {
+	font-size: .6rem;
+	width: 20%;
+	text-align: right
+}
+
+.content .sec-nav {
+	padding: .875rem 1% 0 1%
+}
+
+.content .sec-nav ul li {
+	position: relative;
+	overflow: hidden;
+	float: left;
+	text-align: center;
+	width: 20%;
+	height: 1.25rem;
+	line-height: 1.25rem;
+	font-size: .55rem;
+	color: #222
+}
+
+.content .sec-nav ul li::before {
+	content: "";
+	z-index: -2;
+	position: absolute;
+	width: 2.5rem;
+	height: 2.45rem;
+	left: 13%;
+	top: -44%;
+	transform: rotate(-75deg);
+	background-color: #f4f4f4
+}
+
+.content .sec-nav ul li:after {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	width: 2.5rem;
+	height: .2rem;
+	left: -27%;
+	top: 16%;
+	transform: rotate(-75deg);
+	background-color: #e8e8e8
+}
+
+.content .sec-nav ul li.active {
+	color: #f74c30
+}
+
+.content .sec-nav ul li.active::before {
+	background-color: #fddbd6
+}
+
+.content .sec-nav ul li.active::after {
+	background-color: #f74c30
+}
+
+.content .sec-con {
+	margin-top: .875rem;
+	border-top: .025rem solid #e9e9e9
+}
+
+.content .sec-con .p-01 {
+	padding: .625rem .375rem;
+	border-bottom: .025rem solid #e9e9e9
+}
+
+.content .sec-con .p-01 label {
+	display: inline-block;
+	width: 20%;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .sec-con .p-01 input {
+	float: right;
+	text-align: right;
+	width: 70%;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222;
+	background-color: transparent;
+	border: 0
+}
+
+.content .div-01 {
+	padding: .625rem .375rem;
+	border-bottom: .025rem solid #e9e9e9
+}
+
+.content .div-01 .p-lx {
+	float: left;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .div-01 .box {
+	width: 60%;
+	float: right
+}
+
+.content .div-01 .box .divxl {
+	width: 70%;
+	text-align: center;
+	border: 0;
+	float: right;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .div-01 .box .divxl span {
+	margin-left: 12%;
+	display: block;
+	float: right;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .div-01 .box .divxl p {
+	padding-left: .25rem;
+	float: right;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	display: flex;
+	align-items: center
+}
+
+.content .div-01 .box .divxl p img {
+	width: .45rem;
+	margin-bottom: 2%
+}
+
+.content .div-01 .box .divmarrig {
+	margin-right: .25rem
+}
+
+.content .div-bottom {
+	padding: 0.5rem 0 0.5rem 0
+}
+
+.content .div-bottom p {
+	width: 60%;
+	margin: 0 auto;
+	border-radius: .15rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: .55rem;
+	color: #222;
+	text-align: center;
+	background-color: #f8f8f8
+}
+
+.content .sec-footer {
+	padding-top: 0.5rem;
+	padding-bottom: 1rem;
+}
+
+.content .sec-footer p {
+	width: 80%;
+	margin: 0 auto;
+	border-radius: .25rem;
+	height: 1.65rem;
+	line-height: 1.65rem;
+	font-size: .6rem;
+	color: #fff;
+	text-align: center;
+	background-color: #f74c32
+}
+
+
+.hyfl {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	overflow-y: scroll;
+	display:none;
+}
+
+.hyfl .div-header ul li {
+	float: left;
+	width: 15%;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	font-size: .65rem;
+	color: #484a50
+}
+
+.hyfl .div-header ul li:first-of-type img {
+	margin-left: .95rem;
+	width: .55rem
+}
+
+.hyfl .div-header ul li:nth-of-type(2) {
+	width: 70%;
+	text-align: center
+}
+
+.hyfl .div-header ul li:last-of-type img {
+	margin-left: .8rem;
+	width: .9rem
+}
+
+.hyfl .hyfl-content .p-top {
+	padding: 0 .95rem;
+	background-color: #f3f5f9;
+	height: 2.25rem;
+	line-height: 2.25rem;
+	font-size: .55rem;
+	color: #222;
+	border-bottom: .025rem solid #e7e7e9;
+	overflow: hidden;
+}
+
+.hyfl .hyfl-content ul li {
+	margin-left: 1rem;
+	padding: 0 1rem 0 0;
+	border-bottom: .025rem solid #eae9eb;
+	cursor: pointer;
+}
+
+.hyfl .hyfl-content ul li p {
+	float: left;
+	height: 2.1rem;
+	line-height: 2.1rem;
+	font-size: .65rem;
+	color: #484a50
+}
+
+.hyfl .hyfl-content ul li p:last-of-type {
+	float: right
+}
+
+.hyfl .hyfl-content ul li p:last-of-type img {
+	width: .35rem
+}
+.content .sec-03 {
+	padding: 0 .375rem;
+	border-bottom: .025rem solid #e9e9e9
+}
+
+.content .sec-03 .left {
+	height: 2.75rem;
+	line-height: 2.75rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .sec-03 .right {
+	margin-right: .1rem;
+	height: 2.75rem;
+	line-height: 2.75rem;
+	position: relative;
+	width: 1.7rem
+}
+
+.content .sec-03 .right input {
+	width: 100%;
+	opacity: 0;
+	position: absolute;
+	height: 100%
+}
+
+.content .sec-03 .right img {
+	width: 100%;
+	height: 64%
+}
+.sec-footer{
+	padding:0.5rem 10%!important;
+}
+.sec-footer .p-s{
+	width: 33%!important;
+	float: left;
+	background-color: #ccc!important;
+}
+.sec-footer .p-x{
+	width: 63%!important;
+	float: right;
+}
+.p-01 span{
+	margin-left: 0.25rem;
+	float: right;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	display: flex;
+	align-items: center;
+}
+.p-01 span img{
+	width: 0.65rem;
+}
+
+.content .div-p-02 {
+	padding: .25rem 0 .75rem 0
+}
+
+.content .div-p-02 p {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: .55rem;
+	color: #f74c30;
+	background-color: #f8f8f8
+}
+.liandong {
+	position: relative
+}
+
+.liandong #myAddrs {
+	position: absolute;
+	border: 0;
+	width: 100%;
+	height: 2rem;
+	background-color: transparent;
+	color: transparent
+}
+
+.content .ul-dizhi li {
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: .6rem;
+	color: #222;
+	padding: 0 .375rem;
+	border-bottom: .025rem solid #e9e9e9
+}
+
+.content .ul-dizhi li p:first-of-type {
+	float: left
+}
+
+.content .ul-dizhi li p:last-of-type {
+	float: right
+}
+
+.content .ul-dizhi li p:last-of-type img {
+	margin-left: .15rem;
+	width: .45rem;
+	margin-bottom: .1rem
+}
+.form-4 .p-01 label{
+	width: auto!important;
+}
+.form-4 .p-01 input{
+	width: 50%!important;
+}
+

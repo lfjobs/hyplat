@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+    <class name="hy.ea.bo.finance.PerformanceManagement" table="DT_PERFORMANCE_MANAGEMENT">
+        <id name="key">
+            <column length="50" name="KEY">
+                <comment>主键id</comment>
+            </column>
+            <generator class="uuid"/>
+        </id>
+        <property name="id">
+            <column length="50" name="ID">
+                <comment>唯一id</comment>
+            </column>
+        </property>
+        <property name="name">
+            <column length="255" name="NAME">
+                <comment>名称</comment>
+            </column>
+        </property>
+        <property name="parentId">
+            <column length="50" name="PARENT_ID">
+                <comment>父级id</comment>
+            </column>
+        </property>
+        <property name="delFlag">
+            <column length="1" name="DEL_FLAG">
+                <comment>0删除，1正常</comment>
+            </column>
+        </property>
+        <property name="createName">
+            <column length="50" name="CREATE_NAME">
+                <comment>创建人</comment>
+            </column>
+        </property>
+        <property name="updateName">
+            <column length="50" name="UPDATE_NAME">
+                <comment>修改人</comment>
+            </column>
+        </property>
+        <property name="createTime">
+            <column length="20" name="CREATE_TIME">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        <property name="updateTime">
+            <column length="20" name="UPDATE_TIME">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

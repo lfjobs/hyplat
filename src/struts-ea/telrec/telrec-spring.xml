@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<!-- 	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+		value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+		value="jdbc:mysql://127.0.0.1/telrec?characterEncoding=utf-8">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123"></property>
+		<property name="initialSize" value="5"></property>
+		<property name="maxActive" value="20"></property>
+		</bean>
+		
+		<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+		</bean> -->
+	<!-- dao -->
+	<!-- <bean id="userDao" class="com.tiantai.telrec.dao.UserDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean> -->
+	<!-- <bean id="companyInfoDao"
+		class="com.tiantai.telrec.dao.CompanyInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean> -->
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager" ref="txManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="query*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="check*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="create*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="merge*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="delete*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="insert*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="update*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="reset*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="bind*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="unBind*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="remove*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="auth*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="save*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="edit*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="audit*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<bean
+		class="org.springframework.transaction.interceptor.TransactionAttributeSourceAdvisor">
+		<property name="transactionInterceptor"
+			ref="transactionInterceptor" />
+	</bean>
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>Client*Service</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+				<!-- 				<value>methodSecurityInterceptorAdvisor</value>  
+					<value>beanAuditLogAdviceAdvisor</value>     -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="customerInfoDao"
+		class="com.tiantai.telrec.dao.impl.TelrecCustomerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="telInDao"
+		class="com.tiantai.telrec.dao.impl.TelInInfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- <bean id="waveDao" class="com.tiantai.telrec.dao.WaveDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean> -->
+	<!-- <bean id="queryDao" class="com.tiantai.telrec.dao.QueryDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean> -->
+	<bean id="telInfoDao"
+		class="com.tiantai.telrec.dao.impl.TelrecTelInfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- <bean id="accessInfoDao"
+		class="com.tiantai.telrec.dao.AccessInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+	-->
+	<!--<bean id="relaInfoDao"
+		class="com.tiantai.telrec.dao.CustomerRelaInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>-->
+	<!-- <bean id="relevanceDao"
+		class="com.tiantai.telrec.dao.RelevanceInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+	-->
+	<!-- service -->
+	<bean id="ClientQueryCustomerService"
+		class="com.tiantai.telrec.service.impl.ClientQueryCustomerServiceImpl">
+		<property name="transactionManager" ref="txManager" />
+		<property name="telInDao" ref="telInDao" />
+		<property name="customerDao" ref="customerInfoDao"></property>
+	</bean>
+	<bean id="ClientInsertCustomerService"
+		class="com.tiantai.telrec.service.impl.ClientInsertCustomerServiceImpl">
+		<property name="transactionManager" ref="txManager" />
+		<property name="customerDao" ref="customerInfoDao"></property>
+	</bean>
+	<bean id="ClientInsertTelInfoService"
+		class="com.tiantai.telrec.service.impl.ClientInsertTelInfoServiceImpl">
+		<property name="transactionManager" ref="txManager" />
+		<property name="telInfoDao" ref="telInfoDao" />
+		<property name="telinInfoDao" ref="telInDao" />
+
+	</bean>
+	<bean id="ClientMissedCalledService"
+		class="com.tiantai.telrec.service.impl.ClientMissCalledServiceImpl">
+		<property name="transactionManager" ref="txManager" />
+		<property name="telInDao" ref="telInDao" />
+	</bean>
+	<!-- clientAction -->
+	<bean id="clientLoginAction"
+		class="com.tiantai.telrec.action.ClientLoginAction">
+		<!-- <property name="userDao" ref="userDao" /> -->
+	</bean>
+	<bean id="clientQueryUserPara"
+		class="com.tiantai.telrec.action.ClientQueryUserParaAction">
+		<!-- <property name="userDao" ref="userDao"></property> -->
+	</bean>
+	<bean id="clientInsertCustomer"
+		class="com.tiantai.telrec.action.ClientInsertCustomer">
+		<property name="insertCustomerService"
+			ref="ClientInsertCustomerService">
+		</property>
+	</bean>
+	<bean id="clientQueryCustomer"
+		class="com.tiantai.telrec.action.ClientQueryCustomer">
+		<!-- 	<property name="customerDao" ref="customerInfoDao"></property> -->
+		<property name="telInService"
+			ref="ClientQueryCustomerService">
+		</property>
+		<!-- <property name="telInDao" ref="telInDao"></property> -->
+	</bean>
+	<bean id="clientQueryCustomerTelRec"
+		class="com.tiantai.telrec.action.ClientQueryCustomerTelRecord">
+		<property name="telInfoService"
+			ref="ClientInsertTelInfoService">
+		</property>
+	</bean>
+	<bean id="clientWaveFileUpload"
+		class="com.tiantai.telrec.action.ClientWaveFileUploadAction">
+		<property name="telInfoService"
+			ref="ClientInsertTelInfoService">
+		</property>
+	</bean>
+	<bean id="clientInsertTelRec"
+		class="com.tiantai.telrec.action.ClientInsertTelRec">
+		<property name="telInfoService"
+			ref="ClientInsertTelInfoService">
+		</property>
+	</bean>
+	<bean id="clientQueryCustomerList"
+		class="com.tiantai.telrec.action.ClientQueryCustomerList">
+		<property name="customerService"
+			ref="ClientQueryCustomerService">
+		</property>
+	</bean>
+	<bean id="clientQueryTelForDate"
+		class="com.tiantai.telrec.action.ClientQueryTelForDate">
+		<property name="telInfoService"
+			ref="ClientInsertTelInfoService">
+		</property>
+	</bean>
+	<bean id="clientTestConnection"
+		class="com.tiantai.telrec.action.ClientTestConnection">
+	</bean>
+
+	<bean id="clientMissCall"
+		class="com.tiantai.telrec.action.ClientMissCallShow">
+		<property name="missedCalledService"
+			ref="ClientMissedCalledService">
+		</property>
+	</bean>
+	<!-- webAction -->
+	<bean id="WebQueryCustomer"
+		class="com.tiantai.telrec.action.WebQueryCustomer">
+		<property name="queryCustomerServie"
+			ref="ClientQueryCustomerService">
+		</property>
+	</bean>
+	<bean id="WebQueryCustomerAction"
+		class="com.tiantai.telrec.action.WebQueryCustomerAction">
+		<property name="queryCustomerServie"
+			ref="ClientQueryCustomerService">
+		</property>
+	</bean>
+	<bean id="WebQueryTelByCustomerId"
+		class="com.tiantai.telrec.action.WebQueryTelByCustomerId">
+		<property name="telInfoService"
+			ref="ClientInsertTelInfoService">
+		</property>
+	</bean>
+	<bean id="webInsertCustomerInfo"
+		class="com.tiantai.telrec.action.WebInsertCustomerInfo">
+		<property name="queryCustomerServie"
+			ref="ClientQueryCustomerService">
+		</property>
+	</bean>
+	<!-- 根据客户ID查询数据-->
+	<bean id="webQueryCustomerInfoById"
+		class="com.tiantai.telrec.action.WebQueryCustomerById">
+		<property name="queryCustomerServie"
+			ref="ClientQueryCustomerService">
+		</property>
+	</bean>
+	<bean id="webUpdateCustomerInfo"
+		class="com.tiantai.telrec.action.WebUpdateCustomerInfo">
+		<property name="queryCustomerServie"
+			ref="ClientQueryCustomerService">
+		</property>
+	</bean>
+	<bean id="clientQueryParam"
+		class="com.tiantai.telrec.action.ClientQueryParam">
+
+	</bean>
+	<bean id="clientSaveStaff"
+		class="com.tiantai.telrec.action.ClientSaveStaff">
+	</bean>
+	<bean id="clientSaveContactCompany"
+		class="com.tiantai.telrec.action.ClientSaveContactCompany">
+	</bean>
+	<bean id="WebQueryTelForCustomer"
+		class="com.tiantai.telrec.action.WebQueryTelForCustomer">
+		<property name="telInfoService" 
+			ref="ClientInsertTelInfoService">
+		</property>
+	</bean>
+	<bean id="WebQueryTelForUser"
+		class="com.tiantai.telrec.action.WebQueryTelForUser">
+		<property name="telInfoService"
+			ref="ClientInsertTelInfoService">
+		</property>
+	</bean>
+	<!-- <bean id="webInsertCompany"
+		class="com.tiantai.telrec.action.WebInsertCompanyAction">
+		<property name="companyInfoDao" ref="companyInfoDao"></property>
+		</bean>
+		<bean id="webInsertUser"
+		class="com.tiantai.telrec.action.WebInsertUserAction">
+		<property name="userDao" ref="userDao"></property>
+		</bean>
+		<bean id="webLogin" class="com.tiantai.telrec.action.WebLogin">
+		<property name="userDao" ref="userDao"></property>
+		<property name="companyInfoDao" ref="companyInfoDao"></property>
+		</bean>
+		<bean id="webUserList"
+		class="com.tiantai.telrec.action.WebUserList">
+		<property name="userDao" ref="userDao"></property>
+		</bean>
+		<bean id="webUpdateUserInfo"
+		class="com.tiantai.telrec.action.WebUpdateUserInfo">
+		<property name="userDao" ref="userDao"></property>
+		</bean>
+		<bean id="webDeleteUserInfo"
+		class="com.tiantai.telrec.action.WebDeleteUserInfo">
+		<property name="userDao" ref="userDao"></property>
+		</bean>
+		<bean id="webQueryUser"
+		class="com.tiantai.telrec.action.WebQueryUserById">
+		<property name="userDao" ref="userDao"></property>
+		</bean>
+		<bean id="queryUserTelRec"
+		class="com.tiantai.telrec.action.WebQueryUserTelRec">
+		<property name="userDao" ref="userDao"></property>
+		</bean>
+		<bean id="queryUserWorkInfo"
+		class="com.tiantai.telrec.action.WebQueryUserWorkInfo">
+		<property name="userDao" ref="userDao"></property>
+		<property name="listToXml" ref="userListToXml"></property>
+		</bean>
+		
+		<bean id="userListToXml"
+		class="com.tiantai.telrec.tool.UserWorkListToxmlForChart">
+		</bean>
+		<bean id="customerListToXml"
+		class="com.tiantai.telrec.tool.customerListToxmlForChart">
+		</bean>
+		<bean id="webChangePassWord"
+		class="com.tiantai.telrec.action.WebChangePassWord">
+		<property name="userDao" ref="userDao"></property>
+		</bean>
+		<bean id="webClearSession"
+		class="com.tiantai.telrec.action.WebClearSession">
+		</bean>
+		<bean id="webSplitPageForUser"
+		class="com.tiantai.telrec.action.WebSplitPageForUser">
+		<property name="userDao" ref="userDao"></property>
+		</bean>
+		<bean id="webQueryUserWorkSplit"
+		class="com.tiantai.telrec.action.WebQueryUserWorkSplit">
+		<property name="userDao" ref="userDao"></property>
+		</bean>
+		<bean id="webCustomerTotal"
+		class="com.tiantai.telrec.action.WebCustomerTotal">
+		<property name="customerDao" ref="customerInfoDao"></property>
+		<property name="customerListToXml" ref="customerListToXml"></property>
+		</bean>
+		<bean id="webInsertAccessInfo"
+		class="com.tiantai.telrec.action.WebInsertAccessInfo">
+		<property name="accessInfoDao" ref="accessInfoDao"></property>
+		</bean>
+	-->
+	<!-- 根据客户ID查询数据
+		<bean id="webQueryCustomerInfoById"
+		class="com.tiantai.telrec.action.WebQueryCustomerById">
+		<property name="customerDao" ref="customerInfoDao"></property>
+		<property name="relaDao" ref="relaInfoDao"></property>
+		</bean>
+		<bean id="queryCustomerRelaListInfo"
+		class="com.tiantai.telrec.action.WebQueryCustomerRelaList">
+		<property name="relaDao" ref="relaInfoDao"></property>
+		</bean>
+		<bean id="updateCustomerRelaForQuery"
+		class="com.tiantai.telrec.action.WebUpdateCustomerRelaForQuery">
+		<property name="relaDao" ref="relaInfoDao"></property>
+		</bean>
+		<bean id="insertCustomerRelaInfo"
+		class="com.tiantai.telrec.action.WebInsertCustomerRela">
+		<property name="relaDao" ref="relaInfoDao"></property>
+		</bean>
+		<bean id="updateCustomerRelaInfo"
+		class="com.tiantai.telrec.action.WebUpdateCustomerRela">
+		<property name="relaDao" ref="relaInfoDao"></property>
+		</bean>
+		<bean id="queryCustomerNameSpell"
+		class="com.tiantai.telrec.action.WebQueryCustomerForSpell">
+		<property name="customerDao" ref="customerInfoDao"></property>
+		</bean>
+		<bean id="queryCustomerRelaSpell"
+		class="com.tiantai.telrec.action.WebQueryCustomerRelaSpell">
+		<property name="relaDao" ref="relaInfoDao"></property>
+		</bean>
+		<bean id="queryAccessInfoList"
+		class="com.tiantai.telrec.action.WebQueryAccessList">
+		<property name="accessDao" ref="accessInfoDao"></property>
+		</bean>-->
+</beans>

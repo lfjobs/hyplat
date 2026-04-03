@@ -1,0 +1,240 @@
+
+body{
+	overflow:hidden;
+}
+header {
+	background-color: #f74c32
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	color: #fff
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center
+}
+
+header ul li:nth-of-type(3) {
+	width: 20%;
+	text-align: right
+}
+
+.content .div-name {
+	border-bottom: .025rem solid #eee;
+	padding: .625rem .75rem .5rem .75rem;
+	clear:both;
+	overflow:hidden;
+}
+
+.content .div-name label {
+	display: block;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: .95rem;
+	color: #222;
+	width:25%;
+	float:left
+}
+
+.content .div-name input {
+	height: 2rem;
+	line-height: 2rem;
+	font-size: .9rem;
+	color: #666;
+	background-color: transparent;
+	border: 0;
+	width:75%;
+	float:left
+}
+
+
+.div-bottom {
+	display: flex;
+	/*justify-content: center; !* 水平居中 *!
+    align-items: center; !* 垂直居中 *!*/
+	height: 40px; /* 容器高度，用于演示目的 */
+}
+.express-data-box {
+	position: absolute;
+	bottom: -100%;
+	z-index: 15;
+	width: 100%;
+	background-color: #fff;
+	color: #4d525d;
+}
+.express-data-box header {
+	position: relative;
+	border-top: 1px solid #e2e2e2;
+	display: block; background-color: #fff;
+}
+
+.express-data-box header h3 {
+	margin: 0 1.675rem;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 2.5rem;
+}
+.express-data-box header .close-mask,.submit-mask {
+	position: absolute;
+	top: 0;
+	width: 1.675rem;
+	height: 2.25rem;
+}
+
+.express-data-box article {
+	height: 350px;
+	overflow-y: scroll;
+}
+
+.submit-mask {
+	right: 0;
+	width: 40px;
+	font-size: 16px;
+	font-weight: 500;
+	margin-top: 6px;
+}
+.close-mask {
+	font-size: 24px !important;
+	font-weight: bold;
+	margin-top: 6px;
+}
+
+
+.content .div-role {
+	left: 0;
+	width: 100%;
+	padding:10px;
+	background-color: #e9b0aa;
+	border-top: 0.35rem solid #f8f8f8;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: 1rem;
+	color: #121212;
+	font-weight: 550;
+
+
+}
+
+.express-data-box article {
+	height: 250px;
+	overflow-y: scroll;
+}
+
+.express-data-box {
+	position: absolute;
+	bottom: -100%;
+	z-index: 15;
+	width: 100%;
+	background-color: #fff;
+	color: #4d525d;
+}
+.express-data-box header {
+	position: relative;
+	border-top: 1px solid #e2e2e2;
+	display: block; background-color: #fff;
+}
+.select-data{
+	border-bottom: 1px solid #e2e2e2;
+	padding: 10px;
+}
+.div-data{
+	text-align: center;
+	font-size: .94rem;
+	line-height: 1.2rem;
+}
+.data-name{
+	font-size: .94rem;
+	line-height: 1.2rem;
+}
+
+.express-data-box header h3 {
+	margin: 0 1.675rem;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 2.5rem;
+}
+.express-data-box header .close-mask,.div-back {
+	position: absolute;
+	top: 0;
+	width: 1.675rem;
+	height: 2.25rem;
+}
+
+#dataBox{
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+.express-data-box article {
+	height: 350px;
+	overflow-y: scroll;
+}
+.div-mask-list li {
+	padding: .6rem;
+	border-bottom: 1px solid #e2e2e2;
+	text-align: justify;
+	font-size: .9rem;
+	line-height: 1.45rem;
+	text-align:center;
+	display:flex;
+	height:20px;
+}
+
+.selected-child{
+	width: 20%;
+	border-left: 1px solid #cfbdc1;
+	color: #c33820;
+}
+
+.label-child-name{
+	argin-left: 2px;
+	font-size: 16px;
+}
+.div_type{
+	width: 30%;
+	float: left
+}
+.div-back{
+	font-size: 20px !important;
+	top: 8px;
+	left: 2px;
+}
+/*遮罩层*/
+.mask {
+	display: none;
+	position: absolute;
+	top: 0; left: 0;
+	z-index: 12;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+}
+@media (min-width: 960px) {
+
+	.content{
+		width: 800px;
+		height:600px;
+		margin: 2rem auto;
+		border: 1px solid #efeaea;
+	}
+	.content .div-bottom {
+
+		margin-top: 8rem;
+	}
+}

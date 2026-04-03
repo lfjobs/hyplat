@@ -1,0 +1,327 @@
+@charset "utf-8";
+.bgff {
+	background-color: #fff
+}
+
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+.db {
+	display: block
+}
+
+.w100 {
+	width: 100%
+}
+
+.hover {
+	cursor: pointer
+}
+
+.fixed_top {
+	position: fixed;
+	top: 0;
+	left: 0
+}
+
+.fixed_bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0
+}
+
+body,
+html {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	-webkit-overflow-scrolling: touch
+}
+
+body {
+	margin: 0 auto;
+	background-color: #fff;
+	width: 100%
+}
+
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+input,
+label,
+li,
+menu,
+option,
+p,
+section,
+select,
+table,
+td,
+textarea,
+th,
+ul {
+	margin: 0 0;
+	padding: 0 0;
+	font-family: '微软雅黑'
+}
+
+img {
+	cursor: pointer;
+	border: none;
+	vertical-align: middle
+}
+
+li,
+ol,
+ul {
+	list-style: none
+}
+
+a,
+a:link {
+	text-decoration: none;
+	color: #666
+}
+a:active,
+a:hover {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+a:focus {
+	outline: 0
+}
+
+.left {
+	float: left
+}
+
+.right {
+	float: right
+}
+
+.txt {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.txt_2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.txt_3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+input {
+	outline: 0;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+::-webkit-scrollbar {
+	width: 0;
+	height: 0
+}
+
+.clearfix:after,
+.clearfix:before {
+	content: "";
+	display: table
+}
+
+.clearfix:after {
+	clear: both;
+	overflow: hidden
+}
+
+.clearfix {
+	zoom: 1
+}
+
+header {
+	background: url(/images/todayPrice.png) top center no-repeat #08bef5
+}
+
+header div {
+	position: relative;
+	height: 170px;
+	width: 1644px;
+	margin: 0 auto;
+	text-align: center
+}
+
+header div p {
+	letter-spacing: 9px;
+	font-size: 30px;
+	color: #fff;
+	padding-top: 123px
+}
+
+header div p span {
+	display: inline-block
+}
+
+header div i {
+	background: 0 0;
+	color: transparent;
+	position: absolute;
+	border: 0;
+	left: -25px;
+	top: 50px;
+	width: 200px;
+	height: 70px
+}
+
+body>div:first-of-type{
+	border: 1px solid #eee;
+	height: 101px;
+	width: 1642px;
+	margin: 74px auto 0px auto;
+	overflow: auto
+}
+body>div:last-of-type{
+	border: 1px solid #eee;
+	border-top:0;
+	height: 764px;
+	width: 1642px;
+	margin: 0px auto 50px auto;
+	overflow: auto
+}
+
+body>div table {
+	border: 1px solid #eee;
+	border-left: 0;
+	border-right: 0;
+	margin: 0 auto;
+	border-collapse: collapse;
+	table-layout: fixed
+}
+
+body>div table:first-of-type {
+	border: 0
+}
+
+body>div table:first-of-type th {
+	height: 84px;
+	line-height: 84px;
+	font-size: 36px;
+	color: #222;
+	font-weight: 400;
+	border: 0
+}
+
+body>div table:first-of-type tr {
+	border-top: 1px solid #eee
+}
+
+body>div table:first-of-type tr th:first-of-type {
+	width: 135px
+}
+
+body>div table:first-of-type tr th:nth-of-type(2) {
+	width: 246px
+}
+
+body>div table:first-of-type tr th:nth-of-type(3) {
+	width: 780px
+}
+
+body>div table:first-of-type tr th:nth-of-type(4) {
+	width: 261px;
+	letter-spacing: 3px
+}
+
+body>div table:first-of-type tr th:last-of-type {
+	width: 210px;
+	color: #f80000
+}
+
+body>div table:last-of-type tr {
+	border-top: 1px solid #eee
+}
+
+body>div table:last-of-type tr td:first-of-type {
+	width: 135px
+}
+
+body>div table:last-of-type tr td:nth-of-type(2) {
+	width: 246px
+}
+
+body>div table:last-of-type tr td:nth-of-type(3) {
+	width: 790px
+}
+
+body>div table:last-of-type tr td:nth-of-type(4) {
+	width: 261px;
+	letter-spacing: 3px
+}
+
+body>div table:last-of-type tr td:last-of-type {
+	width: 210px;
+	color: #f80000
+}
+
+body>div table:last-of-type td {
+	height: 96px;
+	line-height: 50px;
+	font-size: 30px;
+	color: #222;
+	text-align: center;
+	border: 0
+}
+
+.priceType{
+	float: left;
+	position: relative;
+	top: 5px;left:70px;
+	color: #fff;
+	background-color: red;
+	border-radius: 6px;
+	font-size: 20px;
+	margin-right: 80px;
+	padding:0px 2px;
+	display: block;
+	line-height: 30px
+}
+.price{
+	float: left;
+	position: relative;
+	left:40px;
+}
+.endTime{
+	float: left;color: #e81515
+}
+.startTime{
+	float: left;
+	position: relative;
+	top: 5px;
+	color: darkgreen
+}

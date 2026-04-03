@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="PayBackupBill" table="dtPayBackupBill">
+		<id length="50" name="pbbkey">
+			<column length="50" name="pbbkey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="pbbID">
+        	<column name="pbbID" length="50"/>
+        </property>
+        <property name="waiterID">
+        	<column name="waiterID" length="50">
+        	<comment>服务人员，用于扫码助手</comment>
+        	</column>
+        </property>
+         <property name="sccid">
+        	<column name="sccid" length="50">
+        	<comment>支付的人的sccid</comment>
+        	</column>
+        </property>
+          <property name="staffId">
+        	<column name="staffId" length="50">
+        	<comment>支付的人的staffid</comment>
+        	</column>
+        </property>
+		<property name="ppid">
+			<column name="ppid" length="50">
+				<comment>支付的产品</comment>
+			</column>
+		</property>
+		<property name="companyId">
+			<column name="companyId" length="50">
+				<comment>产品的公司</comment>
+			</column>
+		</property>
+		<property name="journalNum">
+			<column name="journalNum" length="50">
+				<comment>用于支付的凭证号</comment>
+			</column>
+		</property>
+		<property name="attach">
+			<column name="attach" length="50">
+				<comment>附件字段</comment>
+			</column>
+		</property>
+		<property name="coID">
+			<column name="coID" length="50">
+				<comment>结算订单ID</comment>
+			</column>
+		</property>
+		<property name="addressID">
+			<column name="addressID" length="50">
+				<comment>地址</comment>
+			</column>
+		</property>
+		<property name="noviceName">
+			<column name="noviceName" length="50"><comment>学员姓名</comment></column>
+		</property>
+		<property name="novicePhone">
+			<column name="novicePhone" length="11" ><comment>学员电话</comment></column>
+		</property>
+		<property name="noviceCode">
+			<column name="noviceCode" length="20" ><comment>身份证</comment></column>
+		</property>
+		<property name="noviceAddress">
+			<column name="noviceAddress" length="1000"><comment>地址</comment></column>
+		</property>
+		<property name="enrollID">
+			<column length="50" name="enrollID">
+				<comment>报名ID</comment>
+			</column>
+		</property>
+		<property name="ptppid">
+			<column length="500" name="ptppid">
+				<comment>选择促销品产品ID</comment>
+			</column>
+		</property>
+		<property name="ptstandard">
+			<column length="500" name="ptstandard">
+				<comment>选择促销品产品规格</comment>
+			</column>
+		</property>
+		<property name="privateRoom">
+			<column length="200" name="privateRoom" />
+		</property>
+		<property name="remark">
+			<column length="500" name="remark" />
+		</property>
+		<property name="cashCompany">
+			<column length="50" name="cashCompany" >
+				<comment>现金收款公司sccid</comment>
+			</column>
+		</property>
+		<property name="openId">
+			<column length="50" name="openId" >
+				<comment>//微信用户ID</comment>
+			</column>
+		</property>
+		<property name="nickname">
+			<column length="50" name="nickname" >
+				<comment>微信用户昵称</comment>
+			</column>
+		</property>
+		<property name="transaction_id">
+			<column length="50" name="transaction_id" >
+				<comment>第三方交易号</comment>
+			</column>
+		</property>
+		<property name="money">
+			<column length="50" name="money" >
+				<comment>交易额</comment>
+			</column>
+		</property>
+		<property name="device_id">
+			<column length="50" name="device_id" >
+				<comment>序列号</comment>
+			</column>
+		</property>
+		<property name="carNum">
+			<column length="10" name="carNum" >
+				<comment>序列号</comment>
+			</column>
+		</property>
+		<property name="companyName">
+			<column name="companyName" length="250" ><comment>公司名称</comment></column>
+		</property>
+		<property name="shopname">
+			<column name="shopname" length="100"><comment>县或者区</comment></column>
+		</property>
+		<property name="pname">
+			<column name="pname" length="100"><comment>省份</comment></column>
+		</property>
+		<property name="cityname">
+			<column name="cityname" length="100"><comment>市</comment></column>
+		</property>
+		<property name="adname">
+			<column name="adname" length="100"><comment>县或者区</comment></column>
+		</property>
+		<property name="street">
+			<column name="street" length="256"><comment>街道地址</comment></column>
+		</property>
+		<property name="companyPhone" >
+			<column name="companyPhone" length="20" ><comment>企业电话</comment></column>
+		</property>
+		<property name="companyManager" >
+			<column name="companyManager" length="50"><comment>负责人</comment></column>
+		</property>
+		<property name="managertel" >
+			<column name="managertel" length="11"><comment>负责人电话</comment></column>
+		</property>
+		<property name="accuracy">
+			<column name="accuracy" length="50"><comment>公司的经度坐标</comment></column>
+		</property>
+		<property name="dimension">
+			<column name="dimension" length="50"><comment>公司的纬度坐标</comment></column>
+		</property>
+		<property name="industryType">
+			<column length="256" name="industryType" ><comment>行业类别</comment></column>
+		</property>
+		<property name="industryId">
+			<column name="industryId" length="50"><comment>行业id</comment></column>
+		</property>
+		<property name="gdID">
+			<column name="gdID" length="50"><comment>高德地图获取的POIS的ID</comment></column>
+		</property>
+		<property name="brandInfo">
+			<column length="50" name="brandInfo"><comment>品牌</comment></column>
+		</property>
+		<property name="logo">
+			<column length="500" name="logo"><comment>logo</comment></column>
+		</property>
+		<property name="hdpay">
+			<column length="1" name="hdpay"><comment>1合单</comment></column>
+		</property>
+		<property name="hdfinish">
+			<column length="1" name="hdfinish"><comment>已添加到待分账表中</comment></column>
+		</property>
+	</class> 
+	
+</hibernate-mapping>

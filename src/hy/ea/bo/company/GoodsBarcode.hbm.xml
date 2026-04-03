@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.company.GoodsBarcode" table="DTGOODSBARCODE" schema="HYPLAT">
+        <id name="barcodekey">
+            <column name="BARCODEKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="barcodeid">
+            <column name="BARCODEID" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="goodsid">
+            <column name="GOODSID" sql-type="varchar2(50)" length="50"><comment>物品id</comment></column>
+        </property>
+        <property name="barcode">
+            <column name="BARCODE" sql-type="varchar2(50)" length="50"><comment>条码</comment></column>
+        </property>
+        <property name="spcation">
+            <column name="SPCATION" sql-type="varchar2(50)" length="50"><comment>规格</comment></column>
+        </property>
+        <property name="quantity">
+            <column name="QUANTITY" sql-type="varchar2(50)" length="50"><comment>数量</comment></column>
+        </property>
+        <property name="variable1Id">
+            <column name="VARIABLE1ID" sql-type="varchar2(50)" length="50"><comment>单位</comment></column>
+        </property>
+        <property name="status">
+            <column name="STATUS" sql-type="varchar2(2)" length="2"><comment>状态 00：默认 01:不默认</comment></column>
+        </property>
+        <property name="companyID">
+            <column name="companyID" sql-type="varchar2(50)" length="50"><comment>公司ID</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

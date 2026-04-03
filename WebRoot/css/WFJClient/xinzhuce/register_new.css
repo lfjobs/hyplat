@@ -1,0 +1,344 @@
+@charset "utf-8";
+.bgff {
+	background-color: #fff
+}
+
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+.db {
+	display: block
+}
+
+.w100 {
+	width: 100%
+}
+
+.hover {
+	cursor: pointer
+}
+
+.fixed_top {
+	position: fixed;
+	top: 0;
+	left: 0
+}
+
+.fixed_bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0
+}
+
+body,
+html {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	-webkit-overflow-scrolling: touch
+}
+
+body {
+	margin: 0 auto;
+	background-color: #fff;
+	width: 100%
+}
+
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+input,
+li,
+menu,
+p,
+section,
+select,
+span,
+table,
+td,
+textarea,
+th,
+ul {
+	margin: 0 0;
+	padding: 0 0;
+	font-family: '微软雅黑'
+}
+
+img {
+	cursor: pointer;
+	border: none;
+	vertical-align: middle
+}
+
+li,
+ol,
+ul {
+	list-style: none
+}
+
+a,
+a:link {
+	text-decoration: none;
+	color: #666
+}
+
+a:active,
+a:hover {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+a:focus {
+	outline: 0
+}
+
+.left {
+	float: left
+}
+
+.right {
+	float: right
+}
+
+.txt {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.txt_2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.txt_3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+input {
+	outline: 0;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+::-webkit-scrollbar {
+	width: 0
+}
+
+.clearfix:after,
+.clearfix:before {
+	content: "";
+	display: table
+}
+
+.clearfix:after {
+	clear: both;
+	overflow: hidden
+}
+
+.clearfix {
+	zoom: 1
+}
+
+::-webkit-input-placeholder {
+	color: #ccc
+}
+
+:-moz-placeholder {
+	color: #ccc
+}
+
+::-moz-placeholder {
+	color: #ccc
+}
+
+:-ms-input-placeholder {
+	color: #ccc
+}
+
+header ul li {
+	float: left;
+	width: 10%;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	font-size: .8rem;
+	color: #222
+}
+header ul li span{
+	padding:.5rem;
+}
+header ul li .active{
+   color:#4792f7;
+}
+header ul li:first-of-type img {
+	margin-left: .75rem;
+	width: .5rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 80%;
+	text-align: center
+}
+
+.content {
+	padding: 0 1.5rem
+}
+
+.content p.p_first {
+	height: 3rem;
+	line-height: 3rem;
+	font-size: .9rem;
+	color: #666
+}
+
+.content menu {
+	padding-bottom: 1.75rem
+}
+
+.content menu li {
+	height: 2.7rem;
+	line-height: 2.7rem;
+	border-bottom: .025rem solid #ececec
+}
+
+.content menu li label {
+	display: inline-block;
+	width: 1.25rem;
+	text-align: center
+}
+
+.content menu li label img {
+	width: .95rem
+}
+
+.content menu li label .lab_img_01 {
+	width: .95rem
+}
+
+.content menu li label .lab_img_02 {
+	width: .7rem
+}
+
+.content menu li label .lab_img_03 {
+	width: .9rem
+}
+
+.content menu li label .lab_img_04 {
+	width: .725rem
+}
+
+.content menu li input {
+	padding-left: .65rem;
+	width: 6.5rem;
+	border: 0;
+	line-height: 2.65rem;
+	height: 2rem;
+	font-size: .75rem;
+	color: #222
+}
+
+.content menu li p {
+	float: right;
+	height: 2.65rem;
+	line-height: 2.65rem;
+	font-size: .75rem;
+	color: #4792f7
+}
+
+.content .ljzc {
+	margin: 0 auto;
+	border-radius: 1rem;
+	text-align: center;
+	width: 75%;
+	background-color: #4792f7;
+	height: 2.1rem;
+	line-height: 2.1rem;
+	font-size: .75rem;
+	color: #fff;
+	box-shadow: 0 12px 12px -12px #4792f7
+}
+
+.content .p_xz {
+	text-align: center;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: .75rem;
+	color: #666
+}
+
+.content .p_xz a {
+	color: #f39106
+}
+
+.content .d_xz p {
+	margin-top: -.5rem;
+	text-align: center;
+	padding-bottom: .5rem
+}
+
+.content .d_xz p img {
+	width: .75rem
+}
+
+.content .d_xz div.div_i {
+	display: block;
+	height: 2rem
+}
+
+.content .d_xz div.div_i img {
+	width: 50%
+}
+
+.content .d_xz div.div_i img:first-of-type {
+	float: left;
+	/*padding-left: 0.25rem*/
+}
+
+.content .d_xz div.div_i img:last-of-type {
+	float: right;
+	/*padding-right: 0.25rem*/
+}
+
+.div_img {
+	background-color: #fff
+}
+
+.div_img img {
+	width: 100%
+}
+
+
+@media (min-width: 960px) {
+
+
+	html{
+		margin: 0 25% 0 25%;
+		font-size: 25px;
+	}
+
+
+}

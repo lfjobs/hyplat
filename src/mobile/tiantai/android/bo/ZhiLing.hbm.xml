@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="mobile.tiantai.android.bo">
+    <class name="ZhiLing" table="DT_ZhiLing" schema="HYPLAT">
+        <id name="key" type="java.lang.String">
+            <column name="key" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="id" type="java.lang.String">
+            <column name="id" length="50" ><comment>指令的唯一id</comment></column>
+        </property>
+        <property name="userid" type="java.lang.String">
+            <column name="userid" length="50" ><comment>用户唯一标识，十六位数字或者字符</comment></column>
+        </property>
+        <property name="cmd" type="java.lang.Integer">
+            <column name="cmd" length="50" ><comment>0表示查询设备信息,1表示下发开锁指令，2表示寻车，3 表示设置设备位置回传间隔</comment></column>
+        </property>
+         <property name="deviceid" type="java.lang.String">
+             <column name="deviceid" length="50" ><comment>设备的编号，和用户发送过来的一样</comment></column>
+        </property>
+        <property name="result" type="java.lang.String">
+            <column name="result" length="50" ><comment>ok 表示成功，fail 表示失败查询则放设备的信息</comment></column>
+        </property>
+          <property name="info" type="java.lang.String">
+              <column name="info" length="50" ><comment>串表示没有车辆，用分号隔开每辆车的信息，逗号隔开每个字段的信息</comment></column>
+        </property>
+         <property name="serialnum" type="java.lang.Integer">
+             <column name="serialnum" length="50" ><comment>用户下发指令的流水号</comment></column>
+        </property>
+        <property name="sign" type="java.lang.String">
+            <column name="sign" length="50" ><comment>以上字段值+userkey 组成的字符串后进行 uft-8 编码的字节流进行 md5 计算</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

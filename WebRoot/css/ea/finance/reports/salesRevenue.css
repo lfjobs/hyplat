@@ -1,0 +1,459 @@
+@charset "utf-8";
+.bgff {
+	background-color: #fff
+}
+
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+.db {
+	display: block
+}
+
+.w100 {
+	width: 100%
+}
+
+.hover {
+	cursor: pointer
+}
+
+.fixed_top {
+	position: fixed;
+	top: 0;
+	left: 0
+}
+
+.fixed_bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0
+}
+
+body,
+html {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	-webkit-overflow-scrolling: touch
+}
+
+body {
+	margin: 0 auto;
+	background-color: #fff;
+	width: 100%
+}
+
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+input,
+label,
+li,
+menu,
+option,
+p,
+section,
+select,
+table,
+td,
+textarea,
+th,
+ul {
+	margin: 0 0;
+	padding: 0 0;
+	font-family: '微软雅黑'
+}
+
+img {
+	cursor: pointer;
+	border: none;
+	vertical-align: middle
+}
+
+li,
+ol,
+ul {
+	list-style: none
+}
+
+a,
+a:link {
+	text-decoration: none;
+	color: #666
+}
+
+a:active,
+a:hover {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+a:focus {
+	outline: 0
+}
+
+.left {
+	float: left
+}
+
+.right {
+	float: right
+}
+
+.txt {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.txt_2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.txt_3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+input {
+	outline: 0;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+::-webkit-scrollbar {
+	width: 0
+}
+
+.clearfix:after,
+.clearfix:before {
+	content: "";
+	display: table
+}
+
+.clearfix:after {
+	clear: both;
+	overflow: hidden
+}
+
+.clearfix {
+	zoom: 1
+}
+
+header {
+	background-color: #f2f9ff
+}
+
+header .box {
+	width: 100%;
+	margin: 0 auto
+}
+
+header .box h2 {
+	height: 130px;
+	line-height: 130px;
+	font-size: 40px;
+	color: #222;
+	float: left;
+	font-weight: 400;
+	padding-left: 92px
+}
+
+header .box section {
+	padding: 19px 90px 0 0;
+	width: 818px;
+	float: right
+}
+
+header .box section input {
+	float: right;
+	width: 80px;
+	height: 38px;
+	line-height: 38px;
+	font-size: 18px;
+	color: #222;
+	border: 1px solid #b3c9dd;
+	background-color: #fff;
+	border-radius: 4px
+}
+
+header .box section div {
+	float: right
+}
+
+header .box section div p {
+	float: left;
+	height: 66px;
+	line-height: 66px;
+	font-size: 18px;
+	color: #222;
+	padding-left: 45px
+}
+
+.content {
+	width: 98%;
+	margin: 0 auto
+}
+
+.content section {
+	padding: 50px 0 33px 16px
+}
+
+.content section p {
+	padding-right: 43px;
+	float: left
+}
+
+.content section p label {
+	font-size: 20px;
+	color: #222;
+	padding-right: 14px
+}
+
+.content section p input {
+	font-size: 18px;
+	color: #282727;
+	height: 36px;
+	line-height: 36px;
+	width: 178px;
+	padding: 0 10px;
+	border: 1px solid #b3c9dd;
+	background-color: #f2f9ff;
+	border-radius: 4px
+}
+
+.content section p>span {
+	display: inline-block;
+	position: relative;
+	border: 1px solid #b3c9dd;
+	background-color: #f2f9ff;
+	border-radius: 4px
+}
+
+.content section p>span:after {
+	content: "-";
+	position: absolute;
+	top: 16%;
+	left: 48.5%
+}
+
+.content section p>span input {
+	text-align: center;
+	background-color: transparent;
+	border: 0;
+	width: 120px;
+	padding: 0
+}
+
+.content section form>input {
+	height: 38px;
+	line-height: 38px;
+	width: 98px;
+	font-size: 18px;
+	color: #222;
+	border: 1px solid #b3c9dd;
+	background-color: #f2f9ff;
+	border-radius: 4px
+}
+
+.content>div {
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid #eee;
+	overflow: hidden;
+	height: 575px
+}
+
+.content>div table tr th {
+	padding-top: 16px;
+	height: 79px;
+	line-height: 79px;
+	font-weight: 400;
+	font-size: 21px;
+	color: #222;
+	border-bottom: 1px solid #eee
+}
+
+.content>div table tr td {
+	text-align: center;
+	height: 79px;
+	line-height: 79px;
+	font-size: 18px;
+	color: #222;
+	border-bottom: 1px solid #eee;
+	white-space: nowrap;
+}
+
+.content>div table tr td input {
+	width: 100%;
+	text-align: center;
+	background-color: transparent;
+	border: 0;
+	font-size: 18px;
+	color: #222;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.content>div table tr td:first-of-type {
+	width: 80px
+}
+
+.content>div table tr td:nth-of-type(2) {
+	width: 275px
+}
+
+.content>div table tr td:nth-of-type(3) {
+	width: 155px
+}
+
+.content>div table tr td:nth-of-type(4) {
+	width: 80px
+}
+
+.content>div table tr td:nth-of-type(5) {
+	width: 140px
+}
+
+.content>div table tr td:nth-of-type(6) {
+	width: 85px
+}
+
+.content>div table tr td:nth-of-type(7) {
+	width: 135px
+}
+
+.content>div table tr td:nth-of-type(8) {
+	width: 120px
+}
+
+.content>div table tr td:nth-of-type(9) {
+	width: 114px
+}
+
+.content>div table tr td:nth-of-type(10) {
+	width: 140px
+}
+
+.content>div table tr td:last-of-type {
+	width: 170px
+}
+
+.content footer div {
+	height: 180px;
+	line-height: 180px;
+	text-align: center
+}
+
+.content footer div a {
+	border: 1px solid #f4f4f4;
+	border-radius: 4px;
+	font-size: 18px;
+	color: #222;
+	display: inline-block;
+	height: 38px;
+	line-height: 38px;
+	padding: 0 20px;
+	margin: 0 10px;
+	overflow: hidden;
+}
+
+.content footer div a.active {
+	background-color: #f2f9ff;
+	border-color: #b3c9dd
+}
+.ripple {
+	position: relative;
+}
+.ripple:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+	background-repeat: no-repeat;
+	background-position: 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform .3s, opacity .5s;
+}
+.ripple:active:after {
+	transform: scale(0, 0);
+	opacity: .3;
+	transition: 0s;
+}
+
+.content>div>table tr:first-of-type td{
+	height:82px!important;
+	line-height:82px!important;
+	font-size:21px!important;
+}
+.load {
+	position: fixed;
+	top: 0;
+	height: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background-color: rgba(0, 0, 0, .1);
+	display: none;
+}
+
+.load section {
+	position: relative;
+	width: 100%;
+	height: 100%
+}
+
+.load section div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -50px;
+	width: 200px;
+	height: 100px;
+	background-color: #fff;
+	text-align: center
+}
+
+.load section div img {
+	margin-top: 0;
+	width: 80px
+}
+
+.load section div p {
+	font-size: 16px;
+	color: #222;
+	margin-top: 15px
+}

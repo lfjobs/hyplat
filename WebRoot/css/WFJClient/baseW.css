@@ -1,0 +1,27 @@
+.pc-box {
+  width: 100%!important;
+}
+.div-bottom {
+  width: 100%!important;
+}
+@media screen and (min-width: 440px) {
+  .li-022 .p-height {
+    width: 750px!important;
+  }
+}
+@media screen and (min-width: 600px) {
+  body {
+    zoom: 60%!important;
+  }
+  .li-022 .p-height {
+    width: 850px!important;
+  }
+}
+@media screen and (min-width: 800px) {
+  body {
+    zoom: 70%!important;
+  }
+  .li-022 .p-height {
+    width: 850px!important;
+  }
+}

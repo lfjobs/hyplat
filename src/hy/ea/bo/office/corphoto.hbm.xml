@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CorPhoto" table="DT_OA_CorPhoto">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="photoID" type="java.lang.String">
+			<column name="photoID" length="255" />
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50" />
+		</property>
+		<property name="companyName" type="java.lang.String">
+			<column name="companyName" length="50" />
+		</property>
+		<property name="photoCode" type="java.lang.String">
+			<column name="photoCode" length="50" />
+		</property>
+		<property name="photoName" type="java.lang.String">
+			<column name="photoName" length="250" />
+		</property>
+		<property name="pnShort" type="java.lang.String">
+			<column name="pnShort" length="50" />
+		</property>
+		<property name="photoDepict" type="java.lang.String">
+			<column name="photoDepict" length="50" />
+		</property>
+		<property name="uploadTime" type="java.util.Date">
+			<column name="uploadTime" length="7" />
+		</property>
+		<property name="photoFile" type="java.lang.String">
+			<column name="photoFile" length="250" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" length="300" />
+		</property>
+		<property name="sortTypePhoto" type="java.lang.String">
+			<column name="sortTypePhoto" length="50" />
+		</property>
+		<property name="creatorID" type="java.lang.String">
+			<column name="creatorID" length="50" />
+		</property>
+		<property name="creatorName" type="java.lang.String">
+			<column name="creatorName" length="50" />
+		</property>
+		<many-to-one name="corPhotoBox" class="hy.ea.bo.office.CorPhotoBox" lazy="false" cascade="save-update" fetch="join">
+			<column name="corPhotoBoxKey" length="50" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

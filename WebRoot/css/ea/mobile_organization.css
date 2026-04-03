@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size:12px;
+}
+table{font-size:12px;}
+.aadTree{
+width:250px;
+height:590px;
+float:left;
+border:#0099FF 1px solid;}
+
+
+
+.qh_right {
+	BORDER-RIGHT: #97c9ee 1px solid; 
+	BORDER-TOP: #97c9ee 1px solid; 
+	DISPLAY: inline; FLOAT: left; 
+	MARGIN:2px 0px 0px 5px; 
+	BORDER-LEFT: #97c9ee 1px solid; 
+	WIDTH:100%; 
+	BORDER-BOTTOM: #97c9ee 1px solid
+}
+.right {
+	BORDER-RIGHT: #97c9ee 1px solid; 
+	BORDER-TOP: #97c9ee 1px solid; 
+	DISPLAY: inline; FLOAT: left; 
+	MARGIN:0px 2px 0px 0px; 
+	BORDER-LEFT: #97c9ee 1px solid; 
+	WIDTH:100%; 
+	BORDER-BOTTOM: #97c9ee 1px solid;
+}
+
+.qh_gg_nav {
+	FONT-WEIGHT:bold; 
+	FONT-SIZE: 12px; 
+	BACKGROUND: url(../../images/ea/human/conter_01.gif) repeat-x; 
+	WIDTH:100%; 
+	COLOR:#1c4a85; 
+	LINE-HEIGHT:26px; 
+	HEIGHT: 26px
+}
+.qh_gg_conter {
+	WIDTH:100%; 
+	COLOR:#1c4a85; 
+}
+.qh_conter{
+background:url(../../images/ea/human/conter_02.gif) repeat-x;
+height:27px;
+line-height:27px;
+}
+.table {
+	border-collapse:collapse;
+	border:1px solid #cccccc;
+	font-size:12px;
+}
+
+.table th {
+border:1px solid #dddddd;
+color:#333;
+font-weight:bold;
+background:url(../../images/ea/human/conter_03.gif) repeat-x;
+height:23px;
+}
+.table td {
+ border:1px solid #dddddd;
+	color:#333;
+}
+#qh_gg_border01 {
+	BORDER-RIGHT: #ddd 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; COLOR: #616161; LINE-HEIGHT: 20px; PADDING-TOP: 0px; BORDER-BOTTOM: #ddd 1px solid; TEXT-ALIGN: center
+}
+
+
+
+
+

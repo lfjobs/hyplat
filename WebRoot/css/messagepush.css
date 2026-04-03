@@ -1,0 +1,5 @@
+.messagepush{width:240px; height:120px;border:1px skyblue solid; position:fixed; right:2px; bottom:2px; background-color:white;}
+.messagepush .title{height:28px; line-height:33px; font-size:14px;background-color:#13A7CA;font-family:ËÎÌו;padding-left:5px; border-bottom:1px #13A7CA solid;}
+.messagepush .title .close{float:right; padding-right:4px;  cursor:pointer; }
+.messagepushContent{font-size:12px; line-height:33px; padding:5px;}
+.messagepushdetails{background-color: skyblue;}

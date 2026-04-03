@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="com.tiantai.wfj.bo.SetPoster" table="DT_SetPoster" schema="HYPLAT" dynamic-insert="true">
+	<comment>海报设置</comment>
+		<id length="50" name="spKey" type="java.lang.String">
+			<column length="50" name="spKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="spID" type="java.lang.String">
+			<column length="50" name="spID" >
+			</column>
+		</property>
+		<property name="isPublish" type="java.lang.String">
+			<column name="isPublish" length="2">
+				<comment>是否推送到设备了00未推送01推送了</comment>
+			</column>
+		</property>
+		<property name="posterName" type="java.lang.String">
+			<column name="posterName" length="200">
+			<comment>海报名称</comment>
+			</column>
+		</property>
+		<property name="posterPath" type="java.lang.String">
+			<column length="500" name="posterPath" >
+			<comment>图片路径；</comment>
+			</column>
+		</property>
+
+		<property name="companyID" type="java.lang.String">
+			<column length="50" name="companyID" >
+			<comment>维护公司</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>录入时间</comment>
+			</column>
+		</property>
+		<property name="inputID" type="java.lang.String">
+			<column length="50" name="inputID" >
+				<comment>录入人员</comment>
+			</column>
+		</property>
+		<property name="inputName" type="java.lang.String">
+			<column length="20" name="inputName" >
+				<comment>录入人员姓名</comment>
+			</column>
+		</property>
+		<property name="deviceType" type="java.lang.String">
+			<column length="2" name="deviceType" >
+				<comment>00微信 01 支付宝</comment>
+			</column>
+		</property>
+		<property name="sorts" type="java.lang.Integer">
+			<column length="10" name="sorts">
+				<comment>排序 1，2，3，4，5</comment>
+			</column>
+		</property>
+		<property name="offlineDate" type="java.util.Date">
+			<column name="offlineDate" >
+				<comment>下线时间</comment>
+			</column>
+		</property>
+		<property name="offlineID" type="java.lang.String">
+			<column length="50" name="offlineID" >
+				<comment>下线人</comment>
+			</column>
+		</property>
+		<property name="offlineName" type="java.lang.String">
+			<column length="20" name="offlineName" >
+				<comment>下线姓名</comment>
+			</column>
+		</property>
+		<property name="publishDate" type="java.util.Date">
+			<column name="publishDate" >
+				<comment>上线时间</comment>
+			</column>
+		</property>
+		<property name="publishID" type="java.lang.String">
+			<column length="50" name="publishID" >
+				<comment>发布人员</comment>
+			</column>
+		</property>
+		<property name="publishName" type="java.lang.String">
+			<column length="20" name="publishName" >
+				<comment>发布人员姓名</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

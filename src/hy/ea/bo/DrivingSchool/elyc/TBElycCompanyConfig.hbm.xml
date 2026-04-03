@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.DrivingSchool.elyc.TbElycCompanyConfig" table="Tb_Elyc_Company_Config" schema="HYPLAT">
+        <id length="50" name="ccKey">
+            <column length="50" name="ccKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="ccId" type="java.lang.String">
+            <column name="ccId"  length="50" ><comment>逻辑ID</comment></column>
+        </property>
+        <property name="genday" type="java.lang.String">
+            <column name="genday"  length="50" ><comment>驾校提前生成预约记录天数</comment></column>
+        </property>
+        <property name="studentay" type="java.lang.String">
+            <column name="studentay"  length="50" ><comment>学员提前预约天数</comment></column>
+        </property>
+        <property name="isUsed" type="java.lang.String">
+            <column name="isUsed"  length="1" ><comment>是否启用</comment></column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId"  length="50" ><comment>驾校ID</comment></column>
+        </property>
+        <property name="startTime" type="java.lang.String">
+            <column name="startTime"  length="50" ><comment>学员每天可约车时段开始时间</comment></column>
+        </property>
+        <property name="endTime" type="java.lang.String">
+            <column name="endTime"  length="50" ><comment>学员每天可约车时段结束时间</comment></column>
+        </property>
+        <property name="cancelDetail" type="java.lang.String">
+            <column name="cancelDetail"  length="50" ><comment>小时数</comment></column>
+        </property>
+        <property name="studentCanBookingToday" type="java.lang.String">
+            <column name="studentCanBookingToday"  length="50" ><comment>学员是否可约当天</comment></column>
+        </property>
+        <property name="createdate" type="java.util.Date">
+            <column name="createdate"  ><comment>创建时间</comment></column>
+        </property>
+        <property name="updatedate" type="java.util.Date">
+            <column name="updatedate" ><comment>更新时间</comment></column>
+        </property>
+        <property name="createperson" type="java.lang.String">
+            <column name="createperson"  length="50" ><comment>创建人ID</comment></column>
+        </property>
+        <property name="updateperson" type="java.lang.String">
+            <column name="updateperson"  length="50" ><comment>修改人</comment></column>
+        </property>
+        <property name="studentLeaveTime" type="java.lang.Double">
+            <column name="studentLeaveTime"  length="50" ><comment>修改人</comment></column>
+        </property>
+
+    </class>
+</hibernate-mapping>

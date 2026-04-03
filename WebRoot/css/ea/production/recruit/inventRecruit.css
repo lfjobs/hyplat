@@ -1,0 +1,313 @@
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+::-webkit-input-placeholder {
+    color: #ccc;
+    font-size: .6rem
+}
+
+::-moz-placeholder {
+    color: #ccc;
+    font-size: .6rem
+}
+
+:-ms-input-placeholder {
+    color: #ccc;
+    font-size: .6rem
+}
+
+body.body-no {
+    overflow: hidden
+}
+
+header {
+    /* background-color: #f74c32; */
+    border-bottom: 1px solid #d0d0d0;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .7rem;
+    color: #6d6d6d
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .525rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+.content .sec-header {
+    padding: 1rem .5rem 1.25rem .75rem;
+    border-bottom: .5rem solid #f4f4f4
+}
+
+.content .sec-header h3 {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .75rem;
+    color: #222;
+    font-weight: 400
+}
+
+.content .sec-header div .p-left {
+    float: left;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-size: .6rem;
+    color: #555
+}
+
+.content .sec-header div .p-right {
+    /*margin-top: -.28rem;*/
+    float: right;
+    width: 4.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .6rem;
+    color: #222;
+    background-color: #f8f8f8;
+    text-align: center;
+    border-radius: .25rem
+}
+
+.content .sec-place {
+    padding: 1.25rem .75rem;
+    border-bottom: .025rem solid #f4f4f4
+}
+
+.content .sec-place h3 {
+    font-weight: 400;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-size: .6rem;
+    color: #555
+}
+
+.content .sec-place p {
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .65rem;
+    color: #222
+}
+
+.content .sec-remarks, .content .sec-time {
+    padding: 1.25rem .75rem;
+    border-bottom: .025rem solid #f4f4f4
+}
+
+.content .sec-remarks h3, .content .sec-time h3 {
+    font-weight: 400;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .6rem;
+    color: #222
+}
+
+.content .sec-remarks input, .content .sec-time input,.content .sec-place input,.content .sec-header input {
+    border: 0;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-size: .6rem;
+    color: #555;
+    width:90%;
+}
+
+.div-msyq {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.div-msyq .box {
+    width: 75%;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 60%;
+    border-radius: .35rem
+}
+
+.div-msyq .box > p {
+    text-align: center;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: .7rem;
+    color: #1c1c1c
+}
+
+.div-msyq .box div {
+    border-top: .025rem solid #eee
+}
+
+.div-msyq .box div p {
+    width: 49.5%;
+    text-align: center;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    font-size: .65rem;
+    color: #555
+}
+
+.div-msyq .box div p:first-of-type {
+    float: left;
+    border-right: .025rem solid #eee
+}
+
+.div-msyq .box div p:last-of-type {
+    float: right;
+    color: #e74a45
+}
+.content .sec-con div {
+    padding: 0 .8rem .125rem .875rem
+}
+
+.content .sec-con div h3 {
+    font-weight: 400;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    font-size: .7rem;
+    color: #222
+}
+.sec-remarks p{
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-size: .6rem;
+    color: #949494;
+}
+.sec-con{
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    background: #fff;
+}
+.content .sec-con div ul {
+    padding-top: .475rem
+}
+
+.content .sec-con div ul li {
+    margin-bottom: .75rem;
+    margin-right: 4.8%;
+    width: 30%;
+    text-align: center;
+    float: left;
+    height: 1.65rem;
+    line-height: 1.65rem;
+    font-size: .65rem;
+    color: #555;
+    background-color: #f4f4f4;
+    overflow:hidden;
+}
+
+.content .sec-con div ul li:nth-of-type(3n) {
+    margin-right: 0
+}
+
+.content .sec-con div ul li.active {
+    color: #f74c32;
+    background-color: #feedea
+}
+.div-del {
+    z-index: 999;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.div-del .box {
+    width: 75%;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 60%;
+    border-radius: .35rem
+}
+
+.div-del .box > p {
+    text-align: center;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: .7rem;
+    color: #1c1c1c
+}
+
+.div-del .box div {
+    border-top: .025rem solid #eee
+}
+
+.div-del .box div p {
+    width: 49.5%;
+    text-align: center;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    font-size: .65rem;
+    color: #555
+}
+
+.div-del .box div p:first-of-type {
+    float: left;
+    border-right: .025rem solid #eee
+}
+
+.div-del .box div p:last-of-type {
+    float: right;
+    color: #e74a45
+}
+
+@media (min-width: 960px) {
+
+    .content,header{
+        margin:auto 25%!important;
+
+
+        border:1px solid #d0d0d0;
+
+    }
+
+    .div-msyq .box {
+        width: 20%;
+        margin-top: 20%;
+    }
+
+    #date-wrapper {
+
+        left: 80% !important;
+        width: 30%!important;
+
+    }
+
+}

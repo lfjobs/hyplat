@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.WinningRecordBean" table="DT_WINNING_RECORD" schema="HYPLAT">
+        <comment>中奖纪录</comment>
+        <id name="winningRecordId">
+            <column name="WINNING_RECORD_ID" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="recordId">
+            <column name="RECORD_ID" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>抽奖记录id</comment>
+            </column>
+        </property>
+        <property name="poolId">
+            <column name="POOL_ID" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>奖品池id</comment>
+            </column>
+        </property>
+        <property name="orderNum">
+            <column name="ORDER_NUM" sql-type="varchar2(250)" length="250">
+                <comment>订单号</comment>
+            </column>
+        </property>
+        <property name="isDraws">
+            <column name="isDraws" sql-type="char(2)" length="2" not-null="true">
+                <comment>是否领取 0未领取；1已领取</comment>
+            </column>
+        </property>
+        <property name="winDate">
+            <column name="winDate" sql-type="timestamp(6)" not-null="true">
+                <comment>中奖时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

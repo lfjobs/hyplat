@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="WfjGuize" table="DT_WFJ_GUIZE" schema="HYPLAT" dynamic-insert="true">
+	<comment>积分规则</comment>
+		<id length="50" name="wfjGuizeKey" type="java.lang.String">
+			<column length="50" name="WFJ_GUIZE_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="wfjGuizeId" type="java.lang.String">
+			<column length="50" name="WFJ_GUIZE_ID" />
+		</property>
+			<property name="companyId" type="java.lang.String">
+			<column length="50" name="COMPANY_ID" />
+		</property>	
+		<property name="wfjGuizeName" type="java.lang.String">
+			<column length="100" name="WFJ_GUIZE_NAME" >
+			<comment>规则名称</comment>
+			</column>
+		</property>
+		<property name="wfjGuizeCalc" type="java.lang.String">
+			<column length="1" name="WFJ_GUIZE_CALC" default="'A'">
+			<comment>A 加 \ M 减</comment>
+			</column>
+		</property>
+		<property name="wfjGuizeUnit" type="java.lang.Integer">
+			<column length="1" name="WFJ_GUIZE_UNIT" default="0">
+			<comment>0：固定值(默认) 1：百分比</comment>
+			</column>
+		</property>
+			<property name="wfjGuizeScore" type="java.lang.Integer">
+			<column length="9" name="WFJ_GUIZE_SCORE" default="0">
+			<comment>积分数</comment>
+			</column>
+		</property>
+	
+		<property name="wfjGuizeState" type="java.lang.Integer">
+			<column length="1" name="WFJ_GUIZE_STATE" default="1">
+			<comment>
+			9：删除 
+			8，停用
+			1.展示微金币页面
+			2.佣金
+			3.金币提现
+			</comment>
+			</column>
+		</property>
+		<property name="wfjGuizeOrder" type="java.lang.Integer">
+			<column length="5" name="WFJ_GUIZE_ORDER" default="0">
+			<comment>排序</comment>
+			</column>
+		</property>
+		<property name="wfjGuizeExplain" type="java.lang.String">
+			<column length="100" name="WFJ_GUIZE_EXPLAIN" >
+			<comment>说明</comment>
+			</column>
+		</property>
+		<property name="wfjGuizePPID" type="java.lang.String">
+			<column length="100" name="WFJ_GUIZE_PPID" >
+				<comment>代理类型id</comment>
+			</column>
+		</property>
+		<property name="wfjGuizeIco" type="java.lang.String">
+			<column length="100" name="WFJ_GUIZE_ICO" >
+				<comment>图标</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

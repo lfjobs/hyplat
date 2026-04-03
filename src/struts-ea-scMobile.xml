@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <include file="struts-ea/scMobile/struts-ea-payBudget.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-oneMenu.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-toQuery.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-wholesaleMall.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-qyrz.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-specsConfig.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-trilateral.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-crmCustomerPo.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-importContacts.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-receiptSum.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-cRMShortMessagingTemplatePO.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-afterSales.xml"/>
+    <include file="struts-ea/scMobile/struts-ea-reviewCirculate.xml"/>
+</struts>

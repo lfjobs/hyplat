@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package strict-method-invocation="false" name="ruku-ntoken" namespace="/ea/ruku" extends="struts-default">
+        <action name="ea_*"
+                class="hy.ea.invoicing.action.RukuBillAction" method="{1}">
+            <!--出库管理-->
+            <result name="pro">/page/ea/main/finance/invoicing/rukuBill_good.jsp</result>
+            <result name="add">/page/ea/main/finance/invoicing/rukuBill_add.jsp</result>
+            <result name="success">/page/ea/success.jsp</result>
+            <result name="toProducts" type="redirectAction">
+                <!-- Action名参数 -->
+                <param name="actionName">ea_toProducts.jspa</param>
+
+                <!-- 命名 空间参数-->
+                <param name="namespace">/ea/productslaunch</param>
+                <param name="sccId">${sccid}</param>
+                <param name="companyId">${companyid}</param>
+                <param name="sys">wdhy</param>
+            </result>
+
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="ruku-jsonajax" namespace="/ea/ruku"
+             extends="json-default">
+        <action name="sajax_ea_*"
+                class="hy.ea.invoicing.action.RukuBillAction" method="{1}">
+            <result name="syserror">/page/ea/sys_error.jsp</result>
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

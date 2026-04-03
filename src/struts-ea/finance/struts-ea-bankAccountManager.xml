@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="bankaccountManager-token" namespace="/ea/bankaccountManager"  extends="ea-ntoken">
+		<action name="ea_*" class="com.tiantai.nwa.tbank.action.BankAccountManagerAction" method="{1}">
+		    <result name="bankAccountList">/page/ea/main/finance/dockingbank/bankaccountManager.jsp</result>		    
+		    <result name="success">/page/ea/success.jsp</result>            
+		</action>	
+	</package>	
+	
+	<package strict-method-invocation="false" name="bankaccountBalance-token" namespace="/ea/bankaccountBalance"  extends="ea-ntoken">
+		<action name="ea_*" class="com.tiantai.nwa.tbank.action.BankAccountBalanceAction" method="{1}">		    
+		    <result name="balance_showAccountList">/page/ea/main/finance/dockingbank/bankAccountBalance.jsp</result>		                
+		</action>	
+	</package>
+	
+	<package strict-method-invocation="false" name="bankaccountTransDetails-token" namespace="/ea/bankaccountTransDetails"  extends="ea-ntoken">
+		<action name="ea_*" class="com.tiantai.nwa.tbank.action.BankAccountTransDetailsAction" method="{1}">		    
+		    <result name="transdetails_accountList">/page/ea/main/finance/dockingbank/bankAccountTransDetails.jsp</result>		                
+		</action>	
+	</package>
+	
+	<package strict-method-invocation="false" name="bankcashdayquery-token" namespace="/ea/bankcashdayquery" extends="ea-ntoken">
+		<action name="ea_*" class="com.tiantai.nwa.tbank.action.BankCashDayQueryAction" method="{1}">		    
+	    	<result name="showAccountList">/page/ea/main/finance/dockingbank/cashdayquery.jsp</result>
+	    	<result name="showCashDayList">/page/ea/main/finance/dockingbank/cashdaylist.jsp</result>
+		</action>			
+	</package>
+	
+	<package strict-method-invocation="false" name="bankaccountInOutManager-token" namespace="/ea/bankaccountInOutManager" extends="ea-ntoken">
+		<action name="ea_*" class="com.tiantai.nwa.tbank.action.BankaccountInOutManager" method="{1}">		    
+	    	<result name="showAccountList">/page/ea/main/finance/dockingbank/bankaccountinoutquery.jsp</result>
+	    	<result name="queryResultList">/page/ea/main/finance/dockingbank/bankaccountinoutquery.jsp</result>
+		</action>				
+	</package>
+</struts>

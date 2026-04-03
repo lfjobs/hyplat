@@ -1,0 +1,101 @@
+html,body{
+    height:100%;
+    overflow:hidden;
+}
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+/* 手绘风格的树容器 */
+.tree-hand-drawn {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fff9e6;
+    border: 2px solid #333;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 15px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 节点文本样式 */
+.tree-hand-drawn .dhx_tree_txt {
+    font-family: 'Comic Sans MS', cursive, sans-serif !important;
+    font-size: 14px !important;
+    color: #333 !important;
+    padding: 4px 8px !important;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 5px !important;
+    white-space: nowrap;
+    display: inline-block !important;
+    transform: rotate(-0.5deg);
+    transition: all 0.2s ease;
+}
+
+/* 连接线样式 - 使用SVG背景 */
+.tree-hand-drawn .dhx_tree_lef_line {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='10' y1='0' x2='10' y2='20' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-dasharray='1,0' stroke-linejoin='round' stroke-dashoffset='0' style='stroke-dasharray: none;'/%3E%3C/svg%3E") !important;
+    background-repeat: repeat-y !important;
+    background-position: center !important;
+    background-size: 20px 20px !important;
+}
+
+.tree-hand-drawn .dhx_tree_top_line {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='10' x2='20' y2='10' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-dasharray='1,0' stroke-linejoin='round' stroke-dashoffset='0' style='stroke-dasharray: none;'/%3E%3C/svg%3E") !important;
+    background-repeat: repeat-x !important;
+    background-position: center !important;
+    background-size: 20px 20px !important;
+}
+
+/* 展开/折叠按钮样式 */
+.tree-hand-drawn .dhx_tree_opener {
+    width: 24px !important;
+    height: 24px !important;
+    background-color: white !important;
+    border: 2px solid #333 !important;
+    border-radius: 50% !important;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1) !important;
+    margin: 0 5px !important;
+    transform: rotate(-1deg);
+}
+
+/* 手绘纸张背景效果 */
+.paper-background {
+    background-color: #fff;
+    background-image:
+            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+}

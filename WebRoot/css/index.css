@@ -1,0 +1,119 @@
+@CHARSET "UTF-8";
+*{
+    margin: 0;
+    padding: 0;}
+a,a:link {
+    color: #fff;
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+img {
+    cursor: pointer;
+    border: none;
+}
+body,div,p {
+    /*font-family: "微软雅黑";*/
+    font-size: 12px;
+    color:black;
+}
+.container{
+    margin: 0 auto;
+}
+.head{
+    margin-top: 60px;
+}
+.logo{
+    width: 300px;
+    height: 100px;
+
+}
+.logo-bottom{
+    margin: 20px 0;
+}
+.logo-bottom p{
+    font-size: 28px;
+    font-family: 微软雅黑;
+    font-weight:bold;
+}
+.content{
+    margin-top: 80px;
+}
+.i1{
+    width: 280px;
+    height: 45px;
+    border:1px solid #000000;
+    border-radius:6px;
+    margin: 20px 0;
+}
+.left{
+    margin:8px 16px 0;
+}
+.pull-left input{
+    width: 215px;
+    height: 42px;
+    border:none;
+    outline: none;
+    font-size: 2em;
+}
+.yan_left{
+    width: 140px;
+    height: 45px;
+    border:1px solid #000000;
+    border-radius:6px;
+}
+.yanz{
+    height: 45px;
+    width: 280px;
+}
+.yanz input{
+    width: 80px;
+}
+.V_img img {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 26px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.loging_v{
+    width: 280px;
+    height: 45px;
+}
+.forget{
+    margin: 32px 10px 0;
+    text-decoration: none;
+}
+.floor{
+    margin-top: 40px;
+}
+.denglu{
+    margin:auto;
+    margin-top: 20px;
+    width: 120px;
+    height: 41px;
+    font-size: 20px;
+    display:block;
+    text-align:center;
+    line-height:40px;
+    vertical-align:middle;
+    background: url(../images/index/logo_03.png) no-repeat;
+}
+.denglu:HOVER.denglu {
+    margin-top: 20px;
+    width: 120px;
+    height: 41px;
+    font-size: 20px;
+    display:block;
+    text-align:center;
+    line-height:40px;
+    vertical-align:middle;
+    background-image: url(../images/index/logo_06.png);
+}
+
+
+@media screen and (max-width: 768px){
+    .erwei{display: none;}
+}

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.DrivingSchool">
+	<class name="hy.ea.bo.DrivingSchool.TbJpStudentInfo" table="TB_JP_STUDENT_INFO">
+	<comment>学员信息表</comment>
+		<id length="50" name="StudentKey">
+			<column length="50" name="StudentKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="studentId">
+			<column length="64" name="student_id" not-null="true"><comment>学员ID</comment></column>
+		</property>
+		<property name="staffId">
+			<column length="64" name="staffId" not-null="true"><comment>人员ID</comment></column>
+		</property>
+		<property name="stuNum">
+			<column name="stunum" length="100"><comment>学员全国统一编码</comment></column>
+		</property>
+		<property name="companyId">
+			<column name="company_id" length="64"><comment>驾校ID</comment></column>
+		</property>
+		<property name="name">
+			<column name="name" length="64"><comment>姓名</comment></column>
+		</property>
+		<property name="sex">
+			<column name="sex" length="4"><comment>1：男，2：女</comment></column>
+		</property>
+		<property name="brith">
+			<column name="brith"><comment>出生日期</comment></column>
+		</property>
+		<property name="nationality">
+			<column name="nationality" length="64"><comment>国籍</comment></column>
+		</property>
+		<property name="cardNum">
+			<column name="cardnum" length="32"><comment>证件号</comment></column>
+		</property>
+		<property name="cardType">
+			<column name="cardtype" length="4"><comment>1：身份证，2：护照，3：军官证，4：其他</comment></column>
+		</property>
+		<property name="busiType">
+			<column name="busiType" length="4"><comment>0：初领，1：增领</comment></column>
+		</property>
+		<property name="trainType">
+			<column name="trainType" length="8"><comment>培训车型</comment></column>
+		</property>
+		<property name="perdriType">
+			<column name="perdriType" length="32"><comment>原准驾车型</comment></column>
+		</property>
+		<property name="phone">
+			<column name="phone" length="32"><comment>手机号码</comment></column>
+		</property>
+		<property name="address">
+			<column name="address" length="256"><comment>地址</comment></column>
+		</property>
+		<property name="tempCardNo">
+			<column name="tempCardNo" length="64"><comment>暂住证号</comment></column>
+		</property>
+		<property name="stayAddress">
+			<column name="stay_address" length="256"><comment>暂住地址</comment></column>
+		</property>
+		<property name="photo">
+			<column name="photo" length="200"><comment>照片文件ID</comment></column>
+		</property>
+		<property name="fingerPrint">
+			<column name="fingerPrint" length="1024"><comment>指纹图片ID</comment></column>
+		</property>
+		<property name="drilicNum">
+			<column name="drilicNum" length="64"><comment>驾驶证号</comment></column>
+		</property>
+		<property name="fstDrilicDate">
+			<column name="fstDrilicDate"><comment>驾驶证初领时间</comment></column>
+		</property>
+		<property name="isLocal">
+			<column name="is_local" length="8"><comment>是否本地</comment></column>
+		</property>
+		<property name="archivesNum">
+			<column name="archives_num" length="32"><comment>档案号</comment></column>
+		</property>
+		<property name="jsCardId">
+			<column name="js_card_id" length="64"><comment>计时卡号</comment></column>
+		</property>
+		<property name="applyDate">
+			<column name="applyDate"><comment>报名日期</comment></column>
+		</property>
+		<property name="checkStatus">
+			<column name="check_status" length="8"><comment>审核状态</comment></column>
+		</property>
+		<property name="syncStatus">
+			<column name="sync_status" length="8"><comment>同步状态</comment></column>
+		</property>
+		<property name="createDate">
+			<column name="createDate"><comment>创建时间</comment></column>
+		</property>
+		<property name="updateDate">
+			<column name="updateDate"><comment>更新时间</comment></column>
+		</property>
+		<property name="createPerson">
+			<column name="createPerson" length="60"><comment>创建人</comment></column>
+		</property>
+		<property name="updatePerson">
+			<column name="updatePerson" length="60"><comment>更新人</comment></column>
+		</property>
+		<property name="synctype">
+			<column name="sync_type" length="8"><comment>同步类型：1新增；2修改；3删除</comment></column>
+		</property>
+		<property name="delFlag">
+			<column name="del_flag" length="1"><comment>删除标志</comment></column>
+		</property>
+		<property name="charId">
+			<column name="char_id" length="64"><comment>付费方式</comment></column>
+		</property>
+		<property name="faceId">
+			<column name="face_id" length="6"><comment>人脸识别ID</comment></column>
+		</property>
+		<property name="faceCode">
+			<column name="face_code" length="6"><comment>人脸识别图像返回code</comment></column>
+		</property>
+		<property name="cardNo">
+			<column name="card_no" length="16"><comment>卡号</comment></column>
+		</property>
+		<property name="syncXlycStatus">
+			<column name="sync_xlyc_status" length="8"><comment>同步状态（0待同步1同步成功2同步失败）</comment></column>
+		</property>
+		<property name="syncoldjp">
+			<column name="sync_oldjp" length="32"></column>
+		</property>
+		<property name="pkTbJpStudentId">
+			<column length="64" name="pkTbJpStudentId" ><comment>快车同步的id</comment></column>
+		</property>
+		</class>
+</hibernate-mapping>

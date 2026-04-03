@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mysl.bo.administrative.DtMyusecarapply" table="dt_Myusecarapply" schema="HYPLAT">
+        <id name="key" type="java.lang.String">
+            <column name="key" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="id" type="java.lang.String">
+            <column name="id" length="50" />
+        </property>
+        <property name="companyname" type="java.lang.String">
+            <column name="companyname" length="50" />
+        </property>
+        <property name="companyid" type="java.lang.String">
+            <column name="companyid" length="50" />
+        </property>
+        <property name="organizationname" type="java.lang.String">
+            <column name="organizationname" length="50" />
+        </property>
+        <property name="organizationid" type="java.lang.String">
+            <column name="organizationid" length="50" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" length="50" />
+        </property>
+        <property name="staffid" type="java.lang.String">
+            <column name="staffid" length="50" />
+        </property>
+        <property name="staffname" type="java.lang.String">
+            <column name="staffname" length="50" />
+        </property>
+        <property name="addtime" type="java.util.Date">
+            <column name="addtime"/>
+        </property>
+        <property name="serialNumber" type="java.lang.String">
+            <column name="serialNumber" length="50" />
+        </property>
+        <property name="carcode" type="java.lang.String">
+            <column name="carcode" length="50" />
+        </property>
+        <property name="carusetime" type="java.util.Date">
+            <column name="carusetime"/>
+        </property>
+         <property name="carbacktime" type="java.util.Date">
+            <column name="carbacktime"/>
+        </property>
+        <property name="carusereason" type="java.lang.String">
+            <column name="carusereason" length="50" />
+        </property>
+        <property name="destination" type="java.lang.String">
+            <column name="destination" length="50" />
+        </property>
+        <property name="carusername" type="java.lang.String">
+            <column name="carusername" length="50" />
+        </property>
+        <property name="caruserid" type="java.lang.String">
+            <column name="caruserid" length="50" />
+        </property>
+        <property name="cardriver" type="java.lang.String">
+            <column name="cardriver" length="50" />
+        </property>
+        <property name="cardriverid" type="java.lang.String">
+            <column name="cardriverid" length="50" />
+        </property>
+        <property name="cardriverorgid" type="java.lang.String">
+            <column name="cardriverorgid" length="50" />
+        </property>
+        <property name="cardriverorgname" type="java.lang.String">
+            <column name="cardriverorgname" length="50" />
+        </property>
+        <property name="cardrivercompanyid" type="java.lang.String">
+            <column name="cardrivercompanyid" length="50" />
+        </property>
+        <property name="cardrivercompanyname" type="java.lang.String">
+            <column name="cardrivercompanyname" length="50" />
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="remarks" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

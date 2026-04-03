@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="ScanBarCode" table="DT_OA_ScanBarCode">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="id" type="java.lang.String">
+			<column name="id" length="50" />
+		</property>
+		<property name="barcode" type="java.lang.String">
+			<column name="barcode" length="13" />
+		</property>
+		<property name="urls" type="java.lang.String">
+			<column name="urls" length="2000" />
+		</property>
+	</class>
+</hibernate-mapping>

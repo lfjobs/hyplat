@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing.voucher">
+	<class name="VoucherBills" table="dt_inv_vouchers">
+		<id length="50" name="vouchersKey">
+			<column length="50" name="vouchersKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="vouchersID">
+			<column length="50" name="vouchersID" />
+		</property>
+		<property name="voucherID">
+			<column length="50" name="voucherID" />
+		</property>
+		<property name="subjectsID">
+			<column length="50" name="subjectsID"/>
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID"/>
+		</property>
+		<property name="goodsBillsID">
+			<column length="50" name="goodsBillsID"/>
+		</property>
+		<property name="goodsID">
+			<column length="50" name="goodsID"/>
+		</property>
+		<property  name="subjectsName">
+			<column length="250" name="subjectsName" />
+		</property>
+		<property  name="reasonThing">
+			<column length="250" name="reasonThing" />
+		</property>
+		<property  name="loan">
+			<column length="250" name="loan" />
+		</property>
+		<property  name="forLoan">
+			<column length="250" name="forLoan" />
+		</property>
+	</class>
+</hibernate-mapping>

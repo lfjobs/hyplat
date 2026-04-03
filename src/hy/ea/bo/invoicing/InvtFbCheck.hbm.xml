@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+<class name="InvtFbCheck" table="DT_INVT_FB_CHECK">
+        <id  length="50"  name="fbillkey">
+            <column name="FBILLKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="fbillid">
+            <column name="FBILLID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="groupcompanysn">
+            <column name="GROUPCOMPANYSN" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="companyid">
+            <column name="COMPANYID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="companyName">
+            <column name="COMPANYNAME" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="organizationid">
+            <column name="ORGANIZATIONID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="orgName">
+            <column name="ORGNAME" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="departmentid">
+            <column name="DEPARTMENTID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="billstatus">
+            <column name="BILLSTATUS" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="staffid">
+            <column name="STAFFID" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="staffname">
+            <column name="STAFFNAME" sql-type="varchar2(250)" length="250"/>
+        </property>
+        <property name="billstype">
+            <column name="BILLSTYPE" sql-type="varchar2(250)" length="250"/>
+        </property>
+        <property name="journalnum">
+            <column name="JOURNALNUM" sql-type="varchar2(250)" length="250"/>
+        </property>
+        <property name="warehouse">
+            <column name="WAREHOUSE" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="warehousename">
+            <column name="WAREHOUSENAME" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="goodsmoney">
+            <column name="GOODSMONEY" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="billsdate">
+            <column name="BILLSDATE" sql-type="date"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

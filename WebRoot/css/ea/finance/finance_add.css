@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size:12px;
+}
+a {
+	color: #333;
+	text-decoration:none;
+}
+a:hover {
+	color: #fff;
+}
+a:active{color: #002f76;
+font-weight:bold;}
+.link a {
+color:#333;
+font-size:12px;
+text-decoration:none;
+}
+.link a:link{
+color:#333;
+font-size:12px;
+text-decoration:none;
+}
+
+.link a:active{color: #002f76;}
+
+.link  a:visited{color:#666;text-decoration:none;}
+
+.link a:hover{color:#fff; text-decoration:underline;}
+
+
+.qh_right {
+	BORDER-RIGHT: #97c9ee 1px solid; 
+	BORDER-TOP: #97c9ee 1px solid; 
+	DISPLAY: inline; FLOAT: left; 
+	MARGIN: 3px 0px 0px; 
+	BORDER-LEFT: #97c9ee 1px solid; 
+	WIDTH:100%; 
+	BORDER-BOTTOM: #97c9ee 1px solid
+}
+
+.qh_gg_nav {
+	FONT-WEIGHT:bold; 
+	FONT-SIZE: 12px; 
+	BACKGROUND: url(../../../images/ea/finance/conter_01.gif) repeat-x; 
+	WIDTH:100%; 
+	COLOR:#1c4a85; 
+	LINE-HEIGHT:26px; 
+	HEIGHT: 26px
+}
+.qh_conter{
+background:url(../../../images/ea/finance/conter_02.gif) repeat-x;
+height:27px;
+line-height:27px;
+}
+.table {
+	border-collapse:collapse;
+	border:1px solid #cccccc;
+	font-size:12px;
+}
+
+.table th {
+border:1px solid #dddddd;
+color:#333;
+font-weight:bold;
+background:url(../../../images/ea/finance/conter_03.gif) repeat-x;
+height:23px;
+}
+.table td {
+ border:1px solid #dddddd;
+	color:#333;
+}
+#qh_gg_border01 {
+	BORDER-RIGHT: #ddd 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; COLOR: #616161; LINE-HEIGHT: 20px; PADDING-TOP: 0px; BORDER-BOTTOM: #ddd 1px solid; TEXT-ALIGN: center
+}
+.input{
+border:1px solid #a8c7ce;
+}
+
+.btn01{
+background:url(../../../images/ea/finance/r_add.png) no-repeat;
+width:80px;
+height:21px;
+cursor:pointer;
+border:solid 0px #111;
+line-height:21px;
+font-size:12px;
+margin:0 10px 0 0px;
+}

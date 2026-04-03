@@ -1,0 +1,1070 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>采购入库单添加</title>
+		<%@ page language="java" pageEncoding="UTF-8"%>
+		<%@ taglib uri="/struts-tags" prefix="s"%>
+		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+		<%
+			String path = request.getContextPath();
+			String basePath = request.getScheme() + "://"
+					+ request.getServerName() + ":" + request.getServerPort()
+					+ path + "/";
+		%>
+		<link href="<%=basePath%>/css/ea/staff.css" rel="stylesheet"
+			type="text/css" />
+		<link rel="stylesheet" type="text/css"
+			href="<%=basePath%>css/admin_main111.css" />
+		<script src="<%=basePath%>js/jquery.js" type="text/javascript"></script>
+		<script src="<%=basePath%>js/ea/validate.js" type="text/javascript"></script>
+		<link href="<%=basePath%>css/ea/validate.css" rel="stylesheet"
+			type="text/css" />
+		<script language="javascript" type="text/javascript"
+			src="<%=basePath%>js/My97DatePicker/WdatePicker.js"></script>
+		<script language="javascript" type="text/javascript"
+			src="<%=basePath%>js/ea/finance/invoicing/chooseWarehousingnew.js"></script>
+		<link rel="stylesheet" type="text/css"
+			href="<%=basePath%>js/jqModal/css/jqModal_blue.css" />
+		<script type="text/javascript"
+			src="<%=basePath%>js/jqModal/jqModal.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/jqModal/jqDnR.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/overlayer.js"></script>
+		<link rel="stylesheet" type="text/css"
+			href="<%=basePath%>css/overlayer.css" />
+		<link rel="stylesheet"
+			href="<%=basePath%>js/tree/common/css/style.css" type="text/css"
+			media="screen" />
+		<script src="<%=basePath%>js/tree/codebase/dhtmlxcommon.js"></script>
+		<script src="<%=basePath%>js/tree/codebase/dhtmlxtree.js"></script>	
+		<link rel="STYLESHEET" type="text/css"
+	    href="<%=basePath%>js/tree/codebase/dhtmlxtree.css" />
+		<script src="<%=basePath%>js/ea/human/cstaff.js"></script>
+		<script type="text/javascript"
+			src="<%=basePath%>js/common/organizationTree.js"></script>
+
+<style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.STYLE1 {
+	font-size: 8px;
+	font-weight: bold;
+}
+/*遮罩层*/
+.mask {
+	position: absolute;
+	top: 0px;
+	filter: alpha(opacity=60);
+	background-color: #777;
+	z-index: 1002;
+	left: 0px;
+	opacity:0.5;
+	-moz-opacity:0.5;
+}
+.center-block {
+	position: absolute;
+}
+div>#icon {
+	display: none;
+	font-size: 20px;
+}
+div>#icon img{
+	vertical-align: middle;
+}
+</style>	    
+		<script type="text/javascript">
+  	var treeID = '<%=session.getAttribute("organizationID")%>';
+  	var treeNames="<%=session.getAttribute("organizationName")%>";
+	var tokens = 0;
+	var keyvalue="";
+	var basePath = "<%=basePath%>";
+	var financialbillID="${financialBill.financialbillID}";
+	var deptID="${financialBill.departmentID}";
+	var token = 0;
+	var pNumber=${pageNumber};
+	var search="${search}";
+	var pageNumber=<%=request.getParameter("pagepageNumber")%>;
+	var myform='';
+	var notoken = 0;
+	var cuID="";
+	var journalNum = "";
+	var treeid="";
+	var treename="";
+	var depotPID="";
+	var depotID="";
+	var sdate="${sdate}";
+    var edate="${edate}";
+	var depotName="";
+	var select="";
+	var docNull;
+	var subjectsNumbers;
+	var endnumber = 0;
+	var subRule = new Array();
+	var loginstaffcheck=${loginstaffcheck};//判断审核次数
+	$(document).ready(function() {    //获取凭证号
+    	var url="<%=basePath%>ea/cashierbills/sajax_ea_getBillID.jspa?date="+new Date().toLocaleString();
+		$.ajax({
+                url: url,
+                type: "get",
+                async: true,
+                dataType: "json",
+                success: function cbf(data){
+			    var member = eval("(" + data + ")");
+			    var nologin = member.nologin;
+				if(nologin){
+					document.location.href ="<%=basePath%>page/ea/not_login.jsp";
+				}
+		        $("#journalNum").val(member.BillID);
+	    },
+              error: function cbf(data){
+				         alert("数据获取失败！")
+				 }
+		});
+    });
+	
+	function importGY(attachSearchTable,checkopertionID,checkopertionName,childopertionName,url){ //打开页面
+		 if(checkopertionName=="bankNum"){
+		 	var departmentID =  $("#departmentID").attr("value");
+		 	url = url + "?departmentID="+departmentID;
+		 }
+		 $("#checkopertionID",$("#bankJqm")).attr("value",checkopertionID);
+		 $("#checkform",$("#bankJqm")).attr("value",attachSearchTable);
+		 $("#checkopertionName",$("#bankJqm")).attr("value",checkopertionName);
+		 $("#childopertionName",$("#bankJqm")).attr("value",childopertionName);
+	  	 $("#daoRu").attr("src",basePath+url);
+	  	 $("#bankJqm").jqmShow();
+	}
+	
+	
+		
+$(document).ready(function() {//销售单FORM
+	$("#DaoRuFan").click(function(){// 返回
+       $("#bankJqm").jqmHide();
+	}); 
+	$("#DaoRuFanqd").click(function(){// 选择确定
+		var checkopertionID =$("#checkopertionID",$("#bankJqm")).attr("value");
+		var checkform =$("#checkform",$("#bankJqm")).attr("value");
+		var checkopertionName = $("#checkopertionName",$("#bankJqm")).attr("value");
+		var childopertionName = $("#childopertionName",$("#bankJqm")).attr("value");
+		var childopertionID = window.frames["daoRu"].opertionID;
+
+		if(childopertionID == ""){
+			alert("请选择")
+			return;
+		}
+		var no = window.frames["daoRu"].$('tr#'+childopertionID).find("span#"+checkopertionName).text();
+		var childopertionName =window.frames["daoRu"].$('tr#'+childopertionID).find("span#"+childopertionName).text();
+		if(checkopertionID != "")
+			$("#"+checkopertionID,$("#"+checkform)).attr("value",childopertionID).trigger("blur");
+		if(checkopertionName != ""){
+			$("#"+checkopertionName,$("#"+checkform)).attr("value",childopertionName).trigger("blur");
+		}
+		if(checkopertionName =="partnerName"){
+			var final = no + "---" + childopertionName;
+			$("#"+checkopertionName,$("#"+checkform)).attr("value",final).trigger("blur");
+		}
+		 $("#daoRu").attr("src","");
+         $("#bankJqm").jqmHide();
+   });
+});    
+</script>
+<script type="text/javascript">
+//选择库房
+var basePath = '<%=basePath%>';
+var pNumber='${pageNumber}';
+var treeid;
+var treename;
+var date;
+var token = 0;
+var tree1;
+$(document).ready(function(){
+     tree1=new dhtmlXTreeObject("ckaadTree","100%","100%",0);
+		    tree1.enableDragAndDrop(false); 
+		    tree1.enableHighlighting(1);
+	        tree1.enableCheckBoxes(0);
+			tree1.enableThreeStateCheckboxes(false);
+			tree1.setSkin(basePath+'js/tree/dhx_skyblue');
+			tree1.setImagePath(basePath+"js/tree/codebase/imgs/");
+			tree1.loadXML(basePath+"js/tree/common/tree_b.xml");
+			tree1.insertNewChild("0","001","实物仓库",0,0,0,0);
+			//tree1.insertNewChild("0","002","资料仓库",0,0,0,0);
+			//tree1.insertNewChild("0","003","财务仓库",0,0,0,0);
+			tree1.setOnClickHandler(function(){
+			                        if(token)return;
+			                        token = 1;
+			                        $(".input01").attr("value","");
+                                    $("#desc").attr("html","");
+			                       treeid= tree1.getSelectedItemId();
+			                       treename = tree1.getItemText(treeid);
+			                        $("#codeName").attr("value",treename);
+							           tree1.deleteChildItems(treeid);
+						  	            var getListCCodeurl=basePath+"ea/cdepotmanage/sajax_ea_getListDepotmanageByPID.jspa?depotID="+treeid+"&date="+new Date().toLocaleString();
+									     $.ajax({
+						                        url: encodeURI(getListCCodeurl),
+						                        type: "get",
+						                        async: true,
+						                        dataType: "json",
+						                        success: function cbf(data){
+										           var member = eval("("+data+")");
+										            var nologin = member.nologin;
+								                  if(nologin){
+								                  document.location.href =basePath + "page/ea/not_login.jsp";
+								                  }
+										           var depotManagelist = member.depotManagelist;
+										          
+										           if(null == depotManagelist){
+										              return;
+										           }    
+										            for(var i=0;i<depotManagelist.length;i++)
+												   {
+										             tree1.insertNewChild(treeid,depotManagelist[i].depotID,depotManagelist[i].depotName,0,0,0,0);
+										             tree1.setUserData(depotManagelist[i].depotID,"depotState",depotManagelist[i].depotState);
+										           }
+										            token = 0;
+												  
+								            },
+						                        error: function cbf(data){
+						                           alert("数据获取失败！");
+						                        }
+						                    });
+						     
+			         $("#mainframe").attr(
+				 				"src",basePath +"ea/cdepotmanage/ea_getListDepotManageTree.jspa?pageNumber=${pageNumber}&depotID="+ treeid + "&treename=" + treename + "&usetype=ck");
+				 	 $(window).resize(); 
+				 				
+			});
+});
+</script>
+	</head>
+	<body style="background:#ffffff;border-top:5px solid #c5d9f1;">
+		<div id="mask" class="mask"></div>
+		<div><i id='icon'><img src="<%=basePath%>images/ea/lottery/loading.gif"/> &nbsp;正在加载，请稍等......</i></div>
+		<div id="apDiv1"></div>
+		<form name="InventoryForm" id="InventoryForm" method="post"
+			enctype="multipart/form-data">
+			<input type="submit" name="submit" style="display: none" />
+			<div style="width: 100%;border:0px solid red;">
+				<div style="width: 100%;text-align:left;border:0px solid red;">
+				<table id="titleClone" width="100%" border="0" align="center" cellpadding="0"
+					cellspacing="0" style="background:#dbe5f1;margin-top:1px;
+					margin-bottom: 1px;border-bottom:1px solid #99bbe8;">
+				<tr><td align="left" style="height:24px;">
+			    <nobr>
+				<input type="button" 
+				class="menubtn JQuerySubmitgd" name="button3"value="保存" /><input type="button" 
+								class="menubtn JQuerySubmitgd" name="button" value="提交审核"/><input type="button" 
+								class="menubtn" name="button" id="addgoodtr" value="增加一行"/><input type="button" 
+								class="menubtn" name="button" id="delgoodtr" value="删除新增行"/><input type="button" 
+								class="menubtn grey" name="button" value="打印预览" disabled="disabled"/><input type="button" 
+								class="menubtn JQueryClose" name="button2"value="关闭" /><input type="button" 
+								class="menubtn grey" name="button" value="帮助" disabled="disabled"/>
+				</nobr>
+					</td>
+				</tr>
+			    </table>
+				</div>
+				<table width="800" border="0" id="table3" align="center"
+					cellpadding="0" cellspacing="0" style="margin-left:10px;background: #FFFFFF;">
+					<tr>
+					<td colspan="6" align="center" id="titlestyle">
+					   采购入库单
+					</td></tr>
+					<tr>
+					<td align="right" colspan="5">单据编号：</td>
+					<td align="left">
+					<input type="text" style="width: 160px;" class="inputbottom"
+								id="journalNum" name="financialBill.journalNum"
+								readonly="readonly"/>
+				    <%--验货单据id --%>
+				    <input type="hidden" name="financialBill.financialbillID" 
+				    value="${financialBill.financialbillID}"/>
+				    <input type="hidden" id="cashierBillsID" 
+				    value="${cashierBills.cashierBillsID}"/>					
+					</td>
+					</tr>
+					<tr>
+						<td height="30" align="right">
+							<span>供应商：</span>
+						</td>
+						<td>
+						<input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.ccompanyName}" readonly="readonly"/>
+						</td>
+						<td align="right">
+							单位电话：
+						</td>
+						<td>
+						<input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.ccompanyTel==null?'':financialBill.ccompanyTel}" readonly="readonly"/>
+						</td>
+						<td align="right">
+							<span>预付定金：</span>
+						</td>
+						<td>
+						    <input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.ccompanyTel==null?'':financialBill.ccompanyTel}&nbsp;${financialBill.moneyType}" readonly="readonly"/>
+						</td>
+					</tr>
+					<tr>
+						<td height="30" align="right">
+							<span>采购员：</span>
+						</td>
+						<td>
+						<input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.staffName}" readonly="readonly"/>
+						</td>
+						<td align="right">
+							采购员电话：
+						</td>
+						<td align="left" id="dept">
+						<input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.staffPhone==null?'':financialBill.staffPhone}" readonly="readonly"/>
+						    <span></span>
+						</td>
+						<td align="right">
+							<div id="u1170_rtf">
+							付款方式：
+							</div>
+						</td>
+						<td align="left" colspan=2>
+						<input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.paymentType}" readonly="readonly"/>
+						   <span></span>
+						</td>
+					</tr>
+					<tr>
+						<td height="30" align="right">
+							<span style="color:red;">*</span>入库日期：
+						</td>
+						<td>
+							<input type="text" style="width: 160px;" class="notnull inputbottom" 
+							onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" id="purchaseDate" 
+							name="purchaseDate"/>
+						</td>
+						<td align="right">
+							对方科目：
+						</td>
+						<td align="left">
+						<input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.subjectName}" readonly="readonly"/>
+						</td>
+						<td align="right">
+						    <div id="u1170_rtf">
+							物流方式：
+							</div>
+						</td>
+						<td align="left">
+						<input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.logisticsType}" readonly="readonly"/>
+						</td>
+					</tr>
+					<tr>
+						<td height="30" align="right">
+							收货仓库：
+						</td>
+						<td>
+						   <input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.depotName}" readonly="readonly"/>
+						   <%--<input name="godownbill.depotName" id="depotName" size="15" class="notnull input" readonly="readonly">
+						   <input type="hidden" name="godownbill.depotID" id="depotID"  />
+						   <a href="#" id="shujuck">选择</a>
+						--%></td>
+						<td align="right">
+							接收人：
+						</td>
+						<td align="left" id="td3">
+						  <input style="width: 160px;" class="inputbottom" 
+						value="${financialBill.staffsName}" readonly="readonly"/>
+							<%--<input type="hidden" id="partnerID" name="godownbill.staffsID"
+								readonly="readonly" value="${ManStaffId}"/>
+							<input type="text" id="partnerName"
+								name="godownbill.staffsName" value="${ManStaffName}" size="20" class="notnull input" />
+							<a href="#"
+								onclick="importGY('td3','partnerID','partnerName','childPartnerName','ea/cosincumbent/ea_getStaffForCashier.jspa')">选择</a>
+						--%></td>
+						<td align="center" colspan=2>
+						 <input type="hidden" class="ACT_btn" name="button" value="关联票据"/>
+						</td>
+					</tr>
+				</table>
+				
+				<table width="800" height="200px" border="0" align="center"
+					cellpadding="0" cellspacing="0" style="margin-left:15px;margin-top: 5px">
+					<tr>
+						<td valign="top">
+							<div id="Layer1"
+								style="position: absolute; width: 800px; height: 200px; overflow: auto;">
+								<table width="800" align="center" cellpadding="0"
+									cellspacing="0" class="table" id="goodtable">
+									<tr>
+										<th align="center" bgcolor="#E4F1FA">
+											序号
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											物品名称
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											类别
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											品牌规格
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											物品编号
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											单价
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											数量
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											单位
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											金额
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											选择科目
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											供货商
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											<span style="color: red">*</span>往来责任人
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											备注
+										</th>
+										<th align="center" bgcolor="#E4F1FA">
+											操作
+										</th>
+									</tr>
+									<c:forEach items="${billsgoodlist}" var="list" varStatus="ltm">
+									 <tr class="checkgoods">
+										<td height="30" align="center" bgcolor="#FFFFFF">
+										    <input type="hidden" id="goodsBillsID" name="goodsmapold[${ltm.index}].goodsBillsID" value="${list.goodsBillsID}"/>
+											<span>${list.goodsNomber}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<span>${list.goodsName}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<span>${list.typeID}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										    <span>${list.standard}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										    <span>${list.goodsNum}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<span>${list.price}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<span>${list.isQualify}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										    <span>${list.goodsVariableID}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<span id="amount">${list.money}</span>
+											<input type="hidden" id="amount" value="${list.money}"/>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<span>${list.subjectsName}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										    <input type="text" value="${list.ccompanyName}" style="border:0px;height:100%;text-align:center;" size="10" readonly="readonly"/>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<%-- <s:if>
+												<span>123</span>
+											</s:if>
+											<s:else> --%>
+												<input type="hidden" id="ReceivablesID" name="goodsmapold[${ltm.index}].connectID"  value=""/>
+												<input type="text"  id="ReceivablesName"  class="querys model1 fou wlgr"  size="7" placeholder="点击选择责任人"
+												name="goodsmapold[${ltm.index}].connectName" style="width:65px; display:inline;" value=""/>
+											<%-- </s:else> --%>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<span>${list.remindedContent}</span>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										    <span>无</span>
+										</td>
+									</tr>
+									</c:forEach>
+									<tr id="kelong" style="display: none">
+										<td height="30" align="center" bgcolor="#FFFFFF">
+											<input id="goodsNomber" name="goodsNomber" style="border:0px;height:100%;text-align:center;" class="input" size="2" />
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<span style="color:red;">*</span>
+											<input name="goodsName" id="goodsName" style="height:100%;border:0px;text-align:center;" size="10" placeholder="点击选择物品" class="panduan input" readonly="readonly">
+											<input type="hidden" name="goodsID" id="goodsID"  />
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<input name="typeID" id="typeID" style="border:0;height:100%;text-align:center;" size="5" readonly="readonly">
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										    <input name="standard" id="standard" style="border:0px;height:100%;text-align:center;" size="5" readonly="readonly">
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+					                        <input name="goodsNum" id="goodsNum" style="border:0px;height:100%;text-align:center;" size="15" readonly="readonly">
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										<input maxlength="10" name="price" id="price"
+												size="5" style="border:0px;height:100%;" readonly="readonly"/>
+										<%--<input maxlength="10" name="price" class="jisuan isNaN put3" id="price"
+												size="5" style="border:0px;height:100%;" />
+										--%>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<span style="color:red;">*</span><input maxlength="10" name="isQualify" class="positiveNum jisuan isNaN put3"
+												id="isQualify" size="8" style="border:0px;height:100%;" />
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										    <span style="color:red;">*</span>
+										    <input type="text" id="goodsVariableID" name="goodsVariableID" class="panduan ckTextLength" maxlength="20" size="5" 
+										    style="margin-left: 2px;height:100%;border:0px;"/>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<input readonly="readonly" class="input"
+												id="amount" size="8" style="border:0px;height:100%;" />
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<input type="hidden" id="subjectsID" name="subjectsID" />
+											<span style="color:red;">*</span><input type="text" readonly="readonly" placeholder="点击选择科目" class="tosubjects panduan" size="10"
+												id="subjectsName" name="subjectsName" style="border:0px;height:100%;"/>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										     <span style="color:red;">*</span><input type="text" name="ccompanyName" id="ccompanyname" placeholder="单击选择" class="input panduan" size="10"
+												style="height:100%;border:0px;" readonly="readonly"/>
+											 <input type="hidden" id="ccompanyID" name="ccompanyID" />
+										</td>
+										<td>
+											<input type="hidden" id="ReceivablesID" name="connectID"  value=""/>
+											<input type="text"  id="ReceivablesName"  class="querys model1 fou wlgr"  size="7" placeholder="点击选择责任人"
+											name="connectName" style="width:65px; display:inline;" value=""/>
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+											<input name="remindedContent" id="remindedContent" size="15"
+												style="border:0px;height:100%;" />
+										</td>
+										<td align="center" bgcolor="#FFFFFF">
+										<a href="#" class="klsc"><img
+													src="<%=basePath%>images/admin_images/gtk-del.png"
+													width="16" height="16" title="删除" border="0" /> </a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<table width="800" border="0" id="table4" align="center"
+					cellpadding="0" cellspacing="0" style="background: #FFFFFF;">
+					<tr>
+						<td height="30" align="right" bgcolor="#FFFFFF">
+							<span>合&nbsp;&nbsp;&nbsp;计：</span>
+						</td>
+						<td align="left" bgcolor="#FFFFFF">
+							<input type="text" readonly="readonly" value="0"
+									class="inputbottom" style="width:150px;"
+									id="countmoney"/>
+							<input type="hidden" name="financialBill.goodsmoney" 
+							id="goodsmoney" value="${financialBill.goodsmoney}"/>
+						</td>
+						<td align="right" bgcolor="#FFFFFF">
+							<span>金额（大写）：</span>
+						</td>
+						<td align="left" bgcolor="#FFFFFF" colspan="5" id="daxie">
+						  &nbsp;&nbsp;
+							<span id="6"></span>&nbsp;&nbsp;
+							<span style="color: red">万</span>&nbsp;&nbsp;
+							<span id="5"></span>&nbsp;&nbsp;
+							<span style="color: red">仟</span>&nbsp;&nbsp;
+							<span id="4"></span>&nbsp;&nbsp;
+							<span style="color: red">佰</span>&nbsp;&nbsp;
+							<span id="3"></span>&nbsp;&nbsp;
+							<span style="color: red">拾</span>&nbsp;&nbsp;
+							<span id="2"></span>&nbsp;&nbsp;
+							<span style="color: red">元</span>&nbsp;&nbsp;
+							<span id="1"></span>&nbsp;&nbsp;
+							<span style="color: red">角</span>&nbsp;&nbsp;
+							<span id="0"></span>&nbsp;&nbsp;
+							<span style="color: red">分</span>
+						</td>
+					</tr>
+					<tr>
+						<td height="30" align="right">
+							<span>制单人：</span>
+						</td>
+						<td>
+							<%--<span id="spname">${ManStaffName}</span--%>
+							<input type="text" readonly="readonly" value="${ManStaffName1}"
+									class="inputbottom" style="width:150px;"
+									id="spname"/>
+						</td>
+						<td align="right">
+							<span>制&nbsp;单&nbsp;日&nbsp;期：</span>
+						</td>
+						<td>
+							<%--<span id="zddate">
+							${financialBill.billsDate==null?param.curDateTime:financialBill.billsDate}
+							</span>
+							--%>
+							<input type="text" readonly="readonly" value=""
+									class="inputbottom" style="width:150px;"
+									id="zddate"/>
+						</td>
+					</tr>
+				</table>
+		<table width="99%" border="0" align="center" style="margin-left:15px;" cellpadding="0" cellspacing="0">
+		   <tr><td colspan="2">&nbsp;</td></tr>
+		   <tr>
+		   <td align="left" width="50px">备注：</td>
+		   <td align="left" colspan="9"><input type="text" id="remark" class="inputbottom" style="width:80%;" readonly="readonly"/></td>
+		   </tr>
+		</table>
+        <table width="99%" border="0" cellpadding="0" cellspacing="0" id="audittbl">
+		<tr><td>
+		<input type="hidden" id="staffauditname" 
+		value="${ManStaffName}">
+		<input type="hidden" id="staffauditcode" 
+		value="${ManStaffCode}">
+		<input type="hidden" id="staffauditid" 
+		value="${ManStaffId}">
+		</td></tr>
+		<tr>
+			<td height="25" align="right">
+				公司经理：
+			</td>
+			<td>
+				<input type="text" class="inputbottom gsjl" value="${billcheckmap['gsjl']}" readonly="readonly"/>
+				<c:if test='${billcheckmap["gsjl"]==null||billcheckmap["gsjl"]==""}'>
+				<input type="button" class="btncon verify" id="gsjl" />
+			    </c:if>
+			</td>
+			<td align="right">
+				部门主管：
+			</td>
+			<td>
+				<input type="text" class="inputbottom bmzg" value="${billcheckmap['bmzg']}" readonly="readonly"/>
+				<c:if test='${billcheckmap["bmzg"]==null||billcheckmap["bmzg"]==""}'>
+				<input type="button" class="btncon verify" id="bmzg" />
+			    </c:if>
+			</td>
+			<td  align="right">
+				人事处：
+			</td>
+			<td>
+				<input type="text" class="inputbottom rsc" value="${billcheckmap['rsc']}" readonly="readonly"/>
+				<c:if test='${billcheckmap["rsc"]==null||billcheckmap["rsc"]==""}'>
+				<input type="button" class="btncon verify" id="rsc"/>
+				</c:if>
+			</td>
+			<td  align="right">
+				财务审核：
+			</td>
+			<td>
+				<input type="text" class="inputbottom cwsh" value="${billcheckmap['cwsh']}" readonly="readonly"/>
+				<c:if test='${billcheckmap["cwsh"]==null||billcheckmap["cwsh"]==""}'>
+				<input type="button" class="btncon verify" id="cwsh"/>
+				</c:if>
+			</td>
+			<td  align="center">
+				收款人确认：
+			</td>
+			<td>
+				<input type="text" class="inputbottom skr" value="${billcheckmap['skr']}"readonly="readonly"/>
+				<c:if test='${billcheckmap["skr"]==null||billcheckmap["skr"]==""}'>
+				<input type="button" class="btncon verify" id="skr"/>
+				</c:if>
+			</td>
+		</tr>
+		<tr>
+			<td  height="25" align="right">
+				总部总经理：
+			</td>
+			<td>
+				<input type="text" class="inputbottom zjl" value="${billcheckmap['zjl']}" readonly="readonly"/>
+				<c:if test='${billcheckmap["zjl"]==null||billcheckmap["zjl"]==""}'>
+				<input type="button" class="btncon verify"  id="zjl"/>
+				</c:if>
+			</td>
+			<td  align="right">
+				总部部门主管：
+			</td>
+			<td>
+				<input type="text" class="inputbottom zg" value="${billcheckmap['zg']}" readonly="readonly"/>
+				<c:if test='${billcheckmap["zg"]==null||billcheckmap["zg"]==""}'>
+				<input type="button" class="btncon verify" id="zg"/>
+				</c:if>
+			</td>
+			<td  align="right">
+				总部人事处：
+			</td>
+			<td>
+				<input type="text" class="inputbottom zbrsc" value="${billcheckmap['zbrsc']}" readonly="readonly"/>
+				<c:if test='${billcheckmap["zbrsc"]==null||billcheckmap["zbrsc"]==""}'>
+				<input type="button" class="btncon verify" id="zbrsc"/>
+				</c:if>
+			</td>
+			<td align="right">
+				总财务审核：
+			</td>
+			<td>
+				<input type="text" class="inputbottom zbcw" value="${billcheckmap['zbcw']}" readonly="readonly"/>
+				<c:if test='${billcheckmap["zbcw"]==null||billcheckmap["zbcw"]==""}'>
+				<input type="button" class="btncon verify" id="zbcw"/>
+				</c:if>
+			</td>
+			<td  align="center">
+				交款人确认：
+			</td>
+			<td>
+				<input type="text" class="inputbottom jkr" value="${billcheckmap['jkr']}" readonly="readonly"/>
+				<c:if test='${billcheckmap["jkr"]==null||billcheckmap["jkr"]==""}'>
+				<input type="button" class="btncon verify" id="jkr"/>
+				</c:if>
+			</td>
+		</tr>
+	</table>
+			</div>
+			<s:token></s:token>
+		</form>
+	   <!--审核备注 -->
+        <div class="jqmWindow jqmWindowcss" style="width: 350px;top:50%" id="jqModelSearch">
+                <div class="drag">审核信息
+                    <div class="close">
+                    </div>
+                </div>
+                <table id="cataffSearchTable">
+                    <tr>
+                        <td>备注：</td>
+                        <td>
+                        <input type="text" id="remarks" class="inputbottom" style="width:300px;"/>
+                        </td>
+                    </tr>
+                </table>
+                <div align="center">
+                    <input type="button" class="input-button" id="tocheckok" value="确定" />
+                    <input type="button" class="input-button" id="tocheckclose" value="取消" />
+                </div>
+		</div>
+	<%------------------------------------选择往来单位(供应商)------------------------------------%>
+		<form name="selectcompanyForm" id="selectcompanyForm" method="post"
+			enctype="multipart/form-data">
+			<input type="submit" name="submit" style="display: none" />
+			<div class="jqmWindow jqmWindowcss1" style="top: 5%;"
+				id="companyjqModel">
+				<div class="content1" style="width: 100%; height: 400px;">
+					<div class="contentbannb">
+						<div class="drag">
+							选择单位
+						</div>
+					</div>
+					<table width="99%" height="33" id="searchcompany" border="0"
+						align="center" cellpadding="0" cellspacing="0"
+						style="margin-top: 5px; background: #FFFFFF;">
+						<tr>
+							<td width="70" align="right">
+								单位名称：
+							</td>
+							<td width="60">
+								<input name="ccompanyID" class="input" id="ccompanyID" size="10"
+									style="margin-left: 2px;" />
+								<input  type="hidden" id="inputname" size="10"/>
+								<input  type="hidden" id="inputid" size="10"/>
+							</td>
+							<td width="70" align="right">
+								往来关系：
+							</td>
+							<td width="85">
+								<s:select list="connectionlist" listKey="codeValue"
+									id="contactConnections" listValue="codeValue" headerKey=""
+									headerValue="--全部--" name="contactConnections" theme="simple"></s:select>
+							</td>
+							<td height="33">
+								<input type="button" class="btn02" id="searchcc" name="button7"
+									value="查询" />
+								<input type="button" class="btn02" id="qdcompany" name="button5"
+									value="确定" />
+								<input type="button" class="btn02 xzdw" name="button" value="新增" />
+								<input type="button" class="btn02 JQueryreturns" name="button4"
+									value="关闭" />
+							</td>
+							<td width="50">
+								<a id="dwsy" title="0">上一页</a>
+							</td>
+							<td width="50">
+								<a id="dwxy" title="0">下一页</a>
+							</td>
+							<td width="70">
+								<a id="dwzy">共&nbsp;&nbsp; <span style="color: red"
+									id="zycount"></span>&nbsp;&nbsp; 页</a>
+							</td>
+						</tr>
+					</table>
+					<table width="99%" border="0" align="center" cellpadding="0"
+						cellspacing="0"
+						style="margin-top: 5px; margin-bottom: 5px; height: 320px;">
+						<tr>
+							<td width="99%" valign="top" align="left">
+								<div id="body_02cc"
+									style="margin-top: 2px; display: none; width: 100%; overflow: scroll; height: 310px;">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<s:token></s:token>
+		</form>
+	<%--*****************选择仓库****************--%>
+	<form name="ckForms" id="ckForms" method="post"
+			enctype="multipart/form-data">
+			<input type="submit" name="submit" style="display: none" />
+			<div class="jqmWindow jqmWindowcss1" style="top: 5%;left: 53%;"
+				id="ckjqModel">
+				<div class="content1" style="width: 100%; height: 400px;">
+					<div class="contentbannb">
+						<div class="drag">选择仓库</div>
+					</div>
+					<table width="99%" height="33" id="searchck" border="0"
+						align="center" cellpadding="0" cellspacing="0"
+						style="margin-top: 5px; background: #FFFFFF;">
+						<tr>
+							<td height="33" align="center">
+							<input type="button" class="btn02" id="ckok" name="button5" value="确定" />
+							<input type="button" class="btn02 xzck" name="button" value="新增" />
+							<input type="button" class="btn02 JQueryreturns" name="button4" value="关闭" /> 
+							<input type="hidden" name="parmss" id="parmss" />
+							</td>
+						</tr>
+					</table>
+			    <form name="codeForm" method="post"></form>
+				<div class="main_main">
+				<table width="99%" border="0" align="center" cellpadding="0"
+						cellspacing="0" style="margin-top: 5px; margin-bottom: 5px;">
+				  <tr>
+				    <td  id="qh_sw" style="width: 15%;" valign="top">
+				    <div id="ckaadTree" class="text_tree" style="overflow: scroll; z-index: 99; height: 300px;"></div> 
+				    </td>
+				    <td style="width: 84%;" valign="top">
+				      <iframe src="" name="ccode" width="100%" height="300" marginwidth="0" marginheight="0" scrolling="yes" frameborder="0" id="mainframe" border="0" framespacing="0" noresize="noResize"  vspale="0"> </iframe>
+				    </td>
+				  </tr>
+				</table>
+				</div>
+					</div>
+			</div>
+			<s:token></s:token>
+		</form>
+	<%--******************************************物品选择****************************************--%>
+		<form name="goodsForms" id="goodsForms" method="post"
+			enctype="multipart/form-data">
+			<input type="submit" name="submit" style="display: none" />
+			<div class="jqmWindow jqmWindowcss1" style="top: 5%;left: 53%;"
+				id="goodsjqModel">
+				<div class="content1" style="width: 100%; height: 400px;">
+					<div class="contentbannb">
+						<div class="drag">选择物品</div>
+					</div>
+					<table width="99%" height="33" id="searchgoods" border="0"
+						align="center" cellpadding="0" cellspacing="0"
+						style="margin-top: 5px; background: #FFFFFF;">
+						<tr>
+							<td width="100" align="right">物品编码或名称：</td>
+							<td width="142"><input name="typeID" class="input"
+								id="typeID" size="20" style="margin-left: 2px;" /></td>
+							<td height="33" width="450"><input type="button" class="btn02"
+								ID="searchGoods" name="button7" value="查询" /> <input
+								type="button" class="btn02" id="selectGoods" name="button5"
+								value="确定" /> <input type="button" class="btn02 xzwp"
+								name="button" value="新增" /> <input type="button"
+								class="btn02 JQueryreturns" name="button4" value="关闭" /> <input
+								type="hidden" name="parmss" id="parmss" /></td>
+							<td width="80"><a id="wpsy_1" title="0">上一页</a></td>
+							<td width="80"><a id="wpxy_1" title="0">下一页</a></td>
+							<td width="100"><a id="wpzy_1">共&nbsp;&nbsp; <span
+									style="color: red" id="wpzycount"></span>&nbsp;&nbsp;页
+							</a></td>
+						</tr>
+					</table>
+					<table width="99%" border="0" align="center" cellpadding="0"
+						cellspacing="0" style="margin-top: 5px; margin-bottom: 5px;">
+						<tr>
+							<td width="16%">
+								<table width="100%" cellpadding="0" cellspacing="0">
+									<tr id="menuTreeTrid-1" sizcache="1" sizset="0">
+										<td>
+											<div id="aadTree" class="text_tree"
+												style="overflow: scroll; z-index: 99; height: 320px;"></div>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td width="83%" valign="top" align="left">
+								<div id="body_03"
+									style="margin-top: 2px; display: none; height: 330px; width: 100%; overflow: scroll;">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<s:token></s:token>
+		</form>
+		<%------------------------选择科目------------------------%>
+		<div class="jqmWindow jqmWindowcss2" style="width: 600px; top: 10%;"
+			id="selectsubjects">
+			<div class="drag">
+				选择
+			</div>
+			<table>
+				<tr>
+					<td>
+						科目名字：
+					</td>
+					<td align="left" class="subjects">
+						<select id="province" number='0' style="width: 110px;"></select>
+						<select id="city" number='1' style="width: 110px;"></select>
+						<select id="county" number='2'
+							style="width: 110px; display: none;"></select>
+						<select id="addressTown" number='3'
+							style="width: 110px; display: none;"></select>
+						<select id="addressVillage" number='4'
+							style="width: 110px; display: none;"></select>
+						<select id="addressCommunity" number='5'
+							style="width: 110px; display: none;"></select>
+						<select id="addressFloor" number='6'
+							style="width: 110px; display: none;"></select>
+						<select id="addressLayer" number='7'
+							style="width: 110px; display: none;"></select>
+						<select id="addressSize" number='8'
+							style="width: 110px; display: none;"></select>
+					</td>
+					<td>
+						<a href="#"
+							onclick="window.open('<%=basePath%>/page/ea/main/finance/production/csubejsts/csubejst_manger.jsp')">新增</a>
+					</td>
+				</tr>
+			</table>
+			<div align="center">
+				<input type="button" class="input-button" id="savesubjects"
+					value="确定" />
+				<input type="button" class="input-button JQueryreturns" value="取消" />
+			</div>
+		</div>
+		
+		<%------------------------------------选择往来个人、往来单位------------------------------------%>
+		
+		<form name="selectuserForm" id="selectuserForm" method="post"
+			enctype="multipart/form-data">
+			<input type="submit" name="submit" style="display: none" />
+			<input type="submit" name="submit" style="display: none" />
+			<div class="jqmWindow jqmWindowcss1" style="top: 5%; left: 53%;"
+				id="companyjqModel2">
+				<div class="content1" style="width: 100%; height: 400px;">
+					<div class="contentbannb">
+						<div class="drag">
+							往来个人、往来单位
+						</div>
+					</div>
+					<table width="99%" height="33" id="searchuser"  border="0"
+						align="center" cellpadding="0" cellspacing="0"
+						style="margin-top: 5px; background: #FFFFFF;">
+						<tr>
+							<td width="40" align="left">
+								名称：
+							</td>
+							<td width="110">
+								<input name="comUserID" class="input" id="comUserID"
+									size="10" style="margin-left: 2px;" />
+							</td>
+							<td width="50" align="left">往来关系</td>
+							<td width="100">
+								<select id="seleToo">
+									<option value="">请选择</option>
+								</select>
+							</td>
+							<td height="33">
+								<input type="button" class="btn02" id="searchuu" name="button7"
+									value="查询" />
+								<input type="button" class="btn02" id="qduser" name="button5"
+									value="确定" />
+								<input type="button" class="btn02 JQueryreturns" name="button4"
+									value="关闭" />
+									<input type="hidden" name="parms" id="grparms" />
+									<input type="hidden" name="cutype" id="cutype" />
+			
+							</td>
+							<td width="80">
+								<a id="grsy" title="0">上一页</a>
+							</td>
+							<td width="80">
+								<a id="grxy" title="0">下一页</a>
+							</td>
+							<td width="100">
+								<a id="grzy">共&nbsp;&nbsp; <span style="color: red"
+									id="grzycount"></span>&nbsp;&nbsp;页 </a>
+							</td>
+						</tr>
+					</table>
+					<table width="99%" border="0" align="center" cellpadding="0"
+						cellspacing="0" style="margin-top: 5px; margin-bottom: 5px;">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<div id="body_02cu"
+									style="margin-top: 2px; display: none; height: 310px; width: 100%; overflow: auto;">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<s:token></s:token>
+		</form>
+		
+		<%--选择人员--%>
+		<div id="bankJqm" class="jqmWindow"
+			style="width: 95%; height: 400px; absolute; display: none; left: 1%; top: 1%; background: #eff; overflow-x: hidden; overflow-y: auto;">
+			<div style="background: #efg; margin-right: 500px;">
+				<input style="display: none;" id="checkopertionID" />
+				<input style="display: none;" id="checkopertionName" />
+				<input style="display: none;" id="childopertionName" />
+				<input style="display: none;" id="checkform" />
+			</div>
+			<iframe name="daoRu" id="daoRu" width="100%" height="360px"
+				frameborder="0" style="overflow-x: hidden; overflow-y: auto;"></iframe>
+			<div align="center">
+				<input type="button" class="input-button" id="DaoRuFanqd"
+					value=" 确定 " style="cursor: hand; border: 0;" />
+				<input type="button" class="input-button" id="DaoRuFan" value=" 关闭 "
+					style="cursor: hand; border: 0;" />
+			</div>
+		</div>
+		<iframe name="hidden" frameborder="0" noresize="noresize" border="0"
+			framespacing="0" height="0"></iframe>
+	<script type="text/javascript">
+	//库房管理
+    setTimeout(function(){ 
+	    $(".bDiv").css({"height": $(window).height() - 31 - 30 - 26 - 30 + "px"});
+    },100);
+    
+    $(window).resize(function(){ 
+		setTimeout(function(){ 					    
+		   $(".bDiv").css({"height": $(window).height() - 31 - 30 - 26 - 30 + "px"});
+		},100);
+    }); 
+    </script>
+	</body>
+</html>

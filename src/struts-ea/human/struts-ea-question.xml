@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="quest-ntoken" namespace="/ea/quest"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.entry.QuestionMangeAction" method="{1}">
+			<result name="blist">/page/WFJClient/pc/5l5C/human/entry/e_questionlist.jsp</result>
+			<result name="s_addQuestb">/page/WFJClient/pc/5l5C/human/entry/e_addQuesBase.jsp</result>
+			<result name="s_addQuestype">/page/WFJClient/pc/5l5C/human/entry/e_addQueType.jsp</result>
+			<result name="s_questypelist">/page/WFJClient/pc/5l5C/human/entry/e_questypelist.jsp</result>
+			<result name="toqueslist">/page/WFJClient/pc/5l5C/human/entry/e_questions.jsp</result>
+			<result name="addquestion">/page/WFJClient/pc/5l5C/human/entry/e_addQuestions.jsp</result>
+			<result name="quesView">/page/WFJClient/pc/5l5C/human/entry/e_quesView.jsp</result>
+			<result name="myexam">/page/WFJClient/pc/5l5C/human/entry/e_myexam.jsp</result>
+			<result name="examlist">/page/WFJClient/pc/5l5C/human/entry/e_examlist.jsp</result>
+			<result name="startexam">/page/WFJClient/pc/5l5C/human/entry/e_startexam.jsp</result>
+			<result name="exampage">/page/WFJClient/pc/5l5C/human/entry/e_exampage.jsp</result>
+			<result name="examframe">/page/WFJClient/pc/5l5C/human/entry/e_examiframe.jsp</result>
+			<result name="pyexam">/page/WFJClient/pc/5l5C/human/entry/e_pyexampage.jsp</result>
+			<result name="ksexam">/page/WFJClient/pc/5l5C/human/entry/e_ksexampage.jsp</result>
+			<result name="exresult">/page/WFJClient/pc/5l5C/human/entry/e_succhand.jsp</result>
+
+			<result name="login">/page/WFJClient/pc/pc_login.jsp</result>
+
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="quest-jsonajax" namespace="/ea/quest" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.entry.QuestionMangeAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

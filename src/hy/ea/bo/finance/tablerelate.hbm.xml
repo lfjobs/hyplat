@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="TableRalate" table="dtTableRalate">
+		<id length="50" name="trKey">
+			<column length="50" name="trKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="trID">
+        	<column name="trID" length="50"/>
+        </property>
+        <property name="type">
+        	<column name="type" length="50"><comment>类型</comment></column>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"><comment>公司</comment></column>
+        </property>
+         <property name="tablename">
+        	<column name="tablename" length="50"><comment>表名</comment></column>
+        </property>
+        <property name="dates">
+        	<column name="dates"><comment>日期</comment></column>
+        </property>
+
+		<property name="year">
+			<column name="year" length="10"><comment>一年一个表</comment></column>
+		</property>
+		<property name="companySeq">
+			<column name="companySeq" length="10"><comment>公司的一个序号</comment></column>
+		</property>
+	</class> 
+	
+</hibernate-mapping>

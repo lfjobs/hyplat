@@ -1,0 +1,40 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:10px; color:#666;}/********font-size:10px;********/
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}  
+.fixed { display: block; min-height: 1%; }   
+.clear {width:100%; display: block!important; float: none!important; clear: both; overflow: hidden; width: auto!important; height: 0!important; margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0; }
+.pos{ position:relative;}
+.black{ color: black;}
+/*公共样式*/
+div{width: 180px;margin: auto;background-color:#fff;margin-left:10px;}
+div .div_tit{height: 20px; line-height: 20px;padding-top:10px;}
+div .div_tit ul li{width: 100%; text-align: center;}
+div .div_top{border-bottom: 1px dashed #000; margin-bottom: 2px; height: 45px;}
+div div{width:180px;margin:auto;}
+div .content{border-top: 1px dashed #000; border-bottom: 1px dashed #000; margin-bottom: 2px;}
+div .content .con{text-align: left;}
+div .settlement{border-top: 1px dashed #000; border-bottom: 1px dashed #000; margin-bottom: 2px; height: 30px;}
+div .settlement .sett{float: left;}
+div .settlement .money{float: right; padding-right: 10px;}
+div .total{border-bottom: 1px dashed #000; padding-bottom: 30px;}
+div .total table{border-bottom: 1px dashed #000; padding-bottom: 10px;}
+div .total table .txt{text-align: left;}
+div .total table .price{text-align: right; padding-right: 8px;}
+div .bott{margin-top: 8px;height:60px;}
+div .bott .logo{font-weight: bold; color: #000;}
+div .bott .logo img{width: 16px; height: auto;}
+ul{clear: both;width: 100%;}
+table{width: 100%;}
+li{float: left;list-style: none;-webkit-text-size-adjust:none;height: 14px;line-height: 14px;text-indent: 3px;}/*********font-size: 8px;********/
+td{text-align: center;-webkit-text-size-adjust:none;}/*********font-size: 8px;*********/

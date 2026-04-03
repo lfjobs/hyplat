@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666; font-family:'华文黑体';}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+.wfj_width{ width:92%; margin:0 auto;}
+.wfj_phwidth{ width:95%; margin:0 auto;}
+.bgcolorFFF{ background-color:#FFF;}
+/*公共样式*/
+
+
+/*------------------------------------------------wfj12_018-----------------------------------------------*/
+.wfj12_018 .wfj12_018_width{ width:94%; margin:0 auto;}
+
+.wfj12_018{ width:100%; height:100%; margin:0 auto; max-width:1080px; overflow:hidden;}
+/*-----------中联园区头部 ---------------*/
+.wfj12_018 .wfj_top{ width:100%; margin:0 auto; background-color:#EBEBEB;}
+.wfj12_018 .wfj_top ul li{ float:left; text-align:center; color:#000;}
+.wfj12_018 .wfj_top ul li img{vertical-align:middle;}
+/*----------中联园区头部 end-------------*/
+
+.wfj12_018 .wfj12_018_content{}
+.wfj12_018 .wfj12_018_hidden{}
+#file,#file2{
+	display:none;
+}
+.wfj12_018 .wfj12_018_top_assessment{ width:100%; margin:0 auto; background-color:#FFF; margin-top:5px; clear:both; float:left;}
+.wfj12_018 .wfj12_018_top_assessment table{ width:100%; margin:0 auto; padding:10px 0;}
+.wfj12_018 .wfj12_018_top_assessment table img{ width:90%;}
+.wfj12_018 .wfj12_018_top_assessment table textarea{ width:98%; border:none; resize:none;}
+.wfj12_018 .wfj12_018_top_assessment .wfj12_018_addimg{ width:30%; float:left;}
+.wfj12_018 .wfj12_018_top_assessment .wfj12_018_addimg.div{margin:0 1.2rem;}
+.wfj12_018 .wfj12_018_top_assessment .wfj12_018_addimg div{ width:25%; float:left; text-align:center; }
+.wfj12_018 .wfj12_018_top_assessment .wfj12_018_addimg div .wfj12_018_proimg{ width:70%; height:auto;}
+.wfj12_018 .wfj12_018_top_assessment .wfj12_018_addimg div .wfj12_018_delimg{ width:25%; height:auto; position:relative; }
+.wfj12_018 .wfj12_018_assessimg{ width:100%;float:left; background-color:#FFF;}
+.wfj12_018 .wfj12_018_assessimg table{ width:100%;}
+.wfj12_018 .wfj12_018_assessimg table td{ width:33.3333%; text-align:center; cursor:pointer;}
+.wfj12_018 .wfj12_018_assessimg table td img{ vertical-align:middle;}
+.wfj12_018 .wfj12_018_assess_star{ float:left; width:100%; background-color:#FFF;}
+.wfj12_018 .wfj12_018_assess_star table{ width:100%;border-collapse:collapse;}
+.wfj12_018 .wfj12_018_assess_star table td span{ font-size:14px; font-weight:bold;}
+.wfj12_018 .wfj12_018_assess_star table td div li{ float:left; width:20%; text-align:center;}
+.wfj12_018 .wfj12_018_assess_star table td div li img{ height:20px; vertical-align:middle;}
+
+.wfj12_018 .wfj12_018_bottom{ position:absolute; bottom:0; width:100%; background-color:#FFF;}
+.wfj12_018 .wfj12_018_bottom table{width:100%;}
+.wfj12_018 .wfj12_018_bottom table td{ height:40px; line-height:40px;}
+.wfj12_018 .wfj12_018_bottom table td img{ height:20px; vertical-align:middle;}
+.wfj12_018 .wfj12_018_bottom table td div{ width:80%; text-align:center; background-color:#F74C31; color:#FFF; cursor:pointer; font-weight:bold;}
+
+.wfj12_018 .wfj12_018_addph{ position:fixed; bottom:0; width:100%; background-color:#FFF; cursor:pointer; text-align:center;}
+.wfj12_018 .wfj12_018_addph ul li{ width:100%;}
+.wfj12_018 .wfj12_018_addph ul li a input{ color:#000; font-size:14px;}
+/* 文件上传按钮样式美化*/
+.verification {position: relative;cursor: pointer;overflow: hidden;display: inline-block;*display: inline;*zoom: 1}
+.verification input{position: absolute;right: 0;top: 0;opacity: 0;filter: alpha(opacity=0);cursor: pointer}
+.wfj01_001_bigimg{ width:90%;}
+.wfj01_001_bigimg img{ width:100%; height:auto;}
+.wfj01_001_con_left{overflow: hidden;}
+.wfj01_001_con_left ul li{ float:left;}
+
+/*------------------------------------------------wfj12_018 end-----------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.tao">
+	<class name="AttrColor" table="tao_attrcolor">
+		<id length="50" name="acoKey">
+			<column length="50" name="acoKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="acoID">
+			<column length="50" name="acoID" not-null="true" />
+		</property>
+		<property name="colorname">
+			<column length="50" name="colorname" />
+		</property>
+		 <property name="colorvalue">
+        	<column name="colorvalue" length="50" />
+        </property>
+         <property name="colortype">
+        	<column name="colortype" length="10" />
+        </property>
+         <property name="orders">
+        	<column name="orders" length="10" />
+        </property>
+        	
+	</class>
+</hibernate-mapping>

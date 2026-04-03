@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>物品序号条码</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+table tr td{text-align:center;padding-bottom:10px;font-size:12px;}
+</style> 
+  </head>
+  
+  <body>
+  <table>
+      <#list gngid as id>
+      <tr>
+      <td>
+    <img src="${base}/CreateBarCode?data=${id}&barType=TF25&width=１&height=25" /><br/>
+${staffName}(${id})
+    </td>
+    </tr>
+  </#list>
+</table> 
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocumentSealer" table="DT_OA_DocumentSealer">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="id" type="java.lang.String">
+			<column name="id" length="50" />
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="255" />
+		</property>
+		<property name="companyIDofSealer" type="java.lang.String">
+			<column name="companyIDofSealer" length="50" />
+		</property>
+		<property name="deptIDofSealer" type="java.lang.String">
+			<column name="deptIDofSealer" length="50" />
+		</property>
+		<property name="sealerID" type="java.lang.String">
+			<column name="sealerID" length="200" />
+		</property>
+		<property name="state" type="java.lang.String">
+			<column name="state" length="2" />
+		</property>
+		<property name="isStamp" type="java.lang.String">
+			<column name="isStamp" length="2" />
+		</property>
+		<property name="isSign" type="java.lang.String">
+			<column name="isSign" length="2" />
+		</property>
+		<property name="sealTime" type="java.util.Date">
+			<column name="sealTime" length="20" />
+		</property>
+
+		<property name="applyNo" type="java.lang.String">
+			<column name="applyNo" length="50" />
+		</property>
+		<property name="videoURL" type="java.lang.String">
+			<column name="videoURL" length="500" />
+		</property>
+		<property name="fullName" type="java.lang.String">
+			<column name="fullName" length="50" />
+		</property>
+		<property name="identityCard" type="java.lang.String">
+			<column name="identityCard" length="30" />
+		</property>
+		<property name="identityType" type="java.lang.String">
+			<column name="identityType" length="2" />
+		</property>
+		<property name="loadLink" type="java.lang.String">
+			<column name="loadLink" length="500" />
+		</property>
+		<property name="pdfpath" type="java.lang.String">
+			<column name="pdfpath" length="500" />
+		</property>
+	</class>
+</hibernate-mapping>

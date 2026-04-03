@@ -1,0 +1,109 @@
+@charset "utf-8";
+/*招商后台*/
+/*招商发布*/
+.tab_box{float: left;width: 50%;text-align: center;line-height: 2rem;font-size: .73rem;}
+.tab_wrap{border-bottom: .3rem solid #f0f0f0;height: 2.3rem;position: fixed;width: 100%;background: #fff;z-index: 999;top: 2.16rem;left: 0;}
+.tab_box a{color: #636363;display: inline-block;padding: 0 .6rem;border-bottom: 2px solid transparent;}
+.tab_cur a{color: #ff4a00;border-bottom: 2px solid #ff4a00;}
+.mer_box{display: block;padding: .6rem .6rem .2rem;}
+.mer_img{float: left;width: 4rem;height: 4rem;object-fit: cover;margin-right: .6rem;border: 1px solid #eeeeee;}
+.mer_text{float: left;width: 10.2rem;/*height: 4.2rem;*/}
+.mer_tit{line-height: .84rem;height: 1.68rem;color: #3d4245;font-size: .64rem;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;overflow: hidden;}
+.mer_price{line-height: 1.12rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #ff4a00;font-size: .74rem;font-family: "Hiragino Sans GB W3","microsoft yahei"}
+.mer_state{line-height: 1rem;font-size: .6rem;color: #ff4a00;}
+.mer_state span{float: left;border: 1px solid #ff4a00;border-radius: .1rem;width: 30%;margin-bottom: .2rem;text-align: center;margin-right: 3.3%;font-family: "Hiragino Sans GB W3","microsoft yahei"}
+.mer_state .disable {
+	color: #acacac;border: 1px solid #cecece;
+}
+.operation_wrap{border-top: 1px solid #dbdbdb;border-bottom: 1px solid #dbdbdb;background: #f8f8f8; }
+.oper_box{float: left;width: 50%;text-align: center;line-height: 1.8rem;position: relative;}
+.oper_box:first-child:after{position: absolute;content: '';height: 1rem;width: 1px;background: #dbdbdb;right: -1px;top: .4rem;}
+.oper_btn{display: inline-block;color: #5a5a5a;font-size: .64rem;}
+.oper_btn i{width: .86rem;height: .86rem;display: inline-block;vertical-align: text-bottom;margin-right: .2rem;}
+.edit_ico{background: url(../../../images/WFJClient/ProductAgent/edit_ico.png) no-repeat center;background-size: contain;}
+.end_ico{background: url(../../../images/WFJClient/ProductAgent/end_ico.png) no-repeat center;background-size: contain;}
+.reset_ico{background: url(../../../images/WFJClient/ProductAgent/reset.png) no-repeat center;background-size: contain;}
+
+.mer_list_box{border-bottom: .3rem solid #f0f0f0;}
+.tab_content{margin-top: 2.3rem;padding-bottom: 3rem;}
+.end_wrap .mer_list_box{border-bottom: 1px solid #e6e6e6;}
+.end_wrap{display: none;}
+.issue_btn{position:fixed;width: 100%;bottom: 0;left: 0;height: 2.6rem;line-height: 2.6rem;text-align: center;font-size: .8rem;color: #ff4a00;border-top: 1px solid #c0bebf;background: #f8f8f8;}
+.issue_btn i{display: inline-block;width: 1.05rem;height: 1.05rem;vertical-align: text-bottom;background: url(../../../images/WFJClient/ProductAgent/issue_ico.png) no-repeat center;background-size: contain;margin-right: .4rem;}
+/*选择招商产品发布*/
+.pro_wrap{width: 16.2rem;padding-bottom: 3rem;}
+.pro_box{width: 7.9rem;float: left;margin-right: .2rem;margin-bottom: .5rem;/*border: 1px solid #eeeeee;*/box-shadow: 1px 2px 5px 1px rgba(214,214,214,.6);position: relative;}
+.pro_img{width: 7.9rem;height: 7.9rem;object-fit: cover;}
+.pro_tit{height: 1.6rem;line-height: .8rem;margin: .3rem;font-size: .64rem;color: #545454;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;}
+.pro_state{}
+.pro_price{float: left;width: 40%;height: 1.6rem;line-height: 1.6rem;color: #212121;font-size: .683rem;padding-left: .3rem;white-space: nowrap;}
+.pro_yj{float: left;width:60%;font-size: .5rem;height: 1.6rem;line-height: .7rem;padding-top: .1rem;text-align: right;padding-right: .5rem;color: #ff3600;}
+.pro_yj b{font-weight: normal;font-size: .6rem;}
+.fix_btn{position:fixed;width: 100%;bottom: 0;left: 0;height: 2.6rem;line-height: 2.6rem;text-align: center;font-size: .8rem;color: #ff4a00;border-top: 1px solid #c0bebf;background: #f8f8f8;z-index: 999;}
+.fix_btn i{display: inline-block;width: 1.05rem;height: 1.05rem;vertical-align: text-bottom;margin-right: .4rem;}
+.save_btn i{background: url(../../../images/WFJClient/ProductAgent/next.png) no-repeat center;background-size: contain;}
+.next i{background: url(../../../images/WFJClient/ProductAgent/save_btn.png) no-repeat center;background-size: contain;}
+.pro_box i{position: absolute;width: 1rem;height: 1rem;right: .5rem;top: .5rem;background: url(../../../images/WFJClient/ProductAgent/no-sele.png) no-repeat center;background-size: contain;z-index: 99;}
+.pro_inp{position: absolute;left: -9999px}
+.pro_inp:checked+i{background: url(../../../images/WFJClient/ProductAgent/selected.png) no-repeat center;background-size: contain;}
+
+/*添加招商发布要求*/
+.mer_pro_img{float: left;width: 3.6rem;height: 3.6rem;margin-right: .6rem;}
+.mer_pro_box{padding: 0 .6rem;border-bottom: .28rem solid #f3f3f3;}
+.mer_pro_text{float: left;width:10.6rem; }
+.mer_pro_tit{line-height: .9rem;margin: .2rem 0;height: 1.8rem;color: #3d4245;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;}
+.mer_pro_price{line-height: 1.4rem;height: 1.4rem;color: #ff4a00;font-size: .768rem;}
+.mer_pro_top{padding: .7rem 0;border-bottom: 2px solid #dbdbdb;}
+.mer_pro_bottom{padding: .5rem 0;}
+.mer_type{float: left;width: 50%;padding-left: .8rem;line-height: 1.2rem;font-size: .64rem;color: #353535;position: relative;height: 1.2rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.mer_type i{position: absolute;width: .32rem;height: .32rem;background: #53be69;border-radius: 50%;left: 0;top: .44rem;}
+.mer_type span{color: #ff6600;}
+.mer_require_wrap{width: 14.8rem;margin: 1rem auto 3rem;border: .1rem solid #000000;padding: .6rem;border-radius: .28rem;position: relative;}
+.mer_require{min-height: 8rem;resize: none;width: 100%;outline: 0;border: 0;font-size: .64rem;}
+.mer_require::-webkit-input-placeholder{color: #000000;}
+.triangle_01{position: absolute;border: .7rem solid transparent;border-bottom: .7rem solid #000000;top: -1.42rem;left: .8rem;}
+.triangle_02{position: absolute;content: '';border: .7rem solid transparent;border-bottom: .7rem solid #ffffff;top:-1.28rem ;left: .8rem;;}
+.line{position: absolute;height: .1rem;width: .6rem;background: #000;}
+.line:after{position: absolute;content: '';width: .3rem;height: .1rem; top: 0;right: -.3rem;background: #ffffff;}
+.line:before{position: absolute;content: '';width: .3rem;height: .1rem; top: 0;left: -.3rem;background: #ffffff;}
+.line_01{top: -.09rem;right: 4rem;}
+.line_02{bottom: -.09rem;left: 1.6rem;}
+/*查看项目*/
+.mer_det{border-bottom: .09rem solid #eeeeee;}
+.mer_det .mer_pro_top{border-bottom: 0;}
+.set_require{display: block;line-height: 2.2rem;background: url(../../../images/WFJClient/ProductAgent/arr_R.png) no-repeat 15rem;background-size: .4rem;padding: 0 .6rem;color: #353535;font-size: .7rem;border-bottom: 1px solid #eeeeee;}
+.apply_tit{font-size: 0;background: #f5f5f5;padding: 0 .6rem;}
+.apply_tit span{display: inline-block;font-size: .7rem;color: #c89b39;width: 30%;line-height: 1.8rem;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.apply_tit .a_tit_R{width: 70%;text-align: right;}
+.apply_com_wrap{position: relative;padding: .6rem 0;border-bottom: 1px solid #ededed;}
+.apply_com{padding: 0 .6rem;display: block;}
+.apply_com_logo{float: left;width: 3rem;height: 3rem;object-fit: cover;}
+.apply_com_text{float: left;width: 8.2rem;margin-left: .6rem;}
+.apply_com_name{line-height: 1.6rem;font-size: .683rem;color: #282828;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.apply_com_state{line-height: 1.4rem;font-size: .6rem;color: #ff4a00;}
+.apply_btn{position: absolute;right: 0.6rem;width: 2.4rem;line-height: 1rem;font-size: .6rem;color: #ff4a00;top: 1.5rem;text-align: center;border: 1px solid #ff4a00;border-radius: .1rem;margin-top: -1px;z-index: 9;}
+.agreed{border-color: transparent;color: #78c85c;}
+.no_com_img{float: left;width: 3rem;height: 3rem;object-fit: contain;}
+.no_com_wrap{padding: .6rem;border-bottom: 1px solid #ededed;}
+.no_com_text{float: left;width: 11.2rem;margin-left: .6rem;line-height: 3rem;font-size: .683rem;color: #a2807e;}
+.apply_list_wrap{padding-bottom: 3rem;}
+.reason_wrap{width: 14.8rem;margin: .6rem auto;border: 2px solid #ff6600;border-radius: .3rem;padding: .3rem .6rem 1rem;}
+.reason_tit{color: #ff4a00;line-height: 1.8rem;font-size: .73rem;}
+.reason_con{font-size: .6rem;white-space: pre-wrap;}
+.com_det_text{width: 11.2rem;color: #444444;}
+.agree_btn i{background: url(../../../images/WFJClient/ProductAgent/agree.png) no-repeat center;background-size: contain;height: 1.08rem}
+
+/*发布新项目-无产品*/
+.no_pro{text-align: center;padding-top: 4rem;}
+.no_pro img{width: 12rem;}
+.no_pro p{font-size: .6rem;line-height: 1.6rem;color: #575757;top: -2rem;position: relative;z-index: 99;}
+.add_pro{display: block;width: 6rem;color: #ff6600;font-size: .73rem;line-height: 1.6rem;border: .1rem solid #fadcdc;border-radius: .7rem;margin: 2rem auto 0;}
+
+
+
+
+
+
+
+
+

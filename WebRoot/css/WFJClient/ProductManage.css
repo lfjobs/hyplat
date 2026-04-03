@@ -1,0 +1,234 @@
+.pc-box {
+    min-width: 100%;
+    width: 100%;
+    margin: 0 auto
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+header {
+    border-bottom: 0.025rem solid #f9f9f9;
+}
+header ul {
+    padding: 0 0.5rem;
+}
+header ul li {
+    float: left;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: 0.8rem;
+    color: #000000;
+}
+header ul li:first-of-type {
+    width: 20%;
+}
+header ul li:first-of-type img {
+    width: 0.45rem;
+}
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center;
+}
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: 0.6rem;
+}
+header ul li:nth-of-type(3) img {
+    width: 0.75rem;
+}
+.content menu {
+    padding: 0.35rem 0.25rem;
+}
+.content menu li {
+    float: left;
+    width: 14%;
+    border-radius: 0.25rem;
+    text-align: center;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background-color: #f5f5f5;
+    font-size: 0.6rem;
+    color: #272727;
+    margin: 0 3%;
+}
+.content .container {
+    overflow-y: scroll;
+    padding: 0.25rem 0.5rem 0 0.5rem;
+}
+.content .container .active {
+    background-color: #f9d4d0;
+}
+.content .container ul li {
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    border-bottom: 0.025rem solid #ebebeb;
+    float: left;
+    height: 1.45rem;
+    line-height: 1.45rem;
+    font-size: 0.6rem;
+    color: #000000;
+    text-align: center;
+}
+.content .container ul li:nth-of-type(1) {
+    width: 25%;
+    text-align: left;
+}
+.content .container ul li:nth-of-type(1) p {
+    float: left;
+}
+.content .container ul li:nth-of-type(1) .p-img {
+    display: flex;
+    align-items: center;
+    height: 1.45rem;
+    line-height: 1.45rem;
+}
+.content .container ul li:nth-of-type(1) .p-img img {
+    width: 0.6rem;
+}
+.content .container ul li:nth-of-type(1) .p-img img:nth-of-type(1) {
+    display: none;
+}
+.content .container ul li:nth-of-type(1) .p-img img:nth-of-type(2) {
+    display: inline-block;
+}
+.content .container ul li:nth-of-type(1) .active img:nth-of-type(1) {
+    display: inline-block;
+}
+.content .container ul li:nth-of-type(1) .active img:nth-of-type(2) {
+    display: none;
+}
+.content .container ul li:nth-of-type(2) {
+    width: 25%;
+}
+.content .container ul li:nth-of-type(3) {
+    width: 14%;
+}
+.content .container ul li:nth-of-type(4) {
+    width: 14%;
+}
+.content .container ul li:nth-of-type(5) {
+    width: 21.5%;
+}
+.content .container .ul-header li {
+    color: #959595;
+}
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+/* Firefox 4-18 */
+:-moz-placeholder {
+    color: #ccc;
+}
+/* Firefox 19-50 */
+::-moz-placeholder {
+    color: #ccc;
+}
+/* - Internet Explorer 10?C11
+   - Internet Explorer Mobile 10-11 */
+:-ms-input-placeholder {
+    color: #ccc !important;
+}
+/* Edge (also supports ::-webkit-input-placeholder) */
+::-ms-input-placeholder {
+    color: #ccc;
+}
+/* CSS Working Draft */
+::placeholder {
+    color: #ccc;
+}
+.div-chaxun {
+    z-index: 9;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.div-chaxun .div-box {
+    border-radius: 0.5rem;
+    margin: 30% 0.5rem 0 0.5rem;
+    padding: 0 0.85rem 0.85rem 0.85rem;
+    background-color: #fff;
+}
+.div-chaxun .div-box .p-top {
+    height: 2.85rem;
+    line-height: 2.85rem;
+    font-size: 0.85rem;
+    color: #000000;
+}
+.div-chaxun .div-box .p-inp {
+    display: flex;
+    align-items: center;
+    margin: 0.35rem 0rem;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: 0.6rem;
+    color: #000000;
+}
+.div-chaxun .div-box .p-inp label {
+    float: left;
+    width: 24%;
+}
+.div-chaxun .div-box .p-inp input {
+    width: 68%;
+    border: 0;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    float: left;
+    background-color: #f2f2f2;
+    border-radius: 0.25rem;
+    padding: 0 0.5rem;
+}
+.div-chaxun .div-box .p-bottom {
+    margin-top: 1rem;
+    background-color: #fb5858;
+    width: 100%;
+    height: 1.9rem;
+    line-height: 1.9rem;
+    font-size: 0.6rem;
+    color: #fff;
+    text-align: center;
+    border-radius: 10rem;
+}
+
+header {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
+.content {
+    padding-top: 2.2rem;
+}
+.content > menu {
+    position: fixed;
+    z-index: 9;
+    top: 2.2rem;
+    left: 0;
+    width: 96%;
+    background-color: #fff;
+}
+.container {
+    padding-top: 1.9rem !important;
+}
+.container .ul-header {
+    padding: 0 3%;
+    position: fixed;
+    z-index: 9;
+    top: 4rem;
+    left: 0;
+    width: 94%;
+    background-color: #fff;
+}
+.container > ul:nth-of-type(2) {
+    padding-top: 1.45rem !important;
+}

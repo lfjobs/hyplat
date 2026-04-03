@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package strict-method-invocation="false" name="crmCustomerPO-ntoken" namespace="/ea/crmCustomerPO"
+             extends="struts-default">
+        <action name="ea_*" class="mobile.tiantai.android.action.storeProduction.budgetSheet.CrmCustomerPOAction"
+                method="{1}">
+            <result name="crmCustomer">/page/WFJClient/pc/5l5C/office/config/crmCustomer.jsp</result>
+            <result name="crmCustomer1">/page/WFJClient/pc/5l5C/office/config/crmCustomer1.jsp</result>
+            <result name="updateCrmCustomer">/page/WFJClient/pc/5l5C/office/config/updateCrmCustomer.jsp</result>
+            <result name="addCrmCustomer">/page/WFJClient/pc/5l5C/office/config/addCrmCustomer.jsp</result>
+            <result name="queryCrmCustomer">/page/WFJClient/pc/5l5C/office/config/queryCrmCustomer.jsp</result>
+            <result name="queryCrmCustomer1">/page/WFJClient/pc/5l5C/office/config/queryCrmCustomer1.jsp</result>
+            <result name="visitorImport">/page/pc/5L5C/marketing/visitorImport2.jsp</result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="crmCustomerPO-jsonajax" namespace="/ea/crmCustomerPO" extends="json-default">
+        <action name="sajax_ea_*" class="mobile.tiantai.android.action.storeProduction.budgetSheet.CrmCustomerPOAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

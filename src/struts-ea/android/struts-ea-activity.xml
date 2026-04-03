@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="activity-sajaxs" namespace="/ea/activity" extends="json-default">
+		<action name="sajax_*" class="mobile.tiantai.android.action.WechatActivityAction" method="{1}">
+	<!-- 返回类型为json 在sjon-default中定义 -->  
+			<result type="json">  
+				<!-- root的值对应要返回的值的属性 -->    
+				<!-- 这里的result值即是 对应action中的 result -->  
+				<param name="root">result</param>  
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="activity-sajax" namespace="/ea/activity" extends="struts-default">
+		
+		<action name="ea_*" class="mobile.tiantai.android.action.WechatActivityAction" method="{1}">
+		    <result name="complist">/page/mobile/activity/getcomp_list.jsp</result>
+		    <result name="hhlist">/page/mobile/activity/gethh_list.jsp</result>
+		       <result name="dllist">/page/mobile/activity/dlshop_list.jsp</result>
+		         <result name="xfzlist">/page/mobile/activity/xfzshop_list.jsp</result>
+		    <result name="dplist">/page/mobile/activity/shopdp_list.jsp</result>
+			<result name="success" >/page/mobile/activity/activity_enroll.jsp</result>
+			<result name="list">/page/mobile/activity/activity_list.jsp</result>  
+			<result name="publish" type="redirectAction">getSameDayList</result>
+		    <result name="delsuccess" type="redirectAction">activityList</result>  
+			<result name="enrollList">/page/mobile/activity/activity_enrollList.jsp</result>
+			<result name="SameDayList">/page/mobile/activity/activity_SameDayList.jsp</result>
+			<result name="login">/page/mobile/activity/activity_publishLogin.jsp</result>
+			<result name="publisha">/page/mobile/activity/activity_publish.jsp</result>
+			<result name="notice">/page/mobile/activity/notice_publish.jsp</result>
+			<result name="getorderlist">/page/mobile/activity/orderget_list.jsp</result>
+			<result name="getjifendeteil">/page/mobile/activity/jifendetail_list.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="huiyuan.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+</struts>

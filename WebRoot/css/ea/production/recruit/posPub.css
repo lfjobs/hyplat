@@ -1,0 +1,433 @@
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+::-webkit-input-placeholder {
+	color: #ccc;
+	font-size: .6rem
+}
+
+::-moz-placeholder {
+	color: #ccc;
+	font-size: .6rem
+}
+
+:-ms-input-placeholder {
+	color: #ccc;
+	font-size: .6rem
+}
+
+header {
+	/* background-color: #f74c32; */
+	border-bottom: 1px solid #d0d0d0;
+}
+
+header ul {
+	padding: 0 .5rem
+}
+
+header ul li {
+	float: left;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	font-size: .7rem;
+	color:  #6d6d6d
+}
+
+header ul li:first-of-type {
+	width: 20%
+}
+
+header ul li:first-of-type img {
+	width: .525rem
+}
+
+header ul li:nth-of-type(2) {
+	width: 58%;
+	text-align: center
+}
+
+header ul li:nth-of-type(3) {
+	width: 20%;
+	text-align: right;
+	font-size: .6rem
+}
+
+.content {
+	padding-bottom: 2.625rem
+}
+
+.content .sec-zwlb {
+	cursor: pointer;
+	border-bottom: .025rem solid #f4f4f4
+}
+
+.content .sec-zwlb div {
+	padding: 0 .625rem
+}
+
+.content .sec-zwlb div p {
+	float: left;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	font-size: .6rem;
+	color: #222
+}
+
+.content .sec-zwlb div .p-1 {
+	margin-right: .15rem
+}
+
+.content .sec-zwlb div .p-2 {
+	font-size: .55rem;
+	color: #696969;
+	width: 80%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.content .sec-zwlb div .p-3 {
+	display: flex;
+	align-items: center;
+	float: right
+}
+
+.content .sec-zwlb div .p-3 img {
+	align-items: center;
+	width: .35rem
+}
+
+.content .sec-01 {
+	padding: 1.25rem .625rem 1.125rem .625rem;
+	border-bottom: .025rem solid #f4f4f4;
+	overflow-y: hidden;
+}
+
+.content .sec-01 h2 {
+	height: 1.25rem;
+	line-height: 1.25rem;
+	font-size: .65rem;
+	color: #222;
+	font-weight: 400
+}
+
+.content .sec-01 .div-bottom .div-left {
+	float: left
+}
+
+.content .sec-01 .div-bottom .div-left input {
+	border: 0;
+	height: 1.45rem;
+	line-height: 1.45rem;
+	font-size: .65rem;
+	color: #222
+}
+
+.content .sec-01 .div-bottom .div-right {
+	float: right;
+	height: 1.25rem;
+	line-height: 1.25rem;
+	font-size: .65rem;
+	color: #222;
+	width: 3.125rem;
+	border-radius: .2rem;
+	background-color: #f8f8f8
+}
+
+.content .sec-01 .div-bottom .div-right p {
+	float: left;
+	width: 1.8rem;
+	text-align: center;
+	font-size: .6rem;
+	color: #222;
+	cursor: pointer;
+}
+
+.content .sec-01 .div-bottom .div-right div {
+	padding-left: .3rem;
+	height: 1.25rem;
+	line-height: 1.25rem;
+	float: left;
+	display: flex;
+	align-items: center
+}
+
+.content .sec-01 .div-bottom .div-right div img {
+	width: .35rem
+}
+
+.content .sec-02 {
+	border-bottom: .5rem solid #f4f4f4;
+	padding: 1.375rem 0 1.1rem 0;
+	overflow-y: hidden;
+
+}
+
+.content .sec-02 div {
+	position: relative;
+	float: left;
+	width: 33%;
+	text-align: center
+}
+
+.content .sec-02 div .p-top {
+	height: 1.3rem;
+	line-height: 1.3rem;
+	font-size: .6rem;
+	color: #464646;
+	cursor: pointer;
+}
+
+.content .sec-02 div .p-bottom {
+	height: 1.35rem;
+	line-height: 1.35rem;
+	font-size: .7rem;
+	color: #222;
+	cursor: pointer;
+}
+
+.content .sec-02 div:nth-of-type(2):before {
+	content: "";
+	position: absolute;
+	width: .025rem;
+	height: 2rem;
+	background-color: #f4f4f4;
+	left: 2%;
+	top: 16%
+}
+
+.content .sec-02 div:nth-of-type(2):after {
+	content: "";
+	position: absolute;
+	width: .025rem;
+	height: 2rem;
+	background-color: #f4f4f4;
+	right: -3%;
+	top: 16%
+}
+
+.content .sec-03 {
+	border-bottom: .025rem solid #f4f4f4;
+	padding: 1.25rem 0 1.25rem .625rem
+}
+.sec-03 textarea{
+	width: 93%;
+	line-height: 1.3rem;
+	border: 0;
+	outline: none;
+	resize:none;
+	font-size: .65rem;
+}
+
+.content .sec-03 p {
+	height: 1.4rem;
+	line-height: 1.4rem;
+	font-size: .65rem;
+	color: #222
+}
+
+.content .sec-03 input {
+	height: 1.3rem;
+	line-height: 1.3rem;
+	font-size: .6rem;
+	color: #222;
+	border: 0;
+	width: 80%
+}
+
+.content .sec-05 {
+	height: .7rem;
+	line-height: .7rem;
+	font-size: .65rem;
+	color: #222;
+	padding: 1.5rem .625rem
+}
+
+.content .sec-05 p {
+	float: left
+}
+
+.content .sec-05 .div-num {
+	float: right
+}
+
+.content .sec-05 .div-num img {
+	width: .85rem;
+	float: left
+}
+
+.content .sec-05 .div-num span {
+	width: 1.375rem;
+	text-align: center;
+	display: block;
+	float: left
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	background-color: #fff;
+	bottom: 0;
+	padding: .5rem 0
+}
+
+footer p {
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	background-color: #f74c32;
+	height: 1.625rem;
+	line-height: 1.625rem;
+	font-size: .6rem;
+	color: #fff;
+	border-radius: .25rem
+}
+
+#div-zwxz {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9;
+	background-color: rgba(0, 0, 0, .3)
+}
+
+#div-zwxz .box {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	border-top-left-radius: .25rem;
+	border-top-right-radius: .25rem;
+	background-color: #fff;
+	text-align: center
+}
+
+#div-zwxz .box div {
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: .65rem;
+	color: #222;
+	border-bottom: .025rem solid #f4f4f4
+}
+
+#div-zwxz .box div p {
+	float: right;
+	display: flex;
+	padding-right: .5rem;
+	align-items: center;
+	height: 2.5rem;
+	line-height: 2.5rem
+}
+
+#div-zwxz .box div p img {
+	float: right;
+	width: .6rem
+}
+
+#div-zwxz .box ul {
+	padding: .5rem 0
+}
+
+#div-zwxz .box ul li {
+	margin: .5rem 0;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: .65rem;
+	color: #222
+}
+
+#div-zwxz .box ul li.active {
+	background-color: #f6f6f6
+}
+
+.body_yc{
+	height: 100%;
+	overflow-y: hidden;
+}
+
+.div-del {
+	z-index: 999;
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .3)
+}
+
+.div-del .box {
+	width: 75%;
+	background-color: #fff;
+	margin: 0 auto;
+	margin-top: 60%;
+	border-radius: .35rem
+}
+
+.div-del .box > p {
+	text-align: center;
+	height: 3.5rem;
+	line-height: 3.5rem;
+	font-size: .7rem;
+	color: #1c1c1c
+}
+
+.div-del .box div {
+	border-top: .025rem solid #eee
+}
+
+.div-del .box div p {
+	width: 49.5%;
+	text-align: center;
+	height: 2.3rem;
+	line-height: 2.3rem;
+	font-size: .65rem;
+	color: #555
+}
+
+.div-del .box div p:first-of-type {
+	float: left;
+	border-right: .025rem solid #eee
+}
+
+.div-del .box div p:last-of-type {
+	float: right;
+	color: #e74a45
+}
+
+@media (min-width: 960px) {
+
+  html{
+	  margin:auto 25%!important;
+
+
+  }
+	.content,header{
+		border-left:1px solid #d0d0d0;
+		border-right:1px solid #d0d0d0;
+	}
+	footer {
+
+		width: 50%;
+
+	}
+
+	.select_box {
+
+		width: 50% !important;
+        left:25% !important;
+	}
+
+	.cascade_scroll_selects .scs_container .scs_dialog {
+		width: 50% !important;
+		left: 25% !important;
+
+	}
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarStatus" table="dt_Car_Status">
+		<id length="50" name="stKey">
+			<column length="50" name="stKey"/>
+			<generator class="uuid" />
+		</id>
+		<property name="stID">
+			<column length="50" name="stID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="organizationName">
+			<column length="50" name="organizationName"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="companyName">
+			<column length="50" name="companyName"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"/>
+		</property>
+		<property name="staffName">
+			<column length="50" name="staffName"/>
+		</property>
+		<property name="staffCode">
+			<column length="50" name="staffCode"/>
+		</property>
+		<property name="operateDate">
+			<column name="operateDate" length="50"/>
+		</property>
+		<property name="carNum">
+			<column length="50" name="carNum"/>
+		</property>	
+		<property name="carID" >
+			<column length="50" name="carID"/>
+		</property>
+		<property name="status" >
+			<column length="2" name="status"/>
+		</property>
+		<property name="statusname" >
+			<column length="10" name="statusname"/>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.wage">
+	<class name="PKGoldPool" table="dt_hr_pkgoldpool">
+		<id length="50" name="pkgoldpoolKey">
+			<column length="50" name="pkgoldpoolKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="pkgoldpoolID">
+			<column length="50" name="pkgoldpoolID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="companyName">
+			<column length="200" name="companyName" />
+		</property>
+		<property name="organizationName">
+			<column length="200" name="organizationName" />
+		</property>
+		<property  name="pkDate">
+			<column length="50" name="pkDate" />
+		</property>
+		<property  name="goldpool">
+			<column length="50" name="goldpool" />
+		</property>
+		<property  name="goldpaypool">
+			<column length="50" name="goldpaypool" />
+		</property>
+		<property  name="goldbalpool">
+			<column length="50" name="goldbalpool" />
+		</property>
+	</class>
+</hibernate-mapping>

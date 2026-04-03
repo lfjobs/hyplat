@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hy.ea.bo.invoicing.voucher.vo.VoucherBillVO" table="DT_INV_VOUCHERVO" schema="HYPLAT">
+        <id name="voucherkey" type="java.lang.String">
+            <column name="VOUCHERKEY" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="voucherid" type="java.lang.String">
+            <column name="VOUCHERID" length="50" />
+        </property>
+        <property name="companyid" type="java.lang.String">
+            <column name="COMPANYID" length="50" />
+        </property>
+        <property name="orgId" type="java.lang.String">
+            <column name="ORG_ID" length="50" />
+        </property>
+        <property name="journalnum" type="java.lang.Short">
+            <column name="JOURNALNUM" precision="4" scale="0" />
+        </property>
+        <property name="makepeople" type="java.lang.String">
+            <column name="MAKEPEOPLE" length="250" />
+        </property>
+        <property name="makedate" type="java.lang.String">
+            <column name="MAKEDATE" length="14" />
+        </property>
+        <property name="auditingpeo" type="java.lang.String">
+            <column name="AUDITINGPEO" length="250" />
+        </property>
+        <property name="auditingdate" type="java.lang.String">
+            <column name="AUDITINGDATE" length="14" />
+        </property>
+        <property name="tallypeople" type="java.lang.String">
+            <column name="TALLYPEOPLE" length="250" />
+        </property>
+        <property name="tallydate" type="java.lang.String">
+            <column name="TALLYDATE" length="14" />
+        </property>
+        <property name="vouchercategory" type="java.lang.Short">
+            <column name="VOUCHERCATEGORY" precision="4" scale="0" />
+        </property>
+        <property name="makepeopleid" type="java.lang.String">
+            <column name="MAKEPEOPLEID" length="50" />
+        </property>
+        <property name="auditingpeoid" type="java.lang.String">
+            <column name="AUDITINGPEOID" length="50" />
+        </property>
+        <property name="tallypeopleid" type="java.lang.String">
+            <column name="TALLYPEOPLEID" length="50" />
+        </property>
+        <property name="voucherdate" type="java.lang.String">
+            <column name="VOUCHERDATE" length="8" />
+        </property>
+        <property name="voucherorigin" type="java.lang.String">
+            <column name="VOUCHERORIGIN" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<include file="struts-ea/marketing/struts-ea-marketingExamine.xml" />
+	<include file="struts-ea/marketing/struts-ea-marketingCrmCustomer.xml" />
+	<include file="struts-ea/marketing/struts-ea-marketingWfj.xml" />
+	<include file="struts-ea/wfj/struts-wfj-jifen.xml"></include>
+	<include file="struts-ea/wfj/struts-wfj-industryclassification.xml"></include>
+	<include file="struts-ea/wfj/struts-wfj-budget.xml" />
+	<include file="struts-ea/buildPlatform/struts-ea-mobileoffice.xml"/>
+	<include file="struts-ea/buildPlatform/struts-ea-peoplemange.xml"/>
+	<!-- 共建平台 -->
+	<include file="struts-ea/buildPlatform/struts_ea_wfjIndustryPlatform.xml"/>
+	<!-- PC端 -->
+	<include file="struts-ea/wfj/struts-wfj-newPCend.xml"/>
+	<!-- 产品代理 -->
+	<include file="struts-ea/marketing/struts-ea-productAgent.xml"/>
+	<!-- 抽奖活动 -->
+	<include file="struts-ea/marketing/struts-ea-lotteryactivity.xml" />
+	<!-- 购物卡 -->
+	<include file="struts-ea/marketing/struts-ea-giftcard.xml" />
+	<!-- 抽奖活动 -->
+	<include file="struts-ea/wfj/struts-wfj-dserve.xml" />
+	<!-- 自助收银 -->
+	<include file="struts-ea/marketing/struts-ea-supermarket.xml" />
+	<!-- 超市线下支付 -->
+	<include file="struts-ea/marketing/struts-ea-payOffline.xml"/>
+	<!-- 刷脸设备-->
+	<include file="struts-ea/marketing/struts-ea-paydevice.xml" />
+	<!-- POS销售终端管理 -->
+	<include file="struts-ea/marketing/struts-ea-posmanage.xml" />
+	<!-- 电子秤管理 -->
+	<include file="struts-ea/marketing/struts-ea-scalemanage.xml" />
+	<!-- 微分金超市 -->
+	<include file="struts-ea/marketing/struts-ea-smGoods.xml" />
+	<!-- 商帮圈 -->
+	<include file="struts-ea/marketing/struts-ea-sbqindex.xml" />
+	<!-- 拼货拉首页-->
+	<include file="struts-ea/marketing/struts-ea-phlindex.xml" />
+	<!-- 拼货拉商家-->
+	<include file="struts-ea/marketing/struts-ea-phlbusi.xml" />
+	<!-- 拼货拉批发商家产品-->
+	<include file="struts-ea/marketing/struts-ea-phlpro.xml" />
+	<!-- 拼货拉司机加盟-->
+	<include file="struts-ea/marketing/struts-ea-phljoin.xml" />
+	<!-- 短视频-->
+	<include file="struts-ea/marketing/struts-ea-dspindex.xml" />
+	<!--NFC设置-->
+	<include file="struts-ea/marketing/struts-ea-bindNfc.xml"/>
+	<!--安全巡查-->
+	<include file="struts-ea/marketing/struts-ea-safetyInspect.xml"/>
+	<!--安全巡查-->
+	<include file="struts-ea/wfj/struts-wfj-certificatePhone.xml"/>
+</struts>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hy.ea.bo.office.face.OfficeFaceEmpower" table="OFFICE_FACE_EMPOWER">
+		<id length="50" name="staffKey">
+			<column length="50" name="STAFF_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="staffId">
+			<column length="50" name="STAFF_ID"/>
+		</property>
+		<property  name="companyId">
+			<column length="50" name="COMPANY_ID"/>
+		</property>
+		<property  name="empowerStaffId">
+			<column length="50" name="EMPOWER_STAFF_ID"/>
+		</property>
+		<property  name="empowerStaffName">
+			<column length="250" name="EMPOWER_STAFF_NAME"/>
+		</property>
+		<property  name="empowerState">
+			<column length="1" name="EMPOWER_STATE"/>
+		</property>
+		<property  name="empowerTime">
+			<column length="250" name="EMPOWER_TIME"/>
+		</property>
+		<property  name="createTime">
+			<column length="250" name="CREATE_TIME"/>
+		</property>
+		<property  name="deleteState">
+			<column length="250" name="DELETE_STATE"/>
+		</property>
+		<property  name="personId">
+			<column length="250" name="PERSON_ID"/>
+		</property>
+		<property  name="payMoney">
+			<column length="250" name="PAY_MONEY"/>
+		</property>
+		<property  name="personType">
+			<column length="250" name="PERSON_TYPE"/>
+		</property>
+		<property  name="staffName">
+			<column length="250" name="STAFF_NAME"/>
+		</property>
+		<property  name="personImage">
+			<column length="250" name="PERSON_IMAGE"/>
+		</property>
+		<property  name="payStatus">
+			<column length="250" name="PAY_STATUS"/>
+		</property>
+		<property  name="notes">
+			<column length="250" name="NOTES"/>
+		</property>
+		<property  name="siteId">
+			<column length="250" name="SITE_ID"/>
+		</property>
+	</class>
+</hibernate-mapping>

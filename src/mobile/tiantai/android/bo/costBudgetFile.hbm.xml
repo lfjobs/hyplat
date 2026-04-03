@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mobile.tiantai.android.bo">
+    <class name="mobile.tiantai.android.bo.CostBudgetFile" table="DT_COST_BUDGET_FILE">
+        <comment>费用预算条目</comment>
+        <id name="budgetFileKey">
+            <column length="50" name="BUDGET_FILE_KEY">
+                <comment>主键id</comment>
+            </column>
+        </id>
+        <property name="budgetFileId">
+            <column length="50" name="BUDGET_FILE_ID">
+                <comment>编号</comment>
+            </column>
+        </property>
+        <property name="budgetItemId">
+            <column length="50" name="BUDGET_ITEM_ID">
+                <comment>关联的单号或者预算明细编号</comment>
+            </column>
+        </property>
+        <property name="filePath">
+            <column length="60" name="FILE_PATH">
+                <comment>文件路径</comment>
+            </column>
+        </property>
+        <property name="fileName">
+            <column length="255" name="FILE_NAME">
+                <comment>文件名称</comment>
+            </column>
+        </property>
+        <property name="fileWebName">
+            <column length="255" name="FILE_WEB_NAME">
+                <comment>文件在服务器的名称</comment>
+            </column>
+        </property>
+        <property name="createName">
+            <column length="50" name="CREATE_NAME">
+                <comment>上传人</comment>
+            </column>
+        </property>
+        <property name="createTime">
+            <column length="7" name="CREATE_TIME">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        <property name="type">
+            <column length="20" name="TYPE">
+                <comment>文件类型</comment>
+            </column>
+        </property>
+        <property name="sort">
+            <column length="22" name="SORT">
+                <comment>排序</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

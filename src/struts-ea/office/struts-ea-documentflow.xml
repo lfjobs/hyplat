@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package strict-method-invocation="false" name="documentflow-ntoken" namespace="/ea/documentflow" extends="ea">
+		<action name="ea_*" class="hy.ea.office.action.DocumentFlowAction" method="{1}">			
+			<!-- 未完成列表的页面 -->
+			<result name="examine">/page/ea/main/office_ea/document/documentApproveno.jsp</result>
+			<result name="seal">/page/ea/main/office_ea/document/documentStampno.jsp</result>
+			<result name="publish">/page/ea/main/office_ea/document/documentSendno.jsp</result>
+			<result name="read">/page/ea/main/office_ea/document/documentReadno.jsp</result>
+			<!-- 已完成列表的页面 -->
+			<result name="examineyes">/page/ea/main/office_ea/document/documentApproveyes.jsp</result>
+			<result name="sealyes">/page/ea/main/office_ea/document/documentStampyes.jsp</result>
+			<result name="publishyes">/page/ea/main/office_ea/document/documentSendyes.jsp</result>
+			<result name="readyes">/page/ea/main/office_ea/document/documentReadyes.jsp</result>
+			<!-- 跟踪登记表 -->
+			<result name="track">/page/ea/main/office_ea/document/fileAuditTrack.jsp</result>
+			<result name="trackprint">/page/ea/main/office_ea/document/fileStatusTrack.jsp</result>
+			
+			
+			<!-- 已完成查看的页面 -->
+			<result name="finishedView">/page/ea/main/office_ea/document/finishedDocView.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="document.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="documentflowf-ntoken" namespace="/ea/documentflowf" extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.office.action.DocumentFlowAction" method="{1}">			
+			<result name="toFrame">/page/ea/main/office_ea/document/documentFrame.jsp</result>
+			
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="documentflow-jsonajax" namespace="/ea/documentflow" extends="json-default">
+		<action name="sajax_n_ea_*" class="hy.ea.office.action.DocumentFlowAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

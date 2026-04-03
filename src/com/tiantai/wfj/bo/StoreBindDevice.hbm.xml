@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="StoreBindDevice" table="DT_StoreBindDevice" schema="HYPLAT" dynamic-insert="true">
+	<comment>商户绑定设备</comment>
+		<id length="50" name="sbdKey" type="java.lang.String">
+			<column length="50" name="sbdKey" />
+			<generator class="uuid" />
+		</id>
+
+		<property name="sbdID" type="java.lang.String">
+			<column length="50" name="sbdID" >
+			</column>
+		</property>
+		<property name="subCompanyID" type="java.lang.String">
+			<column length="50" name="subCompanyID" >
+			</column>
+		</property>
+		<property name="storeID" type="java.lang.String">
+			<column length="32" name="storeID" >
+			</column>
+		</property>
+		<property name="storeName" type="java.lang.String">
+			<column length="50" name="storeName" >
+			</column>
+		</property>
+		<property name="subAppID" type="java.lang.String">
+			<column name="subAppID" length="50">
+				<comment>特约商户APPID</comment>
+			</column>
+		</property>
+		<property name="subMchid" type="java.lang.String">
+			<column name="subMchid" length="50">
+				<comment>特约商户号</comment>
+			</column>
+		</property>
+		<property name="storeRate" type="java.lang.String">
+			<column name="storeRate" length="50">
+				<comment>费率</comment>
+			</column>
+		</property>
+
+
+		<property name="companyID" type="java.lang.String">
+			<column length="50" name="companyID" >
+			<comment>维护所有设备公司ID</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>添加日期</comment>
+			</column>
+		</property>
+		<property name="changeRateDate" type="java.util.Date">
+			<column name="changeRateDate" >
+				<comment>调整费率时间</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>负责人ID</comment>
+			</column>
+		</property>
+		<property name="staffName" type="java.lang.String">
+			<column length="50" name="staffName" >
+				<comment>负责人姓名</comment>
+			</column>
+		</property>
+		<property name="inputID" type="java.lang.String">
+			<column length="50" name="inputID" >
+				<comment>录入人员</comment>
+			</column>
+		</property>
+		<property name="inputName" type="java.lang.String">
+			<column length="20" name="inputName" >
+				<comment>录入人员姓名</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

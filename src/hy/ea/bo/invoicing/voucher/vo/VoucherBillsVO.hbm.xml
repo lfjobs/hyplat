@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hy.ea.bo.invoicing.voucher.vo.VoucherBillsVO" table="DT_INV_VOUCHERSVO" schema="HYPLAT">
+         <id name="voucherskey" type="java.lang.String">
+            <column name="VOUCHERSKEY" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="vouchersid" type="java.lang.String">
+            <column name="VOUCHERSID" length="50" />
+        </property>
+        <property name="voucherid" type="java.lang.String">
+            <column name="VOUCHERID" length="50" />
+        </property>
+        <property name="subjectsid" type="java.lang.String">
+            <column name="SUBJECTSID" length="50" />
+        </property>
+        <property name="casId" type="java.lang.String">
+            <column name="CAS_ID" length="50" />
+        </property>
+        <property name="goodsid" type="java.lang.String">
+            <column name="GOODSID" length="50" />
+        </property>
+        <property name="subjectsname" type="java.lang.String">
+            <column name="SUBJECTSNAME" length="250" />
+        </property>
+        <property name="reasonthing" type="java.lang.String">
+            <column name="REASONTHING" length="300" />
+        </property>
+        <property name="goodsbillsid" type="java.lang.String">
+            <column name="GOODSBILLSID" length="50" />
+        </property>
+        <property name="direction" type="java.lang.String">
+            <column name="DIRECTION" length="1" />
+        </property>
+        <property name="currencyname" type="java.lang.String">
+            <column name="CURRENCYNAME" length="50" />
+        </property>
+        <property name="currencyid" type="java.lang.String">
+            <column name="CURRENCYID" length="50" />
+        </property>
+        <property name="vouchersnum" type="java.lang.Short">
+            <column name="VOUCHERSNUM" precision="4" scale="0" />
+        </property>
+        <property name="exchangerate" type="java.lang.Double">
+            <column name="EXCHANGERATE" precision="14" scale="9" />
+        </property>
+        <property name="mdannotation" type="java.lang.String">
+            <column name="MDANNOTATION" length="1" />
+        </property>
+        <property name="standardmoney" type="java.lang.Double">
+            <column name="STANDARDMONEY" precision="16" />
+        </property>
+        <property name="accountingmoney" type="java.lang.Double">
+            <column name="ACCOUNTINGMONEY" precision="16" />
+        </property>
+        <property name="quantity" type="java.lang.Double">
+            <column name="QUANTITY" precision="16" scale="4" />
+        </property>
+        <property name="clientid" type="java.lang.String">
+            <column name="CLIENTID" length="50" />
+        </property>
+        <property name="reserved1" type="java.lang.String">
+            <column name="RESERVED1" length="200" />
+        </property>
+        <property name="reserved2" type="java.lang.String">
+            <column name="RESERVED2" length="200" />
+        </property>
+        <property name="groupcsn" type="java.lang.String">
+            <column name="GROUPCSN" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

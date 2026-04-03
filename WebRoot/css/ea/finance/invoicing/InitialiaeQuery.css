@@ -1,0 +1,462 @@
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+header {
+    background-color: #f74c30
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .65rem;
+    color: #fff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .45rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    font-size: .6rem;
+    width: 20%;
+    text-align: right
+}
+
+.content .sec-search {
+    border-bottom: .025rem dashed #cfcfcf;
+    padding: 1rem .8rem 1rem 0
+}
+
+.content .sec-search .div-left {
+    float: left
+}
+
+.content .sec-search .div-left .p-dh {
+    float: left;
+    text-align: right;
+    width: 2.3rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .65rem;
+    color: #222
+}
+
+.content .sec-search .div-left .p-img {
+    padding-left: .15rem;
+    float: left;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    display: flex;
+    align-items: center
+}
+
+.content .sec-search .div-left .p-img img {
+    width: .45rem
+}
+
+.content .sec-search .div-right {
+    width: 77%;
+    border: .025rem solid #f85d45;
+    border-radius: 1rem;
+    float: right
+}
+
+.content .sec-search .div-right input {
+    float: left;
+    display: block;
+    background-color: transparent;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .6rem;
+    color: #222;
+    border: 0
+}
+
+.content .sec-search .div-right input:first-of-type {
+    padding-left: .5rem;
+    width: 64.5%
+}
+
+.content .sec-search .div-right input:last-of-type {
+    float: right;
+    width: 3.1rem;
+    background-color: #f74c32;
+    text-align: center;
+    font-size: .6rem;
+    color: #fff;
+    border-radius: 1rem
+}
+
+.content .sec-searchtime {
+    display: none;
+    border-bottom: .025rem dashed #cfcfcf;
+    padding: 1rem .8rem 1rem 0
+}
+
+.content .sec-searchtime .div-left {
+    float: left
+}
+
+.content .sec-searchtime .div-left .p-dh {
+    float: left;
+    text-align: right;
+    width: 2.3rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .65rem;
+    color: #222
+}
+
+.content .sec-searchtime .div-left .p-img {
+    padding-left: .15rem;
+    float: left;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    display: flex;
+    align-items: center
+}
+
+.content .sec-searchtime .div-left .p-img img {
+    width: .45rem
+}
+
+.content .sec-searchtime section {
+    float: right;
+    width: 77%;
+    border-radius: 1rem;
+    border: .025rem solid #f74c32
+}
+
+.content .sec-searchtime section .div-rl {
+    float: left;
+    width: 72%;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    display: flex;
+    align-items: center
+}
+
+.content .sec-searchtime section .div-rl input {
+    border: 0;
+    text-align: center;
+    float: left;
+    background-color: transparent;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .6rem;
+    color: #222;
+    display: block
+}
+
+.content .sec-searchtime section .div-rl input:first-of-type {
+    border-right: .025rem solid #f74c32;
+    width: 55%
+}
+
+.content .sec-searchtime section .div-rl input:last-of-type {
+    width: 45%
+}
+
+.content .sec-searchtime section .div-right {
+    float: right
+}
+
+.content .sec-searchtime section .div-right input {
+    float: left;
+    display: block;
+    background-color: transparent;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .6rem;
+    color: #222;
+    border: 0
+}
+
+.content .sec-searchtime section .div-right input:last-of-type {
+    float: right;
+    width: 3.1rem;
+    background-color: #f74c32;
+    text-align: center;
+    font-size: .6rem;
+    color: #fff;
+    border-radius: 1rem
+}
+
+.content .div-box {
+    padding-top: .5rem
+}
+
+.content .div-box ul:first-of-type li {
+    height: 1.73rem;
+    line-height: 1.73rem
+}
+
+.content .div-box ul:nth-of-type(2n) {
+    background-color: #feedea
+}
+
+.content .div-box ul:nth-of-type(2n) li:first-of-type section {
+    background-color: #feedea
+}
+
+.content .div-box ul {
+    padding: 0 .5rem
+}
+
+.content .div-box ul li {
+    font-size: .6rem;
+    color: #222;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    float: left;
+    text-align: center;
+    position: relative
+}
+
+.content .div-box ul li p {
+    float: right;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    display: flex;
+    align-items: center
+}
+
+.content .div-box ul li p img {
+    width: .225rem
+}
+
+.content .div-box ul li .p-yc img {
+    width: .375rem
+}
+
+.content .div-box ul li .zi {
+    z-index: 9
+}
+
+.content .div-box ul li section {
+    background-color: #fff;
+    text-align: left;
+    float: left;
+    width: 92.5%;
+    height: auto;
+    line-height: 1.4rem;
+    position: absolute;
+    padding: 0.3rem 0;
+    line-height: 0.8rem;
+}
+
+.content .div-box ul li section.yc {
+    overflow: hidden;
+    height: 1.4rem;
+    line-height: 1.4rem
+}
+
+.content .div-box ul li:first-of-type {
+    width: 42%
+}
+
+.content .div-box ul li:nth-of-type(2) {
+    width: 12.8%
+}
+
+.content .div-box ul li:nth-of-type(3) {
+    width: 19%
+}
+
+.content .div-box ul li:nth-of-type(4) {
+    width: 24.5%
+}
+
+.content .div-box ul li:nth-of-type(4).active {
+    color: #f74c32
+}
+
+.getDateBox .choiceDateTitle {
+    height: 2rem!important
+}
+
+.getDateBox .choiceDateTitle button {
+    color: #f74c32!important;
+    font-size: .6rem!important
+}
+
+#daywrapper ul li,
+#monthwrapper ul li,
+#yearwrapper ul li {
+    font-size: .6rem!important
+}
+
+.getDateBox .dateContent {
+    margin: 2rem 0!important
+}
+
+.div-tk {
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.div-tk .box {
+    border-radius: .35rem;
+    background-color: #fff;
+    width: 70%;
+    margin: 50% auto 0 auto
+}
+
+.div-tk .box>h4 {
+    text-align: center;
+    font-weight: 400;
+    border-bottom: .025rem solid #f4f4f4;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .6rem;
+    color: #222
+}
+
+.div-tk .box>ul li {
+    padding: 0 1.25rem;
+    border-bottom: .025rem solid #f4f4f4
+}
+
+.div-tk .box>ul li p {
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .55rem;
+    color: #222
+}
+
+.div-tk .box>ul li p.active {
+    color: #f74c32
+}
+
+.div-tk .box>ul li div {
+    float: right;
+    height: 2rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center
+}
+
+.div-tk .box>ul li div img {
+    float: right;
+    width: .75rem
+}
+
+.div-tk .box>div {
+    padding: 1rem 0 .5rem 0
+}
+
+.div-tk .box>div p {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: .25rem;
+    background-color: #f74c32;
+    height: 1.65rem;
+    line-height: 1.65rem;
+    font-size: .6rem;
+    color: #fff
+}
+
+.div-datatime {
+    display: none;
+    position: fixed;
+    top: 0;
+    border: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.div-datatime p {
+    height: 1.8rem;
+    line-height: 1.8rem;
+    font-size: .6rem;
+    color: #222;
+    background-color: #fff;
+    width: 80%;
+    margin: 60% auto 0 auto;
+    border-radius: .35rem;
+    text-align: center
+}
+
+.table-s tr td {
+    text-align: center;
+    font-size: .6rem;
+    color: #222;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    vertical-align: bottom;
+}
+.table-s tr:first-of-type td{
+    font-weight: bold;
+}
+.table-s tr td:first-of-type{
+    line-height: 1rem;
+    height: auto;
+    padding: 0.15rem;
+}
+.table-s tr td p {
+    float: right;
+    width: 20%;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    display: flex;
+    align-items: center
+}
+
+.table-s tr td p img {
+    width: .225rem
+}
+
+.table-s tr td:first-of-type {
+    width: 40%;
+}
+
+.table-s tr td:nth-of-type(2) {
+    width: 15%
+}
+
+.table-s tr td:nth-of-type(3) {
+    width: 20%
+}
+
+.table-s tr td:nth-of-type(4) {
+    width: 25%
+}
+
+.table-s tr .active {
+    color: #f74c32
+}
+
+.table-s tr:nth-of-type(2n) {
+    background-color: #feedea
+}

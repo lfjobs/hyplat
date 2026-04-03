@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>	
+	<package strict-method-invocation="false" name="corganization-token" namespace="/ea/corganization"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.ccompany.action.CCOrganizationAction" method="{1}">
+			<result name="list">/page/ea/ccompany/organization/organization_list.jsp</result>
+			<result name="invalid.token" type="redirectAction">ea_getOrganizationListAll</result>
+		    <result name="organizationlist">/page/ea/ccompany/organization/organization_list.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="corganization-no" namespace="/ea/corganization"  extends="struts-default">
+		<action name="n_ea_*" class="hy.ea.ccompany.action.CCOrganizationAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="orgtree">/page/WFJClient/pc/5l5C/human/org/orgmanage.jsp</result>
+			<result name="orgadd">/page/WFJClient/pc/5l5C/human/org/orgadd.jsp</result>
+			<result name="orgsort">/page/WFJClient/pc/5l5C/human/org/orgsort.jsp</result>
+
+
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="corganization-ntoken" namespace="/ea/corganization"   extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.ccompany.action.CCOrganizationAction" method="{1}">
+			<result name="sortchildren">/page/ea/ccompany/organization/organization_sortchildren.jsp</result>
+			<result name="list">/page/ea/ccompany/organization/organization.jsp</result>
+			<result name="list_a">/page/ea/ccompany/organization/org_Jobsettings.jsp</result>
+			<result name="list_e">/page/ea/ccompany/organization/org_Entry.jsp</result>
+			<result name="list_f">/page/ea/ccompany/organization/org_EntryTree.jsp</result>
+			<result name="add">/page/ea/ccompany/organization/organization_add.jsp</result>
+			<result name="organizationlist">/page/ea/ccompany/organization/organization_list.jsp</result>
+			<result name="toPrint">/page/ea/ccompany/organization/organization_print.jsp</result>
+		<!-- 导出EXCEL -->
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="organization.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>		
+	</package>
+	<package strict-method-invocation="false" name="corganization-jsonajax" namespace="/ea/corganization" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.ccompany.action.CCOrganizationAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

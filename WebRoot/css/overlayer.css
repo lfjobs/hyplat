@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+#fullbg{   
+background-color:Gray;   
+display:none;   
+z-index:3;   
+position:absolute;   
+left:0px;   
+top:0px;   
+filter:Alpha(Opacity=30);   
+/*IE*/   
+-moz-opacity:0.4;   
+/*Moz+FF*/   
+opacity:0.4;   
+}   
+  
+#dialog{   
+position:absolute;   
+width:200px;   
+height:200px;   
+display:none;   
+z-index:5;   
+}   

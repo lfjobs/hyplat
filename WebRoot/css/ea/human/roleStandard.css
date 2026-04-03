@@ -1,0 +1,243 @@
+html,body{
+    height:100%;
+}
+header {
+    background-color: #f74c32;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .75rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+
+.content .ac {
+    margin-bottom:0.6rem;
+}
+
+.content .sec-nav ul {
+    width:100%;
+    margin: 0 auto
+}
+
+.content .sec-nav ul li {
+    text-align: center;
+    /*width: 33%;*/
+    float: left;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: #222;
+    padding:0.1rem 0.4rem 0.1rem 0.3rem;
+}
+
+.content .sec-nav ul li img {
+    width: 1rem;
+    margin-right: .1rem
+}
+
+.content .sec-nav ul li p {
+    font-size: .9rem;
+    height:2rem;
+}
+
+.sec-hide{
+    background:#f9f9f9;
+    padding-left: 0.5rem;
+}
+
+
+.content .nav {
+    position: fixed;
+    z-index: 999;
+    top:-0.5rem;
+    width: 100%;
+}
+
+.content .sysSet{
+    margin-right: 0.5rem;
+    color:#222;
+}
+
+.content .sec-nav ul li .del img {
+    width: 1.2rem;
+}
+
+.content .p-wq span:nth-of-type(1) {
+    padding-right:0.2rem;
+}
+
+
+.content .sec-bottom {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 999;
+    padding: .25rem 0
+}
+
+.content .sec-bottom p {
+    text-align: center;
+    width: 21rem;
+    margin: 0 auto;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 1rem;
+    background-color: #f74c30;
+}
+.content .div-bottom {
+    left: 0;
+    width: 100%;
+    padding: .5rem 0;
+    background-color: #e64d3d;
+    text-align: center;
+    border-top: 0.35rem solid #f8f8f8;
+    height: 2rem;
+    line-height: 1.5rem;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+.container .ul-header {
+    position: fixed;
+    z-index: 9;
+    top: 4rem;
+    left: 0;
+    width: 94%;
+    background-color: #fff;
+}
+
+.content .sec-list ul li {
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    border-bottom: 0.025rem solid #ebebeb;
+    float: left;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 0.9rem;
+    color: #000000;
+    text-align: center;
+    width:100%;
+}
+.solid-circle {
+    width: 25px;
+    height: 25px;
+    background-color: #e1633b;
+    border-radius: 50%;
+    float:left;
+    margin-top:8px;
+}
+
+
+.content .sec-list ul li .role_name {
+    float: left;
+    margin-left: 10px;
+    font-size: 1.1rem;
+    font-weight: 550;
+
+ }
+
+
+.content .sec-list ul li .layui-person{
+    color: #f1ecec;
+    float: left;
+    font-size: 15px;
+    margin-left: -20px;
+
+}
+.content .sec-list ul li .layui-arrow_01 {
+    font-size: 25px;
+    float:left;
+    color: #c5b5b5;
+    margin-left:10px
+}
+.content .sec-list ul li .layui-arrow_02 {
+    font-size: 25px;
+    float:right;
+    color: #c5b5b5;
+    padding-right:25px
+}
+.content .sec-list ul li .role_person_num {
+    float: right;
+    padding-right: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.active {
+    background-color: #dd40284f;
+    color: white;
+    font-size: 12px;
+}
+
+.delete-class .layui-layer-title{
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+    background-color: #f74c32;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    color: #fefefe;
+    position: relative;
+    padding-left:30%;
+}
+.delete-class .layui-layer-content {
+    font-size: 1rem !important;
+    text-align: center;
+    line-height: 40px !important;
+}
+.delete-class .layui-layer-btn .layui-layer-btn0 {
+    border-color: #fff;
+    background-color: #fff;
+    color: #666;
+    border-right: 0.025rem solid #eee;
+}
+.delete-class .layui-layer-btn{
+    border-top: 0.025rem solid #eee;
+}
+.delete-class .layui-layer-btn{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.delete-class .layui-layer-btn a{
+    margin:0 !important;
+    padding:0 !important;
+    border: 0px solid #dedede !important;
+    width:50%;
+    height:3rem;
+    line-height:3rem;
+    font-size:1rem;
+    text-align:center;
+}
+
+
+

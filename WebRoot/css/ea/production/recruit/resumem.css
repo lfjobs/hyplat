@@ -1,0 +1,151 @@
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+::-webkit-input-placeholder {
+    color: #777;
+    font-size: .6rem
+}
+
+::-moz-placeholder {
+    color: #777;
+    font-size: .6rem
+}
+
+:-ms-input-placeholder {
+    color: #777;
+    font-size: .6rem
+}
+
+header {
+    /* background-color: #f74c32; */
+    border-bottom: 1px solid #d0d0d0;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .7rem;
+    color:  #6d6d6d
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .525rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+.content ul li {
+    padding: .75rem 1.125rem 1.25rem .875rem;
+    border-bottom: .025rem solid #f4f4f4
+}
+
+.content ul li .sec-left {
+    float: left
+}
+
+.content ul li .sec-left h3 {
+    font-weight: 400;
+    height: 1.65rem;
+    line-height: 1.65rem;
+    font-size: .8rem;
+    color: #222
+}
+.content ul li .sec-left h3 img{
+    width: 1.2rem;
+    margin-bottom: 0.1rem;
+}
+.content ul li .sec-left div p {
+    float: left;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    font-size: .6rem;
+    color: #555
+}
+
+.content ul li .sec-left div span {
+    float: left;
+    display: block;
+    width: .5rem;
+    height: 1.075rem;
+    position: relative
+}
+
+.content ul li .sec-left div span::after {
+    content: "";
+    position: absolute;
+    width: .05rem;
+    height: .575rem;
+    background-color: #ddd;
+    left: 50%;
+    top: 26%
+}
+
+.content ul li .sec-left .p-zw {
+    width: 10.5rem;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    font-size: .6rem;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.content ul li .sec-right {
+    position: relative;
+    width: 2.5rem;
+    float: right;
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    line-height: 3.5rem
+}
+
+.content ul li .sec-right .img-tx {
+    width: 2.5rem
+}
+
+.content ul li .sec-right .img-bq {
+    position: absolute;
+    top: 65%;
+    right: -14%;
+    width: 3.125rem
+}
+
+@media (min-width: 960px) {
+
+    .content,header{
+        margin:auto 25%!important;
+
+        border-left:1px solid #d0d0d0;
+        border-right:1px solid #d0d0d0;
+
+
+    }
+
+
+
+}

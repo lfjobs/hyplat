@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body{margin:0 auto; background-color: #f0f0f0;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; font-size:12px; color:#666; font-family:'华文黑体';-webkit-text-size-adjust:none;}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; }
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+.wfj_width{ width:92%; margin:0 auto;}
+.wfj_phwidth{ width:95%; margin:0 auto;}
+.bgcolorFFF{ background-color:#FFF;}
+
+
+
+
+
+/*------------------------------------------------wfj12_004-----------------------------------------------*/
+.wfj12_004 .wfj12_004_width{ width:94%; margin:0 auto;}
+
+.wfj_top{ width:100%; margin:0 auto; background-color:#F74C31; overflow:hidden;}
+.wfj_top ul li:nth-of-type(1){ float:left;width: 20%;height: 4.5rem;  line-height: 4.5rem;}
+
+.wfj_top ul li:nth-of-type(2){ float:left; text-align:center; color:#FFF;height: 4.5rem;  line-height: 4.5rem;  width: 58%;font-size: 1.5rem;}
+.wfj_top ul li img{vertical-align:middle;width: 1.1rem;  padding-left: 1rem;}
+
+.wfj12_004 .wfj12_004_content{ width:100%; overflow:hidden; clear:both; float:left;}
+.wfj12_004 .wfj12_004_hidden{ overflow:auto;}
+.wfj12_004 .wfj12_004_con{ width:100%; margin:0 auto; clear:both; float:left;}
+
+
+
+.qr_img{
+    text-align: center;
+    margin-top:1rem;
+}
+.wfj12_024_bottom{
+    text-align: center;
+    margin-top: 1rem;
+
+}
+
+.wfj12_024_bottom ul li{
+
+    font-size: 1.3rem;
+
+}
+.wfj12_024_icon{
+
+    width:6rem;
+}
+
+.td-0{
+
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.wfj12_024_width table{
+    margin-top:2rem;
+}
+
+.wfj12_024_width table td{
+    font-size:1.3rem;
+    color:#000;
+}
+
+.p-1{
+    color:red;
+    font-weight: bold;
+    padding:1rem 2rem 0rem 2rem;
+    text-indent: 1em;
+    font-size: 1.2rem;
+
+}
+.p-2{
+    color: #1d1c1c;
+    padding:0.2rem 2rem;
+    line-height: 2rem;
+    font-weight: bold;
+    text-indent: 2em;
+    font-size: 1.2rem;
+    word-break: break-all;
+}
+.p-0{
+    padding:0rem 2rem 0.5rem 2rem;
+}
+
+.wfj_top ul li:nth-of-type(2) img {
+    width: 10rem;
+}
+.div-img{
+    width: 100%;
+    text-align: center;
+}
+.div-img img{
+    width: 90%;
+}
+.div-img1{
+    width: 100%;
+    text-align: center;
+    margin-top:2rem;
+    margin-bottom:4rem;
+}
+.div-img1 img{
+    width: 90%;
+}
+.div-img0{
+    margin-top:1rem;
+}
+@media (min-width: 960px) {
+    html{
+        margin: 0 20% 0 20%;
+    }
+
+}
+/*------------------------------------------------wfj12_004 end-----------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

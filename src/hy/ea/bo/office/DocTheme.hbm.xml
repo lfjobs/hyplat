@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocTheme" table="DT_OA_DOCTHEME">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="themeId" type="java.lang.String">
+			<column name="themeId" length="50" />
+		</property>
+		<property name="themeName" type="java.lang.String">
+			<column name="themeName" length="255" />
+		</property>
+		<property name="creatorID" type="java.lang.String">
+			<column name="creatorID" length="50" />
+		</property>
+		<property name="module" type="java.lang.String">
+			<column name="module" length="50" />
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column name="createTime" length="20" />
+		</property>
+
+		
+	</class>
+</hibernate-mapping>

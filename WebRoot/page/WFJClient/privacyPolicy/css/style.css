@@ -1,0 +1,137 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none;  /*webkit浏览器*/
+    -ms-user-select: none;   /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;      /*文本不可选*/
+    -webkit-overflow-scrolling: touch; /*兼容ios滑屏卡顿*/
+    -webkit-tap-highlight-color:transparent;/*去除手机浏览器点击时出现背景颜色*/
+    font-size: 12px;
+    max-width: 1920px;
+}
+a{
+    text-decoration: none;/*去除下划线*/
+    -webkit-tap-highlight-color:transparent;/*是一个不规范的属性，去除a标签点击时出现的背景颜色*/
+    outline: none;
+    color: #000;
+}
+li,span,input,textarea{
+    outline: none;  /*去除点击input出现的边框颜色*/
+    -webkit-appearance: none; /*去除系统默认appearance的样式,常用于IOS下移除原生样式*/
+    cursor: pointer;
+}
+select{
+    outline: none;
+}
+img{
+    -webkit-tap-highlight-color:transparent;/*去除点击有背景颜色*/
+    vertical-align: middle;/*图片垂直居中*/
+    object-fit: cover;/*图片不变形平铺居中*/
+}
+ul,li,ol{list-style: none;}
+::-webkit-scrollbar {
+    width: 0;/*去滚动条*/
+}
+
+.header{
+    height: 2rem;
+    line-height: 2rem;
+    overflow: hidden;
+    background-color: #f74c32;
+}
+.lic{
+    height: 100%;
+    background-color: #eeeeee;
+}
+.header li{
+    float: left;
+    text-align: center;
+}
+.header li:nth-child(1){
+    width: 15%;
+    height: 0.8rem;
+}
+.header li:nth-child(1) img{
+    height: 1rem;
+}
+.header li:nth-child(2){
+    width: 70%;
+    font-size: 0.7rem;
+    color: #fff;
+}
+
+
+.pric_header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+.pric_con{
+    letter-spacing: 2px;
+}
+.pric_con h2{
+    line-height: 3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+}
+.pric_con p{
+    line-height: 1rem;
+    font-size: 0.5rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+.pric_con h5{
+    line-height: 0.6rem;
+    border-left: 3px solid #f74c32;
+    font-size: 0.5rem;
+    font-weight: 500;
+    padding: 0 0 0 0.3rem;
+    margin: 0.3rem 0 0.7rem 0.5rem;
+}
+
+header {
+    background-color: #f74c32;
+    height: 2rem;
+}
+
+header ul {
+    padding: 0 .5rem
+}
+
+header ul li {
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.7rem;
+    color: #ffffff
+}
+
+header ul li:first-of-type {
+    width: 20%
+}
+
+header ul li:first-of-type img {
+    width: .45rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 58%;
+    text-align: center
+}
+
+header ul li:nth-of-type(3) {
+    width: 20%;
+    text-align: right;
+    font-size: .6rem
+}
+
+@media (min-width: 960px) {
+
+
+
+}

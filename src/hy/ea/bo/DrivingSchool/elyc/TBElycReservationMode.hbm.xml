@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.DrivingSchool.elyc.TbElycReservationMode" table="Tb_Elyc_Reservation_Mode" schema="HYPLAT">
+        <id length="50" name="rmKey">
+            <column length="50" name="rmKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="reservationModeId" type="java.lang.String">
+            <column name="reservationModeId"  length="50" ><comment>逻辑ID</comment></column>
+        </property>
+        <property name="modeName" type="java.lang.String">
+            <column name="modeName"  length="50" ><comment>模式名称</comment></column>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" length="2" ><comment>模式状态；00未启用，01：启用</comment></column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId"  length="50" ><comment>驾校ID</comment></column>
+        </property>
+        <property name="createdate" type="java.util.Date">
+            <column name="createdate"  ><comment>创建时间</comment></column>
+        </property>
+        <property name="updatedate" type="java.util.Date">
+            <column name="updatedate" length="16" ><comment>更新时间</comment></column>
+        </property>
+        <property name="createperson" type="java.lang.String">
+            <column name="createperson"  length="50" ><comment>创建人ID</comment></column>
+        </property>
+        <property name="updateperson" type="java.lang.String">
+            <column name="updateperson"  length="50" ><comment>修改人</comment></column>
+        </property>
+
+    </class>
+</hibernate-mapping>

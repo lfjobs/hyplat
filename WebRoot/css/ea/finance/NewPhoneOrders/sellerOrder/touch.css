@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+.tabBox .hd {
+    padding: 0;
+    background: #f4f4f4;
+    position: relative;
+}
+.tabBox .hd ul {
+    width: 100%;
+    position: absolute;
+    border-bottom: 1px solid #ddd;
+    top: 0;
+    overflow: hidden;
+    background: #fff;
+    z-index: 1;
+}
+.tabBox .hd ul li {
+    float: left;
+    padding: 0;
+    font-size: 0.7rem;
+    width: 20%;
+    margin: 0 2.5%;
+    text-align: center;
+}
+.tabBox .hd ul .active {
+    background: #fff;
+    color: #ff6600;
+    border-bottom: 2px solid #ff6600;
+}
+.tabBox .tempWrap ul{
+
+    background: #f3f3f3;
+}
+.bd ul {
+
+}
+.bd li {
+
+}
+.bd li a {
+    color: #666;
+}

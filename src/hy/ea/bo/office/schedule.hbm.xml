@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office"> 
+	<class name="Schedule" table="dtSchedule">
+		<id length="50" name="scheduleKey">
+			<column length="50" name="scheduleKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="scheduleID">
+			<column length="50" name="scheduleID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="corganizationID">
+			<column length="50" name="corganizationID"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="workContent">
+			<column length="250" name="workContent" />
+		</property>
+		<property  name="workSchedule">
+			<column  name="workSchedule" />
+		</property>
+		<property  name="workStatus">
+			<column length="250" name="workStatus" />
+		</property>
+		<property  name="appraise">
+			<column  name="appraise" />
+		</property>
+	</class>
+</hibernate-mapping>

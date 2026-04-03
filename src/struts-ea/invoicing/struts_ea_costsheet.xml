@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="costsheet-token"  namespace="/ea/costsheet" extends="ea-ntoken">
+		<action name="t_ea_*" class="hy.ea.invoicing.action.CostSheetAction" method="{1}">
+			<result name="list">/page/ea/main/finance/invoicing/Purchase_list.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="costsheet-ntoken"  namespace="/ea/costsheet"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.invoicing.action.CostSheetAction" method="{1}">
+		     <result name="historylist">/page/ea/main/finance/invoicing/costSheet_historylist.jsp</result>
+			<result name="fxlb">/page/ea/main/finance/invoicing/costSheet_list.jsp</result>
+			<result name="fxlbhumen">/page/ea/main/finance/invoicing/costSheet_list.jsp</result>
+			<result name="budget_complete">/page/ea/main/finance/invoicing/budget_complete.jsp</result>
+			<result name="pszy">/page/ea/main/finance/invoicing/budget_szy.jsp</result>
+			<result name="pdetailist">/page/ea/main/finance/invoicing/costSheet_detaillist.jsp</result>
+			<result name="zbqsh">/page/ea/main/finance/invoicing/costSheet_examinelist.jsp</result>
+			<result name="zbqysh">/page/ea/main/finance/invoicing/costSheet_examinelist.jsp</result>
+			<result name="projectprint">/page/ea/main/finance/invoicing/costSheet_printlist.jsp</result>
+			<result name="printcover">/page/ea/main/finance/invoicing/costSheet_printcover.jsp</result>
+			<result name="printtprice">/page/ea/main/finance/invoicing/costSheet_tprice.jsp</result>
+			<result name="printpexplain">/page/ea/main/finance/invoicing/costSheet_printpexplain.jsp</result>
+			<result name="printpprice">/page/ea/main/finance/invoicing/costSheet_printpprice.jsp</result>
+			<result name="printsprice">/page/ea/main/finance/invoicing/costSheet_printsprice.jsp</result>
+            <result name="printdprice">/page/ea/main/finance/invoicing/costSheet_printdprice.jsp</result>
+			<result name="bjlb">/page/ea/main/finance/invoicing/costSheet_list_parity.jsp</result>
+			<result name="list_2">/page/ea/main/finance/invoicing/costSheet_list_credit.jsp</result>
+			<result name="list_1_parity">/page/ea/main/finance/invoicing/costSheet_jqm_parity.jsp</result>
+			<result name="add">/page/ea/main/finance/invoicing/costSheet_add.jsp</result>			
+			<result name="getlistorer">/page/ea/main/finance/invoicing/wfjorer.jsp</result>
+			<result name="edit">/page/ea/main/finance/invoicing/costSheet_edit.jsp</result>
+			<result name="edit_e">/page/ea/main/finance/invoicing/costSheet_edit_e.jsp</result>
+			<result name="printcsb">/page/ea/main/finance/invoicing/csbsprint.jsp</result>
+			<result name="login">/page/ea/not_login.jsp</result>
+			<result name="doccontract">/page/ea/main/finance/invoicing/costSheet_contract.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="costSheet.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="costsheet-jsonajax" namespace="/ea/costsheet" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.invoicing.action.CostSheetAction" method="{1}">
+		<result name="syserror">/page/ea/sys_error.jsp</result>
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

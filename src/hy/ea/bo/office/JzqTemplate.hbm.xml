@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="JzqTemplate" table="DT_OA_DOC_JzqTemplate">
+		<id length="50" name="jzqtKey">
+			<column length="50" name="jzqtKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="jzqtId" type="java.lang.String">
+			<column name="jzqtId" length="50" />
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50" />
+		</property>
+		<property name="templateID" type="java.lang.String">
+			<column name="templateID" length="50" />
+		</property>
+		<property name="scene" type="java.lang.String">
+			<column name="scene" length="50" />
+		</property>
+		<property name="templateName" type="java.lang.String">
+			<column name="templateName" length="50" />
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="organizationdesc-token" namespace="/ea/organizationdesc"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.ccompany.action.OrganizationdescAction" method="{1}">
+			<result name="getList">/page/ea/ccompany/organization/orgdesc_list.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="organizationdesc-ntoken" namespace="/ea/organizationdesc" extends="struts-default">
+		<action name="ea_*" class="hy.ea.ccompany.action.OrganizationdescAction" method="{1}">
+			<result name="getList">/page/ea/ccompany/organization/orgdesc_list.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="organizationdesc.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,411 @@
+@charset "utf-8";
+.bgff {
+    background-color: #fff
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.db {
+    display: block
+}
+
+.w100 {
+    width: 100%
+}
+
+.hover {
+    cursor: pointer
+}
+
+.fixed_top {
+    position: fixed;
+    top: 0;
+    left: 0
+}
+
+.fixed_bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0
+}
+
+body,
+html {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-overflow-scrolling: touch
+}
+
+body {
+    margin: 0 auto;
+    background-color: #fff;
+    width: 100%
+}
+
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+input,
+li,
+menu,
+p,
+section,
+select,
+span,
+table,
+td,
+textarea,
+th,
+ul {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: '微软雅黑'
+}
+
+img {
+    cursor: pointer;
+    border: none;
+    vertical-align: middle
+}
+
+li,
+ol,
+ul {
+    list-style: none
+}
+
+a,
+a:link {
+    text-decoration: none;
+    color: #666
+}
+
+a:active,
+a:hover {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+a:focus {
+    outline: 0
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+.txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.txt_2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.txt_3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+input {
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+::-webkit-scrollbar {
+    width: 0
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: table
+}
+
+.clearfix:after {
+    clear: both;
+    overflow: hidden
+}
+
+.clearfix {
+    zoom: 1
+}
+
+::-webkit-input-placeholder {
+    color: #ccc
+}
+
+:-moz-placeholder {
+    color: #ccc
+}
+
+::-moz-placeholder {
+    color: #ccc
+}
+
+:-ms-input-placeholder {
+    color: #ccc
+}
+
+.div-kc{
+    display: none;
+    width: 101%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    z-index: 99999;
+    background-color: #fff;
+}
+.div-kc .box p{
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .65rem;
+    text-align: center;
+}
+.div-kc .box p span{
+    width: 0.65rem;
+}
+header ul li {
+    float: left;
+    width: 15%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: .9rem;
+    color: #222
+}
+
+header ul li:first-of-type img {
+    margin-left: .95rem;
+    width: .5rem
+}
+
+header ul li:nth-of-type(2) {
+    width: 70%;
+    text-align: center
+}
+
+header ul li:last-of-type {
+    font-size: .75rem;
+    color: #db1616
+}
+
+.content {
+    background: url(../images/bg_01.png) no-repeat left top;
+    background-size: 100%
+}
+
+.content section.con_co ul li.li_right_l p.left_name {
+    width: 25%!important
+}
+
+.content section.con_co ul li.li_right_l input {
+    width: 64%!important
+}
+
+.content section.con_co ul li.li_left_l p.left_name {
+    width: 60%!important
+}
+
+.content section.con_co ul li.li_left_l input {
+    width: 30%!important
+}
+
+.content section.con_co ul li:not(.li_name) {
+    padding-left: 1rem;
+    border-bottom: .025rem solid #f2f2f2
+}
+
+.content section.con_co ul li:not(.li_name) p.left_name {
+    float: left;
+    width: 40%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: .75rem;
+    color: #222
+}
+
+.content section.con_co ul li:not(.li_name) p.left_name span {
+    display: inline-block;
+    width: .45rem;
+    font-size: .75rem;
+    color: #e81515
+}
+
+.content section.con_co ul li:not(.li_name) div {
+    padding-right: .45rem;
+    float: right;
+    width: 33%
+}
+
+.content section.con_co ul li:not(.li_name) div p {
+    float: left;
+    width: 80%;
+    text-align: right;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: .6rem;
+    color: #ccc
+}
+
+.content section.con_co ul li:not(.li_name) div p.p_clo_red {
+    color: #db1616
+}
+
+.content section.con_co ul li:not(.li_name) div img {
+    float: right;
+    width: .325rem;
+    margin-left: .5rem;
+    margin-top: 21%
+}
+
+.content section.con_co ul li:not(.li_name) input {
+    width: 45%;
+    background-color: transparent;
+    float: right;
+    text-align: right;
+    line-height: 2.5rem;
+    font-size: .6rem;
+    color: #222;
+    border: 0;
+    padding-right: 1.4rem
+}
+
+.content section.con_co ul .li_name {
+    padding-left: 1rem
+}
+.content section.con_co ul .li_name p.left_name {
+    float: left;
+    padding-right: .5rem;
+    width: 25%;
+    height: 2.125rem;
+    line-height: 2.125rem;
+    font-size: .75rem;
+    color: #222
+}
+
+.content section.con_co ul .li_name p.left_name span {
+    display: inline-block;
+    width: .45rem;
+    font-size: .75rem;
+    color: #e81515
+}
+
+.content section.con_co ul .li_name div ul {
+    padding-top: .75rem;
+    width: 63%;
+    float: left
+}
+
+.content section.con_co ul .li_name div ul li {
+    padding: 0;
+    width: 33%;
+    border: 0;
+    float: left
+}
+
+.content section.con_co ul .li_name div ul li p {
+    text-align: center
+}
+
+.content section.con_co ul .li_name div ul li p img {
+    width: 1.5rem
+}
+
+.content section.con_co ul .li_name div ul li p:last-of-type {
+    text-align: center;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .75rem;
+    color: #222
+}
+
+.content section.con_co ul .li_name div>img {
+    float: right;
+    width: .325rem;
+    margin-right: .435rem;
+    margin-top: 10.5%
+}
+
+.content section.btn_footer {
+    margin-top: .25rem;
+    margin-bottom: .5rem;
+    padding: 1.875rem 0;
+    background-color: #f2f2f2
+}
+
+.content section.btn_footer p {
+    width: 44.4%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: .25rem;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    font-size: .9rem;
+    color: #db1616;
+    background-color: #fff;
+    border: .025rem solid #db1616
+}
+
+#shengchanriqi_xz input,
+#youxiaoriqi_xz input {
+    float: left;
+    width: 80%;
+    padding: 0
+}
+
+#dateCancel,
+#dateSure {
+    color: #db1616
+}
+.li-div2 div{
+    padding-right: .45rem;
+    float: right;
+    width: 33%;
+}
+.li-div2 input{
+    float: left!important;
+    width: 80%!important;
+    padding: 0!important;
+}
+.li-div2 img{
+    float: right;
+    width: .325rem;
+    margin-left: .5rem;
+    margin-top: 21%;
+}

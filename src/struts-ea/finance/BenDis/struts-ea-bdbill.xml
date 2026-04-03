@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="bdbill-sajaxs" namespace="/ea/bdbill" extends="json-default">
+		<action name="sajax_*" class="hy.ea.finance.action.BenDis.bdBillAction" method="{1}">
+	<!-- 返回类型为json 在sjon-default中定义 -->  
+			<result type="json">  
+				<!-- root的值对应要返回的值的属性 -->    
+				<!-- 这里的result值即是 对应action中的 result -->  
+				<param name="root">result</param>  
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="bdbill-ntoken" namespace="/ea/bdbill" extends="struts-default">
+		<action name="ea_*" class="hy.ea.finance.action.BenDis.bdBillAction" method="{1}">
+			<result name="fpjinbi">/page/ea/main/finance/BenDis/fpjinbi_list.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="nologin">/page/ea/not_login.jsp</result>
+			<result name="mobilelist">/page/ea/main/finance/mobile/mobile_list.jsp</result>
+			<result name="mobilerefund">/page/ea/main/finance/mobile/mobileRefund.jsp</result>
+			<result name="list">/page/ea/main/finance/BenDis/bdbill_list.jsp</result>
+			<result name="getskd">/page/ea/main/finance/BenDis/ordergetsk_list.jsp</result>
+			<result name="getdxskd">/page/ea/main/finance/companySupport.jsp</result>
+			<result name="skd">/page/ea/main/finance/BenDis/wfjsk_list.jsp</result>
+			<result name="dxskd">/page/ea/main/finance/cashReceipts.jsp</result>
+			<result name="getzkd">/page/ea/main/finance/BenDis/ordershou_list.jsp</result>
+			<result name="edit">/page/ea/main/finance/BenDis/orderedit.jsp</result>
+			<result name="invoice">/page/ea/main/finance/BenDis/invoice.jsp</result>
+			<result name="look">/page/ea/main/finance/mobile/mobileLook.jsp</result>
+   			<result name="zkdck">/page/ea/main/finance/BenDis/orderrgetzk_edit.jsp</result>
+			<result name="jbedit">/page/ea/main/finance/BenDis/fpjinbi_edit.jsp</result>
+			<result name="refund">/page/ea/main/finance/BenDis/refund.jsp</result>
+			<result name="addrefund">/page/ea/main/finance/BenDis/addrefund.jsp</result>
+			<result name="printcashier4CashAccept">/page/ea/main/finance/company/cashierBillsPrint4CashAccept.jsp</result>
+			<result name="xp">/page/ea/main/finance/company/smallTicketsprint.jsp</result>
+			<result name="Rxp">/page/ea/main/finance/company/smallRestaurantsprint.jsp</result>
+
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="skd.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+</struts>

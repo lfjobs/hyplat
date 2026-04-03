@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="resumes-ntoken" namespace="/ea/resumes"
+		extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.ResumeAction" method="{1}">
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+			<result name="query">/page/ea/main/production/resume/educationalBackg.jsp</result>
+			<result name="queryResume">/page/ea/main/production/resume/internshipExperience.jsp</result>
+			<result name="queryPersion">/page/ea/main/production/resume/resume.jsp</result>
+			<result name="update">/page/ea/main/production/resume/updateEducationalBackg.jsp</result>
+			<result name="updateResume">/page/ea/main/production/resume/updateInternshipExperience.jsp</result>
+			<result name="querySearch">/page/ea/main/production/resume/JobSearchIntention.jsp</result>
+			<result name="evaluation">/page/ea/main/production/resume/selfEvaluation.jsp</result>
+			<result name="privacy">/page/ea/main/production/resume/stealthSetting.jsp</result>
+			<result name="edit">/page/ea/main/production/resume/Basicdata.jsp</result>
+			<result name="queryResumes">/page/ea/main/production/resume/resumeName.jsp</result>
+			<result name="resumeManagement">/page/ea/main/production/resume/resumeManagement/management.jsp</result>
+			<result name="Details">/page/ea/main/production/resume/resumeManagement/details.jsp</result>
+			<result name="Record">/page/ea/main/production/resume/resumeManagement/record.jsp</result>
+			<result name="postion">/page/ea/main/production/resume/resumeManagement/position.jsp</result>
+			<result name="candidates">/page/ea/main/production/resume/resumeManagement/candidates.jsp</result>
+
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="resumes-sajaxs" namespace="/ea/resumes" extends="json-default">
+		<action name="sajax_ea_*" 
+		         class="hy.ea.production.action.cprocedure.ResumeAction" method="{1}">
+	<!-- 返回类型为json 在sjon-default中定义 -->  
+			<result type="json">  
+				<!-- root的值对应要返回的值的属性 -->    
+				<!-- 这里的result值即是 对应action中的 result -->  
+				<param name="root">result</param>  
+			</result>
+		</action>
+	</package>
+</struts>

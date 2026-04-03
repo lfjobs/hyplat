@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<package name="ea" extends="base">
+		<interceptors>
+			<interceptor name="permission"
+				class="hy.ea.interceptor.EAPermission">
+			</interceptor>
+			<interceptor-stack name="eaStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="permission" />
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="not_login">/page/ea/not_login.jsp</result>
+			<result name="no_use">/page/ea/no_use.jsp</result>
+			<result name="no_authority">/page/ea/no_authority.jsp</result>
+			<result name="time_out">/page/ea/time_out.jsp</result>
+		</global-results>
+	</package>
+
+
+	<package strict-method-invocation="false" name="ea-token" extends="ea">
+		<interceptors>
+			<interceptor-stack name="ea-tokenStack">
+				<interceptor-ref name="eaStack" />
+				<interceptor-ref name="token" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 这里是默认的拦截器栈，在编辑的时候需要Token -->
+		<default-interceptor-ref name="ea-tokenStack" />
+	</package>
+	
+	<package strict-method-invocation="false" name="ea-ntoken" extends="ea">
+
+		<!-- 这里是默认的拦截器栈，没有token -->
+		<default-interceptor-ref name="eaStack" />
+	</package>
+  
+    
+	<package strict-method-invocation="false" name="ea-sajax" extends="json-default">
+		<interceptors>
+			<interceptor name="ea_ajax_permission"
+				class="hy.ea.interceptor.EAPermission">
+			</interceptor>
+			<interceptor-stack name="eaAjaxStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="ea_ajax_permission" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 这里是默认的拦截器栈 -->
+		<default-interceptor-ref name="eaAjaxStack" /> 
+		
+		<global-results>
+			<result name="not_login">page/ea/not_login.jsp</result>
+			<result name="no_authority">page/ea/no_authority.jsp</result>
+			<result name="time_out">page/ea/time_out.jsp</result>
+		</global-results>
+	</package>
+	
+	<include file="struts-ea/struts-ea-ccode.xml" />
+	<include file="struts-ea/struts-ea-cea.xml" />
+	<include file="struts-ea/struts-ea-cmenu.xml" />
+	<include file="struts-ea/struts-ea-company.xml" />
+	<include file="struts-ea/struts-ea-cposition.xml" />
+	<include file="struts-ea/struts-ea-crole.xml" />
+	<include file="struts-ea/struts-ea-login.xml" />
+	<include file="struts-ea/struts-ea-caccount.xml" />
+	<include file="struts-ea/struts-ea-vlogin.xml" />
+	<include file="struts-ea/struts-ea-accessresource.xml" />
+	<include file="struts-ea/struts-ea-register.xml" />
+	<include file="struts-ea/struts-ea-cmenuallot.xml" />
+	<include file="struts-ea/struts-ea-croleallot.xml" />
+	<include file="struts-ea/struts-ea-clogbook.xml" />
+	<include file="struts-ea/struts-ea-DTCMODAL.xml" />
+	<!-- 系统消息提醒 -->
+	<include file="struts-ea/struts-ea-systemremind.xml" />
+	<!-- 驾校联营平台 -->
+	<include file="struts-ea/struts-st.xml" />
+	<!-- 考勤签到（新版） -->
+	<include file="struts-ea/struts-ea-signin.xml" />
+	<include file="struts-ea/struts-ea-dictdata.xml" />
+	<include file="struts-ea/struts-ea-file.xml" />
+</struts>

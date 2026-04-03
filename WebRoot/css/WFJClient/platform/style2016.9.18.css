@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+html,body{
+
+}
+body{margin:0 auto; background-color: #fff;width:100%;}
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe,table,th,td{margin:0 0; padding:0px 0px; color:#666; font-family:'微软雅黑';}
+img{ cursor:pointer;border:none;}
+ul,li,ol{ list-style: none;}
+a,a:link { text-decoration: none; color: #666;}
+a:active,a:hover { text-decoration: none; }
+a:focus{ outline: none; }
+.left{float:left;}
+.right{float:right;}
+/*公共样式*/
+
+/*申请加入连赢经济平台会员*/
+.content2 {
+    padding: 0;
+}
+.terrace li{
+    overflow: hidden;
+    line-height: 1.85rem;
+    padding: 0.5rem 0;
+    margin-left: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+.terrace a li p{
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    float: left;
+    border: 2px solid #3f81c1;
+    border-radius: 50%;
+    color: #3f81c1;
+    background: #e6f3ff;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.terrace a:nth-child(2) li p{
+    border: 2px solid #41b651;
+    background: #ebfce5;
+    color: #41b651;
+}
+.terrace a:nth-child(3) li p{
+    border: 2px solid #ff0000;
+    background: #ffbfbf;
+    color: #ff0000;
+}
+.terrace a:nth-child(4) li p{
+    border: 2px solid #5670b6;
+    background: #dce5ff;
+    color: #5670b6;
+}
+.terrace a:nth-child(5) li p{
+    border: 2px solid #ea68a2;
+    color: #ea68a2;
+    background: #f5cfe0;
+}
+.terrace a:nth-child(6) li p{
+    border: 2px solid #8fc31f;
+    color: #8fc31f;
+    background: #e6efd2;
+}
+.terrace li span{
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding-left: 0.5rem;
+}
+/*申请加入连赢经济平台会员 end*/
+
+/*省级联营经济平台*/
+.pingtai li{
+    margin-left: 0.5rem;
+    padding: 0.5rem 0 0.3rem 0;
+    overflow: hidden;
+    position: relative;
+}
+.pingtai li .img{
+    width: 23%;
+    float: left;
+}
+.pingtai li img{
+    width: 100%;
+}
+.pingtai li .txt{
+    float: left;
+    width: 73%;
+    margin-left: 0.5rem;
+
+}
+.pingtai li .txt h5{
+    font-size: 0.75rem;
+    position: absolute;
+    top: 0.6rem;
+
+}
+.pingtai li .txt p{
+    font-size: 0.6rem;
+    position: absolute;
+    bottom: 0.8rem;
+    color: #ef6060;
+}
+.pingtai li .txt span{
+    font-size: 0.8rem;
+}
+/*省级联营经济平台 end*/
+
+/*省级联营经济平台2*/
+.search_pt{
+    text-align: center;
+    border-bottom: 5px solid #eee;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+}
+.search_pt input{
+    width: 95%;
+    background: #eeeeee;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.65rem;
+    line-height: 1.5rem;
+    margin: 0.2rem 0;
+    outline: none;
+    text-align: left;
+    text-indent: 1em;
+}
+.search_pt .sear{
+    width: 95%;
+    font-size: 0.65rem;
+    line-height: 1.5rem;
+    background: transparent;
+    position: absolute;
+    top: 0.2rem;
+    left: 2.5%;
+    color: #a4a4a4;
+    background: url("../images/search.png") 43% 50% no-repeat;
+    background-size: 0.7rem;
+    text-indent: 1em;
+}
+.lypingtai li{
+    overflow: hidden;
+    margin-left: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+.lypingtai li .left{
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border: 2px solid #e0620d;
+    border-radius: 50%;
+    color: #e0620d;
+    background: #fff4ec;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.lypingtai li .txt{
+    float: left;
+    line-height: 2.25rem;
+    font-size: 0.8rem;
+    padding-left: 0.8rem;
+}
+/*省级联营经济平台2 end*/
+
+@media (min-width: 960px) {
+    html {
+
+        margin: 0 20% 0 20%;
+        zoom:20%;
+    }
+
+    header {
+        width: 60%;
+
+    }
+    header ul li img {
+        width: 10%;
+
+    }
+
+}

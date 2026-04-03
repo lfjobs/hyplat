@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 人事-正式员工管理 --> 
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="mobilecosincumbent-ntoken" namespace="/ea/mobilecosincumbent"
+		extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.MobileEmploymentAction" method="{1}">
+			<param name="args">99_10_50_50_50_50</param>
+			<result name="to_employment">
+				/page/mobile/main/human/office/personal_department/personal_incumbent.jsp
+			</result>
+			<result name="staffForCashier">/page/ea/main/finance/personal_department/cashierbills_jqm_cstaffs.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="staff.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+</struts>
