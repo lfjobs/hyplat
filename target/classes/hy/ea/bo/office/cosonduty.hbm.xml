@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="COSOnduty" table="dtCOSOnduty">
+		<id length="50" name="ondutyKey">
+			<column length="50" name="ondutyKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ondutyID">
+			<column length="50" name="ondutyID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true"/>
+		</property>
+		<property name="departmentName">
+			<column length="250" name="departmentName"/>
+		</property>
+		<property name="headOfDepartment">
+			<column length="250" name="headOfDepartment"/>
+		</property>
+		<property name="staffName">
+			<column length="250" name="staffName"/>
+		</property>
+		<property name="dutyRoom">
+			<column length="250" name="dutyRoom" />
+		</property>
+			<property name="attendedTime">
+			<column length="250" name="attendedTime"/>
+		</property>
+		<property name="scope">
+			<column length="250" name="scope"/>
+		</property>
+		<property name="jobRecord">
+			<column length="250" name="jobRecord"/>
+		</property>
+		<property name="remark">
+			<column length="250" name="remark" />
+		</property>
+	</class>
+</hibernate-mapping>

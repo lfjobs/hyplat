@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.human.COS;
@@ -49,6 +52,7 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class MobileCOSJobPlanAction {
+	private static final Logger logger = LoggerFactory.getLogger(MobileCOSJobPlanAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -139,11 +143,11 @@ public class MobileCOSJobPlanAction {
 		response.setCharacterEncoding("UTF-8");
 		try {
 			response.getWriter().write(outString);
-			//System.out.println(outString);
+			//logger.info("值：{}", outString);
 			response.flushBuffer();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 		//return "listSummary";
@@ -279,7 +283,7 @@ public class MobileCOSJobPlanAction {
 			enddate = sdf.parse(job.getStrEndDate());
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		job.setStartDate(startdate);

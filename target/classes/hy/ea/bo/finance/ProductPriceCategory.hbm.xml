@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="ProductPriceCategory" table="dt_ProductPriceCategory">
+		<id length="50" name="pcKey">
+			<column length="50" name="pKey" /> 
+			<generator class="uuid" />
+		</id>
+		<property name="pcID"> 
+			<column length="50" name="pcID" />	
+		</property>
+		<property name="ppID">
+			<column length="50" name="ppID" />	
+		</property>
+		<property name="category">
+			<column length="50" name="category" />
+		</property>		
+		<property name="price">
+			<column length="250" name="price" />
+		</property>
+		<property name="money">
+			<column length="250" name="money" />
+		</property>		
+	</class>
+</hibernate-mapping>

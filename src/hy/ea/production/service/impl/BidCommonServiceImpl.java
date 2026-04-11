@@ -1,5 +1,8 @@
 package hy.ea.production.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 import java.math.BigDecimal;
@@ -143,7 +146,7 @@ public class BidCommonServiceImpl implements BidCommonService {
 		
 		cb.setBillsType("金币出库单");// 单据类型
 		cb.setJournalNum(pzid1);// 凭证号
-		System.out.println("金币出库单:"+cb.getJournalNum());
+		logger.info("调试信息");
 
 		cb.setStaffID(staffId);// 责任人ID
 		cb.setStaffName(staname);//责任人name
@@ -229,7 +232,7 @@ public class BidCommonServiceImpl implements BidCommonService {
 		cb1.setBillsType("金币入库单");
 		cb1.setStatus("15");
 		cb1.setJournalNum(pzid2);// 凭证号
-		System.out.println("金币入库单:"+cb1.getJournalNum());
+		logger.info("调试信息");
 		cb1.setStaffID(null);// 责任人ID
 		cb1.setStaffName(null);//责任人name
 		cb1.setStaffCode(null);// 责任人编号
@@ -262,7 +265,7 @@ public class BidCommonServiceImpl implements BidCommonService {
 
 		} catch (Exception e) {
 			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		gb1.setGoodsBillsKey(null);
 		gb1.setGoodsBillsID(idgec.getServerID("GoodsBills"));
@@ -440,7 +443,7 @@ public class BidCommonServiceImpl implements BidCommonService {
 			}
 			subtract= true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			subtract= false;
 		}
 		return subtract;

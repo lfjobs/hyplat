@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="PurchaseCheck" table="dtPurchaseCheck">
+		<id length="50" name="pckey">
+			<column length="50" name="pckey" />
+			<generator class="uuid" />
+		</id>
+		<property name="pcId">
+			<column length="50" name="pcId"><comment>ID</comment></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID"><comment>单据ID</comment></column>
+		</property>
+		<property name="journalNum">
+			<column length="250" name="journalNum"><comment>凭证号</comment></column>
+		</property>
+		<property name="billsType">
+			<column length="250" name="billsType"><comment>单据类型</comment></column>
+		</property>
+		<property name="applyTime">
+			<column  name="applyTime"><comment>申请时间</comment></column>
+		</property>
+		<property name="applyor">
+			<column length="50" name="applyor"><comment>申请人</comment></column>
+		</property>
+		<property name="applyId">
+			<column length="50" name="applyId"><comment>申请人ID</comment></column>
+		</property>
+		<property name="comapplyId">
+			<column length="50" name="comapplyId"><comment>申请人公司ID</comment></column>
+		</property>
+		<property name="comapplyName">
+			<column length="50" name="comapplyName"><comment>申请人公司</comment></column>
+		</property>
+		<property name="orgapplyId">
+			<column length="50" name="orgapplyId"><comment>申请人部门ID</comment></column>
+		</property>
+		<property name="orgapplyName">
+			<column length="50" name="orgapplyName"><comment>申请人部门</comment></column>
+		</property>
+		<property name="auditorId">
+			<column length="50" name="auditorId"><comment>审核人ID</comment></column>
+		</property>
+	   <property name="auditor">
+			<column length="50" name="auditor"><comment>审核人</comment></column>
+		</property>
+		<property name="companyId">
+			<column length="50" name="companyId"><comment>公司ID</comment></column>
+		</property>
+		<property name="companyName">
+			<column length="50" name="companyName"><comment>公司名称</comment></column>
+		</property>
+		<property name="organizationId">
+			<column length="50" name="organizationId"><comment>部门ID</comment></column>
+		</property>
+		<property name="organizationName">
+			<column length="50" name="organizationName"><comment>部门名称</comment></column>
+		</property>
+		<property name="auditoroption">
+			<column length="5000" name="auditoroption"><comment>审核人意见</comment></column>
+		</property>
+		<property name="dcheckTime">
+			<column  name="dcheckTime"><comment>考核时间</comment></column>
+		</property>
+		<property name="status">
+			<column length="50" name="status"><comment>考核状态 00待审核  01通过 02驳回</comment></column>
+		</property>
+		<property name="fiveClear">
+			<column length="50" name="fiveClear"><comment>1人事2办公室3财务4生产5营销</comment></column>
+		</property>
+		<property name="type">
+			<column length="2" name="type"><comment>生产类别</comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

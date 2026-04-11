@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="OrderProduct" table="dtOrderProduct">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="orderProductID">
+			<column length="250" name="orderProductID" />
+		</property>
+		<property name="orderID">
+			<column length="250" name="orderID" />
+		</property>
+		<property name="productID">
+			<column length="250" name="productID" />
+		</property>
+		<property name="productMoney">
+			<column length="250" name="productMoney" />
+		</property>
+		
+		<property name="wlCompany">
+			<column length="50" name="wlCompany" />
+		</property>
+		<property name="wlOrderNumber">
+			<column length="50" name="wlOrderNumber" />
+		</property>
+		<property name="sendProductTime">
+			<column length="50" name="sendProductTime" />
+		</property>
+		
+		<property name="compID">
+			<column length="250" name="compID" />
+		</property>
+		<property name="buyNum">
+			<column length="50" name="buyNum" />
+		</property>
+		<property name="type">
+			<column length="50" name="type" />
+		</property>
+	</class>
+</hibernate-mapping>

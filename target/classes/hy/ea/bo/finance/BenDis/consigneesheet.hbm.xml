@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">          
+<hibernate-mapping package="hy.ea.bo.finance.BenDis">
+	<class name="ConsigneeSheet"  table="dtConsigneeSheet">
+		<id length="50" name="cskey">
+			<column length="50" name="cskey" />
+			<generator class="uuid" />
+		</id>
+		<property name="csid">
+			<column length="50" name="csid" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="orderCode">
+			<column length="50" name="orderCode"><comment>订单编号</comment></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID"><comment>订单ID</comment></column>
+		</property>
+		<property name="consigneCode">
+			<column length="50" name="consigneCode"><comment>收货单编号</comment></column>
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID"><comment>公司ID</comment></column>
+		</property>
+		<property  name="companyName">
+			<column length="50" name="companyName"><comment>公司名称</comment></column>
+		</property>
+		<property  name="orderDate">
+			<column  name="orderDate"><comment>下单时间</comment></column>
+		</property>
+		<property  name="userID">
+			<column length="50" name="userID"><comment>用户ID</comment></column>
+		</property>
+			<property name="userName">
+			<column length="50" name="userName"><comment>用户Name</comment></column>
+		</property>
+		<property name="userAccount">
+			<column length="20" name="userAccount"><comment>用户账号</comment></column>
+		</property>
+		<property  name="vipType">
+			<column length="10" name="vipType"><comment>会员类别</comment></column>
+		</property>
+		<property  name="consigneeName">
+			<column length="50" name="consigneeName"><comment>收货人名称 </comment></column>
+		</property>
+		<property  name="consigneeTel">
+			<column length="11" name="consigneeTel"><comment>收货人电话</comment></column>
+		</property>
+	
+		<property  name="postcode">
+			<column length="6" name="postcode"><comment>邮编</comment></column>
+		</property>
+		<property  name="consigneeAddress">
+			<column length="500" name="consigneeAddress"><comment>收货地址</comment></column>
+		</property>
+		<property  name="consignneDate">
+			<column name="consignneDate"><comment>收货时间</comment></column>
+		</property>
+		<property  name="senderName">
+			<column  length="50" name="senderName"><comment>发货人名称</comment></column>
+		</property>
+			<property  name="senderTel">
+			<column   length="11" name="senderTel"><comment>发货人电话</comment></column>
+		</property>
+		<property  name="sendDate">
+			<column  name="sendDate"><comment>发货电话</comment></column>
+		</property>
+		<property  name="sendAddress">
+			<column  length="500" name="sendAddress"><comment>发货地址</comment></column>
+		</property>
+		<property  name="state">
+			<column  length="20" name="state"><comment>状态</comment></column>
+		</property>
+	
+		
+	</class>
+</hibernate-mapping>

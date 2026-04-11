@@ -1,5 +1,8 @@
 package hy.ea.driving.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -55,6 +58,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class DrivingAction {
+	private static final Logger logger = LoggerFactory.getLogger(DrivingAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -1663,7 +1667,7 @@ public class DrivingAction {
 				array.add("%"+dtDrivingPrincipalType.getCoachname().trim().split("---")[0]+"%");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		sql += " order by  dt.testdate desc ";
@@ -1861,7 +1865,7 @@ public class DrivingAction {
 							+ DateUtil.getDateOfMonthEnd(DateUtil.getCurrentDate(), "yyyy-MM-dd") + "','yyyy-MM-dd') enddate,";
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 		}
@@ -1897,7 +1901,7 @@ public class DrivingAction {
 					array.add(DateUtil.parseDate("yyyy-MM-dd",DateUtil.getDateOfMonthEnd(DateUtil.getCurrentDate(), "yyyy-MM-dd")));
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 			if (dtDrivingPrincipalType != null
@@ -1966,7 +1970,7 @@ public class DrivingAction {
 							+ DateUtil.getDateOfMonthEnd(DateUtil.getCurrentDate(), "yyyy-MM-dd") + "','yyyy-MM-dd') enddate,";
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 		}
@@ -2002,7 +2006,7 @@ public class DrivingAction {
 					array.add(DateUtil.parseDate("yyyy-MM-dd",DateUtil.getDateOfMonthEnd(DateUtil.getCurrentDate(), "yyyy-MM-dd")));
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 			if (dtDrivingPrincipalType != null

@@ -1,5 +1,8 @@
 package hy.base.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.service.CLogBookService;
 import hy.ea.service.ShowExcelService;
@@ -45,7 +48,7 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>,
 		try {
 			entity = (T) entityClass.newInstance();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 	/**

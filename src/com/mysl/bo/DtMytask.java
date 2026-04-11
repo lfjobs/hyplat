@@ -1,5 +1,8 @@
 package com.mysl.bo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.ExcelBean;
 import hy.ea.util.DateUtil;
 import hy.plat.bo.BaseBean;
@@ -359,7 +362,7 @@ public class DtMytask implements java.io.Serializable,BaseBean, ExcelBean {
 					warningStatues="03";
 				}
 			} catch (ParseException e) {
-				System.out.println("时间转换异常");
+				logger.info("时间转换异常");
 			}
 		return warningStatues;
 		

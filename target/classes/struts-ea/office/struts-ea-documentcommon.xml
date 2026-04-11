@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package strict-method-invocation="false" name="documentcommon-ntoken" namespace="/ea/documentcommon" extends="ea">
+		<action name="ea_*" class="hy.ea.office.action.DocumentCommonAction" method="{1}">			
+			<result name="toFrame">/page/ea/main/office_ea/document/documentFrame.jsp</result>
+			<result name="newFrame">/page/ea/main/office_ea/contract/mainFrame.jsp</result>
+			<result name="toSocialInfo">/page/ea/main/office_ea/document/doc_jqm_cstaffs.jsp</result>	
+			<result name="formallist">/page/ea/main/office_ea/document/formal_jqm_cstaffs.jsp</result>
+			<result name="connectC">/page/ea/main/office_ea/document/connectCompanyJqm.jsp</result>
+			<result name="recyleBin">/page/ea/main/office_ea/document/docRecycleBinList.jsp</result>
+			<result name="persontrack">/page/ea/main/office_ea/document/filePersonTrack.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="documentcommon-jsonajax" namespace="/ea/documentcommon" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.DocumentCommonAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

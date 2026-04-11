@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffAgreement" table="dt_hr_staff_agreement">
+		<id length="50" name="agreementKey">
+			<column length="50" name="agreementKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="agreementID">
+			<column length="50" name="agreementID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="contractCode">
+			<column length="50" name="contractCode"/>
+		</property>
+		<property name="attachUrl">
+			<column length="250" name="attachUrl"/>
+		</property>
+		<property name="status">
+			<column length="50" name="status" />
+		</property>
+		<property name="contractSignDate" type="java.util.Date">
+			<column name="contractSignDate" length="7" />
+		</property>
+		<property name="relieveContractDate" type="java.util.Date">
+			<column name="relieveContractDate" length="7" />
+		</property>
+		<property name="renewalDate" type="java.util.Date">
+			<column name="renewalDate" length="7" />
+		</property>
+		<property name="remark" >
+			<column name="remark" length="250"/>
+		</property>
+	</class>
+</hibernate-mapping>

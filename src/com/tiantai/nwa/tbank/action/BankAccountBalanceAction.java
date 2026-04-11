@@ -1,5 +1,8 @@
 package com.tiantai.nwa.tbank.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.plat.bo.BaseBean;
 import hy.plat.service.BaseBeanService;
@@ -36,6 +39,7 @@ import com.tiantai.nwa.util.DockingBankInitUtil;
 @Controller
 @Scope("prototype")
 public class BankAccountBalanceAction {
+	private static final Logger logger = LoggerFactory.getLogger(BankAccountBalanceAction.class);
 
 	private String innerAction;
 	private List<BaseBean> accountList;
@@ -106,7 +110,7 @@ public class BankAccountBalanceAction {
 			response.getWriter().print(json.toString());			
 			
 		} catch (Exception e) {			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 	

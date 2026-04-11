@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="specs-ntoken" namespace="/ea/specs" extends="struts-default">
+		<action name="ea_*" class="mobile.tiantai.android.action.storeProduction.budgetSheet.SpecsConfigAction" method="{1}">
+			<result name="specsConfigList">/page/WFJClient/pc/5l5C/office/config/specsConfigList.jsp</result>
+			<result name="specsConfigAdd">/page/WFJClient/pc/5l5C/office/config/specsConfig.jsp</result>
+			<result name="specsConfigUpdate">/page/WFJClient/pc/5l5C/office/config/specsConfigUpdate.jsp</result>
+			<result name="pmEdit">/page/WFJClient/pc/5l5C/office/performanceManagement/pmEdit.jsp</result>
+
+		</action>
+	</package>
+
+	<package strict-method-invocation="false" name="specs-jsonajax" namespace="/ea/specs" extends="json-default">
+		<action name="sajax_ea_*" class="mobile.tiantai.android.action.storeProduction.budgetSheet.SpecsConfigAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.recruit">
+	<class name="TalentPool" table="dtTalentPool">
+		<id length="50" name="tpkey">
+			<column length="50" name="tpkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="tpId">
+			<column length="50" name="tpId"><comment>ID</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>人员ID</comment></column>
+		</property>
+		<property name="riId">
+			<column  name="riId"><comment>招聘信息ID</comment></column>
+		</property>
+		<property name="postDate">
+			<column  name="postDate"><comment>投递时间</comment></column>
+		</property>
+		<property name="state">
+			<column length="2"  name="state"><comment>00 01</comment></column>
+		</property>
+		<property name="resumeID">
+			<column length="50" name="resumeID"><comment>投递时间</comment></column>
+		</property>
+		<property name="type">
+			<column length="2" name="type"><comment>00 投递 01 邀请</comment></column>
+		</property>
+		<property name="interviewDate">
+			<column name="interviewDate"><comment>面试时间</comment></column>
+		</property>
+		<property name="interviewPlace">
+			<column length="200" name="interviewPlace"><comment>面试地点</comment></column>
+		</property>
+		<property name="contactor">
+			<column length="50" name="contactor"><comment>联系人</comment></column>
+		</property>
+		<property name="contactTel">
+			<column length="13" name="contactTel"><comment>联系人电话</comment></column>
+		</property>
+		<property name="remark">
+			<column length="200" name="remark"><comment>备注</comment></column>
+		</property>
+		<property name="noticeDate">
+			<column name="noticeDate"><comment>通知时间</comment></column>
+		</property>
+		<property name="isSMS">
+			<column length="2" name="isSMS"><comment>是否短信通知 00 否  01 是</comment></column>
+		</property>
+		<property name="companyId">
+			<column length="50" name="companyId"><comment>公司ID</comment></column>
+		</property>
+		<property name="content">
+			<column length="500" name="content"><comment>内容</comment></column>
+		</property>
+		<property name="resID">
+			<column length="50" name="resID"><comment>用哪个简历投的</comment></column>
+		</property>
+		<property name="operateID">
+			<column length="50" name="operateID"><comment>不合适/面试邀请人</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

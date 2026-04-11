@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="ProductionAssembly" table="dtAssembly">
+		<id length="50" name="proAssemblyKey">
+			<column length="50" name="proAssemblyKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="proAssemblyID">
+			<column length="200" name="proAssemblyID"  ><comment>业务主键</comment></column>
+		</property>
+		<property name="productPID">
+			<column length="200" name="productPID"  ><comment>主产品ID</comment></column>
+		</property>
+		<property name="productID">
+			<column length="200" name="productID"  ><comment>产品ID</comment></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="200" name="cashierBillsID"  ><comment>订单</comment></column>
+		</property>
+		<property name="goodsName">
+			<column length="200" name="goodsName"  ><comment>物品名称</comment></column>
+		</property>
+		<property name="structureQuantity">
+			<column length="200" name="structureQuantity"  ><comment>结构数量</comment></column>
+		</property>
+		<property name="outgoingQuantity">
+			<column length="200" name="outgoingQuantity"  ><comment>生产数量</comment></column>
+		</property>
+		<property name="startTime">
+			<column length="200" name="startTime"  ><comment>开始时间</comment></column>
+		</property>
+		<property name="endTime">
+			<column length="200" name="endTime"  ><comment>结束时间</comment></column>
+		</property>
+		<property name="journal">
+			<column length="200" name="journal"  ><comment>生产日志</comment></column>
+		</property>
+		<property name="teachingSupervisor">
+			<column length="200" name="teachingSupervisor"  ><comment>责任人</comment></column>
+		</property>
+		<property name="teachingSupervisorID">
+			<column length="200" name="teachingSupervisorID"  ><comment>责任人ID</comment></column>
+		</property>
+		<property name="status">
+			<column length="200" name="status"  ><comment>状态</comment></column>
+		</property>
+		<property name="remarks">
+			<column length="200" name="remarks"  ><comment>备注</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

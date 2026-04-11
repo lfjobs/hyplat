@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.recruit">
+	<class name="HistorySearch" table="dthistorySearch">
+		<id length="50" name="hskey">
+			<column length="50" name="hskey" />
+			<generator class="uuid" />
+		</id>
+		<property name="hsId">
+			<column length="50" name="hsId"><comment>ID</comment></column>
+		</property>
+		<property name="type">
+			<column length="2" name="type"><comment>搜索工作的00，还是求职的01</comment></column>
+		</property>
+		<property name="keyword1">
+			<column  length="50" name="keyword1"><comment>行业</comment></column>
+		</property>
+		<property name="keyword2">
+			<column length="50" name="keyword2"><comment>职位</comment></column>
+		</property>
+		<property name="keyword3">
+			<column length="50"  name="keyword3"><comment>城市</comment></column>
+		</property>
+		<property name="staffID">
+			<column  length="50"  name="staffID"><comment>对应的人的搜索</comment></column>
+		</property>
+		<property name="searchDate">
+			<column  name="searchDate"><comment>搜索时间</comment></column>
+		</property>
+		<property name="secount">
+			<column length="10" name="secount"><comment>搜索次数</comment></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

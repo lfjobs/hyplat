@@ -1,5 +1,8 @@
 package hy.ea.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.COA;
@@ -34,6 +37,7 @@ import com.tiantai.wfj.util.SessionWrap;
 @Controller
 @Scope("prototype")
 public class CLoginAction {
+	private static final Logger logger = LoggerFactory.getLogger(CLoginAction.class);
 	private static Map<String, HttpSession> sessionMap = new HashMap<String, HttpSession>();
 	@Resource
 	private CLoginService loginService;
@@ -226,7 +230,7 @@ public class CLoginAction {
 			 * try { response.sendRedirect(
 			 * "/page/mobile/activity/activity_publish.jsp?weixinCompanyId="
 			 * +weixinCompanyId); } catch (IOException e) { // TODO
-			 * Auto-generated catch block e.printStackTrace(); }
+			 * Auto-generated catch block logger.error("操作异常", e); }
 			 */
 			return "activityLogin";
 		} else {

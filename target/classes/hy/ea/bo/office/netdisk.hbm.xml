@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office"> 
+	<class name="NetDisk" table="dtNetDisk">
+		<id length="50" name="netDiskKey">
+			<column length="50" name="netDiskKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="netDiskID">
+			<column length="50" name="netDiskID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="netDiskNum">
+			<column length="250" name="netDiskNum"/>
+		</property>
+		<property name="netDiskName">
+			<column length="250" name="netDiskName" />
+		</property>
+		<property name="netDiskType">
+			<column length="250" name="netDiskType" />
+		</property>
+		<property  name="netDiskSize">
+			<column  name="netDiskSize" />
+		</property>
+		<property name="netDiskDate">
+			<column name="netDiskDate"/>
+		</property>
+		
+		<property name="netDiskPath">
+			<column name="netDiskPath"/>
+		</property>
+	</class>
+</hibernate-mapping>

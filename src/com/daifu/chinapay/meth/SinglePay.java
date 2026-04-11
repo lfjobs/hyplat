@@ -32,6 +32,7 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class SinglePay {
+	private static final Logger logger = LoggerFactory.getLogger(SinglePay.class);
 
     private final static Logger logger= LoggerFactory.getLogger(SinglePay.class);
 
@@ -90,9 +91,9 @@ public class SinglePay {
 		try {
 			httpClient.executeMethod(postMethod);
 		} catch (HttpException e1) {
-			e1.printStackTrace();
+			logger.error("操作异常", e1);
 		} catch (Exception e1) {
-			e1.printStackTrace();
+			logger.error("操作异常", e1);
 		}
 
 		// 读取内容
@@ -100,7 +101,7 @@ public class SinglePay {
 		try {
 			resInputStream = postMethod.getResponseBodyAsStream();
 		} catch (IOException e1) {
-			e1.printStackTrace();
+			logger.error("操作异常", e1);
 		}
 		// 处理内容
 		BufferedReader reader = new BufferedReader(new InputStreamReader(resInputStream));
@@ -166,7 +167,7 @@ public class SinglePay {
 			try {
 				buildOK = key.buildKey("999999999999999", KeyUsage, PubKeyPath);
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			if (!buildOK) {
                 logger.error("build error!");
@@ -208,7 +209,7 @@ public class SinglePay {
 			try {
 				buildOK = key.buildKey("999999999999999", KeyUsage, PubKeyPath);
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			if (!buildOK) {
 			    logger.error(" build error!");
@@ -372,16 +373,16 @@ public class SinglePay {
 		try {
 			httpClient.executeMethod(postMethod);
 		} catch (HttpException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		// 读取内容
 		InputStream resInputStream = null;
 		try {
 			resInputStream = postMethod.getResponseBodyAsStream();
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		// 处理内容
 		BufferedReader reader = new BufferedReader(new InputStreamReader(resInputStream));
@@ -425,7 +426,7 @@ public class SinglePay {
 			try {
 				buildOK = key.buildKey("999999999999999", KeyUsage, PubKeyPath);
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			if (!buildOK) {
 				return pay;
@@ -455,7 +456,7 @@ public class SinglePay {
 			try {
 				buildOK = key.buildKey("999999999999999", KeyUsage, PubKeyPath);
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			if (!buildOK) {
 				return pay;
@@ -520,10 +521,10 @@ public class SinglePay {
 			httpClient.executeMethod(postMethod);
 		} catch (HttpException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		// 读取内容
 		InputStream resInputStream = null;
@@ -531,7 +532,7 @@ public class SinglePay {
 			resInputStream = postMethod.getResponseBodyAsStream();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		// 处理内容
 		BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -545,7 +546,7 @@ public class SinglePay {
 			}
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			logger.error("操作异常", e1);
 		}
 		String resMes = html.toString();
 		int dex = resMes.lastIndexOf("|");
@@ -574,7 +575,7 @@ public class SinglePay {
 			try {
 				buildOK = key.buildKey("999999999999999", KeyUsage, PubKeyPath);
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			if (!buildOK) {
 				logger.error("build error!");
@@ -599,7 +600,7 @@ public class SinglePay {
 			try {
 				buildOK = key.buildKey("999999999999999", KeyUsage, PubKeyPath);
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			if (!buildOK) {
 				logger.error("build error!");

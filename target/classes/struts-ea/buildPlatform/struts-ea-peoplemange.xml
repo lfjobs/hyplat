@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="peoplemanage-ntoken" namespace="/people/manage" extends="struts-default">
+		<action name="ea_*" class="PeopleManageMenAction" method="{1}">
+			<result name="login">/page/ea/BuildPlatform/MobileOfficeLogin.jsp</result>
+			<result name="teamshow">/page/ea/BuildPlatform/PeopleManagement/TeamShow.jsp</result>
+			<result name="manualFriendsAdd">/page/ea/BuildPlatform/PeopleManagement/ManualFriendsAdd.jsp</result>
+			<result name="personalDetail">/page/ea/BuildPlatform/PeopleManagement/PersonalDetail.jsp</result>
+			<result name="teamAdd">/page/ea/BuildPlatform/PeopleManagement/TeamAdd.jsp</result>
+			<result name="friendsAdd">/page/ea/BuildPlatform/PeopleManagement/FriendsAdd.jsp</result>
+			<result name="companyAdd">/page/ea/BuildPlatform/PeopleManagement/CompanyAdd.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="peoplemanamge-ajax" namespace="/people/manage" extends="json-default">
+		<action name="sajax_*" class="PeopleManageMenAction" method="{1}">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

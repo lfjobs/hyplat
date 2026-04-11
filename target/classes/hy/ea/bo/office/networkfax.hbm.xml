@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="NetworkFax" table="dtNetworkFax">
+		<id length="50" name="networkFaxKey">
+			<column length="50" name="networkFaxKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="networkFaxID">
+			<column length="50" name="networkFaxID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="faxCompanyID">
+			<column length="50" name="faxCompanyID"/>
+		</property>
+		<property name="faxCode">
+			<column length="250" name="faxCode"/>
+		</property>
+		<property name="faxNum">
+			<column length="250" name="faxNum" />
+		</property>
+		<property name="faxDate">
+			<column name="faxDate" />
+		</property>
+		<property  name="operator">
+			<column length="250" name="operator" />
+		</property>
+		<property  name="faxCategory">
+			<column length="250" name="faxCategory" />
+		</property>
+		<property  name="faxPhoto">
+			<column length="256" name="faxPhoto" />
+		</property>
+		<property  name="faxNote">
+			<column length="250" name="faxNote" />
+		</property>
+	</class>
+</hibernate-mapping>

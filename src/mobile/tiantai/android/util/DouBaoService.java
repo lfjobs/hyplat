@@ -1,11 +1,15 @@
 package mobile.tiantai.android.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alibaba.fastjson2.JSONObject;
 import mobile.tiantai.android.bo.UserMessage;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DouBaoService {
+	private static final Logger logger = LoggerFactory.getLogger(DouBaoService.class);
     public String handleMessage(String userMessage,String imageURL) throws Exception {
         UserMessage message = MessageUtil.generateUserMessage();
         String data = JSONObject.from(message).toString();
@@ -16,10 +20,10 @@ public class DouBaoService {
         DouClient client = new DouClient();
         try {
             String response = client.sendRequest(data);
-            System.out.println("Response: " + response);
+            logger.info("Response: : {}", response);
             return response;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
     }
@@ -31,14 +35,14 @@ public class DouBaoService {
 //                "{\"type\":\"input_image\", \"image_url\":\""+imageURL+"\"}," +
                 "{\"type\":\"input_text\", \"text\":\""+String.format(Prompt.CompanyPrompt,companyName)+"\"}" +
                 "]");
-        System.out.println(data);
+        logger.info("值：{}", data);
         DouClient client = new DouClient();
         try {
             String response = client.sendRequest(data);
-            System.out.println("Response: " + response);
+            logger.info("Response: : {}", response);
             return response;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
     }

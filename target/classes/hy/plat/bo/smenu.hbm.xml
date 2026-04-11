@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.plat.bo">
+	<class name="SMenu" table="dtSMenu">
+		<id name="menuKey">
+			<column length="50" name="menuKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="menuID">
+			<column length="50" name="menuID" unique="true" not-null="true" />
+		</property>
+		<property name="eaID">
+			<column length="50" name="eaID" not-null="true" />
+		</property>
+		<property name="menuName">
+			<column length="50" name="menuName" not-null="true" />
+		</property>
+		<property name="menuNumber">
+			<column length="2" name="menuNumber" not-null="true" />
+		</property>
+		<property name="menuDesc">
+			<column length="256" name="menuDesc" />
+		</property>
+	</class>
+</hibernate-mapping>

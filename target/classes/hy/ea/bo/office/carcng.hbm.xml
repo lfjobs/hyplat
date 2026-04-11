@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarCNG" table="DT_Car_CNG">
+		<id length="50" name="cngKey">
+			<column length="50" name="cngKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="cngID">
+			<column length="50" name="cngID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="carID">
+			<column length="50" name="carID" />
+		</property>
+		<property name="refitName">
+			<column length="250" name="refitName" />
+		</property>
+		<property name="refitPhone">
+			<column length="250" name="refitPhone" />
+		</property>
+		<property name="refitContact">
+			<column length="250" name="refitContact" />
+		</property>
+		<property name="refitCompany">
+			<column length="250" name="refitCompany" />
+		</property>
+		<property name="refitLicenseCode">
+			<column length="250" name="refitLicenseCode" />
+		</property>
+		<property name="refitDate">
+			<column name="refitDate" />
+		</property>
+		<property name="refitAgoFuel">
+			<column length="250" name="refitAgoFuel" />
+		</property>
+		<property name="refitAfterFuel">
+			<column length="250" name="refitAfterFuel" />
+		</property>
+		<property name="cylinderType">
+			<column length="250" name="cylinderType" />
+		</property>
+		<property name="refitEligibleCode">
+			<column length="250" name="refitEligibleCode" />
+		</property>
+		<property name="cylinderEligibleCode">
+			<column length="250" name="cylinderEligibleCode" />
+		</property>
+		<property name="cylinderDetectCode">
+			<column length="250" name="cylinderDetectCode" />
+		</property>
+		<property name="cylinderDetectDate">
+			<column name="cylinderDetectDate" />
+		</property>
+		<property name="cylinderDetectName">
+			<column length="250" name="cylinderDetectName" />
+		</property>
+		<property name="cylinderDetectPhone">
+			<column length="250" name="cylinderDetectPhone" />
+		</property>
+		<property name="cylinderDetectContact">
+			<column length="250" name="cylinderDetectContact" />
+		</property>
+		<property name="remarks">
+			<column length="250" name="remarks" />
+		</property>
+		<property name="carType">
+			<column length="250" name="carType"/>
+		</property>
+		<property name="carNum">
+			<column length="250" name="carNum"/>
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property name="carPeople">
+			<column length="250" name="carPeople"/>
+		</property>
+	</class>
+</hibernate-mapping>

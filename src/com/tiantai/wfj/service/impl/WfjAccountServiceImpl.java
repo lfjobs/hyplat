@@ -129,7 +129,7 @@ public class WfjAccountServiceImpl
             }
             tcc.setPpid(tuicus.getPpid());
         }
-        System.out.println("用户"+wxUserInfo.getNickname()+"  推荐人sccid   "+tjsccid);
+        logger.info("调试信息");
         if(wxUserInfo!=null&&wxUserInfo.getNickname()!=null){
             sf.setStaffName(wxUserInfo.getNickname());
         }
@@ -286,7 +286,7 @@ public class WfjAccountServiceImpl
 
             }
         }catch (Exception e){
-            e.printStackTrace();;
+            logger.error("操作异常", e);;
         }
 
         return  urlmicro;
@@ -338,13 +338,13 @@ public class WfjAccountServiceImpl
                         bos.write(b);//将字节数组写入输出流。
                     }
                 }catch(Exception   e){
-                    System.out.println(e.toString());
+                    logger.info("调试信息");
                 }finally{
                     try{
                         bos.flush();//刷新此缓冲的输出流。
                         bis.close(); //关闭此输入流 。
                     }catch(Exception   e){
-                        System.out.println(e.toString());
+                        logger.info("调试信息");
                     }
                 }
             }}

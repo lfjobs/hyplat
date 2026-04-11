@@ -1,5 +1,8 @@
 package hy.ea.finance.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -43,6 +46,7 @@ import net.sf.json.JsonConfig;
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.telrec.tool.JsonDateValueProcessor;
 public class SplitBillGroupAction {
+	private static final Logger logger = LoggerFactory.getLogger(SplitBillGroupAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -1090,7 +1094,7 @@ public class SplitBillGroupAction {
 					null, null);
 		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -1226,7 +1230,7 @@ public class SplitBillGroupAction {
 			JSONObject oj = JSONObject.fromObject(map, jsonConfig);
 			result = oj.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return "success";

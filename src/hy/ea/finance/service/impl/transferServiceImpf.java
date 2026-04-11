@@ -205,10 +205,10 @@ public class transferServiceImpf implements transferService {
         } catch (Exception e) {
             String a = e.toString();
             String b = a.substring(a.indexOf(":") + 1);
-            e.printStackTrace();
+            logger.error("操作异常", e);
             str = b;
         }
-        //System.out.println(str);
+        //logger.info("值：{}", str);
         return str;
     }
 
@@ -219,14 +219,14 @@ public class transferServiceImpf implements transferService {
      * @return
      */
     private void addWillfishiHdBill(String journalNum,String companyID,List<String> liststr){
-        System.out.println("addWillfishiHdBill");
+        logger.info("addWillfishiHdBill");
         List<BaseBean> beans = new ArrayList<BaseBean>();
 
       try {
           PayBackupBill pb = (PayBackupBill) baseBeanDao.getBeanByHqlAndParams("from PayBackupBill where journalNum = ?", new Object[]{journalNum});
           //确认订单是合单支付
           if (pb != null && "1".equals(pb.getHdpay())) {
-              System.out.println("pb");
+              logger.info("pb");
 
               HdBackupBill hdBackupBill = (HdBackupBill) baseBeanDao.getBeanByHqlAndParams("from HdBackupBill where journalNum = ?", new Object[]{journalNum});
 
@@ -246,7 +246,7 @@ public class transferServiceImpf implements transferService {
                       beans.add(hdBackupBill);
                       pb.setHdfinish("1");
                       beans.add(pb);
-                      System.out.println("addBeans"+beans.size());
+                      logger.info("调试信息");
                       baseBeanDao.saveBeansListAndexecuteHqlsByParams(beans,null,null);
 
                   }
@@ -255,7 +255,7 @@ public class transferServiceImpf implements transferService {
               }
           }
       }catch (Exception e){
-          e.printStackTrace();
+          logger.error("操作异常", e);
       }
 
     }
@@ -363,7 +363,7 @@ public class transferServiceImpf implements transferService {
                                wxAccountDetail.setStaffName(staff.getStaffName());
                            }
                        }catch (Exception e){
-                           e.printStackTrace();
+                           logger.error("操作异常", e);
                        }
                    }else{
                        wxAccountDetail.setSztype("A");
@@ -373,19 +373,19 @@ public class transferServiceImpf implements transferService {
                            Staff staff = (Staff) baseBeanDao.getBeanByHqlAndParams(hql, new Object[]{hdBackupBill.getJournalNum()});
                            wxAccountDetail.setStaffName(staff.getStaffName());
                        }catch (Exception e){
-                           e.printStackTrace();
+                           logger.error("操作异常", e);
                        }
                    }
 
                    beans.add(wxMainAccount);
                    beans.add(wxMonthAccount);
                    beans.add(wxAccountDetail);
-                   System.out.println("beans" + beans.size());
+                   logger.info("beans: {}", beans.size());
                    baseBeanDao.executeHqlsByParmsList(beans, null, null);
                }
            }
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
     }
@@ -425,7 +425,7 @@ public class transferServiceImpf implements transferService {
             msage.setMessage("产品消费返回微金币" + backup.getJbNum() + "个");
             msage.sendMsg("【微分金平台】");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -467,10 +467,10 @@ public class transferServiceImpf implements transferService {
      * @param status 要改成的状态
      */
     public void getCoasUpdate(String cashid, String status) {
-        //	System.out.println("开始调用-修改订单状态-存储过程");
+        //	logger.info("开始调用-修改订单状态-存储过程");
         //调用修改订单状态存储过程
         transferDao.getCoasUpdate(cashid, status);
-        //	System.out.println("调用-修改订单状态-存储过程结束");
+        //	logger.info("调用-修改订单状态-存储过程结束");
     }
 
     /**
@@ -501,7 +501,7 @@ public class transferServiceImpf implements transferService {
             baseBeanDao.saveBeansListAndexecuteHqlsByParams(beanList, null, null);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
     }
@@ -542,12 +542,12 @@ public class transferServiceImpf implements transferService {
 						+ "的订单，系统自动收货分配金币时出错，错误信息为：" + str);
 				String reStr;*/
                 //reStr = msage.sendMsg();
-                //	System.out.println(reStr);
+                //	logger.info("值：{}", reStr);
 
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return str;
     }
@@ -604,7 +604,7 @@ public class transferServiceImpf implements transferService {
             //logger.error("结束调用-金币充值-存储过程");
 
         } else {
-            System.out.println("该订单已经生成过了");
+            logger.info("该订单已经生成过了");
             //logger.error("该订单已经生成过了");
         }
 
@@ -747,9 +747,9 @@ public class transferServiceImpf implements transferService {
 //		        	  param.append(entry.getKey());
 //		        	  param.append("=");
 //		        	  param.append(entry.getValue());
-//		        	  //System.out.println(entry.getKey()+":"+entry.getValue());
+//		        	  //logger.info("调试信息");
 //		          }
-//		          //System.out.println("param:"+param.toString());
+//		          //logger.info("调试信息");
 //		          out.write(param.toString());
 //            }
 //            // flush输出流的缓冲
@@ -762,7 +762,7 @@ public class transferServiceImpf implements transferService {
 //                result.append(line);
 //            }
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            logger.error("操作异常", e);
 //        }
 //        //使用finally块来关闭输出流、输入流
 //        finally{
@@ -775,7 +775,7 @@ public class transferServiceImpf implements transferService {
 //                }
 //            }
 //            catch(IOException ex){
-//                ex.printStackTrace();
+//                logger.error("操作异常", ex);
 //            }
 //        }
 //        return result.toString();
@@ -835,9 +835,9 @@ public class transferServiceImpf implements transferService {
         try {
             HttpResponse response = HttpUtils.doGet(host, path, method, headers, querys);
             result = EntityUtils.toString(response.getEntity());//这个就是返回值呦
-            System.out.println(result);
+            logger.info("值：{}", result);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return result;
     }
@@ -1379,7 +1379,7 @@ public class transferServiceImpf implements transferService {
                     baseBeanDao.saveBeansListAndexecuteSqlsByParams(null, new String[]{sql}, new Object[]{fkStatus,cashierBillsID});
                 }
             }catch (Exception e){
-                e.printStackTrace();;
+                logger.error("操作异常", e);;
             }
         }
 

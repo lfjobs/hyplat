@@ -1,5 +1,8 @@
 package hy.ea.human.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.mysl.bo.administrative.DtMytravel;
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
@@ -227,7 +230,7 @@ public class OutworkReviewMobileServiceImpl implements OutworkReviewMobileServic
                 try {
                     baseBeanService.saveBeansListAndexecuteSqlsByParams(signIns,null,null);
                 }catch (Exception e){
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
         }

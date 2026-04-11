@@ -1,5 +1,8 @@
 package mobile.tiantai.android.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.service.CLogBookService;
@@ -27,6 +30,7 @@ import org.springframework.context.annotation.Scope;
 import com.opensymphony.xwork2.ActionContext;
 @Scope("prototype")
 public class WechatMenuAction {
+	private static final Logger logger = LoggerFactory.getLogger(WechatMenuAction.class);
 	
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -90,7 +94,7 @@ public class WechatMenuAction {
 		try {
 			FileUtils.writeStringToFile(f, contenttxt,ENCODING);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		StringBuilder sb = new StringBuilder();

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="mobilelogbook-token" namespace="/ea/mobilelogbook"   extends="struts-default">
+		<action name="t_ea_*" class="hy.ea.human.action.MobileLogBookAction" method="{1}">
+			<result name="list">/js/signApp/mobilelogbook.jsp</result>
+			<result name="personlist">/js/signApp/mobilelogbook.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="mobilelogbook" namespace="/ea/mobilelogbook" extends="struts-default">
+		<action name="ea_*"
+			class="hy.ea.human.action.MobileLogBookAction" method="{1}">
+			<result name="list">/js/signApp/mobilelogbook.jsp</result>
+			<result name="personlist">/js/signApp/mobilelogbook.jsp</result>
+			<result name="false">/page/ea/sys_error.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">filename="logbook.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<!-- 
+	<package strict-method-invocation="false" name="phonelogbook-token" namespace="/ea/phonelogbook"   extends="struts-default">
+		<action name="t_ea_*" class="hy.ea.human.action.PhoneLogBookAction" method="{1}">
+			<result name="list">/js/signApp/MyJsp.jsp</result>
+			<result name="personlist">/js/signApp/MyJsp.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="phonelogbook-token" namespace="/ea/phonelogbook" extends="ea-ntoken">
+		<action name="ea_*"
+			class="hy.ea.human.action.PhoneLogBookAction" method="{1}">
+			<result name="list">/js/signApp/MyJsp.jsp</result>
+			<result name="personlist">/js/signApp/MyJsp.jsp</result>
+			<result name="false">/page/ea/sys_error.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">filename="logbook.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	-->
+</struts>

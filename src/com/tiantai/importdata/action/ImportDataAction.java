@@ -1,5 +1,8 @@
 package com.tiantai.importdata.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.plat.bo.BaseBean;
 import hy.plat.service.BaseBeanService;
 
@@ -31,6 +34,7 @@ import com.tiantai.importdata.util.XmlInitializeUtil;
 @Controller
 @Scope("prototype")
 public class ImportDataAction {
+	private static final Logger logger = LoggerFactory.getLogger(ImportDataAction.class);
 	//标示文件类别(见ImportDataFileList.xml中的type节点，与<type>中的值对应)
 	private String fileType1;
 	private String fileType2;
@@ -79,7 +83,7 @@ public class ImportDataAction {
 			map = XmlInitializeUtil.getFileMap();
 			ServletActionContext.getRequest().setAttribute("fileMap", map);	
 		} catch (InvalidAttributeException e) {			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}			
 		return "show";
 	}
@@ -108,9 +112,9 @@ public class ImportDataAction {
 						response.getWriter().println("系统正在检查文件" + fileNameList.get(i) + "时发现问题如下: ");//在这里可以获取到底层异常跑出的错误信息，拼接合理后就可以返回给response，再由js展现在页面
 						response.getWriter().println( e.getMessage());
 					} catch (IOException e1) {
-						e1.printStackTrace();
+						logger.error("操作异常", e1);
 					}					
-					e.printStackTrace();
+					logger.error("操作异常", e);
 					break;
 				}
 			}
@@ -119,7 +123,7 @@ public class ImportDataAction {
  				try {
 					response.getWriter().print("系统验证文件无误");
 				} catch (Exception e) {					
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
  			}
  		}else{
@@ -127,7 +131,7 @@ public class ImportDataAction {
  			try {
 				response.getWriter().print("没有发现文件");
 			} catch (Exception e) {				
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
  		}
  		return null;
@@ -160,9 +164,9 @@ public class ImportDataAction {
 						response.getWriter().println("系统导入文件" + fileNameList.get(i) + "时发现问题如下: ");//在这里可以获取到底层异常跑出的错误信息，拼接合理后就可以返回给response，再由js展现在页面
 						response.getWriter().println( e.getMessage());
 					} catch (IOException e1) {
-						e1.printStackTrace();
+						logger.error("操作异常", e1);
 					}					
-					e.printStackTrace();
+					logger.error("操作异常", e);
 					break;
 				}						
 			}
@@ -171,7 +175,7 @@ public class ImportDataAction {
  				try {
 					response.getWriter().print("数据导入成功");
 				} catch (Exception e) {					
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
  			}
 		}else{
@@ -179,7 +183,7 @@ public class ImportDataAction {
  			try {
 				response.getWriter().print("没有发现文件");
 			} catch (Exception e) {				
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
  		} 		 		
 		return null;

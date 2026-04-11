@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.FileInputStream;
 import java.util.Iterator;
 import java.util.List;
@@ -9,6 +12,7 @@ import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 
 public class XMLReader {
+	private static final Logger logger = LoggerFactory.getLogger(XMLReader.class);
 
 	protected Element m_RootElement = null;
 
@@ -19,7 +23,7 @@ public class XMLReader {
 			document = builder.build(new FileInputStream(xmlFile));
 			m_RootElement = document.getRootElement();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 

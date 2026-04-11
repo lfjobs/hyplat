@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+    
+<struts>
+	<package strict-method-invocation="false" name="refundmoney-ntoken" namespace="/ea/refundMoney" extends="struts-default">
+		<action name="ea_*" class="hy.ea.finance.action.NewPhoneOrders.RefundMoneyAction" method="{1}">	
+		  	 <result name="refund">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/refunds.jsp</result>
+		  	 <result name="rfmoney">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/returnRefund.jsp</result>	
+		  	 <result name="refundList">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/refund_list.jsp</result>	
+			 <result name="details">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/particularsDetails.jsp</result>	
+			 <result name="return">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/return.jsp</result>				 
+			 <result name="list">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/refund_list.jsp</result>	
+			 <result name="gainAddress">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/returnOfBackAdd.jsp</result>
+			 <result name="refundOfBack">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/returnOfBackSuccess.jsp</result>
+			<result name="viewLogistics">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/viewLogistics.jsp</result>
+			
+			
+			 <result>
+					<param name="contentType">
+						application/vnd.ms-excel
+					</param>
+					<param name="inputName">excelStream</param>
+					<param name="contentDisposition">
+						filename="productslaunch.xls"
+					</param>
+					<param name="bufferSize">1024</param>
+				</result>		
+		</action>		
+	</package>	
+	<package strict-method-invocation="false" name="refundmoney-sajaxs" namespace="/ea/refundMoney" extends="json-default">
+		<action name="sajax_*" class="hy.ea.finance.action.NewPhoneOrders.RefundMoneyAction" method="{1}">
+			<result type="json">  
+				<!-- root的值对应要返回的值的属性 -->    
+				<!-- 这里的result值即是 对应action中的 result -->  
+				<param name="root">result</param>  
+			</result>					
+		</action>		
+	</package>
+	
+	
+	
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

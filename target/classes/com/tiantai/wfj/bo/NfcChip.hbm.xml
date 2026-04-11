@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+    <class name="NfcChip" table="DT_NfcChip" schema="HYPLAT" dynamic-insert="true">
+        <comment>NFC芯片</comment>
+        <id length="50" name="nfckey" type="java.lang.String">
+            <column length="50" name="nfckey" />
+            <generator class="uuid" />
+        </id>
+        <property name="nfcID" type="java.lang.String">
+            <column length="50" name="nfcID" >
+            </column>
+        </property>
+        <property name="sn" type="java.lang.String">
+            <column name="sn" length="50">
+                <comment>序列号</comment>
+            </column>
+        </property>
+        <property name="model" type="java.lang.String">
+            <column length="50" name="model" >
+                <comment>标签类型</comment>
+            </column>
+        </property>
+        <property name="companyID" type="java.lang.String">
+            <column length="50" name="companyID" >
+                <comment>绑定公司ID</comment>
+            </column>
+        </property>
+        <property name="companyName" type="java.lang.String">
+            <column length="50" name="companyName" >
+                <comment>绑定公司name</comment>
+            </column>
+        </property>
+        <property name="staffID" type="java.lang.String">
+            <column length="50" name="staffID" >
+                <comment>负责人ID</comment>
+            </column>
+        </property>
+        <property name="staffName" type="java.lang.String">
+            <column length="50" name="staffName" >
+                <comment>负责人姓名</comment>
+            </column>
+        </property>
+        <property name="ln" type="java.lang.Integer">
+            <column name="ln" length="50">
+                <comment>安全点编号</comment>
+            </column>
+        </property>
+        <property name="oaskName" type="java.lang.String">
+            <column name="oaskName" length="50">
+                <comment>安全类别名称</comment>
+            </column>
+        </property>
+        <property name="oaskId" type="java.lang.String">
+            <column name="oaskId" length="50">
+                <comment>安全类别id （OASafeKind类id）</comment>
+            </column>
+        </property>
+        <property name="en" type="java.lang.String">
+            <column name="en" length="50">
+                <comment>设备编号 如：车牌号</comment>
+            </column>
+        </property>
+        <property name="bindLocation" type="java.lang.String">
+            <column length="50" name="bindLocation" default="00">
+                <comment>芯片绑定公司地点 如：厨房、仓库、下水道、车间、财务处等</comment>
+            </column>
+        </property>
+        <property name="bindDate" type="java.util.Date">
+            <column name="bindDate" sql-type="date">
+                <comment>绑定日期</comment>
+            </column>
+        </property>
+        <property name="onBindDate" type="java.util.Date">
+            <column name="onBindDate" sql-type="date">
+                <comment>解绑日期</comment>
+            </column>
+        </property>
+        <property name="bindState" type="java.lang.String">
+            <column length="4" name="bindState" default="00">
+                <comment>绑定状态  00：绑定  01：解绑  默认绑定</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

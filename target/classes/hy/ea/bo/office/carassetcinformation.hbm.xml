@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarAssetcInformation" table="dt_Car_CarAssetcInformation">
+		<id length="50" name="CarAssetcKey">
+			<column length="50" name="CarAssetcKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="assetcID">
+			<column length="50" name="assetcID"/>
+		</property>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="propertyname">
+			<column length="50" name="propertyname" />
+		</property>
+		<property  name="standard">
+			<column length="50" name="standard" />
+		</property>
+		<property  name="count">
+			<column  length="50" name="count" />
+		</property>
+		<property  name="price" >
+			<column length="50" name="price"/>
+		</property>
+		<property  name="totleCount" >
+			<column  length="50" name="totleCount"  />
+		</property>
+		<property  name="connectTime">
+			<column name="connectTime" />
+		</property>
+		<property  name="connectPeople">
+			<column  length="50" name="connectPeople" />
+		</property>
+		<property  name="certificatenum">
+			<column length="50" name="certificatenum" />
+		</property>
+		<property  name="trackNumber">
+			<column length="50" name="trackNumber" />
+		</property>
+	</class>
+</hibernate-mapping>

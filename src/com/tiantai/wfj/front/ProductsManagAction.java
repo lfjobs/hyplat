@@ -37,6 +37,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class ProductsManagAction {
+	private static final Logger logger = LoggerFactory.getLogger(ProductsManagAction.class);
     private Logger logger = LoggerFactory.getLogger(ProductsManagAction.class);
     @Resource
     private BaseBeanService baseBeanService;
@@ -79,7 +80,7 @@ public class ProductsManagAction {
         try {
             map = pmService.getProductList(search, companyID, goodsName, type, barCode, pageForm);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         JsonConfig jsonConfig = new JsonConfig();
@@ -174,7 +175,7 @@ public class ProductsManagAction {
                                 .getServletContext().getRealPath("\\"), companyID);
                         gm.setLogoPath(map.get("path").toString());//品牌log路径
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        logger.error("操作异常", e);
                     }
                 }
                 gm.setIsScale(goodsManage.getIsScale());//是否需要电子秤打印条码
@@ -267,7 +268,7 @@ public class ProductsManagAction {
                             .getServletContext().getRealPath("\\"), companyID);
                     gm.setLogoPath(map.get("path").toString());//品牌log路径
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
             gm.setVariableID(goodsManage.getVariableID());//单位
@@ -419,7 +420,7 @@ public class ProductsManagAction {
         try {
             baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, new String[]{sql, sql2, sql3, hql_del}, new Object[]{gm.getGoodsID()});
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             logger.error("保存失败");
             s = "0";
         }
@@ -441,7 +442,7 @@ public class ProductsManagAction {
         try {
             map = pmService.upLoadFile(chunk, chunks, name, file, path, companyID);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         JSONObject oj = JSONObject.fromObject(map);
         result = oj.toString();

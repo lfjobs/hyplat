@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="AccountInfo" table="dt_sft_AccountInfo">
+	<comment>二级商户进件——结算银行账户 </comment>
+		<id length="50" name="acKey">
+			<column length="50" name="acKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="acId">
+			<column length="50" name="acId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="bank_account_type">
+			<column length="50" name="bank_account_type" ><comment>账户类型</comment></column>
+		</property>
+		<property name="account_bank">
+			<column length="50" name="account_bank" ><comment>开户银行 </comment></column>
+		</property>
+		<property name="account_name">
+			<column length="50" name="account_name" ><comment>开户名称</comment></column>
+		</property>
+		<property name="bank_address_code">
+			<column length="50" name="bank_address_code" ><comment>开户银行省市编码 </comment></column>
+		</property>
+		<property name="bank_address">
+			<column length="200" name="bank_address" ><comment>开户银行省市编码 </comment></column>
+		</property>
+		<property name="bank_branch_id">
+			<column length="50" name="bank_branch_id" ><comment>开户银行联行号</comment></column>
+		</property>
+		<property name="bank_name">
+			<column length="50" name="bank_name" ><comment>开户银行全称 （含支行）</comment></column>
+		</property>
+		<property name="account_number">
+			<column length="50" name="account_number" ><comment>银行帐号</comment></column>
+		</property>
+		<property name="account_copy">
+			<column length="500" name="account_copy" ><comment>银行卡照片</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

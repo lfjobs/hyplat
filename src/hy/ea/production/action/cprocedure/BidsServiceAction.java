@@ -1,5 +1,8 @@
 package hy.ea.production.action.cprocedure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.finance.CashierBills;
 import hy.ea.bo.human.Staff;
 import hy.ea.bo.production.Bidsinformation;
@@ -28,6 +31,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 @Scope("prototype")
 public class BidsServiceAction {
+	private static final Logger logger = LoggerFactory.getLogger(BidsServiceAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -81,8 +85,8 @@ public class BidsServiceAction {
 			  String[] imgurls =  fileService.mutiFileUpload(path, photoFileName, photo, "bidsdemand", "/upload_files/bids/"
 							+Utilities.getDateString(new Date(), "yyyy-MM-dd"));
 			} catch (Exception e) {
-				System.out.println("保存上传图片失败");
-				e.printStackTrace();
+				logger.info("保存上传图片失败");
+				logger.error("操作异常", e);
 			}
 		}
 		return "success";

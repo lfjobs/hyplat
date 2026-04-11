@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -49,6 +52,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class PersonalArchiveAction {
+	private static final Logger logger = LoggerFactory.getLogger(PersonalArchiveAction.class);
 	@SuppressWarnings("unused")
 	@Resource
 	private ShowExcelService excelService;
@@ -147,7 +151,7 @@ public class PersonalArchiveAction {
 					.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber),
 					hql, params);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -189,7 +193,7 @@ public class PersonalArchiveAction {
 			staffinfo = (Staff) baseBeanService.getBeanByHqlAndParams(hql,params);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -275,7 +279,7 @@ public class PersonalArchiveAction {
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(baseBeanList,
 					null, null);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -399,7 +403,7 @@ public class PersonalArchiveAction {
 					.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber),
 					hql, params);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 

@@ -1,5 +1,8 @@
 package hy.ea.dao.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.dao.CAccountDao;
@@ -79,7 +82,7 @@ public class CAccountDaoImpl implements CAccountDao{
 //		query.setString(0, account.getCompanyID());
 //		List<SEA> list = query.list(); 
 //		for(SEA cea : list){
-//			//System.out.println(cea.getEaID());
+//			//logger.info("调试信息");
 //			ceasdao.pushSEAtoCEA(account.getCompanyID(),cea.getEaID(),account.getRoleID());
 //		}
 		ccodeDao.upadateCodeToCCode(account.getCompanyID());

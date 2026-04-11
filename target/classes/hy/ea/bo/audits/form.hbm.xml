@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.audits">
+    <class name="Form" table="dt_au_Form">
+        <id name="formKey" length="50">
+        	<column name="formKey" length="50"/>
+        	<generator class="uuid" />
+        </id>
+         <property name="formId">
+        	<column name="formId" length="50" unique="true" not-null="true"/>
+        </property>
+        <property name="formName">
+        	<column name="formName" length="50" unique="true" not-null="true"/>
+        </property>
+        <property name="tag" >
+        	<column name="tag" length="7" />
+        </property>
+        <property name="proID" >
+        	<column name="proID" length="50" />
+        </property>
+         <property name="createDate" >
+        	<column name="createDate" length="7"  />
+        </property>
+        <property name="creatorID" >
+        	<column name="creatorID" length="50"  />
+        </property>
+          <property name="companyID">
+        	<column name="companyID" length="50" />
+        </property>
+              <property name="organizationID">
+        	<column name="organizationID" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

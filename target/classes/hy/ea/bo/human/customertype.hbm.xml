@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="CustomerType" table="dtCustomerType"> 
+		<id length="50" name="customerKey">
+			<column length="50" name="customerKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="customerID">
+			<column length="50" name="customerID" not-null="true" />
+		</property>
+		<property name="staffID">
+        	<column name="staffID"  length="50"  not-null="true"/>
+        </property>
+       <property name="companyID">
+        	<column name="companyID"  length="50"  not-null="true"/>
+        </property>
+         <property name="customerrelation" >
+        	<column name="customerrelation" length="250"  />
+        </property>
+	</class>
+</hibernate-mapping>

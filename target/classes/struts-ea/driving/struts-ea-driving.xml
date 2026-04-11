@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package strict-method-invocation="false" name="driving-ntoken" namespace="/ea/driving" extends="struts-default">
+		<action name="ea_*" class="hy.ea.driving.action.DrivingAction" method="{1}">
+			<result name="driving_list">/page/ea/main/driving/driving_list.jsp</result>
+			<result name="driving_list2">/page/ea/main/driving/driving_list2.jsp</result>
+			<result name="driving_list_fenche">/page/ea/main/driving/driving_list_fenche.jsp</result>
+			<result name="driving_list_peixun">/page/ea/main/driving/driving_list_peixun.jsp</result>
+			<result name="driving_list_baokaixue">/page/ea/main/driving/driving_list_baokaixue.jsp</result>
+			<result name="driving_list_yuekao">/page/ea/main/driving/driving_list_yuekao.jsp</result>
+			<result name="driving_list_kaoshiinfors">/page/ea/main/driving/driving_list_kaoshiinfors.jsp</result>
+			<result name="driving_carInformationlist">/page/ea/main/driving/driving_CarInformation.jsp</result>
+			<result name="driving_list_tongji">/page/ea/main/driving/driving_list_tongji.jsp</result>
+			<!-- 考试合格率分析 2014-12-23 -->
+			<result name="driving_list_fenxi">/page/ea/main/driving/driving_list_fenxi.jsp</result>
+			
+			<result name="driving_list_fenxi_test">/page/ea/main/driving/driving_list_fenxi_test.jsp</result>
+			
+			<result name="getListOfStudent">/page/ea/main/driving/training/performanceOfCoachForPrintPreview.jsp</result>
+			<result name="getListQualificationOfSubjects">/page/ea/main/driving/training/qualificationOfSubjectsForPrintPreview.jsp</result>
+			<result name="getListOfCoachsOfqualified">/page/ea/main/driving/training/listOfCoachsOfqualifiedForPrintPreview.jsp</result>
+			<result name="getListOfCoachsOfqualifiedOfAnnual">/page/ea/main/driving/training/listOfCoachsOfqualifiedOfAnnualForPrintPreview.jsp</result>
+			
+			<!-- 预约测试汇总 2014-11-21 -->
+			<result name="driving_list_total">/page/ea/main/driving/driving_list_total.jsp</result>
+			<result name="driving_list_total_test">/page/ea/main/driving/driving_list_total_test.jsp</result>
+			<!-- 预约测试 2014-11-21 -->
+			<result name="drivingListYueKaoTestOfList">/page/ea/main/driving/driving_list_yuekao_test.jsp</result>
+			<!-- 测试 2014-11-21 -->
+			<result name="driving_list_tongji_test">/page/ea/main/driving/driving_list_tongji_test.jsp</result>
+			<!-- 归档 2014-11-21 -->
+			<result name="driving_list_archive">/page/ea/main/driving/driving_list_archive.jsp</result>
+			<!-- 测试登记表打印预览 2014-12-08 -->
+			<result name="toPrintOfDrivingTest">/page/ea/main/driving/training/printOfDrivingTest.jsp</result>
+			<!-- 考试登记表打印预览 2014-12-09 -->
+			<result name="toPrintOfDrivingExam">/page/ea/main/driving/training/printOfDrivingExam.jsp</result>
+			
+			<!-- 资料是否齐全 2015-01-06 -->
+			<result name="dataIsComplete">/page/ea/main/driving/part/dataIsComplete.jsp</result>
+			
+			<!-- 报开学 2015-01-06 -->
+			<result name="baokaixue">/page/ea/main/driving/part/baokaixue.jsp</result>
+			
+			<result name="extension_staff_coach" type="chain" >
+				<param name="actionName">ea_getStudentCoachList</param>
+				<param name="nameSpace">/ea/enroll</param>  
+			</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="fail">/page/ea/fail.jsp</result>
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+		    <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="drivingList.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="driving-sajax" namespace="/ea/driving" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.EdcDept.action.EdcDeptAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">results</param>  
+            </result>  
+
+		</action>
+	</package>
+</struts>

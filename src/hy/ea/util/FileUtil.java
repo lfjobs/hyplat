@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.plat.service.HistoryService;
 
 import java.io.BufferedReader;
@@ -27,6 +30,7 @@ import org.springframework.util.FileCopyUtils;
  *
  */ 
 public class FileUtil {
+	private static final Logger logger = LoggerFactory.getLogger(FileUtil.class);
 
 	@Resource
 	private HistoryService historyService;
@@ -89,7 +93,7 @@ public class FileUtil {
 		try {
 			encodeName = new String(fileName.getBytes("UTF-8"), "ISO-8859-1");// ISO-8859-1
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return encodeName;
 	}
@@ -121,7 +125,7 @@ public class FileUtil {
 	public static boolean delete(String fileName) {
 		File file = new File(fileName);
 		if (!file.exists()) {
-			System.out.println("删除文件失败：" + fileName + "文件不存在");
+			logger.info("删除文件失败：{}{}", fileName, "文件不存在");
 			return false;
 		} else {
 			if (file.isFile()) {
@@ -144,10 +148,10 @@ public class FileUtil {
 		File file = new File(fileName);
 		if (file.isFile() && file.exists()) {
 			file.delete();
-			//System.out.println("删除单个文件" + fileName + "成功！");
+			//logger.info("删除单个文件{}{}", fileName, "成功！");
 			return true;
 		} else {
-			System.out.println("删除单个文件" + fileName + "失败！");
+			logger.info("删除单个文件{}{}", fileName, "失败！");
 			return false;
 		}
 	}
@@ -167,7 +171,7 @@ public class FileUtil {
 		File dirFile = new File(dir);
 		// 如果dir对应的文件不存在，或者不是一个目录，则退出
 		if (!dirFile.exists() || !dirFile.isDirectory()) {
-			System.out.println("删除目录失败" + dir + "目录不存在！");
+			logger.info("删除目录失败{}{}", dir, "目录不存在！");
 			return false;
 		}
 		boolean flag = true;
@@ -191,16 +195,16 @@ public class FileUtil {
 		}
 
 		if (!flag) {
-			System.out.println("删除目录失败");
+			logger.info("删除目录失败");
 			return false;
 		}
 
 		// 删除当前目录
 		if (dirFile.delete()) {
-			System.out.println("删除目录" + dir + "成功！");
+			logger.info("删除目录{}{}", dir, "成功！");
 			return true;
 		} else {
-			System.out.println("删除目录" + dir + "失败！");
+			logger.info("删除目录{}{}", dir, "失败！");
 			return false;
 		}
 	}
@@ -254,18 +258,18 @@ public class FileUtil {
 						str += (t + ";");
 					}
 				} catch (IOException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 				if (null != br) {
 					try {
 						br.close();
 						br = null;
 					} catch (IOException e) {
-						e.printStackTrace();
+						logger.error("操作异常", e);
 					}
 				}
 			} catch (FileNotFoundException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		return str;
@@ -289,6 +293,6 @@ public class FileUtil {
 ////////////////////////////////////////////////////////
 	public static void main(String[] args) {
 		for(int i =0;i<100;i++)
-		System.out.println("insert into DTCPASSWORD (PASSWORD, DAY) values ('"+RandomDatas.getRandomString(30)+"', 356);");
+		logger.info("调试信息");
 	}
 }

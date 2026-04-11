@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<include file="struts-ea/finance/struts-ea-journalsum.xml" />
+	<include file="struts-ea/finance/struts-ea-csbjects.xml" />
+	<include file="struts-ea/finance/struts-ea-csubjectsrule.xml" />
+	<include file="struts-ea/finance/struts-ea-currentcount.xml" />
+	<include file="struts-ea/finance/struts-ea-cashierbills.xml" />
+	<include file="struts-ea/finance/struts-ea-goodscashiersummary.xml" />
+	<include file="struts-ea/finance/struts-ea-cashierbillssummary.xml" />
+	<include file="struts-ea/finance/struts-ea-accountant.xml" />
+	<include file="struts-ea/finance/struts-ea-cashier.xml" />
+	<include file="struts-ea/finance/struts-ea-responsible.xml" />
+	<include file="struts-ea/finance/struts-ea-cashierbillssummarycompany.xml" />
+	<include file="struts-ea/finance/struts-ea-projectplanbudget.xml" />
+	<!-- 扫码选产品支付 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-scancodeassi.xml" />
+	<!-- 餐厅管理 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-restaurant.xml" />
+	<!-- 餐厅新主页 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-restmainnew.xml" />
+	<!-- 消息提醒 -->
+	<include file="struts-ea/finance/struts-ea-remind.xml" />
+	<!-- 税务单据 -->
+	<include file="struts-ea/finance/struts-ea-dutiable.xml" />	
+	<!-- 税务单据待主管审核 -->
+	<include file="struts-ea/finance/struts-ea-competent.xml" />
+	<!-- 税务单据待经理审核 -->
+	<include file="struts-ea/finance/struts-ea-manager.xml" />
+	<!-- 税务单据待财务审核 -->
+	<include file="struts-ea/finance/struts-ea-audit.xml" />
+	<!-- 税务单据汇总 -->
+	<include file="struts-ea/finance/struts-ea-taxsummary.xml" />	
+	<!-- 税务单据公司汇总 -->
+	<include file="struts-ea/finance/struts-ea-dutiablessummarycompany.xml" />
+	<!-- 现金请购申请审批明细单 -->
+	<include file="struts-ea/finance/struts-ea-cashapplybills.xml" />
+	<!-- 单据归档 -->
+	<include file="struts-ea/finance/struts-ea-archives.xml" />
+	<!-- 部门物品明细 -->
+	<include file="struts-ea/finance/struts-ea-goodscashierdepartment.xml" />
+	<!-- 分单据类别录入 -->
+	<include file="struts-ea/finance/struts-ea-cashierbillsClassify.xml" />
+	<!-- 分单据类别展示 -->
+	<include file="struts-ea/finance/struts-ea-cashierbillsclassret.xml" />
+	<!-- 单据拆分 -->
+	<include file="struts-ea/finance/struts-ea-splitbill.xml" />
+	<!-- 现金、银行日记账报表 -->
+	<include file="struts-ea/finance/struts-ea-statements.xml" />
+	<!-- 设置期初余额 -->
+	<include file="struts-ea/finance/struts-ea-beginningbalance.xml" />
+	<!-- 驳回单据汇总 -->
+	<include file="struts-ea/finance/struts-ea-rejectbills.xml" />
+	<!-- 银行账户管理(部门) -->
+	<include file="struts-ea/finance/struts-ea-bankAccountManager.xml" />
+	<!-- 个人财务管理-设置期初余额  
+	<include file="struts-ea/finance/struts-ea-pbeginning.xml" />-->
+	<!-- 收入支出物品明细  -->
+	<include file="struts-ea/finance/struts-ea-splitgoodsbill.xml" />
+	<!-- 单据拆分公司汇总  -->
+	<include file="struts-ea/finance/struts-ea-splitbillCompany.xml" />
+	<!-- 单据拆分集团汇总  -->
+	<include file="struts-ea/finance/struts-ea-splitbillGroup.xml" />
+	<!-- 佣金设计 -->
+	<include file="struts-ea/finance/struts-ea-commissionDesign.xml" />
+	
+	<include file="struts-ea/finance/BenDis/struts-ea-bdbill.xml" />
+	<!-- 收货单管理 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-consigneesheet.xml"/>
+     <!-- 退款单 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-refundsheet.xml"/>
+	<!-- 物流出入库管理 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-logisticsstorage.xml"/>
+	<include file="struts-ea/finance/BenDis/struts-ea-logisticswarehouse.xml"/>
+	<include file="struts-ea/finance/BenDis/struts-ea-SalesManagement.xml"/>
+	<!--  现金库存管理 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-cashStockOperation.xml"/>
+	<!--  金币库存管理 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-goldStockOperation.xml"/>
+	<!--  金币流水管理 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-userGoldWaterReport.xml"/>
+	<!--  手机订单 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-phoneBill.xml"/>
+	<!-- 新版手机订单ljc -->
+	<include file="struts-ea/finance/NewPhoneOrders/struts-ea-phoneOrders.xml"/>
+	<!-- 新退款单 -->
+	<include file="struts-ea/finance/NewPhoneOrders/struts_ea_refundmoney.xml"/>
+	<!--  手机金币池 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-jinbi.xml"/>
+	<include file="struts-ea/finance/BenDis/struts-ea-resourseNetwork.xml"/>
+			
+	<!--  卖家订单 -->
+	
+	<include file="struts-ea/finance/NewPhoneOrders/struts-ea-sellerOrder.xml"/>
+	
+	<!-- 新退款单 -->
+	<include file="struts-ea/finance/NewPhoneOrders/struts_ea_refundmoney.xml"/>
+
+	<!-- 共建平台 -->
+	<include file="struts-ea/buildPlatform/struts_ea_wfjIndustryPlatform.xml"/>
+
+	<!-- 积分-->
+	<include file="struts-ea/finance/BenDis/struts-ea-bonuspoints.xml"/> 
+	<!-- 积分 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-wfjzh.xml"/>
+	<!-- 投资设备绑定设置 -->
+	<include file="struts-ea/finance/InvestDeviceBind/struts-ea-devicebind.xml"/>
+	<!-- 消费补助设置 -->
+	<include file="struts-ea/finance/BenDis/struts-ea-setSubsidize.xml"/>
+	<include file="struts-ea/finance/struts-ea-supermarket.xml"/>
+	<!-- 价格佣金百分比设置 -->
+	<include file="struts-ea/finance/percentage/struts-ea-percentage.xml"/>
+	<!-- 价格佣金设置 -->
+	<include file="struts-ea/finance/brokerage/struts-ea-brokerage.xml"/>
+	<include file="struts-ea/finance/BenDis/reports/struts-ea-reports.xml"/>
+	<!-- 成交订单-->
+	<include file="struts-ea/finance/turnovermanage/struts-ea-makeOrder.xml"/>
+	<!-- 移动端佣金设置-->
+	<include file="struts-ea/finance/brokerage/struts-ea-mobileBrokerage.xml"/>
+</struts>
+
+

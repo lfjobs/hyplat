@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office"> 
+	<class name="TelMessage" table="dtTelMessage">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property  name="telMessageID">
+			<column  length="50" name="telMessageID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="telNum">
+			<column length="250" name="telNum" />
+		</property>
+		<property  name="status">
+			<column  length="10" name="status" />
+		</property>
+		<property  name="sendDate">
+			<column  length="250" name="sendDate" />
+		</property>
+		<property  name="msgStatus">
+			<column  length="250" name="msgStatus" />
+		</property>
+		<property  name="accountID">
+			<column  length="50" name="accountID" />
+		</property>
+		<property name="sendTime">
+			<column length="250" name="sendTime"/>
+		</property>
+		<property  name="companyName">
+			<column  length="250" name="companyName" />
+		</property>
+		<property name="staffName">
+			<column length="50" name="staffName"/>
+		</property>
+		<property name="content">
+			<column length="2000" name="content"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="orgDetail">
+			<column length="50" name="orgDetail"/>
+		</property>
+			<property name="ralation">
+			<column length="50" name="ralation"/>
+		</property>
+		<property name="connection">
+			<column length="50" name="connection"/>
+		</property>
+		<property name="receiverCompanyID">
+			<column length="50" name="receiverCompanyID"/>
+		</property>
+		<property name="receiverCompanyName">
+			<column length="50" name="receiverCompanyName"/>
+		</property>
+		<property name="receiverID">
+			<column length="50" name="receiverID"/>
+		</property>
+		<property name="receiverName">
+			<column length="50" name="receiverName"/>
+		</property>
+	</class>
+</hibernate-mapping>

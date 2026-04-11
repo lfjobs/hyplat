@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="GoodsManage" table="dtGoodsManage">
+		<id length="50" name="goodsKey">
+			<column length="50" name="goodsKey" ><comment>逻辑主键</comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="goodsID">
+			<column length="50" name="goodsID" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"><comment>公司业务主键</comment></column>
+		</property>
+		 <property name="goodsCoding">
+        	<column name="goodsCoding" length="250" ><comment>品名编号</comment></column>
+        </property>
+        	<property name="goodsName">
+        	<column name="goodsName" length="250"><comment>品名名称</comment></column>
+        </property>
+        <property name="guojiStorage">
+              <column name="guojiStorage" length="250"><comment>国际条码管理;</comment></column>
+        </property>
+        <property name="wupjj">
+          <column name="wupjj" length="500"><comment>物品简介管理</comment></column>
+        </property>
+        <property name="wupgn">
+          <column name="wupgn" length="500"><comment>物品功能管理；</comment></column>
+        </property>
+           <property name="wupxuhao">
+          <column name="wupxuhao" length="500"><comment>物品序号</comment></column>
+        </property>
+        <property name="wupyt">
+           <column name="wupyt" length="500"><comment>物品用途管理</comment></column>
+        </property>
+        <property name="shippath">
+           <column name="shippath" length="250"><comment>物品视频路径</comment></column>
+        </property>
+		<property name="typeID">
+			<column length="50" name="typeID"><comment>类型</comment></column>
+		</property>
+		<property name="variableID">
+			<column length="50" name="variableID"><comment>单位</comment></column>
+		</property>
+		<property name="goodsvariable">
+			<column length="256" name="goodsvariable"><comment>换算单位</comment></column>
+		</property>
+		<property name="num">
+			<column length="250" name="num"><comment></comment></column>
+		</property>
+		<property name="variable1ID">
+			<column length="50" name="variable1ID"><comment>单位</comment></column>
+		</property>
+		<property name="num1">
+			<column length="250" name="num1"><comment></comment></column>
+		</property>
+		<property name="variable2ID">
+			<column length="50" name="variable2ID"><comment>单位</comment></column>
+		</property>
+		<property name="num2">
+			<column length="250" name="num2"><comment></comment></column>
+		</property>
+		<property name="variable3ID">
+			<column length="50" name="variable3ID"><comment>单位</comment></column>
+		</property>
+		<property name="num3">
+			<column length="250" name="num3"><comment></comment></column>
+		</property>
+		<property name="variable4ID">
+			<column length="50" name="variable4ID"><comment>单位</comment></column>
+		</property>
+		<property name="num4">
+			<column length="250" name="num4"><comment></comment></column>
+		</property>
+		
+		<property name="acquiesceStandard">
+			<column length="250" name="acquiesceStandard" ><comment>默认规格</comment></column>
+		</property>
+        <property name="standard">
+        	<column name="standard" length="250"><comment>品牌规格</comment></column>
+        </property>
+		<property name="mnemonicCode">
+			<column length="250" name="mnemonicCode"><comment>主板号/发动机号(品牌)</comment></column>
+		</property>
+		<property name="model">
+			<column length="250" name="model"><comment>型号</comment></column>
+		</property>
+		<property name="defaultStorage">
+			<column length="250" name="defaultStorage" ><comment>统一分类条码</comment></column>
+		</property>
+		<property name="manufacturers">
+			<column length="250" name="manufacturers" ><comment>车架号/机壳号</comment></column>
+		</property>
+		<property name="photoPath">
+			<column length="256" name="photoPath" ><comment>图片路径</comment></column>
+		</property>
+		<property name="logoPath">
+			<column length="256" name="logoPath" ><comment>LOGO路径</comment></column>
+		</property>
+		<property name="goodsState">
+			<column length="2" name="goodsState" ><comment>物品状态(说明：00表示正常，01表示作废)</comment></column>
+		</property>
+		<property name="subjectsID">
+        	<column name="subjectsID" length="50"><comment>科目ID</comment></column>
+        </property>
+         <property name="subjectsName">
+        	<column name="subjectsName" length="250"><comment>科目名称</comment></column>
+        </property>
+        <property name="tradeCode">
+        	<column name="tradeCode" length="50"><comment>行业类别</comment></column>
+        </property>
+        <property name="bigClass">
+        	<column name="bigClass" length="250"><comment>人事物品元素，财务物品元素···</comment></column>
+        </property>
+        	<property name="companyStorsge">
+			<column length="250" name="companyStorsge" ><comment>公司打印条码号</comment></column>
+		</property>
+			<property name="twoCode">
+			<column length="250" name="twoCode" ><comment>二维码</comment></column>
+		</property>
+			<property name="barCode">
+			<column length="250" name="barCode" ><comment>条码号</comment></column>
+		</property>
+			<property name="producttype">
+			<column length="50" name="producttype" ><comment>项目产品分类</comment></column>
+		</property>
+		
+		 <property name="remark">
+			<column length="250" name="remark" ><comment>备注</comment></column>
+		</property>
+		 <property name="tradeID">
+			<column length="50" name="tradeID" ><comment>行业</comment></column>
+		</property>
+		 <property name="tradeName">
+			<column length="200" name="tradeName" ><comment>全名</comment></column>
+		</property>
+	    <property name="brand">
+			<column length="50" name="brand" ><comment>品牌</comment></column>
+		</property>
+		 <property name="fiveClear">
+			<column  name="fiveClear" ><comment>5C部门名称</comment></column>
+		</property>
+		  <property name="createdate">
+			<column  name="createdate" ><comment>创建时间</comment></column>
+		</property>
+		<property name="staffID">
+			<column  name="staffID" ><comment>责任人ID</comment></column>
+		</property>
+		<property name="staffName">
+			<column  name="staffName" ><comment>责任人名称</comment></column>
+		</property>
+		<property name="carModel">
+			<column  length="100"  name="carModel" ><comment>教练车品牌</comment></column>
+		</property>
+		<property name="categoryId">
+			<column  length="50"  name="categoryId" ><comment>关联驾校产品分类表的分类id</comment></column>
+		</property>
+		<property name="categoryName">
+			<column  length="50"  name="categoryName" ><comment>关联驾校产品分类表的分类名称</comment></column>
+		</property>
+
+		<property name="isScale">
+			<column  length="1"  name="isScale" ><comment>0:是：1否</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

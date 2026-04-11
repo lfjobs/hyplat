@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="personal-ntoken" namespace="/ea/personal" extends="struts-default">
+		<action name="ea_*"
+			class="hy.ea.invoicing.action.PersonalWarehouseAction" method="{1}">
+			<!--出库管理-->
+			<result name="list">/page/ea/main/finance/invoicing/personalwarehouse_list.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="personal-jsonajax" namespace="/ea/personal"
+		extends="json-default">
+		<action name="sajax_ea_*"
+			class="hy.ea.invoicing.action.PersonalWarehouseAction" method="{1}">
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

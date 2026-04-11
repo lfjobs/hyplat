@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="androiddoc-sajax" namespace="/ea/androiddoc" extends="json-default">
+		<action name="sajax_ea_*" class="mobile.tiantai.android.action.AndroidDocFlowAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>
+		</action>	
+	</package>
+	<package strict-method-invocation="false" name="androiddoc-ntoken" namespace="/ea/androiddoc"  extends="struts-default">
+		<action name="ea_*" class="mobile.tiantai.android.action.AndroidDocFlowAction" method="{1}">
+			 <result name="success">/page/ea/success.jsp</result>
+			 <result name="qyht">/page/ea/main/office_ea/contract/paySuc.jsp</result>
+			<result name="toupload">/page/ea/main/office_ea/contract/bdUploadFile.jsp</result>
+			<result name="printDa">/page/ea/main/office_ea/contract/printDa.jsp</result>
+			<result name="tmppre">/page/ea/main/office_ea/contract/fileTmpPre.jsp</result>
+			<result name="viewDoc">/page/ea/main/office_ea/contract/viewDoc.jsp</result>
+			<result name="tempManage">/page/ea/main/office_ea/contract/tempManage.jsp</result>
+			<result name="tempType">/page/ea/main/office_ea/contract/tempTypelist.jsp</result>
+			<result name="tovideo">/page/ea/main/office_ea/contract/sealvideo.jsp</result>
+			<result name="toSort">/page/ea/main/office_ea/contract/tempTypeSort.jsp</result>
+			<result name="toTempSort">/page/ea/main/office_ea/contract/tempSort.jsp</result>
+			<result name="tempTypeTree">/page/ea/main/office_ea/contract/tempTypeTree.jsp</result>
+			<result name="temptree">/page/ea/main/office_ea/contract/tempTree.jsp</result>
+			<result name="selecttemp">/page/ea/main/office_ea/contract/selectTemp.jsp</result>
+			<result name="selecttemprz">/page/ea/main/office_ea/contract/selectTempRz.jsp</result>
+			<result name="selecttemptype">/page/ea/main/office_ea/contract/selectTempType.jsp</result>
+			<result name="arvTypeTree">/page/ea/main/office_ea/contract/archiveTypeTree.jsp</result>
+			<result name="archivetree">/page/ea/main/office_ea/contract/archiveTree.jsp</result>
+			<result name="arvbox">/page/ea/main/office_ea/contract/archiveBoxView.jsp</result>
+			<result name="pdfaudit">/page/ea/main/office_ea/contract/pdfViewAd.jsp</result>
+			<result name="toall">/page/WFJClient/pc/5l5C/office/documentListNew.jsp</result>
+
+		</action>
+	</package>
+</struts>

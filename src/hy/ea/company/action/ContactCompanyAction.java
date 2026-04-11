@@ -1,5 +1,8 @@
 package hy.ea.company.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 往来单位
  *
@@ -55,6 +58,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class ContactCompanyAction {
+	private static final Logger logger = LoggerFactory.getLogger(ContactCompanyAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -311,7 +315,7 @@ public class ContactCompanyAction {
                 return true;
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return false;
     }
@@ -554,7 +558,7 @@ public class ContactCompanyAction {
             result = result.substring(result.indexOf(":") + 2, result.indexOf("}") - 1);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return result;
     }

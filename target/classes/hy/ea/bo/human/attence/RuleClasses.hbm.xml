@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">                            
+<hibernate-mapping package="hy.ea.bo.human.attence">
+	<class name="RuleClasses" table="DT_At_RuleClasses" schema="HYPLAT" dynamic-insert="true">
+	<comment>规则对应的时间班次</comment>
+		<id length="50" name="classkey" type="java.lang.String">
+			<column length="50" name="classkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="classID" type="java.lang.String">
+			<column length="50" name="classID" >
+			</column>
+		</property>
+		<property name="signNum" type="java.lang.String">
+			<column name="signNum" length="1">
+				<comment>每天打卡次数  2,4,6</comment>
+			</column>
+		</property>
+		 <property name="startWork1" type="java.util.Date">
+			<column name="startWork1" >
+				<comment>上班时间1</comment>
+			</column>
+		</property>
+		 <property name="endWork1" type="java.util.Date">
+			<column name="endWork1" >
+				<comment>下班时间1</comment>
+			</column>
+		</property>
+		 <property name="startWork2" type="java.util.Date">
+			<column name="startWork2" >
+				<comment>上班时间2</comment>
+			</column>
+		</property>
+		 <property name="endWork2" type="java.util.Date">
+			<column name="endWork2" >
+				<comment>上班时间2</comment>
+			</column>
+		</property>
+		 <property name="startWork3" type="java.util.Date">
+			<column name="startWork3" >
+				<comment>上班时间3</comment>
+			</column>
+		</property>
+		<property name="endWork3" type="java.util.Date">
+			<column name="endWork3" >
+				<comment>上班时间3</comment>
+			</column>
+		</property>
+		<property name="className" type="java.lang.String">
+			<column length="50" name="className" >
+				<comment>班次名称</comment>
+			</column>
+		</property>
+		
+		<property name="attenceDate" type="java.lang.String">
+			<column length="50" name="attenceDate" >
+				<comment>考勤时间</comment>
+			</column>
+		</property>
+	
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50">
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+         <property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>创建日期</comment>
+			</column>
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.drive">
+	<class name="StudentInfo" table="dtStudentInfo">
+		<id length="50" name="siKey">
+			<column length="50" name="siKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="siId">
+			<column length="50" name="siId"><comment>ID</comment></column>
+		</property>
+		<property name="oriEnroll">
+			<column length="50" name="oriEnroll"><comment> 报名来源</comment></column>
+		</property>
+		<property name="dateEnroll">
+			<column  name="dateEnroll"><comment>报名时间</comment></column>
+		</property>
+		<property name="oriDriveLic">
+			<column  name="oriDriveLic"><comment>现有驾照</comment></column>
+		</property>
+		<property name="ispartyMem">
+			<column length="2"  name="ispartyMem"><comment>00 01是否党员</comment></column>
+		</property>
+		<property name="islocal">
+			<column length="2"  name="islocal"><comment>00 01是否本地</comment></column>
+		</property>
+		<property name="isDriveLic">
+			<column length="2"  name="isDriveLic"><comment>00 01已领驾驶证</comment></column>
+		</property>
+		<property name="iscerComple">
+			<column length="2"  name="iscerComple"><comment>00 01已领结业证</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>人员ID</comment></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="productregister-ntoken" namespace="/ea/productregister"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.driving.action.CarProductregisterAction" method="{1}">
+			<result name="cylinderlist">/page/ea/main/driving/signup/cylinderlist.jsp</result>
+		    <result name="success">/page/ea/success.jsp</result> 
+		    <result name="editcheck">/page/ea/main/driving/signup/carCarlinderInformation_add.jsp</result>
+		    <result name="updatecheck">/page/ea/main/driving/signup/carCarlinderInformation_edit.jsp</result>
+		    <result name="allRecordlist">/page/ea/main/driving/signup/recoredCylinderlist.jsp</result>
+		     <result name="cylinderpage">/page/ea/main/driving/cylinderdetection.jsp</result>
+		     <result name="Windingpage">/page/ea/main/driving/windingbottledetection.jsp</result>
+		      <result name="registrationlist">/page/ea/main/driving/signup/registrationlist.jsp</result><!-- 使用登记证返回页面 -->
+		      <result name="panfeitongzhilist">/page/ea/main/driving/signup/panfeitongzhilist.jsp</result><!-- 判废通知列表页面 -->
+		      <result name="metereportlist">/page/ea/main/driving/signup/metereportlist.jsp</result><!-- 评定报告打印列表 -->
+		      <result name="registrationprint">/page/ea/main/driving/signup/registrationPrint.jsp</result><!-- 登记证打印 -->
+		      <result name="seedatial">/page/ea/main/driving/signup/carCarlinderInformation_detail.jsp</result><!-- 返回按车牌号显示气瓶详细信息查看 -->
+		     <result name="updateregistration">/page/ea/main/driving/signup/printregistrationpage.jsp</result><!-- 更换打印登记证 -->
+		     <result name="printcylinder">/page/ea/main/driving/signup/registrationPrint.jsp</result><!-- 打印气瓶使用登记 -->
+		     <result name="printsheetlist">/page/ea/main/driving/signup/SheetOrderPrint.jsp</result><!-- 打印派工单 -->
+		    <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="student.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="productregister-sajax" namespace="/ea/productregister" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.driving.action.CarProductregisterAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+  
+</struts>

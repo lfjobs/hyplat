@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,6 +49,7 @@ import net.sf.json.JSONObject;
 @Controller
 @Scope("prototype")
 public class GoldTicketAction {
+	private static final Logger logger = LoggerFactory.getLogger(GoldTicketAction.class);
 	
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -383,7 +387,7 @@ public class GoldTicketAction {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		CAccount account = (CAccount) session.get("account");
 		String prID = request.getParameter("prID");
-		System.out.println("prid:"+prID);		
+		logger.info("调试信息");		
 		publicreceipts = (Publicreceipts)baseBeanService.getBeanByHqlAndParams("from Publicreceipts where prID=? ", new Object[]{prID});
 		publicreceiptsChild = (PublicreceiptsChild)baseBeanService.getBeanByHqlAndParams("from PublicreceiptsChild where prID=? ", new Object[]{prID});				
 
@@ -419,7 +423,7 @@ public class GoldTicketAction {
 		try {
 			fu.downFile(downLoadPath);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package strict-method-invocation="false" name="cashinv-ntoken"  namespace="/ea/cashinv"  extends="struts-default">
+        <action name="ea_*" class="hy.ea.invoicing.action.CheckInvAction" method="{1}">
+            <!--<result name="success">/page/ea/success.jsp</result>-->
+            <result name="checkInvList">/page/pkModule/checkinv/checkInvList/checkInvList.jsp</result><!--支出盘库单列表-->
+            <result name="toAddCheckInv">/page/pkModule/checkinv/addCheckInv/addCheckInv.jsp</result><!--添加盘库单/库房保存然后返回首页-->
+            <result name="toDetail">/page/pkModule/checkinv/checkInvList/checkInvDetail.jsp</result><!--盘库单详情页-->
+            <result name="toUpCheckInv">/page/pkModule/checkinv/addCheckInv/upCheckInv.jsp</result><!--修改支出预算单-->
+            <result name="tree">/page/pkModule/checkinv/management/SalesLibrary.jsp</result><!--库房管理1OK-->
+            <result name="deopt">/page/pkModule/checkinv/management/kftwo.jsp</result><!--库房管理2-->
+
+
+        </action>
+    </package>
+
+    <package strict-method-invocation="false" name="cashinv-jsonajax" namespace="/ea/cashinv" extends="json-default">
+        <action name="sajax_ea_*" class="hy.ea.invoicing.action.CheckInvAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

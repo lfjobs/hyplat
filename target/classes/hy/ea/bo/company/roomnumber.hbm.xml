@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="RoomNumber" table="DT_RoomNumber">
+		<id length="50" name="roomNumKey">
+			<column length="50" name="roomNumKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="roomNumID">
+			<column length="50" name="roomNumID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="accommodID">
+			<column length="50" name="accommodID" />
+		</property>
+		<property name="roomNum">
+			<column length="50" name="roomNum" />
+		</property>
+		<property name="starts">
+			<column length="50" name="starts" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

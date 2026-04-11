@@ -1,5 +1,8 @@
 package com.hx.comm;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -11,6 +14,7 @@ import java.util.Properties;
  *
  */
 public class PropertiesUtils {
+	private static final Logger logger = LoggerFactory.getLogger(PropertiesUtils.class);
 
 	public static Properties getProperties() {
 
@@ -23,7 +27,7 @@ public class PropertiesUtils {
 			p.load(inputStream);
 
 		} catch (IOException e1) {
-			e1.printStackTrace();
+			logger.error("操作异常", e1);
 		}
 
 		return p;

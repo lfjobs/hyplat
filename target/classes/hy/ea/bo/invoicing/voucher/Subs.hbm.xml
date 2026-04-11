@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing.voucher">
+	<class name="Subs" table="dt_inv_Subs">
+		<id length="50" name="subearlyKey">
+			<column length="50" name="subearlyKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="subearlyID">
+			<column length="50" name="subearlyID" />
+		</property>
+		<property name="subjectsID">
+			<column length="50" name="subjectsID" />
+		</property>
+		<property name="subjectsPID">
+        	<column name="subjectsPID" length="50"/>
+        </property>
+		<property  name="subjectsNumbers">
+			<column length="250" name="subjectsNumbers" />
+		</property>
+		<property  name="subjectsName">
+			<column length="250" name="subjectsName" />
+		</property>
+		<property  name="startCash">
+			<column length="250" name="startCash" />
+		</property>
+		<property  name="endCash">
+			<column length="250" name="endCash" />
+		</property>
+		<property  name="datess">
+			<column sql-type="Date" name="datess" />
+		</property>
+		<property  name="install">
+			<column length="250" name="install" />
+		</property>
+		<property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+        <property name="sdirection">
+			<column length="250" name="sdirection" />
+		</property>
+		<property name="edirection">
+			<column length="250" name="edirection" />
+		</property>
+		<property  name="cloan">
+			<column length="250" name="cloan" />
+		</property>
+		<property  name="cforLoan">
+			<column length="250" name="cforLoan" />
+		</property>
+		<property name="currentLevel">
+        	<column name="currentLevel" length="250"/>
+        </property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.vo">
+	<class name="COSJobPlanVO" table="dtCOSJobPlanvo">
+		<id length="50" name="jobPlanKey">
+			<column length="50" name="jobPlanKey" />
+			<generator class="uuid" />
+		</id>
+		<property  name="companyName">
+			<column length="250" name="companyName" />
+		</property>
+		<property  name="organizationName">
+			<column length="250" name="organizationName" />
+		</property>
+		<property  name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+		<property  name="staffCode">
+			<column length="250" name="staffCode" />
+		</property>
+		<property name="jobPlanID">
+			<column length="50" name="jobPlanID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		
+		<property name="startDate">
+			<column  name="startDate"/>
+		</property>
+		<property name="jobName">
+			<column length="250" name="jobName"/>
+		</property>
+		<property name="postmanage">
+			<column length="250" name="postmanage"/>
+		</property>
+		<property name="endDate">
+			<column  name="endDate"/>
+		</property>
+		<property name="jobContent">
+			<column length="250" name="jobContent"/>
+		</property>
+		<property name="supervisor">
+			<column length="250" name="supervisor" />
+		</property>
+		<property  name="humanSupervisor">
+			<column length="250" name="humanSupervisor" />
+		</property>
+		<property  name="manager">
+			<column length="250" name="manager" />
+		</property>
+		<property name="entryDate">
+			<column length="50" name="entryDate"/>
+		</property>
+			<property  name="entry">
+			<column length="250" name="entry" />
+		</property>
+		
+		<property  name="projectcode">
+			<column length="250" name="projectcode" />
+		</property>
+		<property  name="projectDetailsCode">
+			<column length="250" name="projectDetailsCode" />
+		</property>
+			<property  name="projectRequirements">
+			<column length="250" name="projectRequirements" />
+		</property>
+			<property  name="fraction">
+			<column length="250" name="fraction" />
+		</property>
+			<property  name="points">
+			<column length="250" name="points" />
+		</property>
+			<property  name="actualScore">
+			<column length="250" name="actualScore" />
+		</property>
+		<property  name="codeID">
+			<column length="50" name="codeID" />
+		</property>
+		<property  name="codeValue">
+			<column length="50" name="codeValue" />
+		</property>
+		<property  name="jobstatus">
+			<column length="50" name="jobstatus" />
+		</property>
+	</class>
+</hibernate-mapping>

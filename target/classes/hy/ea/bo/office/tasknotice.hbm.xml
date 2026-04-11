@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="TaskNotice" table="dtTaskNotice">
+		<id length="50" name="taskNoticeKey">
+			<column length="50" name="taskNoticeKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="taskNoticeID">
+			<column length="50" name="taskNoticeID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="deptID">
+			<column length="50" name="deptID" />
+		</property>
+		<property name="voucherNum">
+			<column length="50" name="voucherNum" />
+		</property>
+		<property name="enPerson">
+			<column length="50" name="enPerson" />
+		</property>
+		<property name="enTNumber">
+			<column length="250" name="enTNumber" />
+		</property>
+		<property name="enType">
+			<column length="250" name="enType" />
+		</property>
+		<property name="enDate">
+			<column length="50" name="enDate" />
+		</property>
+		<property name="enContent">
+			<column length="50" name="enContent" />
+		</property>
+		<property name="enIdea">
+			<column length="250" name="enIdea" />
+		</property>
+		<property name="enAuditor">
+			<column length="50" name="enAuditor" />
+		</property>
+		<property name="enLeader">
+			<column length="250" name="enLeader" />
+		</property>
+		<property name="enFilePath">
+			<column length="256" name="enFilePath" />
+		</property>
+		<property name="manager">
+			<column length="250" name="manager" />
+		</property>
+		<property name="president">
+			<column length="50" name="president" />
+		</property>
+		<property name="headCharge">
+			<column length="50" name="headCharge" />
+		</property>
+		<property name="financeVerify">
+			<column length="50" name="financeVerify" />
+		</property>
+		<property name="accounting">
+			<column length="50" name="accounting" />
+		</property>
+		<property name="allAccounting">
+			<column length="50" name="allAccounting" />
+		</property>
+		<property name="cashier">
+			<column length="50" name="cashier" />
+		</property>
+		<property name="allCashier">
+			<column length="50" name="allCashier" />
+		</property>
+	</class>
+</hibernate-mapping>

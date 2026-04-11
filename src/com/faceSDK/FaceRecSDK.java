@@ -1,5 +1,8 @@
 package com.faceSDK;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.ha.facecamera.configserver.ConfigServer;
 import com.ha.facecamera.configserver.ConfigServerConfig;
 import com.ha.facecamera.configserver.DataServer;
@@ -11,6 +14,7 @@ import com.ha.facecamera.configserver.pojo.ListFaceCriteria;
 import static com.ha.facecamera.configserver.ConnectStateInvokeCondition.DeviceNoKnown;
 
 public class FaceRecSDK {
+	private static final Logger logger = LoggerFactory.getLogger(FaceRecSDK.class);
     public static   DataServer ds = null;
     public static   ConfigServer cs = null;
 
@@ -20,8 +24,8 @@ public class FaceRecSDK {
     public static boolean startConfigServer() {
 
         ConfigServer cs = new ConfigServer();
-        System.out.println(cs.getLastErrorCode());
-        System.out.println(cs.getLastErrorMsg());
+        logger.info("调试信息");
+        logger.info("调试信息");
         ConfigServerConfig config = new ConfigServerConfig();
 
         return  cs.start(10001, config);
@@ -77,10 +81,10 @@ public class FaceRecSDK {
 //        f.setRole(1);
 //        f.setJpgFilePath(new String[]{"C:\\Users\\LinXing\\Desktop\\肖何.jpg"});
         if(cs.addFace(deviceID,face, 5000)){
-            System.out.println("添加人脸成功");
+            logger.info("添加人脸成功");
             return true;
         }else{
-            System.out.println("添加人脸失败");
+            logger.info("添加人脸失败");
             return  false;
         }
 

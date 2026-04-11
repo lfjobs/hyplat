@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.company">
+	<class name="BusiManager" table="DT_BManager">
+	<comment>负责认领公司的业务员</comment>
+		<id length="50" name="bsmKey">
+			<column length="50" name="bsmKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="bsmId">
+			<column length="50" name="bsmId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" ><comment>业务员ID</comment></column>
+		</property>
+		<property name="createDate">
+			<column  name="createDate" ><comment>日期</comment></column>
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" ><comment>公司ID</comment></column>
+		</property>
+		<property name="type">
+			<column length="2" name="type" ><comment>任务类型</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

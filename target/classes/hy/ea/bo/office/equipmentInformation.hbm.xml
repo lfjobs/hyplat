@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EquipmentInformation" table="DT_EquipmentInformation">
+		<id length="50" name="equipmentkey">
+			<column length="50" name="equipmentkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="equipmentId">
+			<column length="50" name="equipmentId">
+				<comment>设备id</comment>
+			</column>
+		</property>
+		<property name="siteId">
+			<column length="50" name="siteId" >
+				<comment>所属场地id</comment>
+			</column>
+		</property>
+		<property name="equipmentDate">
+			<column length="50" name="equipmentDate">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="installationTime">
+			<column length="50" name="installationTime" >
+				<comment>安装日期</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column length="50" name="status" >
+				<comment>00:已使用(正常),01:未使用,02:已使用(损坏)</comment>
+			</column>
+		</property>
+		<property name="equipmentNumber">
+			<column length="50" name="equipmentNumber" >
+				<comment>设备编号</comment>
+			</column>
+		</property>
+		<property name="deviceName">
+			<column length="50" name="deviceName" >
+				<comment>设备名称</comment>
+			</column>
+		</property>
+		<property name="unitType">
+			<column length="50" name="unitType" >
+				<comment>设备型号</comment>
+			</column>
+		</property>
+		<property name="manufacturer">
+			<column length="50" name="manufacturer" >
+				<comment>生产厂商</comment>
+			</column>
+		</property>
+		<property name="channel">
+			<column length="1" name="channel" >
+				<comment>出口 0 入口 1</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

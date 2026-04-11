@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="hy.ea.bo.production.drive">
+	<class name="CoachInfo" table="dtCoachInfo">
+		<id length="50" name="ciKey">
+			<column length="50" name="ciKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ciId">
+			<column length="50" name="ciId"><comment>ID</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment> 人员ID</comment></column>
+		</property>
+		<property name="trainSchool">
+			<column   length="50"  name="trainSchool"><comment>之前的培训学校</comment></column>
+		</property>
+		<property name="drivelictype">
+			<column  length="50"  name="drivelictype"><comment>驾驶证准驾驶车型</comment></column>
+		</property>
+		<property name="drivelicDate">
+			<column  name="drivelicDate"><comment>初领驾照日期</comment></column>
+		</property>
+		<property name="trainCertDate">
+			<column name="trainCertDate"><comment>教证日期</comment></column>
+		</property>
+		<property name="applyCarType">
+			<column length="50"  name="applyCarType"><comment>申请类型</comment></column>
+		</property>
+		<property name="applyAllowCarType">
+			<column length="50"  name="applyAllowCarType"><comment>申请准教车型</comment></column>
+		</property>
+		<property name="iccardCode">
+			<column length="50" name="iccardCode"><comment>IC卡编号</comment></column>
+		</property>
+		<property name="coachlevel">
+			<column length="50"  name="coachlevel"><comment>教练等级</comment></column>
+		</property>
+		<property name="state">
+			<column length="50" name="state"><comment>教练状态</comment></column>
+		</property>
+		<property name="satisdegree">
+			<column length="50" name="satisdegree"><comment>满意度</comment></column>
+		</property>
+		<property name="trainArea">
+			<column length="500" name="trainArea"><comment>培训场地</comment></column>
+		</property>	
+		<property name="briefIntro">
+			<column length="500" name="briefIntro"><comment>教练简介</comment></column>
+		</property>	
+	</class>
+</hibernate-mapping>

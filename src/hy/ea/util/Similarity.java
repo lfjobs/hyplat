@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.text.NumberFormat;  
   
 import java.util.Locale;  
@@ -11,7 +14,8 @@ import java.util.Locale;
  
  */  
   
-public class Similarity {  
+public class Similarity {
+	private static final Logger logger = LoggerFactory.getLogger(Similarity.class);  
   
     public static void main(String[] args) {  
   
@@ -22,11 +26,11 @@ public class Similarity {
         double result=SimilarDegree(strA, strB);  
   
         if(result>=0.7){  
-            System.out.println("相似度很高！" +similarityResult(result)+result);  
+            logger.info("调试信息");  
   
         }else{  
   
-            System.out.println("相似度不高"+similarityResult(result)+result);  
+            logger.info("调试信息");  
   
         }  
   
@@ -86,7 +90,7 @@ public class Similarity {
   
             if (charReg(item)){  
   
-                //System.out.println("--"+item);  
+                //logger.info("调试信息");  
   
                 sb.append(item);  
   

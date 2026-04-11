@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocInviteRecord" table="DT_OA_DocInviteRecord">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="id" type="java.lang.String">
+			<column name="id" length="50" />
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="50" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="10" />
+		</property>
+		<property name="seqno" type="java.lang.String">
+			<column name="seqno" length="20" />
+		</property>
+		<property name="telphone" type="java.lang.String">
+			<column name="telphone" length="11" />
+		</property>
+		<property name="oprState" type="java.lang.String">  
+			<column name="oprState" length="2" />
+		</property>
+		<property name="inventDate" type="java.util.Date">
+			<column name="inventDate"  />
+		</property>
+		<property name="receiveDate" type="java.util.Date">
+			<column name="receiveDate" />
+		</property>
+		<property name="sccid" type="java.lang.String">
+			<column name="sccid" length="50" />
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column name="staffID" length="50" />
+		</property>
+		<property name="docstatus" type="java.lang.String">
+			<column name="docstatus" length="10" />
+		</property>
+		<property name="bystaffID" type="java.lang.String">
+			<column name="bystaffID" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

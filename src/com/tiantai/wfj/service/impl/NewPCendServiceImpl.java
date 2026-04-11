@@ -1,5 +1,8 @@
 package com.tiantai.wfj.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import hy.ea.bo.Company;
 import hy.ea.bo.company.CcomCom;
@@ -110,7 +113,7 @@ public class NewPCendServiceImpl implements NewPCendService {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         }
     }
@@ -519,7 +522,7 @@ public class NewPCendServiceImpl implements NewPCendService {
                 map.put("goodNum", goodNum);
             } catch (Exception e) {
                 map.put("goodNum", goodNum);
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
         } else {
             map.put("goodNum", goodNum);

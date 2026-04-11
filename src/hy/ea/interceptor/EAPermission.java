@@ -1,5 +1,8 @@
 package hy.ea.interceptor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 
 import java.util.HashMap;
@@ -38,11 +41,11 @@ public class EAPermission extends ActionSupport implements Interceptor{
 				
 				return invocation.invoke();
 			}
-			System.out.println( interfaceUrl +":没权限!!!!!!!!!");
+			logger.info("调试信息");
 			return "no_authority";
 //			return invocation.invoke();
 		}
-		/*System.out.println(":没登录!!!!!!!!!");*/
+		/*logger.info(":没登录!!!!!!!!!");*/
 		return "not_login";
 	}
 }

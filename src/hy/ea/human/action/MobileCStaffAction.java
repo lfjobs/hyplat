@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.Company;
@@ -46,6 +49,7 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class MobileCStaffAction {
+	private static final Logger logger = LoggerFactory.getLogger(MobileCStaffAction.class);
 	@Resource
 	private ShowExcelService excelService;
 	@Resource
@@ -409,11 +413,11 @@ public class MobileCStaffAction {
 			response.setCharacterEncoding("UTF-8");
 			try {
 				response.getWriter().write(outString);
-				// System.out.println(outString);
+				// logger.info("值：{}", outString);
 				response.flushBuffer();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			return null;
 		}
@@ -432,11 +436,11 @@ public class MobileCStaffAction {
 		response.setCharacterEncoding("UTF-8");
 		try {
 			response.getWriter().write(outString);
-			// System.out.println(outString);
+			// logger.info("值：{}", outString);
 			response.flushBuffer();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 	}

@@ -1,5 +1,8 @@
 package hy.ea.finance.action.BenDis;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.TEshopCustomer;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
@@ -73,6 +76,7 @@ import com.unionpay.acp.sdk.SDKUtil;
 @Controller
 @Scope("prototype")
 public class RefundSheetAction {
+	private static final Logger logger = LoggerFactory.getLogger(RefundSheetAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -299,8 +303,8 @@ public class RefundSheetAction {
                                     + Utilities.getDateString(new Date(),
                                     "yyyy-MM-dd"));
         } catch (Exception e) {
-            System.out.println("保存上传图片失败");
-            e.printStackTrace();
+            logger.info("保存上传图片失败");
+            logger.error("操作异常", e);
         }
 
         Map<String, Object> map = new HashMap<String, Object>();
@@ -722,7 +726,7 @@ public class RefundSheetAction {
                 newgoodsBill = (GoodsBills) gb.cloneGoodsBills();
             } catch (Exception e) {
 
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
             newgoodsBill.setGoodsBillsID(serverService.getServerID("goodsBillsID"));
             newgoodsBill.setGoodsBillsKey(null);
@@ -938,7 +942,7 @@ public class RefundSheetAction {
             newgoodsBill = (GoodsBills) gb.cloneGoodsBills();
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         newgoodsBill.setGoodsBillsID(serverService.getServerID("goodsBillsID"));
         newgoodsBill.setGoodsBillsKey(null);
@@ -1095,7 +1099,7 @@ public class RefundSheetAction {
             newgoodsBill = (GoodsBills) gb.cloneGoodsBills();
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         newgoodsBill.setGoodsBillsID(serverService.getServerID("goodsBillsID"));
         newgoodsBill.setGoodsBillsKey(null);
@@ -1239,7 +1243,7 @@ public class RefundSheetAction {
             newgoodsBill = (GoodsBills) gb.cloneGoodsBills();
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         newgoodsBill.setGoodsBillsID(serverService.getServerID("goodsBillsID"));
         newgoodsBill.setInventoryID(inv.getInventoryID());// 库存ID
@@ -1346,7 +1350,7 @@ public class RefundSheetAction {
         // String cause = "你好";
         // String detail =
         // ("2015090100001000870061348099"+"^"+"0.01"+"^ss").trim();
-        // System.out.println("========================"+detail);
+        // logger.info("调试信息");
         // rparam.setDetail_data(detail);//退款详情
         // } catch (UnsupportedEncodingException e1) {
         //
@@ -1361,9 +1365,9 @@ public class RefundSheetAction {
         // response.getWriter().print(s);
         // } catch (IOException e) {
         //
-        // e.printStackTrace();
+        // logger.error("操作异常", e);
         // }
-        // //System.out.println(s);
+        // //logger.info("值：{}", s);
         //
         // } else {
         // 银联
@@ -1439,9 +1443,9 @@ public class RefundSheetAction {
                 String hqlre = "from RefundSheet where journalNum = ?";
                 RefundSheet re = (RefundSheet) baseBeanService
                         .getBeanByHqlAndParams(hqlre, new Object[]{order_no});
-                System.out.println(1111111);
+                logger.info("值：{}", 1111111);
                 if (!re.getAccountstatus().equals("01")) {
-                    System.out.println(222222);
+                    logger.info("值：{}", 222222);
                     generatePaySheet(order_no, trade_no, "10");
                     re.setAccountstatus("01");
                     re.setRemitDate(new Date());
@@ -1460,7 +1464,7 @@ public class RefundSheetAction {
 
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return null;
@@ -1514,7 +1518,7 @@ public class RefundSheetAction {
         if (!SDKUtil.validate(valideData, encoding)) {
             LogUtil.writeLog("验证签名结果[失败].");
         } else {
-            System.out.println(valideData.get("orderId")); // 其他字段也可用类似方式获取
+            logger.info("调试信息"); // 其他字段也可用类似方式获取
             LogUtil.writeLog("验证签名结果[成功].");
 
             String hqlre = "from RefundSheet where journalNum = ?";
@@ -1586,7 +1590,7 @@ public class RefundSheetAction {
         } else {
             page.append("<tr><td width=\"30%\" align=\"right\">验证签名结果</td><td>成功</td></tr>");
             LogUtil.writeLog("验证签名结果[成功].");
-            System.out.println(valideData.get("orderId")); // 其他字段也可用类似方式获取
+            logger.info("调试信息"); // 其他字段也可用类似方式获取
 
         }
         request.setAttribute("result", page.toString());
@@ -1612,7 +1616,7 @@ public class RefundSheetAction {
                 String value = request.getParameter(en);
                 res.put(en, value);
                 // 在报文上送时，如果字段的值为空，则不上送<下面的处理为在获取所有参数数据时，判断若值为空，则删除这个字段>
-                // System.out.println("ServletUtil类247行  temp数据的键=="+en+"     值==="+value);
+                // logger.info("调试信息");
                 if (null == res.get(en) || "".equals(res.get(en))) {
                     res.remove(en);
                 }
@@ -1631,7 +1635,7 @@ public class RefundSheetAction {
     public void generatePaySheet(String journalNum, String tradeNo,
                                  String appstyle) {
 
-        System.out.println(33333333);
+        logger.info("值：{}", 33333333);
         Map<String, Object> session = ActionContext.getContext().getSession();
         CAccount account = (CAccount) session.get("account");
 
@@ -1695,7 +1699,7 @@ public class RefundSheetAction {
 
             } catch (Exception e) {
 
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
         }
 

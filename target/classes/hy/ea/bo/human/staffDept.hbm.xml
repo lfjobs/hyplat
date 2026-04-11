@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="hy.ea.bo.human.StaffDept" table="DT_HR_STAFF_DEPT">
+		<id length="50" name="staffDeptKey" >
+			<column length="50" name="STAFF_DEPT_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="staffId" >
+			<column length="50" name="STAFF_ID" not-null="true"/>
+		</property>
+		<property name="deptId" >
+			<column length="50" name="DEPT_ID" not-null="true"/>
+		</property>
+		<property name="companyId" >
+			<column length="50" name="COMPANY_ID" not-null="true"/>
+		</property>
+
+	</class>
+</hibernate-mapping>

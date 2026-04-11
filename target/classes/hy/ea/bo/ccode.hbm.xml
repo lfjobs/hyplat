@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+    <class name="CCode" table="dtCCode">
+        <id length="50" name="codeKey">
+            <column length="50" name="codeKey"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="codeID">
+            <column length="50" name="codeID" not-null="true"/>
+        </property>
+        <property name="codePID">
+            <column length="50" name="codePID" not-null="true"/>
+        </property>
+        <property name="companyID">
+            <column name="companyID" length="50" not-null="true"/>
+        </property>
+        <property name="codeNumber">
+            <column name="codeNumber" length="3"/>
+        </property>
+        <property name="codeValue">
+            <column length="250" name="codeValue" not-null="true"/>
+        </property>
+        <property name="codeStatus">
+            <column length="2" name="codeStatus" not-null="true"/>
+        </property>
+        <property name="codeDesc">
+            <column length="256" name="codeDesc"/>
+        </property>
+        <property name="wageStatus">
+            <column name="wageStatus" length="4"></column>
+        </property>
+        <property name="codeSn">
+            <column name="CODESN" length="50"></column>
+        </property>
+        <property name="isLeaf">
+            <column name="isLeaf" length="5"></column>
+        </property>
+        <property name="groupSn">
+            <column name="groupSn" length="50"></column>
+        </property>
+        <property name="goodsID">
+            <column name="goodsID" length="50"></column>
+        </property>
+        <property name="iconPath" type="java.lang.String">
+            <column name="iconPath" length="200"/>
+        </property>
+        <property name="codetype" type="java.lang.String">
+            <column name="codetype" length="10"/><!--类别:FL ,行业:HY-->
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.percentage">
+	<!--价格百分比表-->
+	<class name="PPercentage" table="p_percentage">
+		<!--主键-->
+		<id length="50" name="percentageKey">
+			<column length="50" name="percentageKey" />
+			<generator class="uuid" /> 
+		</id>
+		<!--价格百分比id-->
+		<property name="percentageId">
+			<column length="50" name="percentageId" />
+		</property>
+		<!--零售价百分比-->
+		<property name="retail">
+			<column length="50" name="retail" />
+		</property>
+		<!--活动价百分比-->
+		<property name="activity">
+			<column length="50" name="activity" />
+		</property>
+		<!--vip价百分比-->
+		<property name="vip">
+			<column length="50" name="vip" />
+		</property>
+		<!--批发价百分比-->
+		<property name="wholesale">
+			<column length="50" name="wholesale" />
+		</property>
+		<!--特价百分比-->
+		<property name="special">
+			<column length="50" name="special" />
+		</property>
+		<!--设置价格百分比责任人	-->
+		<property name="principal">
+			<column length="50" name="principal" ></column>
+		</property>
+		<!--设置时间-->
+		<property name="times">
+			<column length="50" name="times"/>
+		</property>
+		<!--公司id-->
+		<property name="companyId">
+			<column length="50" name="companyId" />
+		</property>
+		<!--行业[分类]id-->
+		<property name="codeId">
+			<column length="50" name="codeId" />
+		</property>
+		<!--产品id-->
+		<property name="ppId">
+			<column length="50" name="ppId" />
+		</property>
+		<!--代理佣金百分比id-->
+		<property name="brokerageId">
+			<column length="50" name="brokerageId" />
+		</property>
+	</class>
+</hibernate-mapping>

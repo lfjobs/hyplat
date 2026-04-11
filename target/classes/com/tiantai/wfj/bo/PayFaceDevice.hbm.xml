@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="PayFaceDevice" table="DT_PayFaceDevice" schema="HYPLAT" dynamic-insert="true">
+	<comment>刷脸设备</comment>
+		<id length="50" name="pfdkey" type="java.lang.String">
+			<column length="50" name="pfdkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="pfdID" type="java.lang.String">
+			<column length="50" name="pfdID" >
+			</column>
+		</property>
+		<property name="sn" type="java.lang.String">
+			<column name="sn" length="50">
+				<comment>设备序列号</comment>
+			</column>
+		</property>
+		<property name="model" type="java.lang.String">
+			<column length="50" name="model" >
+				<comment>设备型号</comment>
+			</column>
+		</property>
+		<property name="bindID" type="java.lang.String">
+			<column length="50" name="bindID" >
+				<comment>绑定人ID</comment>
+			</column>
+		</property>
+		<property name="bindName" type="java.lang.String">
+			<column length="50" name="bindName" >
+				<comment>绑定人姓名</comment>
+			</column>
+		</property>
+		<property name="factoryID" type="java.lang.String">
+			<column name="factoryID" length="50">
+			<comment>厂家ID</comment>
+			</column>
+		</property>
+		<property name="factoryName" type="java.lang.String">
+			<column name="factoryName" length="50">
+				<comment>厂家名称</comment>
+			</column>
+		</property>
+		<property name="source" type="java.lang.String">
+			<column length="2" name="source" >
+			<comment>设备来源 00：采购 01自研</comment>
+			</column>
+		</property>
+		<property name="bindState" type="java.lang.String">
+			<column length="2" name="bindState" >
+				<comment>和商户绑定状态00未绑定01已绑定</comment>
+			</column>
+		</property>
+		<property name="activeState" type="java.lang.String">
+			<column length="2" name="activeState" >
+				<comment>00未激活01已激活</comment>
+			</column>
+		</property>
+		<property name="tradeMoney" type="java.lang.String">
+			<column length="50" name="tradeMoney" >
+				<comment>这台设备总交易额</comment>
+			</column>
+		</property>
+		<property name="rakeMoney" type="java.lang.String">
+			<column length="50" name="rakeMoney" >
+			<comment>这台设备总返佣</comment>
+			</column>
+		</property>
+		<property name="deviceType" type="java.lang.String">
+			<column length="2" name="deviceType" >
+				<comment>00 微信刷脸设备  01：支付宝刷脸设备</comment>
+			</column>
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column length="50" name="companyID" >
+			<comment>维护所有设备公司ID</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>添加日期</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>负责人ID</comment>
+			</column>
+		</property>
+		<property name="staffName" type="java.lang.String">
+			<column length="50" name="staffName" >
+				<comment>负责人姓名</comment>
+			</column>
+		</property>
+		<property name="inputID" type="java.lang.String">
+			<column length="50" name="inputID" >
+				<comment>录入人员</comment>
+			</column>
+		</property>
+		<property name="inputName" type="java.lang.String">
+			<column length="20" name="inputName" >
+				<comment>录入人员姓名</comment>
+			</column>
+		</property>
+
+		<property name="clerkID" type="java.lang.String">
+			<column length="50" name="clerkID" >
+				<comment>业务员ID</comment>
+			</column>
+		</property>
+		<property name="clerkName" type="java.lang.String">
+			<column length="50" name="clerkName" >
+				<comment>业务员姓名</comment>
+			</column>
+		</property>
+		<property name="clerkSccid" type="java.lang.String">
+			<column length="50" name="clerkSccid" >
+				<comment>业务员账号ID</comment>
+			</column>
+		</property>
+		<property name="clearkAccount" type="java.lang.String">
+			<column length="50" name="clearkAccount" >
+				<comment>业务员微分金账号手机号</comment>
+			</column>
+		</property>
+		<property name="bindDate" type="java.util.Date">
+			<column name="bindDate" >
+				<comment>绑定日期</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

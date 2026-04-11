@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="ClientPblm" table="dtClientPblm" >
+		<id length="50" name="clientPblmKey">
+			<column length="50" name="clientPblmKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="clientPblmID">
+        	<column name="clientPblmID" length="50"/>
+        </property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="clientCode">
+			<column length="250" name="clientCode" />
+		</property>
+		<property name="clientName">
+			<column length="250" name="clientName" />
+		</property>
+		<property name="clientAddress">
+			<column length="250" name="clientAddress"/>
+		</property>
+		<property name="clientLinkman">
+			<column length="250" name="clientLinkman"/>
+		</property>
+		<property name="clientTelephone">
+			<column length="250" name="clientTelephone"/>
+		</property>
+		<property name="clientEmail">
+			<column  length="250" name="clientEmail" />
+		</property>
+		<property  name="clientQq">
+			<column length="250" name="clientQq" />
+		</property>
+		<property name="productName">
+			<column length="250" name="productName"/>
+		</property>
+		<property name="productType">
+			<column length="250" name="productType"/>
+		</property>
+		<property name="productBrand">
+			<column  length="250" name="productBrand" />
+		</property>
+		<property name="productSerial">
+			<column  length="250" name="productSerial" />
+		</property>
+		<property name="productSay">
+			<column  length="250" name="productSay" />
+		</property>
+		<property name="productPblmSay">
+			<column  length="250" name="productPblmSay" />
+		</property>
+		<property name="moveAndResult">
+			<column  length="250" name="moveAndResult" />
+		</property>
+		<property name="causeAnalysis">
+			<column  length="250" name="causeAnalysis" />
+		</property>
+		<property name="processingResult">
+			<column  length="250" name="processingResult" />
+		</property>
+		<property name="clientConceit">
+			<column  length="250" name="clientConceit" />
+		</property>
+	</class>
+</hibernate-mapping>

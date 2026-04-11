@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="CashApplyBills" table="dtCashApplyBills">
+		<id length="50" name="cashApplyBillsKey">
+			<column length="50" name="cashApplyBillsKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="cashApplyBillsID">
+			<column length="50" name="cashApplyBillsID" />
+		</property>
+		<property name="goodsBillsID">
+			<column length="50" name="goodsBillsID" />
+		</property>
+		<property name="organizationName">
+			<column length="250" name="organizationName" />
+		</property>
+		<property name="journalNum">
+			<column length="250" name="journalNum" />
+		</property>
+		<property name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+		<property name="goodsName">
+			<column length="250" name="goodsName" />
+		</property>
+		<property name="quantity">
+			<column length="250" name="quantity" />
+		</property>
+		<property name="price">
+			<column length="250" name="price" />
+		</property>
+		<property name="money">
+			<column length="250" name="money" />
+		</property>
+		<property name="cashierDate">
+			<column name="cashierDate" />
+		</property>
+		<property name="inputDate">
+			<column length="250" name="inputDate" />
+		</property>
+		<property name="boxStandard">
+			<column length="250" name="boxStandard" />
+		</property>
+		<property name="moneySpent">
+			<column length="250" name="moneySpent" />
+		</property>
+		<property name="status">
+			<column length="250" name="status" />
+		</property>
+		
+		<property name="appropriationMoney">
+			<column length="50" name="appropriationMoney" />
+		</property>
+		<property name="appropriationNote">
+			<column length="250" name="appropriationNote" />
+		</property>
+		<property name="appropriationDate">
+			<column  name="appropriationDate" />
+		</property>
+		<property name="appropriateStatus">
+			<column length="10" name="appropriateStatus" />
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" />
+		</property>
+		<property name="ccompanyName">
+			<column length="250" name="ccompanyName" />
+		</property>
+		<property name="UserID">
+			<column length="50" name="UserID" />
+		</property>
+		<property name="UserName">
+			<column length="250" name="UserName" />
+		</property>
+		<property name="appropriationNum">
+			<column length="250" name="appropriationNum" />
+		</property>
+		<property name="projectName">
+			<column length="50" name="projectName" />
+		</property>
+		<property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+        <property name="cashierBillsID">
+        	<column name="cashierBillsID" length="50"/>
+        </property>
+        <property name="csbID">
+			<column length="50" name="csbID" />
+		</property>
+		<property name="companyName">
+        	<column name="companyName" length="250"/>
+        </property>
+        <property name="goodsID">
+			<column length="50" name="goodsID" />
+		</property>
+		<property  name="xmtypename">
+			<column length="50" name="xmtypename" />
+		</property>
+		<property name="canstatus">
+			<column length="10" name="canstatus" />
+		</property>
+		<property name="appropriationcompanyID">
+			<column length="50" name="appropriationcompanyID" />
+		</property>
+		<property name="appropriationcompanyName">
+			<column length="250" name="appropriationcompanyName" />
+		</property>
+		<property name="inputName">
+			<column length="250" name="inputName" />
+		</property>
+		<property name="content">
+        	<column name="content" length="250" />
+        </property>
+        <property name="receivablesID">
+			<column length="50" name="receivablesID" />
+		</property>
+		<property name="receivablesName">
+			<column length="250" name="receivablesName" />
+		</property>
+		<property name="recropriationNum">
+			<column length="250" name="recropriationNum" />
+		</property>
+		<property name="receopenBank">
+			<column length="100" name="receopenBank" />
+		</property>
+		<property name="receuserName">
+			<column length="100" name="receuserName" />
+		</property>
+		<property name="appstyle">
+			<column length="50" name="appstyle" />
+		</property>
+	</class>
+</hibernate-mapping>

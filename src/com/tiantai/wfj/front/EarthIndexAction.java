@@ -1,5 +1,8 @@
 package com.tiantai.wfj.front;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alipay.util.httpClient.HttpRequest;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
@@ -40,6 +43,7 @@ import static com.tiantai.wfj.front.constact.WxMiniConstant.ServerId.H5;
 @Controller
 @Scope("prototype")
 public class EarthIndexAction {
+	private static final Logger logger = LoggerFactory.getLogger(EarthIndexAction.class);
 	
 	@Resource
 	private SmsService smsService;
@@ -125,7 +129,7 @@ public class EarthIndexAction {
 	 */
 	public String  earthIndex(){
 		if (StringUtil.isNotEmpty(code)&&state.equals("STATE")){
-			System.out.println(state);
+			logger.info("值：{}", state);
 			Response<Object> result = weChatMiniService.WxH5Login(code);
 			if (result.getCode() !=-1){
 				if(result.getData() instanceof TEshopCusCom)

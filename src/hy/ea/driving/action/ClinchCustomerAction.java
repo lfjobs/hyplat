@@ -1,5 +1,8 @@
 package hy.ea.driving.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 成交客户
  *@author 陈婷
@@ -697,7 +700,7 @@ public class ClinchCustomerAction implements SessionAware{
 		JSONObject jo = JSONObject.fromObject(map);
 		this.result = jo.toString();
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "success";
@@ -818,7 +821,7 @@ public class ClinchCustomerAction implements SessionAware{
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(baseBeanList,
 					null, null);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -949,7 +952,7 @@ public class ClinchCustomerAction implements SessionAware{
 		dcstudent.add(Restrictions.eq("states", "01"));
 		stafflist = baseBeanService.getListByDC(dcstudent);
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		

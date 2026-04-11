@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.office.bo">
+	<class name="SignInType" table="DT_SIGNIN_TYPE" schema="HYPLAT" dynamic-insert="true">
+	<comment>签到类型</comment>
+		<id length="50" name="signInTypeId" type="java.lang.String">
+			<column length="50" name="SIGNIN_TYPE_ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="signInTypeName" type="java.lang.String">
+			<column name="SIGNIN_TYPE_NAME" length="10">
+				<comment>签到类别:普通，会议，外出</comment>
+			</column>
+		</property>
+		<property name="signInTypeSerial" type="java.lang.String">
+			<column length="3" name="SIGNIN_TYPE_SERIAL" >
+				<comment>签到类别序号</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
+

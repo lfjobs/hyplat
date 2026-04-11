@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="ClientOrderGoods" table="dtClientOrderGoods">
+		<id length="50" name="cogkey" type="java.lang.String">
+			<column length="50" name="cogkey"  />
+			<generator class="uuid" />
+		</id>
+		 <property name="cogID" type="java.lang.String">
+        	<column name="cogID" length="50"/>
+        </property>
+        <property name="coID" type="java.lang.String">
+        	<column name="coID" length="50">
+        	<comment>总订单</comment>
+        	</column>
+        </property>
+		<property name="codID" type="java.lang.String">
+			<column name="codID" length="50">
+				<comment>子订单</comment>
+			</column>
+		</property>
+         <property name="goodsName" type="java.lang.String">
+        	<column name="goodsName" length="50">
+        	<comment>产品Name</comment>
+        	</column>
+        </property>
+          <property name="ppid" type="java.lang.String">
+        	<column name="ppid" length="50">
+        	<comment>产品ID</comment>
+        	</column>
+        </property>
+		<property name="quantity" type="java.lang.String">
+			<column name="quantity" length="50">
+				<comment>数量</comment>
+			</column>
+		</property>
+		<property name="price" type="java.lang.String">
+			<column name="price" length="50">
+				<comment>销售单价</comment>
+			</column>
+		</property>
+		<property name="money" type="java.lang.String">
+			<column name="money" length="50">
+				<comment>总价</comment>
+			</column>
+		</property>
+		<property name="standard" type="java.lang.String">
+			<column name="standard" length="50">
+				<comment>规格</comment>
+			</column>
+		</property>
+
+	</class> 
+	
+</hibernate-mapping>

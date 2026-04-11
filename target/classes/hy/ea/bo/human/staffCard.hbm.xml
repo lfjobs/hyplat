@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human">
+    <class name="StaffCard" table="DT_HR_STAFF_CARDINFO">
+        <id name="cardKey" length="50">
+            <column name="CARD_KEY" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="staffID">
+            <column name="STAFF_ID" length="50" not-null="true" />
+        </property>
+        <property name="cardFrontUrl">
+            <column name="CARD_FRONT_URL" length="50"/>
+        </property>
+        <property name="cardReverseUrl">
+            <column name="CARD_REVERSE_URL" length="2"/>
+        </property>
+    </class>
+</hibernate-mapping>

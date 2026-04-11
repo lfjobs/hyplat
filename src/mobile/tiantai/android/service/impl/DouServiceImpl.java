@@ -1,5 +1,8 @@
 package mobile.tiantai.android.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opensymphony.xwork2.Action;
 import mobile.tiantai.android.bo.IdentityCard;
@@ -31,10 +34,10 @@ public class DouServiceImpl implements DouService {
                 "]");
         try {
             String response = DouClient.sendRequest(data);
-            System.out.println("Response: " + response);
+            logger.info("Response: : {}", response);
             return response;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
     }

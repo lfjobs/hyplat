@@ -1,5 +1,8 @@
 package hy.ea.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CDomain;
 import hy.ea.bo.CLogBook;
@@ -38,6 +41,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class HDocumentAction {
+	private static final Logger logger = LoggerFactory.getLogger(HDocumentAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -155,7 +159,7 @@ public class HDocumentAction {
 			}
 			ServletActionContext.getResponse().sendRedirect(url+"&search="+search);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.info("error");
 		}
 	}
 	

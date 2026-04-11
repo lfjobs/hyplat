@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.history.vo">
+	<class name="HistoryGoodsBillVO" table="dt_hy_goodsvo">
+		<id length="50" name="goodsBillsKey">
+			<column length="50" name="goodsBillsKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="goodsBillsID">
+        	<column name="goodsBillsID" length="50"/>
+        </property>
+		<property name="subjectsID">
+			<column length="50" name="subjectsID" />
+		</property>
+		<property name="subjectsName">
+			<column length="250" name="subjectsName" />
+		</property>
+		<property name="startDate">
+			<column  name="startDate" />
+		</property>
+			<property name="goodsVariableID">
+			<column length="50" name="goodsVariableID" />
+		</property>
+		<property name="goodsVariable">
+			<column length="256" name="goodsVariable" />
+		</property>
+		<property name="endDate">
+			<column  name="endDate" />
+		</property>
+		<property name="costType">
+			<column length="250" name="costType" />
+		</property>
+			<property name="variable1ID">
+			<column length="50" name="variable1ID" />
+		</property>
+		<property name="variable2ID">
+			<column length="50" name="variable2ID" />
+		</property>
+		<property name="variable3ID">
+			<column length="50" name="variable3ID" />
+		</property>
+		<property name="variable4ID">
+			<column length="50" name="variable4ID" />
+		</property>
+		<property name="payType">
+			<column length="250" name="payType" />
+		</property>
+		<property name="moneySpent">
+			<column length="250" name="moneySpent" />
+		</property>
+		<property name="weight">
+			<column length="250" name="weight" />
+		</property>
+		<property name="boxStandard">
+			<column length="250" name="boxStandard" />
+		</property>
+		<property name="goodsID">
+			<column length="50" name="goodsID" />
+		</property>
+		<property name="priceManage">
+			<column length="250" name="priceManage" />
+		</property>
+		<property name="identifyingCode">
+			<column length="250" name="identifyingCode" />
+		</property>
+		
+		<property name="defaultStorage">
+			<column length="250" name="defaultStorage" />
+		</property>
+		<property name="logistics">
+			<column length="250" name="logistics" />
+		</property>
+		<property name="quantity">
+			<column length="250" name="quantity" />
+		</property>
+		<property name="price">
+			<column length="250" name="price" />
+		</property>
+		<property name="money">
+			<column length="250" name="money" />
+		</property>
+		<property name="depotID">
+			<column length="50" name="depotID" />
+		</property>
+		<property name="depotName">
+			<column length="250" name="depotName" />
+		</property>
+		<property name="depotType">
+			<column length="250" name="depotType" />
+		</property>
+		<property name="loan">
+			<column length="250" name="loan" />
+		</property>
+		<property name="forLoan">
+			<column length="250" name="forLoan" />
+		</property>
+		<property name="direction">
+			<column length="250" name="direction" />
+		</property>
+		<property name="balance">
+			<column length="250" name="balance" />
+		</property>
+		<property name="cashierStatus">
+			<column length="2" name="cashierStatus" />
+		</property>
+		<property name="taxstatus">
+			<column length="2" name="taxstatus" />
+		</property>
+		<property name="taxstatus2">
+			<column length="2" name="taxstatus2" />
+		</property>
+		<property name="input">
+			<column length="250" name="input" />
+		</property>
+		<property name="competent">
+			<column length="250" name="competent" />
+		</property>
+		<property name="manager">
+			<column length="250" name="manager" />
+		</property>
+		<property name="financial">
+			<column length="250" name="financial" />
+		</property>
+		<property name="taxDate">
+			<column  name="taxDate" />
+		</property>
+		 <property name="goodsCoding">
+        	<column name="goodsCoding" length="250" />
+        </property>
+        <property name="goodsNomber">
+        	<column name="goodsNomber" length="50"/>
+        </property>
+        	<property name="goodsName">
+        	<column name="goodsName" length="250"/>
+        </property>
+		<property name="typeID">
+			<column length="50" name="typeID"/>
+		</property>
+		<property name="variableID">
+			<column length="50" name="variableID"/>
+		</property>
+        <property name="standard">
+        	<column name="standard" length="250"/>
+        </property>
+		<property name="mnemonicCode">
+			<column length="250" name="mnemonicCode"/>
+		</property>
+		<property name="model">
+			<column length="250" name="model"/>
+		</property>
+		 <property name="cashierBillsID">
+        	<column name="cashierBillsID" length="250"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+        <property name="companyBankNum">
+        	<column name="companyBankNum" length="250"/>
+        </property>
+		 <property name="organizationID">
+        	<column name="organizationID" length="50"/>
+        </property>
+        <property name="departmentID">
+        	<column name="departmentID" length="50"/>
+        </property>
+         <property name="contactUserID">
+        	<column name="contactUserID" length="50"/>
+        </property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" />
+		</property>
+		<property name="billsType">
+			<column length="250" name="billsType" />
+		</property>
+		<property name="journalNum">
+			<column length="250" name="journalNum" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="cashierDate">
+			<column  name="cashierDate" />
+		</property>
+		<property name="discountMoney">
+			<column length="250" name="discountMoney" />
+		</property>
+		<property name="afterDiscount">
+			<column length="250" name="afterDiscount" />
+		</property>
+		<property name="dataDepotID">
+			<column length="50" name="dataDepotID" />
+		</property>
+		<property name="dataDepotName">
+			<column length="250" name="dataDepotName" />
+		</property>
+		<property name="status">
+			<column length="2" name="status" />
+		</property>
+		 <property name="companyname">
+        	<column name="companyname" length="250"/>
+        </property>
+        <property name="departmentname">
+        	<column name="departmentname" length="250"/>
+        </property>
+         <property name="staffname">
+        	<column name="staffname" length="250"/>
+        </property>
+        <property name="recordcode">
+        	<column name="recordcode" length="250"/>
+        </property>
+		<property name="ccompanyname">
+			<column length="250" name="ccompanyname" />
+		</property>
+		<property name="companyAddr">
+			<column length="250" name="companyAddr" />
+		</property>
+		<property name="companyTel">
+			<column length="250" name="companyTel" />
+		</property>
+		<property name="cresponsible">
+			<column length="250" name="cresponsible" />
+		</property>
+		<property name="responsibleTel">
+			<column length="250" name="responsibleTel" />
+		</property>
+		<property name="contactUserName">
+			<column length="250" name="contactUserName" />
+		</property>
+		<property name="staffIdentityCard">
+			<column length="250" name="staffIdentityCard" />
+		</property>
+		<property name="tel">
+			<column length="250" name="tel" />
+		</property>
+			<property name="userAccountNum">
+			<column length="250" name="userAccountNum" />
+		</property>
+		<property name="phone">
+			<column length="250" name="phone" />
+		</property>
+		<property name="userQq">
+			<column length="250" name="userQq" />
+		</property>
+		<property name="email">
+			<column length="250" name="email" />
+		</property>
+		<property name="userAddr">
+			<column length="250" name="userAddr" />
+		</property>
+		<property name="responsible">
+			<column length="250" name="responsible" />
+		</property>
+		<property name="accountant">
+			<column length="250" name="accountant" />
+		</property>
+		<property name="cashier">
+			<column length="250" name="cashier" />
+		</property>
+		
+		<property name="bankDepotID">
+			<column length="50" name="bankDepotID" />
+		</property>
+		<property name="bankDepotName">
+			<column length="250" name="bankDepotName" />
+		</property>
+		<property name="accountNum">
+			<column length="250" name="accountNum" />
+		</property>
+		<property name="industryType">
+			<column length="250" name="industryType" />
+		</property>
+		<property name="contactConnections">
+			<column length="250" name="contactConnections" />
+		</property>
+		<property name="pcompanyID">
+			<column length="50" name="pcompanyID" />
+		</property>
+		<property name="batchNumber">
+			<column length="250" name="batchNumber" not-null="false"/>
+		</property>
+		<property name="periodDate">
+			<column  name="periodDate" not-null="false"/>
+		</property>
+		<property name="remindedContent">
+			<column length="250" name="remindedContent" not-null="false"/>
+		</property>
+		<property name="archivesNum">
+			<column length="50" name="archivesNum" />
+		</property>
+         <property name="archivesDate">
+			<column  name="archivesDate" />
+		</property>
+		<property name="deparchivesNum">
+			<column length="50" name="deparchivesNum" />
+		</property>
+         <property name="deparchivesDate">
+			<column  name="deparchivesDate" />
+		</property>
+		<property name="reasonThing">
+			<column length="250" name="reasonThing" />
+		</property>
+		<property name="PbillsTypeID">
+			<column length="50" name="PbillsTypeID" />
+		</property>
+	</class>
+</hibernate-mapping>

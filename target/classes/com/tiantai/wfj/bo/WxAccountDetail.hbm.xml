@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="WxAccountDetail" table="dtWxAccountDetaill">
+		<id length="50" name="wxdKey">
+			<column length="50" name="wxdKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="wxdId">
+        	<column name="wxdId" length="50"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"><comment>公司ID</comment></column>
+        </property>
+		<property name="money">
+			<column name="money" length="50"><comment>总收入</comment></column>
+		</property>
+        <property name="createDate">
+        	<column name="createDate"><comment>时间</comment></column>
+        </property>
+		<property name="sccid">
+			<column name="sccid" length="50"><comment>用户</comment></column>
+		</property>
+		<property name="type">
+			<column name="type" length="10"><comment>类型</comment></column>
+		</property>
+		<property name="sztype">
+			<column name="sztype" length="1"><comment>收入支出</comment></column>
+		</property>
+		<property name="rate">
+			<column name="rate" length="10"><comment>费率</comment></column>
+		</property>
+		<property name="journalNum">
+			<column name="journalNum" length="50"><comment>订单</comment></column>
+		</property>
+		<property name="status">
+		<column name="status" length="50"><comment>状态</comment></column>
+	</property>
+		<property name="staffName">
+			<column name="staffName" length="50"><comment>姓名</comment></column>
+		</property>
+
+	</class> 
+	
+</hibernate-mapping>

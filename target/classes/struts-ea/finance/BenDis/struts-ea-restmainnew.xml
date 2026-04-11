@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="restmn-ntoken" namespace="/ea/restmn"
+		extends="struts-default">
+		<action name="ea_*"
+			class="hy.ea.finance.action.BenDis.RestMainNewAction" method="{1}">
+
+			<!--餐饮主页-->
+			<result name="index">/page/conacts/restaurant/mainNew.jsp</result>
+			<result name="cateMenu">/page/conacts/restaurant/products.jsp</result>
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="restmn-sajaxs" namespace="/ea/restmn" extends="json-default">
+		<action name="sajax_ea_*" 
+		         class="hy.ea.finance.action.BenDis.RestMainNewAction" method="{1}">
+	<!-- 返回类型为json 在sjon-default中定义 -->  
+			<result type="json">  
+				<!-- root的值对应要返回的值的属性 -->    
+				<!-- 这里的result值即是 对应action中的 result -->  
+				<param name="root">result</param>  
+			</result>
+		</action>
+	</package>
+
+</struts>

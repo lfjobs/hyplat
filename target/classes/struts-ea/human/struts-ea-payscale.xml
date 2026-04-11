@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 人事-正式员工汇总 -->
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="payscale-token" namespace="/ea/payscale"   extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.PayScaleAction" method="{1}">
+		  <result name="list">/page/ea/main/human/office/SersonnelSystem/payScale.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="payscale-ntoken" namespace="/ea/payscale"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.PayScaleAction" method="{1}">
+			<result name="plist">/page/ea/main/human/office/company/payScaleSummary.jsp</result>
+			<result name="cspstafflist">/page/ea/main/human/office/company/staffpayScaleSummary.jsp</result>
+			<result name="list">/page/ea/main/human/office/SersonnelSystem/payScale.jsp</result>
+			<result name="csplist">/page/ea/main/human/office/production/staffpayScale.jsp</result>
+			<result name="succ">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="staff.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="payscale-jsonajax" namespace="/ea/payscale" extends="ea-sajax">
+		<action name="sajax_ea_*" class="hy.ea.human.action.PayScaleAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="payscale-njsonajax" namespace="/ea/payscale" extends="json-default">
+		<action name="sajax_n_ea_*" class="hy.ea.human.action.PayScaleAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

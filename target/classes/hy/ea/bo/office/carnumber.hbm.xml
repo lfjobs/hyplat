@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarNumber" table="dt_Car_Number">
+		<id length="50" name="cnKey">
+			<column length="50" name="cnKey"/>
+			<generator class="uuid" />
+		</id>
+		<property name="cnID">
+			<column length="50" name="cnID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"/>
+		</property>
+		<property name="staffName">
+			<column length="50" name="staffName"/>
+		</property>
+		<property name="brandDate">
+			<column name="brandDate" length="50"/>
+		</property>
+		<property name="carNum">
+			<column length="50" name="carNum"/>
+		</property>	
+		<property name="carID" >
+			<column length="250" name="carID"/>
+		</property>
+		<property name="Unit">
+			<column length="50" name="Unit"/>
+		</property>	
+		<property name="address">
+			<column length="50" name="address"/>
+		</property>	
+		<property name="fzDate">
+			<column name="fzDate" length="50"/>
+		</property>	
+	    <property name="fzOrgizationID">
+			<column length="50" name="fzOrgizationID"/>
+		</property>	
+		<property name="fzStaffID">
+			<column length="50" name="fzStaffID"/>
+		</property>	
+	</class>
+</hibernate-mapping>

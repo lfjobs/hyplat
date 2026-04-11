@@ -1,5 +1,8 @@
 package hy.ea.util.nfc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import hy.ea.office.action.CarMqttService;
 import io.grpc.netty.shaded.io.netty.buffer.ByteBuf;
@@ -45,7 +48,7 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<ByteBuf> {
                 ctx.writeAndFlush(Unpooled.wrappedBuffer(cmd));
             }
         }, 500, TimeUnit.MILLISECONDS);
-        System.out.println("设备接入：" + ctx.channel().remoteAddress());
+        logger.info("调试信息");
 
     }
 
@@ -60,7 +63,7 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<ByteBuf> {
         if (frame.equals(COMBO_READ)) {
             addDevice(key);
         } else if (frame.startsWith(HEART)) {
-            System.out.println("心跳" );
+            logger.info("调试信息");
             updateTime(key);
         } else {
             if (DEVICE_MAP.containsKey(key)) {
@@ -72,7 +75,7 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<ByteBuf> {
                     RfidFrame rfidFrame = RfidParser.parse(data);
 
                     if (rfidFrame.cardId.trim().equals("E28069950000500E8B06F89F".trim())||rfidFrame.cardId.trim().equals("E28069950000500E8B06F8A5".trim())){
-                        System.out.println("发起开门=====》》》》》："+rfidFrame.cardId );
+                        logger.info("调试信息");
                         CarMqttService.isOpen("111111","3c74a221-c156e59a");//开门
 
                     }
@@ -105,7 +108,7 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<ByteBuf> {
     @Override
     public void channelInactive(ChannelHandlerContext ctx) {
         DEVICE_MAP.values().remove(ctx.channel());
-        System.out.println("设备断开：" + ctx.channel().remoteAddress());
+        logger.info("调试信息");
     }
 
     private String toHex(byte[] bytes) {
@@ -137,7 +140,7 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<ByteBuf> {
             DeviceEntity device = entry.getValue();
             if (now - device.getTime() > timeout) {
                 iterator.remove(); // 安全删除
-                System.out.println("清理设备：" + entry.getKey());
+                logger.info("清理设备：: {}", entry.getKey());
             }
         }
     }

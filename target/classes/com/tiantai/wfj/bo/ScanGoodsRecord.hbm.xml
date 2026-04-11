@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="com.tiantai.wfj.bo.ScanGoodsRecord" table="DT_ScanGoodsRecord" schema="HYPLAT" dynamic-insert="true">
+	<comment>扫描商品记录</comment>
+		<id length="50" name="sgrKey" type="java.lang.String">
+			<column length="50" name="sgrKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="sgrId" type="java.lang.String">
+			<column length="50" name="sgrId" >
+			</column>
+		</property>
+		<property name="posNum" type="java.lang.String">
+			<column name="posNum" length="50">
+			<comment>人员Id</comment>
+			</column>
+		</property>
+		<property name="pid" type="java.lang.String">
+			<column length="50" name="pid" >
+			<comment>商品ID</comment>
+			</column>
+		</property>
+
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="companyId" >
+			<comment>商品对应的公司ID</comment>
+			</column>
+		</property>
+		<property name="itemNum" type="java.lang.String">
+			<column length="50" name="itemNum" >
+			<comment>商品的数量</comment>
+			</column>
+		</property>
+		<property name="joinNum" type="java.lang.String">
+			<column length="50" name="joinNum" >
+				<comment>加入数量</comment>
+			</column>
+		</property>
+		<property name="barCode" type="java.lang.String">
+		<column length="50" name="barCode" >
+			<comment>条码</comment>
+		</column>
+	</property>
+		<property name="stardard" type="java.lang.String">
+			<column length="50" name="stardard" >
+				<comment>规格</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>收银员ID</comment>
+			</column>
+		</property>
+		<property name="reason" type="java.lang.String">
+			<column length="50" name="reason" >
+				<comment>未结算理由</comment>
+			</column>
+		</property>
+		<property name="relateID" type="java.lang.String">
+			<column length="50" name="relateID" >
+				<comment>关联订单号的统一编号</comment>
+			</column>
+		</property>
+
+		<property name="joinDate" type="java.util.Date">
+			<column name="joinDate" >
+				<comment>扫码时间</comment>
+			</column>
+		</property>
+		<property name="price" type="java.lang.String">
+			<column length="10" name="price" >
+				<comment>单价</comment>
+			</column>
+		</property>
+		<property name="goodsName" type="java.lang.String">
+			<column length="500" name="goodsName" >
+				<comment>商品名称</comment>
+			</column>
+		</property>
+		<property name="state" type="java.lang.String">
+			<column length="2" name="state" >
+				<comment>未处理，01 已处理 09删除</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

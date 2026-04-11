@@ -1,5 +1,8 @@
 package hy.ea.signin.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import cn.hutool.core.codec.Base64;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.facebody.model.v20191230.AddFaceEntityResponse;
@@ -26,6 +29,7 @@ import java.util.*;
  * 签到
  */
 public class SignInAction {
+	private static final Logger logger = LoggerFactory.getLogger(SignInAction.class);
 
     @Resource
     private BaseBeanService baseBeanService;
@@ -93,7 +97,7 @@ public class SignInAction {
         params.add(sccid);
 
         List<BaseBean> companyList = baseBeanService.getListBeanBySqlAndParams(sql.toString(), params.toArray());
-        System.out.println(companyList.size());
+        logger.info("调试信息");
 
         JSONArray jsonArray = new JSONArray();
         for (int i = 0; i < companyList.size(); i++) {
@@ -174,8 +178,8 @@ public class SignInAction {
         String objectName = UUID.randomUUID() + ".jpg";
         String ossFileUrl = ossService.uploadObject(localFileUrl, objectName);
 
-        System.out.println("识别人脸信息并返回质量检查");
-        System.out.println(ossFileUrl);
+        logger.info("识别人脸信息并返回质量检查");
+        logger.info("值：{}", ossFileUrl);
 
         // 检测图片综合得分
         RecognizeFaceResponse recognizeFaceResponse = faceBodyService.recognizeFace(ossFileUrl);
@@ -202,10 +206,10 @@ public class SignInAction {
         String entityId = UUID.randomUUID().toString().replaceAll("-", "");
         String extraData = "";
 
-        System.out.println("添加样本");
+        logger.info("添加样本");
         AddFaceEntityResponse addFaceEntityResponse = faceBodyService.addFaceEntity(entityId);
 
-        System.out.println("添加样本图片");
+        logger.info("添加样本图片");
         AddFaceResponse addFaceResponse = faceBodyService.addFace(ossFileUrl, entityId, extraData);
 
         Map<String, Object> map = new HashMap<>();
@@ -215,7 +219,7 @@ public class SignInAction {
 
         JSONObject js = JSONObject.fromObject(map);
 
-        System.out.println(js.toString());
+        logger.info("调试信息");
 
         result = js.toString();
         return "success";
@@ -230,17 +234,17 @@ public class SignInAction {
         HttpServletRequest request = ServletActionContext.getRequest();
         String ossFileUrl = Base64.decodeStr(request.getParameter("ossFileUrl"));
 
-        System.out.println("==人脸比对样本==");
+        logger.info("==人脸比对样本==");
         try {
             SearchFaceResponse searchFaceResponse = faceBodyService.searchFace(ossFileUrl);
 
             List<SearchFaceResponse.Data.MatchListItem> matchList = searchFaceResponse.getData().getMatchList();
             if (matchList.isEmpty() || matchList.get(0).getFaceItems().isEmpty()) {
-                System.out.println("-匹配上人脸-");
+                logger.info("-匹配上人脸-");
                 return "success";
             }
 
-            System.out.println("-匹配上人脸-");
+            logger.info("-匹配上人脸-");
             SearchFaceResponse.Data.MatchListItem.FaceItemsItem faceItemsItem = matchList.get(0).getFaceItems().get(0);
 
             Map<String, Object> map = new HashMap<>();
@@ -250,11 +254,11 @@ public class SignInAction {
             map.put("extraData", faceItemsItem.getExtraData());
 
             JSONObject js = JSONObject.fromObject(map);
-            System.out.println(js.toString());
+            logger.info("调试信息");
             result = js.toString();
             return "success";
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }

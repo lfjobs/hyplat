@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="Money" table="DT_Wfj_Money" schema="HYPLAT">
+	<comment>单车金钱记录相关</comment>
+		<id length="50" name="wfjMoneyKey" type="java.lang.String">
+			<column length="50" name="wfjMoneyKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="wfjMoneyId" type="java.lang.String">
+			<column length="50" name="wfjMoneyId" >
+			</column>
+		</property>
+		<property name="staffId" type="java.lang.String">
+			<column name="staffId" length="50">
+			<comment>人员Id</comment>
+			</column>
+		</property>
+		<property name="sccid" type="java.lang.String">
+			<column length="50" name="sccid" >
+			<comment>规则外键</comment>
+			</column>
+		</property>
+		<property name="wfjyajin" type="java.lang.String">
+			<column length="50" name="wfjyajin" >
+				<comment>规则外键</comment>
+			</column>
+		</property>
+		<property name="wfjJifenState" type="java.lang.String">
+			<column length="50" name="wfjJifenState" >
+				<comment>规则外键</comment>
+			</column>
+		</property>
+		<property name="wfjyingli" type="java.lang.String">
+			<column length="50" name="wfjyingli" >
+				<comment>规则外键</comment>
+			</column>
+		</property>
+		<property name="staffName" type="java.lang.String">
+			<column length="50" name="staffName" >
+				<comment>规则外键</comment>
+			</column>
+		</property>
+        <property name="headimage" type="java.lang.String">
+            <column length="50" name="headimage" >
+                <comment>规则外键</comment>
+            </column>
+        </property>
+
+	</class>
+</hibernate-mapping>

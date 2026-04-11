@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="stockInv" table="dt_inv_stockinvt">
+		<id length="50" name="stockinvKey">
+			<column length="50" name="stockinvKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="stockinvID">
+			<column length="50" name="stockinvID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="groupCompanySn">
+			<column length="50" name="groupCompanySn" />
+		</property>
+		<property  name="goodsID">
+			<column length="250" name="goodsID" />
+		</property>
+		<property  name="goodsType">
+			<column length="250" name="goodsType" />
+		</property>
+		<property  name="goodsName">
+			<column length="250" name="goodsName" />
+		</property>
+		<property name="warehouse">
+			<column length="250" name="warehouse" />
+		</property>
+		<property  name="warehouseName">
+			<column length="50" name="warehouseName" />
+		</property>
+		<property  name="invenQuantity">
+			<column length="250" name="invenQuantity" sql-type="number"/>
+		</property>
+		<property  name="summoney">
+			<column length="250" name="summoney" />
+		</property>
+		<property  name="invenOnline">
+			<column length="250" name="invenOnline" />
+		</property>
+		<property  name="invenUnderline">
+			<column length="250" name="invenUnderline" />
+		</property>
+		<property  name="type">
+			<column length="250" name="type" />
+		</property>
+		<property  name="intime">
+			<column name="intime" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+		<property name="goodsBillsId">
+			<column length="250" name="goodsBillsId" />
+		</property>
+	</class>
+</hibernate-mapping>

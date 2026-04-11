@@ -1,5 +1,8 @@
 package com.tiantai.telrec.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
@@ -147,7 +150,7 @@ public class ClientInsertCustomer extends ActionSupport {
 	}
 
 	public String execute() throws Exception {
-		//System.out.println("ClientInsertCustomer do");
+		//logger.info("ClientInsertCustomer do");
 		HttpServletResponse response = ServletActionContext.getResponse();
 		TelrecCustomerInfo info = this.setCustomerInfo();
 		String id = null;

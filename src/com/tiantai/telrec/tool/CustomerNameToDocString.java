@@ -1,5 +1,8 @@
 package com.tiantai.telrec.tool;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 import java.util.Map;
 
@@ -34,7 +37,7 @@ public class CustomerNameToDocString extends ListToXmlForChart {
 			writer.write(document);
 			s = out.toString("UTF-8");
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			logger.error("操作异常", ex);
 		}
 		return s;
 	}

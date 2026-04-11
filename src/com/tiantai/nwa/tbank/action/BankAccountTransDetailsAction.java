@@ -1,5 +1,8 @@
 package com.tiantai.nwa.tbank.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.plat.bo.BaseBean;
 import hy.plat.service.BaseBeanService;
@@ -50,6 +53,7 @@ import com.tiantai.nwa.util.DockingBankInitUtil;
 @Controller
 @Scope("prototype")
 public class BankAccountTransDetailsAction {
+	private static final Logger logger = LoggerFactory.getLogger(BankAccountTransDetailsAction.class);
 
 	private String innerAction;
 	private List<BaseBean> accountList;
@@ -120,7 +124,7 @@ public class BankAccountTransDetailsAction {
 			response.getWriter().print(json.toString());			
 			
 		} catch (Exception e) {			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 	
@@ -258,7 +262,7 @@ public class BankAccountTransDetailsAction {
 	public void importAccountTransDetails()
 	{
 		//导入交易日期是trdate的银行日结数据。注意这里应该考虑多家银行的情况。
-		System.out.println("import begin");
+		logger.info("import begin");
 		//
 		setInnerTransCode("0002");
 		CallBankServiceClientUtil.setBaseBeanService(baseBeanService);
@@ -299,11 +303,11 @@ public class BankAccountTransDetailsAction {
 					
 				}catch(Exception e)
 				{
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}				
 			}			
 		}
-		System.out.println("import ok");
+		logger.info("import ok");
 	}
 	//在导入数据之前，应该先做一次删除，以免导入已经存在的重复数据。
 	private void deleteCashDayFromDatabase(CallBankRequestBean reqBean,String transDate)

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="UpLoadFile" table="dtUpLoadFile" >
+	<comment>多附件上传实体</comment>
+		<id length="50" name="fileKey">
+			<column length="50" name="fileKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="fileID">
+			<column length="50" name="fileID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" ><comment>公司ID</comment></column>
+		</property>
+		<property name="parmeterID">
+			<column length="50" name="parmeterID" ><comment>根据实际情况存储外键</comment></column>
+		</property>
+		<property name="filename">
+			<column length="250" name="filename" ><comment>上传文件名称</comment></column>
+		</property>
+		<property name="filepath">
+			<column length="250" name="filepath" ><comment>上传文件路径</comment></column>
+		</property>
+		<property name="filedesc">
+			<column length="250" name="filedesc" ><comment>上传文件说明或者排序字段</comment></column>
+		</property>
+		<property name="fileType">
+			<column length="250" name="fileType" ><comment>文件类别</comment></column>
+		</property>
+		<property name="fileAttr">
+			<column length="250" name="fileAttr" ><comment>文件属性</comment></column>
+		</property>
+
+
+	</class>
+</hibernate-mapping>

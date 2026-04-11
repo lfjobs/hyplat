@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="carFoundation" table="DT_CAR_CARFOUNDATION">
+		<id length="50" name="foundationKey">
+			<column length="50" name="foundationKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="foundationId">
+			<column length="50" name="foundationId"/>
+		</property>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="brandModel">
+			<column length="250" name="brandModel" />
+		</property>
+		<property  name="engineType">
+			<column length="250" name="engineType" />
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property  name="frameNum">
+			<column length="250" name="frameNum" />
+		</property>
+		<property  name="containerInSize">
+			<column  length="250" name="containerInSize" />
+		</property>
+		<property  name="outerSize">
+			<column  length="250" name="outerSize" />
+		</property>
+		<property  name="driveType">
+			<column  length="250" name="driveType" />
+		</property>
+		<property  name="power">
+			<column  length="250" name="power" />
+		</property>
+		<property  name="fuelType">
+			<column length="250" name="fuelType" />
+		</property>
+		<property  name="colorPaintNum">
+			<column length="250" name="colorPaintNum" />
+		</property>
+		<property  name="vehicleBrand">
+			<column length="250" name="vehicleBrand" />
+		</property>
+		<property  name="factoryName">
+			<column length="250" name="factoryName" />
+		</property>
+		<property  name="tractionTotal">
+			<column length="250" name="tractionTotal" />
+		</property>
+		<property  name="wheelTead">
+			<column length="250" name="wheelTead" />
+		</property>
+		<property  name="ratifyPeople">
+			<column length="250" name="ratifyPeople" />
+		</property>
+		<property  name="ratifyQuality">
+			<column length="250" name="ratifyQuality" />
+		</property>
+		<property  name="domestic">
+			<column length="250" name="domestic" />
+		</property>
+		<property  name="bridgePeople">
+			<column length="250" name="bridgePeople" />
+		</property>
+		<property  name="springNum">
+			<column length="250" name="springNum" />
+		</property>
+		<property  name="vehicleGet">
+			<column length="250" name="vehicleGet" />
+		</property>
+		<property  name="useProp">
+			<column length="250" name="useProp" />
+		</property>
+		<property  name="releaseDate">
+			<column name="releaseDate" />
+		</property>
+		<property  name="operationDate">
+			<column  name="operationDate" />
+		</property>
+		<property  name="wheelbase">
+			<column length="250" name="wheelbase" />
+		</property>
+		<property  name="kmFuel">
+			<column length="250" name="kmFuel" />
+		</property>
+		<property  name="shaftNum">
+			<column length="250" name="shaftNum" />
+		</property>
+		<property  name="tireNum">
+			<column length="250" name="tireNum" />
+		</property>
+		<property  name="tireSpecifications">
+			<column length="250" name="tireSpecifications" />
+		</property>
+		<property  name="serviceQuality">
+			<column length="250" name="serviceQuality" />
+		</property>
+		<property  name="steeringType">
+			<column length="250" name="steeringType" />
+		</property>
+	</class>
+</hibernate-mapping>

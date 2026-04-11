@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="CEA" table="dtCEA">
+		<id length="50" name="ceaKey">
+			<column length="50" name="ceaKey" />
+			<generator class="uuid" />
+		</id>
+		<property  name="ceaID">
+			<column length="50" name="ceaID"  not-null="true" />
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID" not-null="true" />
+		</property>
+		<property  name="eaID">
+			<column length="50" name="eaID" not-null="true" />
+		</property>
+		<property  name="ceaType">
+			<column length="2" name="ceaType" not-null="true" />
+		</property>
+		<property  name="ceaTryDate">
+			<column name="ceaTryDate" not-null="true" />
+		</property>
+		<property  name="ceaBuyDate">
+			<column name="ceaBuyDate" not-null="true" />
+		</property>
+		<property 	name="ceaInvalidDate">
+			<column name="ceaInvalidDate" not-null="true" />
+		</property>
+		<property  name="ceaStatus">
+			<column length="2" name="ceaStatus" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

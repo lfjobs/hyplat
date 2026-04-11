@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.PrizePoolBean" table="DT_PRIZE_POOL" schema="HYPLAT">
+        <comment>奖品池</comment>
+        <id name="poolkey">
+            <column name="poolkey" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="poolId">
+            <column name="POOL_ID" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>逻辑主键</comment>
+            </column>
+        </property>
+        <property name="productId">
+            <column name="PRODUCT_ID" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>产品id</comment>
+            </column>
+        </property>
+        <property name="prizeNum">
+            <column name="PRIZE_NUM" sql-type="number(*)" precision="2147483646" not-null="true">
+                <comment>剩余数量</comment>
+            </column>
+        </property>
+        <property name="prizeLvl">
+            <column name="PRIZE_LVL" sql-type="varchar2(10)" length="10" not-null="true">
+                <comment>奖品等级</comment>
+            </column>
+        </property>
+        <property name="companyId">
+            <column name="COMPANY_ID" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>公司id</comment>
+            </column>
+        </property>
+        <property name="activityId">
+            <column name="ACTIVITY_ID" sql-type="varchar2(50)" length="50">
+                <comment>活动id</comment>
+            </column>
+        </property>
+        <property name="status">
+            <column name="STATUS" sql-type="char(2)" length="2" not-null="true">
+                <comment>状态</comment>
+            </column>
+        </property>
+        <property name="startingTime">
+            <column name="STARTING_TIME" sql-type="timestamp(6)">
+                <comment>开始时间</comment>
+            </column>
+        </property>
+        <property name="endTime">
+            <column name="END_TIME" sql-type="timestamp(6)">
+                <comment>结束时间</comment>
+            </column>
+        </property>
+        <property name="prizeType">
+            <column name="PRIZE_TYPE" sql-type="char(2)" length="2" not-null="true">
+                <comment>奖品类型</comment>
+            </column>
+        </property>
+        <property name="ppName">
+            <column name="PP_NAME" sql-type="varchar2(100)" length="100" not-null="true">
+                <comment>产品名称</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

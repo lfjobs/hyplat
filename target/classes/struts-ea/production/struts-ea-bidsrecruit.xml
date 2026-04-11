@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="bidrecruit-token" namespace="/ea/bidrecruit"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.BidsRecruitAction" method="{1}">
+		      <result name="success">/page/ea/success.jsp</result>
+		      <result name="recruitlist">/page/ea/main/production/cprocedure/recruit/recruitInfos_list.jsp</result>
+		      <result name="addpage">/page/ea/main/production/cprocedure/recruit/recruitInfos_add.jsp</result>
+		      <result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>	
+		      <result name="torecruit">/page/ea/main/production/cprocedure/recruit/recruitinfo_index.jsp</result>
+		      <result name="posdetail">/page/ea/main/production/cprocedure/recruit/recruitinfo_posdetail.jsp</result>
+		      <result name="resumedetail">/page/ea/main/production/cprocedure/recruit/recruitinfo_resume.jsp</result>
+		      <result name="gsdetail">/page/ea/main/production/cprocedure/recruit/recruitinfo_gsdetail.jsp</result>
+		      <result name="toindustry">/page/ea/main/production/cprocedure/recruit/recruitinfo_industry.jsp</result>
+		      <result name="gssearch">/page/ea/main/production/cprocedure/recruit/recruitinfo_gssearch.jsp</result>
+		      <result name="grsearch">/page/ea/main/production/cprocedure/recruit/recruitinfo_grsearch.jsp</result>
+		      <result name="toposition">/page/ea/main/production/cprocedure/recruit/recruitinfo_position.jsp</result>
+		      <result name="gsresult">/page/ea/main/production/cprocedure/recruit/recruitinfo_gsresult.jsp</result>
+		      <result name="grresult">/page/ea/main/production/cprocedure/recruit/recruitinfo_grresult.jsp</result>
+		      <result name="grabsuc">/page/ea/main/production/cprocedure/recruit/recuitinfo_grabsuc.jsp</result>
+		      <result name="postsuc">/page/ea/main/production/cprocedure/recruit/recuitinfo_postsuc.jsp</result>
+			  <result name="topub">/page/ea/main/production/resume/resumeManagement/postionPublish.jsp</result>
+		     <result name="todetail">/page/ea/main/production/resume/resumeManagement/recruitDetail.jsp</result>
+			 <result name="topostion">/page/ea/main/production/resume/resumeManagement/postionManage.jsp</result>
+			<result name="totalent">/page/ea/main/production/resume/resumeManagement/resumeManage.jsp</result>
+			<result name="filterResume">/page/ea/main/production/resume/resumeManagement/filterResume.jsp</result>
+			<result name="redetail">/page/ea/main/production/resume/resumeManagement/resumeDetail.jsp</result>
+			<result name="toinvent">/page/ea/main/production/resume/resumeManagement/inventRecruit.jsp</result>
+			<result name="collectResume">/page/ea/main/production/resume/resumeManagement/collectResume.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="recruitInfo.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="bidrecruit-jsonajax" namespace="/ea/bidrecruit" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.BidsRecruitAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

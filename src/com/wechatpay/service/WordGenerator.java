@@ -1,5 +1,8 @@
 package com.wechatpay.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -10,6 +13,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class WordGenerator {
+	private static final Logger logger = LoggerFactory.getLogger(WordGenerator.class);
 
     public static String createWord(String content, String savePath) throws IOException {
         String fileName	= UUID.randomUUID().toString().replaceAll("-", "")+".docx";
@@ -50,6 +54,6 @@ public class WordGenerator {
                 "### 3. 复古港风美女\n" +
                 "90年代港风胶片滤镜，长卷发，涂着复古正红色口红，穿红色吊带连衣裙，站在老式霓虹牌下的街边，暖黄路灯打在脸上，氛围感拉满，画质有轻微颗粒感，色彩浓郁，构图是港风电影特写，生动有故事感";
         createWord(text, "D:/test.docx");
-        System.out.println("Word 生成成功！");
+        logger.info("Word 生成成功！");
     }
 }

@@ -51,6 +51,7 @@ import net.sf.json.JSONObject;
 @Controller
 @Scope("prototype")
 public class RefundMoneyAction {
+	private static final Logger logger = LoggerFactory.getLogger(RefundMoneyAction.class);
 
     @Resource
     private BaseBeanDao beandao;
@@ -237,7 +238,7 @@ public class RefundMoneyAction {
 
             refundSheet = new RefundSheet();
             refundSheet.setRsid(serverService.getServerID("RefundSheet"));
-            System.out.println("退货单id为：" + refundSheet.getRsid());
+            logger.info("退货单id为：: {}", refundSheet.getRsid());
             refundSheet.setOrderCode(cashierBills.getjNumOrder());
             refundSheet.setCashierBillsID(cashid);
             refundSheet.setRefundCode(serverService.getBillID(cashierBills.getCompanyID()));
@@ -305,7 +306,7 @@ public class RefundMoneyAction {
                 list.add(refundSheet);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             subtract = false;
         }
         return subtract;
@@ -386,7 +387,7 @@ public class RefundMoneyAction {
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String Hql = "from RefundSheet where cashierBillsID = ?";
             refundSheet = (RefundSheet) baseBeanService.getBeanByHqlAndParams(Hql, new Object[]{cashid});
-            System.out.println("退货单id为：" + refundSheet.getRsid());
+            logger.info("退货单id为：: {}", refundSheet.getRsid());
             refundSheet.setExpress(express);
             refundSheet.setWaybillno(expno);
             refundSheet.setExpCode(expCode);//快递公司名的标识
@@ -417,7 +418,7 @@ public class RefundMoneyAction {
             if (inv == null) {
                 inv = new Inventory();
                 inv.setInventoryID(serverService.getServerID("Inventory"));
-                System.out.println("新的库存表：" + inv.getInventoryID());
+                logger.info("新的库存表：: {}", inv.getInventoryID());
                 inv.setCompanyID(tEshopCusCom.getCompanyId());
                 inv.setWarehouse(depot.getDepotID());
                 inv.setWarehouseName(depot.getDepotName());
@@ -432,7 +433,7 @@ public class RefundMoneyAction {
                 inv.setGoodstatus("00");
                 list.add(inv);
             } else {
-                System.out.println("已有的库存表：" + inv.getInventoryID());
+                logger.info("已有的库存表：: {}", inv.getInventoryID());
                 inv.setInvenQuantity(Integer.parseInt(inv.getInvenQuantity()) + Integer.parseInt(gb.getQuantity()) + "");
                 inv.setSumPrice(Double.parseDouble(inv.getSumPrice()) + Double.parseDouble(gb.getMoney()) + "");
                 list.add(inv);
@@ -441,7 +442,7 @@ public class RefundMoneyAction {
             //库存盘点表
             stockInv sto = new stockInv();
             sto.setStockinvID(serverService.getServerID("stockInv"));
-            System.out.println("存库盘点表id：" + sto.getStockinvID());
+            logger.info("存库盘点表id：: {}", sto.getStockinvID());
             sto.setCompanyID(tEshopCusCom.getCompanyId());
             sto.setGoodsBillsId(gb.getGoodsBillsID());
             sto.setGoodsID(gb.getGoodsID());
@@ -457,7 +458,7 @@ public class RefundMoneyAction {
             //物流入库单(单据表)
             CashierBills cbs = new CashierBills();
             cbs.setCashierBillsID(serverService.getServerID("CashierBills"));
-            System.out.println("物流入库单（单据表）：" + cbs.getCashierBillsID());
+            logger.info("物流入库单（单据表）：: {}", cbs.getCashierBillsID());
             cbs.setJournalNum(serverService.getBillID(tEshopCusCom.getCompanyId()));
             cbs.setCompanyID(tEshopCusCom.getCompanyId());
             cbs.setCashierDate(new Date());
@@ -469,7 +470,7 @@ public class RefundMoneyAction {
             //物品单据
             GoodsBills newgb = new GoodsBills();
             newgb.setGoodsBillsID(serverService.getServerID("GoodsBills"));
-            System.out.println("物流入库表（商品表）：" + newgb.getGoodsBillsID());
+            logger.info("物流入库表（商品表）：: {}", newgb.getGoodsBillsID());
             newgb.setInventoryID(inv.getInventoryID());
             newgb.setStockinvID(sto.getStockinvID());
             newgb.setCashierBillsID(cbs.getCashierBillsID());
@@ -484,7 +485,7 @@ public class RefundMoneyAction {
             //进销存单据
             FinancialBill fin = new FinancialBill();
             fin.setFinancialbillID(serverService.getServerID("FinancialBill"));
-            System.out.println("进销存单据：" + fin.getFinancialbillID());
+            logger.info("进销存单据：: {}", fin.getFinancialbillID());
             fin.setCashierBillsID(cbs.getCashierBillsID());
             fin.setCompanyID(tEshopCusCom.getCompanyId());
             fin.setDepotID(depot.getDepotID());
@@ -506,7 +507,7 @@ public class RefundMoneyAction {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             subtract = false;
         }
         return subtract;

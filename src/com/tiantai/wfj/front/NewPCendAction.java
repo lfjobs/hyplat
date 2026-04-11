@@ -59,6 +59,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class NewPCendAction {
+	private static final Logger logger = LoggerFactory.getLogger(NewPCendAction.class);
 	private Logger logger = LoggerFactory.getLogger(WfjEshopProductAction.class);
 	private final static String merId = "504511707060002";
 	@Resource
@@ -686,7 +687,7 @@ public class NewPCendAction {
 				if(staffid!=null&&!staffid.equals("")){
 					str=staffid.split(",");
 				}
-				System.out.println("staffid："+staffid+"-");
+				logger.info("调试信息");
 			}
 			//乱码解决，这段代码在出现乱码时使用
 			/*valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");*/
@@ -698,7 +699,7 @@ public class NewPCendAction {
 			//调用SDK验证签名
 			signVerified = AlipaySignature.rsaCheckV1(params, AlipayConfig.APP_PUBLIC_KEY, AlipayConfig.input_charset, AlipayConfig.sign_type);
 		} catch (AlipayApiException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		//获取响应对象
 		HttpServletResponse httpResponse = ServletActionContext.getResponse();
@@ -718,7 +719,7 @@ public class NewPCendAction {
 				String total_amount = new String(request.getParameter("total_amount").getBytes("ISO-8859-1"),"UTF-8");
 				//交易状态
 				String trade_status = new String(request.getParameter("trade_status").getBytes("ISO-8859-1"),"UTF-8");
-				System.out.println(trade_status);
+				logger.info("值：{}", trade_status);
 				//验证订单是否正确
 				Map<String,Object> map = newPCendService.ajaxValidatePayBills(out_trade_no,total_amount);
 				if("TRADE_SUCCESS".equals(trade_status) && "score".equals(isflag)){
@@ -727,7 +728,7 @@ public class NewPCendAction {
 					bonusPointsService.buyBonusPoints("company201009046vxdyzy4wg0000000025",out_trade_no,(str!=null?str[0]:""),(str!=null?str[1]:""),total_amount,"01",trade_no);
 					//pc积分充值支付宝
 					OperatorInfo operator = (OperatorInfo)baseBeanService.getBeanByHqlAndParams("from OperatorInfo where journalNum = ?",new Object[]{out_trade_no});
-					System.out.println("操作人--------------"+operator);
+					logger.info("调试信息");
 					if(operator!=null){
 						operator.setStatus("01");
 						operator.setPayWay("00");
@@ -755,8 +756,8 @@ public class NewPCendAction {
 						//收款单生成后复制订单和收款单到新表
 						goldOrderService.copyCash(out_trade_no, "d");
 					}catch (Exception e3){
-						e3.printStackTrace();
-						System.out.println("复制订单收款单错误");
+						logger.error("操作异常", e3);
+						logger.info("复制订单收款单错误");
 					}
 					httpResponse.getWriter().write("success");
 				}
@@ -811,12 +812,12 @@ public class NewPCendAction {
 		}
 		boolean signVerified =false;
 		isflag = (str !=null ?(str.length< 8 ?"":str[7]):"");
-		System.out.println(isflag);
+		logger.info("值：{}", isflag);
 		try {
 			//调用SDK验证签名
 			signVerified = AlipaySignature.rsaCheckV1(params, AlipayConfig.APP_PUBLIC_KEY, AlipayConfig.input_charset, AlipayConfig.sign_type);
 		} catch (AlipayApiException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		if(signVerified)
 		{
@@ -930,8 +931,8 @@ public class NewPCendAction {
 						//收款单生成后复制订单和收款单到新表
 						goldOrderService.copyCash(journalNum, "d");
 					}catch (Exception e){
-						e.printStackTrace();
-						System.out.println("复制订单收款单错误");
+						logger.error("操作异常", e);
+						logger.info("复制订单收款单错误");
 					}
 				}
 				inputLine = WeChatUtils.backWeixinResult("SUCCESS", "OK");
@@ -1229,7 +1230,7 @@ public class NewPCendAction {
 				respStr = StringUtil.parseResponseToStr(httpResonse);
 				logger.error("respStr:"+respStr);
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			//同步响应在页面生成二维码
 			Map<String, String> resultMap = StringUtil.paserStrtoMap(respStr);

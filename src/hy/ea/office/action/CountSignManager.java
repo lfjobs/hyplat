@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.office.service.impl.SignManagerServiceImpl;
 
@@ -45,7 +48,7 @@ public class CountSignManager extends ActionSupport {
 			response.getWriter().print(outString);
 			response.flushBuffer();
 		} catch (Exception e) { // TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<!-- 项目管理 -->
+	<!-- 任务审核 -->
+	<include file="struts-ea/mysl/struts-ea-checkmanage.xml" />
+	<!-- 项目 -->
+	<include file="struts-ea/mysl/struts-ea-projectmanage.xml" />
+	<!-- 任务 -->
+	<include file="struts-ea/mysl/struts-ea-taskmanage.xml" />
+	
+	
+	
+	<!-- 单据审核  -->
+	<include file="struts-ea/mysl/administrative/struts-ea-receiptcheck.xml" />
+	<!-- 个人待办  -->
+	<include file="struts-ea/mysl/administrative/struts-ea-personaltodo.xml" />
+
+	
+	
+	
+	<!-- 个人办公 -->
+	<!-- 卫生检查单 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-sanitaryinspection.xml" />
+	<!-- 图书借阅单 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-bookborrowing.xml" />
+	<!--  客餐申请单 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-guestmeals.xml" />
+	<!--  盖章登记单 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-sealregistration.xml" />
+	<!-- 证书领用申请的action配置 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-cateapply.xml" />
+	<!-- 设备借用的action配置 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-deviceborrow.xml" />
+     
+    <!-- 加班申请 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-overtimeapply.xml" />
+	 <!-- 请假申请 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-leaveapply.xml" />
+	 <!-- 出差申请 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-travelapply.xml" />
+	 <!-- 耗材领用申请 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-consumablerecipient.xml" />
+	<!-- 设备维修的action配置 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-devicerepair.xml" />
+	<!-- 用车申请的action配置 -->
+	<include file="struts-ea/mysl/administrative/struts-ea-carapply.xml" />
+	
+
+	
+</struts>

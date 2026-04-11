@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+           
+<hibernate-mapping package="hy.ea.bo.production.scmanage">
+	<class name="MaterialGroup"  table="dtMaterialGroup">
+		<id length="50" name="mgkey">
+			<column length="50" name="mgkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="mgId">
+			<column length="50" name="mgId" not-null="true"><comment>逻辑主键</comment></column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"><comment>公司ID </comment></column>
+		</property>
+		<property  name="groupname">
+			<column length="50" name="groupname"><comment>分组名称</comment></column>
+		</property>
+		<property  name="groupdesc">
+			<column length="250" name="groupdesc"><comment>分组描述</comment></column>
+		</property>
+		<property  name="groupcover">
+			<column length="250" name="groupcover"><comment>分组封面URL，如没上传文件，设置个默认图片</comment></column>
+		</property>
+		<property  name="fileType">
+			<column length="2" name="fileType"><comment>存放的文件类型 00:图片 01：视频 02：音频</comment></column>
+		</property>
+		<property name="createDate">
+			<column name="createDate" ><comment>创建日期</comment></column>
+		</property><property name="updateDate">
+			<column name="updateDate" ><comment>更新日期包括删除操作</comment></column>
+		</property>
+		<property name="state">
+			<column name="state"  length="2"><comment>00：初始；01：09:已删除</comment></column>
+		</property>
+		<property name="createStaffID">
+			<column name="createStaffID"  length="50"><comment>创建人ID</comment></column>
+		</property>
+			<property name="updateStaffID">
+			<column name="updateStaffID"  length="50"><comment>更新人ID，包括删除操作</comment></column>
+		</property>
+		<property name="filenum">
+			<column name="filenum"  length="20"><comment>存放的文件数量</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

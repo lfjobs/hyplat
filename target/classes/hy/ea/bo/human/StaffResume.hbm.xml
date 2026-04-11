@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffResume" table="dt_hr_staff_Resume">
+		<id length="50" name="recordKey">
+			<column length="50" name="recordKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="recordID">
+			<column length="50" name="recordID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="resumeID">
+			<column length="50" name="resumeID" />
+		</property>
+		<property name="startTime">
+			<column length="250" name="startTime"/>
+		</property>
+		<property name="endTime">
+			<column length="250" name="endTime"/>
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID"/>
+		</property>
+		<property name="companyName">
+			<column length="250" name="companyName" />
+		</property>
+		<property  name="position">
+			<column length="250" name="position" />
+		</property>
+		<property  name="duties">
+			<column length="1000" name="duties" />
+		</property>
+		<property  name="reference">
+			<column length="250" name="reference" />
+		</property>
+		<property  name="referencePhon">
+			<column length="250" name="referencePhon" />
+		</property>
+		<property  name="postName">
+			<column length="250" name="postName" />
+		</property>
+		<property  name="postCase">
+			<column length="250" name="postCase" />
+		</property>
+		<property  name="postAddress">
+			<column length="250" name="postAddress" />
+		</property>
+		<property  name="fileNumber">
+			<column length="250" name="fileNumber" />
+		</property>
+		<property  name="fileAttachments">
+			<column length="250" name="fileAttachments" />
+		</property>
+		<property  name="referenceCode">
+			<column length="250" name="referenceCode" />
+		</property>
+		<property  name="referenceTime">
+			<column length="250" name="referenceTime" />
+		</property>
+		<property  name="photo">
+			<column length="256" name="photo" />
+		</property>
+		<property name="degree">
+		<column length="50" name="degree"></column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="StoreRateHistory" table="DT_StoreRateHistory" schema="HYPLAT" dynamic-insert="true">
+	<comment>商户调整费率</comment>
+		<id length="50" name="sdhKey" type="java.lang.String">
+			<column length="50" name="sdhKey" />
+			<generator class="uuid" />
+		</id>
+
+		<property name="sdhID" type="java.lang.String">
+			<column length="50" name="sdhID" >
+			</column>
+		</property>
+		<property name="subCompanyID" type="java.lang.String">
+			<column length="50" name="subCompanyID" >
+			</column>
+		</property>
+		<property name="storeID" type="java.lang.String">
+			<column length="32" name="storeID" >
+			</column>
+		</property>
+		<property name="storeName" type="java.lang.String">
+			<column length="50" name="storeName" >
+			</column>
+		</property>
+		<property name="subAppID" type="java.lang.String">
+			<column name="subAppID" length="50">
+				<comment>特约商户APPID</comment>
+			</column>
+		</property>
+		<property name="subMchid" type="java.lang.String">
+			<column name="subMchid" length="50">
+				<comment>特约商户号</comment>
+			</column>
+		</property>
+		<property name="storeRate" type="java.lang.String">
+			<column name="storeRate" length="50">
+				<comment>费率</comment>
+			</column>
+		</property>
+		<property name="changeRateDate" type="java.util.Date">
+			<column name="changeRateDate" >
+				<comment>绑定日期</comment>
+			</column>
+		</property>
+
+		<property name="changeDate" type="java.util.Date">
+			<column name="changeDate" >
+				<comment>调整日期</comment>
+			</column>
+		</property>
+
+		<property name="changeID" type="java.lang.String">
+			<column length="50" name="changeID" >
+				<comment>调整人ID</comment>
+			</column>
+		</property>
+		<property name="changeName" type="java.lang.String">
+			<column length="50" name="changeName" >
+				<comment>调整人姓名</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

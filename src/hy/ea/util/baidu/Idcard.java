@@ -1,5 +1,8 @@
 package hy.ea.util.baidu;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import com.wechat.bo.sft.IdCardInfo;
 import mobile.tiantai.android.action.AATelMessageAction;
@@ -11,6 +14,7 @@ import java.net.URLEncoder;
  * 身份证识别
  */
 public class Idcard {
+	private static final Logger logger = LoggerFactory.getLogger(Idcard.class);
 
     /**
      * 重要提示代码中所需工具类
@@ -38,7 +42,7 @@ public class Idcard {
             String accessToken = AuthService.getAuth();
 
             String result = HttpUtil.post(url, accessToken, param);
-            System.out.println(result);
+            logger.info("值：{}", result);
             JSONObject jo = JSONObject.fromObject(result);
             JSONObject jsonObject = jo.getJSONObject("words_result");
             if("01".equals(certType)) {
@@ -50,7 +54,7 @@ public class Idcard {
 
             return idCardInfo;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
     }

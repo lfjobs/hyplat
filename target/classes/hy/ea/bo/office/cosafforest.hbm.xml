@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="COSAfforest" table="dtCOSAfforest">
+		<id length="50" name="afforestKey">
+			<column length="50" name="afforestKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="afforestID">
+			<column length="50" name="afforestID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true"/>
+		</property>
+		<property name="classes">
+			<column length="250" name="classes"/>
+		</property>
+		<property name="area">
+			<column length="250" name="area"/>
+		</property>
+		<property name="amount">
+			<column length="250" name="amount"/>
+		</property>
+		<property name="place">
+			<column length="250" name="place" />
+		</property>
+		<property  name="principal">
+			<column length="250" name="principal" />
+		</property>
+		<property  name="afforestDate">
+			<column length="250" name="afforestDate" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.question">
+	<class name="QuestionsLast" table="dt_q_QuestionsLast">
+		<id length="50" name="qlKey">
+			<column length="50" name="qlKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="qlID">
+			<column length="50" name="qlID"><comment>记录</comment></column>
+		</property>
+		<property name="tqeID">
+			<column length="50" name="tqeID"><comment>题库</comment></column>
+		</property>
+		<property name="tqID">
+			<column length="50" name="tqID"><comment>题库</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>考生</comment></column>
+		</property>
+		<property name="pageNumber">
+			<column length="10" name="pageNumber"><comment>页码</comment></column>
+		</property>
+		<property name="createDate">
+			<column  name="createDate"><comment>时间</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

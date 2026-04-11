@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocRelateOther" table="DT_OA_DocRelateOther">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="id" type="java.lang.String">
+			<column name="id" length="50" >
+				<comment>ID</comment>
+			</column>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="2" >
+				<comment>初始状态00 ，盖章后章台01</comment>
+			</column>
+		</property>
+		<property name="updateDate" type="java.util.Date">
+			<column name="updateDate" length="50" >
+				<comment>盖章日期</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="createDate" length="50" >
+				<comment>创建日期</comment>
+			</column>
+		</property>
+		<property name="tableName" type="java.lang.String">
+			<column name="tableName" length="50" >
+			<comment>表名</comment>
+			</column>
+		</property>
+		<property name="idName" type="java.lang.String">
+			<column name="idName" length="50" >
+				<comment>ID名</comment>
+			</column>
+		</property>
+		<property name="idValue" type="java.lang.String">
+			<column name="idValue" length="50" >
+				<comment>ID值</comment>
+			</column>
+		</property>
+		<property name="stateName" type="java.lang.String">
+			<column name="stateName" length="50" >
+				<comment>要修改的状态名</comment>
+			</column>
+		</property>
+		<property name="stateValue" type="java.lang.String">
+			<column name="stateValue" length="50" >
+				<comment>要修改的状态值</comment>
+			</column>
+		</property>
+		<property name="refundValue" type="java.lang.String">
+			<column name="refundValue" length="50" >
+				<comment>驳回的值</comment>
+			</column>
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="50" >
+				<comment>公文ID</comment>
+			</column>
+		</property>
+
+		<property name="source" type="java.lang.String">
+			<column name="source" length="20" >
+				<comment>来源</comment>
+			</column>
+		</property>
+		<property name="htmlUrl" type="java.lang.String">
+			<column name="htmlUrl">
+				<comment>html链接</comment>
+			</column>
+		</property>
+		<property name="title" type="java.lang.String">
+			<column name="title" length="50" >
+				<comment>公文名称</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column name="staffID" length="50" >
+				<comment>提交审核人</comment>
+			</column>
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50" >
+				<comment>提交审核人公司</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,5 +1,8 @@
 package hy.ea.mesagepush;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Remind;
 import hy.plat.bo.BaseBean;
@@ -54,14 +57,14 @@ public class MessagePush implements ServletContextListener,HttpSessionListener {
 				try {
 						Thread.sleep(1000);
 						 
-						//System.out.println("session=="+sessionMap.keySet().size());
+						//logger.info("调试信息");
 						BaseBeanService testService = (BaseBeanService) springContext
 								.getBean("baseBeanServiceImpl");
 						List<CAccount>  accounts=new ArrayList<CAccount>();
 						for (HttpSession session : sessionMap.values()) {
 							CAccount account1 = (CAccount) session.getAttribute("account");
 							accounts.add(account1);
-							//System.out.println("-------------"+account1.getAccountEmail());
+							//logger.info("调试信息");
 						}
 						for (CAccount acount : accounts) {
 							String hql2="from Remind  where receiveDate<=? and (remindStatus=? or remindStatus=?) and remindType=?  and staffID=?";
@@ -95,13 +98,13 @@ public class MessagePush implements ServletContextListener,HttpSessionListener {
 								} 
 								if (null != rm.getCircularText()){
 									//如果当前登录人有可发送的消息 则在控制台
-									System.out.println(rm.getCircularText());
+									logger.info("调试信息");
 									
 								}
 							}
 						}
 				} catch (Exception ex) {
-					System.out.println(ex.getMessage());
+					logger.info("调试信息");
 				}
 				
 				

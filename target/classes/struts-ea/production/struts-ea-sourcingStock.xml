@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="sourcingsto-token" namespace="/ea/sourcingsto"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.sourcing.SourcingStockAction" method="{1}">
+		      <result name="inspectionList">/page/ea/main/production/cprocedure/sourcing/sourcingInspection_list.jsp</result>
+		      <result name="inspectionPrint">/page/ea/main/production/cprocedure/sourcing/sourcingInspection_ins.jsp</result>
+		      <result name="inspectionSee">/page/ea/main/production/cprocedure/sourcing/sourcingInspection_see.jsp</result>
+		     
+		      <result name="goodsReceiptList">/page/ea/main/production/cprocedure/sourcing/sourcingGoodsReceipt_list.jsp</result>
+		      <result name="goodsReceiptPrint">/page/ea/main/production/cprocedure/sourcing/sourcingGoodsReceipt_ins.jsp</result>
+		      <result name="goodsReceiptSee">/page/ea/main/production/cprocedure/sourcing/sourcingGoodsReceipt_see.jsp</result>     
+		      
+		      <result name="storageList">/page/ea/main/production/cprocedure/sourcing/sourcingStorage_list.jsp</result>
+		      <result name="storageAddPage">/page/ea/main/production/cprocedure/sourcing/sourcingStorage_add.jsp</result>
+		      <result name="storageSee">/page/ea/main/production/cprocedure/sourcing/sourcingStorage_see.jsp</result>     
+		     <result name="storagePrint">/page/ea/main/production/cprocedure/sourcing/sourcingStorage_print.jsp</result>
+	
+		      <result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="sourcingsto-jsonajax" namespace="/ea/sourcingsto" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.sourcing.SourcingStockAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

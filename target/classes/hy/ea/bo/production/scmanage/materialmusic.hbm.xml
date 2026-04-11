@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+           
+<hibernate-mapping package="hy.ea.bo.production.scmanage">
+	<class name="MaterialMusic"  table="dtMaterialMusic">
+		<id length="50" name="mmkey">
+			<column length="50" name="mmkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="mmId">
+			<column length="50" name="mmId" not-null="true"><comment>逻辑主键</comment></column>
+		</property>
+		<property name="staffId">
+			<column length="50" name="staffId"><comment>用户ID</comment></column>
+		</property>
+		<property  name="musicName">
+			<column length="250" name="musicName"><comment>音乐名称</comment></column>
+		</property>
+		<property  name="singName">
+			<column length="50" name="singName"><comment>演唱人</comment></column>
+		</property>
+		<property  name="musichash">
+			<column length="250" name="musichash"><comment>音乐hash</comment></column>
+		</property>
+		<property  name="musicType">
+			<column length="50" name="musicType"><comment>音乐类型00:搜索历史,01:默认</comment></column>
+		</property>
+		<property name="createDate">
+			<column name="createDate" ><comment>创建日期</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

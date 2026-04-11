@@ -36,6 +36,7 @@ import java.util.List;
  */
 @Component
 public class SendSMS {
+	private static final Logger logger = LoggerFactory.getLogger(SendSMS.class);
 	
 	/**
 	 * 发送短信
@@ -60,7 +61,7 @@ public class SendSMS {
 			is.close();
 		} catch (Exception e) {
 			log.error("发送短信失败!---{}",e.getMessage());
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return result;
@@ -258,7 +259,7 @@ public class SendSMS {
 			this.message = URLEncoder.encode(message, this.getEncode());
 		} catch (UnsupportedEncodingException e) { 
 			Log.error(e.getMessage());
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 	
@@ -407,7 +408,7 @@ public class SendSMS {
 			Map<String, List<String>> map = connection.getHeaderFields();
 			// 遍历所有的响应头字段
 			for (String key : map.keySet()) {
-				System.out.println(key + "--->" + map.get(key));
+				logger.info("调试信息");
 			}
 			// 定义 BufferedReader输入流来读取URL的响应
 			in = new BufferedReader(new InputStreamReader(
@@ -417,8 +418,8 @@ public class SendSMS {
 				result += line;
 			}
 		} catch (Exception e) {
-			System.out.println("发送GET请求出现异常！" + e);
-			e.printStackTrace();
+			logger.info("发送GET请求出现异常！: {}", e);
+			logger.error("操作异常", e);
 		}
 		// 使用finally块来关闭输入流
 		finally {
@@ -472,8 +473,8 @@ public class SendSMS {
 				result += line;
 			}
 		} catch (Exception e) {
-			System.out.println("发送 POST 请求出现异常！"+e);
-			e.printStackTrace();
+			logger.info("调试信息");
+			logger.error("操作异常", e);
 		}
 		//使用finally块来关闭输出流、输入流
 		finally{
@@ -486,7 +487,7 @@ public class SendSMS {
 				}
 			}
 			catch(IOException ex){
-				ex.printStackTrace();
+				logger.error("操作异常", ex);
 			}
 		}
 
@@ -501,7 +502,7 @@ public class SendSMS {
 //        try {
 //           String s = mm.sendMsg();
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            logger.error("操作异常", e);
 //        }
         //发送 GET 请求
 //		String url="http://211.149.174.186:16668/SendSms.asp";
@@ -512,9 +513,9 @@ public class SendSMS {
 //		String channel="1";
 //		String request="Account="+account+"&Password="+password+"&Phones="+phones+"&Content="+content+"&Channel="+channel;
 //		String ret1=SendSMS.sendGet(url, request);
-//		System.out.println(ret1);
+//		logger.info("值：{}", ret1);
 //		//发送 POST 请求
 //		String ret2=SendSMS.sendPost(url, request);
-//		System.out.println(ret2);
+//		logger.info("值：{}", ret2);
 	}
 }

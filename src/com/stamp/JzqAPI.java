@@ -1,5 +1,8 @@
 package com.stamp;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.junziqian.sdk.bean.ResultInfo;
@@ -16,6 +19,7 @@ import java.util.Map;
 
 
 public class JzqAPI {
+	private static final Logger logger = LoggerFactory.getLogger(JzqAPI.class);
     private static  String   APP_KEY = "35e2ab24ccc84034";
     private static String  APP_SECRET = "1093fc5635e2ab24ccc8403449149748";
     private static String  SERVICE_URL = "https://api.junziqian.com";
@@ -53,7 +57,7 @@ public class JzqAPI {
             String result = JSONObject.toJSONString(ri);
             net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
 
-            System.out.println(JSONObject.toJSONString(ri));
+            logger.info("调试信息");
 
             boolean  success = jsonObject.getBoolean("success");
             if(success==true){
@@ -73,7 +77,7 @@ public class JzqAPI {
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return applyResult;
     }
@@ -111,10 +115,10 @@ public class JzqAPI {
 
 
             }
-            System.out.println(JSONObject.toJSONString(ri));
+            logger.info("调试信息");
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return applyResult;
     }
@@ -128,18 +132,18 @@ public class JzqAPI {
             params.put("file", new FileBody(new File("E:\\1111.docx")));
 
             ResultInfo<Void> ri= requestUtils.doPost("/v2/file/upload",params);
-            System.out.println(JSONObject.toJSONString(ri));
-//            System.out.println(ri.getData());
-//            System.out.println(ri.getMsg());
-//            System.out.println("resultCode:"+ri.getResultCode());
-//            System.out.println("success:"+ri.isSuccess());
+            logger.info("调试信息");
+//            logger.info("调试信息");
+//            logger.info("调试信息");
+//            logger.info("调试信息");
+//            logger.info("调试信息");
 
 
 
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
     }
@@ -219,7 +223,7 @@ public class JzqAPI {
 
 
         ResultInfo<String> ri= requestUtils.doPost("/v2/sign/applySign",params);
-        System.out.println(JSONObject.toJSONString(ri));
+        logger.info("调试信息");
         String result = JSONObject.toJSONString(ri);
         net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
 
@@ -253,7 +257,7 @@ public class JzqAPI {
             params.put("identityCard",identityCard);
             params.put("identityType",1);//证件类型 1身份证, 2护照, 3台胞证, 4港澳居民来往内地通行证, 11营业执照, 12统一社会信用代码, 20子账号, 99其他
             ResultInfo<String> ri= requestUtils.doPost("/v2/sign/link",params);
-          System.out.println(JSONObject.toJSONString(ri));
+          logger.info("调试信息");
 
             String result = JSONObject.toJSONString(ri);
             net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
@@ -266,7 +270,7 @@ public class JzqAPI {
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return signUrl;
     }
@@ -288,7 +292,7 @@ public class JzqAPI {
             params.put("identityCard",identityCard);
             params.put("identityType",identityType);//证件类型 1身份证, 2护照, 3台胞证, 4港澳居民来往内地通行证, 11营业执照, 12统一社会信用代码, 20子账号, 99其他
             ResultInfo<String> ri= requestUtils.doPost("/v2/sign/link",params);
-            System.out.println(JSONObject.toJSONString(ri));
+            logger.info("调试信息");
 
             String result = JSONObject.toJSONString(ri);
             net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
@@ -301,7 +305,7 @@ public class JzqAPI {
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return signUrl;
     }
@@ -320,7 +324,7 @@ public class JzqAPI {
             Map<String,Object> params=new HashMap<>();
             params.put("applyNo",applyNo);
             ResultInfo<String> ri= requestUtils.doPost("/v2/sign/linkAnonyDetail",params);
-            System.out.println(JSONObject.toJSONString(ri));
+            logger.info("调试信息");
             String result = JSONObject.toJSONString(ri);
             net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
             viewUrl = jsonObject.getString("data");
@@ -328,7 +332,7 @@ public class JzqAPI {
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return viewUrl;
     }
@@ -351,7 +355,7 @@ public class JzqAPI {
             downUrl = jsonObject.getString("data");
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return downUrl;
     }
@@ -380,7 +384,7 @@ public class JzqAPI {
             str = data.getString("html");
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return str;
     }
@@ -406,7 +410,7 @@ public class JzqAPI {
             String result = JSONObject.toJSONString(ri);
             net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
             boolean  success = jsonObject.getBoolean("success");
-            System.out.println(JSONObject.toJSONString(ri));
+            logger.info("调试信息");
             if(success==true){
                 data = jsonObject.getString("data");
             }else{
@@ -414,7 +418,7 @@ public class JzqAPI {
 
             }
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return data;
     }
@@ -443,11 +447,11 @@ public class JzqAPI {
             String result = JSONObject.toJSONString(ri);
             net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
             success = jsonObject.getString("success");
-            System.out.println(JSONObject.toJSONString(ri));
-            System.out.println(success);
+            logger.info("调试信息");
+            logger.info("值：{}", success);
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return success;
     }
@@ -471,7 +475,7 @@ public class JzqAPI {
             params.put("backUrl",backUrl);//
 
             ResultInfo<Void> ri= requestUtils.doPost("/v2/auth/startH5Face",params);
-            System.out.println(JSONObject.toJSONString(ri));
+            logger.info("调试信息");
             String result = JSONObject.toJSONString(ri);
             net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
 
@@ -484,7 +488,7 @@ public class JzqAPI {
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return startFaceUrl;
 
@@ -506,7 +510,7 @@ public class JzqAPI {
         params.put("evidenceType",2);//证据类型,0图片,1视频,2人脸证据
         ResultInfo<JSONObject> ri= requestUtils.doPost("/v2/sign/evidenceLinkFile",params);
 
-        System.out.println(JSONObject.toJSONString(ri));
+        logger.info("调试信息");
 
         String result = JSONObject.toJSONString(ri);
         net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
@@ -594,7 +598,7 @@ public class JzqAPI {
 
        try {
            ResultInfo<String> ri = requestUtils.doPost("/v2/sign/applySign", params);
-           System.out.println(JSONObject.toJSONString(ri));
+           logger.info("调试信息");
            String result = JSONObject.toJSONString(ri);
 
         net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
@@ -608,7 +612,7 @@ public class JzqAPI {
 
 
        }catch (Exception e){
-           e.printStackTrace();
+           logger.error("操作异常", e);
        }
         return aplNo;
 
@@ -662,16 +666,16 @@ public class JzqAPI {
 
         params.put("faceThreshold",70);
         params.put("signatories",signatories.toJSONString());
-        System.out.println(signatories.toJSONString());
+        logger.info("调试信息");
 
-        System.out.println(params.toString());
+        logger.info("调试信息");
         ResultInfo<String> ri= requestUtils.doPost("/v2/sign/signatory/add",params);
-        System.out.println(JSONObject.toJSONString(ri));
+        logger.info("调试信息");
         String result = JSONObject.toJSONString(ri);
         net.sf.json.JSONObject  jsonObject = net.sf.json.JSONObject.fromObject(result);
 
 //        String str= HttpClientUtils.init().getPost(url,null,params,true);
-//        System.out.println(str);
+//        logger.info("值：{}", str);
 
         return null;
 

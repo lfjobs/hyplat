@@ -1,5 +1,8 @@
 package com.mysl.action.administrative;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Remind;
@@ -42,6 +45,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class CarApplyAction {
+	private static final Logger logger = LoggerFactory.getLogger(CarApplyAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -152,7 +156,7 @@ public class CarApplyAction {
 					Date  ttt= matter1.parse(Dvusetime);
 					dc.add(Restrictions.eq("carusetime",ttt));
 				} catch (ParseException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 	    }

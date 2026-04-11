@@ -1,5 +1,8 @@
 package mobile.tiantai.android.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.util.DateUtil;
 import hy.plat.bo.BaseBean;
 import hy.plat.bo.PageForm;
@@ -24,6 +27,7 @@ import com.mysl.bo.administrative.DtMytravel;
 @Controller
 @Scope("prototype")
 public class ATravelAction {
+	private static final Logger logger = LoggerFactory.getLogger(ATravelAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -189,7 +193,7 @@ public class ATravelAction {
                  baseBeanService.saveBeansListAndexecuteHqlsByParams(list, null, null);
                  jret.accumulate("result", "suc");
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 				jret.accumulate("result", "fail");
 			}
 		result=jret;
@@ -205,7 +209,7 @@ public class ATravelAction {
 			baseBeanService.deleteBeanByKey(DtMytravel.class, dtMytravel.getKey());
 			 jret.accumulate("result", "suc");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			jret.accumulate("result", "fail");
 		}	
          result=jret;
@@ -357,7 +361,7 @@ public class ATravelAction {
 
 		} catch (Exception e) {
 			jret.accumulate("result", "fail");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = jret;
 		return "success";

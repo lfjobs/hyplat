@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.human.service.SalarySettlementService;
 import hy.ea.util.AutoTaskUtils;
 import org.apache.commons.lang.StringUtils;
@@ -15,6 +18,7 @@ import java.util.Objects;
 
 @Service
 public class TaskBean {
+	private static final Logger logger = LoggerFactory.getLogger(TaskBean.class);
     private static final String EXECUTE_TRUE = "TRUE";
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     @Autowired
@@ -26,7 +30,7 @@ public class TaskBean {
     @Scheduled(cron = "0 1 0 1 * ?")
     public void runMonthTask() throws Exception {
         String now = sdf.format(new Date());
-        System.out.println("start runMonthTask:" + now + " ...");
+        logger.info("start runMonthTask:{}{}", now, " ...");
         String y = "2025";
         String m = "01";
         String[] date = now.split("-");
@@ -45,7 +49,7 @@ public class TaskBean {
         }
         y = String.valueOf(year);
         salarySettlementService.saveEmployeeSalaryAdd(y,m,null);
-        System.out.println("end runMonthTask:" + now + " ...");
+        logger.info("end runMonthTask:{}{}", now, " ...");
     }
 
     /**
@@ -88,7 +92,7 @@ public class TaskBean {
     @Transactional
     public void salarySettlement(String[] years,String[] months,String[] companyIds) throws Exception {
         if(Objects.isNull(years)){
-            System.out.println("年份为空，不生成工资");
+            logger.info("年份为空，不生成工资");
             return;
         }
         salarySettlementService.deleteSalaryMonthAdd(years,months,companyIds);
@@ -99,7 +103,7 @@ public class TaskBean {
             String currentYear = sdf.format(date).split("-")[0];
             String currentMonth = sdf.format(date).split("-")[1];
             if(Integer.valueOf(year).intValue() > Integer.valueOf(currentYear).intValue()){
-                System.out.println("年份大于今年，不生成工资");
+                logger.info("年份大于今年，不生成工资");
                 return;
             }else if(Integer.valueOf(year).intValue() == Integer.valueOf(currentYear).intValue()){
                 month = Integer.valueOf(currentMonth) - 1;

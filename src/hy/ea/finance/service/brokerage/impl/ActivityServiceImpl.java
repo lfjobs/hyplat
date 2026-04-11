@@ -292,7 +292,7 @@ public class ActivityServiceImpl implements ActivityService {
         try {
             this.baseBeanService.saveBeansListAndexecuteSqlsByParams(null, new String[]{sql}, new Object[]{activityId});
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -308,7 +308,7 @@ public class ActivityServiceImpl implements ActivityService {
         try {
             this.baseBeanService.saveBeansListAndexecuteSqlsByParams(null, new String[]{sql}, new Object[]{activityId});
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
     }
@@ -325,7 +325,7 @@ public class ActivityServiceImpl implements ActivityService {
         try {
             this.baseBeanService.saveBeansListAndexecuteSqlsByParams(null, new String[]{sql}, new Object[]{activityId});
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
     }
@@ -487,7 +487,7 @@ public class ActivityServiceImpl implements ActivityService {
             this.baseBeanService.saveBeansListAndexecuteSqlsByParams(null, new String[]{psql}, new Object[]{actPrice.getPpid()});
             map.put("code", "200");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             map.put("code", "201");
         }
         return map;

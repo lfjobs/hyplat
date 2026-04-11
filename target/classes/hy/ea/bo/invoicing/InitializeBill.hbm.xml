@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.invoicing.InitializeBill" table="DT_INITIALIZE_BILL" schema="HYPLAT">
+        <id name="initializekey">
+            <column name="INITIALIZEKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="initializeid">
+            <column name="INITIALIZEID" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="journalnum">
+            <column name="JOURNALNUM" sql-type="varchar2(50)" length="50">
+                <comment>单据编号</comment>
+            </column>
+        </property>
+        <property name="companyid">
+            <column name="COMPANYID" sql-type="varchar2(50)" length="50">
+                <comment>公司id</comment>
+            </column>
+        </property>
+        <property name="staffid">
+            <column name="STAFFID" sql-type="varchar2(50)" length="50">
+                <comment>责任人id</comment>
+            </column>
+        </property>
+        <property name="staffname">
+            <column name="STAFFNAME" sql-type="varchar2(50)" length="50">
+                <comment>责任人名字</comment>
+            </column>
+        </property>
+        <property name="codeid">
+            <column name="CODEID" sql-type="varchar2(50)" length="50">
+                <comment>产品类别id</comment>
+            </column>
+        </property>
+        <property name="codename">
+            <column name="CODENAME" sql-type="varchar2(100)" length="100">
+                <comment>产品类别名称</comment>
+            </column>
+        </property>
+        <property name="adddate">
+            <column name="ADDDATE" sql-type="date">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="status">
+            <column name="STATUS" sql-type="varchar2(50)" length="50">
+                <comment>单据状态 01:入库</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

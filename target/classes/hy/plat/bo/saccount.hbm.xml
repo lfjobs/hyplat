@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.plat.bo">
+	<class name="SAccount" table="dtSAccount">
+		<id name="accountKey">
+			<column length="50" name="accountKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="accountID">
+			<column length="50" name="accountID" unique="true" not-null="true" />
+		</property>
+		<property name="accountName">
+			<column length="50" name="accountName" not-null="true" />
+		</property>
+		<property name="accountEmail">
+			<column length="50" name="accountEmail" unique="true" not-null="true" />
+		</property>
+		<property name="accountPassword">
+			<column length="20" name="accountPassword" not-null="true" />
+		</property>
+		<property name="roleID">
+			<column length="50" name="roleID" not-null="true" />
+		</property>
+		<property name="accountStatus">
+			<column length="2" name="accountStatus" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

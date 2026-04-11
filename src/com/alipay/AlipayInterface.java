@@ -1,5 +1,8 @@
 package com.alipay;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alipay.api.*;
 import com.alipay.api.domain.*;
 import com.alipay.api.internal.util.AlipaySignature;
@@ -28,6 +31,7 @@ import net.sf.json.JSONObject;
  */
 @Service
 public class AlipayInterface {
+	private static final Logger logger = LoggerFactory.getLogger(AlipayInterface.class);
     //实例化客户端
     private static DefaultAlipayClient alipayClient = AlipayConfigTtsw.AlipayConfig();
 
@@ -55,7 +59,7 @@ public class AlipayInterface {
             AlipayTradeAppPayResponse response = alipayClient.sdkExecute(request);
             orderString=response.getBody();//就是orderString 可以直接给客户端请求，无需再做处理。
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return orderString;
     }
@@ -81,9 +85,9 @@ public class AlipayInterface {
         request.setReturnUrl(basePath + "ea/wfjshop/ea_call_back.jspa");//页面跳转同步通知页面路径
         try {
             AlipayTradeAppPayResponse response = alipayClient.pageExecute(request);
-            System.out.println(response.getBody());//就是orderString 可以直接给客户端请求，无需再做处理。
+            logger.info("调试信息");//就是orderString 可以直接给客户端请求，无需再做处理。
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -164,16 +168,16 @@ public class AlipayInterface {
                 response.getWriter().write("success");
             } else {//验证失败
                 //out.println("fail");
-                //System.out.println("验证失败");
+                //logger.info("验证失败");
                 //logger.error("验证失败");
                 response.getWriter().write("fail");
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -239,11 +243,11 @@ public class AlipayInterface {
                 response.getWriter().write("验证失败");
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -260,15 +264,15 @@ public class AlipayInterface {
         try {
             AntMerchantExpandIndirectZftConsultResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
             falg = false;
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return falg;
     }
@@ -286,15 +290,15 @@ public class AlipayInterface {
         try {
             AntMerchantExpandIndirectZftCreateResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
             falg = false;
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return falg;
     }
@@ -312,15 +316,15 @@ public class AlipayInterface {
         try {
             AntMerchantExpandIndirectZftModifyResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
             falg = false;
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return falg;
     }
@@ -338,15 +342,15 @@ public class AlipayInterface {
         try {
             AntMerchantExpandIndirectZftorderQueryResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
             falg = false;
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return falg;
     }
@@ -367,12 +371,12 @@ public class AlipayInterface {
         try {
             response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return response.getImageId();
     }
@@ -390,14 +394,14 @@ public class AlipayInterface {
         try {
             AlipayTradeRoyaltyRelationBindResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             falg = false;
         }
         return falg;
@@ -416,14 +420,14 @@ public class AlipayInterface {
         try {
             AlipayTradeRoyaltyRelationUnbindResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             falg = false;
         }
         return falg;
@@ -442,14 +446,14 @@ public class AlipayInterface {
         try {
             AlipayTradeRoyaltyRelationBatchqueryResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             falg = false;
         }
         return falg;
@@ -474,14 +478,14 @@ public class AlipayInterface {
         try {
             AlipayTradeCreateResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             falg = false;
         }
         return falg;
@@ -501,13 +505,13 @@ public class AlipayInterface {
         try {
             AlipayTradeMergePrecreateResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 pre_order_no = response.getPreOrderNo();
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return pre_order_no;
     }
@@ -528,14 +532,14 @@ public class AlipayInterface {
         try {
             AlipayTradeAppMergePayResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             falg = false;
         }
         return falg;
@@ -557,14 +561,14 @@ public class AlipayInterface {
         try {
             AlipayTradeWapMergePayResponse response = alipayClient.pageExecute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             falg = false;
         }
         return falg;
@@ -583,14 +587,14 @@ public class AlipayInterface {
         try {
             AlipayTradeSettleConfirmResponse response = alipayClient.pageExecute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             falg = false;
         }
         return falg;
@@ -609,14 +613,14 @@ public class AlipayInterface {
         try {
             AlipayTradeQueryResponse response = alipayClient.pageExecute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             falg = false;
         }
         return falg;
@@ -635,14 +639,14 @@ public class AlipayInterface {
         try {
             AlipayTradeRefundResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
-                System.out.println("调用成功");
+                logger.info("接口调用成功");
                 falg = true;
             } else {
-                System.out.println("调用失败");
+                logger.error("接口调用失败");
                 falg = false;
             }
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             falg = false;
         }
         return falg;
@@ -667,8 +671,8 @@ public class AlipayInterface {
                 model = (AlipayTradeAppPayModel) JSONObject.toBean(object, AlipayTradeAppPayModel.class);  //通过JSONObject.toBean()方法进行对象间的转换
             }*/
         } catch (Exception e) {
-            System.out.println("filters=" + filters.toString() + ".json转换成实体类出错");
-            e.printStackTrace();
+            logger.info("调试信息");
+            logger.error("操作异常", e);
         }
         return model;
     }

@@ -1,5 +1,8 @@
 package hy.ea.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.DefaultAlipayClient;
@@ -94,10 +97,10 @@ public class TEST {
         for (int j = 0; j < str.length; j++) {
             String str_i = str[j];
             String pid = str_i.substring(0, str_i.indexOf(":"));
-            System.out.println(pid);
-            System.out.println(str_i.substring(str_i.indexOf(":")+ 1));
+            logger.info("调试信息");
+            logger.info("调试信息");
             int num = Integer.parseInt(str_i.substring(str_i.indexOf(":") + 1));
-            System.out.println(num);
+            logger.info("调试信息");
         }
     }
 
@@ -111,11 +114,11 @@ public class TEST {
         // 使用正则表达式来进行补位，"0"代表需要补的位
         String paddedBinaryString = String.format("%0" + targetLength + "d", number);
 
-        System.out.println("补位前的整数: " + number);
-        System.out.println("补位前的二进制字符串: " + Integer.toBinaryString(number));
-        System.out.println("需要补位的位数: " + paddingNeeded);
-        System.out.println("补位后的二进制字符串: " + paddedBinaryString);
-        System.out.println("补位后的整数: " + paddedBinaryString.length());
+        logger.info("调试信息");
+        logger.info("调试信息");
+        logger.info("调试信息");
+        logger.info("调试信息");
+        logger.info("调试信息");
     }
 
     private static void way36(String companyID,List<BaseBean> beans){
@@ -172,7 +175,7 @@ public class TEST {
         depot.setDepotState("02");
         depot.setDepotType("1");
         beans.add(depot);
-        System.out.println(depot.getDepotID()+"--"+depot.getDepotPID()+":"+depot.getDepotName());
+        logger.info("调试信息");
         return depot.getDepotID();
     }
 
@@ -211,7 +214,7 @@ public class TEST {
 
         // 输出每种物品的个数
         for (int i = 0; i < numOfTypes; i++) {
-            System.out.println("第 " + (i + 1) + " 种物品的个数: " + quantities[i]);
+            logger.info("调试信息");
         }
     }
 
@@ -226,7 +229,7 @@ public class TEST {
         List<String[]> c=new ArrayList<>();
         try {
             way34("", new BigDecimal("1.355"), BigDecimal.ZERO, b.size(), b); // 调用递归函数，从空字符串开始，限制为n，生成长度为3的组合
-            System.out.println(ReturnRecursion);
+            logger.info("调试信息");
             /*if (ReturnRecursion != null&&!ReturnRecursion.equals("")) {
                 String[] str=ReturnRecursion.split(",");
                 for (int i = 0; i < str.length; i++) {
@@ -236,7 +239,7 @@ public class TEST {
                 }
             }*/
         }catch (StopRecursiveException e){
-            System.out.println(e.getMessage());
+            logger.info("调试信息");
         }
     }
 
@@ -252,7 +255,7 @@ public class TEST {
     public static void way34(String prefix, BigDecimal target,BigDecimal currentSum, int length,List<String[]> b) throws StopRecursiveException {
         // 检查数组长度，如果为0则无需执行后续操作
         if (length == 0) {
-            //System.out.println(prefix);
+            //logger.info("调试信息");
             return;
         }
 
@@ -327,7 +330,7 @@ public class TEST {
     public static void way32(int target, int currentSum, int currentNumber, StringBuilder currentCombination) {
         // 如果当前数字组合的和等于目标值，打印该组合
         if (currentSum == target) {
-            System.out.println(currentCombination);
+            logger.info("调试信息");
             return;
         }
         // 如果当前数字组合的和超过目标值或当前数字超过9，则停止递归
@@ -347,7 +350,7 @@ public class TEST {
         for (int a = 0; a <= n; a++) {
             for (int b = 0; b <= n; b++) {
                 for (int c = 0; c <= n; c++) {
-                        System.out.println("(" + a + ", " + b + ", " + c + ")");
+                        logger.info("调试信息");
                 }
             }
         }
@@ -381,32 +384,32 @@ public class TEST {
                 for (int j = 0; j < subList.size(); j++) {
                     Object[] psup = (Object[]) subList.get(j);
                     ProProxy pp = null;
-                    //System.out.println("key = " + entry.getKey() + ", value = " + entry.getValue());
+                    //logger.info("调试信息");
                     if (psup[0] != null || !psup[0].equals("")) {
                         BigDecimal jinbi = new BigDecimal(psup[0].toString()).multiply(new BigDecimal(1)).multiply(new BigDecimal(100));
                         if (jinbi.compareTo(BigDecimal.ZERO) > 0) {
                             if (psup[1].equals("p20170220ZVZR76B88M0000000017") || psup[1].equals("p20170220ZVZR76B88M0000000016")) {
                                 if (pp != null && pp.getState() != null && pp.getState().equals("01")) {
-                                    System.out.println(j+"---------"+psup[1]+"------------"+d);
+                                    logger.info("调试信息");
                                 } else {
                                     d = d.add(jinbi);
                                 }
                             } else if (psup[1].equals("p20170220ZVZR76B88M0000000019") || psup[1].equals("p20170220ZVZR76B88M0000000018") || psup[1].equals("p20170220ZVZR76B88M0000000020")) {
                                 if (pp != null && pp.getState() != null && pp.getState().equals("01")) {
-                                    System.out.println(j+"---------"+psup[1]+"------------"+d);
+                                    logger.info("调试信息");
                                 } else {
                                     d = d.add(jinbi);
                                 }
                             } else if (psup[1].equals("p20170220ZVZR76B88M0000000022")) {
                                 //购物积分代理
-                                System.out.println(j+"---------"+psup[1]+"------------"+d);
+                                logger.info("调试信息");
 
                             } else if (psup[1].equals("p20170605KY3VAANZJG0000000003") && psuObj[4] != null && !psuObj[4].equals("")) {
-                                System.out.println(j+"---------"+psup[1]+"------------"+d);
+                                logger.info("调试信息");
                             }
                         }
                         if (j == subList.size() - 1 && d.compareTo(BigDecimal.ZERO) == 1) {
-                            System.out.println(j+"---------剩余------------"+d);
+                            logger.info("调试信息");
                         }
                     }
                 }
@@ -423,7 +426,7 @@ public class TEST {
         } else {
             sql.append("and cc.industrytype like ?");
         }
-        System.out.println(sql);
+        logger.info("调试信息");
     }
 
     private static void way28() {
@@ -439,9 +442,9 @@ public class TEST {
     }
 
     private static void way26() {
-        System.out.println("cashiertally20230313AXI2US98T3784365856".length());
-        System.out.println("cashiertally20230313S3LRXUBGKD6874998764".length());
-        System.out.println("2024031507565200007".substring(0,8));
+        logger.info("调试信息");
+        logger.info("调试信息");
+        logger.info("调试信息");
     }
 
     private static void way25() {
@@ -464,8 +467,8 @@ public class TEST {
                     0, 4)), i);
             String time = timeyear.substring(0, 4) + "-" + i + "-" + tt
                     + " 23:59:59";
-            System.out.println(DateUtil.getCurrentMonday("yyyy-MM-dd"));
-            System.out.println(time);
+            logger.info("调试信息");
+            logger.info("调试信息");
         }
     }
 
@@ -560,39 +563,39 @@ public class TEST {
                 if (tEshopCusCom != null) {
                     if (tEshopCusCom.getCusType().equals("0")) {
                         if (cuscom[5].toString().equals("0")) {
-                            System.out.println(90 + "");
+                            logger.info("调试信息");
                         } else {
-                            System.out.println(new BigDecimal(10f / (baseList.size() - 1)).setScale(3, BigDecimal.ROUND_DOWN) + "");
+                            logger.info("调试信息");
                         }
                     } else {
                         if (Float.parseFloat(baseList2[5].toString()) >= 2
                                 && Float.parseFloat(baseList2[5].toString()) <= 5) {
                             if (i == 1) {
-                                System.out.println(90 + "");
+                                logger.info("调试信息");
                             } else {
-                                System.out.println(new BigDecimal(10f / (baseList.size() - 1)).setScale(3, BigDecimal.ROUND_DOWN) + "");
+                                logger.info("调试信息");
                             }
                         }
                     }
                 } else {
                     if (baseList.size() <= 3) {
                         if (cuscom[5].toString().equals("0")) {
-                            System.out.println(90 + "");
+                            logger.info("调试信息");
                         } else {
-                            System.out.println(new BigDecimal(10f / (baseList.size() - 1)).setScale(3, BigDecimal.ROUND_DOWN) + "");
+                            logger.info("调试信息");
                         }
                     } else {
                         if (Float.parseFloat(baseList2[5].toString()) == 1) {
                             if (i == 0) {
-                                System.out.println(90 + "");
+                                logger.info("调试信息");
                             } else {
-                                System.out.println(new BigDecimal(10f / (baseList.size() - 1)).setScale(3, BigDecimal.ROUND_DOWN) + "");
+                                logger.info("调试信息");
                             }
                         } else {
                             if (i == 0) {
-                                System.out.println(90 + "");
+                                logger.info("调试信息");
                             } else {
-                                System.out.println(new BigDecimal(10f / (baseList.size() - 1)).setScale(2, BigDecimal.ROUND_DOWN) + "");
+                                logger.info("调试信息");
                             }
                         }
                     }
@@ -604,46 +607,46 @@ public class TEST {
     private static void way21() {
         //String q = Float.parseFloat("99030.00") / Float.parseFloat("0.01") * 1000/0.001d+ "";
 
-        System.out.println(Float.parseFloat("99030.00") / Float.parseFloat("0.01") * 1000 / 0.001d);
+        logger.info("调试信息");
     }
 
     private static void way20() {
-        System.out.println("Test Start: ");
+        logger.info("调试信息");
         String ip = "119.101.118.61";
 
-        System.out.println(IPUtils.getMyIp());
+        logger.info("调试信息");
 
         System.setProperty("proxyPort", "9999");
         System.setProperty("proxyHost", ip);
         System.setProperty("proxySet", "true");
 
-        System.out.println(IPUtils.getMyIp());
+        logger.info("调试信息");
     }
 
     private static void way19() {
-        System.out.println("Test Start: ");
+        logger.info("调试信息");
         String ip = "119.101.118.61";
 
-        System.out.println(IPUtils.getMyIp());
+        logger.info("调试信息");
 
         System.setProperty("proxyPort", "9999");
         System.setProperty("proxyHost", ip);
         System.setProperty("proxySet", "true");
 
-        System.out.println(IPUtils.getMyIp());
+        logger.info("调试信息");
     }
 
     private static void way18() {
-        System.out.println("Start: ");
+        logger.info("调试信息");
 
         IPSpider spider = new IPSpider();
         List<IPBean> list = spider.crawlHttp(3);
 
-        System.out.println("爬取数量：" + list.size());
+        logger.info("调试信息");
 
         Gson gson = new Gson();
         for (IPBean ipBean : list) {
-            System.out.println(gson.toJson(ipBean));
+            logger.info("调试信息");
 
             new Thread(new Runnable() {
                 @Override
@@ -661,7 +664,7 @@ public class TEST {
         while (true) {
             // 判断所有副线程是否完成
             if (IPList.getCount() == list.size()) {
-                System.out.println("有效数量：" + IPList.getSize());
+                logger.info("调试信息");
                 break;
             }
         }
@@ -718,9 +721,9 @@ public class TEST {
         try {
             //这里和普通的接口调用不同，使用的是sdkExecute
             AlipayTradeAppPayResponse response = alipayClient.sdkExecute(request);
-            System.out.println(response.getBody()); //就是orderString 可以直接给客户端请求，无需再做处理。
+            logger.info("调试信息"); //就是orderString 可以直接给客户端请求，无需再做处理。
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -728,9 +731,9 @@ public class TEST {
         try {
             WebBookHelper.拯救苍生从拆CP走起();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -739,17 +742,17 @@ public class TEST {
         //Jedis jedis = new Jedis("47.94.207.152");
         // 如果 Redis 服务设置来密码，需要下面这行，没有就不需要
         // jedis.auth("123456");
-        System.out.println("连接成功");
+        logger.info("调试信息");
         //查看服务是否运行
-        //System.out.println("服务正在运行: " + jedis.ping());
+        //logger.info("调试信息");
         //设置 redis 字符串数据
         //jedis.set("runoobkey", "www.runoob.com");
         // 获取存储的数据并输出
-        //System.out.println("redis 存储的字符串为: " + jedis.get("runoobkey"));
+        //logger.info("调试信息");
 
         //Set<String> keys = jedis.keys("*");
 
-        //System.out.println(keys);
+        //logger.info("调试信息");
         //jedis.del("qenm");
         JSONObject jo=new JSONObject();
         jo.accumulate("A1", new String[]{"A1", "A3", "B1", "B2", "C1", "C2", "C3", "C4", "C5", "M" });
@@ -771,31 +774,31 @@ public class TEST {
 
 
         JSONArray ja=(JSONArray) jo.get(categoryName);
-        System.out.println(ja);
+        logger.info("调试信息");
         for (int i = 0; i < ja.size(); i++) {
-            System.out.println(ja.get(i));
+            logger.info("调试信息");
         }
         Object [] qenm= (Object[]) ja.toArray();
-        System.out.println(qenm);
+        logger.info("调试信息");
     }
 
     private static void way13() {
         /*String a="CashierBills20190325I225KSZUMZ0000098975";
-        System.out.println(a.substring(0, 40));*/
+        logger.info("调试信息");*/
 
         String a = "第1/2页";
-        System.out.println(a.lastIndexOf("第"));
+        logger.info("调试信息");
         a = a.substring(a.lastIndexOf("第") + 1);
-        System.out.println(Integer.parseInt(a.substring(0, a.indexOf("/"))));
+        logger.info("调试信息");
     }
 
     private static void way12() {
         String title = "章节目录 第1章 白老大之死（1）(1/4)";
         System.out.print(title.substring(title.lastIndexOf("第"), title.length()));
 
-        System.out.println(title.length() + "字");
+        logger.info("调试信息");
         title = "第26章第一医院(完)(一更+二更+两百雷三更+1.2w营养液四";
-        System.out.println(WebBookCrawler.method_2(title, "\\("));
+        logger.info("调试信息");
         if (title.indexOf("(") >= 0 && title.indexOf(")") >= 0 && WebBookCrawler.method_2(title, "\\(") == WebBookCrawler.method_2(title, "\\)")) {
             String a = title.substring(title.lastIndexOf("(") + 1,
                     title.lastIndexOf(")"));
@@ -820,7 +823,7 @@ public class TEST {
                 s = new StringBuilder(s.toString().replaceAll(str, ""));
             }
         }
-        System.out.println(s);*/
+        logger.info("调试信息");*/
 
     }
 
@@ -832,33 +835,33 @@ public class TEST {
         // 今天
         Elements elements2 = elements1.select("h1");
         String today = elements2.get(0).text();
-        System.out.println(today);
+        logger.info("调试信息");
         // 几号
         Elements elements3 = elements1.select("h2");
         String number = elements3.get(0).text();
-        System.out.println(number);
+        logger.info("调试信息");
         // 是否有雨
         Elements elements4 = elements1.select("[class=wea]");
         String rain = elements4.get(0).text();
-        System.out.println(rain);
+        logger.info("调试信息");
         // 高的温度
         Elements elements5 = elements1.select("span");
         String highTemperature = elements5.get(0).text() + "°C";
-        System.out.println(highTemperature);
+        logger.info("调试信息");
         // 低的温度
         String lowTemperature = elements5.get(1).text() + "°C";
-        System.out.println(lowTemperature);
+        logger.info("调试信息");
         // 风力
         Elements elements6 = elements1.select("i");
         String wind = elements6.get(2).text();
-        System.out.println(wind);
+        logger.info("调试信息");
     }
 
     public Document getDocument(String url) {
         try {
             return Jsoup.connect(url).get();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
     }
@@ -883,7 +886,7 @@ public class TEST {
             }
         } catch (SocketException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return SERVER_IP;*/
         try {
@@ -891,26 +894,26 @@ public class TEST {
             //String hostAddress = address.getHostAddress());//192.168.0.121
             InetAddress address1 = InetAddress.getByName("www.impf2010.com");//获取的是该网站的ip地址，比如我们所有的请求都通过nginx的，所以这里获取到的其实是nginx服务器的IP地
             String hostAddress1 = address1.getHostAddress();//124.237.121.122
-            System.out.println(hostAddress1);
+            logger.info("调试信息");
             //InetAddress[] addresses = InetAddress.getAllByName("www.impf2010.com");//根据主机名返回其可能的所有InetAddress对象
             //for (InetAddress addr : addresses) {
-            //    System.out.println(addr);//www.baidu.com/14.215.177.38
+            //    logger.info("调试信息");//www.baidu.com/14.215.177.38
             //www.baidu.com/14.215.177.37
             //}
         } catch (UnknownHostException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
     private static void way10() {
-        System.out.println(new BigDecimal("0.0").setScale(4, BigDecimal.ROUND_HALF_UP));
+        logger.info("调试信息");
     }
 
     private static void way9() {
         //Float.parseFloat(gold) + Float.parseFloat(notWithDrawGlod(wfjJifen.getWfjJifenId())) > Float.parseFloat("29040.9082000000")
-        System.out.println(Float.toString((Float.parseFloat("1082.409075025") - Float.parseFloat("0"))));
-        System.out.println(Float.parseFloat("29040.9082000000"));
-        System.out.println(Float.parseFloat(new BigDecimal("290").multiply(new BigDecimal(100)).toString()));
+        logger.info("调试信息");
+        logger.info("调试信息");
+        logger.info("调试信息");
     }
 
     private static void way8() {
@@ -921,29 +924,29 @@ public class TEST {
             utf8Bytes = a.getBytes("UTF-8");
             //然后用utf-8 对这个字节数组解码成新的字符串
             String result = new String(utf8Bytes, "UTF-8");
-            System.out.println(result);
+            logger.info("调试信息");
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
     }
 
     private static void way7() {
         String a = "from hy.ea.bo.finance.ProSetup ps,hy.ea.bo.finance.ProductPackaging p where p.ppid = ps.ppid and p.showweixin = ? and ps.comId = ? and  exists ( select 1 from hy.ea.marketing.bo.ProProxy pp where pp.ppid = p.ppID and pp.agentstate = ? ) order by ps.editDate desc";
-        System.out.println(a.substring(a.indexOf("from")));
+        logger.info("调试信息");
     }
 
     private static void way6() {
         try {
             int i = 100 / 0;
-            System.out.println(i);
+            logger.info("调试信息");
         } catch (Exception e) {
-            System.out.println(1);
+            logger.info("调试信息");
             throw new RuntimeException();
         } finally {
-            System.out.println(2);
+            logger.info("调试信息");
         }
-        System.out.println(3);
+        logger.info("调试信息");
     }
 
     private static void way5() {
@@ -953,7 +956,7 @@ public class TEST {
         String[] b = new String[4];
         System.arraycopy(a, 0, b, 0, a.length);
         b[3] = "sdfsdfsfsdfsfdsf";
-        System.out.println(Arrays.toString(b));
+        logger.info("调试信息");
         String[] c = {"4444444444444444444444444444" };
 
 
@@ -1060,41 +1063,41 @@ public class TEST {
                 "egg98,\n" +
                 "egg99,\n" +
                 "egg100,\n";
-        System.out.println(str.replaceAll("\\s*", ""));
+        logger.info("调试信息");
     }
 
     private static void way3() {
-        System.out.println(Integer.valueOf("0"));
+        logger.info("调试信息");
     }
 
     private static void way2() {
         /*try {
             if (!conn.isClosed())
-                System.out.println("Succeeded connecting to the Database!");
+                logger.info("调试信息");
             Statement statement = conn.createStatement();
             String sql = "SELECT * FROM dtgoodsmanage WHERE goodsid='goodsID20180815CXCYV9YNCH0000018056'";
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                System.out.println(rs.getString("goodskey") + "");
+                logger.info("调试信息");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }*/
     }
 
     public static void way1() {
         float a = 123.234478f;
         float b = (float) (Math.round(a * 100)) / 100;
-        System.out.println(b);
+        logger.info("调试信息");
         BigDecimal v = BigDecimal.ONE;
         BigDecimal c = new BigDecimal(12).subtract(v).subtract(new BigDecimal(8)).multiply(new BigDecimal(1));
         if (c.compareTo(new BigDecimal(3)) > 0) {
-            System.out.println(c);
+            logger.info("调试信息");
         }
         Object[] tz = {0.30};
         BigDecimal d = new BigDecimal(tz[0].toString()).multiply(new BigDecimal(100));
 
-        System.out.println(d);
+        logger.info("调试信息");
 
 
         BigDecimal vv = BigDecimal.ZERO;
@@ -1104,10 +1107,10 @@ public class TEST {
         zs = new BigDecimal(12.5); //零售价
         p = new BigDecimal(15.00);  //实际价格
         e = new BigDecimal(1.20); //佣金
-        System.out.println(zs.compareTo(p));
-        System.out.println(e.compareTo(new BigDecimal(3)));
+        logger.info("调试信息");
+        logger.info("调试信息");
         if (zs.compareTo(p) <= 0 && e.compareTo(new BigDecimal(3)) == 1) {
-            System.out.println(345345345);
+            logger.info("调试信息");
         }
         List<Object[]> list = new ArrayList<>();
         list.add(new Object[]{0, "a", "a" });
@@ -1165,15 +1168,15 @@ public class TEST {
             }
             clist.add(a1);
         }
-        //System.out.println(clist.size());
+        //logger.info("调试信息");
         BigDecimal total = new BigDecimal(6);
-        System.out.println(total.multiply(new BigDecimal(25).divide(new BigDecimal(100))));
+        logger.info("调试信息");
 
-        System.out.println(total.multiply(new BigDecimal(25).divide(new BigDecimal(100))));
+        logger.info("调试信息");
 
-        System.out.println(total.multiply(new BigDecimal(5).divide(new BigDecimal(100))));
+        logger.info("调试信息");
 
-        System.out.println(total.multiply(new BigDecimal(5).divide(new BigDecimal(100))));
+        logger.info("调试信息");
 
         String str = "\"品牌： 伊利  \n" +
                 "商品名称：伊利牛奶\n" +
@@ -1195,24 +1198,24 @@ public class TEST {
                 "\n" +
                 "\"\n";
         String str2 = str.replaceAll("\\s*", "");
-        System.out.println(str2);
+        logger.info("调试信息");
 
-        System.out.println(new BigDecimal(0).setScale(2, BigDecimal.ROUND_HALF_UP));
+        logger.info("调试信息");
 
-        System.out.println(new BigDecimal("1").divide(new BigDecimal("0.011"), 2, BigDecimal.ROUND_DOWN));
+        logger.info("调试信息");
     }
 
     public synchronized void log1() throws InterruptedException {
-        System.out.println("a1");
+        logger.info("调试信息");
         Thread.sleep(3000);
-        System.out.println("a2");
+        logger.info("调试信息");
     }
 
     public void log2() throws InterruptedException {
         synchronized (this) {
-            System.out.println("b1");
+            logger.info("调试信息");
             Thread.sleep(3000);
-            System.out.println("b2");
+            logger.info("调试信息");
         }
     }
 
@@ -1277,7 +1280,7 @@ public class TEST {
                 ImageIO.write(tag, "JPEG", new File(result));//
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 

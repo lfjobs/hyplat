@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarMaintain" table="dt_Car_CarMaintain">
+		<id length="50" name="maintainKey">
+			<column length="50" name="maintainKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="maintainID">
+			<column length="50" name="maintainID"/>
+		</property>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="repairpeople">
+			<column  length="50" name="repairpeople" />
+		</property>
+		<property  name="carnumber">
+			<column length="50" name="carnumber" />
+		</property>
+		<property  name="carType">
+			<column length="50" name="carType" />
+		</property>
+		<property  name="maintenanceAddress">
+			<column length="250" name="maintenanceAddress" />
+		</property>
+		<property  name="engineNum">
+			<column length="50" name="engineNum" />
+		</property>
+		<property  name="frameNumber">
+			<column length="50" name="frameNumber" />
+		</property>
+		<property  name="maintainType">
+			<column length="50" name="maintainType" />
+		</property>
+		<property  name="maintainISBN">
+			<column length="50" name="maintainISBN" />
+		</property>
+		<property  name="totalmileage" >
+			<column name="totalmileage" />
+		</property>
+		<property  name="qualitysurveyor">
+			<column  length="50" name="qualitysurveyor" />
+		</property>
+		<property  name="repaireCompany">
+			<column  length="50" name="repaireCompany" />
+		</property>
+		<property  name="intodate">
+			<column  name="intodate" />
+		</property>
+		<property  name="outdate">
+			<column name="outdate" />
+		</property>
+		<property  name="connectcarpeople">
+			<column  length="50" name="connectcarpeople" />
+		</property>
+		<property  name="takebackdate">
+			<column name="takebackdate" />
+		</property>
+		<property  name="maintainContext">
+			<column length="250" name="maintainContext" />
+		</property>
+		<property  name="maintainCost" >
+			<column name="maintainCost" />
+		</property>
+		<property  name="remark">
+			<column  length="256" name="remark" />
+		</property>
+		<property name="carPeople">
+			<column length="250" name="carPeople"/>
+		</property>
+	</class>
+</hibernate-mapping>

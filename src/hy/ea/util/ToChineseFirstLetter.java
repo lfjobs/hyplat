@@ -1,4 +1,7 @@
 package hy.ea.util;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -7,6 +10,7 @@ import java.io.UnsupportedEncodingException;
  *
  */
 public class ToChineseFirstLetter {
+	private static final Logger logger = LoggerFactory.getLogger(ToChineseFirstLetter.class);
 	static final int GB_SP_DIFF = 160; 
 	// 存放国标一级汉字不同读音的起始区位码
     static final int[] secPosValueList = { 1601, 1637, 1833, 2078, 2274, 2302, 2433, 2594, 2787, 3106, 3212, 3472, 3635, 3722, 3730, 3858, 4027, 4086, 4390, 4558, 4684, 4925, 
@@ -42,7 +46,7 @@ public class ToChineseFirstLetter {
         try {
             uniCode = String.valueOf(ch).getBytes("GBK"); 
         } catch (UnsupportedEncodingException e) { 
-            e.printStackTrace(); 
+            logger.error("操作异常", e); 
             return null; 
         } 
         if (uniCode[0] < 128 && uniCode[0] > 0) { // 非汉字 

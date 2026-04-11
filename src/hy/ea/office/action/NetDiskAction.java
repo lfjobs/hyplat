@@ -1,6 +1,9 @@
 
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.office.NetDisk;
@@ -36,6 +39,7 @@ import com.opensymphony.xwork2.ActionContext;
  *
  */
 public class NetDiskAction {
+	private static final Logger logger = LoggerFactory.getLogger(NetDiskAction.class);
 	
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -173,7 +177,7 @@ public class NetDiskAction {
 			try {
 				fu.downFile(downLoadPath);
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 	public NetDisk getNetDisk() {

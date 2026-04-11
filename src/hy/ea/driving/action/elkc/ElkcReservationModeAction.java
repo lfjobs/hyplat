@@ -1,5 +1,8 @@
 package hy.ea.driving.action.elkc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
@@ -28,6 +31,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class ElkcReservationModeAction {
+	private static final Logger logger = LoggerFactory.getLogger(ElkcReservationModeAction.class);
 
     @Resource
     private BaseBeanService baseBeanService;
@@ -69,7 +73,7 @@ public class ElkcReservationModeAction {
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         map.put("msg",msg);
         JSONObject jo = JSONObject.fromObject(map);
@@ -97,8 +101,8 @@ public class ElkcReservationModeAction {
                 Collections.sort(this.detailList, new Comparator<TbElycReservationDetail>() {
 
                     public int compare(TbElycReservationDetail arg0, TbElycReservationDetail arg1) {
-                        System.out.println(arg0.getStartTime());
-                        System.out.println(arg1.getStartTime());
+                        logger.info("调试信息");
+                        logger.info("调试信息");
                         Date date1 = DateUtilElkc.toDateTime("2015-11-11 " + arg0.getStartTime() + ":00");
                         Date date2 = DateUtilElkc.toDateTime("2015-11-11 " + arg1.getStartTime() + ":00");
                         return date1.compareTo(date2);
@@ -214,7 +218,7 @@ public class ElkcReservationModeAction {
             try {
                 reservModeService.deleteModeById(reservationMode.getReservationModeId());
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
 
         }

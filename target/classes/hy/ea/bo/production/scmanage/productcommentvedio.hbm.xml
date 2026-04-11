@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.scmanage">
+	<class name="ProductCommentVedio" table="dt_ProductCommentVedio">
+		<comment>产品评论表主表</comment>
+		<id length="50" name="pcvKey">
+			<column length="50" name="pcvKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="pcvID">
+			<column length="50" name="pcvID" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="ppid">
+			<column length="50" name="ppid" >
+			<comment>如果是文章中发布的视频会有ppid</comment>
+			</column>
+		</property>
+		<property name="videoID">
+			<column length="50" name="videoID" >
+			<comment>视频ID</comment>
+			</column>
+		</property>
+		<property name="praisev">
+			<column length="50" name="praisev" >
+			<comment>视频被赞数</comment>
+			</column>
+		</property>
+
+		<property name="plcountv">
+		    <column   name="plcountv">
+			<comment>视频评论数 </comment>
+			</column>
+		</property>
+		<property name="sharev">
+		    <column   name="sharev">
+			<comment>分享视频数</comment>
+			</column>
+		</property>
+
+
+	</class>
+</hibernate-mapping>

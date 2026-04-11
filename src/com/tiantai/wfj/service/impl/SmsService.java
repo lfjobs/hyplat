@@ -1,5 +1,8 @@
 package com.tiantai.wfj.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.service.SmsServiceImpl;
 import com.tiantai.wfj.util.SessionWrap;
@@ -35,10 +38,10 @@ public class SmsService implements SmsServiceImpl {
             JSONObject temp = new JSONObject();
             if(yanz!=null)
             {
-//			System.out.println(yanz+pahe+yanz);
-//			System.out.println(Utilities.MD5(yanz+pahe+yanz));
+//			logger.info("调试信息");
+//			logger.info("调试信息");
                 if(Utilities.MD5(yanz+pahe+yanz).equals(sbhk)) {
-                    System.out.println("带随机数调用");
+                    logger.info("带随机数调用");
                     if (yanzheng(new String[]{pahe, yanz})) {
                         sdk.getduan(pahe, yanz);
                         temp.accumulate("return", "0");
@@ -51,11 +54,11 @@ public class SmsService implements SmsServiceImpl {
                 }
             }else{
 
-                System.out.println(session.get("sbhk"));
+                logger.info("调试信息");
                 if (sbhk != null && !sbhk.equals("")&&sbhk.equals(session.get("sbhk"))) {
-                    System.out.println("不带随机数调用");
+                    logger.info("不带随机数调用");
                 }else{
-                    System.out.println("不合理调用");
+                    logger.info("不合理调用");
 //				return "success";
                 }
 
@@ -68,7 +71,7 @@ public class SmsService implements SmsServiceImpl {
 			/* 国际短信 暂时不用
 			 * String back = MobileSMS.sendMessage(pahe, yanz);
 			if(back.equals("0")){*/
-                System.out.println(yz);
+                logger.info("值：{}", yz);
                 temp.accumulate("returna",yz);
                 session.put(SessionWrap.KEY_SMS,yz);
                 verifyCodeManager.generateCode(pahe,yz);

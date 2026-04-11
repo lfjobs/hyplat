@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -48,6 +51,7 @@ import com.opensymphony.xwork2.ActionContext;
  * 	产品包装设计
  */
 public class CompanyTestProductAction {
+	private static final Logger logger = LoggerFactory.getLogger(CompanyTestProductAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -242,8 +246,8 @@ public class CompanyTestProductAction {
 		productDesign.setUpdateUser(account.getAccountName());*/
 		String[] sqlArray = { "update dt_productpackaging dp set dp.ppcestuer=?,updateUser=? where dp.ppid=?" };
 		List<Object[]> list = new ArrayList<Object[]>();
-		/*System.out.println(pper);
-		System.out.println(ppID);*/	
+		/*logger.info("值：{}", pper);
+		logger.info("值：{}", ppID);*/	
 		Object[] objArray = { pper,account.getStaffName(), ppID };
 		list.add(objArray);
 		baseBeanService.executeSqlsByParmsList(null, sqlArray, list);
@@ -748,7 +752,7 @@ public class CompanyTestProductAction {
 
 			return null;
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return null;
 		}
 	}
@@ -781,7 +785,7 @@ public class CompanyTestProductAction {
 			response.getWriter().print(contentToFileService.getContent(path));
 			return null;
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return "";
 		}
 	}
@@ -1049,7 +1053,7 @@ public class CompanyTestProductAction {
 		map.put("serverID", serverService.getServerID("productpackaging"));
 		JSONObject obj = JSONObject.fromObject(map);
 		result = obj.toString();
-		System.out.println(result);
+		logger.info("值：{}", result);
 		return "success";
 	}
 

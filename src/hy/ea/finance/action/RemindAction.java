@@ -1,5 +1,8 @@
 package hy.ea.finance.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Remind;
@@ -33,6 +36,7 @@ import com.opensymphony.xwork2.ActionContext;
  * 	提醒功能
  */
 public class RemindAction {
+	private static final Logger logger = LoggerFactory.getLogger(RemindAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;//基本的方法
 	@Resource
@@ -266,7 +270,7 @@ public class RemindAction {
 	 			bl=true;
 	 		} catch (Exception e) {
 	 			// TODO Auto-generated catch block
-	 			//e.printStackTrace();
+	 			//logger.error("操作异常", e);
 	 			bl=false;
 	 		}
 	 		return "reminds";

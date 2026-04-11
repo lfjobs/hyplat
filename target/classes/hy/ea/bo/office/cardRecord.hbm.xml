@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CardRecord" table="dt_Car_CardRecord">
+		<id length="50" name="cardRecordKey">
+			<column length="50" name="cardRecordKey"/>
+			<generator class="uuid" />
+		</id>
+		<property name="ID">
+			<column length="50" name="ID"/>
+		</property>
+		<property name="cardCode">
+			<column length="50" name="cardCode"/>
+		</property>
+		<property name="readerEnter">
+			<column length="50" name="readerEnter"/>
+		</property>
+		<property name="enterTime">
+			<column length="50" name="enterTime"/>
+		</property>
+		<property name="createDate">
+			<column length="50" name="createDate"/>
+		</property>	
+		<property name="descs">
+			<column length="250" name="descs"/>
+		</property>
+		<property name="companyId">
+			<column length="50" name="companyId"/>
+		</property>	
+		<property name="createUser">
+			<column length="50" name="createUser"/>
+		</property>	
+		<property name="videoPic">
+			<column length="255" name="videoPic"/>
+		</property>	
+	    
+	    
+	</class>
+</hibernate-mapping>

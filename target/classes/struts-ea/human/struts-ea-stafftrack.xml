@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="stafftrack-ntoken" namespace="/ea/stafftrack"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.StaffTrackAction" method="{1}">
+			 <result name="list">/page/ea/main/human/cstaff/cstaff_collect.jsp</result>
+			 <result name="staffForCashier">/page/ea/main/finance/personal_department/trackRelation_jqm_cstaffs.jsp</result>
+			  <result name="toSaveJsp">/page/ea/main/human/cstaff/cstaff_collect_add.jsp</result>
+			 <result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="stafftrack-jsonajax" namespace="/ea/stafftrack" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.StaffTrackAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+		</action>
+	</package>
+</struts>

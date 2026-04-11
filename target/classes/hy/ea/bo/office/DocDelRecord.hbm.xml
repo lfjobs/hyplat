@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocDelRecord" table="DT_OA_DOC_DELRECORD">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="delId" type="java.lang.String">
+			<column name="delId" length="50" />
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="50" />
+		</property>
+		<property name="stage" type="java.lang.String">
+			<column name="stage" length="50" />
+		</property>
+		<property name="delstate" type="java.lang.String">
+			<column name="delstate" length="20" />
+		</property>
+		<property name="operator" type="java.lang.String">
+			<column name="operator" length="50" />
+		</property>
+		<property name="deptOperate" type="java.lang.String">
+			<column name="deptOperate" length="50" />
+		</property>
+		<property name="operateTime" type="java.util.Date">
+			<column name="operateTime" length="50" />
+		</property>
+		<property name="orgmark" type="java.lang.String">
+			<column name="orgmark" length="20" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

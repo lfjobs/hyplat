@@ -1,5 +1,8 @@
 package hy.ea.finance.service.brokerage.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.finance.brokerage.PVip;
 import hy.ea.bo.finance.brokerage.PVipBrokerage;
@@ -178,7 +181,7 @@ public class VipServiceImpl implements VipService {
             this.baseBeanService.saveBeansListAndexecuteSqlsByParams(null, new String[]{sql1}, new Object[]{vip.getPpid()});
             map.put("code", "200");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             map.put("code", "500");
         }
         return map;

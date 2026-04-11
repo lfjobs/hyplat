@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.util.SessionWrap;
@@ -37,6 +40,7 @@ import java.util.Map;
  * 合同管理
  */
 public class ContractAction {
+	private static final Logger logger = LoggerFactory.getLogger(ContractAction.class);
 
 	@Resource
 	private ContractService contractService;
@@ -308,11 +312,11 @@ public class ContractAction {
 			HttpServletResponse response = ServletActionContext.getResponse();
 
 
-			System.out.println("url:"+url);
+			logger.info("调试信息");
 			response.sendRedirect(url);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 //		Map<String,Object> map = new HashMap<String,Object>();
@@ -419,11 +423,11 @@ public class ContractAction {
 			HttpServletResponse response = ServletActionContext.getResponse();
 
 
-			System.out.println("url:"+viewUrl);
+			logger.info("调试信息");
 			response.sendRedirect(viewUrl);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 //		Map<String,Object> map = new HashMap<String,Object>();
 //		map.put("viewUrl",viewUrl);

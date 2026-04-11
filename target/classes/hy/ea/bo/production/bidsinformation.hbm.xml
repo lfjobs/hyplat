@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="Bidsinformation" table="dtBidsinformation">
+		<id length="50" name="bfkey">
+			<column length="50" name="bfkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="bfId">
+			<column length="50" name="bfId"><comment>ID</comment></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID"><comment>单据ID</comment></column>
+		</property>
+		<property name="mainpicurl">
+			<column length="250" name="mainpicurl"><comment>主图</comment></column>
+		</property>
+		<property name="tgoodsName">
+			<column length="50" name="tgoodsName"><comment>投标的物品名称</comment></column>
+		</property>
+		<property name="tgoodsID">
+			<column  length="50" name="tgoodsID"><comment>投标的物品ID</comment></column>
+		</property>
+		<property name="tgoodsNum">
+			<column  length="50" name="tgoodsNum"><comment>针对的是哪个物品</comment></column>
+		</property>
+		<property name="goodsID">
+			<column  length="50" name="goodsID"><comment>针对的是哪个物品</comment></column>
+		</property>
+		<property name="ppID">
+			<column length="50" name="ppID"><comment>产品ID</comment></column>
+		</property>
+		<property name="tprice">
+			<column length="50" name="tprice"><comment>产品价格</comment></column>
+		</property>
+		<property name="tmoney">
+			<column length="50" name="tmoney"><comment>产品金额</comment></column>
+		</property>
+		<property name="tquantity">
+			<column length="50" name="tquantity"><comment>数量</comment></column>
+		</property>
+		<property name="boxStandard">
+			<column length="50" name="boxStandard"><comment>型号</comment></column>
+		</property>
+		<property name="goodsVariableID">
+			<column length="50" name="goodsVariableID"><comment>单位</comment></column>
+		</property>
+		<property name="bidperson">
+			<column length="50" name="bidperson"><comment>投标人</comment></column>
+		</property>
+		<property name="bidtype">
+			<column length="2" name="bidtype"><comment>投标人类型 00公司  01个人</comment></column>
+		</property>
+		<property name="bidDate">
+			<column name="bidDate"><comment>投标时间</comment></column>
+		</property>
+		<property name="iszbid">
+			<column length="6" name="iszbid"><comment>是否中标00未中标 01中标</comment></column>
+		</property>
+		<property name="bidremark">
+			<column length="5000" name="bidremark"><comment>投标说明</comment></column>
+		</property>		
+		
+		<property name="zbDate">
+			<column name="zbDate"><comment>投标时间</comment></column>
+		</property>
+		<property name="selectName">
+			<column length="50" name="selectName"><comment>选标人姓名</comment></column>
+		</property>
+		<property name="selectID">
+			<column length="50" name="selectID"><comment>选标人ID</comment></column>
+		</property>
+		
+		<property name="companyID">
+			<column length="50" name="companyID"><comment>如果是公司公司ID</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>如果是个人个人ID</comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="OrganizationCertInfo" table="dt_sft_OrganizationCertInfo">
+	<comment>二级商户进件——组织机构代码证信息</comment>
+		<id length="50" name="ociKey">
+			<column length="50" name="ociKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="ociID">
+			<column length="50" name="ociID" ><comment>业务主键</comment></column>
+		</property>
+		<property name="organization_copy">
+			<column length="200" name="organization_copy" ><comment>组织机构代码证照片</comment></column>
+		</property>
+		<property name="organization_number">
+			<column length="50" name="organization_number" ><comment>组织机构代码 </comment></column>
+		</property>
+		<property name="organization_time">
+			<column length="50" name="organization_time" ><comment>组织机构代码有效期限</comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

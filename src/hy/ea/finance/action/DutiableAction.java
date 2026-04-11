@@ -1,5 +1,8 @@
 package hy.ea.finance.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -49,6 +52,7 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class DutiableAction {
+	private static final Logger logger = LoggerFactory.getLogger(DutiableAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -499,7 +503,7 @@ public class DutiableAction {
 					null, null);
 		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 	}

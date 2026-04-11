@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="staffrankcompany-ntoken"  namespace="/ea/staffrankcompany"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.company.action.human.StaffRankCompanyAction" method="{1}">
+			<result name="ranklist">/page/ea/main/human/office/company/staffRankCompany.jsp</result>
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			<result name="showrankexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="Sta'f'fCompany.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+</struts>

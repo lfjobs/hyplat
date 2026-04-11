@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hy.ea.bo.finance.brokerage.PWhoBrokerage" table="dt_pro_who_brokerage">
+        <id name="whobroKey" type="java.lang.String">
+            <column name="whobroKey" length="50"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="whobroId" type="java.lang.String">
+            <column name="whobroId" length="50">
+            </column>
+        </property>
+        <property name="brokerage" type="java.lang.Double">
+            <column name="brokerage" length="50">
+                <comment>代理佣金</comment>
+            </column>
+        </property>
+        <property name="ppid" type="java.lang.String">
+            <column name="ppid" length="50">
+                <comment>产品id</comment>
+            </column>
+        </property>
+        <property name="typePpid" type="java.lang.String">
+            <column name="typePpid" length="50">
+                <comment>代理类别id</comment>
+            </column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId" length="50">
+                <comment>公司id</comment>
+            </column>
+        </property>
+
+        <property name="wholesaleId" type="java.lang.String">
+            <column name="wholesaleId" length="50">
+                <comment>批发价id</comment>
+            </column>
+        </property>
+
+    </class>
+</hibernate-mapping>

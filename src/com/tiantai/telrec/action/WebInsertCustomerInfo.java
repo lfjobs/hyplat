@@ -1,5 +1,8 @@
 package com.tiantai.telrec.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,7 +49,7 @@ public class WebInsertCustomerInfo extends ActionSupport {
 			try {
 				this.queryCustomerServie.insertCustomerInfo(customerInfo);
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			return SUCCESS;
 

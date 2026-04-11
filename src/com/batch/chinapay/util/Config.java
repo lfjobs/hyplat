@@ -1,5 +1,8 @@
 package com.batch.chinapay.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -9,6 +12,7 @@ import java.util.Properties;
  *
  */
 public class Config {
+	private static final Logger logger = LoggerFactory.getLogger(Config.class);
 
 	private static Config instance = null;
 	
@@ -23,7 +27,7 @@ public class Config {
 	}
 	
 	public static Config getInstance() {
-		System.out.println("执行Config中的getInstance方法!");
+		logger.info("执行Config中的getInstance方法!");
 		
 		if (instance == null) {
 			instance = new Config();

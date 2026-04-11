@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="qrshare-token" namespace="/ea/qrshare"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.scmanage.QRShareAction" method="{1}">
+		      
+		      <result name="sharelist">/page/ea/main/production/cprocedure/qrshare/qrshare_list.jsp</result>
+		      <result name="shareedit">/page/ea/main/production/cprocedure/qrshare/qrshare_edit.jsp</result>
+		      <result name="sharedetail">/page/ea/main/production/cprocedure/qrshare/qrshare_detail.jsp</result>
+		      <result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+
+			<result name="perfectionMessage">/page/ea/main/production/cprocedure/qrshare/perfectionMessage1.jsp</result>
+			  <result name="queryState">/page/ea/main/production/cprocedure/qrshare/perfectionMessage2.jsp</result>
+			   <!--<result name="mbapply_type">/page/ea/main/office_ea/companyRegist/mbapply/mbapply_type.jsp</result>-->
+			  <result name="mbapply_type">/page/ea/main/office_ea/companyRegist/mbapply/mbapply_licenseinfo.jsp</result>
+			  <result name="bank_type">/page/ea/main/office_ea/companyRegist/mbapply/mbapply_accountinfo.jsp</result>
+			  <result name="super_type">/page/ea/main/office_ea/companyRegist/mbapply/mbapply_contactinfo.jsp</result>
+
+			  <result name="mobileLogin">/page/ea/BuildPlatform/MobileOfficeLogin.jsp</result>
+			  
+			  <result name="jumpManagement">/page/ea/main/production/cprocedure/qrshare/siteManagementList.jsp</result>
+			  <result name="theVehicleDetails">/page/ea/main/production/cprocedure/qrshare/siteManagementParticulars.jsp</result>
+
+			  <result name="delete" type="redirectAction">
+			    <param name="actionName">ea_forumMessage.jspa?</param>
+			    <param name="namespace">/ea/companyforum/</param>
+			    <param name="concom.ccompanyID">${concom.ccompanyID}</param>
+			  </result>
+			 <result name="sbqindex" type="redirectAction">
+				<param name="actionName">/ea_getAllInfo.jspa</param>
+				<param name="namespace">/ea/sbq</param>
+				<param name="nav">nav</param>
+			</result>
+			  
+			  <result name="abnormalJump">/page/ea/main/production/cprocedure/qrshare/abnormal_jump.jsp</result>
+			<result name="timeinfo">/page/ea/main/production/cprocedure/qrshare/timeinfo.jsp</result>
+			<result name="feeset">/page/ea/main/production/cprocedure/qrshare/feeSetAudit.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="qrshare-jsonajax" namespace="/ea/qrshare" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.scmanage.QRShareAction" method="{1}">
+
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

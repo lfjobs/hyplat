@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="GoodsCollect" table="dt_GoodsCollect">
+		<id length="50" name="gcKey" type="java.lang.String">
+			<column length="50" name="gcKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="gcId" type="java.lang.String">
+			<column length="50" name="gcId" />
+		</property>
+		<property name="staffId">
+			<column length="50" name="staffId">
+			<comment>人员ID</comment>
+		</column>
+		</property>
+		<property name="pid" type="java.lang.String">
+			<column length="50" name="pid">
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="pricetype" type="java.lang.String">
+			<column length="50" name="pricetype" >
+				<comment>0零售价，1：批发价</comment>
+			</column>
+		</property>
+		  <property  name="createDate" type="java.util.Date">
+            <column name="createDate">
+                  <comment>收藏时间</comment>
+             </column>
+            </property>
+		
+	</class>
+</hibernate-mapping>

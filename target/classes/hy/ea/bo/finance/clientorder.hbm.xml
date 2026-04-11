@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="ClientOrder" table="dtClientOrder">
+		<id length="50" name="cokey" type="java.lang.String">
+			<column length="50" name="cokey"  />
+			<generator class="uuid" />
+		</id>
+		 <property name="coID" type="java.lang.String">
+        	<column name="coID" length="50"/>
+        </property>
+        <property name="companyID" type="java.lang.String">
+        	<column name="companyID" length="50">
+        	<comment>公司ID</comment>
+        	</column>
+        </property>
+         <property name="orderNum" type="java.lang.String">
+        	<column name="orderNum" length="50">
+        	<comment>订单编号</comment>
+        	</column>
+        </property>
+          <property name="boardNo" type="java.lang.String">
+        	<column name="boardNo" length="50">
+        	<comment>餐桌编号No0001f</comment>
+        	</column>
+        </property>
+		<property name="caterID" type="java.lang.String">
+			<column name="caterID" length="50">
+				<comment>餐桌表关联</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>第一次下单时间</comment>
+			</column>
+		</property>
+
+		<property name="balanceID" type="java.lang.String">
+			<column name="balanceID" length="50">
+				<comment>结算人ID</comment>
+			</column>
+		</property>
+		<property name="balanceName" type="java.lang.String">
+			<column name="balanceName" length="50">
+				<comment>结算人Name</comment>
+			</column>
+		</property>
+		<property name="balanceDate" type="java.util.Date">
+			<column name="balanceDate" >
+				<comment>结算时间</comment>
+			</column>
+		</property>
+		<property name="state" type="java.lang.String">
+			<column name="state" length="2">
+				<comment>//01未结算，00：已结算</comment>
+			</column>
+		</property>
+		<property name="totalMoney" type="java.lang.String">
+			<column name="totalMoney" length="20">
+				<comment>总金额</comment>
+			</column>
+		</property>
+		<property name="cashierBillsID" type="java.lang.String">
+			<column name="cashierBillsID" length="50">
+				<comment>结算订单ID</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column name="staffID" length="50">
+				<comment>付款用户ID</comment>
+			</column>
+		</property>
+		<property name="staffName" type="java.lang.String">
+			<column name="staffName" length="50">
+				<comment>付款用户姓名</comment>
+			</column>
+		</property>
+		<property name="tel" type="java.lang.String">
+			<column name="tel" length="11">
+				<comment>联系电话</comment>
+			</column>
+		</property>
+
+
+	</class> 
+	
+</hibernate-mapping>

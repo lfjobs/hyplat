@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="AndroidEdition" table="dtAndroidEdition">
+		<id length="50" name="AEKey">
+			<column length="50" name="AEKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="AEID">
+			<column length="250" name="AEID" />
+		</property>
+			<property name="AEpahe">
+			<column length="250" name="AEpahe" />
+		</property>	
+		<property name="AEEdition">
+			<column length="250" name="AEEdition" not-null="true"/>
+		</property>
+		<property name="AEEditionTOPUser">
+			<column length="50" name="AEEditionTOPUser" />
+		</property>
+		<property name="AEDate">
+			<column length="50" name="AEDate" />
+		</property>
+		<property name="AEIOSORANDROID">
+			<column length="50" name="AEIOSORANDROID" />
+		</property>
+		<property name="APPname">
+			<column length="100" name="APPname" />
+		</property>
+		<property name="APPLogo">
+			<column length="50" name="APPLogo" />
+		</property>
+		<property name="content">
+			<column length="500" name="content" />
+		</property>
+		<property name="forceUpdate">
+			<column length="2" name="forceUpdate" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="earnbudget-token"  namespace="/ea/earnbudget" extends="ea-ntoken">
+		<action name="t_ea_*" class="hy.ea.invoicing.action.EarnBudgetAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="earnbudget-ntoken"  namespace="/ea/earnbudget"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.invoicing.action.EarnBudgetAction" method="{1}">
+		    <result name="detailist">/page/ea/main/finance/invoicing/earnBudget_detail.jsp</result>
+			<result name="list">/page/ea/main/finance/invoicing/earnBudget_list.jsp</result>
+			<result name="add">/page/ea/main/finance/invoicing/earnBudget_add.jsp</result>
+			<result name="printebb">/page/ea/main/finance/invoicing/ebbsprint.jsp</result>
+			<result name="tocompelete">/page/ea/main/finance/invoicing/budgetCompleteRate.jsp</result>
+			<result name="budget">/page/ea/main/finance/invoicing/budget_sprin.jsp</result>
+			<result name="tiao">/page/ea/main/finance/invoicing/btiaoz_sprin.jsp</result>
+			<result name="login">/page/ea/not_login.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="earnBudget.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="earnbudget-jsonajax" namespace="/ea/earnbudget" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.invoicing.action.EarnBudgetAction" method="{1}">
+		<result name="syserror">/page/ea/sys_error.jsp</result>
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

@@ -1,5 +1,8 @@
 package hy.ea.util.milvus.db;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.common.util.concurrent.ListenableFuture;
 import io.milvus.v2.client.ConnectConfig;
 import io.milvus.v2.client.MilvusClientV2;
@@ -18,6 +21,7 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class MilvusDBContorller {
+	private static final Logger logger = LoggerFactory.getLogger(MilvusDBContorller.class);
     private MilvusClientV2 client;
 
     private CollectionsManager collectionsManager;
@@ -30,7 +34,7 @@ public class MilvusDBContorller {
 //                .build();
 //        client = new MilvusClientV2(config);
 //        collectionsManager=new CollectionsManager(client);
-//        System.out.println("启动结束");
+//        logger.info("启动结束");
     }
 
     @PreDestroy
@@ -39,10 +43,10 @@ public class MilvusDBContorller {
         try {
             if (client != null) {
                 client.close();  // ✅ 关闭 gRPC 连接、释放线程
-                System.out.println("Milvus 连接已关闭");
+                logger.info("Milvus 连接已关闭");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 

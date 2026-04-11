@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="CRole"  table="dtCRole">
+		<id length="50" name="roleKey">
+			<column length="50" name="roleKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="roleID">
+			<column length="50" name="roleID"  not-null="true" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true" />
+		</property>
+		<property  name="companyName">
+			<column length="250" name="companyName" />
+		</property>
+		<property  name="organizationName">
+			<column length="250" name="organizationName" />
+		</property>
+		<property  name="organizationNameDesc">
+			<column length="250" name="organizationNameDesc" />
+		</property>
+		<property  name="opostName">
+			<column length="250" name="opostName"  />
+		</property>
+		<property  name="roleName">
+			<column length="250" name="roleName" not-null="true" />
+		</property>
+		<property  name="roleDesc">
+			<column length="256" name="roleDesc" />
+		</property>
+		<property  name="createDate">
+			<column length="256" name="CREATE_DATE" />
+		</property>
+	</class>
+</hibernate-mapping>

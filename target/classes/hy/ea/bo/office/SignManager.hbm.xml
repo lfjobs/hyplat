@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="SignManager" table="dtSignManager">
+		<id length="50" name="signmanagerkey">
+			<column length="50" name="signmanagerkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="signmanagerid">
+			<column length="50" name="signmanagerid"></column>
+		</property>
+		<property name="relationtable">
+			<column length="50" name="relationtable" />
+		</property>
+		<property name="relationid">
+			<column length="50" name="relationid" />
+		</property>
+		<property name="position">
+			<column length="50" name="position" />
+		</property>
+		<property name="signid">
+			<column length="50" name="signid" />
+		</property>
+		<property name="signstat">
+			<column length="50" name="signstat" />
+		</property>
+		<property name="datetime">
+			<column name="datetime" />
+		</property>
+	</class>
+</hibernate-mapping>

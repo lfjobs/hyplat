@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="ClientPositioning" table="dtClientPositioning" >
+		<id length="50" name="clientPositioningKey">
+			<column length="50" name="clientPositioningKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="clientPositioningID">
+        	<column name="clientPositioningID" length="50"/>
+        </property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="clientCode">
+			<column length="250" name="clientCode" />
+		</property>
+		<property name="clientName">
+			<column length="250" name="clientName" />
+		</property>
+		<property name="brand">
+			<column length="250" name="brand"/>
+		</property>
+		<property name="grade">
+			<column length="250" name="grade"/>
+		</property>
+		<property name="model">
+			<column length="250" name="model"/>
+		</property>
+		<property name="brandSpecification">
+			<column  length="250" name="brandSpecification" />
+		</property>
+		<property  name="unit">
+			<column length="250" name="unit" />
+		</property>
+		<property name="weight">
+			<column length="250" name="weight"/>
+		</property>
+		<property name="caseSpecification">
+			<column length="250" name="caseSpecification"/>
+		</property>
+		<property name="PhotoFile">
+			<column  length="256" name="PhotoFile" />
+		</property>
+	</class>
+</hibernate-mapping>

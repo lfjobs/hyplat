@@ -62,6 +62,7 @@ import static com.tiantai.wfj.util.SessionWrap.KEY_SHOPCUSCOM;
 @Controller
 @Scope("prototype")
 public class IndustryClassificationAction {
+	private static final Logger logger = LoggerFactory.getLogger(IndustryClassificationAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -545,7 +546,7 @@ public class IndustryClassificationAction {
 //		try{
 //			ind.setIndustryName(industryType);
 //		}catch (Exception e){
-//			e.printStackTrace();
+//			logger.error("操作异常", e);
 //		}
 //
 //		baseBeanService.saveOrUpdate(ind);
@@ -1012,7 +1013,7 @@ public class IndustryClassificationAction {
             readcount = pcm.getReadcount();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         request.setAttribute("readcount", readcount);
         return "informationDetails";
@@ -1363,7 +1364,7 @@ public class IndustryClassificationAction {
         try {
             baseBeanService.save(staffbank);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             msg = "no";
         }
         obj.accumulate("msg", msg);
@@ -1401,7 +1402,7 @@ public class IndustryClassificationAction {
             }
             reader.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return sbf.toString();
     }
@@ -1932,7 +1933,7 @@ public class IndustryClassificationAction {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         }
     }
@@ -1997,7 +1998,7 @@ public class IndustryClassificationAction {
             obj.accumulate("stuts", true);
             obj.accumulate("ordernum", ordernum);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             obj.accumulate("stuts", false);
         }
         result = obj.toString();
@@ -2017,7 +2018,7 @@ public class IndustryClassificationAction {
         try {
             URLDecoder.decode(search, "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return search;
     }

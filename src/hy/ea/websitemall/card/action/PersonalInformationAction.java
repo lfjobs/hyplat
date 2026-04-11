@@ -1,5 +1,8 @@
 package hy.ea.websitemall.card.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -55,6 +58,7 @@ import com.tiantai.wfj.util.SessionWrap;
  */
 
 public class PersonalInformationAction {
+	private static final Logger logger = LoggerFactory.getLogger(PersonalInformationAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -345,11 +349,11 @@ public class PersonalInformationAction {
         try {
             result= BankCardVerifiUtil.jiekou(map);
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } catch (InvalidKeyException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
 	}
@@ -371,7 +375,7 @@ public class PersonalInformationAction {
 			res = response.body().string();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}		
 		
 		return res;	
@@ -401,7 +405,7 @@ public class PersonalInformationAction {
 	    StringBuffer sbf = new StringBuffer();
 		httpUrl = httpUrl + "?card="+accountNo+"&key="+bkey;
 	    //httpUrl = httpUrl + "?key="+bkey+"&cardnum="+accountNo;
-	    System.out.println("httpUrl:"+httpUrl);
+	    logger.info("调试信息");
 	    try { 
 	        URL url = new URL(httpUrl);
 	        HttpURLConnection connection = (HttpURLConnection) url
@@ -418,7 +422,7 @@ public class PersonalInformationAction {
 	        reader.close();
 	        result = sbf.toString();
 	    } catch (Exception e) {
-	        e.printStackTrace();
+	        logger.error("操作异常", e);
 	    }
 	    return result;				
 	}
@@ -449,7 +453,7 @@ public class PersonalInformationAction {
 		try {
 			baseBeanService.save(staffbank);
 		} catch (Exception e) {			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			msg = "no";
 		}	
 		obj.accumulate("msg", msg);
@@ -961,7 +965,7 @@ public class PersonalInformationAction {
 	            }else{
 	            }
 	        } catch (Exception e) {
-	            e.printStackTrace();
+	            logger.error("操作异常", e);
 	        }
 	        ServletActionContext.getResponse().setHeader("Access-Control-Allow-Origin", "*");
 		return "success";
@@ -993,7 +997,7 @@ public class PersonalInformationAction {
             }else{
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         	
 		return "success";
@@ -1026,7 +1030,7 @@ public class PersonalInformationAction {
                     DataOutputStream out = new DataOutputStream(conn.getOutputStream());
                         out.writeBytes(urlencode(params));
                 } catch (Exception e) {
-                    System.out.println(e);
+                    logger.info("值：{}", e);
                 }
             }
             InputStream is = conn.getInputStream();
@@ -1037,7 +1041,7 @@ public class PersonalInformationAction {
             }
             rs = sb.toString();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } finally {
             if (reader != null) {
                 reader.close();
@@ -1055,7 +1059,7 @@ public class PersonalInformationAction {
             try {
                 sb.append(i.getKey()).append("=").append(URLEncoder.encode(i.getValue()+"","UTF-8")).append("&");
             } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
         }
         return sb.toString();
@@ -1074,7 +1078,7 @@ public class PersonalInformationAction {
 			contentToFileService.saveContent(id,
 					content, path);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 	
 		}	
 		return "/upload_files/activitiesDetails/"+id+UploadContentToFileService.suffix;

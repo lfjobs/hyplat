@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="Order" table="dtOrder">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="orderID">
+			<column length="250" name="orderID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		
+		<property name="orderNumber">
+			<column length="250" name="orderNumber" />
+		</property>
+		<property name="userID">
+			<column length="250" name="userID" />
+		</property>
+		<property name="supplierID">
+			<column length="250" name="supplierID" />
+		</property>
+		<property name="supplier">
+			<column length="250" name="supplier" />
+		</property>
+		<property name="orderType">
+			<column length="50" name="orderType" />
+		</property>
+		<property name="orderMoney">
+			<column length="50" name="orderMoney" />
+		</property>
+		<property name="paymentType">
+			<column length="50" name="paymentType" />
+		</property>
+		
+		<property name="paymentNumber">
+			<column length="50" name="paymentNumber" />
+		</property>
+		<property name="createTime">
+			<column length="50" name="createTime" />
+		</property>
+		<property name="updateTime">
+			<column length="50" name="updateTime" />
+		</property>
+		<property name="updateUser">
+			<column length="50" name="updateUser" />
+		</property>
+		
+		<property name="sendProductID">
+			<column length="50" name="sendProductID" />
+		</property>
+		<property name="freight">
+			<column length="50" name="freight" />
+		</property>
+		<property name="paymentTime">
+			<column length="50" name="paymentTime" />
+		</property>
+		<property name="receiveAddress">
+			<column length="250" name="receiveAddress" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

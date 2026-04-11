@@ -1,5 +1,8 @@
 package mobile.tiantai.android.action.storeProduction.budgetSheet;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -66,6 +69,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")//作用域
 public class PayBudgetSheetAction {
+	private static final Logger logger = LoggerFactory.getLogger(PayBudgetSheetAction.class);
     @Resource
     private BaseBeanService baseBeanService;//基础beanservice
     @Resource
@@ -208,7 +212,7 @@ public class PayBudgetSheetAction {
             //3.获取数据信息
             pageForm = baseBeanService.getPageFormByDC((null != pageForm ? pageForm.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber), dc);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "payBudgetList";
     }
@@ -231,7 +235,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -243,7 +247,7 @@ public class PayBudgetSheetAction {
      */
     public String toAddPayBudget() {
         try {
-            System.out.println("跳转添加支出预算单");
+            logger.info("跳转添加支出预算单");
             // 1.获取session数据
             parmaInfor = MapSesssionUtil.getSessionForMap("paramMap");
             // 2.根据当前登录人公司id查询凭证号
@@ -258,7 +262,7 @@ public class PayBudgetSheetAction {
             // 5.判断是否是提交扫描数据.
             payBudgetService.toAddPayBudget(scanningMap, addBean, mapKey);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "toAddPayBudget";
     }
@@ -272,7 +276,7 @@ public class PayBudgetSheetAction {
         try {
             result = payBudgetService.ajaxStaffForDep(departmentID);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -294,7 +298,7 @@ public class PayBudgetSheetAction {
             JSONObject obj = JSONObject.fromObject(map, jsonConfig);
             this.result = obj.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -306,14 +310,14 @@ public class PayBudgetSheetAction {
      */
     public String scanningInventoryInfo() {
         try {
-            System.out.println("通过扫描枪获取数据" + addBean.getBarcode());
+            logger.info("通过扫描枪获取数据: {}", addBean.getBarcode());
             //addBean.setCompanyId("company20170324CUPPV7YJDK0000000088");//TODO 测试用
             //1.根据公司id和扫描的条形码号查询货物信息
             goodsManage = (GoodsManage) baseBeanService.getBeanByHqlAndParams("from GoodsManage o where o.companyID = ? and o.barCode = ?", new Object[]{addBean.getCompanyId(), addBean.getBarcode()});
             //2.判断商品是否存在拼接扫描参数信息到bean中
             payBudgetService.splicingAddBean(goodsManage, addBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "scanningInventoryInfo";
     }
@@ -335,7 +339,7 @@ public class PayBudgetSheetAction {
             JSONObject obj = JSONObject.fromObject(map);
             result = obj.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -357,7 +361,7 @@ public class PayBudgetSheetAction {
             JSONObject obj = JSONObject.fromObject(map);
             result = obj.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -371,7 +375,7 @@ public class PayBudgetSheetAction {
         try {
             payBudgetService.removeBeanForKey(mapKey);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -385,7 +389,7 @@ public class PayBudgetSheetAction {
         try {
             payBudgetService.saveCostSheet(cashierBills);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return toPayBudgetList();
     }
@@ -413,7 +417,7 @@ public class PayBudgetSheetAction {
                 this.result = jo.toString();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return "success";
@@ -574,7 +578,7 @@ public class PayBudgetSheetAction {
             // 2.判断是否是提交扫描数据.
             //payBudgetService.toAddPayBudget(scanningMap, addBean, mapKey);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "toDetail";
     }
@@ -596,7 +600,7 @@ public class PayBudgetSheetAction {
             // 3.判断是否是提交扫描数据.
             payBudgetService.toAddPayBudget(scanningMap, addBean, mapKey);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "toUpPayBudget";
     }
@@ -621,7 +625,7 @@ public class PayBudgetSheetAction {
             //修改预算单信息
             payBudgetService.upCostSheet(cashierBills);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return toPayBudgetList();
     }
@@ -640,7 +644,7 @@ public class PayBudgetSheetAction {
             parmList.add(new Object[]{cashierBillsId});
             baseBeanService.executeHqlsByParamsList(null, new String[]{hql, hql1}, parmList);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return toPayBudgetList();
     }
@@ -652,7 +656,7 @@ public class PayBudgetSheetAction {
      */
     public String toRelease() {
         try {
-            System.out.println("跳转发布页" + cashierBillsId);
+            logger.info("跳转发布页: {}", cashierBillsId);
             //1.根据公司id和扫描的条形码号查询货物信息
             String cashHql = "from CashierBills o where o.cashierBillsID = ? and (o.status = '00' or o.status = '01')";
             cashierBills = (CashierBills) baseBeanService.getBeanByHqlAndParams(cashHql, new Object[]{cashierBillsId});
@@ -662,7 +666,7 @@ public class PayBudgetSheetAction {
                 goodBeanslist = baseBeanService.getListBeanByHqlAndParams(hql, new Object[]{cashierBillsId});
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "toRelease";
     }
@@ -674,13 +678,13 @@ public class PayBudgetSheetAction {
      */
     public String toBudgetReleaseList() {
         try {
-            System.out.println("跳转跳转发布预算单列表");
+            logger.info("跳转跳转发布预算单列表");
             //1.将列表信息拼接成DetachedCriteria类
             DetachedCriteria dc = payBudgetService.getReleaseDc(fbJumpType);
             //2.获取数据信息
             pageForm = baseBeanService.getPageFormByDC((null != pageForm ? pageForm.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber), dc);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "toBudgetReleaseList";
     }
@@ -702,7 +706,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -720,7 +724,7 @@ public class PayBudgetSheetAction {
                 baseBeanService.update(cashierBills);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return toPayBudgetList();
     }
@@ -736,7 +740,7 @@ public class PayBudgetSheetAction {
             String hql = " from GoodsBills gb ,GoodsManage gm where gb.goodsID = gm.goodsID and gb.goodsBillsID = ?";
             goodBeanslist = baseBeanService.getListBeanByHqlAndParams(hql, new Object[]{search});
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "toBarCodeInfo";
     }
@@ -757,7 +761,7 @@ public class PayBudgetSheetAction {
         try {
             map = payBudgetService.upLoadFile(chunk, chunks, name, file, path, companyID);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         JSONObject oj = JSONObject.fromObject(map);
         result = oj.toString();
@@ -774,7 +778,7 @@ public class PayBudgetSheetAction {
     public String toCostBudgetBillList() {
         try {
             //1.清除session中扫描物品bean信息
-            System.out.println("进入初始项目列表===========");
+            logger.info("进入初始项目列表===========");
             System.out.printf("参数打印：menuId：%s，tenantFlag：%s，menuName：%s，staffId：%s，companyid：%s\n", menuId, tenantFlag, menuName, staffId, companyid);
             MapSesssionUtil.removeSession("scanGoodsMap");
             MapSesssionUtil.removeSession("cacheGoodsMap");
@@ -798,7 +802,7 @@ public class PayBudgetSheetAction {
             System.out.printf("从session中获取参数打印：menuId：%s，tenantFlag：%s，menuName：%s，staffId：%s，companyid：%s\n", menuId, tenantFlag, menuName, staffId, companyid);
             //个人账户登录
             if ("personal".equals(tenantFlag)) {
-                System.out.println("初始项目个人模块================");
+                logger.info("初始项目个人模块================");
                 SessionWrap sw = SessionWrap.getInstance();
                 Map<String, Object> session = ActionContext.getContext().getSession();
                 TEshopCusCom tc = (TEshopCusCom) sw.getObject(session, SessionWrap.KEY_SHOPCUSCOM);
@@ -825,7 +829,7 @@ public class PayBudgetSheetAction {
                 MapSesssionUtil.saveSessionForMap("paramMap", paramMap);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if ("ng".equals(menuId)) {
             return "costBudgetBillList";
@@ -839,7 +843,7 @@ public class PayBudgetSheetAction {
         try {
             String sccId = "";
             //1.清除session中扫描物品bean信息
-            System.out.println("进入初始项目列表===========");
+            logger.info("进入初始项目列表===========");
             System.out.printf("参数打印：menuId：%s，tenantFlag：%s，menuName：%s，staffId：%s，companyid：%s\n", menuId, tenantFlag, menuName, staffId, companyid);
             MapSesssionUtil.removeSession("scanGoodsMap");
             MapSesssionUtil.removeSession("cacheGoodsMap");
@@ -863,7 +867,7 @@ public class PayBudgetSheetAction {
             System.out.printf("从session中获取参数打印：menuId：%s，tenantFlag：%s，menuName：%s，staffId：%s，companyid：%s\n", menuId, tenantFlag, menuName, staffId, companyid);
             //个人账户登录
             if ("personal".equals(tenantFlag)) {
-                System.out.println("初始项目个人模块================");
+                logger.info("初始项目个人模块================");
                 SessionWrap sw = SessionWrap.getInstance();
                 Map<String, Object> session = ActionContext.getContext().getSession();
                 TEshopCusCom tc = (TEshopCusCom) sw.getObject(session, SessionWrap.KEY_SHOPCUSCOM);
@@ -914,7 +918,7 @@ public class PayBudgetSheetAction {
                 MapSesssionUtil.saveSessionForMap("paramMap", paramMap);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "projectBillList";
     }
@@ -966,7 +970,7 @@ public class PayBudgetSheetAction {
                 MapSesssionUtil.saveSessionForMap("paramMap", paramMap);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "costBudgetBillReceiveList";
     }
@@ -1033,7 +1037,7 @@ public class PayBudgetSheetAction {
             getBudgetBillApproval(staffID, companyId, search, searchType, sql, params, billsType);
             pageForm = baseBeanService.getPageForm((null != pageForm ? pageForm.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber), sql.toString(), "select count(*) " + sql.substring(sql.indexOf("from")), params.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "costBudgetBillApprovalList";
     }
@@ -1129,7 +1133,7 @@ public class PayBudgetSheetAction {
             getBudgetBillSent(staffID, companyId, search, searchType, sql, params, billsType);
             pageForm = baseBeanService.getPageForm((null != pageForm ? pageForm.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber), sql.toString(), "select count(*) " + sql.substring(sql.indexOf("from")), params.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "costBudgetBillSentList";
     }
@@ -1195,7 +1199,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1236,7 +1240,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1264,7 +1268,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1291,7 +1295,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1345,7 +1349,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1357,10 +1361,10 @@ public class PayBudgetSheetAction {
      */
     public String toAddCostBudgetItem() {
         try {
-            System.out.println("跳转添加初始项目单中间页面");
+            logger.info("跳转添加初始项目单中间页面");
             HttpServletRequest request = ServletActionContext.getRequest();
             String commitFlag = request.getParameter("commitFlag");
-            System.out.println(cashierBillsId);
+            logger.info("值：{}", cashierBillsId);
 
             if (costBaseBean != null) {
                 MapSesssionUtil.saveSessionForObject("costBaseBean", costBaseBean);
@@ -1392,17 +1396,17 @@ public class PayBudgetSheetAction {
             // TODO: 20241022：提交的同时保存最近联系人账户信息、账号信息数据入账号信息管理表
             payBudgetService.toAddCostBudgetItem(scanGoodsMap, costAddBean, mapKey);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addCostBudgetItem";
     }
 
     public String toAddProjectItem() {
         try {
-            System.out.println("跳转添加初始项目单中间页面");
+            logger.info("跳转添加初始项目单中间页面");
             HttpServletRequest request = ServletActionContext.getRequest();
             String commitFlag = request.getParameter("commitFlag");
-            System.out.println(cashierBillsId);
+            logger.info("值：{}", cashierBillsId);
 
             if (costBaseBean != null) {
                 MapSesssionUtil.saveSessionForObject("costBaseBean", costBaseBean);
@@ -1434,7 +1438,7 @@ public class PayBudgetSheetAction {
             // TODO: 20241022：提交的同时保存最近联系人账户信息、账号信息数据入账号信息管理表
             payBudgetService.toAddCostBudgetItem(scanGoodsMap, costAddBean, mapKey);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addProjectItem";
     }
@@ -1447,7 +1451,7 @@ public class PayBudgetSheetAction {
      */
     public String toAddCostBudgetBill() {
         try {
-            System.out.println("跳转添加初始项目单页面");
+            logger.info("跳转添加初始项目单页面");
             HttpServletRequest request = ServletActionContext.getRequest();
             // 1.获取session数据
             parmaInfor = MapSesssionUtil.getSessionForMap("paramMap");
@@ -1526,14 +1530,14 @@ public class PayBudgetSheetAction {
                 payBudgetService.toAddCostBudgetBill(cacheGoodsMap, scanGoodsMap);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addCostBudgetBill";
     }
 
     public String toAddProjectBill() {
         try {
-            System.out.println("跳转添加初始项目单页面");
+            logger.info("跳转添加初始项目单页面");
             HttpServletRequest request = ServletActionContext.getRequest();
             // 1.获取session数据
             parmaInfor = MapSesssionUtil.getSessionForMap("paramMap");
@@ -1570,7 +1574,7 @@ public class PayBudgetSheetAction {
                 payBudgetService.toAddCostBudgetBill(cacheGoodsMap, scanGoodsMap);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addProjectBill";
     }
@@ -1583,7 +1587,7 @@ public class PayBudgetSheetAction {
      */
     public String scanningCostBudgetInfo() {
         try {
-            System.out.println("初始项目通过扫描枪获取数据" + costAddBean.getBarCode());
+            logger.info("初始项目通过扫描枪获取数据: {}", costAddBean.getBarCode());
             //1.根据扫描的条形码号查询货物信息
 //            goodsManage = (GoodsManage-) baseBeanService.getBeanByHqlAndParams("from GoodsManage o where o.barCode = ?", new Object[]{costAddBean.getBarCode()});
             if (StringUtils.isNotBlank(costAddBean.getCompanyId())) {
@@ -1623,7 +1627,7 @@ public class PayBudgetSheetAction {
             //暂时：扫码进入的单位为空，因为物品表数据的单位是老的
             costAddBean.setVariableId("");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if (StringUtils.isEmpty(costAddBean.getGoodsName()) && StringUtils.isEmpty(costAddBean.getTradeName())) {
             return "noData";
@@ -1633,7 +1637,7 @@ public class PayBudgetSheetAction {
 
     public String scanningProjectInfo() {
         try {
-            System.out.println("初始项目通过扫描枪获取数据" + costAddBean.getBarCode());
+            logger.info("初始项目通过扫描枪获取数据: {}", costAddBean.getBarCode());
             if (Objects.nonNull(costAddBean.getBarCode())) {
                 //1.根据扫描的条形码号查询货物信息
 //            goodsManage = (GoodsManage-) baseBeanService.getBeanByHqlAndParams("from GoodsManage o where o.barCode = ?", new Object[]{costAddBean.getBarCode()});
@@ -1675,7 +1679,7 @@ public class PayBudgetSheetAction {
             //暂时：扫码进入的单位为空，因为物品表数据的单位是老的
             costAddBean.setVariableId("");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 //        if (StringUtils.isEmpty(costAddBean.getGoodsName()) && StringUtils.isEmpty(costAddBean.getTradeName())) {
 //            return "noData";
@@ -1693,7 +1697,7 @@ public class PayBudgetSheetAction {
     public String getCostBudgetInfo() {
         try {
 
-            System.out.println("查询条件" + search);
+            logger.info("查询条件: {}", search);
             search = search.trim();
             //1.根据查询条件查询货物信息
 //            goodsManage = (GoodsManage) baseBeanService.getBeanByHqlAndParams("from GoodsManage o where o.barCode = ?", new Object[]{costAddBean.getBarCode()});
@@ -1734,7 +1738,7 @@ public class PayBudgetSheetAction {
             result = oj.toString();
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1747,7 +1751,7 @@ public class PayBudgetSheetAction {
             JSONObject oj = JSONObject.fromObject(map);
             result = oj.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1774,7 +1778,7 @@ public class PayBudgetSheetAction {
             JSONObject oj = JSONObject.fromObject(map);
             result = oj.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1800,7 +1804,7 @@ public class PayBudgetSheetAction {
             JSONObject oj = JSONObject.fromObject(map);
             result = oj.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1827,7 +1831,7 @@ public class PayBudgetSheetAction {
             JSONObject oj = JSONObject.fromObject(map);
             result = oj.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1841,7 +1845,7 @@ public class PayBudgetSheetAction {
         try {
             result = payBudgetService.getOrganizationByStaff(companyid, staffId);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return Action.SUCCESS;
     }
@@ -1850,7 +1854,7 @@ public class PayBudgetSheetAction {
         try {
             result = payBudgetService.getDepotByCompanyId(companyid, "001");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return Action.SUCCESS;
     }
@@ -1865,7 +1869,7 @@ public class PayBudgetSheetAction {
             payBudgetService.saveCostBudgetSheet(cashierBills);
             billsType = cashierBills.getBillsType();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return toCostBudgetBillList();
     }
@@ -1875,7 +1879,7 @@ public class PayBudgetSheetAction {
             payBudgetService.saveCostBudgetSheet(cashierBills);
             billsType = cashierBills.getBillsType();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return toProjectBillList();
     }
@@ -1941,7 +1945,7 @@ public class PayBudgetSheetAction {
             payBudgetService.updateCostBudgetSheet(cashierBills, menuId);
             billsType = cashierBills.getBillsType();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if ("receive".equals(menuId)) {
             return toCostBudgetBillReceiveList();
@@ -1955,7 +1959,7 @@ public class PayBudgetSheetAction {
             payBudgetService.updateCostBudgetSheet(cashierBills, menuId);
             billsType = cashierBills.getBillsType();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if ("receive".equals(menuId)) {
             return toProjectBillReceiveList();
@@ -1978,7 +1982,7 @@ public class PayBudgetSheetAction {
             parmList.add(new Object[]{cashierBillsId});
             baseBeanService.executeHqlsByParamsList(null, new String[]{hql, hql1}, parmList);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if ("receive".equals(menuId)) {
             return toCostBudgetBillReceiveList();
@@ -1999,7 +2003,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -2039,7 +2043,7 @@ public class PayBudgetSheetAction {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if ("printPage".equals(pageType)) {
             return "costBudgetBillPrint";
@@ -2074,7 +2078,7 @@ public class PayBudgetSheetAction {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if ("printPage".equals(pageType)) {
             return "projectBillPrint";
@@ -2106,7 +2110,7 @@ public class PayBudgetSheetAction {
             // 3.判断是否是提交扫描数据
             payBudgetService.getUpdateCostBudgetItem(cacheGoodsMap, goodBeanslist, costAddBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "costBudgetUpdate";
     }
@@ -2130,7 +2134,7 @@ public class PayBudgetSheetAction {
             // 3.判断是否是提交扫描数据
             payBudgetService.getUpdateCostBudgetItem(cacheGoodsMap, goodBeanslist, costAddBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "updateProjectBill";
     }
@@ -2161,7 +2165,7 @@ public class PayBudgetSheetAction {
             // 3.判断是否是提交扫描数据
             payBudgetService.getUpdateCostBudgetItem(cacheGoodsMap, goodBeanslist, costAddBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "costBudgetUpdate";
     }
@@ -2235,7 +2239,7 @@ public class PayBudgetSheetAction {
 //            costAddBean.setAddress(cashierBills.getAddress());
 //            costAddBean.setCoordinate(cashierBills.getCoordinate());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addCostBudgetBill";
     }
@@ -2293,7 +2297,7 @@ public class PayBudgetSheetAction {
             }
             costBaseBean = (CostBudgetBaseBean) MapSesssionUtil.getSessionForObject("costBaseBean");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addProjectBill";
     }
@@ -2352,7 +2356,7 @@ public class PayBudgetSheetAction {
                 lastBean = bean;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addCostBudgetItem";
     }
@@ -2406,7 +2410,7 @@ public class PayBudgetSheetAction {
                 lastBean = bean;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addProjectItem";
     }
@@ -2439,7 +2443,7 @@ public class PayBudgetSheetAction {
                 lastBean = bean;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "costBudgetUpdate";
     }
@@ -2467,7 +2471,7 @@ public class PayBudgetSheetAction {
                 lastBean = bean;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "updateProjectBill";
     }
@@ -2490,7 +2494,7 @@ public class PayBudgetSheetAction {
                 costAddBean = (CostBudgetAddBean) cacheGoodsMap.get(keyNum);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "costBudgetItemUpdate";
     }
@@ -2502,7 +2506,7 @@ public class PayBudgetSheetAction {
                 costAddBean = (CostBudgetAddBean) cacheGoodsMap.get(keyNum);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "projectItemUpdate";
     }
@@ -2525,7 +2529,7 @@ public class PayBudgetSheetAction {
                 costAddBean = (CostBudgetAddBean) scanGoodsMap.get(keyNum);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "costBudgetItemUpdate";
     }
@@ -2543,7 +2547,7 @@ public class PayBudgetSheetAction {
                 costAddBean = (CostBudgetAddBean) scanGoodsMap.get(keyNum);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "projectItemUpdate";
     }
@@ -2563,7 +2567,7 @@ public class PayBudgetSheetAction {
             costAddBean = new CostBudgetAddBean();
             payBudgetService.getBudgetItemInfo(goodsBills, goodsBillsExt, costAddBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "costBudgetItemDetail";
     }
@@ -2578,7 +2582,7 @@ public class PayBudgetSheetAction {
             costAddBean = new CostBudgetAddBean();
             payBudgetService.getBudgetItemInfo(goodsBills, goodsBillsExt, costAddBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "projectItemDetail";
     }
@@ -2737,7 +2741,7 @@ public class PayBudgetSheetAction {
             jsonObjList.accumulate("result", "suc");
         } catch (Exception e) {
             jsonObjList.accumulate("result", "fail");
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         result = jsonObjList.toString();
         return "success";
@@ -2820,7 +2824,7 @@ public class PayBudgetSheetAction {
 
             costAddBean.setGoodsBillsID("");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "scanningCostBudgetInfo";
     }
@@ -2853,7 +2857,7 @@ public class PayBudgetSheetAction {
 
             costAddBean.setGoodsBillsID("");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "scanningProjectInfo";
     }
@@ -2939,7 +2943,7 @@ public class PayBudgetSheetAction {
             //3.获取数据信息
             pageForm = baseBeanService.getPageFormByDC((null != pageForm ? pageForm.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber), dc);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if ("ng".equals(menuId)) {
             return "planCostBudgetBillList";
@@ -2988,7 +2992,7 @@ public class PayBudgetSheetAction {
             getPlanBudgetBillReceive(staffID, companyId, search, searchType, sql, params);
             pageForm = baseBeanService.getPageForm((null != pageForm ? pageForm.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber), sql.toString(), "select count(*) " + sql.substring(sql.indexOf("from")), params.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "planCostBudgetBillReceiveList";
     }
@@ -3055,7 +3059,7 @@ public class PayBudgetSheetAction {
             getPlanBudgetBillSent(staffID, companyId, search, searchType, sql, params);
             pageForm = baseBeanService.getPageForm((null != pageForm ? pageForm.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber), sql.toString(), "select count(*) " + sql.substring(sql.indexOf("from")), params.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "planCostBudgetBillSentList";
     }
@@ -3089,7 +3093,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -3122,7 +3126,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -3149,7 +3153,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -3196,7 +3200,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -3230,10 +3234,10 @@ public class PayBudgetSheetAction {
      */
     public String toAddPlanCostBudgetItem() {
         try {
-            System.out.println("跳转添加项目计划单中间页面");
+            logger.info("跳转添加项目计划单中间页面");
             HttpServletRequest request = ServletActionContext.getRequest();
             String commitFlag = request.getParameter("commitFlag");
-            System.out.println(cashierBillsId);
+            logger.info("值：{}", cashierBillsId);
 
             if (costBaseBean != null) {
                 MapSesssionUtil.saveSessionForObject("costBaseBean", costBaseBean);
@@ -3265,7 +3269,7 @@ public class PayBudgetSheetAction {
             // TODO: 20241022：提交的同时保存最近联系人账户信息、账号信息数据入账号信息管理表
             payBudgetService.toAddPlanCostBudgetItem(scanGoodsMap, costAddBean, mapKey);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addPlanCostBudgetItem";
     }
@@ -3278,7 +3282,7 @@ public class PayBudgetSheetAction {
      */
     public String toAddPlanCostBudgetBill() {
         try {
-            System.out.println("跳转添加项目计划单页面");
+            logger.info("跳转添加项目计划单页面");
             HttpServletRequest request = ServletActionContext.getRequest();
             // 1.获取session数据
             parmaInfor = MapSesssionUtil.getSessionForMap("paramMap");
@@ -3314,7 +3318,7 @@ public class PayBudgetSheetAction {
                 payBudgetService.toAddCostBudgetBill(cacheGoodsMap, scanGoodsMap);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addPlanCostBudgetBill";
     }
@@ -3327,7 +3331,7 @@ public class PayBudgetSheetAction {
      */
     public String scanningPlanCostBudgetInfo() {
         try {
-            System.out.println("项目计划通过扫描枪获取数据" + costAddBean.getBarCode());
+            logger.info("项目计划通过扫描枪获取数据: {}", costAddBean.getBarCode());
             //1.根据扫描的条形码号查询货物信息
 //            goodsManage = (GoodsManage-) baseBeanService.getBeanByHqlAndParams("from GoodsManage o where o.barCode = ?", new Object[]{costAddBean.getBarCode()});
             if (StringUtils.isNotBlank(costAddBean.getCompanyId())) {
@@ -3367,7 +3371,7 @@ public class PayBudgetSheetAction {
             //暂时：扫码进入的单位为空，因为物品表数据的单位是老的
             costAddBean.setVariableId("");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if (StringUtils.isEmpty(costAddBean.getGoodsName()) && StringUtils.isEmpty(costAddBean.getTradeName())) {
             return "planNoData";
@@ -3385,7 +3389,7 @@ public class PayBudgetSheetAction {
         try {
             payBudgetService.savePlanCostBudgetSheet(cashierBills);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return toPlanCostBudgetBillList();
     }
@@ -3400,7 +3404,7 @@ public class PayBudgetSheetAction {
             menuId = (String) MapSesssionUtil.getSessionForObject("menuId");
             payBudgetService.updatePlanCostBudgetSheet(cashierBills, menuId);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if ("receive".equals(menuId)) {
             return toPlanCostBudgetBillReceiveList();
@@ -3423,7 +3427,7 @@ public class PayBudgetSheetAction {
             parmList.add(new Object[]{cashierBillsId});
             baseBeanService.executeHqlsByParamsList(null, new String[]{hql, hql1}, parmList);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return toPlanCostBudgetBillList();
     }
@@ -3463,7 +3467,7 @@ public class PayBudgetSheetAction {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         if ("printPage".equals(pageType)) {
             return "costBudgetBillPrint";
@@ -3495,7 +3499,7 @@ public class PayBudgetSheetAction {
             // 3.判断是否是提交扫描数据
             payBudgetService.getUpdateCostBudgetItem(cacheGoodsMap, goodBeanslist, costAddBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "planCostBudgetUpdate";
     }
@@ -3526,7 +3530,7 @@ public class PayBudgetSheetAction {
             // 3.判断是否是提交扫描数据
             payBudgetService.getUpdateCostBudgetItem(cacheGoodsMap, goodBeanslist, costAddBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "planCostBudgetUpdate";
     }
@@ -3588,7 +3592,7 @@ public class PayBudgetSheetAction {
             }
             costBaseBean = (CostBudgetBaseBean) MapSesssionUtil.getSessionForObject("costBaseBean");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addPlanCostBudgetBill";
     }
@@ -3646,7 +3650,7 @@ public class PayBudgetSheetAction {
                 lastBean = bean;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "addPlanCostBudgetItem";
     }
@@ -3679,7 +3683,7 @@ public class PayBudgetSheetAction {
                 lastBean = bean;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "planCostBudgetUpdate";
     }
@@ -3702,7 +3706,7 @@ public class PayBudgetSheetAction {
                 costAddBean = (CostBudgetAddBean) cacheGoodsMap.get(keyNum);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "planCostBudgetItemUpdate";
     }
@@ -3725,7 +3729,7 @@ public class PayBudgetSheetAction {
                 costAddBean = (CostBudgetAddBean) scanGoodsMap.get(keyNum);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "planCostBudgetItemUpdate";
     }
@@ -3745,7 +3749,7 @@ public class PayBudgetSheetAction {
             costAddBean = new CostBudgetAddBean();
             payBudgetService.getBudgetItemInfo(goodsBills, goodsBillsExt, costAddBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "planCostBudgetItemDetail";
     }
@@ -3855,7 +3859,7 @@ public class PayBudgetSheetAction {
             jsonObjList.accumulate("result", "suc");
         } catch (Exception e) {
             jsonObjList.accumulate("result", "fail");
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         result = jsonObjList.toString();
         return "success";
@@ -3896,7 +3900,7 @@ public class PayBudgetSheetAction {
 
             costAddBean.setGoodsBillsID("");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "scanningPlanCostBudgetInfo";
     }
@@ -3914,7 +3918,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -3927,7 +3931,7 @@ public class PayBudgetSheetAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -3970,7 +3974,7 @@ public class PayBudgetSheetAction {
                 MapSesssionUtil.saveSessionForMap("paramMap", paramMap);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "projectBillReceiveList";
     }
@@ -4006,7 +4010,7 @@ public class PayBudgetSheetAction {
 //                    (pageNumber == 0 ? 10 : pageNumber), sql.toString(), "select count(*) "
 //                            + sql.substring(sql.indexOf("from")), params.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "projectBillSentList";
     }

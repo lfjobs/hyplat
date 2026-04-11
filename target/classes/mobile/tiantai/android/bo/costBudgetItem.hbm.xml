@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+    <class name="mobile.tiantai.android.bo.CostBudgetItem" table="DT_COST_BUDGET_ITEM">
+        <comment>费用预算条目</comment>
+        <id name="budgetItemKey">
+            <column length="50" name="BUDGET_ITEM_KEY">
+                <comment>主键id</comment>
+            </column>
+        </id>
+        <property name="budgetItemId">
+            <column length="50" name="BUDGET_ITEM_ID">
+                <comment>预算明细id</comment>
+            </column>
+        </property>
+        <property name="ppid">
+            <column length="50" name="PPID">
+                <comment>产品id</comment>
+            </column>
+        </property>
+        <property name="companyid">
+            <column length="50" name="COMPANYID">
+                <comment>公司id</comment>
+            </column>
+        </property>
+        <property name="companyName">
+            <column length="255" name="COMPANY_NAME">
+                <comment>公司名称</comment>
+            </column>
+        </property>
+        <property name="organizationid">
+            <column length="50" name="ORGANIZATIONID">
+                <comment>部门id</comment>
+            </column>
+        </property>
+        <property name="organizationName">
+            <column length="255" name="ORGANIZATION_NAME">
+                <comment>部门名称</comment>
+            </column>
+        </property>
+        <property name="goodsname">
+            <column length="500" name="GOODSNAME">
+                <comment>物品名称</comment>
+            </column>
+        </property>
+        <property name="quantity">
+            <column length="250" name="QUANTITY">
+                <comment>数量</comment>
+            </column>
+        </property>
+        <property name="price">
+            <column length="250" name="PRICE">
+                <comment>价格(调查价)</comment>
+            </column>
+        </property>
+        <property name="stock">
+            <column length="255" name="STOCK">
+                <comment>库存</comment>
+            </column>
+        </property>
+        <property name="standard">
+            <column length="500" name="STANDARD">
+                <comment>规格</comment>
+            </column>
+        </property>
+        <property name="fiveclear">
+            <column length="200" name="FIVECLEAR">
+                <comment>5C 1 _人事,2_办公室,3——财务,4——教务处,5-营销</comment>
+            </column>
+        </property>
+        <property name="barcode">
+            <column length="50" name="BARCODE">
+                <comment>条码</comment>
+            </column>
+        </property>
+        <property name="brand">
+            <column length="50" name="BRAND">
+                <comment>品牌</comment>
+            </column>
+        </property>
+        <property name="variableid">
+            <column length="20" name="VARIABLEID">
+                <comment>单位</comment>
+            </column>
+        </property>
+        <property name="itemStatus">
+            <column length="2" name="ITEM_STATUS">
+                <comment>数据状态</comment>
+            </column>
+        </property>
+        <property name="staffid">
+            <column length="50" name="STAFFID">
+                <comment>责任人id</comment>
+            </column>
+        </property>
+        <property name="staffName">
+            <column length="50" name="STAFF_NAME">
+                <comment>责任人姓名</comment>
+            </column>
+        </property>
+        <property name="amendStaffid">
+            <column length="50" name="AMEND_STAFFID">
+                <comment>修改人id</comment>
+            </column>
+        </property>
+        <property name="amendStaffName">
+            <column length="50" name="AMEND_STAFF_NAME">
+                <comment>修改人姓名</comment>
+            </column>
+        </property>
+        <property name="gradeid">
+            <column length="50" name="GRADEID">
+                <comment>产品等级id</comment>
+            </column>
+        </property>
+        <property name="gradeName">
+            <column length="50" name="GRADE_NAME">
+                <comment>产品等级</comment>
+            </column>
+        </property>
+        <property name="receiveType">
+            <column length="20" name="RECEIVE_TYPE">
+                <comment>接收人类型</comment>
+            </column>
+        </property>
+        <property name="createTime">
+            <column length="11" name="CREATE_TIME">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        <property name="updateTime">
+            <column length="11" name="UPDATE_TIME">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="deadline">
+            <column length="10" name="DEADLINE">
+                <comment>截止日期</comment>
+            </column>
+        </property>
+        <property name="businessTypeId">
+            <column length="100" name="BUSINESS_TYPE_ID">
+                <comment>行业类别id</comment>
+            </column>
+        </property>
+        <property name="businessTypeName">
+            <column length="300" name="BUSINESS_TYPE_NAME">
+                <comment>行业类别名称</comment>
+            </column>
+        </property>
+        <property name="address">
+            <column length="500" name="ADDRESS">
+                <comment>地址</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

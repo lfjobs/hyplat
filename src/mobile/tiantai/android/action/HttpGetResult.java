@@ -1,5 +1,8 @@
 package mobile.tiantai.android.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,6 +15,7 @@ import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.params.HttpMethodParams;
 //封装调第三方接口GET方法
 public class HttpGetResult {
+	private static final Logger logger = LoggerFactory.getLogger(HttpGetResult.class);
 	public static String httpGet(String url) {
 		String result = null;
 		HttpClient httpClient = new HttpClient();
@@ -48,7 +52,7 @@ public class HttpGetResult {
 			jsonStr = new String(out.toByteArray(),"UTF-8");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return jsonStr;
 	}

@@ -1,5 +1,8 @@
 package hy.ea.office.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.artofsolving.jodconverter.DocumentConverter;
 import com.artofsolving.jodconverter.openoffice.connection.OpenOfficeConnection;
 import com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection;
@@ -70,12 +73,12 @@ public String office2PDF(String sourcePath,String realPath, String fileName) {
 		pro.destroy();
 		return PDFName;
 	} catch (FileNotFoundException e) {
-		e.printStackTrace();
+		logger.error("操作异常", e);
 		return "nofind";
 	} catch (ConnectException e) {
-		e.printStackTrace();
+		logger.error("操作异常", e);
 	} catch (IOException e) {
-		e.printStackTrace();
+		logger.error("操作异常", e);
 	}
 
 	return "fail";
@@ -139,7 +142,7 @@ public String office2PDF(String sourcePath,String realPath, String fileName) {
 				fileName = office2PDF(sourcePath,realPath,fileName);
 			} catch (Exception e) {
 				
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			sourcePath = sourcePath.replace(sourcePath.substring(sourcePath
 					.lastIndexOf(".")), ".pdf");
@@ -167,7 +170,7 @@ public String office2PDF(String sourcePath,String realPath, String fileName) {
 					while (br.readLine() != null)
 						;
 				} catch (IOException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 		}).start(); // 启动单独的线程来清空process.getInputStream()的缓冲区
@@ -177,9 +180,9 @@ public String office2PDF(String sourcePath,String realPath, String fileName) {
 		String line = null;
 		while ((line = br2.readLine()) != null)
 			buf.append(line); // 循环等待ffmpeg进程结束
-		System.out.println("输出结果为：" + buf);
+		logger.info("输出结果为：: {}", buf);
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return targetPath;
 	}

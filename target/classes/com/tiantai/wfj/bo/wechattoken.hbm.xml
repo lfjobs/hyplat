@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+	<class name="com.tiantai.wfj.bo.WeChatToken" table="dtWeChatToken">
+		<id length="50" name="wctKey">
+			<column length="50" name="wctKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="wctID">
+			<column length="50" name="wctID" />
+		</property>
+        <property name="appID">
+			<column length="50" name="appID" />
+		</property>
+		<property name="appSecret">
+			<column length="50" name="appSecret" />
+		</property>
+		<property name="accessToken">
+			<column length="512" name="accessToken" />
+		</property>
+        <property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		 <property name="accessTime">
+			<column  name="accessTime" />
+		</property>
+		<property name="jsapi_ticket">
+			<column length="512" name="jsapi_ticket" />
+		</property>
+	</class>
+</hibernate-mapping>

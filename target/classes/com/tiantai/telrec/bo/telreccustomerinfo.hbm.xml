@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.telrec.bo">
+	<class name="TelrecCustomerInfo" 
+		table="telrecCostomerInfo">
+		<id length="50" name="id">
+			<column length="50" name="id" />
+			<generator class="uuid" />
+		</id>
+		<property name="customer_name">
+			<column length="50" name="customer_name" />
+		</property>
+		<property name="customer_tel">
+			<column length="20" name="customer_tel" />
+		</property>
+		<property name="customer_mobile">
+			<column length="20" name="customer_mobile" />
+		</property>
+		<property name="customer_type">
+			<column length="20" name="customer_type" />
+		</property>
+		<property name="customer_unit">
+			<column length="150" name="customer_unit" />
+		</property>
+		<property name="customer_address">
+			<column length="150" name="customer_address" />
+		</property>
+		<property name="customer_fax">
+			<column length="20" name="customer_fax" />
+		</property>
+		<property name="customer_email">
+			<column length="50" name="customer_email" />
+		</property>
+		<property name="customer_hometel">
+			<column length="20" name="customer_hometel" />
+		</property>
+		<property name="customer_birthday">
+			<column length="20" name="customer_birthday" />
+		</property>
+		<property name="customer_title">
+			<column length="20" name="customer_title" />
+		</property>
+		<property name="customer_postcode">
+			<column length="6" name="customer_postcode" />
+		</property>
+		<property name="customer_memo">
+			<column length="200" name="customer_memo" />
+		</property>
+		<property name="rela_companyid">
+			<column length="50" name="rela_companyid" />
+		</property>
+		<property name="rela_companyid_name">
+			<column length="50" name="rela_companyid_name" />
+		</property>
+	</class>
+</hibernate-mapping>

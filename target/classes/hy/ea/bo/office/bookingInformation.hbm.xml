@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="BookingInformation" table="DT_BookingInformation">
+		<id length="50" name="bifKey">
+			<column length="50" name="bifKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="bifId">
+			<column length="50" name="bifId">
+				<comment>主键</comment>
+			</column>
+		</property>
+		<property  name="cashierBillsID">
+			<column length="50" name="cashierBillsID">
+				<comment>同时保存ID避免重复查询订单表</comment>
+			</column>
+		</property>
+		<property  name="journalNum">
+			<column length="50" name="journalNum">
+				<comment>订单凭证号</comment>
+			</column>
+		</property>
+		<property  name="ppID">
+			<column length="50" name="ppID">
+				<comment>预约产品ID</comment>
+			</column>
+		</property>
+		<property  name="sccId">
+			<column length="50" name="sccId">
+				<comment>账号ID</comment>
+			</column>
+		</property>
+		<property  name="erId">
+			<column length="50" name="erId">
+				<comment>考场ID</comment>
+			</column>
+		</property>
+		<property  name="coachStaffId">
+			<column length="50" name="coachStaffId">
+				<comment>教练ID</comment>
+			</column>
+		</property>
+		<property  name="directorStaffId">
+			<column length="50" name="directorStaffId">
+				<comment>主管ID</comment>
+			</column>
+		</property>
+		<property  name="qrCode">
+			<column length="250" name="qrCode">
+				<comment>二维码url</comment>
+			</column>
+		</property>
+		<property  name="signInState">
+			<column length="10" name="signInState">
+				<comment>签到状态</comment>
+			</column>
+		</property>
+		<property  name="checkInTime">
+			<column length="50" name="checkInTime">
+				<comment>签到时间</comment>
+			</column>
+		</property>
+		<property  name="signBackTime">
+			<column length="50" name="signBackTime">
+				<comment>签退时间</comment>
+			</column>
+		</property>
+		<property  name="bifTime">
+			<column length="50" name="bifTime">
+				<comment>生成时间</comment>
+			</column>
+		</property>
+		<property  name="howMuchTime">
+			<column length="50" name="howMuchTime">
+				<comment>时长</comment>
+			</column>
+		</property>
+		<property  name="money">
+			<column length="50" name="money">
+				<comment>金额</comment>
+			</column>
+		</property>
+		<property  name="reasonForFailure">
+			<column length="250" name="reasonForFailure">
+				<comment>失败原因</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

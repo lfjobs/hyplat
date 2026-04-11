@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="MealNum" table="dtMealNum">
+		<id length="50" name="mnkey" type="java.lang.String">
+			<column length="50" name="mnkey"  />
+			<generator class="uuid" />
+		</id>
+		 <property name="mnId" type="java.lang.String">
+        	<column name="mnId" length="50"/>
+        </property>
+        <property name="companyID" type="java.lang.String">
+        	<column name="companyID" length="50">
+        	<comment>公司ID</comment>
+        	</column>
+        </property>
+         <property name="mealNum" type="java.lang.Integer">
+        	<column name="mealNum" length="50">
+        	<comment>取餐顺序号</comment>
+        	</column>
+        </property>
+	</class> 
+	
+</hibernate-mapping>

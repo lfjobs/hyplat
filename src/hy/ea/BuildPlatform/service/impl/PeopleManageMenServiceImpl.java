@@ -186,7 +186,7 @@ public class PeopleManageMenServiceImpl implements PeopleManageMenService {
 				map.put("content", content);
 			}		
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}		
 		return map;
 	}
@@ -214,7 +214,7 @@ public class PeopleManageMenServiceImpl implements PeopleManageMenService {
 				map.put("content", content);
 			}		
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}		
 		return map;
 	}
@@ -291,7 +291,7 @@ public class PeopleManageMenServiceImpl implements PeopleManageMenService {
 					content, path);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 	
 		}		
 		return "/upload_files/goodDetail/"+id+UploadContentToFileService.suffix;

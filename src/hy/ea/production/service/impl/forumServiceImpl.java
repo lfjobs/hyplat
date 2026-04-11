@@ -1,5 +1,8 @@
 package hy.ea.production.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.finance.ProductComment;
 import hy.ea.bo.finance.BenDis.JoinFans;
 import hy.ea.bo.human.Staff;
@@ -97,7 +100,7 @@ public class forumServiceImpl implements forumService {
 			return contentToFileService.getContent(path);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return "";
 		}
 	}

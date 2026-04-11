@@ -293,7 +293,7 @@ public class AndroidAction extends ActionSupport {
 			try {
 				EasemobIMUsers.modifyIMUserPasswordWithAdminToken(pahe,
 						"123456");
-				System.out.println("+++++++++++"+pahe);
+				logger.info("调试信息");
 				temp.accumulate("result", "0");
 			} catch (Exception e) {
 				temp.accumulate("result", "1");
@@ -310,12 +310,12 @@ public class AndroidAction extends ActionSupport {
 						if (tc.getAccount() != null
 								&& tc.getAccount().length() == 11) {
 							try {
-								System.out.println(tc.getAccount());
+								logger.info("调试信息");
 								EasemobIMUsers
 										.modifyIMUserPasswordWithAdminToken(
 												tc.getAccount(), "123456");
 							} catch (Exception e) {
-								e.printStackTrace();
+								logger.error("操作异常", e);
 							}
 						}
 					}
@@ -453,7 +453,7 @@ public class AndroidAction extends ActionSupport {
 
 		} catch (Exception e) {
 			temp.accumulate("result", "1");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = temp;
 		return Action.SUCCESS;
@@ -556,7 +556,7 @@ public class AndroidAction extends ActionSupport {
 			temp.accumulate("result", "0");
 		} catch (Exception e) {
 			temp.accumulate("result", "1");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = temp;
 		return Action.SUCCESS;
@@ -619,7 +619,7 @@ public class AndroidAction extends ActionSupport {
             int i=   telService.redPacket(sender,recipient,goldNum,liuYan); 20180223暂时注释掉这行代码
             jobj.accumulate("type", i);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			jobj.accumulate("type", "1");
 		}*/
 		jobj.accumulate("type", "11");
@@ -671,7 +671,7 @@ public class AndroidAction extends ActionSupport {
 			}
 		} catch (Exception e) {
 			temp.accumulate("result", "1");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = temp;
 		return Action.SUCCESS;
@@ -927,7 +927,7 @@ public class AndroidAction extends ActionSupport {
 				JushMain.sendjiguangMessage("有新用户注册，点击立即抢单，手慢无，快来抢！"+date, "抢下级", "有新的客户注册哦！", "lowerlevel", list);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			map.put("returnCode", "1");
 		}
 		result = JSONObject.fromObject(map);
@@ -945,7 +945,7 @@ public class AndroidAction extends ActionSupport {
 			msage.setMessage("恭喜您以成功注册微分金，欢迎您使用！！！");
 			msage.sendMsg("【微分金平台】");
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 
@@ -1712,7 +1712,7 @@ public class AndroidAction extends ActionSupport {
 			response.sendRedirect(path+"/ea/wfjshop/ea_getjspzc.jspa?indus="+abphone);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		result = ret1;
@@ -1740,7 +1740,7 @@ public class AndroidAction extends ActionSupport {
 			response.sendRedirect("http://192.168.172.8/ea/wfjshop/ea_getWFJshops.jspa?user="
 					+ user + "&indus=products");
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = ret1;
 		return Action.SUCCESS;
@@ -2320,9 +2320,9 @@ public class AndroidAction extends ActionSupport {
 				try {
 					BeanUtils.copyProperties(lb, temp);
 				} catch (IllegalAccessException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				} catch (InvocationTargetException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 		}else{
@@ -2491,7 +2491,7 @@ public class AndroidAction extends ActionSupport {
 			baseBeanService.update(jobPlans);
 			results = 1;
 		} catch (RuntimeException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		JSONObject jsonObj = new JSONObject();
 		jsonObj.accumulate("result", results);
@@ -2515,7 +2515,7 @@ public class AndroidAction extends ActionSupport {
 		try {
 			request.setCharacterEncoding("gb2312");
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		String comName = request.getParameter("comName");
 		String address = request.getParameter("address");
@@ -2806,7 +2806,7 @@ public class AndroidAction extends ActionSupport {
 			}
 		} catch (Exception e) {
 			result = "abnormal";
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 	}
@@ -2830,9 +2830,9 @@ public class AndroidAction extends ActionSupport {
 			fis.close();
 
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "uploadfile";
@@ -2929,7 +2929,7 @@ public class AndroidAction extends ActionSupport {
 
 		} catch (Exception e) {
 			map.put("result", "0");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		HttpServletResponse response = ServletActionContext.getResponse();
 		JSONObject json = JSONObject.fromObject(map);
@@ -2938,7 +2938,7 @@ public class AndroidAction extends ActionSupport {
 			response.getWriter().print(json.toString());
 		} catch (IOException e) {
 
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 	}
@@ -2997,7 +2997,7 @@ public class AndroidAction extends ActionSupport {
 			response.getWriter().print(json.toString());
 		} catch (IOException e) {
 
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 	}
@@ -3020,10 +3020,10 @@ public class AndroidAction extends ActionSupport {
 		JSONObject temp = new JSONObject();
 		if(yanz!=null)
 		{
-//			System.out.println(yanz+pahe+yanz);
-//			System.out.println(Utilities.MD5(yanz+pahe+yanz));
+//			logger.info("调试信息");
+//			logger.info("调试信息");
 			if(Utilities.MD5(yanz+pahe+yanz).equals(sbhk)) {
-				System.out.println("带随机数调用");
+				logger.info("带随机数调用");
 				if (yanzheng(new String[]{pahe, yanz})) {
 					sdk.getduan(pahe, yanz);
 					temp.accumulate("return", "0");
@@ -3036,11 +3036,11 @@ public class AndroidAction extends ActionSupport {
 			}
 		}else{
 
-			System.out.println(session.get("sbhk"));
+			logger.info("调试信息");
 			if (sbhk != null && !sbhk.equals("")&&sbhk.equals(session.get("sbhk"))) {
-				System.out.println("不带随机数调用");
+				logger.info("不带随机数调用");
 			}else{
-				System.out.println("不合理调用");
+				logger.info("不合理调用");
 //				return "success";
 			}
 
@@ -3341,7 +3341,7 @@ public class AndroidAction extends ActionSupport {
 			jsonObjList.accumulate("pageCount", pageForm==null?"0":pageForm.getPageCount());
 			result = jsonObjList;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -3473,7 +3473,7 @@ public class AndroidAction extends ActionSupport {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		if(pageForm!=null&&pageForm.getList().size()>0){
 			JSONObject jsonObjList = new JSONObject();
@@ -3878,7 +3878,7 @@ public class AndroidAction extends ActionSupport {
 			jo.accumulate("countlist", listt);
 			result = jo;
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "success";
@@ -3988,7 +3988,7 @@ public class AndroidAction extends ActionSupport {
 			jsonObjList.accumulate("result", "success");
 		} catch (Exception e) {
 			jsonObjList.accumulate("result", "fail");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = jsonObjList;
 		return "success";
@@ -4067,7 +4067,7 @@ public class AndroidAction extends ActionSupport {
 			sqlcount=sqlcount+"("+str.toString()+")";
 			pageForm = baseBeanService.getPageFormBySQL(pageNumber, 15, str.toString(), sqlcount, params.toArray());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		if (pageForm == null || pageForm.getList().size() == 0) {
 			JSONObject jsonObjList = new JSONObject();
@@ -4133,7 +4133,7 @@ public class AndroidAction extends ActionSupport {
 			sqlcount=sqlcount+"("+str.toString()+")";
 			pageForm = baseBeanService.getPageFormBySQL(pageNumber, 40, str.toString(), sqlcount, params.toArray());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		if (pageForm == null || pageForm.getList().size() == 0) {
 			JSONObject jsonObjList = new JSONObject();
@@ -4199,7 +4199,7 @@ public class AndroidAction extends ActionSupport {
 			sqlcount=sqlcount+"("+str.toString()+")";
 			pageForm = baseBeanService.getPageFormBySQL(1, 500, str.toString(), sqlcount, params.toArray());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		if(pageForm!=null&&pageForm.getList().size()>0){
 			JSONObject jsonObjList = new JSONObject();
@@ -4871,7 +4871,7 @@ public class AndroidAction extends ActionSupport {
 			jsonObj1.accumulate("headimage", isNull(obj2[2]));
 			list.add(jsonObj1);
 		}
-		//System.out.println(list.size());
+		//logger.info("调试信息");
 		jobj.accumulate("slist", list);
 		result=jobj;
 		return "success";
@@ -5013,7 +5013,7 @@ public class AndroidAction extends ActionSupport {
              }
          }*/
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		for (int i = 0; i < slist.size(); i++) {
 			for (int j = slist.size() -1; j >i; j--) {
@@ -5133,7 +5133,7 @@ public class AndroidAction extends ActionSupport {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		jsonObjList.accumulate("companyList", lists);
 		result = jsonObjList;
@@ -5452,7 +5452,7 @@ public class AndroidAction extends ActionSupport {
 				baseBeanService.update(staffPosInfo);
 				map.put("result", 0);//成功
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 				map.put("result", 1);//失败
 
 			}
@@ -5712,7 +5712,7 @@ public class AndroidAction extends ActionSupport {
 
 			}
 		}catch (Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -5824,7 +5824,7 @@ public class AndroidAction extends ActionSupport {
 			consultManageService.saveReturnVisit(consult);
 			map.put("result", "SUCCESS");
 		}catch (Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			map.put("result", "FAIL");
 
 		}

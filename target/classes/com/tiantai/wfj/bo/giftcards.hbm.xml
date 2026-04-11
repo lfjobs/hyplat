@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="GiftCards" table="dt_giftcards">
+		<id length="50" name="cardKey">
+			<column length="50" name="cardKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="cardId">
+			<column length="50" name="cardId" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID">
+			<comment>人员ID</comment>
+		</column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID">
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="cardNumber">
+			<column length="50" name="cardNumber" >
+				<comment>购物卡号(办卡)</comment>
+			</column>
+		</property>
+		<property name="oldCardNumber">
+			<column length="50" name="oldCardNumber" >
+				<comment>购物卡号(补卡之后的旧卡)</comment>
+			</column>
+		</property>
+		<property name="applyCardDate">
+			<column name="applyCardDate" >
+				<comment>办卡时间</comment>
+			</column>
+		</property>
+		<property name="reissueCardDate">
+			<column name="reissueCardDate" >
+				<comment>补卡时间</comment>
+			</column>
+		</property>
+		<property name="operator">
+			<column length="100" name="operator" >
+				<comment>操作人</comment>
+			</column>
+		</property>
+		<property name="state">
+			<column length="10" name="state" >
+				<comment>状态</comment>
+			</column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

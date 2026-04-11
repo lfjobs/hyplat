@@ -1,5 +1,8 @@
 package com.faceSDK.faceUtil;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import net.sf.json.JSONObject;
@@ -22,6 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class drivingLicenseUtils {
+	private static final Logger logger = LoggerFactory.getLogger(drivingLicenseUtils.class);
 
     private drivingLicenseUtils() {
     }
@@ -36,7 +40,7 @@ public class drivingLicenseUtils {
         ImageIO.write(bufferedImage, "png", baos);
         byte[] bytes = baos.toByteArray();
         Map<String, String> userInfoMap = drivingLicenseUtils.getStringStringMap(bytes);
-        System.out.println(userInfoMap);
+        logger.info("值：{}", userInfoMap);
     }
     /**
      * 行驶证完整信息识别
@@ -61,33 +65,33 @@ public class drivingLicenseUtils {
         Gson gson = new Gson();
         Type type = new TypeToken<Map<String, Object>>() {}.getType();
         Map<String, Object> json = gson.fromJson(s, type);
-        System.out.println("============"+s);
+        logger.info("调试信息");
         List<List<Map>> jsons = (List<List<Map>>) json.get("results");
-        System.out.println(jsons);
+        logger.info("值：{}", jsons);
 
         for (int i = 0; i < jsons.get(0).size(); i++) {
-            System.out.println("当前的文字是：" + jsons.get(0).get(i).get("text"));
+            logger.info("调试信息");
             // 这里光靠这个trim()有些空格是去除不掉的，所以还需要使用替换这个，双重保险
             result.append(jsons.get(0).get(i).get("text").toString().trim().replace(" ", ""));
         }
         String trim = result.toString().trim();
         trim = trim.replace(".", "");
-        System.out.println("=================拼接后的文字是=========================");
-        System.out.println(trim);
-        System.out.println("=======================接下来就是使用正则表达提取文字信息了===============================");
+        logger.info("=================拼接后的文字是=========================");
+        logger.info("值：{}", trim);
+        logger.info("=======================接下来就是使用正则表达提取文字信息了===============================");
         String cp = extractLicensePlate(trim);
-        System.out.println("车牌号："+cp);
+        logger.info("调试信息");
         String sb = extractLicenseNumber(trim);
-        System.out.println("车辆识别代号："+sb);
+        logger.info("调试信息");
         String fd = engineNumber(trim);
-        System.out.println("发动机号码："+fd);
+        logger.info("调试信息");
         String owner = owner(trim);
-        System.out.println("车辆的所有人："+owner);
+        logger.info("调试信息");
         List<String> listTime=sueDate(trim);
         String time1=listTime!=null?listTime.get(0):"沒有获取到注册日期";
         String time2=listTime!=null&&listTime.size()>1?listTime.get(1):"沒有获取到发证日期";
-        System.out.println("注册日期:"+time1);
-        System.out.println("发证日期:"+time2);
+        logger.info("调试信息");
+        logger.info("调试信息");
         Map<String, String> userInfoMap = new HashMap<>();
         return userInfoMap;
     }

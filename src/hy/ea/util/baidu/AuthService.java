@@ -1,4 +1,7 @@
 package hy.ea.util.baidu;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -12,6 +15,7 @@ import java.util.Map;
  * 获取token类
  */
 public class AuthService {
+	private static final Logger logger = LoggerFactory.getLogger(AuthService.class);
 
     /**
      * 获取权限token

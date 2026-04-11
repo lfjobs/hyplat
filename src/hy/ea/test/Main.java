@@ -1,24 +1,27 @@
 package hy.ea.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.apache.commons.lang3.StringUtils;
 
 public class Main {
 
     public static void main(String[] args) {
         String str = "半角符号示例:,!~    全角符号示例：，！~";
-        System.out.println("半角--->全角转换前：" + str);
+        logger.info("调试信息");
         String sbcResult = toSbc(str);
-        System.out.println("半角--->全角转换后：" + sbcResult);
-        System.out.println("全角--->半角转换前：" + str);
+        logger.info("调试信息");
+        logger.info("调试信息");
         String dbcResult = toDbc(str);
-        System.out.println("全角--->半角转换后：" + dbcResult);//打印出java所有字符
+        logger.info("调试信息");//打印出java所有字符
 //    printAllCharacter();
     }
 
     /*** 打印出java中所有Unicode编码的字符*/
     private static void printAllCharacter() {
         for (int i = Character.MIN_VALUE; i <= Character.MAX_VALUE; ++i) {
-            System.out.println(i + "   " + (char) i);
+            logger.info("调试信息");
         }
     }
 

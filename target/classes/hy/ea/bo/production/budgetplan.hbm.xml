@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+              
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="BudgetPlan"  table="dtPBudgetPlan">
+		<id length="50" name="bpkey">
+			<column length="50" name="bpkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="bpid">
+			<column length="50" name="bpid" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="tradeCode">
+			<column length="20" name="tradeCode"><comment>行业类别</comment></column>
+		</property>
+		<property name="producttype">
+			<column length="50" name="producttype"><comment>项目产品分类</comment></column>
+		</property>
+		<property  name="barCode">
+			<column length="50" name="barCode"><comment>条码</comment></column>
+		</property>
+		<property name="productCode">
+			<column length="20" name="productCode"><comment>产品编号</comment></column>
+		</property>
+		<property  name="productName">
+			<column length="50" name="productName"><comment>产品名称</comment></column>
+		</property>
+		<property  name="productID">
+			<column length="50" name="productID"><comment>产品ID</comment></column>
+		</property>
+		<property  name="createDate">
+			<column  name="createDate"><comment>制定日期</comment></column>
+		</property>
+		<property  name="quantity">
+			<column length="10" name="quantity"><comment>数量</comment></column>
+		</property>
+			<property name="price">
+			<column length="10" name="price"  ><comment></comment></column>
+		</property>
+		<property name="money">
+			<column length="10" name="money"><comment>金额</comment></column>
+		</property>
+		<property  name="deviceNum">
+			<column length="10" name="deviceNum"><comment>流水线设备套数</comment></column>
+		</property>
+		<property  name="maxBydevice">
+			<column length="10" name="maxBydevice"><comment>单套设备最大用人量</comment></column>
+		</property>
+		<property  name="maxByhbyd">
+			<column length="10" name="maxByhbyd"><comment>单套设备每小时最大生产量</comment></column>
+		</property>
+		
+		<property  name="worktimeByd">
+			<column length="10" name="worktimeByd"><comment>单套设备每天工作多少时间hour</comment></column>
+		</property>
+		
+		<property  name="maxDay">
+			<column length="10" name="maxDay"><comment>日最大生产量</comment></column>
+		</property>
+		
+		
+		<property  name="maxWeek">
+			<column length="10" name="maxWeek"><comment>周多大生产量</comment></column>
+		</property>
+		
+		
+		<property  name="maxMonth">
+			<column length="10" name="maxMonth"><comment>月最大生产量</comment></column>
+		</property>
+		
+		<property  name="maxYear">
+			<column length="10" name="maxYear"><comment>年最大生产量</comment></column>
+		</property>
+	    <property  name="maxSeason">
+			<column length="10" name="maxSeason"><comment>周最大生产量</comment></column>
+		</property>
+		<property  name="type">
+			<column length="2" name="type"><comment>类型 01 预算 02 计划</comment></column>
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID"><comment>公司表业务主键</comment></column>
+		</property>
+	    <property  name="year">
+			<column  length="5" name="year"><comment>预算年份</comment></column>
+		</property>
+		<property  name="remark">
+			<column length="250" name="remark"><comment>备注</comment></column>
+		</property>
+		<property  name="category">
+			<column length="250" name="category"><comment>产品类型</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

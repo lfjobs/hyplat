@@ -1,5 +1,8 @@
 package hy.ea.finance.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.Company;
@@ -51,6 +54,7 @@ import com.opensymphony.xwork2.ActionContext;
  * 
  */
 public class CashApplyBillsAction {
+	private static final Logger logger = LoggerFactory.getLogger(CashApplyBillsAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -515,7 +519,7 @@ public class CashApplyBillsAction {
 			baseBeanService.executeHqlsByParamsList(beans, null, null);
 		} catch (CloneNotSupportedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -574,7 +578,7 @@ public class CashApplyBillsAction {
 			baseBeanService.executeHqlsByParamsList(beans, null, null);
 		} catch (CloneNotSupportedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -718,7 +722,7 @@ public class CashApplyBillsAction {
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(list, null,
 					null);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		// Map<String,Object> map = new HashMap<String, Object>();
@@ -736,16 +740,16 @@ public class CashApplyBillsAction {
 		List<String> typelist = baseBeanService.getListBeanBySqlAndParams(
 				"select distinct g.typeid from dtgoodsmanage g", null);
 		String gruouid = "";
-		System.out.println("---------------------开始---------------------");
+		logger.info("---------------------开始---------------------");
 
 		if (grouplist.size() > 0) {
 			List<BaseBean> goolist = new ArrayList<BaseBean>();
 			for (int i = 0; i < grouplist.size(); i++) {
-				System.out.println(grouplist.get(i) + "开始");
+				logger.info("调试信息");
 				gruouid = grouplist.get(i);
 				String typeid = "";
 				for (int j = 0; j < typelist.size(); j++) {
-					System.out.println(typelist.get(j) + "开始");
+					logger.info("调试信息");
 					typeid = typelist.get(j);
 					String sql = "select g from GoodsManage g , Company c where c.companyID=g.companyID and c.groupCompanySn=? and g.typeID=?";
 					List<BaseBean> list = baseBeanService
@@ -760,18 +764,18 @@ public class CashApplyBillsAction {
 						DecimalFormat form = new DecimalFormat("000000");
 						goodsManage.setGoodsCoding(coding + "_"
 								+ form.format(k + 1));
-						System.out.println(goodsManage.getGoodsCoding());
+						logger.info("调试信息");
 						goolist.add(goodsManage);
 					}
 
-					System.out.println(typeid + "结束");
+					logger.info("{}{}", typeid, "结束");
 				}
-				System.out.println(gruouid + "结束");
+				logger.info("{}{}", gruouid, "结束");
 			}
 			baseBeanService.executeSqlsByParmsList(goolist, null, null);
 		}
 
-		System.out.println("---------------------结束---------------------");
+		logger.info("---------------------结束---------------------");
 		return "";
 	}
 	
@@ -813,7 +817,7 @@ public class CashApplyBillsAction {
 			JSONObject obj = JSONObject.fromObject(map);
 			result = obj.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return "success";

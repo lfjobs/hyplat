@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.nwa.tbank.bo">
+	<class name="TransConf" table="T_TRANS_CONF">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="confID" type="java.lang.String">
+			<column name="confID" length="50" />
+		</property>
+		<property name="enameSx" type="java.lang.String">
+			<column name="enameSx" length="10" />
+		</property>
+		<property name="enterpriseID" type="java.lang.String">
+			<column name="enterpriseID" length="32" />
+		</property>
+		<property name="transName" type="java.lang.String">
+			<column name="transName" length="20" />
+		</property>
+		<property name="wbatransCode" type="java.lang.String">
+			<column name="wbatransCode" length="10" />
+		</property>
+		<property name="btransCode" type="java.lang.String">
+			<column name="btransCode" length="10" />
+		</property>
+		<property name="ver" type="java.lang.String">
+			<column name="ver" length="50" />
+		</property>
+		<property name="verDesc" type="java.lang.String">
+			<column name="verDesc" length="10" />
+		</property>
+		<property name="isUsed" type="java.lang.String">
+			<column name="isUsed" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

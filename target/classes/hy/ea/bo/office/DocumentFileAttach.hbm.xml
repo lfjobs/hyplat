@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocumentFileAttach" table="DT_OA_DOCUMENT_FILEATTACH">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<many-to-one name="document" class="hy.ea.bo.office.Document" lazy="false" cascade="none" fetch="join">
+			<column name="documentKey" length="50" />
+		</many-to-one>
+		<property name="fileId" type="java.lang.String">
+			<column name="fileId" length="36" />
+		</property>
+		<property name="fileShowName" type="java.lang.String">
+			<column name="fileShowName" length="250" />
+		</property>
+		<property name="fileName" type="java.lang.String">
+			<column name="fileName" length="50" />
+		</property>
+		<property name="filePath" type="java.lang.String">
+			<column name="filePath" length="150" />
+		</property>
+		<property name="createtime" type="java.util.Date">
+			<column name="createtime" length="7" />
+		</property>
+		<property name="ext" type="java.lang.String">
+			<column name="ext" length="10" />
+		</property>
+		<property name="fileType" type="java.lang.String">
+			<column name="fileType" length="1" />
+		</property>
+		<property name="originType" type="java.lang.String">
+			<column name="originType" length="1" />
+		</property>
+		<property name="sourceType" type="java.lang.String">
+			<column name="sourceType" length="10" />
+		</property>
+		<property name="note" type="java.lang.String">
+			<column name="note" length="50" />
+		</property>
+		<property name="creator" type="java.lang.String">
+			<column name="creator" length="50" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="1" />
+		</property>	</class>
+</hibernate-mapping>

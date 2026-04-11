@@ -1,5 +1,8 @@
 package hy.ea.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -16,7 +19,7 @@ public class CheckChinese {
         System.out.print("输入文件地址：");
         String filePath = scanner.nextLine();
         StringBuffer stringBuffer = checkFileByLines(filePath);
-        System.out.println(stringBuffer.toString());
+        logger.info("调试信息");
         write(filePath, stringBuffer.toString());
     }
 
@@ -24,7 +27,7 @@ public class CheckChinese {
         File file = new File(fileName);
         BufferedReader reader = null;
         try {
-            // System.out.println("以行为单位读取文件内容，一次读一整行：");
+            // logger.info("调试信息");
             reader = new BufferedReader(new FileReader(file));
             String tempString = null;
             int line = 1;
@@ -53,7 +56,7 @@ public class CheckChinese {
             reader.close();
             return stringBuffer;
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } finally {
             if (reader != null) {
                 try {
@@ -124,7 +127,7 @@ public class CheckChinese {
             sReturn = sReturn.replace('Z', 'Z');
             sReturn = strReplace(sReturn, "‘", "'");
         } catch (Exception ex) {
-            ex.printStackTrace();
+            logger.error("操作异常", e);
         }
         return sReturn;
     }
@@ -165,10 +168,10 @@ public class CheckChinese {
             bufferWritter.write(string);
             bufferWritter.close();
 
-            System.out.println("---检查/替换完成!---");
+            logger.info("调试信息");
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 }

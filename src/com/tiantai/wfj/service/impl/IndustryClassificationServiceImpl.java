@@ -1,5 +1,8 @@
 package com.tiantai.wfj.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
 import com.tiantai.wfj.service.IndustryClassificationService;
@@ -281,7 +284,7 @@ public class IndustryClassificationServiceImpl implements IndustryClassification
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         }
     }
@@ -832,10 +835,10 @@ public class IndustryClassificationServiceImpl implements IndustryClassification
             out.write(buffer);
             out.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         }
 

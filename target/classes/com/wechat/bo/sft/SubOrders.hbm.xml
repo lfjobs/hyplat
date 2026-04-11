@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="SubOrders" table="dt_sft_SubOrders">
+		<comment>子单信息</comment>
+		<id length="50" name="sokey">
+			<column length="50" name="sokey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="soId">
+			<column length="50" name="soId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="sub_mchid">
+			<column length="30" name="sub_mchid" ><comment>业务主键</comment></column>
+		</property>
+		<property name="money">
+			<column  name="money" ><comment>金额 </comment></column>
+		</property>
+		<property name="out_trade_no">
+			<column length="50" name="out_trade_no" ><comment>子单商户订单号</comment></column>
+		</property>
+		<property name="attach">
+			<column  name="attach" ><comment>附加数据 </comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

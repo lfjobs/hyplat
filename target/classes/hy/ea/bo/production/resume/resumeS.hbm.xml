@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.production.resume">
+	<class name="ResumeS" table="dtresumeS">
+		<id length="50" name="resumeKey">
+			<column length="50" name="resumeKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="resumeID">
+			<column length="50" name="resumeID" not-null="true">
+				<comment>逻辑主键</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID">
+				<comment>人员id </comment>
+			</column>
+		</property>
+		<property name="evaluate">
+			<column length="2000" name="evaluate">
+				<comment>自我评价</comment>
+			</column>
+		</property>
+		<property name="privacy">
+			<column length="50" name="privacy">
+				<comment>是否隐私</comment>
+			</column>
+		</property>
+		<property name="ompletionDegree">
+			<column length="50" name="ompletionDegree">
+				<comment>自我评价的完成度</comment>
+			</column>
+		</property>
+		<property name="creationTime">
+			<column name="creationTime">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="isDefault">
+			<column name="isDefault">
+				<comment>01默认</comment>
+			</column>
+		</property>
+		<property name="resumeName">
+			<column name="resumeName">
+				<comment>简历名称</comment>
+			</column>
+		</property>
+		<property name="isNon">
+			<column name="isNon">
+				<comment>简历是否发布</comment>
+			</column>
+		</property>
+		<property name="state">
+			<column name="state">
+				<comment>状态00 草稿未编辑状态</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

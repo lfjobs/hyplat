@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="PersonalArchiveBill" table="dt_inv_pa">
+		<id length="50" name="pabillKey">
+			<column length="50" name="pabillKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="pabillID">
+			<column length="50" name="pabillID" />
+		</property>
+		<property name="groupCompanySn">
+			<column length="50" name="groupCompanySn" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="departmentID">
+			<column length="50" name="departmentID" />
+		</property>
+		
+		<property  name="companyBankNum">
+			<column length="250" name="companyBankNum" />
+		</property>
+		<property  name="billStatus">
+			<column length="50" name="billStatus" />
+		</property>
+		
+		<property  name="cstaffID">
+			<column length="50" name="cstaffID" />
+		</property>
+		<property  name="cstaffName">
+			<column length="250" name="cstaffName" />
+		</property>
+		<property  name="cstaffRelationship">
+			<column length="50" name="cstaffRelationship" />
+		</property>
+		<property  name="userAccountNum">
+			<column length="50" name="userAccountNum" />
+		</property>
+		
+		<property  name="ccompanyID">
+			<column length="50" name="ccompanyID" />
+		</property>
+		<property  name="ccompanyName">
+			<column length="250" name="ccompanyName" />
+		</property>
+		<property  name="ccompanyRelationship">
+			<column length="250" name="ccompanyRelationship" />
+		</property>
+		<property  name="ccompanyTel">
+			<column length="250" name="ccompanyTel" />
+		</property>
+		<property  name="accountNum">
+			<column length="50" name="accountNum" />
+		</property>
+		
+		<property  name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property  name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+		
+		<property  name="staffsID">
+			<column length="50" name="staffsID" />
+		</property>
+		<property  name="staffsName">
+			<column length="250" name="staffsName" />
+		</property>
+		
+		<property  name="billsType">
+			<column length="250" name="billsType" />
+		</property>
+		<property  name="journalNum">
+			<column length="250" name="journalNum" />
+		</property>
+		<property  name="billsDate">
+			<column length="250" name="billsDate" />
+		</property>
+		
+		<property  name="billStaffID">
+			<column length="50" name="billStaffID" />
+		</property>
+		<property  name="billStaffName">
+			<column length="250" name="billStaffName" />
+		</property>
+		
+		<property name="accessoriesUrl">
+			<column length="500" name="accessoriesUrl" />
+		</property>
+	</class>
+</hibernate-mapping>

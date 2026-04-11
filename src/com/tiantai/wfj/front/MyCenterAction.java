@@ -43,6 +43,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class MyCenterAction {
+	private static final Logger logger = LoggerFactory.getLogger(MyCenterAction.class);
 	private final Logger logger = LoggerFactory.getLogger(MyCenterAction.class);
 	@Resource
 	private EarthIndexService earthIndexService;
@@ -88,15 +89,15 @@ public class MyCenterAction {
 //			String url = request.getRequestURL()+"";
 //			session.setAttribute("url", url);
 //			return "login";
-			System.out.println("user"+user);
+			logger.info("调试信息");
 			TEshopCusCom tc = myCenterService.getCusCom(user);
 			if(tc!=null){
-				System.out.println("sccid"+tc.getSccId());
+				logger.info("调试信息");
 			}
 		  TEshopCustomer customer = myCenterService.getCustomer(user);
 
 			if(customer!=null){
-				System.out.println("customer"+tc.getStaffid());
+				logger.info("调试信息");
 			}
 	     sw.setObject(session, SessionWrap.KEY_CUSTOMER, customer);
 	         sw.setObject(session, SessionWrap.KEY_SHOPCUSCOM, tc);
@@ -107,7 +108,7 @@ public class MyCenterAction {
 
 		if(tc!=null){
 			
-			//System.out.println(tc.getAccount());
+			//logger.info("调试信息");
 			Object obj = myCenterService.getUserInfo(tc.getAccount());
 			request.setAttribute("userinfo", obj);
 			//查询推荐信息
@@ -373,7 +374,7 @@ public class MyCenterAction {
 				SessionWrap.KEY_CUSTOMER);
 
 		if(customer!=null){
-			//System.out.println(customer.getAccount());
+			//logger.info("调试信息");
 			Object[] obj =(Object[]) myCenterService.getUserInfo(customer.getAccount());
 			request.setAttribute("rzstatus", ((obj[4] + "").isEmpty())?"wrz":"rz");
 		}
@@ -410,8 +411,8 @@ public class MyCenterAction {
 			JSONObject js=JSONObject.fromObject(userInfoMap);
 			result=js.toString();
 			//Date date2 = new Date();
-			//System.out.println("处理照片使用的时间"+(date1.getTime()-date.getTime()));
-			//System.out.println("调用使用的时间"+(date2.getTime()-date1.getTime()));
+			//logger.info("调试信息");
+			//logger.info("调试信息");
 		}catch (Exception e){
 			//logger.info(e.getMessage());
 		}

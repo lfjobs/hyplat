@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
@@ -39,6 +42,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class StaffMeetingAction {
+	private static final Logger logger = LoggerFactory.getLogger(StaffMeetingAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -280,7 +284,7 @@ public class StaffMeetingAction {
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, null,
 					null);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "succ";
 	}
@@ -317,7 +321,7 @@ public class StaffMeetingAction {
  
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "succ";
 	}
@@ -342,7 +346,7 @@ public class StaffMeetingAction {
 					photo, account.getCompanyID(), "/office/meeting/"
 							+ Utilities.getDateString(new Date(),
 									"yyyy-MM-dd"));
-			System.out.println(photoPath);
+			logger.info("值：{}", photoPath);
 			sm.setRecordfile(photoPath);
 		}
 		baseBeanService.update(sm);
@@ -482,7 +486,7 @@ public class StaffMeetingAction {
 			baseBeanService.update(smp);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "succ";
@@ -651,7 +655,7 @@ public class StaffMeetingAction {
 
 		} catch (IOException e) {
 
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 	}

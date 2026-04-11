@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.PrizeActivityDesc" table="dt_prize_activityDesc" schema="HYPLAT">
+        <comment>活动说明图片</comment>
+        <id name="activityDescKey">
+            <column name="activityDescKey" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="activityDescId">
+            <column name="activityDescId" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="activityDescImage">
+            <column name="activityDescImage" sql-type="varchar2(200)" length="200" not-null="true">
+                <comment>活动图片说明路径</comment>
+            </column>
+        </property>
+        <property name="activityId">
+            <column name="activityId" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>活动Id</comment>
+            </column>
+        </property>
+        <property name="activityDescDate">
+            <column name="activityDescDate" sql-type="timestamp(6)" not-null="true">
+                <comment>生成时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

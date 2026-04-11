@@ -1,5 +1,8 @@
 package hy.ea.finance.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -59,6 +62,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class ArchivesAction {
+	private static final Logger logger = LoggerFactory.getLogger(ArchivesAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -384,7 +388,7 @@ public class ArchivesAction {
 					cBills = (CashierBills)bills.cloneCashierBills();
 				} catch (CloneNotSupportedException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 				cBills.setCashierBillsID(serverService.getServerID("cashierTally"));
 				cashid=cBills.getCashierBillsID();
@@ -401,7 +405,7 @@ public class ArchivesAction {
 						goodsBills2=(GoodsBills)goodsBills.cloneGoodsBills();
 					} catch (CloneNotSupportedException e) {
 						// TODO Auto-generated catch block
-						e.printStackTrace();
+						logger.error("操作异常", e);
 					}
 					goodsBills2.setCashierBillsID(cBills.getCashierBillsID());
 					goodsBills2.setGoodsBillsID(serverService.getServerID("goodsbills"));
@@ -415,7 +419,7 @@ public class ArchivesAction {
 					billCheck2=(BillCheck)billCheck.cloneBillCheck();
 					} catch (CloneNotSupportedException e) {
 						// TODO Auto-generated catch block
-						e.printStackTrace();
+						logger.error("操作异常", e);
 					}
 					billCheck2.setCheckid(serverService.getServerID("billcheck"));
 					billCheck2.setCheckkey(null);
@@ -433,7 +437,7 @@ public class ArchivesAction {
 					billCheck3=(BillCheck)billCheck2.cloneBillCheck();
 				} catch (CloneNotSupportedException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 				billCheck3.setCheckid(serverService.getServerID("billcheck"));
 				billCheck3.setCheckkey(null);
@@ -734,7 +738,7 @@ public class ArchivesAction {
 		 */
 		long startTime=System.currentTimeMillis();
 		long endTime;
-		System.out.println("----------------开始-----------");	
+		logger.info("----------------开始-----------");	
 		int count=0;
 		/**
 		 * 标识
@@ -768,13 +772,13 @@ public class ArchivesAction {
 						historyRelation.setDeparchivesNum(String.valueOf(j+1));
 						beans.put(historyCashierBills.getCashierBillsID(), historyRelation);
 						count++;
-						System.out.println("------部门分组    第  "+count+ " 次  循环---------");
+						logger.info("调试信息");
 					}	
 				}
 				
 			}
 		}
-		System.out.println("-------------------------------------------------------部门分组循环结束---------------------------------------------------");
+		logger.info("-------------------------------------------------------部门分组循环结束---------------------------------------------------");
 		/**
 		 * 日期，公司排序
 		 */
@@ -794,7 +798,7 @@ public class ArchivesAction {
 						historyRelation.setArchivesNum(String.valueOf(j+1));
 						baseBeansList.add(historyRelation);
 						count++;
-						System.out.println("------公司分组    第  "+count+ " 次  循环---------");
+						logger.info("调试信息");
 					}	
 				}
 				
@@ -803,8 +807,8 @@ public class ArchivesAction {
 		}
 		baseBeanService.saveBeansListAndexecuteHqlsByParams(baseBeansList, null, null);
 		endTime=System.currentTimeMillis();
-		System.out.println("----------------结束-----------");	
-		System.out.println("------------------用时  "   +(endTime-startTime)/1000+   " 秒");
+		logger.info("----------------结束-----------");	
+		logger.info("调试信息");
 		JSONObject  jsonArray=new JSONObject();
 		jsonArray.accumulate("result", result1);
 		result = jsonArray.toString();//ea/archivest/sajax_ea_updateHistoryRelation.jspa
@@ -837,7 +841,7 @@ public class ArchivesAction {
 		 */
 		long startTime=System.currentTimeMillis();
 		long endTime;
-		System.out.println("----------------开始-----------");	
+		logger.info("----------------开始-----------");	
 		int count=0;
 		int count1=0;
 		/**
@@ -894,7 +898,7 @@ public class ArchivesAction {
 		if(beansGoodsBills!=null){
 			for (Object obj : beansGoodsBills) {
 				count++;
-				System.out.println("----------------GoodsCashierBillsVO 统计学员数量 执行第 "+count+" 次-----------");
+				logger.info("调试信息");
 				Object[]  objs=(Object[])obj;
 				double sumMoney = 0;// 初始化当前金额
 
@@ -903,7 +907,7 @@ public class ArchivesAction {
 				if(ws.containsKey(objs[1])&&ws.get(objs[1])!=null&&ws.get(objs[1]).size()>0){
 					for (Object[] objsGoods : ws.get(objs[1])) {
 						count0++;
-						System.out.println("----------------GoodsCashierBillsVO 统计每位学员收费信息  执行第 "+count0+" 次-----------");
+						logger.info("调试信息");
 						
 						
 						DtDrivingAllInformation dtDrivingAllInformation=new DtDrivingAllInformation();	
@@ -930,7 +934,7 @@ public class ArchivesAction {
 					}
 				}
 				count1+=count0;
-				System.out.println("----------------GoodsCashierBillsVO ----------------------------------统计所有学员收费信息  执行第 "+count1+" 次-----------");
+				logger.info("调试信息");
 				//--开始--根据学员缴费金额判断 成交与预定客户类型  金额大于100小于2000为预定客户  大于等于2000为成交客户---//
 				DrivingDeal  beanDrivingDeal=new DrivingDeal();
 				beanDrivingDeal.setDrivingDealid(serverService
@@ -989,12 +993,12 @@ public class ArchivesAction {
 			//--结束--根据根据是否为成交客户    同步生成学员培训信息表数据---//
 		}
 		//-------结束---------//
-		System.out.println("---------  结束-------GoodsCashierBillsVO 统计所有学员收费信息  总数为 "+count1+" 次-----------");
-		System.out.println("---------- 结束------GoodsCashierBillsVO 统计所有学员收费信息  总数为 "+count+" 次-----------");
+		logger.info("调试信息");
+		logger.info("调试信息");
 		baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, null, null);
 		endTime=System.currentTimeMillis();
-		System.out.println("----------------结束-----------");	
-		System.out.println("------------------用时  "   +(endTime-startTime)/1000+   " 秒");
+		logger.info("----------------结束-----------");	
+		logger.info("调试信息");
 		JSONObject  jsonArray=new JSONObject();
 		jsonArray.accumulate("result", result1);
 		result = jsonArray.toString();//ea/archivest/sajax_ea_updateHistoryRelation.jspa
@@ -1129,7 +1133,7 @@ public class ArchivesAction {
 					null, null);
 		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}

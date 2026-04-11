@@ -1,5 +1,8 @@
 package mobile.tiantai.android.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.hst.App;
@@ -192,7 +195,7 @@ public class VideoConfreServiceImpl implements VideoConfreService {
 
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 
 		}
 
@@ -275,7 +278,7 @@ public class VideoConfreServiceImpl implements VideoConfreService {
 
 				code = jsonObject.getString("code").equals("0")?"0000":jsonObject.getString("code");
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 
 			}
 		}
@@ -301,7 +304,7 @@ public class VideoConfreServiceImpl implements VideoConfreService {
 			res = client.invoke(method, object);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return res[0].toString();
@@ -707,7 +710,7 @@ public class VideoConfreServiceImpl implements VideoConfreService {
 					new String[] { hqldelete },
 					new Object[] { staffMeeting.getMeetingID() });
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 	}
@@ -740,7 +743,7 @@ public class VideoConfreServiceImpl implements VideoConfreService {
 			msage.setMessage(content);
 			msage.sendMsg("【微分金平台】");
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		List<String> slist = new ArrayList<String>();// 极光推送设备号
@@ -806,7 +809,7 @@ public class VideoConfreServiceImpl implements VideoConfreService {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		beans.add(staffMeeting);

@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Company;
@@ -43,6 +46,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class StampLogAction {
+	private static final Logger logger = LoggerFactory.getLogger(StampLogAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -265,7 +269,7 @@ public class StampLogAction {
 			stampLogs.setAddType("自动");
 			baseBeanService.save(stampLogs);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -302,7 +306,7 @@ public class StampLogAction {
 				.getPageNumber() : 1), (pageNumber == 0 ? 5 : pageNumber), hql,
 				params);
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "formallist";
@@ -332,7 +336,7 @@ public class StampLogAction {
 					.getPageNumber() : 1), (pageNumber == 0 ? 5 : pageNumber),
 					hql, params);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 

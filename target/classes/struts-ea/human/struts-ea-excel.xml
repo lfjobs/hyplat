@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="platform-default" extends="ea-ntoken" namespace="/ea/excel">
+		<action name="ea_*" class="hy.ea.human.action.ExcelAction"  method="{1}">
+			<result name="getBussinessInfoExcelInputStream" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="bussiness.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="getLeaveInfoExcelInputStream" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="leave.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="getGooutInfoExcelInputStream" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="businesstrip.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			
+		</action>
+		
+			
+	</package>
+</struts>

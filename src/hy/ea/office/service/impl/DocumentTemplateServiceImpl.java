@@ -1,5 +1,8 @@
 package hy.ea.office.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.office.DocumentTemplate;
 import hy.ea.office.service.DocumentTemplateService;
 
@@ -101,7 +104,7 @@ public class DocumentTemplateServiceImpl implements DocumentTemplateService {
 				file.delete();
 			}
 		} catch (Exception e) {
-			System.out.println("删除文件夹出错");
+			logger.info("删除文件夹出错");
 		}
 
 	}
@@ -114,7 +117,7 @@ public class DocumentTemplateServiceImpl implements DocumentTemplateService {
 			baseBeanDao.saveBeansListAndexecuteHqlsByParams(null,
 					new String[] { delhql }, params);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 	}

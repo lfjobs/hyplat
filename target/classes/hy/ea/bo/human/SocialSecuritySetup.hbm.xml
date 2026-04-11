@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="SocialSecuritySetup" table="DT_SOCIAL_SECURITY_SETUP" schema="HYPLAT" dynamic-insert="true">
+	<comment>社保设置</comment>
+		<id length="50" name="socialSecuritySetupId" type="java.lang.String">
+			<column length="50" name="SOCIAL_SECURITY_SETUP_ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="COMPANY_ID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="deductionType" type="java.lang.String">
+			<column name="DEDUCTION_TYPE" length="50">
+				<comment>扣社保方式</comment>
+			</column>
+		</property>
+		<property name="socialSecurityLowLevel" type="java.lang.String">
+			<column name="SOCIAL_SECURITY_LOW_LEVEL" length="50">
+			<comment>社保最低基数</comment>
+			</column>
+		</property>
+		<property name="socialSecurityLevel" type="java.lang.String">
+			<column length="50" name="SOCIAL_SECURITY_LEVEL" >
+			<comment>社保缴纳基数</comment>
+			</column>
+		</property>
+		<property name="elderlyCareRate" type="java.lang.String">
+			<column length="50" name="ELDERLY_CARE_RATE" >
+				<comment>养老比率</comment>
+			</column>
+		</property>
+		<property name="medicalRate" type="java.lang.String">
+			<column length="50" name="MEDICAL_RATE" >
+				<comment>医疗比率</comment>
+			</column>
+		</property>
+		<property name="unemploymentRete" type="java.lang.String">
+			<column length="50" name="UNEMPLOYMENT_RATE" >
+				<comment>失业金比率</comment>
+			</column>
+		</property>
+		<property name="elderlyCareDiscountMoney" type="java.lang.String">
+			<column length="50" name="ELDERLY_CARE_DISCOUNT_MONEY" >
+				<comment>养老扣费</comment>
+			</column>
+		</property>
+		<property name="medicalDiscountMoney" type="java.lang.String">
+			<column length="50" name="MEDICAL_DISCOUNT_MONEY" >
+				<comment>医疗扣费</comment>
+			</column>
+		</property>
+		<property name="unemploymentDiscountMoney" type="java.lang.String">
+			<column name="UNEMPLOYMENT_DISCOUNT_MONEY" length="50">
+				<comment>失业金扣费</comment>
+			</column>
+		</property>
+		<property name="setupDate" type="java.util.Date">
+			<column name="SETUP_DATE">
+				<comment>设置时间</comment>
+			</column>
+		</property>
+		<property name="setStaffId" type="java.lang.String">
+			<column name="SET_STAFF_ID" length="50">
+				<comment>设置人ID</comment>
+			</column>
+		</property>
+
+		<property name="referenceGuaranteeSalary" type="java.lang.String">
+			<column name="REFERENCE_GUARANTEE_SALARY" length="50">
+				<comment>引用保障工资:Y/N</comment>
+			</column>
+		</property>
+		<property name="referenceWelfareSalary" type="java.lang.String">
+			<column name="REFERENCE_WELFARE_SALARY" length="50">
+				<comment>引用福利工资:Y/N</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>
+

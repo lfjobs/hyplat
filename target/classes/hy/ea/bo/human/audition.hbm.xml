@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="Audition" table="dtAudition">
+		<id length="50" name="auditionKey">
+			<column length="50" name="auditionKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="auditionID">
+			<column length="50" name="auditionID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="auditionDirection">
+			<column length="250" name="auditionDirection"/>
+		</property>
+		<property name="auditionPost">
+			<column length="250" name="auditionPost" />
+		</property>
+		<property  name="experience">
+			<column length="250" name="experience" />
+		</property>
+		
+		<property  name="place">
+			<column length="250" name="place" />
+		</property>
+		<property  name="examiner">
+			<column length="250" name="examiner" />
+		</property>
+		<property  name="auditionDate">
+			<column name="auditionDate" />
+		</property>
+		<property  name="auditionDept">
+			<column length="250" name="auditionDept" />
+		</property>
+		<property  name="becomesDate">
+			<column name="becomesDate" />
+		</property>
+		<property  name="regisDate">
+			<column name="regisDate" />
+		</property>
+		<property  name="commentionb">
+			<column length="256" name="commentionb" />
+		</property>
+		<property  name="commentionk">
+			<column length="256" name="commentionk" />
+		</property>
+		<property  name="commention">
+			<column length="256" name="commention" />
+		</property>
+		<property  name="bstID">
+			<column length="50" name="bstID" />
+		</property>
+		<property  name="mstID">
+			<column length="50" name="mstID" />
+		</property>
+		<property  name="bstName">
+			<column length="50" name="bstName" />
+		</property>
+		<property  name="mstName">
+			<column length="50" name="mstName" />
+		</property>
+		<property  name="auditionPointb">
+			<column length="10" name="auditionPointb" />
+		</property>
+		<property  name="auditionPointk">
+			<column length="10" name="auditionPointk" />
+		</property>
+		<property  name="auditionPoint">
+			<column length="250" name="auditionPoint" />
+		</property>
+		<property  name="registerDate">
+			<column  name="registerDate" />
+		</property>
+
+		<property  name="bsDate">
+			<column  name="bsDate" />
+		</property>
+		<property  name="bsstaffID">
+			<column length="50" name="bsstaffID" />
+		</property>
+		<property  name="msDate">
+			<column  name="msDate" />
+		</property>
+		<property  name="mspdDate">
+			<column  name="mspdDate" />
+		</property>
+		<property  name="mspdStaffID">
+			<column length="50" name="mspdStaffID" />
+		</property>
+		<property  name="bsState">
+			<column length="2" name="bsState" />
+		</property>
+		<property  name="ksState">
+			<column length="2" name="ksState" />
+		</property>
+
+		<property  name="zpState">
+			<column length="2" name="zpState" />
+		</property>
+		<property  name="ztState">
+			<column length="2" name="ztState" />
+		</property>
+		<property  name="zpDate">
+			<column  name="zpDate" />
+		</property>
+		<property  name="zpStaffID">
+			<column length="50" name="zpStaffID" />
+		</property>
+		<property  name="auditionPlace">
+			<column length="250" name="auditionPlace" />
+		</property>
+		<property  name="remark">
+			<column length="256" name="remark" />
+		</property>
+		<property  name="status">
+			<column length="2" name="status" />
+		</property>
+		<property  name="staffCategoryID">
+			<column length="256" name="staffCategoryID" />
+		</property>
+		<property  name="categoryName">
+			<column length="256" name="categoryName" />
+		</property>
+		<property name="contactor">
+			<column length="50" name="contactor"><comment>联系人</comment></column>
+		</property>
+		<property name="contactTel">
+			<column length="13" name="contactTel"><comment>联系人电话</comment></column>
+		</property>
+		<property name="tpId">
+			<column length="50" name="tpId"><comment>ID</comment></column>
+		</property>
+		<property name="bdcontactor">
+			<column length="50" name="bdcontactor"><comment>报到联系人</comment></column>
+		</property>
+		<property name="bdcontactortel">
+			<column length="13" name="bdcontactortel"><comment>报到联系人电话</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.recruit">
+	<class name="RecruitInfo" table="dtRecruitInfo">
+		<id length="50" name="rikey">
+			<column length="50" name="rikey" />
+			<generator class="uuid" />
+		</id>
+		<property name="riId">
+			<column length="50" name="riId"><comment>ID</comment></column>
+		</property>
+		<property name="workCity">
+			<column length="30" name="workCity"><comment>工作地点(默认：招聘公司所在城市)</comment></column>
+		</property>
+		<property name="workPlace">
+			<column  name="workPlace"><comment>工作详细地址(默认：招聘公司详细地址)</comment></column>
+		</property>
+		<property name="workYears">
+			<column length="10" name="workYears"><comment>工作年限要求</comment></column>
+		</property>
+		<property name="education">
+			<column length="50"  name="education"><comment>学历要求</comment></column>
+		</property>
+		<property name="partorfull">
+			<column  length="2"  name="partorfull"><comment>全职还是兼职 全职：  兼职</comment></column>
+		</property>
+		<property name="salary">
+			<column length="50" name="salary"><comment>薪资条件 ，具体金额 或者 面议</comment></column>
+		</property>
+		<property name="status">
+			<column length="2" name="status"><comment>发布状态00未发(草稿)  01：已发布 09:已删除</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>责任人，发布人ID</comment></column>
+		</property>
+		<property name="staffName">
+			<column length="50" name="staffName"><comment>发布人name</comment></column>
+		</property>
+		<property name="publishDate">
+			<column  name="publishDate"><comment>发布时间</comment></column>
+		</property>
+		<property name="codeID">
+			<column length="50" name="codeID"><comment>职位ID，即：产品ppID;</comment></column>
+		</property>
+		<property name="jobTitle">
+			<column  length="50" name="jobTitle"><comment>职位名称 </comment></column>
+		</property>
+		<property name="positionName">
+			<column  length="50" name="positionName"><comment>职位类别 </comment></column>
+		</property>
+		<property name="positionCode">
+			<column  length="50" name="positionCode"><comment>职位类别code </comment></column>
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID"><comment>往来单位ID</comment></column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyId"><comment>公司ID</comment></column>
+		</property>
+		<property name="companyName">
+			<column length="50" name="companyName"><comment>公司名称</comment></column>
+		</property>
+		<property name="personNumber">
+			<column length="50" name="personNumber"><comment>职位人数</comment></column>
+		</property>
+		<property name="remark">
+			<column length="500" name="remark"><comment>备注</comment></column>
+		</property>
+		<property name="createDate">
+			<column  name="createDate"><comment>创建时间</comment></column>
+		</property>
+		<property name="jobRequire">
+			<column length="1000" name="jobRequire"><comment>任职要求</comment></column>
+		</property>
+		<property name="industry">
+			<column length="50" name="industry"><comment>行业</comment></column>
+		</property>
+		<property name="offlineDate">
+			<column  name="offlineDate"><comment>下线时间</comment></column>
+		</property>
+		<property name="offlineID">
+			<column length="500" name="offlineID"><comment>下线操作人</comment></column>
+		</property>
+		<property name="offlineName">
+			<column length="500" name="offlineName"><comment>下线操作人</comment></column>
+		</property>
+
+
+	</class>
+</hibernate-mapping>

@@ -1,5 +1,8 @@
 package hy.ea.office.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.human.Staff;
 import hy.ea.bo.office.DocComplaint;
@@ -265,7 +268,7 @@ public class ExtralFlowServiceImpl implements ExtralFlowService {
 
 			return retDocList;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 
@@ -327,7 +330,7 @@ public class ExtralFlowServiceImpl implements ExtralFlowService {
 					}
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		} else if (type.equalsIgnoreCase("seal")) {
 			for (HistoryTask ht : hisTaskList) {
@@ -538,7 +541,7 @@ public class ExtralFlowServiceImpl implements ExtralFlowService {
 			return retDocList;
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 
@@ -613,7 +616,7 @@ public class ExtralFlowServiceImpl implements ExtralFlowService {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;
@@ -665,7 +668,7 @@ public class ExtralFlowServiceImpl implements ExtralFlowService {
 				mobileMessage.setMobiles(t);
 				reStr = mobileMessage.sendMsg();
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		return reStr;

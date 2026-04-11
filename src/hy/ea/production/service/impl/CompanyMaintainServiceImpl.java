@@ -1,5 +1,8 @@
 package hy.ea.production.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -73,7 +76,7 @@ public class CompanyMaintainServiceImpl implements CompanyMaintainService {
 		try {
 			contentToFileService.saveContent(id, content, path);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "/upload_files/goodDetail/" + id
 				+ UploadContentToFileService.suffix;
@@ -95,7 +98,7 @@ public class CompanyMaintainServiceImpl implements CompanyMaintainService {
 			return contentToFileService.getContent(path);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return "";
 		}
 	}
@@ -190,9 +193,9 @@ public class CompanyMaintainServiceImpl implements CompanyMaintainService {
 			out.write(buffer);
 			out.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return picpath;
 	}

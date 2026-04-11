@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="Track" table="dttrack">
+		<id length="50" name="trackKey">
+			<column length="50" name="trackKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="trackID">
+			<column length="50" name="trackID" not-null="true"/>
+		</property>
+		<property name="trackrelationID">
+			<column length="50" name="trackrelationID" not-null="true"/>
+		</property>
+		<property name="inputDate">
+			<column sql-type="Date" name="inputDate"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="trackStartdate">
+			<column sql-type="Date" name="trackStartdate"/>
+		</property>
+		<property name="tarckEnddate">
+			<column sql-type="Date" name="tarckEnddate"/>
+		</property>
+		<property name="workAddr">
+			<column length="250" name="workAddr" />
+		</property>
+		<property  name="serviceMode">
+			<column length="50" name="serviceMode" />
+		</property>
+		<property  name="trackContent">
+			<column length="500" name="trackContent" />
+		</property>
+		<property  name="trackReason">
+			<column length="500" name="trackReason" />
+		</property>
+		<property  name="handleStatus">
+			<column length="2" name="handleStatus" />
+		</property>
+	</class>
+</hibernate-mapping>

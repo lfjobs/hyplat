@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.InvestDeviceBind">
+	<class name="DeviceBind" table="dt_deviceBind" schema="HYPLAT" dynamic-insert="true">
+	<comment>投资设备绑定表</comment>
+		<id length="50" name="dbKey" type="java.lang.String">
+			<column length="50" name="dbKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="dbId" type="java.lang.String">
+			<column length="50" name="dbId" >
+			</column>
+		</property>
+		<property name="dbcarNumber" type="java.lang.String">
+			<column length="50" name="dbcarNumber" >
+			<comment>车牌号</comment>
+			</column>
+		</property>	
+		<property name="dbGoodsId" type="java.lang.String">
+			<column length="100" name="dbGoodsId" >
+			<comment>货物外键(dtgoodsmanage)</comment>
+			</column>
+		</property>		
+		<property name="dbCarId" type="java.lang.String">
+			<column length="50" name="dbCarId" >
+			<comment>车辆外键(dt_Car_CarInformation)</comment>
+			</column>
+		</property>	
+		<property name="dbStaffId" type="java.lang.String">
+			<column length="50" name="dbStaffId" >
+			<comment>人员外键(dt_hr_Staff)</comment>
+			</column>
+		</property>	
+		<property name="dbSccId" type="java.lang.String">
+			<column length="100" name="dbSccId" >
+			<comment>微分金账号外键(t_Eshop_Cuscom)</comment>
+			</column>
+		</property>
+		<property name="dbDate" type="java.util.Date">
+			<column length="100"  name="dbDate" sql-type="DATE">
+			<comment>添加时间</comment>
+			</column>
+		</property>
+		<property name="dbModifyDate" type="java.util.Date">
+			<column length="100"  name="dbModifyDate" sql-type="DATE">
+			<comment>修改时间</comment>
+			</column>
+		</property>		
+		<property name="dbStatus" type="java.lang.String">
+			<column length="100" name="dbStatus" >
+			<comment>停用启用状态1.启用，0.停用</comment>
+			</column>
+		</property>	
+		<property name="dbtzType" type="java.lang.String">
+			<column length="100" name="dbtzType" >
+			<comment>投资类型 01.教练车，02.单车</comment>
+			</column>
+		</property>		
+	</class>
+</hibernate-mapping>

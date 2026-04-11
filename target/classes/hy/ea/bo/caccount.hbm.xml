@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="CAccount"  table="dtCAccount">
+		<id length="50" name="accountKey">
+			<column length="50" name="accountKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="accountID">
+			<column length="50" name="accountID" not-null="true" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true" />
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID" not-null="true" />
+		</property>
+		<property  name="accountName">
+			<column length="250" name="accountName" not-null="true" />
+		</property>
+		<property  name="accountEmail">
+			<column length="250" name="accountEmail" not-null="true" />
+		</property>
+		<property  name="accountPassword">
+			<column length="250" name="accountPassword" not-null="true" />
+		</property>
+		<property  name="roleID">
+			<column length="50" name="roleID" not-null="true" />
+		</property>
+		<property  name="accountStatus">
+			<column length="2" name="accountStatus" not-null="true" />
+		</property>
+		<property  name="accountOnLine">
+			<column length="2" name="accountOnLine" />
+		</property>
+		<property  name="loginGuid">
+			<column length="50" name="loginGuid" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,5 +1,8 @@
 package hy.ea.invoicing.action.voucher;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.invoicing.voucher.DtInvCcbsgl;
@@ -38,6 +41,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class DebtToAssetsAction{
+	private static final Logger logger = LoggerFactory.getLogger(DebtToAssetsAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -328,7 +332,7 @@ public class DebtToAssetsAction{
 	 * @return
 	 */
 	public String isRepeatBySeq() {
-     System.out.println(3333333);
+     logger.info("值：{}", 3333333);
 		CAccount account = (CAccount) ActionContext.getContext().getSession()
 				.get("account");
 		String re = "suc";
@@ -343,7 +347,7 @@ public class DebtToAssetsAction{
 		String actionid="";
 		 List<String> listcg= new ArrayList<String>();
 		if (assetsdebtmap != null) {
-			System.out.println("ffffffffff");
+			logger.info("ffffffffff");
 			//List<String> list = new ArrayList<String>();
 			List<String> listtp = new ArrayList<String>();
 			List<BaseBean> listps = new ArrayList<BaseBean>();
@@ -374,9 +378,9 @@ public class DebtToAssetsAction{
 				
 				listcg.add(inv.getCcId());
 				if(inv.getCglAtion()!=null&&inv.getCglAtion().equals("Y")){
-					System.out.println(inv.getCglAtion());
+					logger.info("调试信息");
 					cl++;
-					System.out.println(cl);
+					logger.info("值：{}", cl);
 					actionid = inv.getCcId();
 					if(cl>1){
 						re="cl";
@@ -508,7 +512,7 @@ public class DebtToAssetsAction{
 		}
 
 		Map<String, Object> map = new HashMap<String, Object>();
-		System.out.println(re);
+		logger.info("值：{}", re);
 		map.put("result", re);
 		JSONObject jo = JSONObject.fromObject(map);
 		this.result = jo.toString();
@@ -649,7 +653,7 @@ public class DebtToAssetsAction{
 		baseBeanService.executeHqlsByParamsList(null, hqls, paramsList);
 		}catch(Exception e){
 			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -668,7 +672,7 @@ public class DebtToAssetsAction{
 		baseBeanService.deleteBeanByKey(DtInvCcpbsgl.class, fs.getCcpKey());
 		}catch(Exception e){
 			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}

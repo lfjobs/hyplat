@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<include file="struts-ea/ccompany/struts-ea-ccaccount.xml" />
+	<include file="struts-ea/ccompany/struts-ea-cccode.xml" />
+	<include file="struts-ea/ccompany/struts-ea-ccompany.xml" />
+	<include file="struts-ea/ccompany/struts-ea-cdepotmanage.xml" />
+	<include file="struts-ea/ccompany/struts-ea-cgoodsmanage.xml" />
+	<include file="struts-ea/ccompany/struts-ea-ccrole.xml" />
+	<include file="struts-ea/ccompany/struts-ea-ccroleallot.xml" />
+	<include file="struts-ea/ccompany/struts-ea-ccorganization.xml" />
+	<include file="struts-ea/ccompany/struts-ea-cdepotperson.xml" />
+	<include file="struts-ea/ccompany/struts-ea-cclogbook.xml" />
+	<include file="struts-ea/ccompany/struts-ea-scheduledproduct.xml"></include>
+	<!-- 使用帮助文档 -->
+	<include file="struts-ea/ccompany/struts_ea_hdocument.xml"></include>
+	<!-- 职务职责 -->
+	<include file="struts-ea/ccompany/struts-ea-organizationdesc.xml"></include>
+</struts>

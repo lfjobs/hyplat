@@ -1,5 +1,8 @@
 package hy.ea.finance.action.BenDis;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.finance.CashierBills;
 import hy.ea.bo.finance.BenDis.PhoneBill;
 import hy.ea.finance.service.transferService;
@@ -30,6 +33,7 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
  *
  */
 public class ghs_phoneBillAction {
+	private static final Logger logger = LoggerFactory.getLogger(ghs_phoneBillAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -92,7 +96,7 @@ public class ghs_phoneBillAction {
 					(null != pageForm ? pageForm.getPageNumber() : 1),
 					pageNumber == 0 ? 7 : pageNumber, dc);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		StringBuffer goodhql=new StringBuffer();
 		goodhql.append("select g.goodsbillsid,g.goodsbillskey," );

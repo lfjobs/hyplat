@@ -217,7 +217,7 @@ public class StockAndroidAction extends ActionSupport {
             stockService.saveGoods(file,fileFileName,inv);
         } catch (Exception e) {
             s = "0";
-            e.printStackTrace();
+            logger.error("操作异常", e);
             logger.error("保存失败");
         }
             JSONObject json = new JSONObject();
@@ -248,7 +248,7 @@ public class StockAndroidAction extends ActionSupport {
             }
         } catch (Exception e) {
             s = "0";
-            e.printStackTrace();
+            logger.error("操作异常", e);
             logger.error("保存失败");
         }
         JSONObject json = new JSONObject();
@@ -275,7 +275,7 @@ public class StockAndroidAction extends ActionSupport {
             stockService.saveBreak(breakType,breakReason,inventoryId,cashierBills);
         } catch (Exception e) {
             s = "0";
-            e.printStackTrace();
+            logger.error("操作异常", e);
             logger.error("保存失败");
         }
         JSONObject json = new JSONObject();
@@ -323,7 +323,7 @@ public class StockAndroidAction extends ActionSupport {
             stockService.updateBreak(companyId,cashierBillsId,status,auditorId,comments);
         } catch (Exception e) {
             s = "0";
-            e.printStackTrace();
+            logger.error("操作异常", e);
             logger.error("保存失败");
         }
         JSONObject json = new JSONObject();

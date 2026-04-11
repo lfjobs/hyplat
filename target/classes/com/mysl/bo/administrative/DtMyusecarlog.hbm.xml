@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mysl.bo.administrative.DtMyusecarlog" table="dt_Myusecarlog" schema="HYPLAT">
+        <id name="key" type="java.lang.String">
+            <column name="key" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="lid" type="java.lang.String">
+            <column name="lid" length="50" />
+        </property>
+        <property name="companyname" type="java.lang.String">
+            <column name="companyname" length="50" />
+        </property>
+        <property name="companyid" type="java.lang.String">
+            <column name="companyid" length="50" />
+        </property>
+        <property name="carapplyid" type="java.lang.String">
+            <column name="carapplyid" length="50" />
+        </property>
+        <property name="userremarks" type="java.lang.String">
+            <column name="userremarks" length="500" />
+        </property>
+        <property name="usercarname" type="java.lang.String">
+            <column name="usercarname" length="50" />
+        </property>
+        <property name="carcode" type="java.lang.String">
+            <column name="carcode" length="50" />
+        </property>
+        <property name="carusereason" type="java.lang.String">
+            <column name="carusereason" length="50" />
+        </property>
+        <property name="destination" type="java.lang.String">
+            <column name="destination" length="50" />
+        </property>
+        <property name="starnum" type="java.lang.String">
+            <column name="starnum" length="50" />
+        </property>
+        <property name="endnum" type="java.lang.String">
+            <column name="endnum" length="50" />
+        </property>
+        <property name="countnum" type="java.lang.String">
+            <column name="countnum" length="50" />
+        </property>
+        <property name="roadtoll" type="java.lang.String">
+            <column name="roadtoll" length="10" />
+        </property>
+        <property name="parkingfees" type="java.lang.String">
+            <column name="parkingfees" length="10" />
+        </property>
+        <property name="cardriver" type="java.lang.String">
+            <column name="cardriver" length="50" />
+        </property>
+        <property name="cardriverid" type="java.lang.String">
+            <column name="cardriverid" length="50" />
+        </property>
+        <property name="cardriverorgid" type="java.lang.String">
+            <column name="cardriverorgid" length="50" />
+        </property>
+        <property name="cardriverorgname" type="java.lang.String">
+            <column name="cardriverorgname" length="50" />
+        </property>
+        <property name="cardrivercompanyid" type="java.lang.String">
+            <column name="cardrivercompanyid" length="50" />
+        </property>
+        <property name="cardrivercompanyname" type="java.lang.String">
+            <column name="cardrivercompanyname" length="50" />
+        </property>
+        <property name="driverremarks" type="java.lang.String">
+            <column name="driverremarks" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

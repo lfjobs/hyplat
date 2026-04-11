@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="departmentpost-ntoken" namespace="/ea/departmentpost"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.DepartmentPostAction" method="{1}">
+			<result name="list">/page/ea/main/human/office/production/DepartmentPost_list.jsp</result>
+			<result name="OrgPostListByOrg">/page/ea/main/human/office/production/orgPost_list.jsp</result>
+			<result name="org_Entry">/page/ea/main/human/office/production/orgPost_Entry.jsp</result>
+			<result name="getDeployList">/page/ea/main/human/office/production/deployList.jsp</result>
+			<result name="add">/page/ea/main/human/office/production/DepartmentPost_add.jsp</result>
+			<result name="edit">/page/ea/main/human/office/production/DepartmentPost_edit.jsp</result>
+			<result name="orgsList">/page/ea/main/human/office/production/orgPosts_list.jsp</result>
+			<result name="getListPerson">/page/ea/main/human/office/production/orgPostPer_list.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="syserror">/page/ea/sys_error.jsp</result>
+			
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="departmentpost.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="departmentpost-jsonajax" namespace="/ea/departmentpost" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.DepartmentPostAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

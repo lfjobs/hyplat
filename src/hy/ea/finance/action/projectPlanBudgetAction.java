@@ -1,4 +1,7 @@
 package hy.ea.finance.action;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import hy.ea.bo.finance.Projectplanbudget;
 import hy.ea.service.CLogBookService;
 import hy.ea.service.ShowExcelService;
@@ -30,6 +33,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class projectPlanBudgetAction {
+	private static final Logger logger = LoggerFactory.getLogger(projectPlanBudgetAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -104,7 +108,7 @@ public class projectPlanBudgetAction {
 			result = obj.toString();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "detailInfo";
 	}

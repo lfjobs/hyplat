@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.vo">
+	<class name="GoodsNumVO" table="dtgoodsnumvo">
+		<id length="50" name="goodsBillsKey">
+			<column length="50" name="goodsBillsKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="goodsBillsID">
+        	<column name="goodsBillsID" length="50"/>
+        </property>
+         <property name="companyid">
+        	<column name="companyid" length="50"/>
+        </property>
+         <property name="organizationid">
+        	<column name="organizationid" length="50"/>
+        </property>
+        <property name="staffid">
+			<column length="50" name="staffid" />
+		</property>
+		<property name="status">
+			<column length="2" name="status" />
+		</property>
+		<property name="Billcheck">
+			<column length="250" name="Billcheck" />
+		</property>
+		<property name="startDate">
+			<column  name="startDate" />
+		</property>
+		<property name="endDate">
+			<column  name="endDate" />
+		</property>
+		<property name="quantity">
+			<column length="250" name="quantity" />
+		</property>
+		<property name="price">
+			<column length="250" name="price" />
+		</property>
+		<property name="journalNum">
+			<column length="250" name="journalNum" />
+		</property>		
+		<property name="companyname">
+        	<column name="companyname" length="250"/>
+        </property>
+        <property name="departmentname">
+        	<column name="departmentname" length="250"/>
+        </property>
+         <property name="staffname">
+        	<column name="staffname" length="250"/>
+        </property>
+        <property name="goodsname">
+        	<column name="goodsname" length="250"/>
+        </property>
+        <property name="postname">
+        	<column name="postname" length="250"/>
+        </property>
+        <property name="costType">
+        	<column name="costType" length="250"/>
+        </property>
+        <property name="goodsVariableID">
+        	<column name="goodsVariableID" length="50"/>
+        </property>
+	</class>
+</hibernate-mapping>

@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
@@ -12,13 +15,14 @@ import java.util.Properties;
  *
  */
 public class AutoTaskUtils {
+	private static final Logger logger = LoggerFactory.getLogger(AutoTaskUtils.class);
 	private static Properties getProperties() {
 		Properties properties = new Properties();
 		try {
 			InputStream inputStream = AutoTaskUtils.class.getResourceAsStream("/autoTask.properties");
 			properties.load(inputStream);
 		} catch (IOException ioException) {
-			ioException.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return properties;
 	}

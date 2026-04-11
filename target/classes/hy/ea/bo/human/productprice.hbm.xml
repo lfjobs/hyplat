@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="ProductPrice" table="dtProductPrice" >
+		<id length="50" name="productpriceKey">
+			<column length="50" name="productpriceKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="productpriceID">
+        	<column name="productpriceID" length="50"/>
+        </property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="goodsID">
+			<column length="50" name="goodsID" />
+		</property>
+		<property name="goodsCoding">
+			<column length="250" name="goodsCoding" />
+		</property>
+		<property name="goodsName">
+			<column length="250" name="goodsName" />
+		</property>
+		<property name="productCost">
+			<column length="250" name="productCost"/>
+		</property>
+		<property name="productDistribution">
+			<column length="250" name="productDistribution"/>
+		</property>
+		<property name="profitSales">
+			<column length="250" name="profitSales"/>
+		</property>
+		<property name="profitSalesProportion">
+			<column length="250"  name="profitSalesProportion" />
+		</property>
+		<property  name="productPositioning">
+			<column length="250" name="productPositioning" />
+		</property>
+		<property name="productsSort">
+			<column length="250" name="productsSort"/>
+		</property>
+		<property name="remark">
+			<column  length="256" name="remark" />
+		</property>
+	</class>
+</hibernate-mapping>

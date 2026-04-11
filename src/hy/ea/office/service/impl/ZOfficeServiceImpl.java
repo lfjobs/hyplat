@@ -1,5 +1,8 @@
 package hy.ea.office.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.office.service.ZOfficeService;
 import hy.ea.util.RandomDatas;
 
@@ -50,7 +53,7 @@ public class ZOfficeServiceImpl implements ZOfficeService {
 			}
 			FileCopyUtils.copy(office, fileSave);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return storePath+ "/" + fileSaveName;
@@ -69,12 +72,12 @@ public class ZOfficeServiceImpl implements ZOfficeService {
 			
 			fs.saveToFile(realpath+storepath);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} finally {
 			try {
 				fs.close();
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 	}
@@ -92,7 +95,7 @@ public class ZOfficeServiceImpl implements ZOfficeService {
 				file.delete();
 			}
 		} catch (Exception e) {
-			System.out.println("删除文件夹出错");
+			logger.info("删除文件夹出错");
 		}
 
 	}
@@ -120,7 +123,7 @@ public class ZOfficeServiceImpl implements ZOfficeService {
 			File fileSave = new File(realpath+filePath);
 			FileCopyUtils.copy(fileSave,newfilepath);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return filedir+fileSaveName;

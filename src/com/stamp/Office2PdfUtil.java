@@ -1,5 +1,8 @@
 package com.stamp;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.artofsolving.jodconverter.OfficeDocumentConverter;
 import org.artofsolving.jodconverter.office.DefaultOfficeManagerConfiguration;
 import org.artofsolving.jodconverter.office.OfficeManager;
@@ -8,6 +11,7 @@ import java.io.File;
 
 
 public class Office2PdfUtil {
+	private static final Logger logger = LoggerFactory.getLogger(Office2PdfUtil.class);
 
     private static Office2PdfUtil office2PdfUtil = new Office2PdfUtil();
     private static  OfficeManager officeManager;
@@ -47,10 +51,10 @@ public class Office2PdfUtil {
             converter.convert(new File(inputFile),new File(pdfFilePath));
             //关闭
             stopService();
-            System.out.println("运行结束");
+            logger.info("运行结束");
         }catch (Exception e) {
             // TODO: handle exception
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -70,7 +74,7 @@ public class Office2PdfUtil {
             officeManager = configuration.buildOfficeManager();
             officeManager.start();    //启动服务
         } catch (Exception ce) {
-            System.out.println("office转换服务启动失败!详细信息:" + ce);
+            logger.info("office转换服务启动失败!详细信息:: {}", ce);
         }
     }
 

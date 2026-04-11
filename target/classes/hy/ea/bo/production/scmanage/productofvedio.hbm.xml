@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.production.scmanage">
+	<class name="ProductOfVedio" table="dt_ProductOfVedio">
+		<comment>产品视频关联表</comment>
+		<id length="50" name="pvKey">
+			<column length="50" name="pvKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="pvID">
+			<column length="50" name="pvID" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="ppid">
+			<column length="50" name="ppid" >
+			<comment>如果是文章中发布的视频会有ppid</comment>
+			</column>
+		</property>
+		<property name="videoID">
+			<column length="50" name="videoID" >
+			<comment>视频ID</comment>
+			</column>
+		</property>
+		<property name="pricetype">
+			<column length="1" name="pricetype" >
+			<comment>1零售 2批发</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

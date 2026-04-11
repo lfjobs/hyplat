@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="PublicTelephone" table="dtPublicTelephone">
+		<id length="50" name="telephoneKey">
+			<column length="50" name="telephoneKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="telephoneID">
+			<column length="50" name="telephoneID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="linkmanName">
+			<column length="250" name="linkmanName"/>
+		</property>
+		<property name="job">
+			<column length="250" name="job"/>
+		</property>
+		<property name="handset">
+			<column length="250" name="handset" />
+		</property>
+		<property name="email">
+			<column length="250" name="email" />
+		</property>
+		<property  name="company">
+			<column length="250" name="company" />
+		</property>
+		<property  name="moreInformation">
+			<column length="250" name="moreInformation" />
+		</property>
+	</class>
+</hibernate-mapping>

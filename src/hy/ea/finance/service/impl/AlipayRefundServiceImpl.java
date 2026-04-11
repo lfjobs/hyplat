@@ -1,5 +1,8 @@
 package hy.ea.finance.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.stereotype.Service;
 
 import com.alipay.api.AlipayApiException;
@@ -34,7 +37,7 @@ public class AlipayRefundServiceImpl implements AlipayRefundService {
 				AlipayConfig.response = AlipayConfig.alipayClient.execute(request);
 		} catch (AlipayApiException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		 String aa=null;
 		 if(AlipayConfig.response.isSuccess()){

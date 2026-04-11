@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.human.UpLoadFile;
 import hy.ea.service.UpLoadFileService;
@@ -34,6 +37,7 @@ import com.zhuozhengsoft.pageoffice.FileSaver;
 @Controller
 @Scope("prototype")
 public class UpLoadAction {
+	private static final Logger logger = LoggerFactory.getLogger(UpLoadAction.class);
 	@Resource
 	private UpLoadFileService fileService;
 	@Resource
@@ -180,7 +184,7 @@ public class UpLoadAction {
 			newTemplatePath = createFile.createBlankWord(path, "remote",
 					fileType.equals("W") ? "doc" : "xls");
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("docPath", newTemplatePath);
@@ -216,12 +220,12 @@ public class UpLoadAction {
 			
 			fs.saveToFile(path+docPath);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} finally {
 			try {
 				fs.close();
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		return "none";

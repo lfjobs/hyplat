@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.vo">
+	<class name="CashierBillsVO" table="dtcashierbillsvo">
+		<id length="50" name="cashierBillsKey">
+			<column length="50" name="cashierBillsKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="cashierBillsID">
+        	<column name="cashierBillsID" length="50"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+        <property name="companyBankNum">
+        	<column name="companyBankNum" length="250"/>
+        </property>
+		 <property name="organizationID">
+        	<column name="organizationID" length="50"/>
+        </property>
+        <property name="departmentID">
+        	<column name="departmentID" length="50"/>
+        </property>
+       <property name="userAccountNum">
+			<column length="250" name="userAccountNum" />
+		</property>
+         <property name="contactUserID">
+        	<column name="contactUserID" length="50"/>
+        </property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" />
+		</property>
+		<property name="billsType">
+			<column length="250" name="billsType" />
+		</property>
+		<property name="billCheck">
+			<column length="250" name="billCheck" />
+		</property>
+		<property name="journalNum">
+			<column length="250" name="journalNum" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="cashierDate">
+			<column  name="cashierDate" />
+		</property>
+		<property name="discountMoney">
+			<column length="250" name="discountMoney" />
+		</property>
+		<property name="afterDiscount">
+			<column length="250" name="afterDiscount" />
+		</property>
+		<property name="dataDepotID">
+			<column length="50" name="dataDepotID" />
+		</property>
+		<property name="dataDepotName">
+			<column length="250" name="dataDepotName" />
+		</property>
+		<property name="status">
+			<column length="2" name="status" />
+		</property>
+		<property name="taxstatus">
+			<column length="2" name="taxstatus" />
+		</property>
+		<property name="taxstatus2">
+			<column length="2" name="taxstatus2" />
+		</property>
+		<property name="inputid">
+			<column length="50" name="inputid" />
+		</property>
+		<property name="inputName">
+			<column length="250" name="inputName" />
+		</property>
+		<property name="competent">
+			<column length="250" name="competent" />
+		</property>
+		<property name="manager">
+			<column length="250" name="manager" />
+		</property>
+		<property name="financial">
+			<column length="250" name="financial" />
+		</property>
+		<property name="taxDate">
+			<column  name="taxDate" />
+		</property>
+		 <property name="companyname">
+        	<column name="companyname" length="250"/>
+        </property>
+        <property name="departmentname">
+        	<column name="departmentname" length="250"/>
+        </property>
+         <property name="staffname">
+        	<column name="staffname" length="250"/>
+        </property>
+        <property name="recordcode">
+        	<column name="recordcode" length="250"/>
+        </property>
+		<property name="ccompanyname">
+			<column length="250" name="ccompanyname" />
+		</property>
+		<property name="companyAddr">
+			<column length="250" name="companyAddr" />
+		</property>
+		<property name="companyTel">
+			<column length="250" name="companyTel" />
+		</property>
+		<property name="cresponsible">
+			<column length="250" name="cresponsible" />
+		</property>
+		<property name="responsibleTel">
+			<column length="250" name="responsibleTel" />
+		</property>
+		<property name="contactUserName">
+			<column length="250" name="contactUserName" />
+		</property>
+		<property name="staffIdentityCard">
+			<column length="250" name="staffIdentityCard" />
+		</property>
+		<property name="tel">
+			<column length="250" name="tel" />
+		</property>
+		<property name="phone">
+			<column length="250" name="phone" />
+		</property>
+		<property name="userQq">
+			<column length="250" name="userQq" />
+		</property>
+		<property name="email">
+			<column length="250" name="email" />
+		</property>
+		<property name="userAddr">
+			<column length="250" name="userAddr" />
+		</property>
+		<property name="responsible">
+			<column length="250" name="responsible" />
+		</property>
+		<property name="accountant">
+			<column length="250" name="accountant" />
+		</property>
+		<property name="cashier">
+			<column length="250" name="cashier" />
+		</property>
+		
+		<property name="bankDepotID">
+			<column length="50" name="bankDepotID" />
+		</property>
+		<property name="bankDepotName">
+			<column length="250" name="bankDepotName" />
+		</property>
+		<property name="accountNum">
+			<column length="250" name="accountNum" />
+		</property>
+		<property name="industryType">
+			<column length="250" name="industryType" />
+		</property>
+		<property name="contactConnections">
+			<column length="250" name="contactConnections" />
+		</property>
+		<property name="pcompanyID">
+			<column length="50" name="pcompanyID" />
+		</property>
+		<property name="depStatue" >
+        	<column name="depStatue" length="250"  />
+        </property>
+        <property name="marketer">
+			<column length="250" name="marketer" />
+		</property>
+		<property name="personnel">
+			<column length="250" name="personnel" />
+		</property>
+		<property name="consultStatus">
+			<column length="50" name="consultStatus" />
+		</property>
+		<property name="goodsCoding">
+			<column length="250" name="goodsCoding" />
+		</property>
+		<property name="goodsName">
+			<column length="250" name="goodsName" />
+		</property>
+		<property name="defaultStorage">
+			<column length="250" name="defaultStorage" />
+		</property>
+		<property name="mnemonicCode">
+			<column length="250" name="mnemonicCode" />
+		</property>
+		<property name="standard">
+			<column length="250" name="standard" />
+		</property>
+		<property name="typeID">
+			<column length="250" name="typeID" />
+		</property>
+		<property name="model">
+			<column length="250" name="model" />
+		</property>
+		<property name="variableID">
+			<column length="250" name="variableID" />
+		</property>
+		<property name="acquiescestandard">
+			<column length="250" name="acquiescestandard" />
+		</property>
+		<property name="statusbill">
+			<column length="2" name="statusbill" />
+		</property>
+		<property name="oorgid">
+        	<column name="oorgid" length="50"/>
+        </property>
+        <property name="oorgname">
+        	<column name="oorgname" length="250"/>
+        </property>
+        <property name="zzAccountNum">
+        	<column name="zzAccountNum" length="250"/>
+        </property>
+         <!-- 项目信息 -->
+        <property name="proID">
+			<column length="50" name="proID" />
+		</property>
+		<property name="projectName">
+			<column length="50" name="projectName" />
+		</property>
+		<property  name="xmtype">
+			<column length="50" name="xmtype" />
+		</property>
+		<property  name="xmtypename">
+			<column length="50" name="xmtypename" />
+		</property>
+		<property  name="projectCode">
+			<column length="250" name="projectCode" />
+		</property>
+		<property name="groupCompanySn">
+        	<column name="groupCompanySn" length="50"/>
+        </property>
+        <property name="targetStart">
+			<column length="15" name="targetStart" />
+		</property>
+		<property name="targetEnd">
+			<column length="15" name="targetEnd" />
+		</property>
+		<property name="targetDeptID">
+			<column length="50" name="targetDeptID" />
+		</property>
+		<property name="targetDeptName">
+			<column length="50" name="targetDeptName" />
+		</property>
+		<property name="targetSalerID">
+			<column length="50" name="targetSalerID" />
+		</property>
+		<property name="targetSalerName">
+			<column length="50" name="targetSalerName" />
+		</property>
+		<property name="appstyle">
+			<column length="50" name="appstyle" />
+		</property>
+		<property name="appropriationcompanyName">
+			<column length="250" name="appropriationcompanyName" />
+		</property>
+		<property name="receivablesName">
+			<column length="250" name="receivablesName" />
+		</property>
+		<property name="jNumOrder">
+			<column length="50" name="jNumOrder" />
+		</property>
+		<property name="zctype">
+			<column length="7" name="zctype" />
+		</property>
+			<property name="remark">
+			<column length="500" name="remark" />
+		</property>
+	</class>
+</hibernate-mapping>

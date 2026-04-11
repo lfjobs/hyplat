@@ -1,5 +1,8 @@
 package mobile.tiantai.android.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,6 +27,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 @Scope("prototype")
 public class AndroidLogBookAction {
+	private static final Logger logger = LoggerFactory.getLogger(AndroidLogBookAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -54,7 +58,7 @@ public class AndroidLogBookAction {
 			jsonObjList.accumulate("result", "success");
 		} catch (Exception e) {
 			jsonObjList.accumulate("result", "fail");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = jsonObjList.toString();
 		return "success";
@@ -124,7 +128,7 @@ public class AndroidLogBookAction {
 			
 		} catch (Exception e) {
 			jsonObjList.accumulate("result", 0);
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = jsonObjList.toString();
 		return "success";

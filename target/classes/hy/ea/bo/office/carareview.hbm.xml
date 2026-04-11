@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarAReview" table="DT_Car_AReview">
+		<id length="50" name="areviewKey">
+			<column length="50" name="areviewKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="areviewID">
+			<column length="50" name="areviewID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="carID">
+			<column length="50" name="carID" />
+		</property>
+		<property name="registrationDate">
+			<column name="registrationDate" />
+		</property>
+		<property name="areviewValid">
+			<column name="areviewValid" />
+		</property>
+		<property name="areviewDate">
+			<column name="areviewDate" />
+		</property>
+		<property name="policyCode">
+			<column length="250" name="policyCode" />
+		</property>
+		<property name="areviewCode">
+			<column length="250" name="areviewCode" />
+		</property>
+		<property name="remarks">
+			<column length="250" name="remarks" />
+		</property>
+		<property name="carType">
+			<column length="250" name="carType"/>
+		</property>
+		<property name="carNum">
+			<column length="250" name="carNum"/>
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property name="carPeople">
+			<column length="250" name="carPeople"/>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,5 +1,8 @@
 package hy.ea.marketing.action.supermaket;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import com.alipay.bo.TradePayParam;
 import com.alipay.config.AlipayConfig;
@@ -68,6 +71,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class SuperSelfAction {
+	private static final Logger logger = LoggerFactory.getLogger(SuperSelfAction.class);
     @Resource
     private ServerService serverService;
     @Resource
@@ -197,7 +201,7 @@ public class SuperSelfAction {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
 
@@ -454,7 +458,7 @@ public class SuperSelfAction {
             request.setAttribute("companyName", map.get("companyName"));
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -693,7 +697,7 @@ public class SuperSelfAction {
                             goldOrderService.copyCash(journalNum, "j");
                         } catch (Exception e3) {
                             e3.printStackTrace();
-                            System.out.println("复制订单积分或者金币入库单错误");
+                            logger.info("复制订单积分或者金币入库单错误");
                         }
 
 
@@ -715,7 +719,7 @@ public class SuperSelfAction {
 
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
 
@@ -765,7 +769,7 @@ public class SuperSelfAction {
                         goldOrderService.copyCash(journalNum, "j");
                     } catch (Exception e3) {
                         e3.printStackTrace();
-                        System.out.println("复制订单积分或者金币入库单错误");
+                        logger.info("复制订单积分或者金币入库单错误");
                     }
 
 
@@ -801,7 +805,7 @@ public class SuperSelfAction {
 
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
 
@@ -856,7 +860,7 @@ public class SuperSelfAction {
                         goldOrderService.copyCash(journalNum, "j");
                     } catch (Exception e3) {
                         e3.printStackTrace();
-                        System.out.println("复制订单积分或者金币入库单错误");
+                        logger.info("复制订单积分或者金币入库单错误");
                     }
 
                     SelfCart selfCart = smSerivce.getSelfCartByJum(journalNum);
@@ -898,7 +902,7 @@ public class SuperSelfAction {
 
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
 
@@ -1011,18 +1015,18 @@ public class SuperSelfAction {
      * @return
      */
     public String pageJump() {
-        System.out.println("推送开门");
+        logger.info("推送开门");
         String hgcode = request.getParameter("hgcode");
         String name = request.getParameter("name");
         if (posNum != null && !posNum.equals("") && name != null && !name.equals("") && hgcode != null && !hgcode.equals("")) {
             try {
                 name = URLEncoder.encode(name, "UTF-8");
             } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
             String url = basePath + "page/ea/main/marketing/supermarket/container/hgWeighing.jsp?posNum=" + posNum + "&staffName=" + name + "&hgcode=" + hgcode;
             smSerivce.pushMessage(posNum, url);
-            System.out.println("推送页面");
+            logger.info("推送页面");
         }
         return "success";
     }
@@ -1156,7 +1160,7 @@ public class SuperSelfAction {
                         goldOrderService.copyCash(journalNum, "j");
                     } catch (Exception e3) {
                         e3.printStackTrace();
-                        System.out.println("复制订单积分或者金币入库单错误");
+                        logger.info("复制订单积分或者金币入库单错误");
                     }
 
 
@@ -1174,7 +1178,7 @@ public class SuperSelfAction {
                 result = "YZF";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1258,7 +1262,7 @@ public class SuperSelfAction {
                     cashierBillsID = cc.getCashierBillsID();
                 }
             } catch (Exception ef) {
-                ef.printStackTrace();
+                logger.error("操作异常", e);
             }
 
             if (cashierBillsID.equals("")) {
@@ -1281,7 +1285,7 @@ public class SuperSelfAction {
                         goldOrderService.copyCash(journalNum, "d");
                     } catch (Exception e3) {
                         e3.printStackTrace();
-                        System.out.println("复制订单收款单错误");
+                        logger.info("复制订单收款单错误");
                     }
 
 
@@ -1301,7 +1305,7 @@ public class SuperSelfAction {
 
         } catch (Exception e) {
             bool = false;
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return bool;
     }
@@ -1313,7 +1317,7 @@ public class SuperSelfAction {
      */
     @SuppressWarnings({"rawtypes", "unused"})
     public void getzfb() {
-        //   System.out.println("----------------------------------");
+        //   logger.info("----------------------------------");
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();
         Map<String, String> params = new HashMap<String, String>();
@@ -1342,8 +1346,8 @@ public class SuperSelfAction {
         }
 
         // 支付宝交易号
-            /*System.out.println("request:" + request);
-            System.out.println("trade_no:" + request.getParameter("trade_no"));*/
+            /*logger.info("request:: {}", request);
+            logger.info("trade_no:: {}", request.getParameter("trade_no"));*/
         String trade_no = new String(request.getParameter("trade_no").getBytes(
                 StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
 
@@ -1364,7 +1368,7 @@ public class SuperSelfAction {
             if (AlipayNotify.verify(params)) {// 验证成功
                 if (trade_status.equals("TRADE_SUCCESS")) {
                     if (seller_id.equals(AlipayConfig.seller_id)) {
-                        //   System.out.println("订单号："+journalNum);
+                        //   logger.info("调试信息");
                         //处理一系列单子
                         //查看该订单是否生成
                         if (journalNum != null && !"".equals(journalNum)) {
@@ -1403,7 +1407,7 @@ public class SuperSelfAction {
                 response.getWriter().write("fail");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -1423,7 +1427,7 @@ public class SuperSelfAction {
         try {
             smSerivce.cancelOrder(journalNum);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
 
@@ -1471,7 +1475,7 @@ public class SuperSelfAction {
                         + "/ea/qrshare/ea_theVehicleDetails.jspa?carManage.carmID="
                         + carmID + "&posNum=" + posNum + "&paysuc=suc");
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
 
         } else {
@@ -1493,7 +1497,7 @@ public class SuperSelfAction {
                                 + "/ea/mappointment/ea_bookingDetails.jspa?cbId="
                                 + cbId + "&sccId=" + sccId + "&dp=1&paysuc=suc");
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        logger.error("操作异常", e);
                     }
                 }
             }else{
@@ -1561,7 +1565,7 @@ public class SuperSelfAction {
             try {
                 response.sendRedirect(basePath + "/ea/qrshare/ea_theVehicleDetails.jspa?carManage.carmID=" + carmID + "&posNum=" + posNum + "&paysuc=suc");
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
 
         } else {
@@ -1579,7 +1583,7 @@ public class SuperSelfAction {
                 try {
                     response.sendRedirect(basePath + "/ea/mappointment/ea_bookingDetails.jspa?cbId=" + cbId + "&sccId=" + sccId + "&dp=1&paysuc=suc");
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
             ContactCompany contactCompany = smSerivce.getPrintCompanyInfo(goodlist);
@@ -1750,11 +1754,11 @@ public class SuperSelfAction {
                 String access_Token = payFaceSerivce.getAccessTokenFromDataBase();
                 String nickname = "";
                 try {
-                    System.out.println("access_Token:" + access_Token);
-                    System.out.println("openid:" + openid);
+                    logger.info("access_Token:: {}", access_Token);
+                    logger.info("openid:: {}", openid);
                     nickname = WeixinUtil.getUserByToken(access_Token, openid);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                     nickname = "佚名";
                 }
 
@@ -1809,7 +1813,7 @@ public class SuperSelfAction {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return "success";
@@ -1912,7 +1916,7 @@ public class SuperSelfAction {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("code", tradePayReuslt.getCode());
@@ -2215,7 +2219,7 @@ public class SuperSelfAction {
             map.put("pcid", pc.getPcid());
         } catch (Exception e) {
             falg = false;
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         map.put("falg", falg);
         JSONObject json = JSONObject.fromObject(map);
@@ -2246,7 +2250,7 @@ public class SuperSelfAction {
             }
         } catch (Exception e) {
             falg = false;
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         map.put("falg", falg);
         JSONObject json = JSONObject.fromObject(map);
@@ -2484,7 +2488,7 @@ public class SuperSelfAction {
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -2519,12 +2523,12 @@ public class SuperSelfAction {
             //有记录，且不是同一个人判断时间
 
             Date st = hgRelateUser1.getScanDate();
-            System.out.println(st);
+            logger.info("值：{}", st);
             Date cu = new Date();
 
             long diff = cu.getTime()-st.getTime();
             long diffmi =  diff/ (60 * 1000);
-            System.out.println("diffmi"+diffmi);
+            logger.info("调试信息");
             if (diffmi <=5) { //小于5分钟，让之前的人记录操作
                 return "useing";
             }else{
@@ -2595,9 +2599,9 @@ public class SuperSelfAction {
 
                 String url = basePath + "ea/sm/ea_getOpenSuc.jspa?posNum=" + posNum + "&sccId=" + tc.getSccId() + "&loginMode=scan&door="+door+"&hrId="+hrId;
                 smSerivce.pushMessage(posNum, url);
-                System.out.println("推送页面");
+                logger.info("推送页面");
                 smSerivce.pushOpenDoor(posNum, door);
-                System.out.println("推送开门");
+                logger.info("推送开门");
                 smSerivce.updateUser(hgcode);
                 smSerivce.pushAudio(posNum,"门锁已开请拉开柜门挑选商品");
 
@@ -2612,9 +2616,9 @@ public class SuperSelfAction {
 
                 String url = basePath + "ea/sm/ea_getOpenSuc.jspa?posNum=" + posNum + "&sccId=" + tc.getSccId() + "&loginMode=scan&door="+door+"&hrId="+hrId;
                 smSerivce.pushMessage(posNum, url);
-                System.out.println("同一个人再次推送页面");
+                logger.info("同一个人再次推送页面");
                 smSerivce.pushOpenDoor(posNum, door);
-                System.out.println("同一个人再次推送开门");
+                logger.info("同一个人再次推送开门");
                 smSerivce.updateUser(hgcode);
                 smSerivce.pushAudio(posNum,"再次门锁已开请拉开柜门挑选商品");
 
@@ -2735,7 +2739,7 @@ public class SuperSelfAction {
                     }
 
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
 
 
@@ -2795,7 +2799,7 @@ public class SuperSelfAction {
                     goldOrderService.copyCash(journalNum, "j");
                 } catch (Exception e3) {
                     e3.printStackTrace();
-                    System.out.println("复制订单积分或者金币入库单错误");
+                    logger.info("复制订单积分或者金币入库单错误");
                 }
 
 
@@ -2808,7 +2812,7 @@ public class SuperSelfAction {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -2835,7 +2839,7 @@ public class SuperSelfAction {
                     goldOrderService.copyCash(journalNum, "j");
                 } catch (Exception e3) {
                     e3.printStackTrace();
-                    System.out.println("复制订单积分或者金币入库单错误");
+                    logger.info("复制订单积分或者金币入库单错误");
                 }
 
 
@@ -2848,7 +2852,7 @@ public class SuperSelfAction {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -3040,7 +3044,7 @@ public class SuperSelfAction {
      * @return
      */
     public String addCartHg() {
-        System.out.println("进入addCartHg");
+        logger.info("进入addCartHg");
 
         String weights = request.getParameter("weights");
         String cplist = request.getParameter("cplist");
@@ -3058,7 +3062,7 @@ public class SuperSelfAction {
             JSONObject obj = JSONObject.fromObject(map);
             result = obj.toString();
         }else{
-            System.out.println("进入closeDoor");
+            logger.info("进入closeDoor");
               closeDoor();
         }
         return "success";
@@ -3129,11 +3133,11 @@ public class SuperSelfAction {
         String hrId = smSerivce.addResult(sccId,"",hgcode,"");
 
         smSerivce.pushSeq(posNum,hrId);
-        System.out.println("推送开门");
+        logger.info("推送开门");
         if(loginMode.equals("scan")) {
             String url = basePath + "ea/sm/ea_getOpenSuc.jspa?hgcode="+hgcode+"&posNum=" + posNum + "&sccId=" + sccId + "&loginMode=" + loginMode+"&door="+door+"&hrId="+hrId;
             smSerivce.pushMessage(posNum, url);
-            System.out.println("推送页面");
+            logger.info("推送页面");
             map.put("hrId",hrId);
             JSONObject obj = JSONObject.fromObject(map);
             result = obj.toString();
@@ -3158,7 +3162,7 @@ public class SuperSelfAction {
 
 
         smSerivce.pushCloseDoor(posNum,door);
-        System.out.println("关门");
+        logger.info("关门");
 
         return "success";
 
@@ -3209,11 +3213,11 @@ public class SuperSelfAction {
 
           String wgw = (String)map.get("wgw");
 
-          System.out.println("wgw"+wgw);
+          logger.info("调试信息");
          if(wgw!=null&&wgw.equals("true")){
              smSerivce.addResult(sccId,"",hgcode,hrId);
              //无购物
-             System.out.println("无购物");
+             logger.info("无购物");
              String url = basePath+"page/ea/main/marketing/supermarket/container/mmdxsuc.jsp?posNum="+posNum;
              smSerivce.pushMessage(posNum,url);
              smSerivce.pushAudio(posNum,"您没有购买任何商品");
@@ -3276,7 +3280,7 @@ public class SuperSelfAction {
                          }
 
                      } catch (Exception e) {
-                         e.printStackTrace();
+                         logger.error("操作异常", e);
                      }
 
 
@@ -3323,7 +3327,7 @@ public class SuperSelfAction {
           //如果有购物
 
       }catch (Exception e){
-          e.printStackTrace();
+          logger.error("操作异常", e);
       }
 
 

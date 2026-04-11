@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+  <!DOCTYPE validators PUBLIC   
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN"   
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="staffName">
+		<field-validator type="regex">
+			<!-- 仅中文-->
+			<param name="expression">[\u2E80-\uFE4F]{0,100}</param>
+			<message>含有非法字符</message>
+		</field-validator>
+	</field>
+	<field name="staffIdentityCard">
+		<field-validator type="regex">
+			<!-- 数字或x匹配-->
+			<param name="expression">\d{0,17}[xX\d]{0,1}</param>
+			<message>含有非法字符</message>
+		</field-validator>
+	</field>
+</validators> 

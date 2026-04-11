@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CapitalConstruction" table="dtCapitalConstruction">
+		<id length="50" name="capitalKey">
+			<column length="50" name="capitalKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="capitalID">
+			<column length="50" name="capitalID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="unitName">
+			<column length="250" name="unitName" />
+		</property>
+		<property  name="unitprincipal">
+			<column length="250" name="unitprincipal" />
+		</property>
+		<property  name="item">
+			<column length="250" name="item" />
+		</property>
+		<property  name="budgetCost">
+			<column length="250" name="budgetCost" />
+		</property>
+		<property  name="buildUnit">
+			<column  length="250" name="buildUnit" />
+		</property>
+		<property  name="buildprincipal">
+			<column  length="250" name="buildprincipal" />
+		</property>
+		<property  name="startDate">
+			<column   name="startDate" />
+		</property>
+		<property  name="endDate">
+			<column  name="endDate" />
+		</property>
+		<property  name="capitalType">
+			<column length="250" name="capitalType" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="Certificate" table="dtCertificate">
+		<id length="50" name="certificatkey">
+			<column length="50" name="certificatkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="certificateID">
+			<column length="50" name="certificateID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID"/>
+		</property>
+		<property name="certificateCode">
+			<column length="250" name="certificateCode"/>
+		</property>
+		<property name="certificateType">
+			<column length="250" name="certificateType" />
+		</property>
+		<property name="certificateName">
+			<column length="250" name="certificateName" />
+		</property>
+		<property  name="certificateTiime">
+			<column name="certificateTiime" />
+		</property>
+		<property  name="availabilityDate">
+			<column name="availabilityDate" />
+		</property>
+		<property  name="certificateDepth">
+			<column length="250" name="certificateDepth" />
+		</property>
+		<property  name="certificateAccessory">
+			<column length="256" name="certificateAccessory" />
+		</property>
+		<property  name="certificateLocation">
+			<column  length="250"  name="certificateLocation" />
+		</property>
+		<property  name="responsible">
+			<column  length="250"  name="responsible" />
+		</property>
+		<property  name="certificateCopyNumber">
+			<column  length="250"  name="certificateCopyNumber" />
+		</property>
+		<property  name="remark">
+			<column   name="remark" />
+		</property>
+	</class>
+</hibernate-mapping>

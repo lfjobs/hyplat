@@ -1,5 +1,8 @@
 package mobile.tiantai.android.service.impl.storeProduction.budgetSheet;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import cn.hutool.core.collection.CollectionUtil;
 import com.mysl.bo.administrative.DtMyovertime;
 import com.mysl.bo.administrative.DtMytravel;
@@ -618,7 +621,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
                     resultFile.getParentFile().mkdirs();
                 }
                 boolean b = mergeFiles(files, resultFile);
-                System.out.println(b ? "合并成功" : "合并失败");
+                logger.info("调试信息");
                 //在合成文件的时候已经删除临时文件 现在删除临时文件夹
                 fileDir.delete();
                 map.put("siSuccess", true);
@@ -626,7 +629,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
                 map.put("name", fileName);
             }
         }
-        System.out.println(path + path2);
+        logger.info("调试信息");
         return map;
     }
 
@@ -658,7 +661,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
                 fos.write(buffer, 0, len);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } finally {
             if (null != fos) {
                 try {
@@ -706,7 +709,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
             }
         }
         for (File file : array) {
-            System.out.println(file.getName());
+            logger.info("调试信息");
         }
         return array;
     }
@@ -729,14 +732,14 @@ public class PayBudgetServiceImpl implements PayBudgetService {
             }
             resultFileChannel.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return false;
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return false;
         }
         for (int i = 0; i < files.length; i++) {
-            System.out.println("临时文件:" + files[i].getName() + " 已删除");
+            logger.info("调试信息");
             files[i].delete();
         }
         return true;
@@ -1251,7 +1254,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
 //                                    .getServletContext().getRealPath("\\"), companyId);
 //                            goodsBills.setLogoPath(map.get("path").toString());//品牌log路径
 //                        } catch (Exception e) {
-//                            e.printStackTrace();
+//                            logger.error("操作异常", e);
 //                        }
 //                    }
                 }
@@ -1715,7 +1718,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
                             .getServletContext().getRealPath("\\"), costAddBean.getCompanyId());
                     costAddBean.setLogoPath(map.get("path").toString());
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
 
@@ -2423,7 +2426,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
                             .getServletContext().getRealPath("\\"), addBean.getCompanyId());
                     addBean.setLogoPath(map.get("path").toString());
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
 
@@ -2920,7 +2923,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
                             .getServletContext().getRealPath("\\"), addBean.getCompanyId());
                     addBean.setLogoPath(map.get("path").toString());
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
 
@@ -3381,7 +3384,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
 //                                    .getServletContext().getRealPath("\\"), companyId);
 //                            goodsBills.setLogoPath(map.get("path").toString());//品牌log路径
 //                        } catch (Exception e) {
-//                            e.printStackTrace();
+//                            logger.error("操作异常", e);
 //                        }
 //                    }
                 }
@@ -4019,7 +4022,7 @@ public class PayBudgetServiceImpl implements PayBudgetService {
     public static void main(String[] args) {
         String str = "开始-2024-02-12 12:25";
         String[] split = str.split("-", 2);
-        System.out.println(split[0]);
-        System.out.println(split[1]);
+        logger.info("调试信息");
+        logger.info("调试信息");
     }
 }

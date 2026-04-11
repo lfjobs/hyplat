@@ -1,5 +1,8 @@
 package hy.ea.st.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.faceSDK.FaceRecognitionController;
 import com.faceSDK.faceUtil.EmpwerUtils;
 import com.faceSDK.faceVO.FaceRecognitionVO;
@@ -51,6 +54,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class EnrollsAction {
+	private static final Logger logger = LoggerFactory.getLogger(EnrollsAction.class);
 
     @Resource
     private EnrollsService enrollsService;
@@ -132,7 +136,7 @@ public class EnrollsAction {
         if (!"".equals(companyID) && companyID != null) {
             List<BaseBean> beans = new ArrayList<BaseBean>();
             if (list.size() == 0 || list == null) {
-                System.out.println("start---------------------");
+                logger.info("start---------------------");
                 String[] str = new String[]{"A1", "A2", "A3", "B1", "B2", "C1", "C2", "C3", "C4", "C5", "D", "E", "F", "M", "N", "P"};//,"从业资格证","其他辅助产品"
                 for (int i = 0; i < str.length; i++) {
                     SchProCategory sch = new SchProCategory();
@@ -652,12 +656,12 @@ public class EnrollsAction {
             subjectHour.setHasTime(subjectHour.getTotalTime());
         }
         beans.add(subjectHour);
-//        System.out.println(subjectHour.getP1Time());
+//        logger.info("调试信息");
         try {
             baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, null, null);
             enrollID = enrollForm.getEnrollID();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("enrollID", enrollID);
@@ -667,7 +671,7 @@ public class EnrollsAction {
         try {
             insertFace();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }finally {
             return "success";
         }
@@ -937,7 +941,7 @@ public class EnrollsAction {
             map.put("pageForm", pageForm);
             map.put("pct", pct == null ? 1 : pct);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return map;

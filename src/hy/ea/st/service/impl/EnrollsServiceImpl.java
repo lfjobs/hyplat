@@ -1,5 +1,8 @@
 package hy.ea.st.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.MarKeting;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
@@ -229,7 +232,7 @@ public class EnrollsServiceImpl implements EnrollsService {
         jxsql.append(" and c.typeid=? and a.oa_sccid = ? and p.categoryname=? and p.companyID = ? and b.status!=?");
 
         int count = baseBeanService.getConutByBySqlAndParams(jxsql.toString(), new Object[]{"学员报名",sccid,licenceType,companyID,"99"});
-        System.out.println(count);
+        logger.info("值：{}", count);
         String  tips  = "";
         if (count > 0) {
             tips = "同一车型不可重复报名";
@@ -328,7 +331,7 @@ public class EnrollsServiceImpl implements EnrollsService {
         }
 
         java.net.URL url = new URL(queryString.toString());
-        System.out.println(queryString.toString());
+        logger.info("调试信息");
         URLConnection httpConnection = (HttpURLConnection) url.openConnection();
         httpConnection.connect();
 
@@ -341,6 +344,6 @@ public class EnrollsServiceImpl implements EnrollsService {
         }
         reader.close();
         isr.close();
-        System.out.println("AK: " + buffer.toString());
+        logger.info("调试信息");
     }
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="EarnBudgetDetail" table="dt_inv_ebd">
+		<id length="50" name="ebdKey">
+			<column length="50" name="ebdKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ebdID">
+			<column length="50" name="ebdID" />
+		</property>
+		<property name="ebbID">
+			<column length="50" name="ebbID" />
+		</property>
+		<property name="productNum">
+			<column length="50" name="productNum" />
+		</property>
+	    <property name="month">
+			<column length="50" name="month" />
+		</property>
+		<property name="productName">
+			<column length="50" name="productName" />
+		</property>
+        <property name="productUnit">
+			<column length="50" name="productUnit" />
+		</property>
+		<property  name="productStandard">
+			<column length="50" name="productStandard" />
+		</property>
+		<property name="bunitPrice">
+			<column length="10" name="bunitPrice" sql-type="number" />
+		</property>
+		<property name="bdquantity">
+			<column length="3" name="bdquantity" sql-type="number" />
+		</property>
+		<property name="bdamount">
+			<column length="10" name="bdamount" sql-type="number" />
+		</property>
+		<property name="bwamount">
+			<column length="10" name="bwamount" sql-type="number" />
+		</property>
+		<property name="bmamount">
+			<column length="10" name="bmamount" sql-type="number" />
+		</property>
+		<property name="bsamount">
+			<column length="10" name="bsamount" sql-type="number" />
+		</property>
+		<property name="byamount">
+			<column length="10" name="byamount" sql-type="number" />
+		</property>
+		<property name="tunitPrice">
+			<column length="10" name="tunitPrice" sql-type="number" />
+		</property>
+		<property name="tdquantity">
+			<column length="3" name="tdquantity" sql-type="number" />
+		</property>
+		<property name="tdamount">
+			<column length="10" name="tdamount" sql-type="number" />
+		</property>
+		<property name="twamount">
+			<column length="10" name="twamount" sql-type="number" />
+		</property>
+		<property name="tmamount">
+			<column length="10" name="tmamount" sql-type="number" />
+		</property>
+		<property name="tsamount">
+			<column length="10" name="tsamount" sql-type="number" />
+		</property>
+		<property name="tyamount">
+			<column length="10" name="tyamount" sql-type="number" />
+		</property>
+		<property name="goodsID">
+			<column length="50" name="goodsID" />
+		</property>
+		<property name="weight">
+			<column length="50" name="weight" />
+		</property>
+		<property name="manual">
+			<column length="250" name="manual" />
+		</property>
+		<property name="productPublicity">
+			<column length="250" name="productPublicity" />
+		</property>
+		<property name="companyFile">
+			<column length="250" name="companyFile" />
+		</property>
+		<property name="goodsNomber">
+			<column length="50" name="goodsNomber" />
+		</property>
+		<property name="delStatus">
+			<column length="5" name="delStatus" />
+		</property>
+		<property name="sztype">
+			<column length="3" name="sztype" />
+		</property>
+
+	</class>
+</hibernate-mapping>

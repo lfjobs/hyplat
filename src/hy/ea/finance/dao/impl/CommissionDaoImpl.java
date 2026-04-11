@@ -1,5 +1,8 @@
 package hy.ea.finance.dao.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.finance.dao.CommissionDao;
 import hy.ea.util.Converter;
 import hy.plat.bo.BaseBean;
@@ -75,8 +78,8 @@ public class CommissionDaoImpl
       cs.close();
       ct.close();
     } catch (Exception e) {
-      System.out.println(e.getMessage());
-      e.printStackTrace();
+      logger.info("调试信息");
+      logger.error("操作异常", e);
     }
     map.put("level", list2);
     map.put("data", list);

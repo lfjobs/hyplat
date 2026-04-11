@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="proBills" table="dtProBills">
+		<id length="50" name="projectKey">
+			<column length="50" name="projectKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="projectID">
+        	<column name="projectID" length="50"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+         <property name="csbID">
+        	<column name="csbID" length="50"/>
+        </property>
+          <property name="cashierBillsID">
+        	<column name="cashierBillsID" length="50"/>
+        </property>
+		 <property name="projectName">
+        	<column name="projectName" length="50"/>
+        </property>
+        <property name="startTime">
+        	<column name="startTime" />
+        </property>
+        <property name="endTime">
+        	<column name="endTime" />
+        </property>
+         <property name="costdescription">
+        	<column name="costdescription" length="50"/>
+        </property>
+	</class> 
+	
+</hibernate-mapping>

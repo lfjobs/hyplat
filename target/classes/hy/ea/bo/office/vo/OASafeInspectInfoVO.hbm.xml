@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office.vo">
+	<class name="OASafeInspectInfoVO" table="DT_OA_SAFE_INSPECT_INFOvo">
+		<id length="50" name="inspectKey">
+			<column length="50" name="inspectKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="inspectID">
+			<column length="50" name="inspectID"/>
+		</property>
+		<property name="inspectNO">
+			<column length="250" name="inspectNO"/>
+		</property>
+		<property name="departmentID">
+			<column length="50" name="departmentID"/>
+		</property>
+		<property name="tsicompanyID">
+			<column length="50" name="tsicompanyID"/>
+		</property>
+		<property name="tsiDeptID">
+			<column length="50" name="tsiDeptID"/>
+		</property>
+		<property name="tsiPersonID">
+			<column length="50" name="tsiPersonID"/>
+		</property>
+		<property name="exunitID">
+			<column length="50" name="exunitID"/>
+		</property>
+		<property name="expersonID">
+			<column length="50" name="expersonID"/>
+		</property>
+		<property name="inspectTypeID">
+			<column length="50" name="inspectTypeID"/>
+		</property>
+		<property name="typeName">
+			<column length="250" name="typeName"/>
+		</property>
+		<property name="makeDate">
+			<column name="makeDate" />
+		</property>
+		<property name="attachment">
+			<column length="250" name="attachment" />
+		</property>
+		<property name="tsiCompany">
+			<column length="250" name="tsiCompany" />
+		</property>
+		<property name="tsiDept">
+			<column length="250" name="tsiDept" />
+		</property>
+		<property name="tsiPerson">
+			<column length="250" name="tsiPerson" />
+		</property>
+		<property  name="tsiPersonCode">
+			<column length="250" name="tsiPersonCode" />
+		</property>
+		<property name="tsiPersonPost">
+			<column length="250" name="tsiPersonPost" />
+		</property>
+		<property name="exUnitName">
+			<column length="250" name="exUnitName" />
+		</property>
+		<property  name="exUnitTel">
+			<column length="250" name="exUnitTel" />
+		</property>
+		<property  name="exUnitPerson">
+			<column length="250" name="exUnitPerson" />
+		</property>
+		<property name="exUnitPersonTel">
+			<column length="250" name="exUnitPersonTel" />
+		</property>
+		<property name="exUnitAddr">
+			<column length="250" name="exUnitAddr" />
+		</property>
+		<property name="exUnitIndustry">
+			<column length="250" name="exUnitIndustry" />
+		</property>
+		<property  name="exUnitBanknum">
+			<column length="100" name="exUnitBanknum" />
+		</property>
+		<property name="exUnitRelation">
+			<column length="250" name="exUnitRelation" />
+		</property>
+		<property name="exPerson">
+			<column length="250" name="exPerson" />
+		</property>
+		<property name="exPersonTel">
+			<column length="250" name="exPersonTel" />
+		</property>
+		<property name="exPersonIdcard">
+			<column length="250" name="exPersonIdcard" />
+		</property>
+		<property name="exPersonQQ">
+			<column length="250" name="exPersonQQ" />
+		</property>
+		<property name="exPersonaddr">
+			<column length="250" name="exPersonaddr" />
+		</property>
+		<property name="exPersonBanknum">
+			<column length="100" name="exPersonBanknum" />
+		</property>
+		<property name="exPersonRelation">
+			<column length="250" name="exPersonRelation" />
+		</property>
+	
+	</class>
+</hibernate-mapping>

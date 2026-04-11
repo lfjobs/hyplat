@@ -1,5 +1,8 @@
 package hy.ea.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -91,7 +94,7 @@ public class ThreadPoolTool<T> {
                 method(list);
                 begin.await();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }finally {
                 //计数器减一
                 end.countDown();
@@ -124,7 +127,7 @@ public class ThreadPoolTool<T> {
         try {
             tool.excute();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 }

@@ -1,5 +1,8 @@
 package hy.ea.invoicing.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.base.action.BaseAction;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
@@ -336,7 +339,7 @@ public class ProjectManageAction extends BaseAction<ProjectManage>{
 			result = jo;
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return "success";
@@ -665,7 +668,7 @@ public class ProjectManageAction extends BaseAction<ProjectManage>{
 		
 		this.result = oj;
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 		

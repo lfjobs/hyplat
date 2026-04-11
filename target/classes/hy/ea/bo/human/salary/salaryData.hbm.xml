@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="hy.ea.bo.human.salary.SalaryData" table="DT_HR_SALARY_DATA">
+		<id length="50" name="salaryKey" >
+			<column length="50" name="SALARY_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="salaryId" >
+			<column length="50" name="SALARY_ID" not-null="true"/>
+		</property>
+		<property name="salaryLevelId" >
+			<column length="50" name="SALARY_LEVEL_ID"/>
+		</property>
+		<property name="salaryLevelSerial" >
+			<column length="250" name="SALARY_LEVEL_SERIAL"/>
+		</property>
+		<property name="salaryLevelNum" >
+			<column length="250" name="SALARY_LEVEL_NUM"/>
+		</property>
+		<property name="baseSalary" >
+			<column length="250" name="BASE_SALARY"/>
+		</property>
+		<property name="roleSalary" >
+			<column length="50" name="ROLE_SALARY" />
+		</property>
+		<property name="dutySalary">
+			<column length="50" name="DUTY_SALARY" />
+		</property>
+		<property name="competeSalary">
+			<column length="50" name="COMPETE_SALARY" />
+		</property>
+		<property name="secrecySalary">
+			<column length="50" name="SECRECY_SALARY" />
+		</property>
+		<property name="levelSalary">
+			<column length="50" name="LEVEL_SALARY" />
+		</property>
+		<property name="companyId">
+			<column length="50" name="COMPANY_ID" />
+		</property>
+		<property name="guaranteeSalary">
+			<column length="50" name="GUARANTEE_SALARY" />
+		</property>
+		<property name="welfareSalary">
+			<column length="50" name="WELFARE_SALARY" />
+		</property>
+		<property name="totalSalary">
+			<column length="50" name="TOTAL_SALARY" />
+		</property>
+		<property name="overtimeSalary">
+			<column length="50" name="OVERTIME_SALARY" />
+		</property>
+		<property name="summarySalary">
+			<column length="50" name="SUMMARY_SALARY" />
+		</property>
+
+
+	</class>
+</hibernate-mapping>

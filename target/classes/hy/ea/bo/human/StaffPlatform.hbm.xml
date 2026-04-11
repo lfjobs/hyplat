@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffPlatform" table="dt_StaffPlatform">
+		<id name="platformKey" length="50">
+			<column name="platformKey" length="50" />
+			<generator class="uuid" />
+		</id>
+		<property name="platformID">
+			<column name="platformID" length="50" not-null="true" />
+		</property>
+		<property name="ccompanyID">
+			<column name="ccompanyID" length="50"/>
+		</property>
+		<property name="staffID">
+			<column name="staffID" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

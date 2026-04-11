@@ -1,5 +1,8 @@
 package hy.ea.marketing.action.supermaket;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tiantai.wfj.bo.Cart;
@@ -36,6 +39,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class SupermarketAction {
+	private static final Logger logger = LoggerFactory.getLogger(SupermarketAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -244,7 +248,7 @@ public class SupermarketAction {
                     //    logger.info("获取购物车商品数量" + goodNum);
                 } catch (Exception e) {
                     map.put("goodNum", goodNum);
-                    //  e.printStackTrace();
+                    //  logger.error("操作异常", e);
                     //  logger.error("获取购物车商品数量异常");
                 }
             }
@@ -294,7 +298,7 @@ public class SupermarketAction {
                     //   logger.info("获取购物车某个商品的数量" + goodNum);
                 } catch (Exception e) {
                     map.put("goodNum", goodNum);
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                     logger.error("获取购物车某个商品的数量异常");
                 }
             } else {

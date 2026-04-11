@@ -1,11 +1,15 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 视图工具
  *
  * @author zgzg
  */
 public class VOtool {
+	private static final Logger logger = LoggerFactory.getLogger(VOtool.class);
     /**
      * 单据汇总查询
      *
@@ -450,7 +454,7 @@ public class VOtool {
      */
     public static StringBuffer getBrokerageSql(int val1, int val2, int val3) {
         StringBuffer result = new StringBuffer();
-        System.out.println(val1 + "," + val2 + "," + val3);
+        logger.info("调试信息");
         switch (val1) {
             case 1: //查询佣金，成本价
                 switch (val2) {

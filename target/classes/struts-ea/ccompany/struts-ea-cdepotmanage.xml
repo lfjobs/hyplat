@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="cdepotmanage-token" namespace="/ea/cdepotmanage"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.ccompany.action.CDepotManageAction" method="{1}">
+			<result name="list">/page/ea/ccompany/depotmanage/depotmanage_list.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="cdepotmanage-ntokennew" namespace="/ea/cdepotmanage1" extends="struts-default" >
+		<action name="ea_*" class="hy.ea.ccompany.action.CDepotManageAction" method="{1}">
+			<result name="listDepotmanagenew">/page/ea/ccompany/depotmanage/depotmanage_list1.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="cdepotmanage-ntoken" namespace="/ea/cdepotmanage" extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.ccompany.action.CDepotManageAction" method="{1}">
+		    <result name="succ">/page/ea/success.jsp</result>
+		    <result name="sortchildren">/page/ea/ccompany/depotmanage/depotmanage_sortchildren.jsp</result>
+			<result name="listDepotmanage">/page/ea/ccompany/depotmanage/depotmanage_list.jsp</result>
+			<result name="tree">/page/ea/ccompany/depotmanage/depotmanage_manger.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="cdepotmanage-sajax" namespace="/ea/cdepotmanage" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.ccompany.action.CDepotManageAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+	
+</struts>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="COSElectricity" table="dtCOSElectricity">
+		<id length="50" name="electricityKey">
+			<column length="50" name="electricityKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="electricityID">
+			<column length="50" name="electricityID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true"/>
+		</property>
+		<property name="username">
+			<column length="250" name="username"/>
+		</property>
+		<property name="amount">
+			<column length="210" name="amount"/>
+		</property>
+		<property name="usedamount">
+			<column length="210" name="usedamount"/>
+		</property>
+		<property name="examiner">
+			<column length="250" name="examiner" />
+		</property>
+	</class>
+</hibernate-mapping>

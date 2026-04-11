@@ -1,5 +1,8 @@
 package hy.ea.ddsr.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Company;
 import hy.ea.bo.ddsr.Ddsrcoach;
@@ -43,6 +46,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class DdsrCoachManagerAction {
+	private static final Logger logger = LoggerFactory.getLogger(DdsrCoachManagerAction.class);
 
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -400,7 +404,7 @@ public class DdsrCoachManagerAction {
 			try {
 				response.getWriter().print(json.toString());
 			} catch (IOException e) {				
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 	}
@@ -421,7 +425,7 @@ public class DdsrCoachManagerAction {
 		try {
 			response.getWriter().print(json.toString());
 		} catch (IOException e) {				
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 	}

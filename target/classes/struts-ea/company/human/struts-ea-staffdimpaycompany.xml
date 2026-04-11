@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="staffpdimaycompany-token" namespace="/ea/staffdimpaycompany"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.company.action.human.StaffDimPayCompanyAction" method="{1}">
+			<result name="getStaffDimPayList">/page/ea/main/company/human/staffdimpay_company.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="staffdimpaycompany-ntoken" namespace="/ea/staffdimpaycompany" extends="struts-default">
+		<action name="ea_*" class="hy.ea.company.action.human.StaffDimPayCompanyAction" method="{1}">
+			<result name="getStaffDimPayList">/page/ea/main/company/human/staffdimpay_company.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+</struts>

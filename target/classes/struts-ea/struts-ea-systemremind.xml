@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="systemremind-ntoken" namespace="/ea/systemremind"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.action.SystemRemindAction" method="{1}">
+		     <param name="args">99_10_50_50_50_50</param>
+			 <result name="systemreminds">/page/ea/SystemReminds.jsp</result>
+			 <result name="staffForCashier">/page/ea/main/finance/cashierbills_jqm_cstaffs.jsp</result>
+			 <result name="success">/page/ea/success.jsp</result> 
+			 <result name="historylist">/page/ea/SystemReminds.jsp</result>
+		<!-- 导出 -->
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="responsibilities.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+</struts>

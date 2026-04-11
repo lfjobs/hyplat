@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="CS" table="dtCS">
+		<id length="50" name="csKEY">
+			<column length="50" name="csKEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="csID">
+			<column length="50" name="csID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+	</class>
+</hibernate-mapping>

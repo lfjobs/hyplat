@@ -1,5 +1,8 @@
 package hy.ea.finance.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -63,6 +66,7 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class SplitBillAction {
+	private static final Logger logger = LoggerFactory.getLogger(SplitBillAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -876,7 +880,7 @@ public class SplitBillAction {
 			relatedBill.setCashfid(cBills.getCashierBillsID());
 			baseBeanList.add(relatedBill);	
 		}catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return baseBeanList;
 	}
@@ -942,7 +946,7 @@ public class SplitBillAction {
 					null, null);
 		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 	
@@ -1000,7 +1004,7 @@ public class SplitBillAction {
 					hqls, paramList);
 		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 	
@@ -1209,7 +1213,7 @@ public class SplitBillAction {
 			JSONObject oj = JSONObject.fromObject(map, jsonConfig);
 			result = oj.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return "success";
@@ -1562,7 +1566,7 @@ public class SplitBillAction {
 			JSONObject obj = JSONObject.fromObject(map,jsonConfig);
 			this.result = obj.toString();
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return "success";
@@ -1601,7 +1605,7 @@ public class SplitBillAction {
 			JSONObject obj = JSONObject.fromObject(map,jsonConfig);
 			this.result = obj.toString();
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return "success";
@@ -1928,7 +1932,7 @@ public class SplitBillAction {
 			JSONObject oj = JSONObject.fromObject(map, jsonConfig);
 			result = oj.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return "success";

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="SuggestionDoc" table="DT_OA_DOCUMENT_SUGG">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="sugId" type="java.lang.String">
+			<column name="sugId" length="50" />
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="255" />
+		</property>
+		<property name="suggestion" type="java.lang.String">
+			<column name="suggestion" length="400" />
+		</property>
+		<property name="sender" type="java.lang.String">
+			<column name="sender" length="50" />
+		</property>
+		<property name="receiver" type="java.lang.String">
+			<column name="receiver" length="50" />
+		</property>
+		<property name="senderName" type="java.lang.String">
+			<column name="senderName" length="50" />
+		</property>
+		<property name="receiverName" type="java.lang.String">
+			<column name="receiverName" length="50" />
+		</property>
+		<property name="sugTime" type="java.lang.String">
+			<column name="sugTime" length="50" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

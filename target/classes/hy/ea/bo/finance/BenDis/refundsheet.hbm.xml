@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">          
+
+
+<hibernate-mapping package="hy.ea.bo.finance.BenDis">
+	<class name="RefundSheet"  table="dtRefundSheet">
+		<id length="50" name="rskey">
+			<column length="50" name="rskey" />
+			<generator class="uuid" />
+		</id>
+		<property name="rsid">
+			<column length="50" name="rsid" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="orderCode">
+			<column length="50" name="orderCode"><comment>订单编号</comment></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID"><comment>订单ID</comment></column>
+		</property>
+		<property name="ppid">
+			<column length="50" name="ppId"><comment>关联产品ID</comment></column>
+		</property>
+		<property name="refundCode">
+			<column length="50" name="refundCode"><comment>退款单编号</comment></column>
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID"><comment>公司ID</comment></column>
+		</property>
+		<property  name="companyName">
+			<column length="50" name="companyName"><comment>公司名称</comment></column>
+		</property>
+		<property  name="orderDate">
+			<column  name="orderDate"><comment>下单时间</comment></column>
+		</property>
+		<property  name="userID">
+			<column length="50" name="userID"><comment>用户ID</comment></column>
+		</property>
+			<property name="userName">
+			<column length="50" name="userName"><comment>用户Name</comment></column>
+		</property>
+		<property name="userAccount">
+			<column length="20" name="userAccount"><comment>用户账号</comment></column>
+		</property>
+		<property  name="vipType">
+			<column length="10" name="vipType"><comment>会员类别</comment></column>
+		</property>
+		<property  name="remark">
+			<column length="50" name="remark"><comment>备注 </comment></column>
+		</property>
+		<property  name="refundType">
+			<column length="2" name="refundType"><comment>退货类型 ：00:仅退款  01：退款退货</comment></column>
+		</property>
+	
+		<property  name="refundCause">
+			<column length="500" name="refundCause"><comment>退货原因</comment></column>
+		</property>
+		<property  name="refundMoney">
+			<column length="11" name="refundMoney"><comment>退款金额</comment></column>
+		</property>
+		<property  name="refundNum">
+			<column length="11" name="refundNum"><comment>退货数量</comment></column>
+		</property>
+		<property  name="refundRemark">
+			<column  length="500" name="refundRemark"><comment>退款说明</comment></column>
+		</property>
+		<property  name="voucherfile1">
+			<column  length="250" name="voucherfile1"><comment>凭证图片1路径</comment></column>
+		</property>
+		<property  name="voucherfile2">
+			<column  length="250" name="voucherfile2"><comment>凭证图片2路径</comment></column>
+		</property>
+		<property  name="voucherfile3">
+			<column  length="250" name="voucherfile3"><comment>凭证图片3路径</comment></column>
+		</property>
+			<property  name="receiverTel">
+			<column   length="11" name="receiverTel"><comment>接收人电话</comment></column>
+		</property>
+		<property  name="express">
+			<column  length="50" name="express"><comment>快递公司</comment></column>
+		</property>
+		
+		<property  name="refundDate">
+			<column   name="refundDate"><comment>退货申请时间</comment></column>
+		</property>
+		<property  name="refundstate">
+			<column  length="2" name="refundstate"><comment>退款单状态；00:买家提交退款申请；01：卖家同意退款 02：卖家拒绝退款03:卖家确认收货 04：卖家已银行打款</comment></column>
+		</property>
+		<property  name="dealDate">
+			<column  name="dealDate"><comment>卖家同意或者拒绝退款时间</comment></column>
+		</property>
+		<property  name="refundAddress">
+			<column  length="500" name="refundAddress"><comment>退货地址</comment></column>
+		</property>
+		<property  name="postcode">
+			<column  length="6" name="postcode"><comment>退货地址邮编</comment></column>
+		</property>
+		<property  name="receiverID">
+			<column  length="50" name="receiverID"><comment>接收人ID</comment></column>
+		</property>
+		<property  name="receiverName">
+			<column  length="50" name="receiverName"><comment>接收人Name</comment></column>
+		</property>
+		<property  name="count">
+			<column  length="50" name="count"><comment>退货数量</comment></column>
+		</property>
+		<property  name="backDate">
+			<column name="backDate"><comment>买家寄回商品时间</comment></column>
+		</property>		
+		<property  name="waybillno">
+			<column  length="20" name="waybillno"><comment>运单号</comment></column>
+		</property>
+		<property  name="expCode">
+			<column  length="10" name="expCode"><comment>快递标识</comment></column>
+		</property>
+		<property  name="confirmConsigneeDate">
+			<column   name="confirmConsigneeDate"><comment>卖家确认收到退回来的货的时间</comment></column>
+		</property>
+		<property  name="freight">
+			<column  length="11" name="freight"><comment>运费</comment></column>
+		</property>
+		<property  name="warehouseCode">
+			<column  length="11" name="warehouseCode"><comment>接收仓库编号</comment></column>
+		</property>
+		<property  name="remitDate">
+			<column name="remitDate"><comment>银行退款时间</comment></column>
+		</property>
+		<property  name="bankName">
+			<column  length="50" name="bankName"><comment>银行名称</comment></column>
+		</property>
+		<property  name="bankAccount">
+			<column  length="16" name="bankAccount"><comment>银行账号</comment></column>
+		</property>
+	    <property  name="bankUser">
+			<column  length="50" name="bankUser"><comment>银行用户名</comment></column>
+		</property>
+		 <property  name="accountstatus">
+			<column  length="2" name="accountstatus"><comment>到账状态 00：处理中 01：成功 02：失败</comment></column>
+		</property>
+	
+		
+	</class>
+</hibernate-mapping>

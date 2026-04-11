@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.driving.view">
+	<class name="DrivingStudentView" table="view_driving_student"> 
+		<id name="drivingprincipalkey" type="java.lang.String">
+            <column name="drivingprincipalkey" length="50" />
+            <generator class="uuid" />
+        </id>
+		<property name="staffid" type="java.lang.String">
+			<column length="50" name="staffid" />
+		</property>
+		<property name="staffcode" type="java.lang.String">
+        	<column name="staffcode"  length="50" />
+        </property>
+       <property name="recordcode" type="java.lang.String">
+        	<column name="recordcode"  length="50"  />
+        </property>
+         <property name="staffname" type="java.lang.String">
+        	<column name="staffname" length="50"  />
+        </property>
+        
+          <property name="usednmae" type="java.lang.String">
+        	<column name="usednmae" length="50"  />
+        </property>
+          <property name="reference" type="java.lang.String">
+        	<column name="reference" length="50" />
+        </property>
+          <property name="sex" type="java.lang.String">
+        	<column name="sex" length="10"  />
+        </property>
+        <property name="birthday" type="java.lang.String">
+        	<column name="birthday" length="50"  />
+        </property>
+        <property name="nativeplace" type="java.lang.String">
+        	<column name="nativeplace" length="50"  />
+        </property>
+        <property name="nationality" type="java.lang.String">
+        	<column name="nationality" length="50"  />
+        </property>
+        <property name="nation" type="java.lang.String">
+        	<column name="nation" length="50"  />
+        </property>
+         <property name="staffidentitycard" type="java.lang.String">
+        	<column name="staffidentitycard" length="50"  />
+        </property>
+         <property name="companyid" type="java.lang.String">
+        	<column name="companyid" length="50"  />
+        </property>
+        <property name="companyname" type="java.lang.String">
+        	<column name="companyname" length="100"  />
+        </property>
+        <property name="registrationdate" type="java.util.Date">
+        	<column name="registrationdate"   />
+        </property>
+        <property name="docstatus" type="java.lang.String">
+        	<column name="docstatus" length="10"  />
+        </property>
+        <property name="studentstatus" type="java.lang.String">
+        	<column name="studentstatus" length="10"  />
+        </property>
+        <property name="istrues" type="java.lang.String">
+        	<column name="istrues" length="20"  />
+        </property>
+        <property name="printcount" type="java.lang.Integer">
+        	<column name="printcount"   length="10" />
+        </property>
+        <property name="states" type="java.lang.String">
+        	<column name="states"   length="10" />
+       </property>
+        <property name="studentstatusnote" type="java.lang.String">
+        	<column name="studentstatusnote"   length="50" />
+        </property>
+        <property name="studentPeriods" type="java.lang.String">
+        	<column name="studentPeriods"   length="50" />
+        </property>
+        <property name="testresult" type="java.lang.String">
+        	<column name="testresult"   length="10" />
+        </property>
+        <property name="inputTime" type="java.util.Date">
+        	<column name="inputTime"    />
+        </property>
+        
+        <property name="ddmsignupdate" type="java.util.Date">
+        	<column name="ddmsignupdate"    />
+        </property>
+        <property name="ddmorganizationid" type="java.lang.String">
+        	<column name="ddmorganizationid"   length="50" />
+        </property>
+        <property name="ddmorganizationname" type="java.lang.String">
+        	<column name="ddmorganizationname"   length="50" />
+        </property>
+        <property name="ddmreferrerid" type="java.lang.String">
+        	<column name="ddmreferrerid"   length="50" />
+        </property>
+        <property name="ddmreferrer" type="java.lang.String">
+        	<column name="ddmreferrer"   length="50" />
+        </property>
+        <property name="contactWay" type="java.lang.String">
+        	<column name="contactWay"   length="50" />
+        </property>
+	</class>
+</hibernate-mapping>

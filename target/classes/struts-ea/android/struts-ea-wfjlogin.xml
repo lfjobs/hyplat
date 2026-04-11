@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="wfjlogin-token" namespace="/ea/wfjlogin" extends="struts-default">
+		<action name="ea_*" class="com.tiantai.wfj.front.WfjLoginAction" method="{1}">
+			<result name="zcok">/page/mobile/zcok.jsp</result>
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+			<result name="bintel">/page/WFJClient/pc/bindTel.jsp</result>
+			<result name="earth">/page/WFJClient/pc/earth/earth.jsp?wxLogin=wx</result>
+
+			<result name="cltjzc" type="redirectAction">
+				<param name="actionName">/ea_registeredViewVehicle.jspa</param>
+				<param name="namespace">/ea/mappointment</param>
+				<param name="tcc.account">${phones}</param>
+			</result>
+
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="wfjlogin-jsonajax" namespace="/ea/wfjlogin" extends="json-default">
+		<action name="sajax_ea_*" class="com.tiantai.wfj.front.WfjLoginAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+	
+</struts>

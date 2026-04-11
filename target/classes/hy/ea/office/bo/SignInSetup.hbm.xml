@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.office.bo">
+	<class name="SignInSetup" table="DT_SIGNIN_SETUP" schema="HYPLAT" dynamic-insert="true">
+	<comment>签到设置</comment>
+		<id length="50" name="signInSetupId" type="java.lang.String">
+			<column length="50" name="SIGNIN_SETUP_ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="COMPANY_ID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="signInTypeId" type="java.lang.String">
+			<column name="SIGNIN_TYPE_ID" length="50">
+				<comment>签到类别ID:普通，会议，外出</comment>
+			</column>
+		</property>
+		<property name="startTime" type="java.lang.String">
+			<column name="START_TIME" length="19">
+			<comment>签到开始时间</comment>
+			</column>
+		</property>
+		<property name="endTime" type="java.lang.String">
+			<column name="END_TIME" length="19">
+			<comment>签到结束时间</comment>
+			</column>
+		</property>
+		<property name="signInAddress" type="java.lang.String">
+			<column length="200" name="SIGNIN_ADDRESS" >
+				<comment>签到地址</comment>
+			</column>
+		</property>
+		<property name="setupDate" type="java.util.Date">
+			<column length="100" name="SETUP_DATE" >
+				<comment>设置时间</comment>
+			</column>
+		</property>
+		<property name="staffId" type="java.lang.String">
+			<column name="STAFF_ID" length="50">
+				<comment>设置人</comment>
+			</column>
+		</property>
+		<property name="reviewerId" type="java.lang.String">
+			<column name="REVIEWER_ID" length="50">
+				<comment>审核人</comment>
+			</column>
+		</property>
+		<property name="reviewStatus" type="java.lang.String">
+			<column name="REVIEW_STATUS" length="10">
+				<comment>审核状态</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
+

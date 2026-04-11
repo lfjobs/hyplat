@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="refund-token" namespace="/ea/refund"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.finance.action.BenDis.RefundSheetAction" method="{1}">
+		      <result name="success">/page/ea/success.jsp</result>
+		      <result name="list">/page/ea/main/finance/BenDis/refundSheet_list.jsp</result>
+		       <result name="mobileRefundList">/page/ea/main/finance/mobile/mobileRefund_list.jsp</result>
+		       <result name="mobileright">/page/ea/main/finance/mobile/mobileRight_list.jsp</result>
+		       <result name="mobileAgree">/page/ea/main/finance/mobile/refundAgree.jsp</result>
+		       <result name="mobileAddress">/page/ea/main/finance/mobile/refundAddress.jsp</result>
+		        <result name="afterSale">/page/ea/main/finance/mobile/mobileAfterSale.jsp</result>
+		       <result name="refundDefault">/page/ea/main/finance/mobile/addAddress.jsp</result>
+		       <result name="addAddress">/page/ea/main/finance/mobile/addAddress2.jsp</result>
+		      <result name="seepage">/page/ea/main/finance/BenDis/refundSheet_see.jsp</result>
+		      <result name="printprev">/page/ea/main/finance/BenDis/refundSheet_print.jsp</result>
+		      <result name="approvepage">/page/ea/main/finance/BenDis/approverefund.jsp</result>
+		      <result name="rejectpage">/page/ea/main/finance/BenDis/rejectfund.jsp</result>
+		      <result name="noticebefore">/page/ea/main/finance/BenDis/refundresult.jsp</result>
+		      <result name="afterRefundDetail">/page/ea/main/finance/mobile/afterRefundDetail.jsp</result>
+		      <result name="afterSaleDetail">/page/ea/main/finance/mobile/mobileAfterSale.jsp</result>
+		      <result name="tocash">/page/ea/main/finance/BenDis/refundbills_list.jsp</result>
+		      <result name="cashsee">/page/ea/main/finance/BenDis/cashview.jsp</result>
+		      <result name="sealAddress">/page/WFJClient/ShopOwner/person/sendAddress.jsp</result>
+		      <result name="detail">/page/WFJClient/ShopOwner/person/toDetail.jsp</result>
+		      <result name="toadd">/page/WFJClient/ShopOwner/person/sendAdd.jsp</result>
+		      <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="refundsheet.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="refund-jsonajax" namespace="/ea/refund" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.finance.action.BenDis.RefundSheetAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

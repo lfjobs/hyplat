@@ -59,6 +59,7 @@ import com.wechatpay.service.WchatPay;
 @Controller("SellerOrderAction")
 @Scope("prototype")
 public class SellerOrderAction {
+	private static final Logger logger = LoggerFactory.getLogger(SellerOrderAction.class);
 
     @Resource
     private BaseBeanService baseBeanService;
@@ -144,7 +145,7 @@ public class SellerOrderAction {
             pageForm = baseBeanService.getPageFormByDC(
                     (null != pageForm ? pageForm.getPageNumber() : 1), 7, dc);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         StringBuilder sql = new StringBuilder();
@@ -338,7 +339,7 @@ public class SellerOrderAction {
             pageForm = baseBeanService.getPageFormByDC(
                     (null != pageForm ? pageForm.getPageNumber() : 1), 7, dc);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         List<Object[]> goodlist = null;
         StringBuffer sql = new StringBuffer();
@@ -577,7 +578,7 @@ public class SellerOrderAction {
             try {
                 response.sendRedirect(url);
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
             return null;
         }else{
@@ -1006,7 +1007,7 @@ public class SellerOrderAction {
             newgoodsBill = (GoodsBills) gb.cloneGoodsBills();
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         newgoodsBill.setGoodsBillsID(serverService.getServerID("goodsBillsID"));
         newgoodsBill.setGoodsBillsKey(null);
@@ -1035,7 +1036,7 @@ public class SellerOrderAction {
     	try {
     		transferService.saveSorting(cashid);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			flag="操作失败";
 		}
     	
@@ -1145,7 +1146,7 @@ public class SellerOrderAction {
         	JSONObject oj = JSONObject.fromObject(map);
         	result=oj.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
     	return "success";
     }
@@ -1250,7 +1251,7 @@ public class SellerOrderAction {
         	JSONObject oj = JSONObject.fromObject(map);
         	result=oj.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
     	return "success";
     }
@@ -1355,7 +1356,7 @@ public class SellerOrderAction {
     		flag=transferService.TransportLogicalProcessing(transportid,Waybillno,ExCode,staffid);
 		} catch (Exception e) {
 			flag="01";
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
     	Map<String, String> map=new HashMap();
     	map.put("flag", flag);
@@ -1407,7 +1408,7 @@ public class SellerOrderAction {
             pageForm = baseBeanService.getPageFormByDC(
                     (null != pageForm ? pageForm.getPageNumber() : 1), 4, dc);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         Map<String,Object> map =new HashMap<String,Object>();
         map.put("pageForm", pageForm);
@@ -1427,7 +1428,7 @@ public class SellerOrderAction {
             falg=transferService.addOverdraft(cashid,raddressId,falg);
         }catch (Exception e){
             falg="01";
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("falg",falg);
@@ -1449,7 +1450,7 @@ public class SellerOrderAction {
             transferService.addAddress(cashid,raddressId);
         }catch (Exception e){
             falg="01";
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("falg",falg);
@@ -1466,7 +1467,7 @@ public class SellerOrderAction {
             String sql="select wm_concat(g.goodsname) from dtgoodsbills g where g.cashierbillsid=?";
             goodname=baseBeanService.getObjectBySqlAndParams(sql,new Object[]{cashid});
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("goodname",goodname);

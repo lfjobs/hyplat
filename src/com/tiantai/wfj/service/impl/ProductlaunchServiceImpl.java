@@ -1,5 +1,8 @@
 package com.tiantai.wfj.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tiantai.wfj.bo.Promotion;
@@ -1013,10 +1016,10 @@ public class ProductlaunchServiceImpl implements ProductlaunchService {
         for (int i = 0; i < beans.size(); i++) {
             try {
                 String json = mapper.writeValueAsString(beans.get(i));
-                System.out.println("\"" + BaseBean.class.getName() + i + "\":" + json + ",");
+                logger.info("调试信息");
 
             } catch (JsonProcessingException e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
         }
     }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+    
+    <struts>
+    		<package strict-method-invocation="false" name="productAgent-ntoken" namespace="/ea/productAgent"  extends="struts-default">
+    			<action name="ea_*" class="ProductAgentAction" method="{1}">
+					<result name="productAgentList">/page/WFJClient/ProductAgent/InvestmentService.jsp</result>
+					<result name="proAgentDetail">/page/WFJClient/ProductAgent/AgentDetail.jsp</result>
+					<result name="investmentRules">/page/WFJClient/ProductAgent/InvestmentRules.jsp</result>
+					<result name="investmentDemand">/page/WFJClient/ProductAgent/InvestmentDemand.jsp</result>
+					<result name="companyAgent">/page/WFJClient/ProductAgent/CompanyAgent.jsp</result>
+					<result name="investmentPro">/page/WFJClient/ProductAgent/InvestmentPromotion.jsp</result>
+					<result name="investmentProducts">/page/WFJClient/ProductAgent/InvestmentProducts.jsp</result>
+					<result name="investRelease">/page/WFJClient/ProductAgent/InvestRelease.jsp</result>
+					<result name="investmentInfo">/page/WFJClient/ProductAgent/InvestmentInfo.jsp</result>
+					<result name="applyDetail">/page/WFJClient/ProductAgent/ApplyDetail.jsp</result>
+					<result name="success">/page/ea/success.jsp</result>
+    			</action>
+    		</package>
+    		
+    		<package strict-method-invocation="false" name="productAgent-ajax" namespace="/ea/productAgent"  extends="json-default">
+    			<action name="sajax_*" class="ProductAgentAction" method="{1}">
+					<result type="json">
+						<param name="root">result</param>
+					</result>
+				</action>
+    		</package>
+    
+    </struts>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="supermarket-ntoken" namespace="/ea/sm"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.marketing.action.supermaket.SuperSelfAction" method="{1}">
+			<result name="success">/page/ea/main/marketing/supermarket/selfservice/suc.jsp</result>
+			<result name="login">/page/ea/main/marketing/supermarket/selfservice/selfService_login.jsp</result>
+			<result name="index">/page/ea/main/marketing/supermarket/selfservice/selfService_index.jsp</result>
+			<result name="qdlist">/page/ea/main/marketing/supermarket/selfservice/selfService_qdlist.jsp</result>
+			<result name="ercode">/page/ea/main/marketing/supermarket/selfservice/selfService_pay.jsp</result>
+			<result name="cashpay">/page/ea/main/marketing/supermarket/selfservice/cashPay.jsp</result>
+			<result name="sucorder">/page/ea/main/marketing/supermarket/selfservice/selfService_sucorder.jsp</result>
+			<result name="sucorder_offline">/page/ea/main/marketing/supermarket/selfservice/selfService_sucorder_offline.jsp</result>
+			<result name="paysuc">/page/conacts/restaurant/paySuc.jsp</result>
+			<result name="sjfdetail">/page/ea/main/marketing/supermarket/selfservice/selfService_jfdetail.jsp</result>
+			<result name="topup">/page/ea/main/marketing/supermarket/selfservice/integralTopup.jsp</result>
+			<result name="scaleindex">/page/ea/main/marketing/supermarket/selfservice/scaleMpc.jsp</result>
+			<result name="card">/page/ea/main/marketing/supermarket/selfservice/selfService_opencard.jsp</result>
+			<result name="joinvip">/page/ea/main/marketing/supermarket/selfservice/selfService_successfully.jsp</result>
+			<result name="nopay">/page/ea/main/marketing/supermarket/selfservice/selfService_nopay.jsp</result>
+			<result name="wfjlogin">/page/WFJClient/pc/pc_login.jsp</result>
+			<result name="auth">/page/ea/main/marketing/supermarket/container/auth.jsp</result>
+			<result name="opensuc">/page/ea/main/marketing/supermarket/container/opensuc.jsp</result>
+			<result name="codehg">/page/ea/main/marketing/supermarket/container/codehg.jsp</result>
+			<result name="selectdoor">/page/ea/main/marketing/supermarket/container/selectDoor.jsp</result>
+			<result name="useing">/page/ea/main/marketing/supermarket/container/useing.jsp</result>
+
+			<result name="topaydetail" type="redirectAction">
+				<param name="actionName">ea_getCashBill.jspa?</param>
+				<param name="namespace">/ea/pobuy/</param>
+				<param name="cbid">${cbid}</param>
+				<param name="sccId">${sccId}</param>
+				<param name="lastPay">${lastPay}</param>
+			</result>
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="supermarket-jsonajax" namespace="/ea/sm"  extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.marketing.action.supermaket.SuperSelfAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

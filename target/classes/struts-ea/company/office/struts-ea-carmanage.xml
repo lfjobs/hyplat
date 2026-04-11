@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="carmanage-token" namespace="/ea/carmanage" extends="struts-default">
+		<action name="ea_*" class="hy.ea.office.action.CarManageAction" method="{1}">
+			<result name="nologin">/page/ea/not_login.jsp</result>
+			<result name="login">/page/WFJClient/pc/pc_login.jsp</result>
+			<result name="list">/page/ea/main/office_ea/carmanage/carmanage_list.jsp</result>
+			<result name="collectList">/page/ea/main/office_ea/carmanage/collect_list.jsp</result>
+			<result name="feescale">/page/ea/main/office_ea/carmanage/feescale_list.jsp</result>
+			<result name="feenews">/page/ea/main/production/cprocedure/qrshare/feeCharge.jsp</result>
+			<result name="queryMessage">/page/ea/main/office_ea/carmanage/collect_print.jsp</result>
+			<result name="siteList">/page/ea/main/office_ea/carmanage/siteManagement.jsp</result>
+			<result name="parkingList">/page/ea/main/office_ea/carmanage/parkingSpaceList.jsp</result>
+			<result name="vipList">/page/ea/main/office_ea/carmanage/vipFeeList.jsp</result>
+			<result name="facilityList">/page/ea/main/office_ea/carmanage/facility_list.jsp</result>
+			<result name="errorlist">/page/ea/main/office_ea/carmanage/error_list.jsp</result>
+	        <result name="success">/page/ea/success.jsp</result>
+            <result name="examinationRoomList">/page/ea/main/office_ea/carmanage/examinationRoomList.jsp</result>
+			<result name="chargeList">/page/ea/main/office_ea/carmanage/charge_list.jsp</result>
+			<result name="testRecordList">/page/ea/main/office_ea/carmanage/testRecord_list.jsp</result>
+			<result name="viewExaminationRecords">/page/ea/main/office_ea/carmanage/viewExaminationRecords.jsp</result>
+			<result name="printingTestRecord">/page/ea/main/office_ea/carmanage/printingTestRecord.jsp</result>
+			<result name="feeaudit">/page/ea/main/office_ea/carmanage/feeAudit.jsp</result>
+
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="responsibilities.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+
+
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="carmanage-sajax" namespace="/ea/carmanage" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.CarManageAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="carmanage-r" namespace="/ea/carmanage" extends="json-default">
+		<action name="r_ea_*" class="hy.ea.office.action.CarManageAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">results</param>
+			</result>
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="carmanage-rs" namespace="/ea/carmanage" extends="json-default">
+		<action name="rs_ea_*" class="hy.ea.office.action.CarManageAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+
+		</action>
+	</package>
+</struts>

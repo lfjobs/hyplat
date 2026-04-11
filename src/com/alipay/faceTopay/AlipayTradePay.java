@@ -1,5 +1,8 @@
 package com.alipay.faceTopay;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.request.AlipayTradeCancelRequest;
@@ -17,6 +20,7 @@ import hy.ea.util.Constant;
  * Created by Administrator on 2017/3/10 0010.
  */
 public class AlipayTradePay {
+	private static final Logger logger = LoggerFactory.getLogger(AlipayTradePay.class);
 
     public static  AlipayClient  alipayClient = new DefaultAlipayClient(AlipayConfig.URL, AlipayConfig.APP_ID, AlipayConfig.APP_PRIVATE_KEY, "json", "GBK", AlipayConfig.APP_PUBLIC_KEY, "RSA");
 
@@ -57,9 +61,9 @@ public class AlipayTradePay {
         if (response.isSuccess()) {
             System.out.print(response.getBody());
 
-            System.out.println("调用成功");
+            logger.info("调用成功");
         } else {
-            System.out.println("调用失败");
+            logger.info("调用失败");
         }
 
             tradePayReuslt.setCode(response.getCode());
@@ -67,7 +71,7 @@ public class AlipayTradePay {
             tradePayReuslt.setTrade_no(response.getTradeNo());
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
               return tradePayReuslt;
@@ -93,7 +97,7 @@ public class AlipayTradePay {
             tradePayReuslt.setTrade_status(response.getTradeStatus());
             //根据response中的结果继续业务逻辑处理
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return tradePayReuslt;
     }
@@ -115,7 +119,7 @@ public class AlipayTradePay {
 //        System.out.print(response.getBody());
         code = response.getCode();
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return code;
     }
@@ -138,14 +142,14 @@ public class AlipayTradePay {
             if (response.isSuccess()) {
                 System.out.print(response.getBody());
                 response.getCode();
-                System.out.println("调用成功");
+                logger.info("调用成功");
             } else {
-                System.out.println("调用失败");
+                logger.info("调用失败");
                 System.out.print(response.getBody());
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 }

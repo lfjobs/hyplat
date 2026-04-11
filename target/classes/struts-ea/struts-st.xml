@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="enroll" namespace="/st/enroll"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.st.action.EnrollsAction" method="{1}" >
+			<result name="success">/page/ea/success.jsp</result>
+
+			<!-- 报名 -->
+			<result name="enrollPage">/st/once_charge.jsp</result>
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+
+			<result name="team">/st/team.jsp</result>
+			<result name="equipment">/st/equipment.jsp</result>
+			<result name="teamDetails">/st/teamDetails.jsp</result>
+			<result name="equipmentDetails">/st/equipmentDetails.jsp</result>
+
+			<result name="productType">/st/productType.jsp</result>
+			<result name="associatedMall">/st/associatedMall.jsp</result>
+			<result name="news">/st/PlatNewList.jsp</result>
+		</action>
+	</package>
+
+	<package strict-method-invocation="false" name="enroll-jsonajax" namespace="/st/enroll" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.st.action.EnrollsAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

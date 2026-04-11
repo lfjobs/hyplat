@@ -1,5 +1,8 @@
 package hy.ea.human.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import hy.ea.bo.human.salaryNew.SalaryItem;
 
@@ -223,7 +226,7 @@ public class SalaryLevelServiceImpl implements SalaryLevelService {
             }
             beandao.saveBeansListAndexecuteHqlsByParams(beans, null, null);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
             result = "fail";
         }
         return result;
@@ -254,7 +257,7 @@ public class SalaryLevelServiceImpl implements SalaryLevelService {
 
             }
         }catch (Exception e){
-//           e.printStackTrace();
+//           logger.error("操作异常", e);
         }
         salaryUnits.setSeq((a+1)+"");
 
@@ -282,7 +285,7 @@ public class SalaryLevelServiceImpl implements SalaryLevelService {
             String sql = "select max(to_number(seq)) from dtSalaryUnits where suID = ? and status='00' and companyID = ?";
             a = beandao.getConutByBySqlAndParams(sql, new Object[]{salaryItem.getSuID(), companyID});
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         salaryItem.setSeq((a+1)+"");
 
@@ -387,7 +390,7 @@ public class SalaryLevelServiceImpl implements SalaryLevelService {
             }
             beandao.saveBeansListAndexecuteHqlsByParams(beans, null, null);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
             result = "fail";
         }
         return result;

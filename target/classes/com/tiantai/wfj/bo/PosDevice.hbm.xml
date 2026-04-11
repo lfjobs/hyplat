@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="PosDevice" table="DT_PosDevice" schema="HYPLAT" dynamic-insert="true">
+	<comment>终端机</comment>
+		<id length="50" name="posKey" type="java.lang.String">
+			<column length="50" name="posKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="posID" type="java.lang.String">
+			<column length="50" name="posID" >
+			</column>
+		</property>
+		<property name="posNum" type="java.lang.String">
+			<column name="posNum" length="20">
+				<comment>pos唯一编号</comment>
+			</column>
+		</property>
+		<property name="posName" type="java.lang.String">
+			<column length="2" name="posName" >
+				<comment>pos的名称；01:互视达销售终端机，02:红外线手持机，03：非红外线手持机，04：平板电脑。</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column name="staffID" length="50">
+			<comment>负责人ID</comment>
+			</column>
+		</property>
+		<property name="staffName" type="java.lang.String">
+			<column name="staff" length="20">
+				<comment>负责人姓名</comment>
+			</column>
+		</property>
+		<property name="organizationID" type="java.lang.String">
+			<column length="50" name="organizationID" >
+			<comment>部门或者负责的社区ID</comment>
+			</column>
+		</property>
+		<property name="organizationName" type="java.lang.String">
+			<column length="50" name="organizationName" >
+				<comment>部门或者负责的社区名称</comment>
+			</column>
+		</property>
+		<property name="comID" type="java.lang.String">
+			<column length="50" name="comID" >
+			<comment>负责配送的超市的ID</comment>
+			</column>
+		</property>
+		<property name="comName" type="java.lang.String">
+			<column length="50" name="comName" >
+				<comment>负责配送的超市的Name</comment>
+			</column>
+		</property>
+		<property name="inputID" type="java.lang.String">
+			<column length="50" name="inputID" >
+			<comment>录入人员</comment>
+			</column>
+		</property>
+		<property name="inputName" type="java.lang.String">
+			<column length="20" name="inputName" >
+				<comment>录入人员姓名</comment>
+			</column>
+		</property>
+		<property name="state" type="java.lang.String">
+			<column length="1" name="state" >
+			<comment>0正常使用状态，1：已停用，2，已收回。</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>添加日期</comment>
+			</column>
+		</property>
+		<property name="accessCcomID" type="java.lang.String">
+			<column length="50" name="accessCcomID" >
+				<comment>哪个超市作为入口</comment>
+			</column>
+		</property>
+		<property name="accessCcomName" type="java.lang.String">
+			<column length="50" name="accessCcomName" >
+				<comment>哪个超市作为入口</comment>
+			</column>
+		</property>
+		<property name="fhform" type="java.lang.String">
+			<column length="1" name="fhform" >
+				<comment>//发货形式：0全部商家送货 1商家送货+现场拿货 2 仅现场拿货</comment>
+			</column>
+		</property>
+		<property name="app" type="java.lang.String">
+			<column length="2" name="app" >
+				<comment>空 不指定 01 考场练车</comment>
+			</column>
+		</property>
+		<property name="siteId" type="java.lang.String">
+			<column length="50" name="siteId" >
+				<comment>所属场地id</comment>
+			</column>
+		</property>
+			<property name="equipmentNumber" type="java.lang.String">
+			<column length="50" name="equipmentNumber" >
+				<comment>设备编号</comment>
+			</column>
+		</property>
+
+		<property name="hgcode" type="java.lang.String">
+			<column length="50" name="hgcode" >
+				<comment>货柜编号</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

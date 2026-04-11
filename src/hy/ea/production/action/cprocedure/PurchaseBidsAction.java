@@ -1,5 +1,8 @@
 package hy.ea.production.action.cprocedure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.service.EarthIndexService;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
@@ -61,6 +64,7 @@ import com.tiantai.wfj.util.SessionWrap;
 @Controller
 @Scope("prototype")
 public class PurchaseBidsAction {
+	private static final Logger logger = LoggerFactory.getLogger(PurchaseBidsAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -959,7 +963,7 @@ public class PurchaseBidsAction {
 					hqls.toArray(new String[hqls.size()]), parmsList);
 		} catch (Exception e) {
 			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	   
 	   return "success";
@@ -1238,7 +1242,7 @@ public class PurchaseBidsAction {
 								baseBeanList, null, null);
 		} catch (Exception e) {
 			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}*/
 			
 		

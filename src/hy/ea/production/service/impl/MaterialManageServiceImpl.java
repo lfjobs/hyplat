@@ -1,5 +1,8 @@
 package hy.ea.production.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
 import com.tiantai.wfj.bo.WeChatToken;
@@ -192,7 +195,7 @@ public class MaterialManageServiceImpl implements MaterialManageService {
 			}
 		} catch (Exception e) {
 			f = false;
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return f;
@@ -222,7 +225,7 @@ public class MaterialManageServiceImpl implements MaterialManageService {
 					new String[] { hqldelete }, new Object[] { staffID, "00" });
 		} catch (Exception e) {
 			f = false;
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return f;
@@ -469,7 +472,7 @@ public class MaterialManageServiceImpl implements MaterialManageService {
 
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			
 	        
@@ -562,7 +565,7 @@ public class MaterialManageServiceImpl implements MaterialManageService {
 				}
 				
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 	      
@@ -609,7 +612,7 @@ public class MaterialManageServiceImpl implements MaterialManageService {
 						hasPic = matcher.find();//判断是否还有img标签
 					}	
 				}
-			System.out.println("匹配到的内容："+srcList);
+			logger.info("调试信息");
 	      return srcList; 
 	    } 
 
@@ -642,7 +645,7 @@ public class MaterialManageServiceImpl implements MaterialManageService {
 			contentToFileService.saveContent(id, content, path);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 
 		}
 
@@ -931,7 +934,7 @@ public class MaterialManageServiceImpl implements MaterialManageService {
 			reader.close();
 			results = sbf.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return results;
 	}
@@ -1277,10 +1280,10 @@ public class MaterialManageServiceImpl implements MaterialManageService {
 			out.write(buffer);
 			out.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return false;
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return false;
 		}
 

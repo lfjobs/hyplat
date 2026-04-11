@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo">
+    <class name="CDetail" table="dtCDetail">
+        <id name="detailKey" length="50">
+        	<column name="detailKey" length="50"/>
+        	<generator class="uuid" />
+        </id>
+         <property name="detailID">
+        	<column name="detailID" length="50" unique="true" not-null="true"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"  not-null="true"/>
+        </property>
+        <property name="companyAddress" >
+        	<column name="companyAddress" length="256"  not-null="true"/>
+        </property>
+        <property name="companyPhone" >
+        	<column name="companyPhone" length="20"  not-null="true"/>
+        </property>
+         <property name="companyManager" >
+        	<column name="companyManager" length="250"  not-null="true"/>
+        </property>
+        <property name="managertel" >
+            <column name="companyManagerPhone" length="20"/>
+        </property>
+         <property name="companyEmail" >
+        	<column name="companyEmail" length="250"  />
+        </property>
+        <property name="logo" >
+        	<column name="logo" length="250"  />
+        </property>
+        <property name="registrationNumber" >
+        	<column name="registrationNumber" length="250"  />
+        </property>
+            <property name="province" >
+        	<column name="province" length="250"  />
+        </property>
+            <property name="city" >
+        	<column name="city" length="250"  />
+        </property>
+        <property name="licenseNumber" >
+        	<column name="licenseNumber" length="250"  />
+        </property>
+        <property name="licensePic" >
+        	<column name="licensePic" length="250"  />
+        </property>
+        <property name="bankNumber" >
+        	<column name="bankNumber" length="250"  />
+        </property>
+        <property name="bankAccount" >
+        	<column name="bankAccount" length="250"  />
+        </property>
+    </class>
+</hibernate-mapping>

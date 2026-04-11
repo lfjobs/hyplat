@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.human.COrganization;
@@ -43,6 +46,7 @@ import com.opensymphony.xwork2.ActionContext;
  *
  */
 public class EnterpriseVideoAction {
+	private static final Logger logger = LoggerFactory.getLogger(EnterpriseVideoAction.class);
 	
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -156,7 +160,7 @@ public class EnterpriseVideoAction {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "success";
@@ -212,7 +216,7 @@ public class EnterpriseVideoAction {
 					try {
 						dc.add(Restrictions.between("enDate", sdf.parse(sDate), sdf.parse(eDate)));
 					} catch (ParseException e) {
-						e.printStackTrace();
+						logger.error("操作异常", e);
 					}
 				} 
 			} 
@@ -234,7 +238,7 @@ public class EnterpriseVideoAction {
 			try {
 				fu.downFile(downLoadPath);
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		} 
 		
@@ -298,7 +302,7 @@ public class EnterpriseVideoAction {
 		            //因此两者均可使用 Process.getInputStream() 方法读取。这使得关联错误消息和相应的输出变得更容易
 		            Process process = builder.start();
 		            process.waitFor();
-		            System.out.println("转换完毕图片");
+		            logger.info("转换完毕图片");
 		            process.destroy();
 	        	
 	        	if(!ext.equals(".mp4")&&!ext.equals(".flv")){
@@ -307,15 +311,15 @@ public class EnterpriseVideoAction {
 	            builder.start();
 //	            Process process2 = builder.start();
 //	            process2.waitFor();
-//	            System.out.println("转换完毕视频");
+//	            logger.info("转换完毕视频");
 //	            process2.destroy();
 	           
 	        	}
 	          
 	        } catch (Exception e) {
 	            mark = false;
-	            System.out.println(e);
-	            e.printStackTrace();
+	            logger.info("值：{}", e);
+	            logger.error("操作异常", e);
 	          
 	        }
 	        return mark;
@@ -368,7 +372,7 @@ public class EnterpriseVideoAction {
 				
 			} catch (Exception e) {
 				
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			
 	    	

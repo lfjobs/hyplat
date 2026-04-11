@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="mobile.tiantai.android.bo.TrilateralData" table="TRILATERAL_DATA" schema="HYPLAT">
+        <id name="id" type="java.lang.String">
+            <column name="id" length="50" not-null="true"/>
+        </id>
+        <property name="companyName" type="java.lang.String">
+            <column name="company_Name" length="100"/>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="company_id" length="100"/>
+        </property>
+        <property name="personnelID" type="java.lang.String">
+            <column name="personnel_ID" length="100"/>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="100"/>
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="sex" length="100"/>
+        </property>
+        <property name="sector" type="java.lang.String">
+            <column name="sector" length="100"/>
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone" length="100"/>
+        </property>
+        <property name="registrationPlatformName" type="java.lang.String">
+            <column name="registration_Platform_Name" length="100"/>
+        </property>
+        <property name="registrationNo" type="java.lang.String">
+            <column name="registration_No" length="100"/>
+        </property>
+        <property name="registerAccount" type="java.lang.String">
+            <column name="register_Account" length="100"/>
+        </property>
+        <property name="pwd" type="java.lang.String">
+            <column name="pwd" length="100"/>
+        </property>
+        <property name="uploadProject" type="java.lang.String">
+            <column name="upload_Project" length="100"/>
+        </property>
+        <property name="promotionReasons" type="java.lang.String">
+            <column name="promotion_Reasons" length="100"/>
+        </property>
+        <property name="distributionService" type="java.lang.String">
+            <column name="distribution_Service" length="100"/>
+        </property>
+        <property name="serviceTracking" type="java.lang.String">
+            <column name="service_Tracking" length="100"/>
+        </property>
+        <property name="businessPersonnel" type="java.lang.String">
+            <column name="business_Personnel" length="100"/>
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" length="100"/>
+        </property>
+
+
+        <property name="staffId" type="java.lang.String">
+            <column name="staff_Id" length="100"/>
+        </property>
+        <property name="staffName" type="java.lang.String">
+            <column name="staff_Name" length="100"/>
+        </property>
+        <property name="privateMessage" type="java.lang.String">
+            <column name="private_Message" length="100"/>
+        </property>
+        <property name="audit1" type="java.lang.String">
+            <column name="audit1" length="100"/>
+        </property>
+        <property name="contractAddress" type="java.lang.String">
+            <column name="contract_Address" length="100"/>
+        </property>
+        <property name="attachmentAddress" type="java.lang.String">
+            <column name="attachment_Address" length="100"/>
+        </property>
+        <property name="distributionState" type="java.lang.String">
+            <column name="distribution_State" length="100"/>
+        </property>
+        <property name="distributionPersonId" type="java.lang.String">
+            <column name="distribution_PersonId" length="100"/>
+        </property>
+        <property name="distributionPersonName" type="java.lang.String">
+            <column name="distribution_Person_Name" length="100"/>
+        </property>
+        <property name="time" type="java.lang.String">
+            <column name="time" length="100"/>
+        </property>
+        <property name="updateTime" type="java.lang.String">
+            <column name="update_Time" length="100"/>
+        </property>
+        <property name="inputId" type="java.lang.String">
+            <column name="input_Id" length="100"/>
+        </property>
+        <property name="inputName" type="java.lang.String">
+            <column name="input_Name" length="100"/>
+        </property>
+        <property name="distributionPersonCompanyId" type="java.lang.String">
+            <column name="DISTRIBUTION_PERSON_COMPANY_ID" length="100"/>
+        </property>
+        <property name="distributionPersonPhone" type="java.lang.String">
+            <column name="DISTRIBUTION_PERSON_PHONE" length="100"/>
+        </property>
+        <property name="contractAddId" type="java.lang.String">
+            <column name="CONTRACTADD_ID" length="100"/>
+        </property>
+        <property name="trusteeship" type="java.lang.String">
+            <column name="TRUSTEESHIP" length="100"/>
+        </property>
+        <property name="isUpload" type="java.lang.String">
+            <column name="IS_UPLOAD" length="100"/>
+        </property>
+        <property name="sectorId" type="java.lang.String">
+            <column name="SECTOR_ID" length="100"/>
+        </property>
+        <property name="sectorCode" type="java.lang.String">
+            <column name="SECTOR_CODE" length="100"/>
+        </property>
+        <property name="attachmentAddressName" type="java.lang.String">
+            <column name="ATTACHMENT_ADDRESS_NAME" length="100"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>

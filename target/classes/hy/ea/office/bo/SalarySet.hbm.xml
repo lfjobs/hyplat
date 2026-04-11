@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.office.bo">
+	<class name="hy.ea.office.bo.SalarySet" table="DT_HR_SALARY_SET" schema="HYPLAT" dynamic-insert="true">
+	<comment>级别工资</comment>
+		<id length="50" name="salaryKey" type="java.lang.String">
+			<column length="50" name="SALARY_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="salaryLevelKey" type="java.lang.String">
+			<column length="50" name="SALARY_LEVEL_KEY" >
+				<comment>工资级别Id</comment>
+			</column>
+		</property>
+		<property name="salaryType" type="java.lang.String">
+			<column length="2" name="SALARY_TYPE" >
+				<comment>工资类别</comment>
+			</column>
+		</property>
+		<property name="baseSalary" type="java.lang.Double">
+			<column name="BASE_SALARY" >
+				<comment>基本工资</comment>
+			</column>
+		</property>
+		<property name="guaranteeSalary" type="java.lang.Double">
+			<column name="GUARANTEE_SALARY" >
+				<comment>保障工资</comment>
+			</column>
+		</property>
+		<property name="welfareSalary" type="java.lang.Double">
+			<column name="WELFARE_SALARY" >
+				<comment>福利工资</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>
+

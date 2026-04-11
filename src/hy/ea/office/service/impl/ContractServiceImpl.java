@@ -1,5 +1,8 @@
 package hy.ea.office.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alibaba.fastjson.JSONObject;
 import com.junziqian.sdk.bean.req.sign.ext.SignatoryReq;
 import com.junziqian.sdk.bean.req.user.OrganizationCreateReq;
@@ -1095,7 +1098,7 @@ public class ContractServiceImpl implements ContractService {
                     templateParams.setDmoney(Utilities.digitUppercase(new Double(money)));
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
 
 //            templateParams.setMoney(money);
@@ -1200,7 +1203,7 @@ public class ContractServiceImpl implements ContractService {
 
             beandao.saveBeansListAndexecuteHqlsByParams(baseBeans, null, null);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -1260,7 +1263,7 @@ public class ContractServiceImpl implements ContractService {
             beandao.update(applyResult);
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
 
@@ -1463,7 +1466,7 @@ public class ContractServiceImpl implements ContractService {
         document.setApplyNo(aplNo);
         beandao.update(document);
 
-        System.out.println(aplNo);
+        logger.info("值：{}", aplNo);
     }
 
 
@@ -1590,12 +1593,12 @@ public class ContractServiceImpl implements ContractService {
                     File file = new File(realPath + docFileAttach.getFilePath());
                     long time = file.lastModified();//当前
                     long newtime = time / 1000L * 1000L;
-                    System.out.println("newtime" + time);
-                    System.out.println("time" + time);
+                    logger.info("newtime: {}", time);
+                    logger.info("time: {}", time);
                     Date date = docFileAttach.getCreatetime();
-                    System.out.println("date" + date);
+                    logger.info("date: {}", date);
                     long times = date.getTime();
-                    System.out.println("times" + times);
+                    logger.info("times: {}", times);
                     List<BaseBean> sealerlist = beandao.getListBeanByHqlAndParams("from DocumentSealer where docId = ?", new Object[]{docId});
 
                     //草稿，驳回，待审核,不批准，公文为转他人审批状态 这几种容易修改
@@ -1607,7 +1610,7 @@ public class ContractServiceImpl implements ContractService {
                         } else {
 
                             if (newtime > times) {
-                                System.out.println("有修改");
+                                logger.info("有修改");
                                 //说明修改过 改过就重新生成
                                 Office2PdfUtil.office2Pdf(realPath + docFileAttach.getFilePath(), realPath + pdfPath);
                                 docFileAttach.setCreatetime(new Date());
@@ -1735,7 +1738,7 @@ public class ContractServiceImpl implements ContractService {
             }
             FileCopyUtils.copy(office, fileSave);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return storePath + "/" + fileSaveName;
@@ -1757,7 +1760,7 @@ public class ContractServiceImpl implements ContractService {
             aplNo = document.getApplyNo();
         }
         String loadUrl = JzqAPI.linkFile(aplNo);
-        System.out.println("loadUrl" + loadUrl);
+        logger.info("loadUrl: {}", loadUrl);
 
 
         return loadUrl;
@@ -1799,7 +1802,7 @@ public class ContractServiceImpl implements ContractService {
             ;
             bis.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return savepath + fileName;
@@ -1840,7 +1843,7 @@ public class ContractServiceImpl implements ContractService {
             ;
             bis.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         }
 
@@ -1893,7 +1896,7 @@ public class ContractServiceImpl implements ContractService {
         if (obj != null) {
 
             String data = JzqAPI.uploadEntSign(stampname, obj.toString(), stampimgs);
-            System.out.println(data);
+            logger.info("值：{}", data);
             EnterpriseStamp es = new EnterpriseStamp();
             es.setCompanyID(companyId);
             es.setStampName(stampname);
@@ -1999,7 +2002,7 @@ public class ContractServiceImpl implements ContractService {
 
         if (document.getApplyNo() != null && !document.getApplyNo().equals("")) {
             aplNo = document.getApplyNo();//说明已经发起过签约
-            System.out.println(aplNo);
+            logger.info("值：{}", aplNo);
             try {
 
 
@@ -2082,7 +2085,7 @@ public class ContractServiceImpl implements ContractService {
         String loadLink = getLoadLink(docId);
 
         String filepath = saveFile(loadLink, document.getCompanyID() == null ? document.getDrafterID() : document.getCompanyID(), path);
-        System.out.println("filepath" + filepath);
+        logger.info("filepath: {}", filepath);
         if (!"".equals(filepath)) {
             document.setPdfUrl(filepath);
 
@@ -2794,10 +2797,10 @@ public class ContractServiceImpl implements ContractService {
                     mobileMessage.setMessage(content);
                     mobileMessage.setMobiles(t);
                     reStr = mobileMessage.sendMsg();
-                    System.out.println(reStr);
+                    logger.info("值：{}", reStr);
                 } catch (IOException e) {
 
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
 
 
@@ -3378,7 +3381,7 @@ public class ContractServiceImpl implements ContractService {
             t.setTitle(cashierBills.getCtUserName() + "学员协议");
             beandao.update(t);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 

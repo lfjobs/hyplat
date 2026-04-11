@@ -48,6 +48,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class bdBillAction {
+	private static final Logger logger = LoggerFactory.getLogger(bdBillAction.class);
 	private Logger logger = LoggerFactory.getLogger(bdBillAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -231,11 +232,11 @@ public class bdBillAction {
 
 
 		String tableName = "Dtcashierbills";
-          System.out.println("reportType"+reportType);
-		System.out.println("pl"+pl);
-		System.out.println("hylb"+hylb);
-		System.out.println("zzorder"+zzorder);
-		System.out.println("inforType"+inforType);
+          logger.info("调试信息");
+		logger.info("调试信息");
+		logger.info("调试信息");
+		logger.info("调试信息");
+		logger.info("调试信息");
 		if((reportType==null||reportType.equals(""))&&(pl==null||pl.equals("")||pl.equals("dd"))&&(hylb==null||hylb.equals("")||hylb.equals("gys"))&&!"zz".equals(zzorder)) {
 			String year = "";
 			if ("".equals(sdate) || sdate == null) {
@@ -251,13 +252,13 @@ public class bdBillAction {
 
 
 			}
-			System.out.println("year"+year);
+			logger.info("调试信息");
 			TableRalate tableRelate = goldOrderService.getTableName(account.getCompanyID(), "CashierBills", year);
 
 			if (tableRelate != null) {
 				tableName = tableRelate.getTablename();
 			}
-			System.out.println("tableName"+tableName);
+			logger.info("调试信息");
 		}
 
 		if("oldOrder".equals(reportType)){
@@ -752,7 +753,7 @@ public class bdBillAction {
 				newgoodsBill = (GoodsBills) gb.cloneGoodsBills();
 			} catch (Exception e) {
 
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			newgoodsBill.setGoodsBillsID(serverService.getServerID("goodsBillsID"));
 			newgoodsBill.setGoodsBillsKey(null);
@@ -1618,7 +1619,7 @@ public class bdBillAction {
 				baseBeanService.update(t);
 			}
 		}catch (Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		result=ret.toString();
@@ -1878,7 +1879,7 @@ public class bdBillAction {
 					.getBeanByHqlAndParams("from ProductPackaging p where p.type =?  and p.model=?",
 							new Object[] {"会员类型级别",orderBillAdd.getYjid()});
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		if (cashierBills != null)
@@ -1941,7 +1942,7 @@ public class bdBillAction {
 				return getcomporder();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}*/

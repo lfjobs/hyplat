@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.Ticket" table="DT_TICKET" schema="HYPLAT">
+        <comment>票券表</comment>
+        <id name="tkey">
+            <column name="tkey" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="tid">
+            <column name="tid" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>逻辑ID</comment>
+            </column>
+        </property>
+        <property name="tname">
+            <column name="tname" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>票券名称</comment>
+            </column>
+        </property>
+        <property name="tprice">
+            <column name="tprice" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>票券价格</comment>
+            </column>
+        </property>
+        <property name="tcount">
+            <column name="tcount" sql-type="number(10)" precision="10" not-null="true">
+                <comment>票券数量</comment>
+            </column>
+        </property>
+        <property name="ttype">
+            <column name="ttype" sql-type="varchar2(10)" length="10" not-null="false">
+                <comment>票券类型</comment>
+            </column>
+        </property>
+        <property name="ppid">
+            <column name="ppid" sql-type="varchar2(50)" length="50" not-null="false">
+                <comment>产品ID</comment>
+            </column>
+        </property>
+        <property name="activityId">
+            <column name="activityId" sql-type="varchar2(50)" length="50" not-null="false">
+                <comment>活动ID</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

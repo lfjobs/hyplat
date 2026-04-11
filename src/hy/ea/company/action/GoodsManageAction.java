@@ -1,5 +1,8 @@
 package hy.ea.company.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
@@ -45,6 +48,7 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 public class GoodsManageAction {
+	private static final Logger logger = LoggerFactory.getLogger(GoodsManageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -176,7 +180,7 @@ public class GoodsManageAction {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		CAccount account = (CAccount) session.get("account");
 		if (goodsManage.getFileLogo() != null) {
-			System.out.println("logo");
+			logger.info("logo");
 			String path = ServletActionContext.getRequest().getSession()
 					.getServletContext().getRealPath("/");
 			String logopath = fileService.savePhoto(path,
@@ -187,7 +191,7 @@ public class GoodsManageAction {
 
 		}
 		if (goodsManage.getFilePhoto() != null) {
-			System.out.println("photo");
+			logger.info("photo");
 			String path = ServletActionContext.getRequest().getSession()
 					.getServletContext().getRealPath("/");
 			String photopath = fileService.savePhoto(path,
@@ -238,7 +242,7 @@ public class GoodsManageAction {
 		try {
 			FileUtils.writeStringToFile(f, contenttxt,ENCODING);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		StringBuilder sb = new StringBuilder();				
 		return sb.append(goodsManage.getGoodsID()+bie).append(SUFFIX).toString();
@@ -853,24 +857,24 @@ public class GoodsManageAction {
 	public void unionpay(){
 		//交易测试
 	/*	String orderID= unionpayMeth.frontConsume("http://test.impf2010.com//ea/productdesign/ea_getFilePackageProduct.jspa?produce=group","http://test.impf2010.com//ea/productdesign/ea_getFilePackageProduct.jspa?produce=group", "100","");
-		System.out.println(orderID);*/
+		logger.info("值：{}", orderID);*/
 		/*//查询测试
 		try {
 			Map<String, String> order= unionpayMeth.query("20150625100528", "20150625100528");
-			System.out.println(order.get("respMsg"));
-			System.out.println(order.get("queryId"));
+			logger.info("调试信息");
+			logger.info("调试信息");
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		//撤销交易测试（和退货测试只能执行一个）
 		Map<String, String> consumeUndo= unionpayMeth.consumeUndo("http://localhost:8080/hyplat//ea/wfjcustomer/ea_addcpjsp.jspa",  "0", "201506251005286856648", "1");
-		System.out.println(consumeUndo.get("respMsg"));
+		logger.info("调试信息");
 		//退货测试（和撤销交易测试只能执行一个）		
 		try {
 			Map<String, String> Refund= unionpayMeth.Refund("http://localhost:8080/hyplat//ea/wfjcustomer/ea_addcpjsp.jspa",  "0", "201506251005286856648", "1");
-			System.out.println(Refund.get("respMsg"));
+			logger.info("调试信息");
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}*/
 		
 		

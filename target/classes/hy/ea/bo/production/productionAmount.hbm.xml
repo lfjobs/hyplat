@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+              
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="ProductionAmount"  table="dtProductionAmount">
+		<id length="50" name="productionAmountKey">
+			<column length="200" name="productionAmountKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="productionAmountID">
+			<column length="200" name="productionAmountID"  ><comment>业务主键</comment></column>
+		</property>
+		<property name="productID">
+			<column length="200" name="productID"  ><comment>产品ID</comment></column>
+		</property>
+		<property name="goodsName">
+			<column length="200" name="goodsName"  ><comment>产品名称</comment></column>
+		</property>
+		<property name="setDate">
+			<column length="200" name="setDate"  ><comment>设置日期</comment></column>
+		</property>
+		<property name="batchNumber">
+			<column length="200" name="batchNumber"  ><comment>生产批次号</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="200" name="staffID"  ><comment>负责人ID</comment></column>
+		</property>
+		<property name="staffName">
+			<column length="200" name="staffName"  ><comment>负责人名称</comment></column>
+		</property>
+		<property name="singleID">
+			<column length="200" name="singleID"  ><comment>制单人ID</comment></column>
+		</property>
+		<property name="singleName">
+			<column length="200" name="singleName"  ><comment>制单人名称</comment></column>
+		</property>
+		<property name="amount">
+			<column length="200" name="amount"  ><comment>生产量</comment></column>
+		</property>
+		<property name="companyID">
+			<column length="200" name="companyID"  ><comment>公司ID</comment></column>
+		</property>
+		<property name="companyName">
+			<column length="200" name="companyName"  ><comment>公司名称</comment></column>
+		</property>
+		<property name="singleDate">
+			<column length="200" name="singleDate"  ><comment>制单时间</comment></column>
+		</property>
+		<property name="status">
+			<column length="200" name="status"  ><comment>状态</comment></column>
+		</property>
+		<property name="category">
+			<column length="200" name="category"  ><comment>产品类型</comment></column>
+		</property>
+		<property name="fiveClear">
+			<column length="200" name="fiveClear"  ><comment>组织机构</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

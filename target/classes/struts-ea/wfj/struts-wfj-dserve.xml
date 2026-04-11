@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package strict-method-invocation="false" name="dserve-token" namespace="/ea/dserve" extends="struts-default">
+        <action name="ea_*" class="com.tiantai.wfj.edmandServe.action.dServeAction" method="{1}">
+            <result name="success">/page/ea/update.jsp</result>
+            <result name="save">/page/ea/main/marketing/edmandServe/success.jsp</result>
+            <result name="ddlist">/page/ea/main/marketing/edmandServe/record.jsp</result>
+            <result name="detailListBydssccid">/page/ea/main/marketing/edmandServe/receive_list.jsp</result>
+            <result name="detailList">/page/ea/main/marketing/edmandServe/demand_list.jsp</result>
+            <result name="serveList">/page/ea/main/marketing/edmandServe/grab_list.jsp</result>
+            <result name="industryList">/page/ea/main/marketing/edmandServe/release.jsp</result>
+            <result name="wtypeList">/page/ea/main/marketing/edmandServe/workType_save.jsp</result>
+            <result name="toPage_success">/page/ea/main/marketing/edmandServe/success.jsp</result>
+            <result name="qdPerDetail">/page/ea/main/marketing/edmandServe/qdPerDetail.jsp</result>
+            <result name="insureQdPerson">/page/ea/main/marketing/edmandServe/insureQdPerson.jsp</result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="dserve-jsonajax" namespace="/ea/dserve" extends="json-default">
+        <action name="sajax_ea_*" class="com.tiantai.wfj.edmandServe.action.dServeAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="contentType">text/html</param>
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

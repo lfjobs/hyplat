@@ -1,5 +1,8 @@
 package hy.ea.signin.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.OSSException;
@@ -19,6 +22,7 @@ import java.net.URL;
 
 @Service
 public class OSSService {
+	private static final Logger logger = LoggerFactory.getLogger(OSSService.class);
 
     // 点播服务所在的Region，接入服务中心为上海，则填cn-shanghai
     String regionId = "cn-shanghai";
@@ -78,16 +82,16 @@ public class OSSService {
                 "}";
         try {
             AssumeRoleResponse response = assumeRole(roleArn, roleSessionName, null);
-            System.out.println("Expiration: " + response.getCredentials().getExpiration());
-            System.out.println("Access Key Id: " + response.getCredentials().getAccessKeyId());
-            System.out.println("Access Key Secret: " + response.getCredentials().getAccessKeySecret());
-            System.out.println("Security Token: " + response.getCredentials().getSecurityToken());
-            System.out.println("RequestId: " + response.getRequestId());
+            logger.info("调试信息");
+            logger.info("调试信息");
+            logger.info("调试信息");
+            logger.info("调试信息");
+            logger.info("RequestId: : {}", response.getRequestId());
             return response;
         } catch (ClientException e) {
-            System.out.println("Failed to get a token.");
-            System.out.println("Error code: " + e.getErrCode());
-            System.out.println("Error message: " + e.getErrMsg());
+            logger.info("Failed to get a token.");
+            logger.info("Error code: : {}", e.getErrCode());
+            logger.info("Error message: : {}", e.getErrMsg());
             throw e;
         }
     }
@@ -109,18 +113,18 @@ public class OSSService {
             PutObjectRequest request = new PutObjectRequest(bucketName, objectName, inputStream);
 
             PutObjectResult response = ossClient.putObject(request);
-            System.out.println("CreateUploadVideoRequest, requestId:" + response.getRequestId());
+            logger.info("CreateUploadVideoRequest, requestId:: {}", response.getRequestId());
             ossClient.shutdown();
 
             return "https://" + bucketName + ".oss-cn-shanghai.aliyuncs.com" + "/" + objectName;
         } catch (OSSException oe) {
-            System.out.println("Caught an OSSException, which means your request made it to OSS, " + "but was rejected with an error response for some reason.");
-            System.out.println("Error Message:" + oe.getErrorMessage());
-            System.out.println("Error Code:" + oe.getErrorCode());
-            System.out.println("Request ID:" + oe.getRequestId());
-            System.out.println("Host ID:" + oe.getHostId());
+            logger.info("调试信息");
+            logger.info("Error Message:: {}", oe.getErrorMessage());
+            logger.info("Error Code:: {}", oe.getErrorCode());
+            logger.info("Request ID:: {}", oe.getRequestId());
+            logger.info("Host ID:: {}", oe.getHostId());
         } catch (Exception e) {
-            System.out.println("Caught an exception: " + e);
+            logger.info("Caught an exception: : {}", e);
         }
         return null;
     }

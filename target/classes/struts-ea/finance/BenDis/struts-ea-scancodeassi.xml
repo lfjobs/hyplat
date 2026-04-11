@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="assicode-ntoken" namespace="/ea/assicode"
+		extends="struts-default">
+		<action name="ea_*"
+			class="hy.ea.finance.action.BenDis.ScanCodeAssiAction" method="{1}">
+
+			<result name="assicom">/page/ea/main/human/office/scanPay/assiCompanyList.jsp</result>
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+			<result name="companyproducts">/page/WFJClient/PersonalJoining/CompanyProducts.jsp</result>
+			<result name="companyHouse">/page/conacts/restaurant/products.jsp</result>
+			<result name="jscode">/page/ea/main/human/office/scanPay/jiesuanCode.jsp</result>
+			<result name="clientlist">/page/ea/main/human/office/scanPay/sfshop/clientOrderList.jsp</result>
+			<result name="finidetail">/page/ea/main/human/office/scanPay/sfshop/clientFiniDetail.jsp</result>
+			<result name="orderdetail">/page/ea/main/human/office/scanPay/sfshop/clientOrderDetail.jsp</result>
+			<result name="shopdetail">/page/ea/main/human/office/scanPay/sfshop/clientShopDetail.jsp</result>
+			<result name="navsf">/page/ea/main/human/office/scanPay/sfshop/navsf.jsp</result>
+			<result name="purchaseSuccess">/page/ea/main/human/office/scanPay/sfshop/purchaseSuccess.jsp</result>
+			<result name="bindingSuccess">/page/ea/main/human/office/scanPay/sfshop/bindingSuccess.jsp</result>
+			<result name="paysuc">/page/conacts/restaurant/paySuc.jsp</result>
+
+
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="assicode-sajaxs" namespace="/ea/assicode" extends="json-default">
+		<action name="sajax_ea_*" 
+		         class="hy.ea.finance.action.BenDis.ScanCodeAssiAction" method="{1}">
+	<!-- 返回类型为json 在sjon-default中定义 -->  
+			<result type="json">  
+				<!-- root的值对应要返回的值的属性 -->    
+				<!-- 这里的result值即是 对应action中的 result -->  
+				<param name="root">result</param>  
+			</result>
+		</action>
+	</package>
+
+</struts>

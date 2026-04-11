@@ -1,5 +1,8 @@
 package com.wechatpay.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 
@@ -35,6 +38,7 @@ import com.wechatpay.utils.http.HttpClientConnectionManager;
 
 public class GetWxOrderno
 {
+	private static final Logger logger = LoggerFactory.getLogger(GetWxOrderno.class);
   public static DefaultHttpClient httpclient;
 
   static
@@ -71,22 +75,22 @@ public class GetWxOrderno
 		}
 		 HttpResponse response = httpclient.execute(httpost);
 	     String jsonStr = EntityUtils.toString(response.getEntity(), "UTF-8");
-	     System.out.println("jsonStr:"+jsonStr);
+	     logger.info("调试信息");
 	    if(jsonStr.indexOf("errcode")!=-1){
-	    	System.out.println("存在errcode");
+	    	logger.info("存在errcode");
 			map.put("errcode","1");
 	    	return map;
 	    }
 	   // jsonStr:{"access_token":"OezXcEiiBSKSxW0eoylIeMWBGcMTk9dhKjkQnNGXqlB5xpc8Siu7g_4lSNe8-K6CcaMtceImaeV2UslRjy4ZoYKEEKrRKUIaTIDXmb489xaPEBNPRiYJ9lnZ9QztwhG7N4OnqGRImtaHwvvuaBziUg","expires_in":7200,"refresh_token":"OezXcEiiBSKSxW0eoylIeMWBGcMTk9dhKjkQnNGXqlB5xpc8Siu7g_4lSNe8-K6Ct6bINSOkyz-hR8G9x0aaJyL9w1Lp7xK2eV77BIygfORk4cRZtm2bmO48304AF1o5rK0OgTXWaDQOaxPUbPwHXA","openid":"owWE7t_mSfyvUEt6iQRW3R_QpKbA","scope":"snsapi_base"}
 	    JSONObject jsonObject = new JSONObject(jsonStr);
-	    System.out.println("openidlll:"+jsonObject.getString("openid"));
+	    logger.info("调试信息");
 	    String openid  =  jsonObject.getString("openid");
 		String access_token = jsonObject.getString("access_token");
 		map.put("openid",openid);
 		map.put("access_token",access_token);
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		logger.error("操作异常", e);
 	}
 	return map;
  }
@@ -113,7 +117,7 @@ public class GetWxOrderno
 		 httpost.setEntity(new StringEntity(xmlParam, "UTF-8"));
 		 HttpResponse response = httpclient.execute(httpost);
 	     String jsonStr = EntityUtils.toString(response.getEntity(), "UTF-8");
-	     System.out.println(jsonStr);
+	     logger.info("值：{}", jsonStr);
 	     Map map = doXMLParse(jsonStr);
 	     if(jsonStr.indexOf("FAIL")!=-1){
 	    	payDto.setPrepay_id(prepay_id);
@@ -130,7 +134,7 @@ public class GetWxOrderno
 
 
 	 } catch (Exception e) {
-		e.printStackTrace();
+		logger.error("操作异常", e);
 	}
 	return payDto;
   }
@@ -148,8 +152,8 @@ public class GetWxOrderno
 		 httpost.setEntity(new StringEntity(xmlParam, "UTF-8"));
 		 HttpResponse response = httpclient.execute(httpost);
 	     String jsonStr = EntityUtils.toString(response.getEntity(), "UTF-8");
-	     System.out.println("************************************");
-	     System.out.println("查询微信订单返回json字符串：" + jsonStr);
+	     logger.info("************************************");
+	     logger.info("查询微信订单返回json字符串：: {}", jsonStr);
 	     parseTextTable(jsonStr);
 	    
 	     if(jsonStr.indexOf("return_code")!=-1){
@@ -173,7 +177,7 @@ public class GetWxOrderno
 
 	} catch (Exception e) {
 		
-		e.printStackTrace();
+		logger.error("操作异常", e);
 	}
 	return payDto;
   }
@@ -203,7 +207,7 @@ public class GetWxOrderno
 	    code_url  = (String) map.get("code_url");
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		logger.error("操作异常", e);
 	}
 	return code_url;
   }
@@ -245,7 +249,7 @@ public class GetWxOrderno
 				while ((str = bufferedReader.readLine()) != null) {
 					buffer.append(str);
 				}
-				System.out.println(buffer.toString());
+				logger.info("调试信息");
 				 map = GetWxOrderno.doXMLParse(buffer.toString());
 
 
@@ -266,7 +270,7 @@ public class GetWxOrderno
 
 			} catch (Exception ce) {
 				payDto.setReturn_code((String) map.get("return_code"));
-                ce.printStackTrace();
+                clogger.error("操作异常", e);
 			}
 
 		return payDto;
@@ -288,7 +292,7 @@ public class GetWxOrderno
 			httpost.setEntity(new StringEntity(xmlParam, "UTF-8"));
 			HttpResponse response = httpclient.execute(httpost);
 			String jsonStr = EntityUtils.toString(response.getEntity(), "UTF-8");
-			System.out.println(jsonStr);
+			logger.info("值：{}", jsonStr);
 			Map map = doXMLParse(jsonStr);
 			if(jsonStr.indexOf("FAIL")!=-1){
 				payDto.setErr_code((String) map.get("err_code"));
@@ -309,7 +313,7 @@ public class GetWxOrderno
 
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return payDto;
 	}
@@ -406,7 +410,7 @@ public class GetWxOrderno
             try {
                 stream.close();
             } catch (Exception ex) {
-            	ex.printStackTrace();
+            	logger.error("操作异常", ex);
             }
             return data;
         } catch (Exception ex) {
@@ -420,7 +424,7 @@ public class GetWxOrderno
 	  try {
 		 stream = new ByteArrayInputStream(str.getBytes("utf-8"));
 	} catch (UnsupportedEncodingException e) {
-		e.printStackTrace();
+		logger.error("操作异常", e);
 	}
 		return stream;
 		
@@ -449,8 +453,8 @@ public class GetWxOrderno
           key = (String) iterator.next();
           value = jsonObject.getString(key);
           result.put(key, value);
-          System.out.println("key:"+key);
-          System.out.println("value:"+value);
+          logger.info("调试信息");
+          logger.info("调试信息");
 
       }
       return result;
@@ -476,21 +480,21 @@ public class GetWxOrderno
 		 httpost.setEntity(new StringEntity(xmlParam, "UTF-8"));
 		 HttpResponse response = httpclient.execute(httpost);
 	     String jsonStr = EntityUtils.toString(response.getEntity(), "UTF-8");
-	     System.out.println(jsonStr);
+	     logger.info("值：{}", jsonStr);
 	     parseTextTable(jsonStr);
 	     if(jsonStr.indexOf("return_code")!=-1){
 	    	  Map map = doXMLParse(jsonStr);
 			  String return_code  = (String) map.get("return_code");
 			  String return_msg  = (String) map.get("return_msg");
-			  System.out.println(return_code);
-			  System.out.println(return_msg);
+			  logger.info("值：{}", return_code);
+			  logger.info("值：{}", return_msg);
 			  return return_code;
 		  }
 		  
 
 	} catch (Exception e) {
 		
-		e.printStackTrace();
+		logger.error("操作异常", e);
 	}
 	return null;
   }
@@ -500,7 +504,7 @@ public class GetWxOrderno
   public static  List<StatementResult> parseTextTable(String jsonStr){
 	  List<StatementResult> list =  new ArrayList<StatementResult>();
 	  String[] arry = jsonStr.split(",");
-	  System.out.println("size:"+arry.length);
+	  logger.info("调试信息");
 	  StatementResult stateResult = null;
 	  List<String> strlist = new ArrayList<String>();
 	  for (int i = 0; i < arry.length-10; i++) {

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="ccaccount-token" namespace="/ea/ccaccount"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.ccompany.action.CCAccountAction" method="{1}">
+			<result name="failed">/page/ea/ccompany/caccount/caccount_edit.jsp</result>
+			<result name="list">/page/ea/ccompany/caccount/caccount_list.jsp</result>
+			<result name="invalid.token" type="redirectAction">ea_getListCAccount</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="ccaccount-ntoken" namespace="/ea/ccaccount" extends="struts-default">
+		<action name="ea_*" class="hy.ea.ccompany.action.CCAccountAction" method="{1}">
+			<result name="list">/page/ea/ccompany/caccount/caccount_list.jsp</result>
+			<result name="success">/page/ea/update.jsp</result>
+			<result name="to_edit">/page/ea/ccompany/caccount/caccount_edit.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ccaccount-sajax" namespace="/ea/ccaccount" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.ccompany.action.CCAccountAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+	
+</struts>

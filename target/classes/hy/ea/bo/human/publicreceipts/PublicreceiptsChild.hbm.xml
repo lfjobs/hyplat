@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.publicreceipts">
+	<class name="PublicreceiptsChild" table="dtPublicreceiptsChild">
+		<id length="50" name="orKey">
+			<column length="50" name="orKey" />
+			<generator class="uuid" />
+		</id> 
+		<property name="orID">
+			<column length="50" name="orID" />
+		</property>  
+		<property name="prID">
+			<column length="50" name="prID" />
+		</property>   
+		<property  name="rankHumanID">
+			<column length="50" name="rankHumanID" />
+		</property>
+		<property  name="rankShenzhigrade">
+			<column length="250" name="rankShenzhigrade" />
+		</property>
+		<property  name="rankEffectivedate">
+			<column length="250" name="rankEffectivedate" />
+		</property>
+		<property  name="rankOldlevel">
+			<column length="250" name="rankOldlevel" />
+		</property>
+		<property  name="rankNewScale">
+			<column length="250" name="rankNewScale" />
+		</property>
+		<property  name="rankOldScale">
+			<column length="250" name="rankOldScale" />
+		</property>
+		<property  name="rankStartdate">
+			<column length="250" name="rankStartdate" />
+		</property>
+		<property  name="rankEnddate">
+			<column length="250" name="rankEnddate" />
+		</property>  
+		<property  name="rankChangeReason">
+			<column length="250" name="rankChangeReason" />
+		</property>
+		<property  name="rankExamine">
+			<column length="250" name="rankExamine" />
+		</property>
+		<property  name="rankContent">
+			<column length="250" name="rankContent" />
+		</property>
+		 
+		<property  name="overTimeSort">
+			<column length="250" name="overTimeSort" />
+		</property>
+		<property  name="overTimeStartDate">
+			<column length="250" sql-type="varchar2" name="overTimeStartDate" />
+		</property>
+		<property  name="overTimeEndDate">
+			<column length="250" sql-type="varchar2" name="overTimeEndDate" />
+		</property>
+		<property  name="overTimeReason">
+			<column length="250" name="overTimeReason" />
+		</property>
+		<property  name="overTimeContent">
+			<column length="250" name="overTimeContent" />
+		</property> 
+		<property  name="overTimePostName">
+			<column length="250" name="overTimePostName" />
+		</property> 
+		<property  name="overTimeDays">
+			<column length="250" name="overTimeDays" />
+		</property> 
+		<property  name="overTimeHour">
+			<column length="250" name="overTimeHour" />
+		</property> 
+		<property  name="overtimeWages">
+			<column length="250" name="overtimeWages" />
+		</property>	
+		
+		<property  name="leavePostName">
+			<column length="250" name="leavePostName" />
+		</property> 
+		<property  name="leaveDays">
+			<column length="250" name="leaveDays" />
+		</property> 
+		<property  name="leaveHour">
+			<column length="250" name="leaveHour" />
+		</property>  
+		<property  name="leaveStartDate">
+			<column length="250" name="leaveStartDate" />
+		</property> 
+		<property  name="leaveEndDate">
+			<column length="250" name="leaveEndDate" />
+		</property> 
+		<property  name="leaveReceiver">
+			<column length="250" name="leaveReceiver" />
+		</property> 
+		<property  name="leaveType">
+			<column length="250" name="leaveType" />
+		</property> 
+		<property  name="leaveReason">
+			<column length="250" name="leaveReason" />
+		</property> 
+		<property  name="Signdate">
+			<column length="250" name="Signdate" />
+		</property> 
+		<property  name="Terminatedate">
+			<column length="250" name="Terminatedate" />
+		</property> 
+		
+		
+		<property  name="rorpJobName">
+			<column length="250" name="rorpJobName" />
+		</property> 
+		<property  name="rorpPostName">
+			<column length="250" name="rorpPostName" />
+		</property> 
+		<property  name="rorpDeductPoint">
+			<column length="250" name="rorpDeductPoint" />
+		</property> 
+		<property  name="rorpDate">
+			<column name="rorpDate" sql-type="date"/>
+		</property> 
+		<property  name="rorpMoney">
+			<column length="250" name="rorpMoney" />
+		</property> 
+		<property  name="rorpMyriad">
+			<column length="250" name="rorpMyriad" />
+		</property> 
+		<property  name="rorpReason">
+			<column length="250" name="rorpReason" />
+		</property> 
+		<property  name="leavecasual">
+			<column length="250" name="leavecasual" />
+		</property> 
+		<property  name="leavesick">
+			<column length="250" name="leavesick" />
+		</property> 
+		<property  name="checkdiscount">
+			<column length="250" name="checkdiscount" />
+		</property> 
+		
+		<property  name="fineCount">
+			<column length="250" name="fineCount" />
+		</property> 
+		<property  name="fineDate">
+			<column name="fineDate" sql-type="date"/>
+		</property>
+		<property  name="fineReason">
+			<column length="250" name="fineReason" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

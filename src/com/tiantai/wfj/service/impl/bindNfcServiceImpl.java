@@ -1,5 +1,8 @@
 package com.tiantai.wfj.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.InspectAnnex;
 import com.tiantai.wfj.bo.NfcChip;
 import com.tiantai.wfj.service.bindNfcService;
@@ -100,7 +103,7 @@ public class bindNfcServiceImpl implements bindNfcService {
             beandao.save(nfc);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return false;
         }
     }
@@ -121,7 +124,7 @@ public class bindNfcServiceImpl implements bindNfcService {
             beandao.update(nfc);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return false;
         }
     }

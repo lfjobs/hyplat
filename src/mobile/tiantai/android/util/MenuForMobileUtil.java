@@ -1,5 +1,8 @@
 package mobile.tiantai.android.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
@@ -21,6 +24,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class MenuForMobileUtil {
+	private static final Logger logger = LoggerFactory.getLogger(MenuForMobileUtil.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -41,7 +45,7 @@ public class MenuForMobileUtil {
                 result = payBudgetService.findOrgByAcc(organizationID, parmaInfor.get("companyId").toString(), parmaInfor.get("staffId").toString());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return Action.SUCCESS;
     }

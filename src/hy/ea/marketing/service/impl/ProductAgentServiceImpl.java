@@ -253,12 +253,12 @@ public class ProductAgentServiceImpl implements ProductAgentService {
 
             List<BaseBean> prolist = bbservice.getListBeanByHqlAndParams(sql.toString(), new Object[]{"佣金分配代理类别", "佣金分配代理类别"});
             String url = "";
-            System.out.println(prolist);
+            logger.info("值：{}", prolist);
             //招商要求
             if (html != null && html.length() > 0) {
                 url = saveContentToFile(html.trim());
             }
-            System.out.println(ppIds);
+            logger.info("值：{}", ppIds);
             String [] ppid=ppIds.split(",");
             if(ppid.length>0){
                 for (int j = 0; j < ppid.length; j++){
@@ -314,7 +314,7 @@ public class ProductAgentServiceImpl implements ProductAgentService {
 
                 }
             }
-            System.out.println(beans);
+            logger.info("值：{}", beans);
             bbservice.executeHqlsByParamsList(beans, null, null);
         } catch (Exception e) {
             flag = "0";
@@ -699,7 +699,7 @@ public class ProductAgentServiceImpl implements ProductAgentService {
         try {
             contentToFileService.saveContent(id, content, path);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "/upload_files/goodDetail/" + id
                 + UploadContentToFileService.suffix;
@@ -721,7 +721,7 @@ public class ProductAgentServiceImpl implements ProductAgentService {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         }
     }
@@ -827,7 +827,7 @@ public class ProductAgentServiceImpl implements ProductAgentService {
             }
             bbservice.executeHqlsByParamsList(beans, null, null);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 

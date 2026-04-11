@@ -1,5 +1,8 @@
 package com.batch.chinapay.meth;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -35,6 +38,7 @@ import chinapay.util.DigestMD5;
 import chinapay.util.SecureUtil;
 
 public class BatchPay {
+	private static final Logger logger = LoggerFactory.getLogger(BatchPay.class);
 	//private static int tmpResultLength = -1;
 	private static final String oraBatchSer = "chinapay.oraBatchSer.url";
 	private static final String oraDownFileSer = "chinapay.oraDownFileSer.url";
@@ -56,7 +60,7 @@ public class BatchPay {
 
 		// 文件的第一行，包含：商户号，批次号，总笔数，总金额，各项用“|”分割
 		String plain = MerId + "|" + MerSeqId + "|"+n+"|3000";
-		System.out.println("文件头：" + plain);
+		logger.info("文件头：: {}", plain);
 		plain += "\r\n"
 			+ TransDate
 			+ "|"
@@ -74,13 +78,13 @@ public class BatchPay {
 			+ "|6228481190350963516|民生3|民生银行|上海|上海|浦东支行|1000|付款|";
 
 		
-		System.out.println("文件内容：");
-		System.out.println(plain);
+		logger.info("文件内容：");
+		logger.info("值：{}", plain);
 
 		// 文件命名规范：MERID_YYYYMMDD_XXXXXX.TXT
 		String fileName = MerId + "_" + TransDate + "_" + MerSeqId + ".txt";
 //		String fileName = "null";
-		System.out.println("fileName=[" + fileName + "]");
+		logger.info("fileName=[{}{}", fileName, "]");
 
 		BatchPayBean charge = new BatchPayBean();
 		charge.setPlain(plain);
@@ -101,7 +105,7 @@ public class BatchPay {
 		PubKeyPath = config.getProperty(Config.KEY_CHINAPAY_PUBKEY_FILEPATH);
 		String url = config.getProperty(oraBatchSer);
 
-		System.out.println(fileContent);
+		logger.info("值：{}", fileContent);
 		String filepath = config.getProperty(Config.FilePath) + fileName;
 		File file = new File(filepath);
 
@@ -110,9 +114,9 @@ public class BatchPay {
 		try {
 			chkValue1 = SecureUtil.digitalSign(merId, fileContent, MerKeyPath);
 		} catch (Exception e2) {
-			e2.printStackTrace();
+			logger.error("操作异常", e2);
 		}
-		System.out.println("txt文件签名密文:" + chkValue1);
+		logger.info("txt文件签名密文:: {}", chkValue1);
 		String plain = fileContent + chkValue1;
 
 		// 将ORA批量信息写入临时文件
@@ -137,17 +141,17 @@ public class BatchPay {
 			try {
 				temSen = getBytes(file);
 			} catch (Exception e1) {
-				e1.printStackTrace();
+				logger.error("操作异常", e1);
 			}
 			int temSenLength = temSen.length;
-			System.out.println("temSen=[" + temSenLength + "]");
+			logger.info("temSen=[{}{}", temSenLength, "]");
 			String tian = new String(temSen, "GBK");
-			System.out.println("tian=[" + tian + "]");
+			logger.info("tian=[{}{}", tian, "]");
 
 			// 对需要上传的字段签名
 			String chkValue2 = null;
 			chkValue2 = DigestMD5.MD5Sign(merId, fileName, plain.getBytes("GBK"), MerKeyPath);
-			System.out.println("文件上传签名内容:" + chkValue2);
+			logger.info("文件上传签名内容:: {}", chkValue2);
 
 			httpClient.getParams().setParameter(
 					HttpMethodParams.HTTP_CONTENT_CHARSET, "GBK");
@@ -169,15 +173,15 @@ public class BatchPay {
 			try {
 				statusCode = httpClient.executeMethod(postMethod);
 			} catch (HttpException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 
 			try {
 				resInputStream = postMethod.getResponseBodyAsStream();
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			reader = new BufferedReader(new InputStreamReader(resInputStream));
 			String tempBf = null;
@@ -187,14 +191,14 @@ public class BatchPay {
 				html.append(tempBf);
 			}
 			String result = html.toString();
-			System.out.println("返回数据" + "[" + result + "]");
+			logger.info("调试信息");
 			int dex = result.lastIndexOf("=");
 			String tiakong = result.substring(0, dex + 1);
-			System.out.println("验签明文：" + "[" + tiakong + "]");
+			logger.info("调试信息");
 
 			// 拆分页面应答数据
 			String str[] = result.split("&");
-			System.out.println(str.length);
+			logger.info("调试信息");
 			int Res_Code = str[0].indexOf("=");
 			int Res_message = str[1].indexOf("=");
 			int Res_chkValue = str[2].indexOf("=");
@@ -202,13 +206,13 @@ public class BatchPay {
 			String responseCode = str[0].substring(Res_Code + 1);
 			String message = str[1].substring(Res_message + 1);
 			String ChkValue = str[2].substring(Res_chkValue + 1);
-			System.out.println("responseCode=" + responseCode);
-			System.out.println("message=" + message);
-			System.out.println("chkValue=" + ChkValue);
+			logger.info("responseCode=: {}", responseCode);
+			logger.info("message=: {}", message);
+			logger.info("chkValue=: {}", ChkValue);
 
 			// 对收到的ChinaPay应答传回的域段进行验签
 			boolean res = DigestMD5.MD5Verify(tiakong, ChkValue,PubKeyPath); 
-			System.out.println(res);
+			logger.info("值：{}", res);
 
 			charge = new BatchPayBean();
 			charge.setResponseCode(responseCode);
@@ -219,17 +223,17 @@ public class BatchPay {
 			map.put("bean", charge);
 
 			if (responseCode.equals("20FM")) {
-				System.out.println("批量文件接口上传成功！");
+				logger.info("批量文件接口上传成功！");
 			}
 			if (res) {
-				System.out.println("验签数据正确!");
+				logger.info("验签数据正确!");
 				map.put("result", 0);
 			} else {
-				System.out.println("签名数据不匹配！");
+				logger.info("签名数据不匹配！");
 				map.put("result", 1);
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			logger.error("操作异常", ex);
 		} finally {
 			// 释放httpclient
 			if (postMethod != null) {
@@ -272,14 +276,14 @@ public class BatchPay {
 
 		// 原始文件命名规范：MERID_YYYYMMDD_XXXXXX.TXT
 		String orFileName = merId + "_" + TransDate + "_" + MerSeqId + ".txt";
-		System.out.println("orFileName=[" + orFileName + "]");
+		logger.info("orFileName=[{}{}", orFileName, "]");
 
 //		String orFileName = "80808029000000320120827154456198";
-//		System.out.println("orFileName=[" + orFileName + "]");
+//		logger.info("orFileName=[{}{}", orFileName, "]");
 		
 		// 回盘文件命名规范：MERID_YYYYMMDD_XXXXXX_H.TXT
 		String fileName = merId + "_" + TransDate + "_" + MerSeqId + "_H.txt";
-		System.out.println("fileName=[" + fileName + "]");
+		logger.info("fileName=[{}{}", fileName, "]");
 
 		// 签名明文
 		String signMsg = merId + orFileName + fileName;
@@ -303,7 +307,7 @@ public class BatchPay {
 			key.buildKey(merId, KeyUsage, MerKeyPath);
 			SecureLink sl = new SecureLink(key);
 			chkValue2 = sl.Sign(msgMd5);
-			System.out.println("回盘文件下载接口签名内容:" + chkValue2);
+			logger.info("回盘文件下载接口签名内容:: {}", chkValue2);
 
 			httpClient.getParams().setParameter(
 					HttpMethodParams.HTTP_CONTENT_CHARSET, "GBK");
@@ -325,15 +329,15 @@ public class BatchPay {
 			try {
 				statusCode = httpClient.executeMethod(postMethod);
 			} catch (HttpException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 
 			try {
 				resInputStream = postMethod.getResponseBodyAsStream();
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 
 			// 接收返回报文
@@ -347,7 +351,7 @@ public class BatchPay {
 			}
 
 			String result = html.toString();
-			System.out.println("result=[" + result + "]");
+			logger.info("result=[{}{}", result, "]");
 
 			// 拆分页面应答数据
 			int dex = result.lastIndexOf("=");
@@ -355,7 +359,7 @@ public class BatchPay {
 			String ChkValue = result.substring(dex + 1);
 
 			String str[] = result.split("&");
-			System.out.println(str.length);
+			logger.info("调试信息");
 			charge = new BatchPayBean();
 			// 验签明文
 			String plainData = "";
@@ -372,28 +376,28 @@ public class BatchPay {
 				String OrFileName = str[1].substring(Res_orFileName + 1);
 				String Filename = str[2].substring(Res_filename + 1);
 				String FileData = str[3].substring(Res_fileData + 1);
-				System.out.println("merId=" + MerId);
-				System.out.println("orFileName=" + OrFileName);
-				System.out.println("filename=" + Filename);
-				System.out.println("FileData=" + FileData);
+				logger.info("merId=: {}", MerId);
+				logger.info("orFileName=: {}", OrFileName);
+				logger.info("filename=: {}", Filename);
+				logger.info("FileData=: {}", FileData);
 				MsgUtil msgUtil = new MsgUtil();
 
 				String resultText = new String(msgUtil.decodeInflate(FileData.getBytes()), "GBK");
 				plainData = resultText;
-				System.out.println("回盘文件内容：");
-				System.out.println(resultText);
+				logger.info("回盘文件内容：");
+				logger.info("值：{}", resultText);
 				
 				// 对下载到的回盘文件内容进行验签
 				int index = resultText.length() - 256;
 				System.out.println("回盘文件内容验签明文："
 						+ resultText.substring(0, index));
-				System.out.println("回盘文件内容验签密文：" + resultText.substring(index));
+				logger.info("回盘文件内容验签密文：: {}", resultText.substring(index));
 				boolean re = false;
 				re = SecureUtil.validateSign("999999999999999", resultText.substring(0, index), resultText.substring(index),PubKeyPath);
 				if (re) {
-					System.out.println("回盘文件内容验签正确!");
+					logger.info("回盘文件内容验签正确!");
 				} else {
-					System.out.println("回盘文件内容验签失败！");
+					logger.info("回盘文件内容验签失败！");
 				}
 
 				charge.setResponseCode(MerId);
@@ -405,13 +409,13 @@ public class BatchPay {
 			} else {
 
 				// 回盘文件下载失败
-				System.out.println("验签明文：");
+				logger.info("验签明文：");
 				plainData = tiakong;
-				System.out.println(plainData);
+				logger.info("值：{}", plainData);
 				int Res = str[0].indexOf("=");
 				String ResponseCode = str[0].substring(Res + 1);
 				String Message = str[1].substring(str[1].indexOf("=") + 1);
-				System.out.println("responseCode = " + ResponseCode);
+				logger.info("responseCode = : {}", ResponseCode);
 				charge.setResponseCode(ResponseCode);
 				charge.setMessage(Message);
 				charge.setPlain(tiakong);
@@ -423,19 +427,19 @@ public class BatchPay {
 			/*request.setAttribute("chargeInput", charge);
 */
 			if (res) {
-				System.out.println("验签数据正确!");
+				logger.info("验签数据正确!");
 				map.put("result", 0);
 				/*request.getRequestDispatcher("./Response.jsp").forward(request,
 						response);*/
 			} else {
-				System.out.println("签名数据不匹配！");
+				logger.info("签名数据不匹配！");
 				map.put("result", 1);
 				/*request.getRequestDispatcher("./VerifyFail.jsp").forward(
 						request, response);*/
 			}
 
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			logger.error("操作异常", ex);
 
 		} finally {
 			map.put("bean", charge);
@@ -471,7 +475,7 @@ public class BatchPay {
 		PubKeyPath = config.getProperty(Config.KEY_CHINAPAY_PUBKEY_FILEPATH);
 		pay_url = config.getProperty(FileStatQuery);
 
-		System.out.println(PubKeyPath);
+		logger.info("值：{}", PubKeyPath);
 
 
 		String merId = "merId"; // 15
@@ -480,17 +484,17 @@ public class BatchPay {
 		String chkValue = "chkValue";
 
 		HttpClient httpClient = new HttpClient();
-		System.out.println("HttpClient方法创建！");
+		logger.info("HttpClient方法创建！");
 		httpClient.getParams().setParameter(
 				HttpMethodParams.HTTP_CONTENT_CHARSET, "GBK");
 		String url = pay_url;
-		System.out.println(url);
+		logger.info("值：{}", url);
 		PostMethod postMethod = new PostMethod(url);
-		System.out.println("Post方法创建！");
+		logger.info("Post方法创建！");
 		// 填入各个表单域的值
 		NameValuePair[] data = { new NameValuePair("merId", merId), new NameValuePair("fileName", fileName), new NameValuePair("queryType", type), new NameValuePair("chkValue", chkValue), };
 
-		System.out.println(data);
+		logger.info("值：{}", data);
 
 		// 将表单的值放入postMethod中
 		postMethod.setRequestBody(data);
@@ -498,16 +502,16 @@ public class BatchPay {
 		try {
 			httpClient.executeMethod(postMethod);
 		} catch (HttpException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		// 读取内容
 		InputStream resInputStream = null;
 		try {
 			resInputStream = postMethod.getResponseBodyAsStream();
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		// 对收到的ChinaPay应答传回的域段进行验签
@@ -521,7 +525,7 @@ public class BatchPay {
 		}
 
 		String resultData = new String(html.toString().getBytes(), "GBK");
-		System.out.println("response message：" + resultData);
+		logger.info("response message：: {}", resultData);
 
 		String[] splits = resultData.split("&");
 		String resVerifyData = null;
@@ -530,11 +534,11 @@ public class BatchPay {
 		BatchPayBean pay = new BatchPayBean();
 		if (splits.length == 3) {// 返回错误报文
 			String resCode = splits[0];
-			System.out.println("resCode=[" + resCode.split("=")[1] + "]");
+			logger.info("调试信息");
 			String resMessage = splits[1];
-			System.out.println("resMessage=[" + resMessage.split("=")[1] + "]");
+			logger.info("调试信息");
 			responseChkValue = splits[2].split("=")[1];
-			System.out.println("responseChkValue=[" + responseChkValue + "]");
+			logger.info("responseChkValue=[{}{}", responseChkValue, "]");
 			StringBuffer str = new StringBuffer();
 			String format = "&";
 			str.append("responseCode=").append(resCode.split("=")[1]).append(format)
@@ -548,15 +552,15 @@ public class BatchPay {
 		
 		if (splits.length == 5) {
 			String resMerId = splits[0];
-			System.out.println("merId=[" + resMerId.split("=")[1] + "]");
+			logger.info("调试信息");
 			String resFileName = splits[1];
-			System.out.println("resFileName=[" + resFileName.split("=")[1] + "]");
+			logger.info("调试信息");
 			String resQueryStat = splits[2];
-			System.out.println("resQueryStat=[" + resQueryStat.split("=")[1] + "]");
+			logger.info("调试信息");
 			String resStat = splits[3];
-			System.out.println("resStat=[" + resStat.split("=")[1] + "]");
+			logger.info("调试信息");
 			responseChkValue = splits[4].split("=")[1];
-			System.out.println("responseChkValue=[" + responseChkValue + "]");
+			logger.info("responseChkValue=[{}{}", responseChkValue, "]");
 
 			StringBuffer str = new StringBuffer();
 			String format = "&";
@@ -570,25 +574,25 @@ public class BatchPay {
 			pay.setData(resVerifyData);
 			pay.setResponseCode(resStat.split("=")[1]);
 		}
-		System.out.println("verifyData=[" + resVerifyData + "],resChkValue=[" + responseChkValue + "]");
+		logger.info("调试信息");
 		String ctmpResMd5 = AscHexSwitch.Hex2Asc(IntegralityUtil.getMD5(resVerifyData.getBytes("GBK")).length, IntegralityUtil.getMD5(resVerifyData.getBytes("GBK")));
-		System.out.println("ctmpResMd5=[" + ctmpResMd5 + "]");
+		logger.info("ctmpResMd5=[{}{}", ctmpResMd5, "]");
 		SignData signData = new SignData();
 		boolean verfiyResult = signData.verifyForCP("999999999999999", ctmpResMd5, responseChkValue, PubKeyPath);
-		System.out.println("[verfiyResult=" + verfiyResult + "]");
+		logger.info("[verfiyResult={}{}", verfiyResult, "]");
 
 		pay.setMerId(merId);
 		/*request.setAttribute("payInput", pay);*/
 		map.put("bean", pay);
 		if (!verfiyResult) {
-			System.out.println("验签失败");
+			logger.info("验签失败");
 			map.put("result", 1);
 			return map;
 			/*request.getRequestDispatcher("./QueryFail.jsp").forward(request, response);
 			*/
 		}
 
-		System.out.println("验签成功");
+		logger.info("验签成功");
 		map.put("result",0);
 		return map;
 		/*request.getRequestDispatcher("./FileStatQueryReturn.jsp").forward(request, response);*/
@@ -611,7 +615,7 @@ public class BatchPay {
 				IntegralityUtil.getMD5(tmpPalin.toString().getBytes("GBK")));
 		SignData signData = new SignData();
 		String chkValue = signData.signForCP(merId, ctmpRetMd5, MerKeyPath);
-		System.out.println("签名内容:"+ chkValue);
+		logger.info("调试信息");
 		
 		BatchPayBean charge = new BatchPayBean();
 		charge.setMerId(merId);
@@ -646,7 +650,7 @@ public class BatchPay {
 		//tmpResultLength = tmpResult.length;
 		MsgUtil msgUtil = new MsgUtil();
 		base64Result = msgUtil.deflateEncode(tmpResult);
-		System.out.println("参数:==[" + base64Result + "]");
+		logger.info("参数:==[{}{}", base64Result, "]");
 		in.close();
 		return base64Result;
 	}

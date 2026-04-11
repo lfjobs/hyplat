@@ -1,5 +1,8 @@
 package hy.ea.invoicing.action.voucher;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Company;
@@ -39,6 +42,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class FiscalPeriodAction{
+	private static final Logger logger = LoggerFactory.getLogger(FiscalPeriodAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -245,7 +249,7 @@ public class FiscalPeriodAction{
 		baseBeanService.deleteBeanByKey(FiscalPeriod.class, fs.getFpKey());
 		}catch(Exception e){
 			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}

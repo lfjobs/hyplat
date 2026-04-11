@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+    <class name="hy.ea.bo.invoicing.InvCheckGoods" table="DT_INV_CHECKGOODS">
+        <id length="50" name="checkinvKey">
+            <column length="50" name="checkinvKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="checkinvId">
+            <column length="50" name="checkinvId" />
+        </property>
+        <property  name="goodsID">
+            <column length="50" name="goodsID" />
+        </property>
+        <property  name="goodsType">
+            <column length="50" name="goodsType" />
+        </property>
+        <property  name="goodsName">
+            <column length="250" name="goodsName" />
+        </property>
+        <property  name="ppID">
+            <column length="50" name="ppID" />
+        </property>
+        <property  name="invenQuantity">
+            <column length="50" name="invenQuantity" sql-type="number"/>
+        </property>
+        <property  name="realQuantity">
+            <column length="50" name="realQuantity" sql-type="number"/>
+        </property>
+        <property  name="price">
+            <column length="50" name="price" />
+        </property>
+        <property  name="invenOnline">
+            <column length="50" name="invenOnline" sql-type="number"/>
+        </property>
+        <property  name="invenUnderline">
+            <column length="50" name="invenUnderline" sql-type="number"/>
+        </property>
+        <property  name="FBILLID">
+            <column length="50" name="FBILLID" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
@@ -20,6 +23,7 @@ import java.net.HttpURLConnection;
  * @version
  */
 public class URLConnIO {
+	private static final Logger logger = LoggerFactory.getLogger(URLConnIO.class);
     public URLConnIO() {
 
     }
@@ -46,7 +50,7 @@ public class URLConnIO {
             outStrm.close();
             is = httpUrlConnection.getInputStream();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
 
         }
         return is;

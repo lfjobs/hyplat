@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="Enroll"  table="dtEnroll">
+		<id length="50" name="enrollKey">
+			<column length="50" name="enrollKey" >
+				<comment>数据库主键</comment>
+			</column>
+			<generator class="uuid" />
+		</id>
+		<property name="enrollID">
+			<column length="50" name="enrollID" not-null="true" >
+				<comment>报名ID</comment>
+			</column>
+		</property>
+		<property name="ppID">
+			<column length="50" name="ppID" not-null="true" >
+				<comment>产品ID</comment>
+			</column>
+		</property>
+		<property name="ppName">
+			<column length="50" name="ppName" not-null="true" >
+				<comment>产品名称</comment>
+			</column>
+		</property>
+		<property name="staffId">
+			<column length="50" name="staffId" not-null="true" >
+				<comment>人员ID</comment>
+			</column>
+		</property>
+		<property name="coachStaffID">
+			<column length="50" name="coachStaffID" >
+				<comment>教练人员ID</comment>
+			</column>
+		</property>
+		<property name="coachName">
+			<column length="50" name="coachName" >
+				<comment>教练人员名称</comment>
+			</column>
+		</property>
+		<property  name="suppoutStaffID">
+			<column length="50" name="suppoutStaffID" >
+				<comment>客服人员ID</comment>
+			</column>
+		</property>
+		<property  name="suppoutName">
+			<column length="50" name="suppoutName" >
+				<comment>客服人员名称</comment>
+			</column>
+		</property>
+		<property  name="directorStaffID">
+			<column length="50" name="directorStaffID"  >
+				<comment>主管人员ID</comment>
+			</column>
+		</property>
+		<property  name="directorName">
+			<column length="250" name="directorName"  >
+				<comment>主管人员名称</comment>
+			</column>
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID">
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property  name="companyName">
+			<column length="50" name="companyName">
+				<comment>公司名称</comment>
+			</column>
+		</property>
+		<property  name="licenceType">
+			<column length="50" name="licenceType"  >
+				<comment>驾照类型</comment>
+			</column>
+		</property>
+		<property  name="price">
+			<column length="50" name="price" >
+				<comment>价格</comment>
+			</column>
+		</property>
+		<property  name="carNumber">
+			<column length="50" name="carNumber" >
+				<comment>车牌号</comment>
+			</column>
+		</property>
+		<property  name="siteID">
+			<column length="50" name="siteID" >
+				<comment>场地</comment>
+			</column>
+		</property>
+		<property  name="siteName">
+			<column length="50" name="siteName" >
+				<comment>场地名称</comment>
+			</column>
+		</property>
+		<property  name="status">
+			<column length="2" name="status" >
+				<comment>状态</comment>
+			</column>
+		</property>
+		<property  name="enrollDate">
+			<column length="50" name="enrollDate" >
+				<comment>报名时间</comment>
+			</column>
+		</property>
+		<property  name="cashierBillsID">
+			<column length="50" name="cashierBillsID" >
+				<comment>订单ID</comment>
+			</column>
+		</property>
+		<property  name="staffAddress">
+			<column length="200" name="staffAddress" >
+				<comment>人员地址</comment>
+			</column>
+		</property>
+		<property  name="idCard">
+			<column length="50" name="idCard" >
+				<comment>身份证</comment>
+			</column>
+		</property>
+		<property  name="managementFees">
+			<column length="50" name="managementFees" >
+				<comment>管理费</comment>
+			</column>
+		</property>
+		<property  name="operatingFee">
+			<column length="50" name="operatingFee" >
+				<comment>操作费</comment>
+			</column>
+		</property>
+		<property  name="operatingStaffId">
+			<column length="50" name="operatingStaffId" >
+				<comment>操作费收款人id</comment>
+			</column>
+		</property>
+		<property  name="operatingStaffName">
+			<column length="50" name="operatingStaffName" >
+				<comment>操作费收款人</comment>
+			</column>
+		</property>
+		<property  name="operatingSccid">
+			<column length="50" name="operatingSccid" >
+				<comment>操作费收款人sccid</comment>
+			</column>
+		</property>
+		<property  name="operatingAcount">
+			<column length="50" name="operatingAcount" >
+				<comment>操作费收款人帐号</comment>
+			</column>
+		</property>
+		<property  name="payMethod">
+		<column length="50" name="payMethod" >
+			<comment>支付方式 01:合并支付  021:分开支付-一次性结清  022：分开支付-计时收费</comment>
+		</column>
+	</property>
+		<property  name="reserved1">
+			<column length="50" name="reserved1" >
+				<comment>预留字段</comment>
+			</column>
+		</property>
+		<property  name="reserved2">
+			<column length="50" name="reserved2" >
+				<comment>预留字段</comment>
+			</column>
+		</property>
+		<property  name="reserved3">
+			<column length="50" name="reserved3" >
+				<comment>预留字段</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="jinbi-sajaxs" namespace="/ea/jinbi" extends="json-default">
+		<action name="sajax_*" class="hy.ea.finance.action.BenDis.hy_jinbiAction" method="{1}">
+	<!-- 返回类型为json 在sjon-default中定义 -->  
+			<result type="json">  
+				<!-- root的值对应要返回的值的属性 -->    
+				<!-- 这里的result值即是 对应action中的 result -->  
+				<param name="root">result</param>  
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="jinbi-ntoken" namespace="/ea/jinbi" extends="struts-default">
+		<action name="ea_*" class="hy.ea.finance.action.BenDis.hy_jinbiAction" method="{1}">
+			
+		<!-- 
+			<result name="jifen">/page/ea/main/finance/BenDis/wfj_jinbichi.jsp</result>						
+			<result name="friends">/page/ea/main/finance/BenDis/wfj_friendVs.jsp</result>
+			<result name="bill">/page/ea/main/finance/BenDis/wfj_jinbiBill.jsp</result>						
+			<result name="tixian">/page/ea/main/finance/BenDis/wfj_jinbiduixi.jsp</result>						
+			<result name="chongzhi">/page/ea/main/finance/BenDis/wfj_jinbichongzhi.jsp</result>
+			 -->
+			<!-- 过度页面 -->
+			<result name = "return">/page/conacts/restaurant/paySuc.jsp</result>
+			
+			<result name="jifen">/page/ea/main/finance/BenDis/Gold_Pool/goldPool.jsp</result>
+			<result name="friends">/page/ea/main/finance/BenDis/Gold_Pool/wfj_friendVs.jsp</result>			
+			<result name="bill">/page/ea/main/finance/BenDis/Gold_Pool/wfj_jinbiBill.jsp</result>						
+			<result name="tixian">/page/ea/main/finance/BenDis/Gold_Pool/wfj_goldCash.jsp</result>
+			<result name="chongzhi">/page/ea/main/finance/BenDis/Gold_Pool/wfj_goldCoin.jsp</result>
+			
+			<result name="redpackte">/page/ea/main/finance/BenDis/Gold_Pool/wfj_redPacket.jsp</result>
+			<result name="not_login">/page/ea/not_login.jsp</result>
+			
+			
+			<result name="platform">/page/ea/main/finance/BenDis/Gold_Pool/goldChangePlatform.jsp</result>
+			<result name="paysuc">/page/conacts/restaurant/paySuc.jsp</result>
+			<result name="nologin">/page/ea/not_login.jsp</result>
+			
+			
+			<result name="cg">/page/WFJClient/suc/cg.jsp</result>
+			<result name="details">/page/ea/main/finance/BenDis/wfj_bill_details.jsp</result>
+			<result name="wda">/page/ea/main/finance/BenDis/Gold_Pool/wfjJiFenService_List.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="customerCashingAudit">/page/ea/main/finance/BenDis/Gold_Pool/customerCashingAudit.jsp</result>
+			<result name="findCashingAudit">/page/ea/main/finance/BenDis/Gold_Pool/findCashingAudit.jsp</result>
+			<result name="receipt">/page/ea/main/finance/BenDis/Gold_Pool/receipt.jsp</result>
+			<result name="withWalPage">/page/ea/main/finance/BenDis/Gold_Pool/withWalPage.jsp</result>
+			<result name="qyht">/page/ea/main/office_ea/contract/paySuc.jsp</result>
+
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="withwal.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+
+			<result name="zip" type="stream">
+				<param name="contentType">application/x-zip-compressed</param>
+				<param name="inputName">data</param>
+				<param name="contentDisposition">filename=data.zip</param>
+				<param name="bufferSize">409600000</param>
+			</result>
+		</action>
+	</package>
+</struts>

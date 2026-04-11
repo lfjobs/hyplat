@@ -48,6 +48,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class PhoneOrdersAction_Buyers {
+	private static final Logger logger = LoggerFactory.getLogger(PhoneOrdersAction_Buyers.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -143,11 +144,11 @@ public class PhoneOrdersAction_Buyers {
 
 					} catch (Exception e) {
 
-						e.printStackTrace();
+						logger.error("操作异常", e);
 					}
 
 					if (!"".equals(order_id)) {
-						System.out.println("完结分账：order_id：" + order_id);
+						logger.info("完结分账：order_id：: {}", order_id);
 
 
 						String hqlsf = "from PayCashierBill c where c.payJournalNum = (select p.payJournalNum from PayCashierBill p where p.oriJournalNum = ? ) and c.dtype is not null";
@@ -167,10 +168,10 @@ public class PhoneOrdersAction_Buyers {
 
 								} catch (Exception e) {
 
-									e.printStackTrace();
+									logger.error("操作异常", e);
 								}
 
-								System.out.println("完结佣金分账：order_id：" + order_idyj);
+								logger.info("完结佣金分账：order_id：: {}", order_idyj);
 
 								//备份完结记录
 								HdBackupBillHistory hdBackupBillHistory = new HdBackupBillHistory();
@@ -181,7 +182,7 @@ public class PhoneOrdersAction_Buyers {
 								hqls.add(hqldelete);
 								//删除原记录
 								parmsList.add(new Object[]{backupBill.getJournalNum()});
-								System.out.println("1111111111111");
+								logger.info("1111111111111");
 
 								trService.addWxAccountDetail(hdBackupBillHistory, beans, mainlist, monthlist, jourlist);
 
@@ -211,12 +212,12 @@ public class PhoneOrdersAction_Buyers {
 
 								backupBill.setMessage("佣金分账异常" + order_idyj);
 								backupBill.setStatus("1");
-								System.out.println("佣金分账异常：order_idyj：" + order_idyj);
+								logger.info("佣金分账异常：order_idyj：: {}", order_idyj);
 								beans.add(backupBill);
 							}
 
 						} else {
-							System.out.println("无佣金分账");
+							logger.info("无佣金分账");
 							//备份完结记录
 							HdBackupBillHistory hdBackupBillHistory = new HdBackupBillHistory();
 							BeanUtils.copyProperties(backupBill, hdBackupBillHistory);
@@ -226,7 +227,7 @@ public class PhoneOrdersAction_Buyers {
 							hqls.add(hqldelete);
 							//删除原记录
 							parmsList.add(new Object[]{backupBill.getJournalNum()});
-							System.out.println("22222222222");
+							logger.info("22222222222");
 							trService.addWxAccountDetail(hdBackupBillHistory, beans, mainlist, monthlist, jourlist);
 						}
 
@@ -234,20 +235,20 @@ public class PhoneOrdersAction_Buyers {
 						backupBill.setMessage("主订单完结分账异常");
 						backupBill.setStatus("1");
 
-						System.out.println("主订单完结分账异常：order_id：" + order_id);
+						logger.info("主订单完结分账异常：order_id：: {}", order_id);
 						beans.add(backupBill);
 					}
 
 				}catch (Exception e){
-					System.out.println("出错："+backupBill.getJournalNum());
-					e.printStackTrace();
+					logger.info("调试信息");
+					logger.error("操作异常", e);
 				}
 			}
 
 			baseBeanService.executeHqlsByParamsList(null,hqls.toArray(new String[]{}),parmsList);
 
 		}catch (Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 
@@ -601,11 +602,11 @@ public class PhoneOrdersAction_Buyers {
 						var44 = JSONObject.fromObject(wobj[0]);
 						temp[0] = var44.get("time");
 						temp[1] = var44.get("status");
-//						System.out.println("time"+temp[0]);
-//						System.out.println("status"+temp[1]);
+//						logger.info("调试信息");
+//						logger.info("调试信息");
 
 						wllist.add(temp);
-//						System.out.println("wllist"+wllist);
+//						logger.info("调试信息");
 					}
 					request.setAttribute("wllist", wllist);
 				}
@@ -622,7 +623,7 @@ public class PhoneOrdersAction_Buyers {
 				request.setAttribute("unPayRecord", unPayRecord);
 
 			}catch (Exception e){
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 
 			}
@@ -669,15 +670,15 @@ public class PhoneOrdersAction_Buyers {
 				//result卖家调用的物流信息
 //				result = trService.wuLiu(dt.getExCode(), dt.getWaybillno());//dt.getExCode()
 				result = trService.wuLiu(dt.getWaybillno());//dt.getExCode()
-				System.out.println(result);
+				logger.info("值：{}", result);
 
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
-//			System.out.println("数据库物流公司编码和运单号有值，调用第三方接口成功");
+//			logger.info("数据库物流公司编码和运单号有值，调用第三方接口成功");
 			return "success";
 		} else {
-//			System.out.println("数据库物流公司编码和运单号没有值，调用第三方接口失败");
+//			logger.info("数据库物流公司编码和运单号没有值，调用第三方接口失败");
 			result = "{ 'msg' : false}";
 		}
 		return "success";
@@ -830,11 +831,11 @@ public class PhoneOrdersAction_Buyers {
 					this.msg.setMobiles("15210904250");
 					this.msg.setMessage("订单号为：" + phone.getJournalNum() + "的订单，系统自动收货时出错，错误代码为：" + var14.getClass().getName());
 					String reStr = this.msg.sendMsg();
-					System.out.println(reStr);
+					logger.info("值：{}", reStr);
 				}
 			}
 
-			System.out.println("自动收货完成");
+			logger.info("自动收货完成");
 		}
 
 	}
@@ -854,7 +855,7 @@ public class PhoneOrdersAction_Buyers {
 					this.msg.setMobiles("15210904250");
 					this.msg.setMessage("订单号为：" + phone.getJournalNum() + "的订单，系统自动分配金币时出错，错误代码为：" + str);
 					String reStr = this.msg.sendMsg();
-					System.out.println(reStr);
+					logger.info("值：{}", reStr);
 					break;
 				}
 			}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarPurchaseTax" table="DT_Car_PurchaseTax">
+		<id length="50" name="purchaseTaxKey">
+			<column length="50" name="purchaseTaxKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="purchaseTaxID">
+			<column length="50" name="purchaseTaxID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="carID">
+			<column length="50" name="carID" />
+		</property>
+		<property name="invoiceCode">
+			<column length="250" name="invoiceCode" />
+		</property>
+		<property name="invoiceDate">
+			<column name="invoiceDate" />
+		</property>
+		<property name="carName">
+			<column length="250" name="carName" />
+		</property>
+		<property name="brandModel">
+			<column length="250" name="brandModel" />
+		</property>
+		<property name="originType">
+			<column length="250" name="originType" />
+		</property>
+		<property name="taxprice">
+			<column length="250" name="taxprice" />
+		</property>
+		<property name="tax">
+			<column length="250" name="tax" />
+		</property>
+		<property name="penalty">
+			<column length="250" name="penalty" />
+		</property>
+		<property name="dutyPaidNum">
+			<column length="250" name="dutyPaidNum" />
+		</property>
+		<property name="collectors">
+			<column length="250" name="collectors" />
+		</property>
+		<property name="payee">
+			<column length="250" name="payee" />
+		</property>
+		<property name="remarks">
+			<column length="250" name="remarks" />
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property  name="carpeople">
+			<column length="250" name="carpeople" />
+		</property>
+		<property  name="carType">
+			<column  length="256" name="carType" />
+		</property>
+		<property  name="carNum">
+			<column length="250" name="carNum" />
+		</property>
+	</class>
+</hibernate-mapping>

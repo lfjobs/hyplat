@@ -1,5 +1,8 @@
 package hy.ea.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.sun.star.frame.TitleChangedEvent;
 import hy.ea.test.other.IPBean;
 import hy.ea.test.other.IPList;
@@ -279,8 +282,8 @@ public class WebBookCrawler {
                 flag = false;
             } catch (Exception e) {
                 if (--count != 0) {
-                    System.out.println("莫名错误，原因：" + e.getMessage());
-                    System.out.println("开始第" + (10 - count) + "次重试");
+                    logger.info("调试信息");
+                    logger.info("调试信息");
                     flag = true;
                     Thread.sleep(1000);
 
@@ -367,7 +370,7 @@ public class WebBookCrawler {
                 //}
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             Thread.sleep(10000);
 
         } finally {
@@ -391,7 +394,7 @@ public class WebBookCrawler {
         }
         //String title = filterHtml(Main.toDbc(titleEle.text().replace(" ", "")));
         String title = Main.toDbc(titleEle.text().replace(" ", ""));
-        System.out.println(title);
+        logger.info("调试信息");
         if (!title.equals(title2)) {
             this.title2 = title;
             if (title.indexOf("(") >= 0 && title.indexOf(")") >= 0) {
@@ -487,8 +490,8 @@ public class WebBookCrawler {
             }
         }
         //String content = CheckChinese.checkByLines(filterHtml(getContent(contentEle).trim()));
-        System.out.println("-" + StringUtil.length(contents) + "字");
-        // System.out.println(content);
+        logger.info("调试信息");
+        // logger.info("调试信息");
     }
 
     /**
@@ -563,8 +566,8 @@ public class WebBookCrawler {
                 flag = false;
             } catch (IOException e) {
                 if (count-- != 0) {
-                    System.out.println("网页获取失败，原因：" + e.getMessage());
-                    System.out.println("开始第" + (10 - count) + "次重试");
+                    logger.info("调试信息");
+                    logger.info("调试信息");
                 } else {
                     throw e;
                 }
@@ -597,7 +600,7 @@ public class WebBookCrawler {
         if (input.length() == 0) {
             return input;
         }
-        //System.out.println(input);
+        //logger.info("调试信息");
         input = input.toUpperCase(Locale.ROOT);
         input = input.replaceAll("间门", "间");
         input = input.replaceAll("『", "");
@@ -625,7 +628,7 @@ public class WebBookCrawler {
             input = input.replaceAll(urlSplit.toUpperCase(Locale.ROOT), "");
         }
 
-        //System.out.println(input);
+        //logger.info("调试信息");
         return input;
     }
 

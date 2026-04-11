@@ -1,5 +1,8 @@
 package hy.ea.util.bean;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataOutputStream;
@@ -19,6 +22,7 @@ import java.net.URL;
  * @version 1.0.1
  */
 public class SmsClientAccessTool {
+	private static final Logger logger = LoggerFactory.getLogger(SmsClientAccessTool.class);
 
 	private static SmsClientAccessTool smsClientToolInstance;
 
@@ -88,13 +92,13 @@ public class SmsClientAccessTool {
 			rd.close();
 		} catch (IOException e) {
 			receive.append("访问产生了异常-->").append(e.getMessage());
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} finally {
 			if (wr != null) {
 				try {
 					wr.close();
 				} catch (IOException ex) {
-					ex.printStackTrace();
+					logger.error("操作异常", ex);
 				}
 				wr = null;
 			}
@@ -130,13 +134,13 @@ public class SmsClientAccessTool {
 
 		} catch (IOException e) {
 			receive.append("访问产生了异常-->").append(e.getMessage());
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} finally {
 			if (in != null) {
 				try {
 					in.close();
 				} catch (IOException ex) {
-					ex.printStackTrace();
+					logger.error("操作异常", ex);
 				}
 				in = null;
 

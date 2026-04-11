@@ -68,7 +68,7 @@ public class DserveServiceImpl implements DserveService {
                 b.add(saveBusinessTypeStaff(demandDetail.getDdstaffid(), demandDetail.getDdscodeid()));
                 beandao.saveBeansListAndexecuteHqlsByParams(b, null, null);
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
                 flag = "保存失败！";
             }
         /*} else {
@@ -248,7 +248,7 @@ public class DserveServiceImpl implements DserveService {
             pfsql.append(" order by ddadddate desc");
             pageForm = bbservice.getPageForm(pageNumber, 10, pfsql+"", parme.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return pageForm;
     }
@@ -276,7 +276,7 @@ public class DserveServiceImpl implements DserveService {
             pfsql.append(" ORDER BY S.DSDATE DESC");
             pageForm = bbservice.getPageFormBySQL(pageNumber, 6, pfsql.toString(), pfcsql.toString(), parme.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return pageForm;
     }
@@ -299,7 +299,7 @@ public class DserveServiceImpl implements DserveService {
             pfsql.append(" order by s.dsdate desc");
             objects = beandao.getListObjectBySqlAndParams(pfsql.toString(), parme.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return objects;
     }
@@ -479,7 +479,7 @@ public class DserveServiceImpl implements DserveService {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             flag = "抢单失败!";
         }
         return flag;
@@ -508,7 +508,7 @@ public class DserveServiceImpl implements DserveService {
                 pames.add(new Object[]{ddid, dsid});
                 beandao.executeHqlsByParmsList(null, hqls, pames);
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
                 flag = "操作失败！";
             }
         } else {
@@ -609,7 +609,7 @@ public class DserveServiceImpl implements DserveService {
                 flag = "帐号信息错误！";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             flag = "操作失败！";
         }
         map.put("flag", flag);
@@ -629,7 +629,7 @@ public class DserveServiceImpl implements DserveService {
             StringBuilder delsql = new StringBuilder("update TCtomerWorktype set cwstatus = ?  where cwkey = ? and cwstatus = ? ");
             beandao.saveBeansListAndexecuteHqlsByParams(null, new String[]{delsql.toString()}, new Object[]{"1", cwtid, "0"});
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             flag = "操作失败！";
         }
         return flag;
@@ -698,7 +698,7 @@ public class DserveServiceImpl implements DserveService {
         String status = "0";
         PageForm pageForm = this.bbservice.getPageFormBySQL(pageNumber, 10, sql.toString(), "select count(*) from (" + sql.toString() + ")", new Object[]{title, status});
         //List<BaseBean> list=this.bbservice.getListBeanBySqlAndParams(sql.toString(),new Object[] {title, status });
-        //System.out.println(list);
+        //logger.info("值：{}", list);
         return pageForm;
     }
 
@@ -722,7 +722,7 @@ public class DserveServiceImpl implements DserveService {
             pfsql.append(" ORDER BY S.DSDATE DESC");
             list= bbservice.getListBeanBySqlAndParams(pfsql.toString(), parme.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return list;
     }
@@ -804,7 +804,7 @@ public class DserveServiceImpl implements DserveService {
             personInfor[0] = "";
             personInfor[1] = "";
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return personInfor;
     }
@@ -874,7 +874,7 @@ public class DserveServiceImpl implements DserveService {
             list.add(personInfor[1]);
             JushMain.sendjiguangMessage("恭喜您已成功抢到新注册用户", null, cc.getAccount(), "lowerlevelsucceed", list);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return personInfor;
     }

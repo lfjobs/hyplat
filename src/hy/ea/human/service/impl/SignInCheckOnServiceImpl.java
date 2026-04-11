@@ -177,7 +177,7 @@ public class SignInCheckOnServiceImpl implements SignInCheckOnService {
                                     signInCheckOn.setGuaranteeSalary(Objects.nonNull(salaryData.getGuaranteeSalary()) ? Double.parseDouble(salaryData.getGuaranteeSalary()) : null);
                                     signInCheckOn.setWelfareSalary(Objects.nonNull(salaryData.getWelfareSalary()) ? Double.parseDouble(salaryData.getWelfareSalary()) : null);
                                 }catch (Exception e){
-                                    e.printStackTrace();
+                                    logger.error("操作异常", e);
                                 }
                                 signInCheckOn.setSalaryLevelId(salaryData.getSalaryLevelId());
                                 signInCheckOn.setSalaryLevelNum(salaryData.getSalaryLevelNum());
@@ -376,7 +376,7 @@ public class SignInCheckOnServiceImpl implements SignInCheckOnService {
                                     signInCheckOn.setGuaranteeSalary(Objects.nonNull(salaryData.getGuaranteeSalary()) ? Double.parseDouble(salaryData.getGuaranteeSalary()) : null);
                                     signInCheckOn.setWelfareSalary(Objects.nonNull(salaryData.getWelfareSalary()) ? Double.parseDouble(salaryData.getWelfareSalary()) : null);
                                 }catch (Exception e){
-                                    e.printStackTrace();
+                                    logger.error("操作异常", e);
                                 }
                                 signInCheckOn.setSalaryLevelId(salaryData.getSalaryLevelId());
                                 signInCheckOn.setSalaryLevelNum(salaryData.getSalaryLevelNum());
@@ -1630,7 +1630,7 @@ public class SignInCheckOnServiceImpl implements SignInCheckOnService {
                     signInCheckOn.setGuaranteeSalary(Objects.nonNull(salaryData.getGuaranteeSalary()) ? Double.parseDouble(salaryData.getGuaranteeSalary()) : null);
                     signInCheckOn.setWelfareSalary(Objects.nonNull(salaryData.getWelfareSalary()) ? Double.parseDouble(salaryData.getWelfareSalary()) : null);
                 }catch (Exception e){
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
                 signInCheckOn.setSalaryLevelId(salaryData.getSalaryLevelId());
             }
@@ -1713,7 +1713,7 @@ public class SignInCheckOnServiceImpl implements SignInCheckOnService {
                     signInCheckOn.setGuaranteeSalary(Objects.nonNull(salaryData.getGuaranteeSalary()) ? Double.parseDouble(salaryData.getGuaranteeSalary()) : null);
                     signInCheckOn.setWelfareSalary(Objects.nonNull(salaryData.getWelfareSalary()) ? Double.parseDouble(salaryData.getWelfareSalary()) : null);
                 }catch (Exception e){
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
                 signInCheckOn.setSalaryLevelId(salaryData.getSalaryLevelId());
             }
@@ -1840,7 +1840,7 @@ public class SignInCheckOnServiceImpl implements SignInCheckOnService {
                     signInCheckOn.setGuaranteeSalary(Objects.nonNull(salaryData.getGuaranteeSalary()) ? Double.parseDouble(salaryData.getGuaranteeSalary()) : null);
                     signInCheckOn.setWelfareSalary(Objects.nonNull(salaryData.getWelfareSalary()) ? Double.parseDouble(salaryData.getWelfareSalary()) : null);
                 }catch (Exception e){
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
                 signInCheckOn.setSalaryLevelId(salaryData.getSalaryLevelId());
             }
@@ -2008,7 +2008,7 @@ public class SignInCheckOnServiceImpl implements SignInCheckOnService {
                         signInCheckOn.setGuaranteeSalary(Objects.nonNull(salaryData.getGuaranteeSalary()) ? Double.parseDouble(salaryData.getGuaranteeSalary()) : null);
                         signInCheckOn.setWelfareSalary(Objects.nonNull(salaryData.getWelfareSalary()) ? Double.parseDouble(salaryData.getWelfareSalary()) : null);
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        logger.error("操作异常", e);
                     }
                     signInCheckOn.setSalaryLevelId(salaryData.getSalaryLevelId());
                 }
@@ -2219,7 +2219,7 @@ public class SignInCheckOnServiceImpl implements SignInCheckOnService {
                         signInCheckOn.setGuaranteeSalary(Objects.nonNull(salaryData.getGuaranteeSalary()) ? Double.parseDouble(salaryData.getGuaranteeSalary()) : null);
                         signInCheckOn.setWelfareSalary(Objects.nonNull(salaryData.getWelfareSalary()) ? Double.parseDouble(salaryData.getWelfareSalary()) : null);
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        logger.error("操作异常", e);
                     }
                     signInCheckOn.setSalaryLevelId(salaryData.getSalaryLevelId());
                 }

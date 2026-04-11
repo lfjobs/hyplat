@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.telrec.bo">
+	<class name="TelrecTelInfo"  table="telrecTelInfo">
+		<id length="50" name="id">
+			<column length="50" name="id" />
+			<generator class="uuid" />
+		</id>
+		<property name="user_id">
+			<column length="50" name="user_id" />
+		</property>
+		<property name="user_name">
+			<column length="50" name="user_name" />
+		</property>
+		<property name="customer_id">
+			<column length="50" name="customer_id" />
+		</property>
+		<property name="customer_name">
+			<column length="50" name="customer_name" />
+		</property>
+		<property name="start_time">
+			<column length="50" name="start_time" />
+		</property>
+		<property name="end_time">
+			<column length="50" name="end_time" />
+		</property>
+		<property name="content">
+			<column length="500" name="content" />
+		</property>
+		<property name="telno">
+			<column length="20" name="telno" />
+		</property>
+		<property name="in_or_out">
+			<column length="50" name="in_or_out" />
+		</property>
+		<property name="teltype">
+			<column length="50" name="teltype" />
+		</property>
+		<property name="path">
+			<column length="200" name="path" />
+		</property>
+	</class>
+</hibernate-mapping>

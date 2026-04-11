@@ -1,5 +1,8 @@
 package hy.ea.ddsr.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.ddsr.Ddsrcoach;
 import hy.ea.bo.ddsr.Ddsrreservationrecord;
@@ -29,6 +32,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class CoachReservationRecordAction {
+	private static final Logger logger = LoggerFactory.getLogger(CoachReservationRecordAction.class);
 	public InputStream excelStream;
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -269,7 +273,7 @@ public class CoachReservationRecordAction {
 					searchEndDate=DateUtil.parseDate("yyyy-MM-dd", DateUtil.toStrDateFromUtilDateByFormat(calendarEndDate.getTime(),"yyyy-MM-dd"));
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 				ddsrreservationrecord.setSearchStaDate(searchStaDate);
 				ddsrreservationrecord.setSearchEndDate(searchEndDate);
@@ -288,7 +292,7 @@ public class CoachReservationRecordAction {
 					searchEndDate=DateUtil.parseDate("yyyy-MM-dd", DateUtil.toStrDateFromUtilDateByFormat(calendarEndDate.getTime(),"yyyy-MM-dd"));
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 				ddsrreservationrecord.setSearchStaDate(searchStaDate);
 				ddsrreservationrecord.setSearchEndDate(searchEndDate);
@@ -301,7 +305,7 @@ public class CoachReservationRecordAction {
 				searchEndDate=DateUtil.parseDate("yyyy-MM-dd", DateUtil.toStrDateFromUtilDateByFormat(calendarEndDate.getTime(),"yyyy-MM-dd"));
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			ddsrreservationrecord=new Ddsrreservationrecord();
 			ddsrreservationrecord.setSearchStaDate(searchStaDate);
@@ -332,7 +336,7 @@ public class CoachReservationRecordAction {
 				calendar=DateUtil.toCalendarFromUtilDate(startDate);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		return arrayDateList;

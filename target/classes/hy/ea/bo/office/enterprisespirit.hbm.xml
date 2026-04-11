@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EnterpriseSpirit" table="dtEnterpriseSpirit">
+		<id length="50" name="spiritKey">
+			<column length="50" name="spiritKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="spiritID">
+			<column length="50" name="spiritID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="enterpriseName">
+			<column length="250" name="enterpriseName" />
+		</property>
+		<property  name="spiritContent">
+			<column length="256" name="spiritContent" />
+		</property>
+		<property  name="spiritNote">
+			<column length="250" name="spiritNote" />
+		</property>
+	</class>
+</hibernate-mapping>

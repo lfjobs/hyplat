@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.plat.bo">
+	<class name="SDistrict" table="dtSDistrict">
+		<id name="districtKey">
+			<column length="50" name="districtKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="districtID">
+			<column length="50" name="districtID" unique="true" not-null="true" />
+		</property>
+		<property name="districtPID">
+			<column length="50" name="districtPID" not-null="true"><comment>父id</comment> </column>
+		</property>
+		<property name="districtCode">
+			<column length="50" name="districtCode" ><comment>地域编码</comment></column>
+		</property>
+		<property name="districtName">
+			<column length="256" name="districtName" not-null="true" ><comment>地域名称</comment> </column>
+		</property>
+		<property name="districtStatus">
+			<column length="2" name="districtStatus" not-null="true" ><comment>00:正常98:删除</comment> </column>
+		</property>
+	</class>
+</hibernate-mapping>

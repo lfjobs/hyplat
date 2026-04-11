@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -11,6 +14,7 @@ import java.util.Properties;
  *
  */
 public class TTswUtils {
+	private static final Logger logger = LoggerFactory.getLogger(TTswUtils.class);
 
 	public static Properties getProperties() {
 

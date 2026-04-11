@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffPapers" table="dt_hr_staff_Papers">
+	<comment>证件照片信息</comment>
+		<id length="50" name="papersKey">
+			<column length="50" name="papersKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="papersID">
+			<column length="150" name="papersID" not-null="true"/>
+		</property>
+		<property name="category">
+			<column length="250" name="category"><comment>证件类别</comment></column>
+		</property>
+		<property name="positive">
+			<column length="550" name="positive"><comment>证件正面照片路径</comment></column>
+		</property>
+		<property name="back">
+			<column length="550" name="back"><comment>证件背面照片路径</comment></column>
+		</property>
+		<property name="staffID">
+			<column  length="250"  name="staffID"><comment>归属人ID</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

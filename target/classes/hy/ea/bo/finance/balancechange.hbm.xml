@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="BalanceChange" table="dtBalanceChange">
+		<id length="50" name="bcKey">
+			<column length="50" name="bcKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="bcID">
+			<column length="50" name="bcID" />
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID" />
+		</property>
+		<property name="goodsBillsID">
+			<column length="50" name="goodsBillsID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="pcompanyID">
+			<column length="50" name="pcompanyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="staffCode">
+			<column name="staffCode" length="250" />
+		</property>
+		<property name="gbalance">
+			<column length="250" name="gbalance" />
+		</property>
+		<property name="gdirection">
+			<column length="250" name="gdirection" />
+		</property>
+		<property name="balance">
+			<column length="250" name="balance" />
+		</property>
+		<property name="direction">
+			<column length="250" name="direction" />
+		</property>
+		<property name="balance1">
+			<column length="250" name="balance1" />
+		</property>
+		<property name="direction1">
+			<column length="250" name="direction1" />
+		</property>
+		<property name="balance2">
+			<column length="250" name="balance2" />
+		</property>
+		<property name="direction2">
+			<column length="250" name="direction2" />
+		</property>
+		<property name="balance3">
+			<column length="250" name="balance3" />
+		</property>
+		<property name="direction3">
+			<column length="250" name="direction3" />
+		</property>
+		<property name="bcDate">
+			<column name="bcDate" />
+		</property>
+		<property name="costType">
+			<column length="250" name="costType" />
+		</property>
+		<property name="subjectsName">
+			<column length="250" name="subjectsName" />
+		</property>
+		<property name="subjectsID">
+			<column length="50" name="subjectsID" />
+		</property>
+		<property name="startDate">
+			<column  name="startDate" />
+		</property>
+	</class>
+</hibernate-mapping>

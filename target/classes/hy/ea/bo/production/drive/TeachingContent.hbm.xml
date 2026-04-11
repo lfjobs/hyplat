@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.drive">
+	<class name="TeachingContent" table="dtTeachingContent">
+		<id length="50" name="tctKey">
+			<column length="50" name="tctKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="tctId">
+			<column length="50" name="tctId"><comment>ID</comment></column>
+		</property>
+		<property name="integral">
+			<column length="50" name="integral"><comment> 基本分</comment></column>
+		</property>
+		<property name="ocrId">
+			<column length="50" name="ocrId"><comment> 教练记录Id</comment></column>
+		</property>
+		<property name="tctContent">
+			<column length="50" name="tctContent"><comment>内容</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

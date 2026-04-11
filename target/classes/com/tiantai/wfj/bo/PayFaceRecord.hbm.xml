@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="PayFaceRecord" table="DT_PayFaceRecord" schema="HYPLAT" dynamic-insert="true">
+		<comment>刷脸记录</comment>
+		<id length="50" name="pftrkey" type="java.lang.String">
+			<column length="50" name="pftrkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="pftrID" type="java.lang.String">
+			<column length="50" name="pftrID" >
+			</column>
+		</property>
+		<property name="sn" type="java.lang.String">
+			<column name="sn" length="50">
+				<comment>设备序列号</comment>
+			</column>
+		</property>
+		<property name="journalNum" type="java.lang.String">
+			<column length="50" name="journalNum" >
+				<comment>订单号</comment>
+			</column>
+		</property>
+		<property name="tradeMoney" type="java.lang.String">
+			<column length="50" name="tradeMoney" >
+				<comment>当时使用商户</comment>
+			</column>
+		</property>
+		<property name="tradeDate" type="java.util.Date">
+			<column name="tradeDate" >
+				<comment>交易日期</comment>
+			</column>
+		</property>
+		<property name="clerkSccid" type="java.lang.String">
+			<column length="50" name="clerkSccid" >
+				<comment>交易时设备绑定的业务员</comment>
+			</column>
+		</property>
+		<property name="subCompanyID" type="java.lang.String">
+			<column length="50" name="subCompanyID" >
+				<comment>当时使用商户</comment>
+			</column>
+		</property>
+		<property name="appID" type="java.lang.String">
+			<column length="50" name="appID" >
+				<comment>当时微信APPID</comment>
+			</column>
+		</property>
+		<property name="storeRate" type="java.lang.String">
+			<column name="storeRate" length="50">
+				<comment>费率</comment>
+			</column>
+		</property>
+		<property name="source" type="java.lang.String">
+			<column length="10" name="source" >
+				<comment>来源 scancode 扫码   face:刷脸</comment>
+			</column>
+		</property>
+		<property name="openID" type="java.lang.String">
+			<column length="255" name="openID" >
+				<comment>业务员微分金账号手机号</comment>
+			</column>
+		</property>
+		<property name="nickname" type="java.lang.String">
+			<column length="50" name="nickname" >
+				<comment>/微信昵称</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

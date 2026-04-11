@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -27,6 +30,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
  *
  */
 public class ZXingCode {
+	private static final Logger logger = LoggerFactory.getLogger(ZXingCode.class);
 	private static final int QRCOLOR = 0xFF000000; // 默认是黑色
 	private static final int BGWHITE = 0xFFFFFFFF; // 背景颜色
 	private static final String IMGTYPE = "png";
@@ -129,7 +133,7 @@ public class ZXingCode {
 
 			ImageIO.write(image, "png", QrCodeFile); // TODO
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return   "/"+qrcodePath+"/"+qrname+"."+IMGTYPE;

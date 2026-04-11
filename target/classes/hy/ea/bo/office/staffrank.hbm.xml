@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="StaffRank" table="dt_hr_staff_rank">
+		<id length="50" name="rankKey">
+			<column length="50" name="rankKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="rankID">
+			<column length="50" name="rankID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="deptID">
+			<column length="50" name="deptID"/>
+		</property>
+		<property name="principal">
+			<column length="250" name="principal" />
+		</property>
+		<property name="voucherNum">
+			<column length="250" name="voucherNum" />
+		</property>
+		<property  name="accessory">
+			<column length="256" name="accessory" />
+		</property>
+		<property  name="rankNum">
+			<column length="250" name="rankNum" />
+		</property>
+		<property  name="rankName">
+			<column length="250" name="rankName" />
+		</property>
+		<property  name="staffNum">
+			<column length="250" name="staffNum" />
+		</property>
+		<property  name="confirmDate">
+			<column  name="confirmDate" />
+		</property>
+		<property  name="startDate">
+			<column  name="startDate" />
+		</property>
+		<property  name="endDate">
+			<column   name="endDate" />
+		</property>
+		<property  name="examine">
+			<column  length="256" name="examine" />
+		</property>
+		<property  name="idea">
+			<column length="256" name="idea" />
+		</property>
+		
+		<property name="manager">
+			<column length="250" name="manager"/>
+		</property>
+		<property name="president">
+			<column length="250" name="president"/>
+		</property>
+		<property name="deptCharge">
+			<column length="250" name="deptCharge" />
+		</property>
+		<property  name="headCharge">
+			<column length="250" name="headCharge" />
+		</property>
+		<property  name="verify">
+			<column length="250" name="verify" />
+		</property>
+		<property  name="financeVerify">
+			<column length="250" name="financeVerify" />
+		</property>
+		
+		<property  name="accounting">
+			<column length="250" name="accounting" />
+		</property>
+		<property  name="allAccounting">
+			<column length="250" name="allAccounting" />
+		</property>
+		<property  name="cashier">
+			<column length="250" name="cashier" />
+		</property>
+		<property  name="allCashier">
+			<column length="250" name="allCashier" />
+		</property>
+	</class>
+</hibernate-mapping>

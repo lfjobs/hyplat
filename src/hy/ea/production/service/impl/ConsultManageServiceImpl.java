@@ -1,5 +1,8 @@
 package hy.ea.production.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.TEshopCusCom;
 import hy.ea.bo.Company;
 import hy.ea.bo.company.ConsultingRegistration;
@@ -113,7 +116,7 @@ public class ConsultManageServiceImpl implements ConsultManageService {
 			msage.setMessage(content.toString());
 			msage.sendMsg("【微分金平台】");
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		//保存账号
@@ -204,8 +207,8 @@ public class ConsultManageServiceImpl implements ConsultManageService {
  	public List<BaseBean> getConsultList(String start,String end,String isIntentCustomer,String returnVisit,String companyId,String staffId,String parameter){
 		List<Object> param = new ArrayList<Object>();
  		String hql = "from ConsultingRegistration where 1=1 ";
- 		System.out.println(start);
-		System.out.println(end);
+ 		logger.info("值：{}", start);
+		logger.info("值：{}", end);
 
 		if(start!=null&&!start.equals("")&&end!=null&&!end.equals("")){
             hql+= " and consultingDate between ? and ?";

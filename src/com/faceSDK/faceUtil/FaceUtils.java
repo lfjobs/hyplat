@@ -42,7 +42,7 @@ public class FaceUtils{
             //logger.info("md5加密的字符串：{}",plainText);
             return DigestUtils.md5Hex(plainText);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             logger.error("使用md5的时候出现错误：{}",e.getMessage());
             return null;
         }

@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -39,6 +42,7 @@ import org.apache.struts2.ServletActionContext;
  *
  */
 public class ExcelUtils {
+	private static final Logger logger = LoggerFactory.getLogger(ExcelUtils.class);
 
     static HttpServletRequest request=ServletActionContext.getRequest();
 
@@ -49,7 +53,7 @@ public class ExcelUtils {
 
     public static void main(String[] args) {
         int s=getSheetCount(52300);
-        System.out.println(1);
+        logger.info("值：{}", 1);
     }
 
     /**
@@ -80,7 +84,7 @@ public class ExcelUtils {
         String path = sdf.format(new Date());
         //获取服务器web路径
         String serverPath=path;
-        System.out.println(serverPath);
+        logger.info("值：{}", serverPath);
         //在服务器端创建文件夹
         File file = new File(serverPath);
         if(!file.exists()){
@@ -194,11 +198,11 @@ public class ExcelUtils {
                                     : result.toString(), wcfCell);
                             ws.addCell(lable);
                         } catch (IllegalArgumentException e) {
-                            e.printStackTrace();
+                            logger.error("操作异常", e);
                         } catch (IllegalAccessException e) {
-                            e.printStackTrace();
+                            logger.error("操作异常", e);
                         } catch (InvocationTargetException e) {
-                            e.printStackTrace();
+                            logger.error("操作异常", e);
                         }
                     }*/
                 }

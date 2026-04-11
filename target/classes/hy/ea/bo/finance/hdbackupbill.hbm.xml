@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="HdBackupBill" table="dt_sft_HdBackupBill">
+		<id length="50" name="hdbkey" type="java.lang.String">
+			<column length="50" name="hdbkey"  />
+			<generator class="uuid" />
+		</id>
+		 <property name="hdbID" type="java.lang.String">
+        	<column name="hdbID" length="50"/>
+        </property>
+        <property name="journalNum" type="java.lang.String">
+        	<column name="journalNum" length="50">
+        	<comment>订单号</comment>
+        	</column>
+        </property>
+         <property name="attach" type="java.lang.String">
+        	<column name="attach" length="50">
+        	<comment>附言</comment>
+        	</column>
+        </property>
+
+		<property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>生成时间</comment>
+			</column>
+		</property>
+
+		<property name="finishDate" type="java.util.Date">
+			<column name="finishDate" >
+				<comment>完结分账时间</comment>
+			</column>
+		</property>
+		<property name="message" type="java.lang.String">
+			<column name="message" length="50">
+				<comment>未成功原因</comment>
+			</column>
+		</property>
+
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50">
+				<comment>订单公司ID</comment>
+			</column>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="1">
+				<comment>状态0 正常 1：暂时不完结</comment>
+			</column>
+		</property>
+		<property name="money" type="java.lang.String">
+			<column name="money" length="50">
+				<comment>分账金额</comment>
+			</column>
+		</property>
+	</class> 
+	
+</hibernate-mapping>

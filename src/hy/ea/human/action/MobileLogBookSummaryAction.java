@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -52,6 +55,7 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class MobileLogBookSummaryAction {
+	private static final Logger logger = LoggerFactory.getLogger(MobileLogBookSummaryAction.class);
 	@Resource
 	private ShowExcelService excelService;
 	public InputStream excelStream;
@@ -111,7 +115,7 @@ public class MobileLogBookSummaryAction {
 						.getStaffCode(), MatchMode.ANYWHERE));
 			}
 			if (!companyID.equals(logbooksummary.getOrganizationID())) {
-				//System.out.println(logbooksummary.getOrganizationID());
+				//logger.info("调试信息");
 				dc.add(Restrictions.like("organizationID", logbooksummary
 						.getOrganizationID(), MatchMode.ANYWHERE));
 			}
@@ -122,7 +126,7 @@ public class MobileLogBookSummaryAction {
 					dc.add(Restrictions.between("todaydate", dateFormat
 							.parse(sdate), dateFormat.parse(edate)));
 				} catch (ParseException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 			if (null != logbooksummary.getStatus()
@@ -150,11 +154,11 @@ public class MobileLogBookSummaryAction {
 		response.setCharacterEncoding("UTF-8");
 		try {
 			response.getWriter().write(outString);
-			//System.out.println(outString);
+			//logger.info("值：{}", outString);
 			response.flushBuffer();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 		// return "list";
@@ -257,7 +261,7 @@ public class MobileLogBookSummaryAction {
 					.getPageNumber() : 1), (pageNumber == 0 ? 10 : pageNumber),
 					hql2, hql3, params);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "LogBookIntegral";
 	}
@@ -295,7 +299,7 @@ public class MobileLogBookSummaryAction {
 			}
 			return baseBeanService.getListBeanByHqlAndParams(hql2, params);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 
@@ -352,7 +356,7 @@ public class MobileLogBookSummaryAction {
 					dc.add(Restrictions.between("todaydate", dateFormat
 							.parse(sdate), dateFormat.parse(edate)));
 				} catch (ParseException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 		}

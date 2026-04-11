@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+    <class name="hy.ea.bo.finance.CashierBillsExt" table="DTCASHIERBILLSEXT">
+        <comment>费用预算条目关联子表</comment>
+        <id name="cashierBillsExtKey">
+            <column length="50" name="CASHIERBILLSEXTKEY">
+                <comment>主键id</comment>
+            </column>
+            <generator class="uuid"/>
+        </id>
+        <property name="cashierBillsID">
+            <column length="50" name="CASHIERBILLSID">
+                <comment>预算单id</comment>
+            </column>
+        </property>
+        <property name="receiverID">
+            <column length="50" name="RECEIVERID">
+                <comment>传阅接收人id</comment>
+            </column>
+        </property>
+        <property name="receiverDeptID">
+            <column length="50" name="RECEIVERDEPTID">
+                <comment>传阅接收部门</comment>
+            </column>
+        </property>
+        <property name="receiverCompanyID">
+            <column length="50" name="RECEIVERCOMPANYID">
+                <comment>传阅接收公司</comment>
+            </column>
+        </property>
+        <property name="updateTime">
+            <column length="7" name="UPDATETIME">
+                <comment>传阅时间</comment>
+            </column>
+        </property>
+        <property name="fromMember">
+            <column length="50" name="FROMMEMBER">
+                <comment>传阅人</comment>
+            </column>
+        </property>
+        <property name="isComplete">
+            <column length="10" name="ISCOMPLETE">
+                <comment>是否完成</comment>
+            </column>
+        </property>
+        <property name="completeTime">
+            <column length="50" name="COMPLETETIME">
+                <comment>完成时间</comment>
+            </column>
+        </property>
+        <property name="completeQuality">
+            <column length="50" name="COMPLETEQUALITY">
+                <comment>完成质量</comment>
+            </column>
+        </property>
+        <property name="reviewerId">
+            <column length="50" name="REVIEWERID">
+                <comment>审核人Id</comment>
+            </column>
+        </property>
+        <property name="reviewerName">
+            <column length="50" name="REVIEWERNAME">
+                <comment>审核人名</comment>
+            </column>
+        </property>
+        <property name="reviewTime">
+            <column length="50" name="REVIEWTIME">
+                <comment>审核时间</comment>
+            </column>
+        </property>
+        <property name="reviewStatus">
+            <column length="50" name="REVIEWSTATUS">
+                <comment>审核时间</comment>
+            </column>
+        </property>
+        <property name="isSend">
+            <column length="50" name="ISSEND">
+                <comment>是否发送</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

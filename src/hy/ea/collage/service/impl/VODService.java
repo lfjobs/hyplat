@@ -1,5 +1,8 @@
 package hy.ea.collage.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
@@ -14,6 +17,7 @@ import java.util.List;
 
 @Service
 public class VODService {
+	private static final Logger logger = LoggerFactory.getLogger(VODService.class);
 
     // 点播服务所在的Region，接入服务中心为上海，则填cn-shanghai
     String regionId = "cn-shanghai";
@@ -69,17 +73,17 @@ public class VODService {
                 "}";
         try {
             AssumeRoleResponse response = assumeRole(roleArn, roleSessionName, policy);
-//            System.out.println("Expiration: " + response.getCredentials().getExpiration());
-//            System.out.println("Access Key Id: " + response.getCredentials().getAccessKeyId());
-//            System.out.println("Access Key Secret: " + response.getCredentials().getAccessKeySecret());
-//            System.out.println("Security Token: " + response.getCredentials().getSecurityToken());
-//            System.out.println("RequestId: " + response.getRequestId());
+//            logger.info("调试信息");
+//            logger.info("调试信息");
+//            logger.info("调试信息");
+//            logger.info("调试信息");
+//            logger.info("RequestId: : {}", response.getRequestId());
 
             return response;
         } catch (ClientException e) {
-//            System.out.println("Failed to get a token.");
-//            System.out.println("Error code: " + e.getErrCode());
-//            System.out.println("Error message: " + e.getErrMsg());
+//            logger.info("Failed to get a token.");
+//            logger.info("Error code: : {}", e.getErrCode());
+//            logger.info("Error message: : {}", e.getErrMsg());
             throw e;
         }
     }
@@ -102,15 +106,15 @@ public class VODService {
 
         try {
             CreateUploadVideoResponse response = client.getAcsResponse(request);
-//            System.out.println("CreateUploadVideoRequest, " + request.getUrl());
-//            System.out.println("CreateUploadVideoRequest, requestId:" + response.getRequestId());
-//            System.out.println("UploadAddress, " + response.getUploadAddress());
-//            System.out.println("UploadAuth, " + response.getUploadAuth());
-//            System.out.println("VideoId, " + response.getVideoId());
+//            logger.info("CreateUploadVideoRequest, : {}", request.getUrl());
+//            logger.info("CreateUploadVideoRequest, requestId:: {}", response.getRequestId());
+//            logger.info("UploadAddress, : {}", response.getUploadAddress());
+//            logger.info("UploadAuth, : {}", response.getUploadAuth());
+//            logger.info("VideoId, : {}", response.getVideoId());
 
             return response;
         } catch (ClientException e) {
-//            System.out.println("action, error:" + e);
+//            logger.info("action, error:: {}", e);
             throw e;
         }
     }
@@ -132,16 +136,16 @@ public class VODService {
             GetVideoInfosResponse response = client.getAcsResponse(request);
             List<GetVideoInfosResponse.Video> videoList = response.getVideoList();
             List<String> nonExistVideoIds = response.getNonExistVideoIds();
-//            System.out.println("GetVideoInfosRequest, " + request.getUrl());
-//            System.out.println("GetVideoInfosRequest, requestId:" + response.getRequestId());
-//            System.out.println("NonExistVideoIds:" + String.join(",", nonExistVideoIds));
-//            System.out.println("VideoInfos: " + videoList.size());
+//            logger.info("GetVideoInfosRequest, : {}", request.getUrl());
+//            logger.info("GetVideoInfosRequest, requestId:: {}", response.getRequestId());
+//            logger.info("NonExistVideoIds:: {}", String.join(",", nonExistVideoIds));
+//            logger.info("VideoInfos: : {}", videoList.size());
 
             return response;
         } catch (ClientException e) {
-//            System.out.println("Failed to get video infos.");
-//            System.out.println("Error code: " + e.getErrCode());
-//            System.out.println("Error message: " + e.getErrMsg());
+//            logger.info("Failed to get video infos.");
+//            logger.info("Error code: : {}", e.getErrCode());
+//            logger.info("Error message: : {}", e.getErrMsg());
             throw e;
         }
     }
@@ -164,16 +168,16 @@ public class VODService {
             GetPlayInfoResponse response = client.getAcsResponse(request);
             GetPlayInfoResponse.VideoBase videoBase = response.getVideoBase();
             List<GetPlayInfoResponse.PlayInfo> playInfoList = response.getPlayInfoList();
-//            System.out.println("GetPlayInfoRequest, " + request.getUrl());
-//            System.out.println("GetPlayInfoRequest, requestId:" + response.getRequestId());
-//            System.out.println("CoverURL:" + videoBase.getCoverURL());
-//            System.out.println("PlayURL: " + playInfoList.get(0).getPlayURL());
+//            logger.info("GetPlayInfoRequest, : {}", request.getUrl());
+//            logger.info("GetPlayInfoRequest, requestId:: {}", response.getRequestId());
+//            logger.info("CoverURL:: {}", videoBase.getCoverURL());
+//            logger.info("调试信息");
 
             return response;
         } catch (ClientException e) {
-//            System.out.println("Failed to get play info.");
-//            System.out.println("Error code: " + e.getErrCode());
-//            System.out.println("Error message: " + e.getErrMsg());
+//            logger.info("Failed to get play info.");
+//            logger.info("Error code: : {}", e.getErrCode());
+//            logger.info("Error message: : {}", e.getErrMsg());
             throw e;
         }
     }

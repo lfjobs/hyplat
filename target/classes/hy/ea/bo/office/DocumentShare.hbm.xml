@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocumentShare" table="DT_OA_DOCUMENT_SHARE">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="shareId" type="java.lang.String">
+			<column name="shareId" length="50" />
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="255" />
+		</property>
+		<property name="companyId" type="java.lang.String">
+			<column name="companyId" length="50" />
+		</property>
+		<property name="groupCompanySn" type="java.lang.String">
+			<column name="groupCompanySn" length="50" />
+		</property>
+		<property name="shareType" type="java.lang.String">
+			<column name="shareType" length="200" />
+		</property>
+		<property name="shareTime" type="java.util.Date">
+			<column name="shareTime" length="20" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

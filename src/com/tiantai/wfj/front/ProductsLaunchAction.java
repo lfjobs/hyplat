@@ -359,7 +359,7 @@ public class ProductsLaunchAction extends ActionSupport {
         try {
             operateImage.cut();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }*/
@@ -696,7 +696,7 @@ public class ProductsLaunchAction extends ActionSupport {
         try {
             contentToFileService.saveContent(id, content, path);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "/upload_files/goodDetail/" + id
                 + UploadContentToFileService.suffix;
@@ -717,7 +717,7 @@ public class ProductsLaunchAction extends ActionSupport {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         }
     }
@@ -764,7 +764,7 @@ public class ProductsLaunchAction extends ActionSupport {
                         URLDecoder.decode(this.getProductPackaging()
                                 .getGoodsName(), "UTF-8"));
             } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
         }
 
@@ -1007,7 +1007,7 @@ public class ProductsLaunchAction extends ActionSupport {
         json.accumulate("goodsId", goodsId);
         json.accumulate("sccId", sccId);
         result = json.toString();
-        System.out.println(result);
+        logger.info("值：{}", result);
         return "success";
     }
 
@@ -1095,15 +1095,15 @@ public class ProductsLaunchAction extends ActionSupport {
         Double efprice1 = ef.setScale(6, BigDecimal.ROUND_DOWN).doubleValue();
         String efprice = null;
         efprice = String.format("%.6f", efprice1);
-    //    System.out.println("efprice=" + efprice);
+    //    logger.info("efprice=: {}", efprice);
      //   Double reprice1 = re.setScale(6, BigDecimal.ROUND_DOWN).doubleValue();
         String reprice = null;
         reprice = String.format("%.6f", re);
-   //     System.out.println("reprice=" + reprice);
+   //     logger.info("reprice=: {}", reprice);
        // Double brokerage1 = br.setScale(6, BigDecimal.ROUND_DOWN).doubleValue();
         String brokerage = null;
         brokerage = String.format("%.6f", br);
-    //    System.out.println("brokerage=" + brokerage);
+    //    logger.info("brokerage=: {}", brokerage);
         BigDecimal dlsum = new BigDecimal(0);
         if (ps == null) {
             // 佣金设计
@@ -1281,7 +1281,7 @@ public class ProductsLaunchAction extends ActionSupport {
         json.accumulate("ppId", ppId);
         json.accumulate("goodsId", goodsId);
         result = json.toString();
-        System.out.println(result);
+        logger.info("值：{}", result);
         return "success";
     }
 
@@ -1850,14 +1850,14 @@ public class ProductsLaunchAction extends ActionSupport {
             for (int i = 0; i < beans.size(); i++) {
                 try {
                     String json = mapper.writeValueAsString(beans.get(i));
-                    System.out.println("\"" + BaseBean.class.getName() + i + "\":" + json + ",");
+                    logger.info("调试信息");
 
                 } catch (JsonProcessingException e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }*/
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             logger.error("保存失败");
             s = "0";
         }
@@ -2191,7 +2191,7 @@ public class ProductsLaunchAction extends ActionSupport {
         try {
             baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, new String[]{sql, sql2, hql_del}, new Object[]{gm.getGoodsID()});
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             logger.error("保存失败");
             s = "0";
         }

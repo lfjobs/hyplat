@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hy.ea.bo.DrivingSchool.elyc.ElycTrainerVacation" table="tb_elyc_trainer_Vacation" schema="HYPLAT">
+        <id length="50" name="etvKey">
+            <column length="50" name="etvKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="etvId" type="java.lang.String">
+            <column name="etvId"  length="50" ><comment>逻辑ID</comment></column>
+        </property>
+        <property name="trainer_id" type="java.lang.String">
+            <column name="trainer_id"  length="50" ><comment>教练ID</comment></column>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status"  length="2" ><comment>用于存放是否已经实施了休班:00:未生效,01:已生效</comment></column>
+        </property>
+        <property name="company_id" type="java.lang.String">
+            <column name="company_id"  length="50" ><comment>驾校ID</comment></column>
+        </property>
+        <property name="start_time" type="java.util.Date">
+            <column name="start_time" ><comment>请假开始时间</comment></column>
+        </property>
+        <property name="end_time" type="java.util.Date">
+            <column name="end_time"><comment>请假结束时间</comment></column>
+        </property>
+        <property name="createdate" type="java.util.Date">
+            <column name="createdate"  ><comment>创建时间</comment></column>
+        </property>
+        <property name="updatedate" type="java.util.Date">
+            <column name="updatedate" ><comment>更新时间</comment></column>
+        </property>
+        <property name="createperson" type="java.lang.String">
+            <column name="createperson"  length="50" ><comment>创建人ID</comment></column>
+        </property>
+        <property name="updateperson" type="java.lang.String">
+            <column name="updateperson"  length="50" ><comment>修改人</comment></column>
+        </property>
+
+    </class>
+</hibernate-mapping>

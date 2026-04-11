@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.vo">
+	<class name="ViewFormalcontract" table="VIEW_FORMALCONTRACT">
+		<id name="formalcontractkey" length="50">
+			<column name="FORMALCONTRACTKEY" length="50" />
+			<generator class="uuid" />
+		</id>
+		<property name="contractid" type="java.lang.String">
+			<column name="CONTRACTID" length="50" />
+		</property>
+		<property name="staffid" type="java.lang.String">
+			<column name="STAFFID" length="50" />
+		</property>
+		<property name="staffname" type="java.lang.String">
+			<column name="STAFFNAME" length="50" />
+		</property>
+		<property name="sex" type="java.lang.String">
+			<column name="SEX" length="50" />
+		</property>
+		<property name="staffidentitycard" type="java.lang.String">
+			<column name="STAFFIDENTITYCARD" length="50" />
+		</property>
+		<property name="registerdate" type="java.util.Date">
+			<column name="REGISTERDATE" length="7" />
+		</property>
+		<property name="contractsigndate" type="java.util.Date">
+			<column name="CONTRACTSIGNDATE" length="11" />
+		</property>
+		<property name="contractcode" type="java.lang.String">
+			<column name="CONTRACTCODE" length="50" />
+		</property>
+		<property name="startvalidity" type="java.util.Date">
+			<column name="STARTVALIDITY" length="11" />
+		</property>
+		<property name="endvalidity" type="java.util.Date">
+			<column name="ENDVALIDITY" length="11" />
+		</property>
+		<property name="renewaldate" type="java.util.Date">
+			<column name="RENEWALDATE" length="11" />
+		</property>
+		<property name="companyid" type="java.lang.String">
+			<column name="COMPANYID" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

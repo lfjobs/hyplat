@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EnterpriseStamp" table="DT_OA_ENTERPRISESTAMP">
+		<id length="50" name="enterpriseStampKey">
+			<column length="50" name="enterpriseStampKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="enterpriseStampID">
+			<column length="50" name="enterpriseStampID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="enterpriseStampCode">
+			<column length="250" name="enterpriseStampCode" />
+		</property>
+		<property name="stampName">
+			<column length="250" name="stampName" />
+		</property>
+		<property name="stampContent">
+			<column length="250" name="stampContent" />
+		</property>
+		<property name="awardedAnnual">
+			<column name="awardedAnnual" />
+		</property>
+		<property name="registeredAnnual">
+			<column name="registeredAnnual" />
+		</property>
+		<property name="createTime">
+			<column name="createTime" />
+		</property>
+		<property name="scanningAccessories">
+			<column length="256" name="scanningAccessories" />
+		</property>
+		<property name="stampType">
+			<column length="250" name="stampType" />
+		</property>
+		<property name="stampNote">
+			<column length="256" name="stampNote" />
+		</property>
+		<property name="type">
+			<column length="50" name="type" />
+		</property>
+		<property name="useStatus">
+			<column length="50" name="useStatus" />
+		</property>
+		<property name="useStaffID">
+			<column length="50" name="useStaffID" />
+		</property>
+		<property name="useDate">
+			<column  name="useDate" />
+		</property>
+		<property name="gore">
+			<column length="50" name="gore" />
+		</property>
+		<property name="responsibleID">
+			<column length="50" name="responsibleID" />
+		</property>
+		<property name="responsibleName">
+			<column length="50" name="responsibleName" />
+		</property>
+		<property name="isStuStamp">
+			<column length="1" name="isStuStamp" />
+		</property>
+
+		<property name="delStatus">
+			<column length="2" name="delStatus" />
+		</property>
+		<property name="delStaffID">
+			<column length="50" name="delStaffID" />
+		</property>
+		<property name="delDate">
+			<column  name="delDate" />
+		</property>
+		<property name="auditStatus">
+			<column length="50" name="auditStatus" />
+		</property>
+		<property name="rejectReason">
+			<column length="50" name="rejectReason" />
+		</property>
+		<property name="auditCompanyID">
+			<column length="50" name="auditCompanyID" />
+		</property>
+		<property name="auditID">
+			<column length="50" name="auditID" />
+		</property>
+		<property name="auditDate">
+			<column  name="auditDate" />
+		</property>
+		<property name="signId">
+			<column length="20" name="signId" />
+		</property>
+	</class>
+</hibernate-mapping>

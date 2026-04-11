@@ -1,5 +1,8 @@
 package com.tiantai.telrec.dao.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -79,7 +82,7 @@ public class TelrecCustomerDaoImpl implements TelrecCustomerDao {
 		 * List list = new ArrayList(); try { list =
 		 * this.jdbcTemplate.queryForList(QUERY_CUSTOMER_TOTAL, new Object[] {
 		 * companyid, starttime, endtime }); } catch (Exception e) {
-		 * e.printStackTrace(); }
+		 * logger.error("操作异常", e); }
 		 */
 
 		return query.list();

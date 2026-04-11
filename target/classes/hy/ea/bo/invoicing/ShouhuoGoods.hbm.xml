@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.invoicing.ShouhuoGoods" table="DT_shouhuo_GOODS" schema="HYPLAT">
+        <id length="50" name="shgoodskey">
+            <column length="50" name="shgoodskey" />
+            <generator class="uuid" />
+        </id>
+        <property name="shgoodsid">
+            <column name="shGOODSID" sql-type="varchar2(50)" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="shid">
+            <column name="shID" sql-type="varchar2(50)">
+                <comment>单据id</comment>
+            </column>
+        </property>
+        <property name="goodsid">
+            <column name="GOODSID" sql-type="varchar2(50)">
+                <comment>物品id</comment>
+            </column>
+        </property>
+        <property name="goodname">
+            <column name="GOODNAME" sql-type="varchar2(50)">
+                <comment>物品名字</comment>
+            </column>
+        </property>
+        <property name="unit">
+            <column name="UNIT" sql-type="varchar2(50)">
+                <comment>单位</comment>
+            </column>
+        </property>
+        <property name="requantity">
+            <column name="REQUANTITY" sql-type="varchar2(50)">
+                <comment>收货数量/重量</comment>
+            </column>
+        </property>
+        <property name="goodstype">
+            <column name="GOODSTYPE" sql-type="varchar2(50)">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ppid">
+            <column name="PPID" sql-type="varchar2(50)">
+                <comment>产品id</comment>
+            </column>
+        </property>
+        <property name="ccompanyID">
+            <column name="ccompanyID" sql-type="varchar2(50)">
+                <comment>往来单位ID</comment>
+            </column>
+        </property>
+        <property name="ccompanyName">
+            <column name="ccompanyName" sql-type="varchar2(50)">
+                <comment>往来单位name</comment>
+            </column>
+        </property>
+        <property name="contactUserID">
+            <column name="contactUserID" sql-type="varchar2(50)">
+                <comment>往来个人ID</comment>
+            </column>
+        </property>
+        <property name="ctUserName">
+            <column name="ctUserName" sql-type="varchar2(50)">
+                <comment>往来个人name</comment>
+            </column>
+        </property>
+        <property name="manufactureDate">
+            <column name="manufactureDate" sql-type="date">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="codeid">
+            <column name="codeid" sql-type="varchar2(50)">
+                <comment>往来单位ID</comment>
+            </column>
+        </property>
+        <property name="codename">
+            <column name="codename" sql-type="varchar2(50)">
+                <comment>往来单位name</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

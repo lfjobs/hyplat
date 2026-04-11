@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+	<hibernate-mapping>
+		 <class name="hy.ea.bo.finance.CartShopPromotion" table="DT_CartShopPromotion" schema="HYPLAT">
+        <id name="cspKey" type="java.lang.String">
+            <column name="cspKey" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="cspId" type="java.lang.String">
+        	<column name="cspId" length="50">
+        		<comment>ID</comment>
+        	</column>
+        </property>
+        <property name="cartId" type="java.lang.String">
+        	<column name="cartId" length="50">
+        		<comment>购物车ID</comment>
+        	</column>
+        </property>
+        <property name="ppId" type="java.lang.String">
+        	<column name="ppId" length="50">
+        		<comment>主产品</comment>
+        	</column>
+        </property>
+		<property name="pptId" type="java.lang.String">
+			<column name="pptId" length="50">
+				<comment>促销品产品ID</comment>
+			</column>
+		</property>
+		<property name="ptstandard" type="java.lang.String">
+			<column name="ptstandard" length="100">
+				<comment>促销品规格</comment>
+			</column>
+		</property>
+		<property name="ptCount" type="java.lang.Integer">
+			 <column name="ptCount" length="8">
+			 	<comment>促销品的数量</comment>
+			 </column>
+		</property>	 
+		<property name="staffId" type="java.lang.String">
+			 <column name="staffId" length="100">
+				<comment>购买人ID</comment>
+			 </column>
+		</property>
+        <property name="posNum" type="java.lang.String">
+				 <column name="posNum" length="100">
+					 <comment>终端机编号</comment>
+				 </column>
+			 </property>
+        </class>
+	</hibernate-mapping>

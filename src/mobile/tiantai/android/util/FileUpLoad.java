@@ -1,5 +1,8 @@
 package mobile.tiantai.android.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.util.ImageCut;
 
 import java.io.File;
@@ -64,11 +67,11 @@ public class FileUpLoad extends HttpServlet {
 							+ "，表单参数值:" + item.getString("UTF-8"));
 				} else {
 					/*
-					 * System.out.println("上传文件的大小:" + item.getSize());
-					 * System.out.println("上传文件的类型:" + item.getContentType());
+					 * logger.info("上传文件的大小:: {}", item.getSize());
+					 * logger.info("上传文件的类型:: {}", item.getContentType());
 					 */
 					// 注意item.getName(),会返回上载文件在客户端的完整路径名称
-					// System.out.println("上传文件的名称:" + item.getName());
+					// logger.info("上传文件的名称:: {}", item.getName());
 
 					String tempName = item.getName();
 
@@ -81,7 +84,7 @@ public class FileUpLoad extends HttpServlet {
 								index1);
 					}
 
-					// System.out.println(fx);
+					// logger.info("值：{}", fx);
 
 					if (docId != null && !docId.equals("")) {
 						filepath = "document/html/test/" + "/";
@@ -109,13 +112,13 @@ public class FileUpLoad extends HttpServlet {
 						fileNamesmall = name + "small" + fx;
 					}
 
-					// System.out.println("文件保存的名称:" + fileName);
+					// logger.info("文件保存的名称:: {}", fileName);
 					File outfile = new File(realpath + filepath, fileName);
 
 					try {
 						item.write(outfile);
 					} catch (Exception e) {
-						e.printStackTrace();
+						logger.error("操作异常", e);
 					}
 					if (width1 != null && height1 != null) {
 						int width = 200;
@@ -136,7 +139,7 @@ public class FileUpLoad extends HttpServlet {
 
 				}
 			}
-			System.out.println(returnpath.substring(0, returnpath.length() - 1));
+			logger.info("调试信息");
 			out.write(returnpath.substring(0, returnpath.length() - 1)+"\n");
 			if (pahe != null && !pahe.equals("")) {
 				response.sendRedirect(basePath
@@ -153,7 +156,7 @@ public class FileUpLoad extends HttpServlet {
 
 		} catch (FileUploadException e) {
 
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 	}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">          
+<hibernate-mapping package="hy.ea.bo.finance.BenDis">
+	<class name="RedPacket"  table="dtRedPacket">
+		<id length="50" name="redPacketKey">
+			<column length="50" name="redPacketKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="redPacketId" type="java.lang.String">
+			<column length="50" name="redPacketId" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="sccIdS" type="java.lang.String">
+			<column length="50" name="sccIdS"></column>
+		</property>
+		<property name="sccIdR" type="java.lang.String">
+			<column length="50" name="sccIdR"></column>
+		</property>
+		<property name="sender" type="java.lang.String">
+			<column length="50" name="sender"><comment>发送人</comment></column>
+		</property>
+		<property name="recipient" type="java.lang.String">
+			<column length="50" name="recipient"><comment>接收人</comment></column>
+		</property>
+		<property  name="goldNum" type="int">
+			<column length="50" name="goldNum"><comment>金币数量</comment></column>
+		</property>	
+		<property  name="redDate" type="java.util.Date">
+			<column name="redDate"><comment>红包时间</comment></column>
+		</property>	
+		<property name="wfjGuizeId" type="java.lang.String">
+			<column length="50" name="WFJ_GUIZE_ID" ><comment>规则外键</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,5 +1,8 @@
 package com.tiantai.wfj.front;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.company.GoodsManage;
@@ -46,6 +49,7 @@ import com.tiantai.wfj.util.SessionWrap;
 @Controller
 @Scope("prototype")
 public class WfjEcusInfoAction {
+	private static final Logger logger = LoggerFactory.getLogger(WfjEcusInfoAction.class);
 	private int pageNumber;
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -368,7 +372,7 @@ public class WfjEcusInfoAction {
 			response.sendRedirect((String)session.getAttribute("url"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}		
 		//return personalInfor();
 	}	
@@ -650,7 +654,7 @@ public class WfjEcusInfoAction {
 			response.sendRedirect(url);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 	public Staff getStaff() {

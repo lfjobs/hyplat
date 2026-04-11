@@ -253,10 +253,10 @@ public class StudentServiceImpl implements StudentService {
             out.write(buffer);
             out.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         }
 

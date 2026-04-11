@@ -1,5 +1,8 @@
 package com.tiantai.telrec.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,7 +63,7 @@ public class ClientLoginAction extends ActionSupport {
 			response.getWriter().print(json.toString());
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;

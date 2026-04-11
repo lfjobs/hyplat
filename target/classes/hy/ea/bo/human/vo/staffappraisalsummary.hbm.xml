@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.vo">
+	<class name="StaffAppraisalSummary" table="view_app" >
+		<id length="50" name="appraisalKey">
+			<column length="50" name="appraisalKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="appraisalID">
+			<column name="appraisalID" length="50" />
+		</property>
+		<property name="companyID">
+			<column name="companyID" length="50" />
+		</property>
+		  <property name="companyName">
+        	<column name="companyName" length="250"/>
+        </property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+			<property name="staffCode">
+					<column  name="staffCode" />
+		</property>
+		<property name="payScaleID">
+			<column name="payScaleID" length="50" />
+		</property>
+		<property name="checkPerson">
+			<column length="250" name="checkPerson" />
+		</property>
+		<property name="workDateSaturation">
+			<column length="250" name="workDateSaturation" />
+		</property>
+		<property name="appraisalDate">
+			<column name="appraisalDate" />
+		</property>
+
+		<property name="responsibility1">
+			<column length="250" name="responsibility1" />
+		</property>
+		<property name="responsibility2">
+			<column length="250" name="responsibility2" />
+		</property>
+		<property name="responsibility3">
+			<column length="250" name="responsibility3" />
+		</property>
+		<property name="achievements1">
+			<column length="250" name="achievements1" />
+		</property>
+		<property name="achievements2">
+			<column length="250" name="achievements2" />
+		</property>
+		<property name="achievements3">
+			<column length="250" name="achievements3" />
+		</property>
+		<property name="task1">
+			<column length="250" name="task1" />
+		</property>
+		<property name="task2">
+			<column length="250" name="task2" />
+		</property>
+		<property name="task3">
+			<column length="250" name="task3" />
+		</property>
+		<property name="ability1">
+			<column length="250" name="ability1" />
+		</property>
+		<property name="ability2">
+			<column length="250" name="ability2" />
+		</property>
+		<property name="ability3">
+			<column length="250" name="ability3" />
+		</property>
+		<property name="manner1">
+			<column length="250" name="manner1" />
+		</property>
+		<property name="manner2">
+			<column length="250" name="manner2" />
+		</property>
+		<property name="manner3">
+			<column length="250" name="manner3" />
+		</property>
+
+		<property name="status">
+			<column length="50" name="status" />
+		</property>
+	</class>
+</hibernate-mapping>

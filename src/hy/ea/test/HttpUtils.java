@@ -1,5 +1,8 @@
 package hy.ea.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -29,7 +32,7 @@ public class HttpUtils {
             httpURLConnection.setDoInput(true);
             httpURLConnection.setRequestMethod("GET");
             int responseCode = httpURLConnection.getResponseCode();
-            System.out.println("responseCode is:" + responseCode);
+            logger.info("调试信息");
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 // 从服务器返回一个输入流
                 inputStream = httpURLConnection.getInputStream();
@@ -37,9 +40,9 @@ public class HttpUtils {
                 inputStream = httpURLConnection.getErrorStream();
             }
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return inputStream;
     }
@@ -63,14 +66,14 @@ public class HttpUtils {
             }
             out.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } finally {
             try {
                 if (out != null) {
                     out.close();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
         }
     }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="RecentViewProCate" table="dt_phl_RecentVPCate">
+		<comment>新闻分享等发布的行业平台</comment>
+		<id length="50" name="rvpKey">
+			<column length="50" name="rvpKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="rvpID">
+			<column length="50" name="rvpID" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="codeID">
+			<column length="50" name="codeID" >
+			<comment>分类ID</comment>
+			</column>
+		</property>
+		<property name="codeValue">
+			<column length="50" name="codeValue" >
+				<comment>分类</comment>
+			</column>
+		</property>
+		<property name="ccompanyID">
+			<column length="50" name="ccompanyID" >
+			<comment>行业平台对应的往来单位ID；</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" >
+				<comment>行业平台对应的往来单位ID；</comment>
+			</column>
+		</property>
+		<property name="viewDate">
+			<column length="50" name="viewDate" >
+				<comment>浏览时间</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

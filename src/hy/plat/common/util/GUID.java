@@ -1,10 +1,14 @@
 package hy.plat.common.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.rmi.dgc.VMID;
 
 public class GUID {
+	private static final Logger logger = LoggerFactory.getLogger(GUID.class);
 
 	private static final int sDataLength = 32;
 	private byte[] mBytes;
@@ -294,20 +298,20 @@ public class GUID {
 			for (int i = 0; i < 3; i++) {
 				long l = System.currentTimeMillis();
 				GUID guid = new GUID();
-				System.out.println("time:" + (System.currentTimeMillis() - l));
-				System.out.println("" + guid.toString());
-				System.out.println("time:" + (System.currentTimeMillis() - l));
+				logger.info("调试信息");
+				logger.info("调试信息");
+				logger.info("调试信息");
 			}
 
 			/*
 			 * GUID guid1 = new GUID(); guid1.fromHexString(guid.toHexString());
-			 * System.out.println("from hex String =" + guid1.toHexString());
+			 * logger.info("from hex String =: {}", guid1.toHexString());
 			 * byte abyte0[] = (new String("1111111111111101")).getBytes(); GUID
 			 * guid2 = new GUID(abyte0); System.out.println("" +
 			 * guid2.toHexString());
 			 */
 		} catch (Exception exception) {
-			exception.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 

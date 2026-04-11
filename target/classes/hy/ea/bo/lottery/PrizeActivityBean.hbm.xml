@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.PrizeActivityBean" table="dt_prize_activity" schema="HYPLAT">
+        <comment>抽奖签到等活动表</comment>
+        <id name="activityKey">
+            <column name="activity_key" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="activityId">
+            <column name="activity_id" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="activityRange">
+            <column name="activity_range" sql-type="char(2)" length="2" not-null="true">
+                <comment>活动范围：0全网,1会员</comment>
+            </column>
+        </property>
+        <property name="activityType">
+            <column name="activity_type" sql-type="char(2)" length="2" not-null="true">
+                <comment>活动类型0:抽奖1：签到</comment>
+            </column>
+        </property>
+        <property name="activityName">
+            <column name="activity_name" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>活动名称</comment>
+            </column>
+        </property>
+        <property name="startingTime">
+            <column name="starting_time" not-null="true">
+                <comment>开始时间</comment>
+            </column>
+        </property>
+        <property name="endTime">
+            <column name="end_time" not-null="true">
+                <comment>结束时间</comment>
+            </column>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="char(2)" length="2" not-null="true">
+                <comment>活动状态（0：发布   1：活动结束  9：活动删除）</comment>
+            </column>
+        </property>
+        <property name="companyId">
+            <column name="company_Id" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment>活动公司</comment>
+            </column>
+        </property>
+        <property name="activityImg">
+            <column name="activity_img" sql-type="varchar2(200)" length="200">
+                <comment>活动图片</comment>
+            </column>
+        </property>
+        <property name="activityDesc">
+            <column name="activity_desc" sql-type="varchar2(1000)" length="1000">
+                <comment>活动说明</comment>
+            </column>
+        </property>
+        <property name="showStatus">
+            <column name="show_status" sql-type="char(2)" length="2">
+                <comment>0:完全公开1：公司内公开2：部分公开（扩展表）</comment>
+            </column>
+        </property>
+        <property name="address">
+            <column name="ACTIVITY_ADDRESS" sql-type="varchar2(50)" length="50" not-null="false">
+                <comment>活动地点</comment>
+            </column>
+        </property>
+        <property name="bonusPoints">
+            <column name="BONUS_POINTS" not-null="false">
+                <comment>抽奖所需积分</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="mobile.tiantai.android.bo">
+    <class name="TravelRecords" table="DT_TravelRecords" schema="HYPLAT">
+        <comment>行车记录表</comment>
+        <id name="trkey" type="java.lang.String">
+            <column name="trkey" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="trid" type="java.lang.String">
+            <column name="trid" length="50" />
+        </property>
+        <property name="sccid" type="java.lang.String">
+            <column name="sccid" length="50" >
+                <comment>人员的sccid</comment>
+            </column>
+        </property>
+        <property name="beginDate" type="java.util.Date">
+            <column name="beginDate" length="50" >
+                <comment>开始行驶的时间</comment>
+            </column>
+        </property>
+         <property name="endDate" type="java.util.Date">
+            <column name="endDate" length="50" >
+                <comment>结束行驶的时间</comment>
+            </column>
+        </property>
+        <property name="scxiaoshi" type="java.lang.String">
+            <column name="scxiaoshi" length="50" >
+                <comment>行驶的小时数</comment>
+            </column>
+        </property>
+          <property name="scfenzhong" type="java.lang.String">
+            <column name="scfenzhong" length="50" >
+                <comment>行驶的分钟数</comment>
+            </column>
+        </property>
+         <property name="trMoney" type="java.lang.String">
+            <column name="trMoney" length="50" >
+                <comment>行驶的总金金币数</comment>
+            </column>
+        </property>
+        <property name="deviceid" type="java.lang.String">
+            <column name="deviceid" length="50" >
+                <comment>骑行的车辆编码号</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

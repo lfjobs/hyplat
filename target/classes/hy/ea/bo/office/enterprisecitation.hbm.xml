@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EnterpriseCitation" table="dtEnterpriseCitation">
+		<id length="50" name="enterpriseCitationKey">
+			<column length="50" name="enterpriseCitationKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="enterpriseCitationID">
+			<column length="50" name="enterpriseCitationID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="enName">
+			<column length="250" name="enName"/>
+		</property>
+		<property name="enSubject">
+			<column length="250" name="enSubject" />
+		</property>
+		<property name="enDate">
+			<column   name="enDate" />
+		</property>
+		<property  name="citationFilePath">
+			<column   name="citationFilePath" />
+		</property>
+		<property  name="mark">
+			<column length="250"  name="mark" />
+		</property> 
+	</class>
+</hibernate-mapping>

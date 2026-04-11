@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package strict-method-invocation="false" name="signInSetup-token" namespace="/ea/signInSetup" extends="struts-default">
+		<action name="ea_*" class="hy.ea.office.action.SignInSetupAction" method="{1}">
+			<result name="find">/page/WFJClient/pc/5l5C/office/SignInSetup.jsp</result>
+			<result name="add">/page/WFJClient/pc/5l5C/office/SignInSetupSave.jsp</result>
+			<result name="update">/page/WFJClient/pc/5l5C/office/SignInSetupSave.jsp</result>
+		</action>
+	</package>
+
+	<package strict-method-invocation="false" name="signInSetup-jsonajax" namespace="/ea/signInSetup" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.SignInSetupAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

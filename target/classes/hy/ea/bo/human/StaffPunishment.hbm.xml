@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffPunishment" table="dt_hr_staff_Punishment">
+		<id length="50" name="punishmentkey">
+			<column length="50" name="punishmentkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="punishmentID">
+			<column length="50" name="punishmentID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="punishmentType">
+			<column length="250" name="punishmentType"/>
+		</property>
+		<property name="punishmentName">
+			<column length="250" name="punishmentName" />
+		</property>
+		<property  name="punishmentReason">
+			<column length="250" name="punishmentReason" />
+		</property>
+		<property  name="punishmentDate">
+			<column length="250" name="punishmentDate" />
+		</property>
+		<property  name="punishmentOrgan">
+			<column length="250" name="punishmentOrgan" />
+		</property>
+		<property  name="dischargeDate">
+			<column length="250" name="dischargeDate" />
+		</property>
+		<property  name="auditor">
+			<column length="250" name="auditor" />
+		</property>
+		<property  name="auditorNumber">
+			<column length="250" name="auditorNumber" />
+		</property>
+		<property  name="auditorTime">
+			<column length="250" name="auditorTime" />
+		</property>
+		<property  name="appendix">
+			<column length="250" name="appendix" />
+		</property>
+		<property  name="punishmentDesc">
+			<column length="250" name="punishmentDesc" />
+		</property>
+		<property  name="photo">
+			<column length="256" name="photo" />
+		</property>
+	</class>
+</hibernate-mapping>

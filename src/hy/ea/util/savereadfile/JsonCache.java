@@ -1,5 +1,8 @@
 package hy.ea.util.savereadfile;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,6 +18,7 @@ import java.io.OutputStreamWriter;
  * 实现: 保存和读取文件(json字符串)
  */
 public class JsonCache {
+	private static final Logger logger = LoggerFactory.getLogger(JsonCache.class);
 
 
     /**
@@ -27,44 +31,44 @@ public class JsonCache {
         String destDirName="d:\\jsonfile";
         File dir = new File(destDirName);
         if (dir.exists()) {
-            System.out.println("创建目录" + destDirName + "失败，目标目录已经存在");
+            logger.info("创建目录{}{}", destDirName, "失败，目标目录已经存在");
         }
         if (!destDirName.endsWith(File.separator)) {
             destDirName = destDirName + File.separator;
         }
         //创建目录
         if (dir.mkdirs()) {
-            System.out.println("创建目录" + destDirName + "成功！");
+            logger.info("创建目录{}{}", destDirName, "成功！");
         } else {
-            System.out.println("创建目录" + destDirName + "失败！");
+            logger.info("创建目录{}{}", destDirName, "失败！");
         }
         File file = new File(destDirName+ fileName + ".txt");
-        System.out.println(file+"file");
+        logger.info("调试信息");
         //如果文件不存在，则新建一个
         if(!file.exists()){
             try {
                 file.createNewFile();
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
-            System.out.println(fileName + ".txt文件不存在");
+            logger.info("调试信息");
         }
         //写入
         try {
             writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file,false), "UTF-8"));
             writer.write(data);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }finally {
             try {
                 if(writer != null){
                     writer.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
         }
-        System.out.println("文件写入成功！");
+        logger.info("文件写入成功！");
     }
 
 
@@ -92,17 +96,17 @@ public class JsonCache {
             }
             reader.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } finally {
             if (reader != null) {
                 try {
                     reader.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
         }
-        System.out.println("文件读取成功");
+        logger.info("文件读取成功");
         return laststr;
     }
 

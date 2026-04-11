@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffInvestigation" table="dt_hr_staff_Investigation">
+		<id length="50" name="investigationKey">
+			<column length="50" name="investigationKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="investigationID">
+			<column length="50" name="investigationID" not-null="true"/>
+		</property>
+		<property name="investigationDate">
+			<column length="250" name="investigationDate"/>
+		</property>
+		<property name="investigationItem">
+			<column length="250" name="investigationItem"/>
+		</property>
+		<property name="investigationPeroration">
+			<column length="250" name="investigationPeroration" />
+		</property>
+		<property  name="investigationPrincipal">
+			<column length="250" name="investigationPrincipal" />
+		</property>
+		<property  name="conductIdea">
+			<column length="250" name="conductIdea" />
+		</property>
+		<property  name="conductPrincipal">
+			<column length="250" name="conductPrincipal" />
+		</property>
+		<property  name="conductDate">
+			<column length="250" name="conductDate" />
+		</property>
+		<property name="assessor">
+			<column length="250" name="assessor" />
+		</property>
+		<property  name="assessorCode">
+			<column length="250" name="assessorCode" />
+		</property>
+		<property  name="assessorDate">
+			<column  name="assessorDate" />
+		</property>
+		<property  name="investigationDesc">
+			<column length="250" name="investigationDesc" />
+		</property>
+		<property  name="quadratList">
+			<column length="250" name="quadratList" />
+		</property>
+		<property  name="photo">
+			<column length="256" name="photo" />
+		</property>
+	</class>
+</hibernate-mapping>

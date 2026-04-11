@@ -1,5 +1,8 @@
 package hy.ea.util.milvus;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.*;
 import hy.ea.util.milvus.Xfyun.XFflow;
 import hy.ea.util.milvus.core.EmbeddingCore;
@@ -55,7 +58,7 @@ public class MilvusServiceImpl implements MilvusService {
 
         InsertReq insertReq= InsertReq.builder().collectionName(collName).data(listOfJsonObjects).build();
         InsertResp insertResp = milvusDBContorller.insertData(insertReq);
-        System.out.println(insertResp.toString());
+        logger.info("调试信息");
     }
 
     @Override
@@ -76,7 +79,7 @@ public class MilvusServiceImpl implements MilvusService {
 
 
         SearchResp search = milvusDBContorller.search(searchReq);
-        System.out.println(search.toString());
+        logger.info("调试信息");
         return search;
 
     }

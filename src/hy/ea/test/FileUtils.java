@@ -1,5 +1,8 @@
 package hy.ea.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,11 +22,11 @@ public class FileUtils {
     public static void isDirPathExist(File dir) {
         // 判断文件夹是否存在
         if (dir.isDirectory()) {
-            System.out.println(dir + "文件夹已存在");
+            logger.info("调试信息");
         } else {
-            System.out.println(dir + "文件夹不存在");
+            logger.info("调试信息");
             dir.mkdir();
-            System.out.println("创建文件夹" + dir);
+            logger.info("调试信息");
         }
     }
 
@@ -35,7 +38,7 @@ public class FileUtils {
      */
     public static void saveImageToDisk(InputStream inputStream, String diskPath) {
         String fileName = String.format(FORMAT_FILE_NAME, new Date().getTime());
-        System.out.println("文件名字为：" + fileName);
+        logger.info("调试信息");
         byte[] data = new byte[1024];
         int len = 0;
         FileOutputStream fileOutputStream = null;
@@ -49,24 +52,24 @@ public class FileUtils {
             }
             fileOutputStream.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } finally {
             if (inputStream != null) {
                 try {
                     inputStream.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
             if (fileOutputStream != null) {
                 try {
                     fileOutputStream.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
 
         }
-        System.out.println(fileName + "写到本地磁盘完成");
+        logger.info("调试信息");
     }
 }

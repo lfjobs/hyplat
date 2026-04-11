@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.portmanage">
+	<!--接口管理接口参数表-->
+	<class name="PortParameter" table="port_parameters">
+		<!--主键-->
+		<id length="50" name="parameterKey">
+			<column length="50" name="parameterKey" />
+			<generator class="uuid" /> 
+		</id>
+		<!--id-->
+		<property name="parameterId">
+			<column length="50" name="parameterId" />
+		</property>
+		<!--参数名称-->
+		<property name="parameterName">
+			<column length="250" name="parameterName" />
+		</property>
+		<!--参数类型-->
+		<property name="parameterType">
+			<column length="50" name="parameterType" />
+		</property>
+		<!--参数说明-->
+		<property name="parameterExplain">
+			<column length="50" name="parameterExplain"/>
+		</property>
+		<!--是否必填-->
+		<property name="required">
+			<column length="50" name="required"/>
+		</property>
+		<!--示例-->
+		<property name="example">
+			<column length="250" name="example"/>
+		</property>
+		<!--接口详情id(外键)-->
+		<property name="portId">
+			<column length="50" name="portId"/>
+		</property>
+
+
+		
+	</class>
+</hibernate-mapping>

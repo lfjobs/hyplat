@@ -1,5 +1,8 @@
 package mobile.tiantai.android.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -10,6 +13,7 @@ import java.text.ParseException;
  * Created by Administrator on 2019-10-18.
  */
 public class PriceArithUtil {
+	private static final Logger logger = LoggerFactory.getLogger(PriceArithUtil.class);
     /**
      * 提供精确加法计算的add方法
      *
@@ -26,7 +30,7 @@ public class PriceArithUtil {
         try {
             d1 = df1.parse(dlStr).doubleValue();
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return Double.valueOf(d1).doubleValue();
        // return Double.valueOf(df1.format(b1.add(b2).doubleValue())).doubleValue();
@@ -48,7 +52,7 @@ public class PriceArithUtil {
         try {
             d1 = df1.parse(dlStr).doubleValue();
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return Double.valueOf(d1).doubleValue();
        // return Double.valueOf(df1.format(b1.subtract(b2).doubleValue())).doubleValue();
@@ -70,7 +74,7 @@ public class PriceArithUtil {
         try {
             d1 = df1.parse(dlStr).doubleValue();
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return Double.valueOf(d1).doubleValue();
 
@@ -98,7 +102,7 @@ public class PriceArithUtil {
         try {
             d1 = df1.parse(dlStr).doubleValue();
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return Double.valueOf(d1).doubleValue();
         //return Double.valueOf(df1.format(b1.divide(b2, scale).doubleValue())).doubleValue();

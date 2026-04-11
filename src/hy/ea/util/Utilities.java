@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.util.bean.MailConfiguration;
 
 import java.lang.reflect.InvocationTargetException;
@@ -26,6 +29,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
 public class Utilities {
+	private static final Logger logger = LoggerFactory.getLogger(Utilities.class);
 	
 	private static Utilities utilities;
 	private JavaMailSenderImpl jmail;
@@ -131,7 +135,7 @@ public class Utilities {
 		try {
 			rootPath = java.net.URLDecoder.decode(rootPath, "utf-8");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return rootPath;
 	}
@@ -149,7 +153,7 @@ public class Utilities {
 			SimpleDateFormat dateFormat = new SimpleDateFormat(format);
 			result = dateFormat.format(date);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return result;
 	}
@@ -170,7 +174,7 @@ public class Utilities {
 		try {
 			date = sdFormat.parse(formatDate);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return date;
 	}
@@ -195,7 +199,7 @@ public class Utilities {
 				newDateStr +=  oldDateStr.substring(8);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return newDateStr;
 	}
@@ -225,7 +229,7 @@ public class Utilities {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		
@@ -275,7 +279,7 @@ public class Utilities {
 	                num = isLeapYear(year)?29:28;
 	                break;
 	            default:
-	                System.out.println("非法月份");
+	                logger.info("非法月份");
 	                break;
 	            }
 	        return num;
@@ -313,7 +317,7 @@ public class Utilities {
 		   		cal3.setTime(sdf.parse(etime));
 		   	  } catch (ParseException e) {
 		   		// TODO Auto-generated catch block
-		   		e.printStackTrace();
+		   		logger.error("操作异常", e);
 		   	  }
 		   	  
 		   	  if((cal2.before(cal1)&& cal3.after(cal1))||ntime.equals(stime)||ntime.equals(etime))
@@ -359,7 +363,7 @@ public class Utilities {
 
 		} catch (Exception e) {
 			result = 1;
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return result;
@@ -415,10 +419,10 @@ public class Utilities {
 			BeanUtils.copyProperties(newObject, oldObject);
 		} catch (IllegalAccessException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} catch (InvocationTargetException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 	
@@ -554,7 +558,7 @@ public class Utilities {
 					mystack1.push(new Double(d));
 					i++;
 				} else {
-					System.out.println("Error!");
+					logger.info("Error!");
 				}
 				break;
 			default:
@@ -668,7 +672,7 @@ public class Utilities {
 			String mailServer = ConfigUtil
 					.getInstance(Constant.SYS_CONFIG_PATH).getKeyValue(
 							"mail_Server");
-			System.out.println(username + " " + password + " " + mailServer);
+			logger.info("调试信息");
 			jmail = new JavaMailSenderImpl();
 			jmail.setHost(mailServer);
 			jmail.setUsername(username);
@@ -687,7 +691,7 @@ public class Utilities {
 			jmail.send(mailMessage);
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return false;
 		}
 

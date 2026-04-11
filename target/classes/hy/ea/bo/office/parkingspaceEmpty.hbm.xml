@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                                   
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="ParkingSpaceEmpty" table="DT_PARKINGSPACE_EMPTY">
+		<id length="50" name="emptyKey">
+			<column length="50" name="empty_key" />
+			<generator class="uuid" />
+		</id>
+		<property name="emptyId">
+			<column length="50" name="empty_id">
+				<comment>主键</comment>
+			</column>
+		</property>
+		<property name="siteId">
+			<column length="50" name="site_id">
+				<comment>场地id</comment>
+			</column>
+		</property>
+		<property name="parksId">
+			<column length="50" name="parks_id">
+				<comment>停车位id</comment>
+			</column>
+		</property>
+		<property name="parkingCode">
+			<column length="50" name="parking_code">
+				<comment>停车位编号 自动生成</comment>
+			</column>
+		</property>
+		<property name="startTime">
+			<column  name="start_time">
+				<comment>开始时间</comment>
+			</column>
+		</property>
+		<property name="endTime">
+			<column  name="end_time">
+				<comment>开始时间</comment>
+			</column>
+		</property>
+		<property name="staffId">
+			<column length="50" name="staff_id">
+				<comment>创建人id</comment>
+			</column>
+		</property>
+		<property name="staffName">
+			<column length="50" name="staff_name">
+				<comment>创建人姓名</comment>
+			</column>
+		</property>
+		<property name="address">
+			<column length="255" name="address">
+				<comment>地址</comment>
+			</column>
+		</property>
+
+		<property name="longitude">
+			<column length="10" name="longitude">
+				<comment>经度</comment>
+			</column>
+		</property>
+		<property name="latitude">
+			<column length="10" name="latitude">
+				<comment>纬度</comment>
+			</column>
+		</property>
+		<property name="liaisonName">
+			<column length="50" name="liaison_name">
+				<comment>联系人姓名</comment>
+			</column>
+		</property>
+		<property name="liaisonPhon">
+			<column length="50" name="liaison_phon">
+				<comment>联系人电话</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

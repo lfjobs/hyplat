@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="consult-token" namespace="/ea/consult"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.scmanage.ConsultManageAction" method="{1}">
+
+			<result name="consultlist">/page/ea/main/production/cprocedure/consult/consult_list.jsp</result>
+			<result name="newconsult">/page/WFJClient/pc/my/consult/consultlist.jsp</result>
+			<result name="viewdetail">/page/WFJClient/pc/my/consult/consultview.jsp</result>
+			<result name="viewrecord">/page/WFJClient/pc/my/consult/consultrecord.jsp</result>
+			<result name="toprint">/page/WFJClient/pc/my/consult/consultlistprint.jsp</result>
+			<result name="login">/page/WFJClient/pc/pc_login.jsp</result>
+			<result name="not_login">/page/ea/not_login.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="consult.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="consult-jsonajax" namespace="/ea/consult" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.scmanage.ConsultManageAction" method="{1}">
+
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

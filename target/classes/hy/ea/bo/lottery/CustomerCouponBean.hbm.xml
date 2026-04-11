@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.lottery.CustomerCouponBean" table="DT_CUSTOMER_COUPON" schema="HYPLAT">
+        <comment>客户优惠券</comment>
+        <id name="customerCouponId" column="CUSTOMER_COUPON_ID">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="couponName">
+            <column name="COUPON_NAME"><comment>优惠券名称</comment></column>
+        </property>
+        <property name="couponFaceVal" >
+            <column name="COUPON_FACE_VAL"><comment>面值</comment></column>
+        </property>
+        <property name="couponId" >
+        <column name="COUPON_ID"><comment>优惠券ID</comment></column>
+        </property>
+        <property name="businessmenId" >
+        <column name="BUSINESSMEN_ID"><comment>商家ID</comment></column>
+        </property>
+        <property name="startingTime" >
+            <column name="STARTING_TIME"><comment>开始时间</comment></column>
+        </property>
+        <property name="endTime" >
+            <column name="END_TIME"><comment>到期时间</comment></column>
+        </property>
+        <property name="staffId" >
+            <column name="STAFF_ID"><comment>人员ID</comment></column>
+        </property>
+        <property name="source" >
+            <column name="SOURCE"><comment>1:抽奖 2:购物返优惠券</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

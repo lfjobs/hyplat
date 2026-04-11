@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.opensymphony.xwork2.ActionContext;
 import hy.base.action.BaseAction;
 import hy.ea.bo.CAccount;
@@ -316,7 +319,7 @@ public class DepartmentPostAction extends BaseAction<Object>{
 		JSONObject obj = JSONObject.fromObject(map);
 		result = obj.toString();
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "success";

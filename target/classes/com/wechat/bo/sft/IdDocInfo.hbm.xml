@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="IdDocInfo" table="dt_sft_IdDocInfo">
+	<comment>二级商户进件——经营者/法人其他类型证件信息 </comment>
+		<id length="50" name="docKey">
+			<column length="50" name="docKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="docId">
+			<column length="50" name="docId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="id_doc_name">
+			<column length="50" name="id_doc_name" ><comment>证件姓名</comment></column>
+		</property>
+		<property name="id_doc_number">
+			<column length="50" name="id_doc_number" ><comment>证件号码  </comment></column>
+		</property>
+		<property name="id_doc_copy">
+			<column length="50" name="id_doc_copy" ><comment>证件照片</comment></column>
+		</property>
+		<property name="doc_period_end">
+			<column length="50" name="doc_period_end" ><comment>证件结束日期 </comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="Budget" table="DT_Budget" schema="HYPLAT" dynamic-insert="true">
+	<comment>项目预算</comment>
+		<id length="50" name="budgetKey" type="java.lang.String">
+			<column length="50" name="budgetKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="budgetId" type="java.lang.String">
+			<column length="50" name="budgetId" >
+			</column>
+		</property>
+		<property name="ppname" type="java.lang.String">
+			<column name="ppname" length="50">
+			<comment>选择产品名称</comment>
+			</column>
+		</property>
+		<property name="goodsBillsID" type="java.lang.String">
+			<column name="goodsBillsID" length="50">
+			<comment>物品单据管理id</comment>
+			</column>
+		</property>
+		<property name="price" type="java.lang.String">
+			<column name="price" length="50">
+			<comment>价格</comment>
+			</column>
+		</property>
+		<property name="ppId" type="java.lang.String">
+			<column name="ppId" length="50">
+			<comment>选择产品Id</comment>
+			</column>
+		</property>
+	</class>		
+</hibernate-mapping>                                   

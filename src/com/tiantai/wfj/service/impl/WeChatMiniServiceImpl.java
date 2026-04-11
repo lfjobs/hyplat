@@ -1,5 +1,8 @@
 package com.tiantai.wfj.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alibaba.fastjson.JSONObject;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
@@ -44,7 +47,7 @@ public class WeChatMiniServiceImpl implements WeChatMiniService {
 //        WxPhone response = new WeChatMiniServiceImpl().getPhone("8cdddc2e40f2a64d4365cfaf0189f70c4758f79f91bc74a1594a9b1160cdb86d");
 //
         WxPhone wxPhone=JSONObject.parseObject("{\"errcode\":0,\"errmsg\":\"ok\",\"phone_info\":{\"phoneNumber\":\"13708207052\",\"purePhoneNumber\":\"13708207052\",\"countryCode\":\"86\",\"watermark\":{\"timestamp\":1745491458,\"appid\":\"wxed2a1187d180aeb6\"}}}",WxPhone.class);
-        System.out.println(wxPhone);
+        logger.info("值：{}", wxPhone);
     }
 
     @Resource
@@ -70,7 +73,7 @@ public class WeChatMiniServiceImpl implements WeChatMiniService {
     public WxPhone getPhone(String code)  {
 
         String token = getAccessToken();
-        System.out.println(token);
+        logger.info("值：{}", token);
         String url = String.format(WxMiniConstant.URL.GET_USER_PHONE, JSONObject.parseObject(fetchAccessTokenFromWeChat()).getString("access_token"));
         OkHttpClient client = new OkHttpClient();
 
@@ -125,7 +128,7 @@ public class WeChatMiniServiceImpl implements WeChatMiniService {
             }
 
             WxPhone wxPhone = getPhone(phoneCode);
-            System.out.println(wxPhone.toString());
+            logger.info("调试信息");
             if (wxPhone.getErrcode()!=null&&wxPhone.getErrcode()!=0)
             {
                 return   Response.error(wxPhone.getErrcode(),"phone_code 无效");
@@ -280,7 +283,7 @@ public class WeChatMiniServiceImpl implements WeChatMiniService {
             byte[] decrypted = cipher.doFinal(data);
             return new String(decrypted);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return null;
         }
     }
@@ -296,7 +299,7 @@ public class WeChatMiniServiceImpl implements WeChatMiniService {
                     fetchAccessTokenFromWeChat(); // 调用微信 API 获取
             accessToken.set(newToken);
             expireTime = Instant.now().plusSeconds(7200); // 假设 7200 秒有效期
-            System.out.println("更新 access_token: " + newToken);
+            logger.info("更新 access_token: : {}", newToken);
         }
     }
 

@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.DrivingSchool.TbJpCar" table="TB_JP_CAR" schema="HYPLAT">
+        <id length="50" name="carKey">
+            <column length="50" name="carKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="carzjid" type="java.lang.String">
+            <column name="CARZJID"  length="50" ><comment>逻辑id</comment></column>
+        </property>
+        <property name="carId" type="java.lang.String">
+            <column name="carId"  length="50" ><comment>车辆ID</comment></column>
+        </property>
+        <property name="carnum" type="java.lang.String">
+            <column name="CARNUM"  length="16" ><comment>教练车全国唯一编号</comment></column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="COMPANY_ID"  length="64" ><comment>驾校ID</comment></column>
+        </property>
+        <property name="franum" type="java.lang.String">
+            <column name="FRANUM"  length="32" ><comment>车架号</comment></column>
+        </property>
+        <property name="engnum" type="java.lang.String">
+            <column name="ENGNUM"  length="32" ><comment>发动机号</comment></column>
+        </property>
+        <property name="plateNumber" type="java.lang.String">
+            <column name="PLATE_NUMBER" length="16" ><comment>车牌号码</comment></column>
+        </property>
+        <property name="plateColor" type="java.lang.String">
+            <column name="PLATE_COLOR"  length="32" ><comment>车牌颜色</comment></column>
+        </property>
+        <property name="photo" type="java.lang.String">
+            <column name="PHOTO"  length="64" ><comment>车辆照片文件ID</comment></column>
+        </property>
+        <property name="manufacture" type="java.lang.String">
+            <column name="MANUFACTURE"  length="64" ><comment>生产厂家</comment></column>
+        </property>
+        <property name="brand" type="java.lang.String">
+            <column name="BRAND"  length="256" ><comment>车辆品牌</comment></column>
+        </property>
+        <property name="model" type="java.lang.String">
+            <column name="MODEL"  length="128" ><comment>厂牌型号</comment></column>
+        </property>
+        <property name="perdritype" type="java.lang.String">
+            <column name="PERDRITYPE"  length="8" ><comment>培训车型</comment></column>
+        </property>
+        <property name="buydate" type="java.util.Date">
+            <column name="BUYDATE" ><comment>购买时间</comment></column>
+        </property>
+        <property name="linceDispathDate" type="java.util.Date">
+            <column name="LINCE_DISPATH_DATE"  ><comment>行驶证发证日期</comment></column>
+        </property>
+        <property name="vehicleState" type="java.lang.String">
+            <column name="VEHICLE_STATE"  length="64" ><comment>车辆状态</comment></column>
+        </property>
+        <property name="skillLevel" type="java.lang.String">
+            <column name="SKILL_LEVEL"  length="64" ><comment>技术等级</comment></column>
+        </property>
+        <property name="fuel" type="java.lang.String">
+            <column name="FUEL"  length="64" ><comment>燃油</comment></column>
+        </property>
+        <property name="zkl" type="java.lang.String">
+            <column name="ZKL"  length="32" ><comment>载客量</comment></column>
+        </property>
+        <property name="jcqk" type="java.lang.String">
+            <column name="JCQK"  length="32" ><comment>检测情况</comment></column>
+        </property>
+        <property name="equipStatus" type="java.lang.String">
+            <column name="EQUIP_STATUS"  length="32" ><comment>设备状况</comment></column>
+        </property>
+        <property name="syncType" type="java.lang.String">
+            <column name="SYNC_TYPE"  length="8" ><comment>同步类型</comment></column>
+        </property>
+        <property name="syncStatus" type="java.lang.String">
+            <column name="SYNC_STATUS"   length="8" ><comment>同步状态</comment></column>
+        </property>
+        <property name="delFlag" type="java.lang.String">
+            <column name="DEL_FLAG"   length="1" ><comment>删除标志</comment></column>
+        </property>
+        <property name="checkStatus" type="java.lang.String">
+            <column name="CHECK_STATUS"  length="8" ><comment>审核状态</comment></column>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" sql-type="varchar2(64)" length="64" ><comment>备注</comment></column>
+        </property>
+        <property name="updateperson" type="java.lang.String">
+            <column name="UPDATEPERSON"  length="60" ><comment>更新人</comment></column>
+        </property>
+        <property name="createdate" type="java.util.Date">
+            <column name="CREATEDATE"  ><comment>创建时间</comment></column>
+        </property>
+        <property name="updatedate" type="java.util.Date">
+            <column name="UPDATEDATE"  ><comment>更新时间</comment></column>
+        </property>
+        <property name="createperson" type="java.lang.String">
+            <column name="CREATEPERSON"  length="60" ><comment>创建人</comment></column>
+        </property>
+        <property name="syncXlycStatus" type="java.lang.String">
+            <column name="SYNC_XLYC_STATUS"  length="8" ><comment>同步状态（0待同步1同步成功2同步失败）</comment></column>
+        </property>
+        <property name="dizhi" type="java.lang.String">
+            <column name="DIZHI"  length="50" ><comment>地址</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

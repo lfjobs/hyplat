@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="StaffInsurance" table="dt_hr_staff_Insurance">
+		<id length="50" name="insuranceKey">
+			<column length="50" name="insuranceKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="insuranceID">
+			<column length="50" name="insuranceID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" not-null="true"/>
+		</property>
+		<property name="startTime">
+			<column length="250" name="startTime"/>
+		</property>
+		<property name="endTime">
+			<column length="250" name="endTime"/>
+		</property>
+		<property name="companyAdress">
+			<column length="250" name="companyAdress" />
+		</property>
+		<property  name="endowment">
+			<column length="250" name="endowment" />
+		</property>
+		<property  name="medical">
+			<column length="250" name="medical" />
+		</property>
+		<property  name="maternity">
+			<column length="250" name="maternity" />
+		</property>
+		<property  name="unemployment">
+			<column length="250" name="unemployment" />
+		</property>
+		<property  name="accident">
+			<column length="250" name="accident" />
+		</property>
+		<property  name="amount">
+			<column length="250" name="amount" />
+		</property>
+		<property  name="phone">
+			<column length="250" name="phone" />
+		</property>
+		<property  name="organization">
+			<column length="250" name="organization" />
+		</property>
+		<property  name="auditor">
+			<column length="250" name="auditor" />
+		</property>
+		
+		<property  name="insuranceName">
+			<column length="250" name="insuranceName" />
+		</property>
+				<property  name="insuranceUnit">
+			<column length="250" name="insuranceUnit" />
+		</property>
+		<property  name="effectiveTime">
+			<column length="250" name="effectiveTime" />
+		</property>
+		<property  name="referenceCode">
+			<column length="250" name="referenceCode" />
+		</property>
+		<property  name="verifyTime">
+			<column length="250" name="verifyTime" />
+		</property>
+		<property  name="fileAttachments">
+			<column length="250" name="fileAttachments" />
+		</property>
+		<property  name="insuranceDesc">
+			<column length="250" name="insuranceDesc" />
+		</property>
+		<property  name="photo">
+			<column length="256" name="photo" />
+		</property>
+	</class>
+</hibernate-mapping>

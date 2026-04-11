@@ -1,5 +1,8 @@
 package com.tiantai.telrec.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 
 import java.text.SimpleDateFormat;
@@ -75,13 +78,13 @@ public class WebQueryTelByCustomerId extends ActionSupport {
 			 */
 			JSONObject jsonArray = JSONObject.fromObject(bean, jsonConfig);
 			String outString = jsonArray.toString();
-			//System.out.println(outString);
+			//logger.info("值：{}", outString);
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(outString);
-			// System.out.println(outString);
+			// logger.info("值：{}", outString);
 			response.flushBuffer();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 

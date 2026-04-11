@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="ModifyStampPswLog" table="DT_OA_MODIFYSPSWLOG">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="pswLogId">
+			<column length="50" name="pswLogId" />
+		</property>
+		<property name="modifyTime">
+			<column length="7" name="modifyTime" />
+		</property>
+		<property name="modifyUser">
+			<column length="50" name="modifyUser" />
+		</property>
+		
+		<property name="enterpriseStampID">
+			<column length="50" name="enterpriseStampID"/>
+		</property>
+		<property name="newPsw">
+			<column length="50" name="newPsw"/>
+		</property>
+		
+	</class>
+</hibernate-mapping>

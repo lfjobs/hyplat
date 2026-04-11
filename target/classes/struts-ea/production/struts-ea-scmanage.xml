@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="scm-token" namespace="/ea/scm"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.scmanage.MaterialManageAction" method="{1}">
+		      
+		      <result name="scmanage">/page/ea/main/production/cprocedure/scmanage/scmanagelist.jsp</result>
+		      <result name="picmanage">/page/ea/main/production/cprocedure/scmanage/picmanagelist.jsp</result>
+		      <result name="videomanage">/page/ea/main/production/cprocedure/scmanage/videomanagelist.jsp</result>
+		      <result name="audiomanage">/page/ea/main/production/cprocedure/scmanage/audiomanagelist.jsp</result>
+		      <result name="newgroup">/page/ea/main/production/cprocedure/scmanage/newgroup.jsp</result>
+		      <result name="editorgroup">/page/ea/main/production/cprocedure/scmanage/editorgroup.jsp</result>
+		      <result name="selectgroup">/page/ea/main/production/cprocedure/scmanage/selectgroup.jsp</result>
+		      <result name="noaudio">/page/ea/main/production/cprocedure/scmanage/nouploadaudio.jsp</result>
+		      <result name="nopic">/page/ea/main/production/cprocedure/scmanage/nouploadpic.jsp</result>
+		      <result name="novideo">/page/ea/main/production/cprocedure/scmanage/nouploadvideo.jsp</result>
+		      <result name="haveaudio">/page/ea/main/production/cprocedure/scmanage/haveuploadaudio.jsp</result>
+		      <result name="havevideo">/page/ea/main/production/cprocedure/scmanage/haveuploadvideo.jsp</result>
+		      <result name="havepic">/page/ea/main/production/cprocedure/scmanage/haveuploadpic.jsp</result>
+		      <result name="uploadaudio">/page/ea/main/production/cprocedure/scmanage/uploadaudio.jsp</result>
+		      <result name="uploadvideo">/page/ea/main/production/cprocedure/scmanage/uploadvideo.jsp</result>
+		      <result name="uploadpic">/page/ea/main/production/cprocedure/scmanage/uploadpic.jsp</result>
+		      <result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>	
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="scm-jsonajax" namespace="/ea/scm" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.scmanage.MaterialManageAction" method="{1}">
+
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

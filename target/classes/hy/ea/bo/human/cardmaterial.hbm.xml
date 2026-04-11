@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="CardMaterial" table="dtMaterial">
+		<id length="50" name="materialKey">
+			<column length="150" name="materialKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="materialID">
+			<column length="150" name="materialID" />
+		</property>
+		<property name="companyID">
+			<column length="150" name="companyID" />
+		</property>
+		<property name="staffID">
+			<column length="150" name="staffID" />
+		</property>
+		<property name="title">
+			<column length="150" name="title" />
+		</property>
+		<property name="elaborate">
+			<column length="1250" name="elaborate" />
+		</property>
+		<property name="route">
+			<column length="250" name="route" />
+		</property>
+		<property name="status">
+			<column length="150" name="status" />
+		</property>
+		<property name="type">
+			<column length="150" name="type" />
+		</property>
+	</class>
+</hibernate-mapping>

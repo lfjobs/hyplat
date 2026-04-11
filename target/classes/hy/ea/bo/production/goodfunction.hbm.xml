@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                                   
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="GoodFunction"  table="dtGoodFunction">
+		<id length="50" name="gfkey">
+			<column length="50" name="gfkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="gfid">
+			<column length="50" name="gfid" not-null="true"><comment>逻辑主键</comment></column>
+		</property>
+		<property name="name">
+			<column length="50" name="name"><comment>功能名称</comment></column>
+		</property>
+		<property  name="url">
+			<column length="250" name="url"><comment>文本编辑器地址</comment></column>
+		</property>
+		<property  name="orders">
+			<column length="10" name="orders"><comment>排序</comment></column>
+		</property>
+		<property  name="type">
+			<column length="2" name="type"><comment>类型</comment></column>
+		</property>
+		<property  name="goodsid">
+			<column length="50" name="goodsid"><comment>物品ID</comment></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

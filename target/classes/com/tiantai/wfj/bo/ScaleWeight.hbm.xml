@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+    <class name="com.tiantai.wfj.bo.ScaleWeight" table="DT_scaleWeight" schema="HYPLAT" dynamic-insert="true">
+        <comment>秤盘重量记录</comment>
+        <id length="50" name="swkey" type="java.lang.String">
+            <column length="50" name="swkey"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="swid" type="java.lang.String">
+            <column length="50" name="swid">
+            </column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="companyId" length="50">
+                <comment>公司Id</comment>
+            </column>
+        </property>
+        <property name="scaleCoding" type="java.lang.String">
+            <column length="50" name="scaleCoding">
+                <comment>秤盘编号</comment>
+            </column>
+        </property>
+        <property name="containerCoding" type="java.lang.String">
+            <column length="50" name="containerCoding">
+                <comment>货柜编号</comment>
+            </column>
+        </property>
+        <property name="weight" type="java.lang.Double">
+            <column name="weight">
+                <comment>重量</comment>
+            </column>
+        </property>
+        <property name="time" type="java.util.Date">
+            <column name="time">
+                <comment>时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -19,6 +19,7 @@ import java.util.Map;
  */
 @Component
 public class MobileMessage {
+	private static final Logger logger = LoggerFactory.getLogger(MobileMessage.class);
 	// 短信平台登录地址http://112.124.10.199:8888/sms.aspx
 
 	private static final String basePath = "http://sms.37037.com/sms.aspx";
@@ -121,7 +122,7 @@ public class MobileMessage {
 			sendSMS.setServicesRequestAddRess(basePath);
 			map = sendSMS.sendSMS();
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return map.get("message");
@@ -138,7 +139,7 @@ public class MobileMessage {
 			sendSMS.setServicesRequestAddRess(basePath);
 			map = sendSMS.sendSMS();
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return map.get("message");
@@ -177,7 +178,7 @@ public class MobileMessage {
 
 			// 执行getMethod
 			int statusCode = httpClient.executeMethod(getMethod);
-			System.out.println("httpClient.executeMethod返回状态" + statusCode);
+			logger.info("httpClient.executeMethod返回状态: {}", statusCode);
 			if (statusCode != HttpStatus.SC_OK) {
 				log.warn("MobileMessage -> Method failed:  "
 						+ getMethod.getStatusLine());
@@ -187,9 +188,9 @@ public class MobileMessage {
 			}
 
 		} catch (HttpException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} finally {
 			getMethod.releaseConnection();
 		}
@@ -225,15 +226,15 @@ public class MobileMessage {
 	 */
 	/*private String getXMLText(String xml, String name) {
 		try {
-			System.out.println("根据发送命令返回的code,查找对应的desc节点-------------" + xml);
-			System.out.println("根据发送命令返回的code,查找对应的desc节点-------------" + name);
+			logger.info("根据发送命令返回的code,查找对应的desc节点-------------: {}", xml);
+			logger.info("根据发送命令返回的code,查找对应的desc节点-------------: {}", name);
 			Document document = null;
 			document = (Document) DocumentHelper.parseText(xml);
 			Element root = document.getRootElement();
 			String xmlContent = root.elementText(name);
 			return xmlContent;
 		} catch (DocumentException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return "解析异常";
 		}
 	}*/

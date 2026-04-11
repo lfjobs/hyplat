@@ -1,5 +1,8 @@
 package com.tiantai.dataSync;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Company;
 import hy.ea.bo.human.COrganization;
@@ -35,6 +38,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 @Scope("prototype")
 public class DataSyncAction{
+	private static final Logger logger = LoggerFactory.getLogger(DataSyncAction.class);
 
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 103910701495642067L;
@@ -113,7 +117,7 @@ public class DataSyncAction{
 			response.getWriter().print(json.toString());
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 	}
@@ -146,7 +150,7 @@ public class DataSyncAction{
 			response.getWriter().print(json.toString());
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;
@@ -174,7 +178,7 @@ public class DataSyncAction{
 
 		} catch (Exception e) {
 			map.put("result", "fail");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		try {
@@ -182,7 +186,7 @@ public class DataSyncAction{
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(json.toString());
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;
@@ -213,7 +217,7 @@ public class DataSyncAction{
 
 		} catch (Exception e) {
 			map.put("result", "fail");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		try {
@@ -221,7 +225,7 @@ public class DataSyncAction{
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(json.toString());
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;
@@ -250,7 +254,7 @@ public class DataSyncAction{
 			response.getWriter().print(json.toString());
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 	}
@@ -353,7 +357,7 @@ public class DataSyncAction{
 			map.put("result", "success");
 		} catch (Exception e) {
 			map.put("result", "fail");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		try {
@@ -361,7 +365,7 @@ public class DataSyncAction{
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(json.toString());
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;

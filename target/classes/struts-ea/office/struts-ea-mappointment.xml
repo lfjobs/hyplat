@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="mappointment-ntoken" namespace="/ea/mappointment" extends="struts-default">
+		<action name="ea_*" class="hy.ea.office.action.MakeAppointmentAction" method="{1}">
+
+			<result name="parkingIsIntroduced">/page/WFJClient/ShopOwner/AppParkingList.jsp</result>
+			<result name="parkingSpacesDetails">/page/WFJClient/ShopOwner/AppParkingDetails.jsp</result>
+			<result name="countdown">/page/WFJClient/ShopOwner/AppParkingRecord.jsp</result>
+			<result name="bindingStateHave">/page/WFJClient/ShopOwner/BindingStateHave.jsp</result>
+			<result name="bindingStateWithout">/page/WFJClient/ShopOwner/BindingStateWithout.jsp</result>
+			<result name="parkingRegistrationSharing">/page/WFJClient/ShopOwner/parkingRegistrationSharing.jsp</result>
+			<result name="registeredViewVehicle">/page/WFJClient/ShopOwner/registeredViewVehicle.jsp</result>
+			<result name="theTestTimeTrue">/page/WFJClient/ShopOwner/TheTestTimeTrue.jsp</result>
+			<result name="theTestTimeFalse">/page/WFJClient/ShopOwner/TheTestTimeFalse.jsp</result>
+
+
+			<result name="jumpToBuy">/page/WFJClient/ShopOwner/Make_an_appointment.jsp</result>
+			<result name="testList">/page/WFJClient/ShopOwner/testList.jsp</result>
+			<result name="coachList">/page/WFJClient/ShopOwner/coachList.jsp</result>
+			<result name="headList">/page/WFJClient/ShopOwner/headList.jsp</result>
+			<result name="buySuccess">/page/WFJClient/ShopOwner/MakeAppSuccessful.jsp</result>
+			<result name="bookingDetails">/page/WFJClient/ShopOwner/BookingDetails.jsp</result>
+
+			<result name="informationList">/page/WFJClient/ShopOwner/information_list.jsp</result>
+			<result name="checkTheDetails">/page/WFJClient/ShopOwner/checkTheDetails.jsp</result>
+
+			<result name="queryTheTest">/page/WFJClient/ShopOwner/QueryTheTest.jsp</result>
+               
+			<result name="carlist">/page/WFJClient/ShopOwner/parking/carNumlist.jsp</result>
+			<result name="parking">/page/WFJClient/ShopOwner/parking/parkingPay.jsp</result>
+			
+
+			<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="mappointment-jsonajax" namespace="/ea/mappointment" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.MakeAppointmentAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

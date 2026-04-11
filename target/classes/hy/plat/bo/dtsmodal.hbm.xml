@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.plat.bo">
+	<class name="Smodal"  table="dtsmodal">
+		<id length="50" name="modalkey">
+			<column length="50" name="modalkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="modalid">
+			<column length="50" name="modalid" />
+		</property>
+		<property name="modalname">
+			<column length="250" name="modalname" />
+		</property>
+		<property name="pmodalid">
+			<column length="50" name="pmodalid" />
+		</property>
+		<property name="sortsn">
+			<column length="5" name="sortsn" />
+		</property>
+		<property name="murl">
+			<column length="250" name="murl" />
+		</property>
+		<property name="status">
+			<column length="50" name="status" />
+		</property>
+		<property name="menuState">
+			<column length="5" name="menuState" default="0" />
+		</property>
+	</class>
+</hibernate-mapping>

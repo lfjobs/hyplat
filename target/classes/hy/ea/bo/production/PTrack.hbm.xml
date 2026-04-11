@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="PTrack" table="production_Ptrack">
+		<id length="50" name="ptrackekey">
+			<column length="50" name="ptrackekey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ptrackeId">
+			<column length="50" name="ptrackeId"><comment>逻辑主键</comment></column>
+		</property>
+		 <property name="id">
+			<column length="50" name="id"><comment>产品ID</comment></column>
+		</property>
+		<property name="lot">
+			<column length="50" name="lot"><comment>生产批次号</comment></column>
+		</property>
+		<property name="productNumber">
+			<column length="50" name="productNumber"><comment>产品编号</comment></column>
+		</property>
+		<property name="productName">
+			<column length="50" name="productName"><comment>产品名称</comment></column>
+		</property>
+		<property name="productionDepartment">
+			<column length="50" name="productionDepartment"><comment>部门名称</comment></column>
+		</property>
+		<property name="departmentID">
+			<column length="50" name="departmentID"><comment>部门ID</comment></column>
+		</property>
+		<property name="projectLeader">
+			<column length="50" name="projectLeader"><comment>项目负责人姓名</comment></column>
+		</property>
+		<property name="projectLeaderID">
+			<column length="50" name="projectLeaderID"><comment>项目负责人ID</comment></column>
+		</property>
+		<property name="throughput">
+			<column length="50" name="throughput"><comment>生产量</comment></column>
+		</property>
+		<property name="percent">
+			<column length="50" name="percent"><comment>合格量</comment></column>
+		</property>
+		<property name="yield">
+			<column length="50" name="yield"><comment>合格率</comment></column>
+		</property>
+		<property name="trackTime">
+			<column length="50" name="trackTime"><comment>跟踪时间</comment></column>
+		</property>
+		<property name="trackman">
+			<column length="50" name="trackman"><comment>跟踪人姓名</comment></column>
+		</property>
+		<property name="trackmanId">
+			<column length="50" name="trackmanId"><comment>跟踪人ID</comment></column>
+		</property>
+		<property name="status">
+			<column length="50" name="status"><comment>状态</comment></column>
+		</property>
+		<property name="remark">
+			<column length="50" name="remark"><comment>备注</comment></column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"><comment>公司ID</comment></column>
+		</property>
+      
+	</class>
+</hibernate-mapping>

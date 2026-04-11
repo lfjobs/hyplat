@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.vo">
+	<class name="SalaryIntegral" table="view_job" >
+		<id length="50" name="logBookKey">
+			<column length="50" name="logBookKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="staffID">
+        	<column name="staffID" length="50"/>
+        </property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+         <property name="companyName">
+        	<column name="companyName" length="250"/>
+        </property>
+        <property name="staffName">
+        	<column name="staffName" length="250"/>
+        </property>
+        <property name="categoryname">
+			<column length="250" name="categoryname" />
+		</property>
+		<property name="funzioneIntegral">
+			<column length="250" name="funzioneIntegral" />
+		</property>
+		<property name="basicIntegral">
+			<column length="250" name="basicIntegral" />
+		</property>
+		<property name="targetTaskIntegral">
+			<column length="250" name="targetTaskIntegral" />
+		</property>
+		<property name="weekendIntegral">
+			<column length="250" name="weekendIntegral" />
+		</property>
+		<property name="workNightIntegral">
+			<column length="250" name="workNightIntegral" />
+		</property>
+		<property name="workHolidaysIntegral">
+			<column length="250" name="workHolidaysIntegral" />
+		</property>
+		<property name="holidaysIntegral">
+			<column length="250" name="holidaysIntegral"/>
+		</property>
+		<property name="appraisalIntegral">
+			<column length="250" name="appraisalIntegral"/>
+		</property>
+		<!--<property name="pieceIntegral">
+			<column length="250" name="pieceIntegral"/>
+		</property>
+		--><property name="rewardIntegral">
+			<column length="250"  name="rewardIntegral" />
+		</property>
+		<property name="stPay">
+			<column length="250"  name="stPay" />
+		</property>
+		<property name="secrecyPay">
+			<column length="250"  name="secrecyPay" />
+		</property>
+		<property  name="safetyIntegral">
+			<column length="256" name="safetyIntegral" />
+		</property>
+		<!--<property  name="phoneSubsidy">
+			<column length="256" name="phoneSubsidy" />
+		</property>
+		<property  name="livingSubsidy">
+			<column length="256" name="livingSubsidy" />
+		</property>
+		--><property name="taskIntegral">
+			<column length="250" name="taskIntegral"/>
+		</property>
+		<property name="personalDiscount">
+			<column length="250" name="personalDiscount"/>
+		</property>
+		<property name="personalSocialSecurity">
+			<column length="250" name="personalSocialSecurity"/>
+		</property>
+		<property name="personalReservedFunds">
+			<column length="250" name="personalReservedFunds"/>
+		</property><!--
+		<property name="phoneDiscount">
+			<column length="250" name="phoneDiscount"/>
+		</property>
+		<property name="liveDiscount">
+			<column length="250" name="liveDiscount"/>
+		</property>
+		--><property name="violationDiscount">
+			<column length="250" name="violationDiscount" />
+		</property>
+		<property name="taskDiscount">
+			<column length="250" name="taskDiscount" />
+		</property>
+		<property name="safetyDiscount">
+			<column length="250" name="safetyDiscount" />
+		</property>
+		<property name="attendanceDiscount">
+			<column length="250" name="attendanceDiscount" />
+		</property>
+		<property name="todaydate">
+			<column  name="todaydate" />
+		</property>
+		<property name="postname">
+			<column name="postname" length="50" />
+		</property>
+		
+		<property name="living">
+			<column name="living" length="250" />
+		</property>
+		<property name="pietypay">
+			<column name="pietypay" length="250" />
+		</property>
+		<property name="campaignpay">
+			<column name="campaignpay" length="250" />
+		</property>
+		<property name="telecompay">
+			<column name="telecompay" length="250" />
+		</property>
+		<property name="pkpay">
+			<column name="pkpay" length="250" />
+		</property>
+	</class>
+</hibernate-mapping>

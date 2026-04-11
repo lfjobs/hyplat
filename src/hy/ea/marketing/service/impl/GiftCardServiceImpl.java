@@ -1,5 +1,8 @@
 package hy.ea.marketing.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.GiftCards;
 import com.tiantai.wfj.bo.MarKeting;
 import com.tiantai.wfj.bo.TEshopCusCom;
@@ -163,7 +166,7 @@ public class GiftCardServiceImpl implements GiftCardService {
             }
             tcc.setPpid(tuicus.getPpid());
         }
-        System.out.println("用户"+phones+"  推荐人sccid   "+sccid);
+        logger.info("调试信息");
         if(staff!=null&&staff.getStaffName()!=null){
             sf.setStaffName(staff.getStaffName());
         }

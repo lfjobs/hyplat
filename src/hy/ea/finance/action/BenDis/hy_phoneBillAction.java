@@ -55,6 +55,7 @@ import com.tiantai.wfj.util.SessionWrap;
  * 
  */
 public class hy_phoneBillAction {
+	private static final Logger logger = LoggerFactory.getLogger(hy_phoneBillAction.class);
 	private static final String String = null;
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -132,7 +133,7 @@ public class hy_phoneBillAction {
 			pageForm = baseBeanService.getPageFormByDC(
 					(null != pageForm ? pageForm.getPageNumber() : 1), 6, dc);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		List<Object[]> goodlist = null;
 		// 0:id 1:key 2:数量 3:单价 4:产品编号 5:产品名称 6:产品图片 7:产品id 8:供应商id
@@ -480,15 +481,15 @@ public class hy_phoneBillAction {
 				MarKeting keting = (MarKeting) baseBeanService
 						.getBeanByHqlAndParams("from MarKeting where userID=?",
 								new Object[] { b });
-				System.out.println(i + "-" + j + "{被推荐人：" + b);
+				logger.info("调试信息");
 				if (keting == null) {
 					keting = new MarKeting();
-					System.out.println("修改");
+					logger.info("修改");
 					keting.setMkID(serverService.getServerID("MarKeting"));
 					keting.setUserID(b);
 
 				}
-				System.out.println("推荐人：" + a + "}");
+				logger.info("推荐人：{}{}", a, "}");
 				keting.setMkuserID(a);
 				keting.setMkdate(new Date());
 				bases.add(keting);
@@ -528,7 +529,7 @@ public class hy_phoneBillAction {
 				List<Object[]> object = baseBeanService.getListBeanBySqlAndParams(
 						sql, new Object[] { b.get(i)});
 				if (object.size() > 0) {
-					System.out.println(i + "-" + t.getAccount() + ":[");
+					logger.info("调试信息");
 
 					MarKeting keting = (MarKeting) baseBeanService
 							.getBeanByHqlAndParams("from MarKeting where userID=?",
@@ -569,7 +570,7 @@ public class hy_phoneBillAction {
 											}
 										}
 
-										//System.out.println("{" + objects2[1] + ","+ objects2[3] + "},");
+										//logger.info("调试信息");
 
 										CashierBills cb = (CashierBills) baseBeanService
 												.getBeanByHqlAndParams(
@@ -812,7 +813,7 @@ public class hy_phoneBillAction {
 					msg.setMessage("订单号为：" + phone.getJournalNum()
 							+ "的订单，系统自动收货分配金币时出错，错误信息为：" + str);
 					String reStr = msg.sendMsg();
-					System.out.println(reStr);
+					logger.info("值：{}", reStr);
 					break a;
 				}
 			}else{
@@ -844,7 +845,7 @@ public class hy_phoneBillAction {
 						msg.setMobiles("15210904250");
 						msg.setMessage("微分金金币库存不足，无法进行系统自动确认收货，请及时补充。");
 						String reStr = msg.sendMsg();
-						System.out.println(reStr);
+						logger.info("值：{}", reStr);
 						modifyState(list);
 						break a;
 					} else {
@@ -858,7 +859,7 @@ public class hy_phoneBillAction {
 								msg.setMessage("订单号为：" + phone.getJournalNum()
 										+ "的订单，系统自动收货分配金币时出错，错误信息为：" + str);
 								String reStr = msg.sendMsg();
-								System.out.println(reStr);
+								logger.info("值：{}", reStr);
 								modifyState(list);
 								break a;
 							}*/
@@ -867,13 +868,13 @@ public class hy_phoneBillAction {
 							msg.setMessage("订单号为：" + phone.getJournalNum()
 									+ "的订单，系统自动收货时出错，错误代码为：" + e.getClass().getName());
 							String reStr = msg.sendMsg();
-							System.out.println(reStr);
+							logger.info("值：{}", reStr);
 						}
 					}
 				}
 			}
 		}
-		System.out.println("自动收货完成");
+		logger.info("自动收货完成");
 	}
 
 	/**

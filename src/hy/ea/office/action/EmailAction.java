@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Company;
@@ -45,6 +48,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class EmailAction {
+	private static final Logger logger = LoggerFactory.getLogger(EmailAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -200,7 +204,7 @@ public class EmailAction {
 			JSONObject obj = JSONObject.fromObject(map);
 			result = obj.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -397,7 +401,7 @@ public class EmailAction {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String emailID = request.getParameter("emailID");
 		zhType = request.getParameter("zhType");
-		System.out.println(zhType);
+		logger.info("值：{}", zhType);
 		String hql = "";
 		hql = "from Email where emailID = ?";
 		email = (Email) baseBeanService.getBeanByHqlAndParams(hql,

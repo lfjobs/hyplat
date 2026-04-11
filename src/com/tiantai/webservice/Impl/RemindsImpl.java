@@ -83,7 +83,7 @@ public class RemindsImpl implements Reminds{
 			bl=true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();
+			//logger.error("操作异常", e);
 			bl=false;
 		}
 		return JSON.toJSONString(bl);
@@ -116,7 +116,7 @@ public class RemindsImpl implements Reminds{
 			else
 				result = obj;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			log.error(e.getMessage());
 			result = "result:-500";
 		}

@@ -1,5 +1,8 @@
 package hy.ea.test.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.test.other.IPBean;
 
 import javax.net.ssl.*;
@@ -25,7 +28,7 @@ public class HttpUtils {
         try {
             return getResponseContent(url, null, null);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
     }
@@ -34,7 +37,7 @@ public class HttpUtils {
         try {
             return getResponseContent(url, null, ipBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
     }

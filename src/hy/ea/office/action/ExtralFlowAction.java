@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.human.Staff;
 import hy.ea.bo.office.ComplaintDealer;
@@ -39,6 +42,7 @@ import com.opensymphony.xwork2.ActionContext;
  * 公文流转管理
  */
 public class ExtralFlowAction {
+	private static final Logger logger = LoggerFactory.getLogger(ExtralFlowAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -83,7 +87,7 @@ public class ExtralFlowAction {
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(json.toString());
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;
@@ -150,7 +154,7 @@ public class ExtralFlowAction {
 				&& !docComplaint.getTelphone().equals("")) {
 			telNumber = docComplaint.getTelphone();
 			String rels = extralFlowService.sendMessage(null, telNumber, "g");
-			System.out.println(rels);
+			logger.info("值：{}", rels);
 		}
 
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -161,7 +165,7 @@ public class ExtralFlowAction {
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(json.toString());
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 
@@ -399,7 +403,7 @@ public class ExtralFlowAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -464,7 +468,7 @@ public class ExtralFlowAction {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -548,7 +552,7 @@ public class ExtralFlowAction {
 							.getReference(), typemessage);
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		return "success";
@@ -591,7 +595,7 @@ public class ExtralFlowAction {
 							.getReference(), "sealed");
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		return "success";
@@ -851,7 +855,7 @@ public class ExtralFlowAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -905,7 +909,7 @@ public class ExtralFlowAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -948,7 +952,7 @@ public class ExtralFlowAction {
 					.getPageNumber() : 1), (pageNumber == 0 ? 5 : pageNumber),
 					hql, params);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "formallist";
@@ -976,7 +980,7 @@ public class ExtralFlowAction {
 					.getPageNumber() : 1), (pageNumber == 0 ? 5 : pageNumber),
 					hql, params);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 

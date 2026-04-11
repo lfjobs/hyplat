@@ -45,12 +45,12 @@
 
 
 		<!--   准备源文件路径 -->
-		<property name="build.src" value="d:/AntBuild/build" />
+		<property name="build.src" value="${basedir}/build/src" />
 
 
 
 		<!--   编译源文件路径 -->
-		<property name="build.dest" value="d:/AntBuild/bin" />
+		<property name="build.dest" value="${basedir}/build/classes" />
 
 
 

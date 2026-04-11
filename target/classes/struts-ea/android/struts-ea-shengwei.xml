@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="shengwei-sajax" namespace="/ea/shengwei" extends="struts-default">
+		
+		<action name="*" class="mobile.tiantai.android.action.shengweiAction" method="{1}">
+			<result name="listCourse">/page/mobile/shengwei/courseList.jsp</result>
+			<result name="getCourseById">/page/mobile/shengwei/courseEnroll.jsp</result>
+			<result name="getShopGoods">/page/mobile/shengwei/shopGoods.jsp</result>
+			<result name="getCompanyGoods">/page/mobile/shengwei/companyGoods.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+</struts>

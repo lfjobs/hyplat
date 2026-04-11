@@ -1,5 +1,8 @@
 package com.tiantai.wfj.front;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -30,6 +33,7 @@ import net.sf.json.JSONObject;
 @Controller
 @Scope("prototype")
 public class WorkMessageAction {
+	private static final Logger logger = LoggerFactory.getLogger(WorkMessageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -172,7 +176,7 @@ public class WorkMessageAction {
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(baselist,null,null);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		map.put("result", "success");
 		JSONObject jo = JSONObject.fromObject(map);

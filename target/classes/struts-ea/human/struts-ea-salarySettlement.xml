@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package strict-method-invocation="false" name="salarySettlement-token" namespace="/ea/salarySettlement" extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.SalarySettlementAction" method="{1}">
+			<result name="find">/page/WFJClient/pc/5l5C/human/salary/salaryList.jsp</result>
+			<result name="findStaff">/page/WFJClient/pc/5l5C/human/salary/salaryStaffList.jsp</result>
+			<result name="findStaffTime">/page/WFJClient/pc/5l5C/human/salary/salaryStaffTimeList.jsp</result>
+			<result name="details">/page/WFJClient/pc/5l5C/human/salary/salaryDetails.jsp</result>
+			<result name="dayList">/page/WFJClient/pc/5l5C/human/salary/salaryDayList.jsp</result>
+			<result name="dayDetails">/page/WFJClient/pc/5l5C/human/salary/salaryDayDetails.jsp</result>
+		</action>
+	</package>
+
+	<package strict-method-invocation="false" name="salarySettlement-jsonajax" namespace="/ea/salarySettlement" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.SalarySettlementAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="carSchool-token" namespace="/ea/carSchool"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.cprocedure.drive.CarSchoolAction" method="{1}">
+		      <result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>	
+		      <result name="goldInform">/page/ea/main/production/cprocedure/drive/jx_learnCarMakeMoney.jsp</result>
+		      <result name="recommendFriend">/page/ea/main/production/cprocedure/drive/jx_recommendFriend.jsp</result>
+		      <result name="inform">/page/ea/main/production/cprocedure/drive/jx_inform.jsp</result>
+		      <result name="queryNewsDetails">/page/ea/main/production/cprocedure/drive/jx_informDetails.jsp</result>
+		      <result name="delNews">/page/ea/main/production/cprocedure/drive/jx_inform.jsp</result>
+		      <result name="regulations">/page/ea/main/production/cprocedure/drive/jx_breakRulesAndRegulations.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="carSchool-jsonajax" namespace="/ea/carSchool" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.cprocedure.drive.CarSchoolAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

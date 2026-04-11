@@ -1,5 +1,8 @@
 package hy.ea.util.isms;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 /*
@@ -12,6 +15,7 @@ package hy.ea.util.isms;
  * @author Administrator
  */
 public class WebNetEncode {
+	private static final Logger logger = LoggerFactory.getLogger(WebNetEncode.class);
 
     //字符编码成HEX
     public static String toHexString(String s) {
@@ -34,7 +38,7 @@ public class WebNetEncode {
             try {
                 baKeyword[i] = (byte) (0xff & Integer.parseInt(s.substring(i * 2, i * 2 + 2), 16));
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
         }
 
@@ -81,7 +85,7 @@ public class WebNetEncode {
             strhex = bytesToHexString(bytSource);
             
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return strhex;
     }
@@ -111,7 +115,7 @@ public class WebNetEncode {
                 //strReturn = System.Text.ASCIIEncoding.ASCII.GetString(bytSrc);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return strReturn;
     }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="LeaveBills" table="dtLeaveBills">
+		<id length="50" name="leaveKey">
+			<column length="50" name="leaveKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="leaveID">
+			<column length="50" name="leaveID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="deptID">
+			<column length="50" name="deptID"/>
+		</property>
+		<property name="principal">
+			<column length="250" name="principal" />
+		</property>
+		<property name="voucherNum">
+			<column length="250" name="voucherNum" />
+		</property>
+		<property  name="accessory">
+			<column length="256" name="accessory" />
+		</property>
+		<property  name="leaveNum">
+			<column length="250" name="leaveNum" />
+		</property>
+		<property  name="postName">
+			<column length="250" name="postName" />
+		</property>
+		<property  name="leaveDate">
+			<column length="250" name="leaveDate" />
+		</property>
+		<property  name="leaveHour">
+			<column length="250" name="leaveHour" />
+		</property>
+		<property  name="startDate">
+			<column  name="startDate" />
+		</property>
+		<property  name="endDate">
+			<column   name="endDate" />
+		</property>
+		<property  name="leaveType">
+			<column  length="256" name="leaveType" />
+		</property>
+		<property  name="leaveReason">
+			<column  length="256" name="leaveReason" />
+		</property>
+		<property  name="idea">
+			<column length="256" name="idea" />
+		</property>
+		
+		<property name="manager">
+			<column length="250" name="manager"/>
+		</property>
+		<property name="president">
+			<column length="250" name="president"/>
+		</property>
+		<property name="deptCharge">
+			<column length="50" name="deptCharge" />
+		</property>
+		<property  name="headCharge">
+			<column length="250" name="headCharge" />
+		</property>
+		<property  name="verify">
+			<column length="250" name="verify" />
+		</property>
+		<property  name="financeVerify">
+			<column length="250" name="financeVerify" />
+		</property>
+		
+		<property  name="accounting">
+			<column length="250" name="accounting" />
+		</property>
+		<property  name="allAccounting">
+			<column length="250" name="allAccounting" />
+		</property>
+		<property  name="cashier">
+			<column length="250" name="cashier" />
+		</property>
+		<property  name="allCashier">
+			<column length="250" name="allCashier" />
+		</property>
+		<property  name="leaveState">
+			<column length="2" name="leaveState" />
+		</property>
+	</class>
+</hibernate-mapping>

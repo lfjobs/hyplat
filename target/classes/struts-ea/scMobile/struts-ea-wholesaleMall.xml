@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="wholesale-inter" namespace="/ea/wholesaleMall" extends="struts-default">
+		<!--自定义拦截器 -->
+		<interceptors>
+			<!-- 定义权限拦截器 -->
+			<interceptor name="admin_interceptor" class="mobile.tiantai.android.common.PayBudget_Interceptor"></interceptor>
+			<!-- 定义拦截器栈,所谓拦截器栈,是指由一个或多个拦截器组成 -->
+			<interceptor-stack name="admin_interceptor_stack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="admin_interceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 为此包下的所有action应用拦截器 -->
+		<default-interceptor-ref name="admin_interceptor_stack"></default-interceptor-ref>
+		<!--全局result(global-results)-->
+		<global-results>
+			<result name="logout" >/page/WFJClient/Login/Login.jsp</result>
+		</global-results>
+	</package>
+
+	<package strict-method-invocation="false" name="wholesale-ntoken" namespace="/ea/wholesaleMall" extends="struts-default,wholesale-inter">
+		<action name="ea_*" class="mobile.tiantai.android.action.storeProduction.wholesaleMall.WholesaleMallAction" method="{1}">
+			<result name="toWholesaleMall">/page/scMobile/wholesaleMall/wholesaleMall.jsp</result><!--批发商城页-->
+			<result name="shoppingCartList">/page/scMobile/wholesaleMall/shoppingCartList.jsp</result><!--购物车列表页-->
+			<result name="orderdetailss">/page/scMobile/wholesaleMall/orderDetailss.jsp</result><!--购物车结算页-->
+			<result name="toGoodsSearch">/page/scMobile/wholesaleMall/goodsSearch.jsp</result><!--购物车货物查询页面-->
+			<result name="toDpGoodsSearch">/page/scMobile/wholesaleMall/dpGoodsSearch.jsp</result><!--大屏购物车货物查询页面-->
+			<result name="toBussList">/page/scMobile/wholesaleMall/businessList.jsp</result><!--所有商家页面-->
+			<result name="shoppingCartForDpList">/page/scMobile/wholesaleMall/shoppingCartForDpList.jsp</result><!--大屏购物车列表页，暂时没用了-->
+		</action>
+	</package>
+
+	<package strict-method-invocation="false"  name="wholesale-jsonajax" namespace="/ea/wholesaleMall" extends="json-default">
+		<action name="sajax_ea_*" class="mobile.tiantai.android.action.storeProduction.wholesaleMall.WholesaleMallAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

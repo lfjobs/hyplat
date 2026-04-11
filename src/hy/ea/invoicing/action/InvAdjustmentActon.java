@@ -1,5 +1,8 @@
 package hy.ea.invoicing.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.invoicing.InvAdjustment;
@@ -25,6 +28,7 @@ import org.springframework.stereotype.Controller;
 @Scope("prototype")
 public class InvAdjustmentActon
 {
+	private static final Logger logger = LoggerFactory.getLogger(InvAdjustmentActon.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -126,7 +130,7 @@ public class InvAdjustmentActon
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             request.setAttribute("message", "10");
         }
         return "success";

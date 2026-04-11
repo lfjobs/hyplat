@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocGsendInfo" table="DT_OA_DOC_GSEND">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="gsId" type="java.lang.String">
+			<column name="gsId" length="50" />
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="50" />
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50" />
+		</property>
+		<property name="organizationID" type="java.lang.String">
+			<column name="organizationID" length="50" />
+		</property>
+		<property name="readerID" type="java.lang.String">
+			<column name="readerID" length="50" />
+		</property>
+		<property name="readstate" type="java.lang.String">
+			<column name="readstate" length="5" />
+		</property>
+		<property name="delstate" type="java.lang.String">
+			<column name="delstate" length="5" />
+		</property>
+		<property name="reciveTime" type="java.lang.String">
+			<column name="reciveTime" length="50" />
+		</property>
+		<property name="readtime" type="java.util.Date">
+			<column name="READTIME" length="5" />
+		</property>
+		<property name="transfer" type="java.lang.String">
+			<column name="TRANSFER" length="5" />
+		</property>
+		<property name="load" type="java.lang.String">
+			<column name="LOAD" length="5" />
+		</property>
+		<property name="print" type="java.lang.String">
+			<column name="PRINT" length="5" />
+		</property>
+		<property name="shares" type="java.lang.String">
+			<column name="SHARES" length="5" />
+		</property>
+		<property name="pub" type="java.lang.String">
+			<column name="PUB" length="5" />
+		</property>
+
+	</class>
+</hibernate-mapping>

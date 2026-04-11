@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="prodesign-token" namespace="/ea/prodesign"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.production.action.adesign.ProductionDesignAction" method="{1}">
+		      <result name="success">/page/ea/success.jsp</result>
+		      <result name="designlist">/page/ea/main/production/adesign/prodesign_list.jsp</result>
+		      <result name="addpage">/page/ea/main/production/adesign/prodesign_add.jsp</result>
+		      <result name="prevpage">/page/ea/main/production/adesign/prodesign_prev.jsp</result>
+		      <result name="printprev">/page/ea/main/production/adesign/prodesign_print.jsp</result>
+		      <result name="process">/page/ea/main/production/adesign/processdesign.jsp</result>
+		      <result name="printPre">/page/ea/main/production/adesign/processdesign_print.jsp</result>
+		      <result name="upsub">/page/ea/main/production/adesign/processdesign_revise.jsp</result>
+		      <result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="productdesign.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="prodesign-jsonajax" namespace="/ea/prodesign" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.production.action.adesign.ProductionDesignAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

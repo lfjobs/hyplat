@@ -1,5 +1,8 @@
 package com.hst.ces.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
@@ -10,6 +13,7 @@ import java.security.NoSuchAlgorithmException;
  * SHA256算法工具
  */
 public class SHAUtil {
+	private static final Logger logger = LoggerFactory.getLogger(SHAUtil.class);
 
 
     /**
@@ -23,7 +27,7 @@ public class SHAUtil {
             messageDigest.update(str.getBytes(StandardCharsets.UTF_8));
             encodeStr = byte2Hex(messageDigest.digest());
         } catch (NoSuchAlgorithmException ex) {
-            ex.printStackTrace();
+            logger.error("操作异常", ex);
         }
         return encodeStr;
     }
@@ -71,7 +75,7 @@ public class SHAUtil {
                 sb.append(Integer.toHexString((item & 0xFF) | 0x100).substring(1, 3));
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
+            logger.error("操作异常", ex);
         }
         return sb.toString();
     }

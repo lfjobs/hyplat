@@ -28,6 +28,7 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 public class bindNfcAction {
+	private static final Logger logger = LoggerFactory.getLogger(bindNfcAction.class);
     private final Logger logger = LoggerFactory.getLogger(bindNfcAction.class);
     @Resource
     private BaseBeanService baseBeanService;
@@ -202,7 +203,7 @@ public class bindNfcAction {
             JSONObject jsonArray = JSONObject.fromObject(map, jsonConfig);
             result = jsonArray.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }

@@ -56,6 +56,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class QRShareAction {
+	private static final Logger logger = LoggerFactory.getLogger(QRShareAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -245,7 +246,7 @@ public class QRShareAction {
             content = contentToFileService.getContent(path1
                     + goodFunction.getUrl());
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         // 查询产品
         productPackaging = (ProductPackaging) baseBeanService
@@ -634,7 +635,7 @@ public class QRShareAction {
                 try {
                     Thread.sleep(1000);//毫秒
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
             scManageService.delTransformVideo(share_path);
@@ -1062,8 +1063,8 @@ public class QRShareAction {
                     request.setAttribute("auditStatus", objs2[16]==null?"":objs2[16].toString());
                 }
          }catch (Exception e){
-             e.printStackTrace();
-             System.out.println(carManage.getCarmID());
+             logger.error("操作异常", e);
+             logger.info("调试信息");
             }
     	}else{
 
@@ -1298,7 +1299,7 @@ public class QRShareAction {
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "feeset";
     }

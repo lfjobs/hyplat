@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="mobileresponsibilitiessummary-token" namespace="/ea/mobileresponsibilitiessummary"   extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.MobileResponsibilitiesSummaryAction" method="{1}">
+		     <result name="responsibilitiessummarylist">/page/mobile/main/human/office/production/ResponsibilitiesSummary.jsp</result>
+		</action>
+	</package>
+	<!-- <package strict-method-invocation="false" name="mobileresponsibilitiessummary-ntoken" namespace="/ea/mobileresponsibilitiessummary"  extends="ea-ntoken"> -->
+	<package strict-method-invocation="false" name="mobileresponsibilitiessummary-ntoken" namespace="/ea/mobileresponsibilitiessummary"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.MobileResponsibilitiesSummaryAction" method="{1}">
+			 <result name="responsibilitiessummarylist">/page/mobile/main/human/office/production/ResponsibilitiesSummary.jsp</result>
+			 <result name="responsibilitiessummarylistSummary">/page/mobile/main/human/office/company/ResponsibilitiesSummary.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="responsibilitiessummary.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="mobileresponsibilitiessummary-jsonajax" namespace="/ea/mobileresponsibilitiessummary" extends="ea-sajax">
+		<action name="sajax_ea_*" class="hy.ea.human.action.MobileResponsibilitiesSummaryAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="mobileresponsibilitiessummary-njsonajax" namespace="/ea/mobileresponsibilitiessummary"
+		extends="json-default">
+		<action name="sajax_n_ea_*"
+			class="hy.ea.human.action.MobileResponsibilitiesSummaryAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,5 +1,8 @@
 package hy.ea.util.baidu;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.wechat.bo.sft.BusinessLicenseInfo;
 import net.sf.json.JSONObject;
 
@@ -9,6 +12,7 @@ import java.net.URLEncoder;
  * 营业执照识别
  */
 public class BusinessLicense {
+	private static final Logger logger = LoggerFactory.getLogger(BusinessLicense.class);
 
     /**
      * 重要提示代码中所需工具类
@@ -36,7 +40,7 @@ public class BusinessLicense {
             String accessToken = AuthService.getAuth();
 
             String result = HttpUtil.post(url, accessToken, param);
-            System.out.println(result);
+            logger.info("值：{}", result);
 
             JSONObject jo = JSONObject.fromObject(result);
             JSONObject jsonObject = jo.getJSONObject("words_result");
@@ -47,7 +51,7 @@ public class BusinessLicense {
             businessLicenseInfo.setLegal_person(jsonObject.getJSONObject("法人").getString("words"));
             return businessLicenseInfo;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return null;
     }

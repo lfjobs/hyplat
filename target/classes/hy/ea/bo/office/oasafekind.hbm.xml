@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="OASafeKind" table="DT_OA_SAFEKIND">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="id">
+			<column length="50" name="id"/>
+		</property>
+		<property name="parentID">
+			<column length="50" name="parentID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="name">
+			<column length="250" name="name"/>
+		</property>
+		<property name="descRiption">
+			<column length="400" name="descRiption"/>
+		</property>
+		<property name="guideline">
+			<column length="100" name="guideline" />
+		</property>
+		<property name="attachment">
+			<column length="150" name="attachment" />
+		</property>
+		<property name="status">
+			<column length="50" name="status" />
+		</property>
+	</class>
+</hibernate-mapping>

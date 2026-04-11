@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -48,6 +51,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class OASafeInspectInfoAction {
+	private static final Logger logger = LoggerFactory.getLogger(OASafeInspectInfoAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -257,7 +261,7 @@ public class OASafeInspectInfoAction {
 					null, null);
 
 		} catch (ParseException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}

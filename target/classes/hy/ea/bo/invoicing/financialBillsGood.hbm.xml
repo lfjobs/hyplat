@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="FinancialBillsGood" table="dt_inv_fbg">
+		<id length="50" name="financialgoodKey">
+			<column length="50" name="financialgoodKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="financialgoodID">
+			<column length="50" name="financialgoodID" />
+		</property>
+		<property name="financialbillID">
+			<column length="50" name="financialbillID" />
+		</property>
+		<property name="financialbillIDyh">
+			<column length="50" name="financialbillIDyh" />
+		</property>
+		<property name="financialbillIDrk">
+			<column length="50" name="financialbillIDrk" />
+		</property>
+		<property name="goodsBillsID">
+			<column length="50" name="goodsBillsID" />
+		</property>
+		<property name="numbers">
+			<column length="50" name="numbers" />
+		</property>
+		<property name="inventoryID">
+			<column length="50" name="inventoryID" />
+		</property>
+		<property name="inventoryName">
+			<column length="250" name="inventoryName" />
+		</property>
+		<property name="goodsID" >
+			<column length="50" name="goodsID" />
+		</property>
+		<property name="goodsName">
+			<column length="250" name="goodsName" />
+		</property>
+		<property name="goodsNum">
+			<column length="250" name="goodsNum" />
+		</property>
+		<property  name="modelNumber">
+			<column length="250" name="modelNumber" />
+		</property>
+		<property  name="brand">
+			<column length="50" name="brand" />
+		</property>
+		<property  name="type">
+			<column length="250" name="type" />
+		</property>
+		<property name="sortCode">
+			<column length="250" name="sortCode"/>
+		</property>
+		<property name="defaultStorage">
+			<column length="250" name="defaultStorage"/>
+		</property>
+		<property  name="quantity">
+			<column length="250" name="quantity" sql-type="number"/>
+		</property>
+		<property  name="unitPrice">
+			<column length="250" name="unitPrice" />
+		</property>
+		<property  name="amount">
+			<column length="250" name="amount" />
+		</property>
+		<property  name="unit">
+			<column length="250" name="unit" />
+		</property>
+		<property  name="remindContent">
+			<column length="250" name="remindContent" />
+		</property>
+		<property  name="status">
+			<column length="250" name="status" />
+		</property>
+		<property  name="goodstatus">
+			<column length="250" name="goodstatus" />
+		</property>
+		<property  name="storageQuantity">
+			<column length="50" name="storageQuantity" sql-type="number"/>
+		</property>
+		<property  name="reQuantity">
+			<column length="250" name="reQuantity"  sql-type="number"/>
+		</property>
+		<property  name="isQualify">
+			<column length="250" name="isQualify" sql-type="number"/>
+		</property>
+		<property name="subjectsID">
+        	<column name="subjectsID" length="50"/>
+        </property>
+        <property name="subjectsName">
+        	<column name="subjectsName" length="250"/>
+        </property>
+		<!--未使用字段  -->
+		<property  name="paymentType">
+			<column length="250" name="paymentType" />
+		</property>
+		<property  name="logisticsType">
+			<column length="250" name="logisticsType" />
+		</property>
+		<property  name="purchasemode">
+			<column length="50" name="purchasemode" />
+		</property>
+		<property  name="stocktakingQuantity">
+			<column length="250" name="stocktakingQuantity" sql-type="number"/>
+		</property>
+		<property  name="stocktakingresults">
+			<column length="10" name="stocktakingresults" />
+		</property>
+		<property  name="invenQuantity">
+			<column length="250" name="invenQuantity" sql-type="number"/>
+		</property>
+		<property  name="surveyAmount">
+			<column length="250" name="surveyAmount" />
+		</property>
+		<property  name="errorAmount">
+			<column length="250" name="errorAmount" />
+		</property>
+		<property  name="processOpinion">
+			<column length="250" name="processOpinion" />
+		</property>
+		
+		<property  name="shiftQuantity">
+			<column length="250" name="shiftQuantity" sql-type="number"/>
+		</property>
+		<property name="ku">
+			<column length="250" name="ku" />
+		</property>
+		<property  name="qu">
+			<column length="250" name="qu" />
+		</property>
+		<property  name="jia">
+			<column length="250" name="jia" />
+		</property>
+		<property  name="wei">
+			<column length="250" name="wei" />
+		</property>
+		
+        <property name="cashApplyBillsID" >
+			<column length="50" name="cashApplyBillsID" />
+		</property>
+		<property name="appropriationmoney">
+        	<column name="appropriationmoney" length="250"/>
+        </property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+
+    <package strict-method-invocation="false" name="mini-jsonajax" namespace="/ea/wxmini" extends="json-default">
+        <action name="sajax_ea_*" class="com.tiantai.wfj.front.WeChatMiniAction" method="{1}">
+            <result name="success" type="stream">
+                <param name="contentType">text/plain</param>
+                <param name="inputName">result</param>
+            </result>
+
+            <!-- JSON 类型返回 -->
+            <result name="json" type="json">
+                <!-- 可选参数 -->
+                <param name="root">jsonResult</param>
+            </result>
+        </action>
+
+    </package>
+</struts>

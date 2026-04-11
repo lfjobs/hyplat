@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ <class name="com.tiantai.wfj.bo.CusComAuth" schema="HYPLAT" table="T_ESHOP_CusComAuth">
+  <id name="cakey" type="java.lang.String">
+   <column length="50" name="cakey"/>
+   <generator class="uuid"/>
+  </id>
+  <property  name="caId" type="java.lang.String">
+   <column length="50" name="caId"/>
+  </property>
+  <property  name="sccId" type="java.lang.String">
+   <column length="50" name="sccId"/>
+  </property>
+  <property  name="account" type="java.lang.String">
+   <column length="60" name="account"/>
+  </property>
+  <property  name="staffid" type="java.lang.String">
+   <column length="50" name="staffid"/>
+  </property>
+  <property  name="coinfee" type="java.lang.String">
+   <column length="1" name="coinfee">
+    <comment>金币积分是否自动扣费 0不自动扣费 1 自动扣费</comment>
+   </column>
+  </property>
+  <property  name="wxfee" type="java.lang.String">
+   <column length="1" name="wxfee"><comment>上微信是否自动扣费0不自动扣费 1 自动扣费</comment></column>
+  </property>
+
+  <property  name="coinDate" type="java.util.Date">
+   <column name="coinDate">
+    <comment>金币积分自动扣费开通时间</comment>
+   </column>
+  </property>
+  <property  name="wxDate" type="java.util.Date">
+   <column name="wxDate">
+    <comment>微信是自动扣费开通时间</comment>
+   </column>
+  </property>
+  <property  name="source" type="java.lang.String">
+   <column name="source">
+   	<comment>开通来源</comment>
+   </column>
+  </property>
+  <property  name="ktip" type="java.lang.String">
+   <column name="ktip">
+    <comment>提示开通</comment>
+   </column>
+  </property>
+ </class>
+</hibernate-mapping>

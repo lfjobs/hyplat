@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="productdesign-token" namespace="/ea/productdesign"   extends="struts-default">
+		<action name="t_ea_*" class="hy.ea.human.action.ProductdesignAction" method="{1}">
+		      <result name="productDesign">/page/ea/main/human/office/SersonnelSystem/Productdesign.jsp</result>
+		      <result name="productByFive">/page/ea/main/marketing/Productdesign.jsp</result>
+		</action>
+	</package> 
+	<package strict-method-invocation="false" name="productdesign-ntoken" namespace="/ea/productdesign"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.ProductdesignAction" method="{1}">
+			 <result name="list">/page/ea/main/marketing/FilePackageProduct.jsp</result>
+			 <result name="gList">/page/ea/main/marketing/GFilePackageProduct.jsp</result>
+			 <result name="cList">/page/ea/main/marketing/CFilePackageProduct.jsp</result>
+			 <result name="productByFive">/page/ea/main/marketing/Productdesign.jsp</result>
+			 <result name="productDesign">/page/ea/main/human/office/SersonnelSystem/Productdesign.jsp</result>
+			<result name="supermarketDesign">/page/ea/main/human/office/SersonnelSystem/supermarketDesign.jsp</result>
+			 <result name="toProPrint">/page/ea/main/human/office/SersonnelSystem/Productdesign_print .jsp</result>
+			 <result name="productdesignAddorEdit">/page/ea/main/human/office/SersonnelSystem/productdesign_add.jsp</result>
+			 <result name="productdesignEdit">/page/ea/main/human/office/SersonnelSystem/productdesign_edit.jsp</result>
+			 <!-- <result name="yjproductPublish">/page/ea/main/human/office/SersonnelSystem/brokerage_add.jsp</result> -->
+			 <result name="addjiagePage">/page/ea/packajiage.jsp</result>
+			 <result name="productdesignjiage"></result>
+			 <!-- 产品设计新增与编辑 -->
+			 <result name="toAddOrEditProductDesign">/page/ea/main/human/office/SersonnelSystem/addOrEditProductDesign.jsp</result>
+			<result name="toAddOrEditPercentageDesign">/page/ea/main/human/office/SersonnelSystem/addOrEditPercentageDesign.jsp</result>
+			 <result name="yongjin">/page/ea/main/human/office/SersonnelSystem/brokerage_add.jsp</result>
+			<result name="yongjinPercent">/page/ea/main/human/office/SersonnelSystem/percentage_add.jsp</result>
+			 <result name="productPublish">/page/ea/main/human/office/SersonnelSystem/productPublish.jsp</result>
+			 <result name="success">/page/ea/success.jsp</result> 
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="responsibilities.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="not_login">/page/ea/not_login.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="productdesign-jsonajax" namespace="/ea/productdesign" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.ProductdesignAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="productdesign-njsonajax" namespace="/ea/productdesign"
+		extends="json-default">
+		<action name="sajax_n_ea_*"
+			class="hy.ea.human.action.ProductdesignAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

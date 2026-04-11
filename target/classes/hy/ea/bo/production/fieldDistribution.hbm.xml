@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="FieldDistribution" table="DTFIELDDISTRIBUTION">
+		<id length="50" name="fieldDistributionKey">
+			<column length="50" name="FIELDDISTRIBUTIONKEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="fieldDistributionId">
+			<column length="50" name="FIELDDISTRIBUTIONID"><comment>逻辑主键</comment></column>
+		</property>
+		<property name="startTime">
+			<column length="50" name="STARTTIME"><comment>开始时间</comment></column>
+		</property>
+		<property name="endTime">
+			<column length="50" name="ENDTIME"><comment>结束时间</comment></column>
+		</property>
+		<property name="staffId">
+			<column length="50" name="STAFFID"><comment>场地责任人ID</comment></column>
+		</property>
+		<property name="staffName">
+			<column length="50" name="STAFFNAME"><comment>场地责任人名称</comment></column>
+		</property>
+		<property name="siteAddress">
+			<column length="50" name="SITEADDRESS"><comment>地址</comment></column>
+		</property>
+		<property name="ppId">
+			<column length="50" name="PPID"><comment>产品ID</comment></column>
+		</property>
+		<property name="duty">
+			<column length="50" name="DUTY"><comment>职责</comment></column>
+		</property>
+		<property name="remarks">
+			<column length="50" name="REMARKS"><comment>备注</comment></column>
+		</property>
+		<property name="companyId">
+			<column length="50" name="companyId"><comment>公司ID</comment></column>
+		</property>
+		<property name="ppName">
+			<column length="50" name="ppName"><comment>产品名称</comment></column>
+		</property>
+		<property name="distributionTime">
+			<column length="50" name="distributionTime"><comment>分配时间</comment></column>
+		</property>
+		<property name="productCode">
+			<column length="50" name="productCode"><comment>产品编号</comment></column>
+		</property>
+		<property name="status">
+			<column length="50" name="status"><comment>状态</comment></column>
+		</property>
+		<property name="type">
+			<column length="50" name="type"><comment>生产类别</comment></column>
+		</property>
+		<property name="category">
+			<column length="50" name="category"><comment>产品类型</comment></column>
+		</property>
+		<property name="proDocumentsID">
+			<column length="50" name="proDocumentsID"><comment>生产批次ID</comment></column>
+		</property>
+		<property name="fiveClear">
+			<column length="50" name="fiveClear"><comment>组织机构</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

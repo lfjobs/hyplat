@@ -1,5 +1,8 @@
 package hy.ea.company.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 往来单位
  *@author 陈小丰
@@ -33,6 +36,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class ContactConnectionAction {
+	private static final Logger logger = LoggerFactory.getLogger(ContactConnectionAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -71,7 +75,7 @@ public class ContactConnectionAction {
 			session.put("tablesearch", cview);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return getListContactConnection();
 	}
@@ -123,7 +127,7 @@ public class ContactConnectionAction {
 					dc.add(Restrictions.eq("industryType", industryType));
 				} catch (UnsupportedEncodingException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 			if(null!=cview.getContactConnections()&&!"".equals(cview.getContactConnections()))

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="Cart" table="DT_cart" schema="HYPLAT" dynamic-insert="true">
+	<comment>购物车</comment>
+		<id length="50" name="cartKey" type="java.lang.String">
+			<column length="50" name="cart_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="cartId" type="java.lang.String">
+			<column length="50" name="cart_Id" >
+			</column>
+		</property>
+		<property name="staffId" type="java.lang.String">
+			<column name="staff_Id" length="50">
+			<comment>人员Id</comment>
+			</column>
+		</property>
+		<property name="pid" type="java.lang.String">
+			<column length="50" name="pid" >
+			<comment>商品ID</comment>
+			</column>
+		</property>
+		<property name="pname" type="java.lang.String">
+			<column length="100" name="pname" >
+			<comment>商品名称</comment>
+			</column>
+		</property>
+		<property name="pic" type="java.lang.String">
+			<column length="400" name="pic" >
+			<comment>商品图片位置</comment>
+			</column>
+		</property>
+		<property name="price" type="java.lang.String">
+			<column length="8" name="price" >
+			<comment>商品价格</comment>
+			</column>
+		</property>
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="companyId" >
+			<comment>商品对应的公司ID</comment>
+			</column>
+		</property>
+		<property name="itemNum" type="java.lang.Integer">
+			<column length="8" name="itemNum" >
+			<comment>商品的数量</comment>
+			</column>
+		</property>
+		<property name="stardard" type="java.lang.String">
+			<column length="100" name="stardard" >
+			<comment>规格参数</comment>
+			</column>
+		</property>
+		<property name="pos" type="java.lang.String">
+			<column length="1" name="pos" >
+				<comment>0正常购物车 1：代购购物车</comment>
+			</column>
+		</property>
+		<property name="pricetype" type="java.lang.String">
+			<column length="1" name="pricetype" >
+				<comment>0零售价，1：批发价</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.finance.BenDis.Rewarddetail" table="DTREWARDDETAIL" schema="HYPLAT">
+        <id name="rdkey">
+            <column name="RDKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid" />
+        </id>
+        <property name="rdid">
+            <column name="RDID" sql-type="varchar2(50)" length="50"><comment></comment></column>
+        </property>
+        <property name="ppid">
+            <column name="PPID" sql-type="varchar2(50)" length="50"><comment>打赏新闻id</comment></column>
+        </property>
+        <property name="fbSccid">
+            <column name="FB_SCCID" sql-type="varchar2(50)" length="50"><comment>发布帐号id</comment></column>
+        </property>
+        <property name="fbAcount">
+            <column name="FB_ACOUNT" sql-type="varchar2(50)" length="50"><comment>发布帐号</comment></column>
+        </property>
+        <property name="rdSccid">
+            <column name="RD_SCCID" sql-type="varchar2(50)" length="50"><comment>打赏帐号id</comment></column>
+        </property>
+        <property name="rdAcount">
+            <column name="RD_ACOUNT" sql-type="varchar2(50)" length="50"><comment>发布帐号</comment></column>
+        </property>
+        <property name="rddate">
+            <column name="RDDATE" sql-type="date"><comment>打赏时间</comment></column>
+        </property>
+        <property name="rdmoney">
+            <column name="RDMONEY" sql-type="varchar2(50)" length="50"><comment>打赏金额</comment></column>
+        </property>
+        <property name="payway">
+            <column name="PAYWAY" sql-type="varchar2(50)" length="50"><comment>支付方式[00微信支付，01支付宝支付，02积分支付]</comment></column>
+        </property>
+        <property name="tradeStatus">
+            <column name="TRADE_STATUS" sql-type="varchar2(50)" length="50"><comment>交易类型[00初始状态未生成订单，01已生成订单交易完成，02生产订单失败]</comment></column>
+        </property>
+        <property name="tradeNo">
+            <column name="TRADE_NO" sql-type="varchar2(50)" length="50"><comment>第三方交易号</comment></column>
+        </property>
+        <property name="ordernum">
+            <column name="ORDERNUM" sql-type="varchar2(50)" length="50"><comment>订单号</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

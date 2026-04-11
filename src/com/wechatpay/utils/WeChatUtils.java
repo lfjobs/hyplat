@@ -1,5 +1,8 @@
 package com.wechatpay.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.lang.reflect.Method;
 import java.security.KeyFactory;
@@ -40,6 +43,7 @@ import javax.net.ssl.SSLContext;
 import javax.servlet.http.HttpServletRequest;
 
 public class WeChatUtils {
+	private static final Logger logger = LoggerFactory.getLogger(WeChatUtils.class);
 	private static int socketTimeout = 10000;// 连接超时时间，默认10秒
 	private static int connectTimeout = 30000;// 传输超时时间，默认30秒
 	private static RequestConfig requestConfig;// 请求器的配置
@@ -78,14 +82,14 @@ public class WeChatUtils {
 //		try {
 //			dateStr = dateFormat.format(date);
 //		} catch (Exception e) {
-//			e.printStackTrace();
+//			logger.error("操作异常", e);
 //		}
 //
 //		int times = 0;
 //		try {
 //			times = (int) ((Timestamp.valueOf(dateStr).getTime())/1000);
 //		} catch (Exception e) {
-//			e.printStackTrace();
+//			logger.error("操作异常", e);
 //		}
 		int times = new Long(System.currentTimeMillis()/1000L).intValue();
           System.out.print(times);
@@ -182,7 +186,7 @@ public class WeChatUtils {
 				}
 			}
 		} catch (Exception e) {
-			//e.printStackTrace();
+			//logger.error("操作异常", e);
 		}
 		return retMap;
 	}
@@ -328,7 +332,7 @@ public class WeChatUtils {
 		try {
 			initCert(mchId, certPath);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		String result = null;
 		HttpPost httpPost = new HttpPost(url);
@@ -345,13 +349,13 @@ public class WeChatUtils {
 			try {
 				response = httpClient.execute(httpPost);
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			HttpEntity entity = response.getEntity();
 			try {
 				result = EntityUtils.toString(entity, "UTF-8");
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		} finally {
 			httpPost.abort();
@@ -424,13 +428,13 @@ public class WeChatUtils {
 			inputStream = new FileInputStream(publicKeyPath);
 			publicKey = getPublicKey(inputStream,keyAlgorithm);
 		} catch (Exception e) {
-			e.printStackTrace();//EAD PUBLIC KEY ERROR
+			logger.error("操作异常", e);//EAD PUBLIC KEY ERROR
 		} finally {
 			if (inputStream != null){
 				try {
 					inputStream.close();
 				}catch (Exception e){
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 		}
@@ -457,7 +461,7 @@ public class WeChatUtils {
 			PublicKey publicKey = keyFactory.generatePublic(pubX509);
 			return publicKey;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			throw new Exception("READ PUBLIC KEY ERROR:", e);
 		} finally {
 			try {

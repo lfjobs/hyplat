@@ -1,5 +1,8 @@
 package hy.ea.marketing.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.PosDevice;
 import com.tiantai.wfj.bo.SqSelfCart;
 import hy.ea.bo.company.ContactCompany;
@@ -151,7 +154,7 @@ public class SupermarketServiceImpl implements SupermarketSerivce {
             baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, null, null);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             result = "0";
         }
 
@@ -220,7 +223,7 @@ public class SupermarketServiceImpl implements SupermarketSerivce {
 
             result = "1";
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             result = "0";
         }
         return result;
@@ -255,7 +258,7 @@ public class SupermarketServiceImpl implements SupermarketSerivce {
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
 
         }
     }

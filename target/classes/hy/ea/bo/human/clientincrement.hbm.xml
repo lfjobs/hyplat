@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="ClientIncrement" table="dtClientIncrement" >
+		<id length="50" name="clientIncrementKey">
+			<column length="50" name="clientIncrementKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="clientIncrementID">
+        	<column name="clientIncrementID" length="50"/>
+        </property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="clientCode">
+			<column length="250" name="clientCode" />
+		</property>
+		<property name="clientName">
+			<column length="250" name="clientName" />
+		</property>
+		<property name="clientService">
+			<column length="250" name="clientService"/>
+		</property>
+		<property name="clientComplaint">
+			<column length="250" name="clientComplaint"/>
+		</property>
+		<property name="clientAppraise">
+			<column length="250" name="clientAppraise"/>
+		</property>
+		<property name="clientFeedback">
+			<column  length="250" name="clientFeedback" />
+		</property>
+		<property  name="tack">
+			<column length="250" name="tack" />
+		</property>
+		<property name="remark">
+			<column length="250" name="remark"/>
+		</property>
+	</class>
+</hibernate-mapping>

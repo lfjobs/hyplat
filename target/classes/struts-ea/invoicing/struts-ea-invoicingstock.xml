@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="stock-token"  namespace="/ea/stock" extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.invoicing.action.InvoicingStockAction" method="{1}">
+			<result name="Stocktakinglist">/page/ea/main/finance/invoicing/stocktaking_list.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="stock-ntoken"  namespace="/ea/stock"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.invoicing.action.InvoicingStockAction" method="{1}">
+			<result name="failed">/page/ea/fail.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<!--盘库管理-->
+			<result name="Stocktakinglist">/page/ea/main/finance/invoicing/stocktaking_list.jsp</result>
+			<result name="addstocktaking">/page/ea/main/finance/invoicing/stocktaking_add.jsp</result>
+			<result name="tostocktaking">/page/ea/main/finance/invoicing/stocktaking_edit.jsp</result>
+			<result name="tostocktakingprint">/page/ea/main/finance/invoicing/stocktaking_print.jsp</result>
+			<!--移库管理-->
+			<result name="ShiftList">/page/ea/main/finance/invoicing/shift_list.jsp</result>
+			<result name="addshift">/page/ea/main/finance/invoicing/shift_add.jsp</result>
+			<result name="toShift">/page/ea/main/finance/invoicing/shift_edit.jsp</result>
+			<result name="toShiftprint">/page/ea/main/finance/invoicing/shift_print.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="stock-jsonajax" namespace="/ea/stock" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.invoicing.action.InvoicingStockAction" method="{1}">
+		<result name="syserror">/page/ea/sys_error.jsp</result>
+				<!-- 返回类型为json 在sjon-default中定义 -->  
+	            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

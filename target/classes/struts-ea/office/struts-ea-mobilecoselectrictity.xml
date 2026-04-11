@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	
+	<package strict-method-invocation="false" name="mobileelectricity-ntoken" namespace="/ea/mobilecoselectrictity"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.office.action.MobileCOSElectricityAction" method="{1}">
+			<result name="list">/page/mobile/main/office_ea/electricity.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="electricity.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

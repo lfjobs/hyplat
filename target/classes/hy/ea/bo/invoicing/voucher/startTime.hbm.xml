@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing.voucher">
+	<class name="startTime" table="dt_inv_startTime">
+		<id length="50" name="startKey">
+			<column length="50" name="startKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="startID">
+			<column length="50" name="startID" />
+		</property>
+		<property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+        <property name="companyName">
+			<column length="250" name="companyName" />
+		</property>
+		<property name="startTime">
+        	<column sql-type="Date" name="startTime"/>
+        </property>
+	</class>
+</hibernate-mapping>

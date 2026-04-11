@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.invoicing.Shouhuobill" table="DT_shouhuoBILL" schema="HYPLAT">
+        <id name="shkey">
+        <column name="shKEY" sql-type="varchar2(50)"/>
+        <generator class="uuid"></generator>
+    </id>
+        <property name="shid">
+            <column name="shID" sql-type="varchar2(50)" not-null="true"><comment></comment></column>
+        </property>
+        <property name="cashid">
+            <column name="cashid" sql-type="varchar2(50)"><comment></comment></column>
+        </property>
+        <property name="transportid">
+            <column name="transportid" sql-type="varchar2(50)"><comment></comment></column>
+        </property>
+        <property name="journalnum">
+            <column name="JOURNALNUM" sql-type="varchar2(50)" ><comment>单据编号</comment></column>
+        </property>
+        <property name="companyid">
+            <column name="COMPANYID" sql-type="varchar2(50)" ><comment>公司id</comment></column>
+        </property>
+        <property name="staffid">
+            <column name="STAFFID" sql-type="varchar2(50)" ><comment>责任人id</comment></column>
+        </property>
+        <property name="staffname">
+            <column name="STAFFNAME" sql-type="varchar2(50)" ><comment>责任人名字</comment></column>
+        </property>
+        <property name="ghcomname">
+            <column name="ghcomname" sql-type="varchar2(50)" ><comment>供货商id</comment></column>
+        </property>
+        <property name="ghcomid">
+            <column name="ghcomid" sql-type="varchar2(50)" ><comment>供货商名字</comment></column>
+        </property>
+        <property name="cgstaffname">
+            <column name="cgstaffname" sql-type="varchar2(50)" ><comment>采购人id</comment></column>
+        </property>
+        <property name="cgstaffid">
+            <column name="cgstaffid" sql-type="varchar2(50)" ><comment>采购人名字</comment></column>
+        </property>
+        <property name="adddate">
+            <column name="ADDDATE" sql-type="date" ><comment>添加时间</comment></column>
+        </property>
+        <property name="status">
+            <column name="STATUS" sql-type="varchar2(50)" ><comment>单据状态  01:入库</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

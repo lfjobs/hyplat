@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EnterpriseReport" table="dtEnterpriseReport">
+		<id length="50" name="reportKey">
+			<column length="50" name="reportKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="reportID">
+			<column length="50" name="reportID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="reportDate">
+			<column name="reportDate" />
+		</property>
+		<property  name="companyName">
+			<column length="250" name="companyName" />
+		</property>
+		<property  name="reportName">
+			<column length="250" name="reportName" />
+		</property>
+		<property  name="reportContent">
+			<column length="256" name="reportContent" />
+		</property>
+		<property  name="reportStatus">
+			<column length="250" name="reportStatus" />
+		</property>
+		<property  name="remark">
+			<column length="256" name="remark" />
+		</property>
+	</class>
+</hibernate-mapping>

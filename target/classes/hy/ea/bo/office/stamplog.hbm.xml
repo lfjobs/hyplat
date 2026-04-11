@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="StampLog" table="DT_OA_STAMPLOG">
+		<id length="50" name="stampLogKey">
+			<column length="50" name="stampLogKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="stampLogID">
+			<column length="50" name="stampLogID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="enterpriseStampID">
+			<column length="50" name="enterpriseStampID"/>
+		</property>
+		<property name="stampDate">
+			<column name="stampDate" />
+		</property>
+		<property name="corganizationID">
+			<column length="50" name="corganizationID" />
+		</property>
+		<property name="documentsTheme">
+			<column length="250" name="documentsTheme" />
+		</property>
+		<property name="contractorsCode">
+			<column length="256" name="contractorsCode" />
+		</property>
+		<property name="contractors">
+			<column length="256" name="contractors" />
+		</property>
+		<property name="contractorsId">
+			<column length="50" name="contractorsId" />
+		</property>
+		<property name="stampCopies">
+			<column length="250" name="stampCopies" />
+		</property>
+		<property name="note">
+			<column length="256" name="note" />
+		</property>
+		<property name="fileId">
+			<column length="50" name="fileId" />
+		</property>
+		<property name="fileName">
+			<column length="200" name="fileName" />
+		</property>
+		<property name="docTitle">
+			<column length="50" name="docTitle" />
+		</property>
+		<property name="operateType">
+			<column length="50" name="operateType" />
+		</property>
+			<property name="addType">
+			<column length="20" name="addType" />
+		</property>
+		<property name="scanAttach">
+			<column length="500" name="scanAttach" />
+		</property>
+		<property name="createTime">
+			<column length="50" name="createTime" />
+		</property>
+		<property name="creator">
+			<column length="50" name="creator" />
+		</property>
+		<property name="ext">
+			<column length="5" name="ext" />
+		</property>
+	</class>
+</hibernate-mapping>

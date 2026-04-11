@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="CEMB" table="dtCEMB">
+		<id name="embKey">
+			<column length="50" name="embKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="embID">
+			<column length="50" name="embID" not-null="true" />
+		</property>
+		<property  name="companyID">
+			<column length="50" name="companyID" not-null="true" />
+		</property>
+		<property name="eaID">
+			<column length="50" name="eaID" not-null="true" />
+		</property>
+		<property name="menuID">
+			<column length="50" name="menuID" not-null="true" />
+		</property>
+		<property name="boID">
+			<column length="50" name="boID" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

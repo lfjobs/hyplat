@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human">
+    <class name="CSP" table="dtCsp">
+        <id name="cspKey" length="50" >
+        	<column name="cspKey" length="50"/>
+        	<generator class="uuid" />
+        </id>
+        <property name="cspID">
+        	<column name="cspID"  length="50"  not-null="true"/>
+        </property>
+        <property name="companyID">
+        	<column name="companyID" length="50"  not-null="true"/>
+        </property>
+        <property name="staffID" >
+        	<column name="staffID" length="50"  not-null="true"/>
+        </property>
+        <property name="payScaleID" >
+        	<column name="payScaleID" length="50"  not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="COSPayGradeModulation" table="dtCOSPayGradeModulation">
+		<id length="50" name="pgmKey">
+			<column length="50" name="pgmKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="pgmID">
+			<column length="50" name="pgmID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true"/>
+		</property>
+		<property name="voucherNomber">
+			<column length="250" name="voucherNomber"/>
+		</property>
+		<property name="affix">
+			<column length="256" name="affix"/>
+		</property>
+		<property name="deptID">
+			<column length="250" name="deptID" />
+		</property>
+		<property  name="dutyOfficer">
+			<column length="250" name="dutyOfficer" />
+		</property>
+		<property  name="addTime">
+			<column length="250" name="addTime" />
+		</property>
+		<property name="staffCode">
+			<column length="250" name="staffCode"/>
+		</property>
+		<property name="currentLevel">
+			<column length="250" name="currentLevel"/>
+		</property>
+		<property name="primaryLevel">
+			<column length="250" name="primaryLevel"/>
+		</property>
+		<property name="startDate">
+			<column length="50" name="startDate" />
+		</property>
+		<property  name="endDate">
+			<column length="50" name="endDate" />
+		</property>
+		<property  name="levelDetail">
+			<column length="250" name="levelDetail" />
+		</property>
+		<property name="selfRating">
+			<column length="256" name="selfRating"/>
+		</property>
+		<property name="classes0">
+			<column length="250" name="classes0"/>
+		</property>
+		<property name="reason">
+			<column length="256" name="reason" />
+		</property>
+		<property  name="suggestion">
+			<column length="256" name="suggestion" />
+		</property>
+		<property  name="managerName">
+			<column length="250" name="managerName" />
+		</property>
+		<property name="supervisor">
+			<column length="250" name="supervisor"/>
+		</property>
+		<property name="auditer">
+			<column length="250" name="auditer"/>
+		</property>
+		<property name="accountant">
+			<column length="250" name="accountant"/>
+		</property>
+		<property name="casher">
+			<column length="250" name="casher" />
+		</property>
+		<property  name="headManager">
+			<column length="250" name="headManager" />
+		</property>
+		<property  name="headSupervisor">
+			<column length="250" name="headSupervisor" />
+		</property>
+		<property name="headAuditer">
+			<column length="250" name="headAuditer"/>
+		</property>
+		<property name="headAccountant">
+			<column length="250" name="headAccountant"/>
+		</property>
+		<property name="headCasher">
+			<column length="250" name="headCasher"/>
+		</property>
+	</class>
+</hibernate-mapping>

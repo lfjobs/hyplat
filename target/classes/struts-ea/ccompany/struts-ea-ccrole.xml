@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+     <package strict-method-invocation="false" name="ccrole-token" namespace="/ea/ccrole" extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.ccompany.action.CCRoleAction" method="{1}">
+			<result name="failed">/page/ea/ccompany/crole/crole_edit.jsp</result>
+			<result name="list">/page/ea/ccompany/crole/crole_list.jsp</result>
+			<result name="invalid.token" type="redirectAction">ea_getListCRole</result>
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="ccrole-ntoken"  namespace="/ea/ccrole" extends="struts-default">
+		<action name="ea_*" class="hy.ea.ccompany.action.CCRoleAction" method="{1}">
+			<result name="list">/page/ea/ccompany/crole/crole_list.jsp</result>
+			<result name="to_edit">/page/ea/ccompany/crole/crole_edit.jsp</result>
+		</action>
+	</package>
+	
+</struts>

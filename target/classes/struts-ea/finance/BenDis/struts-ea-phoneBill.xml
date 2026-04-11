@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="hypb-sajaxs" namespace="/ea/hypb" extends="json-default">
+		<action name="sajax_*" class="hy.ea.finance.action.BenDis.hy_phoneBillAction" method="{1}">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="hypb-ntoken" namespace="/ea/hypb" extends="struts-default">
+		<action name="ea_*" class="hy.ea.finance.action.BenDis.hy_phoneBillAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="list">/page/ea/main/finance/BenDis/phoneBill_list.jsp</result>
+			<result name="edit">/page/ea/main/finance/BenDis/phoneBill_mingxi.jsp</result>
+			<result name="refundDetails">/page/ea/main/finance/mobile/mobileRight_list1.jsp</result>
+			
+			<result name="sh" type="redirectAction">
+			    <param name="actionName">ea_receipt.jspa?</param>
+			    <param name="namespace">/ea/consignee/</param>
+			    <param name="user">${user}</param>
+			    <param name="sta">00</param>
+			    <param name="tupn">goods</param>
+			    <param name="stype"></param>
+			    <param name="stype3"></param>
+			</result>        
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ghspb-sajaxs" namespace="/ea/ghspb" extends="json-default">
+		<action name="sajax_*" class="hy.ea.finance.action.BenDis.ghs_phoneBillAction" method="{1}">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ghspb-ntoken" namespace="/ea/ghspb" extends="struts-default">
+		<action name="ea_*" class="hy.ea.finance.action.BenDis.ghs_phoneBillAction" method="{1}">
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="list">/page/ea/main/finance/BenDis/phoneBill_list_gys.jsp</result>
+			<result name="edit">/page/ea/main/finance/BenDis/phoneBill_mingxi_gys.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocumentPass" table="DT_OA_DOCUMENT_PASS">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="passId" type="java.lang.String">
+			<column name="passId" length="50" />
+		</property>
+		<property name="docId" type="java.lang.String">
+			<column name="docId" length="50" />
+		</property>
+		<property name="subscriber2" type="java.lang.String">
+			<column name="subscriber2" length="50" />
+		</property>
+		<property name="toSubscriber2" type="java.lang.String">
+			<column name="toSubscriber2" length="50" />
+		</property>
+		<property name="deptOfsub2" type="java.lang.String">
+			<column name="deptOfsub2" length="50" />
+		</property>
+		<property name="deptOftoSub2" type="java.lang.String">
+			<column name="deptOftoSub2" length="50" />
+		</property>
+		<property name="companyIDOfsub2" type="java.lang.String">
+			<column name="companyIDOfsub2" length="50" />
+		</property>
+		<property name="companyIDOftosub2" type="java.lang.String">
+			<column name="companyIDOftosub2" length="50" />
+		</property>
+		<property name="passTime" type="java.util.Date">
+			<column name="passTime" length="20" />
+		</property>
+
+	</class>
+</hibernate-mapping>

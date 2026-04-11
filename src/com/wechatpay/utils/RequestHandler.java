@@ -1,5 +1,8 @@
 package com.wechatpay.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 
@@ -39,6 +42,7 @@ import javax.servlet.http.HttpServletResponse;
  '============================================================================
  '*/
 public class RequestHandler {
+	private static final Logger logger = LoggerFactory.getLogger(RequestHandler.class);
 	/** Token获取网关地址地址 */
 	private String tokenUrl;
 	/** 预支付网关url地址 */
@@ -157,7 +161,7 @@ public class RequestHandler {
 
 		// 去掉最后一个&
 		String packageValue = sb.append("sign=" + sign).toString();
-//		System.out.println("UrlEncode后 packageValue=" + packageValue);
+//		logger.info("UrlEncode后 packageValue=: {}", packageValue);
 		return packageValue;
 	}
 
@@ -178,10 +182,10 @@ public class RequestHandler {
 			}
 		}
 		sb.append("key=" + this.getKey());
-		System.out.println(sb.toString());
+		logger.info("调试信息");
 		String sign = MD5Util.MD5Encode(sb.toString(), this.charset)
 				.toUpperCase();
-        System.out.println(sign+"统一订单");
+        logger.info("调试信息");
 
 		return sign;
 
@@ -249,8 +253,8 @@ public class RequestHandler {
 		try {
 			sha = MessageDigest.getInstance("SHA");
 		} catch (Exception e) {
-			System.out.println(e.toString());
-			e.printStackTrace();
+			logger.info("调试信息");
+			logger.error("操作异常", e);
 			return "";
 		}
 

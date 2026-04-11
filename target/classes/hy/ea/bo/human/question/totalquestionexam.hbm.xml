@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.question">
+	<class name="TotalQuestionExam" table="dt_q_TotalQuestionExam">
+		<id length="50" name="tqKey">
+			<column length="50" name="tqKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="tqeID">
+			<column length="50" name="tqeID"><comment>考试ID</comment></column>
+		</property>
+		<property name="tqID">
+			<column length="50" name="tqID"><comment>ID</comment></column>
+		</property>
+		<property name="duration">
+			<column length="10" name="duration"><comment>时长 分钟</comment></column>
+		</property>
+		<property name="totalscore">
+			<column length="10" name="totalscore"><comment>总分数</comment></column>
+		</property>
+		<property name="totalQues">
+			<column length="10" name="totalQues"><comment>题目数</comment></column>
+		</property>
+		<property name="qualifiedSocre">
+			<column length="10" name="qualifiedSocre"><comment>合格分数</comment></column>
+		</property>
+		<property name="titleBase">
+			<column length="500" name="titleBase"><comment>题库名称</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>考试人</comment></column>
+		</property>
+		<property name="staffName">
+			<column length="50" name="staffName"><comment>考试人姓名</comment></column>
+		</property>
+		<property name="qbtID">
+			<column length="50" name="qbtID"><comment>题库类别</comment></column>
+		</property>
+		<property name="type">
+			<column length="2" name="type"><comment>口试还是笔试题</comment></column>
+		</property>
+		<property name="typeName">
+			<column length="50" name="typeName"><comment>类别名称</comment></column>
+		</property>
+		<property name="createDate">
+			<column  name="createDate"><comment>时间</comment></column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"><comment>公司ID</comment></column>
+		</property>
+		<property name="status">
+			<column length="2" name="status"><comment>状态</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

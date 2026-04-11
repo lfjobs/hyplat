@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance.BenDis">
+    <class name="transferPay" table="DT_CB_A_TRANSFERPAY" schema="HYPLAT">
+        <id name="cbatpkey" type="string">
+            <column name="CBATPKEY" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="cbatpid" type="string">
+            <column name="CBATPID" length="50" />
+        </property>
+        <property name="cashierbillsid" type="string">
+            <column name="CASHIERBILLSID" length="50" />
+        </property>
+        <property name="journalnum" type="string">
+            <column name="JOURNALNUM" length="50" />
+        </property>
+        <property name="state" type="string">
+            <column name="STATE" length="50" />
+        </property>
+        <property name="mapkey" type="string">
+            <column name="MAPKEY" length="250" />
+        </property>
+        <property name="mapval" type="string">
+            <column name="MAPVAL" length="250" />
+        </property>
+        <property name="cgscomid" type="string">
+            <column name="CGSCOMID" length="50" />
+        </property>
+        <property name="cgscomname" type="string">
+            <column name="CGSCOMNAME" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

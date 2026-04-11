@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.office.EnterpriseStamp;
 import hy.ea.bo.office.SignManager;
@@ -61,7 +64,7 @@ public class SignManagerAction extends ActionSupport {
 			response.getWriter().write("ok");
 			response.flushBuffer();
 		} catch (Exception e) { // TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;
@@ -83,7 +86,7 @@ public class SignManagerAction extends ActionSupport {
 			}
 			response.flushBuffer();
 		} catch (Exception e) { // TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;
@@ -113,7 +116,7 @@ public class SignManagerAction extends ActionSupport {
 			response.flushBuffer();
 		} catch (Exception e) { 
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;
@@ -157,12 +160,12 @@ public class SignManagerAction extends ActionSupport {
 				object.put("left", left);
 				String outString = object.toString();
 				response.getWriter().write(outString);
-				//System.out.println(outString);
+				//logger.info("值：{}", outString);
 				response.flushBuffer();
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 	}

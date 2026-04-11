@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="Inventory" table="dt_inv_invt">
+		<id length="50" name="inventoryKey">
+			<column length="50" name="inventoryKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="inventoryID">
+			<column length="50" name="inventoryID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="groupCompanySn">
+			<column length="50" name="groupCompanySn" />
+		</property>
+		<property name="inventoryNum">
+			<column length="250" name="inventoryNum"/>
+		</property>
+		<property name="preQuantity">
+			<column length="50" name="preQuantity"/>
+		</property>
+		<property name="goodsCoding">
+        	<column name="goodsCoding" length="250" />
+        </property>
+		<property name="warehouse">
+			<column length="250" name="warehouse" />
+		</property>
+		<property  name="area">
+			<column length="250" name="area" />
+		</property>
+		<property  name="frame">
+			<column length="250" name="frame" />
+		</property>
+		<property  name="position">
+			<column length="250" name="position" />
+		</property>
+		
+		<property  name="goodsID">
+			<column length="250" name="goodsID" />
+		</property>
+		<property  name="goodsType">
+			<column length="250" name="goodsType" />
+		</property>
+		<property  name="goodsName">
+			<column length="250" name="goodsName" />
+		</property>
+		<property  name="barcode">
+			<column length="50" name="barcode" />
+		</property>
+		<property  name="defaultStorage">
+			<column length="50" name="defaultStorage" />
+		</property>
+		<property  name="standard">
+			<column length="250" name="standard" />
+		</property>
+		<property  name="unit">
+			<column length="250" name="unit" />
+		</property>
+		<property  name="unitPrice">
+			<column length="250" name="unitPrice" />
+		</property>
+		<property  name="purPrice">
+			<column length="250" name="purPrice" />
+		</property>
+		<property  name="invenQuantity">
+			<column length="250" name="invenQuantity" sql-type="number"/>
+		</property>
+		<property  name="sumPrice">
+			<column length="250" name="sumPrice" />
+		</property>
+		<property  name="invenOnline">
+			<column length="250" name="invenOnline" sql-type="number"/>
+		</property>
+		<property  name="invenUnderline">
+			<column length="250" name="invenUnderline" sql-type="number"/>
+		</property>
+	    <property  name="warehouseName">
+			<column length="50" name="warehouseName" />
+		</property>
+		<property  name="areaName">
+			<column length="50" name="areaName" />
+		</property>
+		<property  name="frameName">
+			<column length="50" name="frameName" />
+		</property>
+		<property  name="positionName">
+			<column length="50" name="positionName" />
+		</property>
+		<property  name="badQuantity">
+			<column length="50" name="badQuantity" />
+		</property>
+		<property  name="goodstatus">
+			<column length="50" name="goodstatus" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+			<property  name="status">
+			<column length="250" name="status" />
+		</property>
+		<property  name="weizhi">
+			<column length="250" name="weizhi" />
+		</property>
+		<property name="subjectsID">
+        	<column name="subjectsID" length="50"/>
+        </property>
+         <property name="subjectsName">
+        	<column name="subjectsName" length="250"/>
+        </property>
+        <property name="productId">
+        	<column name="productId" length="250"/>
+        </property>
+        <property name="source">
+        	<column name="source" length="250"/>
+        </property>
+         <property name="category">
+        	<column name="category" length="50"/>
+        </property>
+         <property name="fiveClear">
+        	<column name="fiveClear" length="50"/>
+        </property>
+		<property name="startDate">
+			<column name="startDate" length="50"/>
+		</property>
+		<property name="endDate">
+			<column name="endDate" length="50"/>
+		</property>
+	</class>
+</hibernate-mapping>

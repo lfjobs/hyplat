@@ -1,0 +1,451 @@
+================================================================================
+JavaWeb 项目日志问题详细报告
+生成时间：2026-04-11 15:34:47
+================================================================================
+
+【汇总统计】
+--------------------------------------------------------------------------------
+System.out.println:  1365 处
+printStackTrace:     1549 处
+System.err.println:  20 处
+总计问题数：         2934 处
+涉及文件数：         502 个
+
+【按文件统计】（按问题数量排序）
+--------------------------------------------------------------------------------
+文件路径                                                         System.out   printStack   System.err   总计      
+--------------------------------------------------------------------------------
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/office/action/CarManageAction.java 172          8            0            180     
+/home/admin/openclaw/workspace/hyplat/src/mobile/tiantai/android/action/storeProduction/budgetSheet/PayBudgetSheetAction.java 21           98           0            119     
+/home/admin/openclaw/workspace/hyplat/src/com/tiantai/wfj/front/WfjEshopProductAction.java 54           43           0            97      
+/home/admin/openclaw/workspace/hyplat/src/com/wechat/utils/HTTPV3.java 66           14           0            80      
+/home/admin/openclaw/workspace/hyplat/src/com/batch/chinapay/meth/BatchPay.java 60           13           0            73      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/office/service/impl/CarManageServiceImpl.java 52           9            0            61      
+/home/admin/openclaw/workspace/hyplat/src/com/tiantai/wfj/service/impl/GoldOrderServiceImpl.java 23           37           0            60      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/marketing/action/supermaket/SuperSelfAction.java 25           33           0            58      
+/home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java 32           24           0            56      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/marketing/service/impl/SuperSelfServiceImpl.java 42           12           0            54      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/finance/action/BenDis/hy_jinbiAction.java 18           32           0            50      
+/home/admin/openclaw/workspace/hyplat/src/com/tiantai/wfj/service/impl/WfjJifenServiceImpl.java 38           8            0            46      
+/home/admin/openclaw/workspace/hyplat/src/mobile/tiantai/android/action/AndroidAction.java 6            31           0            37      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/office/action/CarMqttService.java 28           2            3            33      
+/home/admin/openclaw/workspace/hyplat/src/com/stamp/JzqAPI.java 16           12           0            28      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/signin/service/FaceBodyService.java 24           0            0            24      
+/home/admin/openclaw/workspace/hyplat/src/com/tiantai/wfj/util/MqttService.java 18           3            2            23      
+/home/admin/openclaw/workspace/hyplat/src/com/wechatpay/utils/GetWxOrderno.java 14           9            0            23      
+/home/admin/openclaw/workspace/hyplat/src/mobile/tiantai/android/action/AndroidDocFlowAction.java 8            12           0            20      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/office/service/impl/ContractServiceImpl.java 11           8            0            19      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/finance/action/ArchivesAction.java 14           5            0            19      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/finance/action/NewPhoneOrders/PhoneOrdersAction_Buyers.java 12           7            0            19      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/finance/action/BenDis/RefundSheetAction.java 6            11           0            17      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/finance/service/impl/transferServiceImpf.java 6            10           0            16      
+/home/admin/openclaw/workspace/hyplat/src/com/daifu/chinapay/meth/SinglePay.java 0            16           0            16      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/office/action/TelMessageAction.java 3            12           0            15      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/signin/service/OSSService.java 15           0            0            15      
+/home/admin/openclaw/workspace/hyplat/src/com/tiantai/wfj/front/WfjEbuyProductsAction.java 11           3            0            14      
+/home/admin/openclaw/workspace/hyplat/src/com/wechat/utils/WeixinUtil.java 11           3            0            14      
+/home/admin/openclaw/workspace/hyplat/src/mobile/tiantai/android/action/PersonalAction.java 4            10           0            14      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/office/service/impl/DocAndroidServiceImpl.java 7            7            0            14      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/collage/action/DspIndexAction.java 9            5            0            14      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/ddsr/action/AppointmentRecordByWeChatAction.java 8            6            0            14      
+/home/admin/openclaw/workspace/hyplat/src/com/faceSDK/faceUtil/drivingLicenseUtils.java 13           0            0            13      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/util/Utilities.java 3            10           0            13      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/websitemall/card/action/PersonalInformationAction.java 2            11           0            13      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/websitemall/card/dao/impl/QRCodeDaoImpl.java 4            8            1            13      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/ddsr/action/CoachReservationRecordContentAction.java 7            6            0            13      
+/home/admin/openclaw/workspace/hyplat/src/mobile/tiantai/android/action/storeProduction/wholesaleMall/WholesaleMallAction.java 0            13           0            13      
+/home/admin/openclaw/workspace/hyplat/src/com/tiantai/wfj/edmandServe/action/dServeAction.java 6            6            0            12      
+/home/admin/openclaw/workspace/hyplat/src/mobile/tiantai/android/service/impl/storeProduction/budgetSheet/PayBudgetServiceImpl.java 6            6            0            12      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/service/impl/MerchanetsRegisServiceImpl.java 9            3            0            12      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/util/savereadfile/JsonCache.java 7            5            0            12      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/invoicing/action/CostSheetAction.java 1            11           0            12      
+/home/admin/openclaw/workspace/hyplat/src/mobile/tiantai/android/action/VideoConfreAction.java 0            12           0            12      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/finance/action/NewPhoneOrders/SellerOrderAction.java 0            12           0            12      
+/home/admin/openclaw/workspace/hyplat/src/com/tiantai/wfj/front/NewPCendAction.java 6            5            0            11      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/util/FileUtil.java 7            4            0            11      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/util/elkc/DateUtilElkc.java 4            7            0            11      
+/home/admin/openclaw/workspace/hyplat/src/hy/ea/office/action/ExtralFlowAction.java 1            10           0            11      
+... 还有 452 个文件
+
+【详细问题列表】（前 100 条）
+--------------------------------------------------------------------------------
+
+--- System.out.println ---
+1. /home/admin/openclaw/workspace/hyplat/src/main/java/com/hyplat/common/logger/LoggerUtil.java:10
+   内容：* 1. 禁止使用 System.out.println 和 printStackTrace
+
+2. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayDemo.java:87
+   内容：System.out.println(oauthTokenResponse.getAccessToken());
+
+3. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayDemo.java:91
+   内容：System.out.println(userInfoResponse);
+
+4. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayDemo.java:107
+   内容：System.out.println("调用转账成功");
+
+5. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayDemo.java:109
+   内容：System.out.println("调用转账失败");
+
+6. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayDemo.java:123
+   内容：System.out.println("调用查询接口成功");
+
+7. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayDemo.java:125
+   内容：System.out.println("调用查询接口失败");
+
+8. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:84
+   内容：System.out.println(response.getBody());//就是orderString 可以直接给客户端请求，无需再做处理。
+
+9. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:263
+   内容：System.out.println("调用成功");
+
+10. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:266
+   内容：System.out.println("调用失败");
+
+11. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:289
+   内容：System.out.println("调用成功");
+
+12. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:292
+   内容：System.out.println("调用失败");
+
+13. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:315
+   内容：System.out.println("调用成功");
+
+14. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:318
+   内容：System.out.println("调用失败");
+
+15. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:341
+   内容：System.out.println("调用成功");
+
+16. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:344
+   内容：System.out.println("调用失败");
+
+17. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:370
+   内容：System.out.println("调用成功");
+
+18. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:372
+   内容：System.out.println("调用失败");
+
+19. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:393
+   内容：System.out.println("调用成功");
+
+20. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:396
+   内容：System.out.println("调用失败");
+
+21. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:419
+   内容：System.out.println("调用成功");
+
+22. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:422
+   内容：System.out.println("调用失败");
+
+23. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:445
+   内容：System.out.println("调用成功");
+
+24. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:448
+   内容：System.out.println("调用失败");
+
+25. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:477
+   内容：System.out.println("调用成功");
+
+26. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:480
+   内容：System.out.println("调用失败");
+
+27. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:504
+   内容：System.out.println("调用成功");
+
+28. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:507
+   内容：System.out.println("调用失败");
+
+29. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:531
+   内容：System.out.println("调用成功");
+
+30. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:534
+   内容：System.out.println("调用失败");
+
+31. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:560
+   内容：System.out.println("调用成功");
+
+32. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:563
+   内容：System.out.println("调用失败");
+
+33. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:586
+   内容：System.out.println("调用成功");
+
+34. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:589
+   内容：System.out.println("调用失败");
+
+35. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:612
+   内容：System.out.println("调用成功");
+
+36. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:615
+   内容：System.out.println("调用失败");
+
+37. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:638
+   内容：System.out.println("调用成功");
+
+38. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:641
+   内容：System.out.println("调用失败");
+
+39. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:670
+   内容：System.out.println("filters=" + filters.toString() + ".json转换成实体类出错");
+
+40. /home/admin/openclaw/workspace/hyplat/src/com/alipay/sign/Base64.java:98
+   内容：System.out.println("number of triplets = " + numberTriplets);
+
+41. /home/admin/openclaw/workspace/hyplat/src/com/alipay/sign/Base64.java:107
+   内容：System.out.println("b1= " + b1 + ", b2= " + b2 + ", b3= " + b3);
+
+42. /home/admin/openclaw/workspace/hyplat/src/com/alipay/sign/Base64.java:118
+   内容：System.out.println("val2 = " + val2);
+
+43. /home/admin/openclaw/workspace/hyplat/src/com/alipay/sign/Base64.java:119
+   内容：System.out.println("k4   = " + (k << 4));
+
+44. /home/admin/openclaw/workspace/hyplat/src/com/alipay/sign/Base64.java:120
+   内容：System.out.println("vak  = " + (val2 | (k << 4)));
+
+45. /home/admin/openclaw/workspace/hyplat/src/com/alipay/sign/Base64.java:134
+   内容：System.out.println("b1=" + b1);
+
+46. /home/admin/openclaw/workspace/hyplat/src/com/alipay/sign/Base64.java:135
+   内容：System.out.println("b1<<2 = " + (b1 >> 2));
+
+47. /home/admin/openclaw/workspace/hyplat/src/com/alipay/faceTopay/AlipayTradePay.java:60
+   内容：System.out.println("调用成功");
+
+48. /home/admin/openclaw/workspace/hyplat/src/com/alipay/faceTopay/AlipayTradePay.java:62
+   内容：System.out.println("调用失败");
+
+49. /home/admin/openclaw/workspace/hyplat/src/com/alipay/faceTopay/AlipayTradePay.java:141
+   内容：System.out.println("调用成功");
+
+50. /home/admin/openclaw/workspace/hyplat/src/com/alipay/faceTopay/AlipayTradePay.java:143
+   内容：System.out.println("调用失败");
+
+--- printStackTrace ---
+1. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayDemo.java:130
+   内容：e.printStackTrace();
+
+2. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:58
+   内容：e.printStackTrace();
+
+3. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:86
+   内容：e.printStackTrace();
+
+4. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:172
+   内容：e.printStackTrace();
+
+5. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:174
+   内容：e.printStackTrace();
+
+6. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:176
+   内容：e.printStackTrace();
+
+7. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:242
+   内容：e.printStackTrace();
+
+8. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:244
+   内容：e.printStackTrace();
+
+9. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:246
+   内容：e.printStackTrace();
+
+10. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:271
+   内容：e.printStackTrace();
+
+11. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:297
+   内容：e.printStackTrace();
+
+12. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:323
+   内容：e.printStackTrace();
+
+13. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:349
+   内容：e.printStackTrace();
+
+14. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:375
+   内容：e.printStackTrace();
+
+15. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:400
+   内容：e.printStackTrace();
+
+16. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:426
+   内容：e.printStackTrace();
+
+17. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:452
+   内容：e.printStackTrace();
+
+18. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:484
+   内容：e.printStackTrace();
+
+19. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:510
+   内容：e.printStackTrace();
+
+20. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:538
+   内容：e.printStackTrace();
+
+21. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:567
+   内容：e.printStackTrace();
+
+22. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:593
+   内容：e.printStackTrace();
+
+23. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:619
+   内容：e.printStackTrace();
+
+24. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:645
+   内容：e.printStackTrace();
+
+25. /home/admin/openclaw/workspace/hyplat/src/com/alipay/AlipayInterface.java:671
+   内容：e.printStackTrace();
+
+26. /home/admin/openclaw/workspace/hyplat/src/com/alipay/sign/RSA.java:46
+   内容：e.printStackTrace();
+
+27. /home/admin/openclaw/workspace/hyplat/src/com/alipay/sign/RSA.java:81
+   内容：e.printStackTrace();
+
+28. /home/admin/openclaw/workspace/hyplat/src/com/alipay/faceTopay/AlipayTradePay.java:70
+   内容：e.printStackTrace();
+
+29. /home/admin/openclaw/workspace/hyplat/src/com/alipay/faceTopay/AlipayTradePay.java:96
+   内容：e.printStackTrace();
+
+30. /home/admin/openclaw/workspace/hyplat/src/com/alipay/faceTopay/AlipayTradePay.java:118
+   内容：e.printStackTrace();
+
+31. /home/admin/openclaw/workspace/hyplat/src/com/alipay/faceTopay/AlipayTradePay.java:148
+   内容：e.printStackTrace();
+
+32. /home/admin/openclaw/workspace/hyplat/src/com/alipay/util/AlipayNotify.java:118
+   内容：e.printStackTrace();
+
+33. /home/admin/openclaw/workspace/hyplat/src/com/alipay/util/AlipayCore.java:91
+   内容：e.printStackTrace();
+
+34. /home/admin/openclaw/workspace/hyplat/src/com/alipay/util/AlipayCore.java:97
+   内容：e.printStackTrace();
+
+35. /home/admin/openclaw/workspace/hyplat/src/com/alipay/config/AlipayConfig.java:125
+   内容：e.printStackTrace();
+
+36. /home/admin/openclaw/workspace/hyplat/src/com/alipay/config/AlipayConfigTtsw.java:64
+   内容：e.printStackTrace();
+
+37. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/TaskManageAction.java:407
+   内容：e.printStackTrace();
+
+38. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/TaskManageAction.java:436
+   内容：e.printStackTrace();
+
+39. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/TaskManageAction.java:651
+   内容：e.printStackTrace();
+
+40. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/CheckManageAction.java:386
+   内容：e.printStackTrace();
+
+41. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/administrative/TravelApplyAction.java:387
+   内容：e.printStackTrace();
+
+42. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/administrative/LeaveApplyAction.java:393
+   内容：e.printStackTrace();
+
+43. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/administrative/ConsumableRecipientAction.java:333
+   内容：e.printStackTrace();
+
+44. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/administrative/OvertimeApplyAction.java:381
+   内容：e.printStackTrace();
+
+45. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/administrative/CarApplyAction.java:155
+   内容：e.printStackTrace();
+
+46. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/administrative/DeviceBorrowAction.java:146
+   内容：e.printStackTrace();
+
+47. /home/admin/openclaw/workspace/hyplat/src/com/mysl/action/administrative/CertificateApplyAction.java:146
+   内容：e.printStackTrace();
+
+48. /home/admin/openclaw/workspace/hyplat/src/com/mysl/service/impl/OfficeServiceImpl.java:58
+   内容：e.printStackTrace();
+
+49. /home/admin/openclaw/workspace/hyplat/src/com/mysl/service/impl/OfficeServiceImpl.java:73
+   内容：e.printStackTrace();
+
+50. /home/admin/openclaw/workspace/hyplat/src/com/mysl/service/impl/OfficeServiceImpl.java:78
+   内容：e.printStackTrace();
+
+================================================================================
+【修复指南】
+================================================================================
+
+
+步骤 1: 在类中添加 Logger 声明
+-----------------------------------
+在类的开头（变量声明区域）添加：
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class MyClass {
+    private static final Logger logger = LoggerFactory.getLogger(MyClass.class);
+    // ... 其他代码
+}
+
+
+步骤 2: 替换 System.out.println
+-----------------------------------
+原代码:
+    System.out.println("user id: " + userId + ", name: " + name);
+
+修改为:
+    logger.info("user id: {}, name: {}", userId, name);
+
+
+步骤 3: 替换 printStackTrace
+-----------------------------------
+原代码:
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+
+修改为:
+    catch (Exception e) {
+        logger.error("操作失败，userId={}", userId, e);
+    }
+
+
+步骤 4: 使用 LoggerUtil 工具类（可选）
+-----------------------------------
+如果项目中有 LoggerUtil 工具类，可以使用：
+
+import com.hyplat.common.logger.LoggerUtil;
+
+LoggerUtil.info(logger, "消息内容");
+LoggerUtil.error(logger, "错误信息", e);
+LoggerUtil.warn(logger, "警告信息");
+LoggerUtil.debug(logger, "调试信息");
+
+
+日志级别选择指南:
+-----------------------------------
+- ERROR: 系统错误、异常，需要立即处理
+- WARN:  警告信息，不影响系统运行但需要注意
+- INFO:  关键业务流程、重要状态变更
+- DEBUG: 调试信息，开发环境使用
+- TRACE: 最详细的跟踪信息，仅在深度调试时使用
+
+
+批量替换技巧 (IntelliJ IDEA):
+-----------------------------------
+1. 按 Ctrl+Shift+R 打开全局替换
+2. 启用正则表达式模式
+3. 查找：System\.out\.println\("([^"]*)" \+ (\w+) \+ "([^"]*)"\)
+   替换：logger.info("$1{}$3", $2)
+4. 逐个文件审查后确认替换
+
+
+注意事项:
+-----------------------------------
+1. 先在测试环境验证
+2. 优先修复业务核心代码
+3. 工具类、测试代码可以暂缓
+4. 确保已添加 SLF4J + Logback 依赖
+5. 配置好 logback.xml 日志配置文件

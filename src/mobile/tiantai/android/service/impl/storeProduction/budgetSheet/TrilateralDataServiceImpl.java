@@ -1,5 +1,8 @@
 package mobile.tiantai.android.service.impl.storeProduction.budgetSheet;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import cn.hutool.core.collection.CollectionUtil;
 import com.opensymphony.xwork2.ActionContext;
 import com.stamp.Office2PdfUtil;
@@ -580,7 +583,7 @@ public class TrilateralDataServiceImpl implements TrilateralDataService {
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return document;
     }
@@ -651,7 +654,7 @@ public class TrilateralDataServiceImpl implements TrilateralDataService {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
     }

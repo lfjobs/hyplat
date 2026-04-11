@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="carRoad" table="DT_ROAD_TRANSPORT">
+		<id length="50" name="roadKey">
+			<column length="50" name="roadKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="roadID">
+			<column length="50" name="roadID"/>
+		</property>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="baseName">
+			<column  length="250" name="baseName" />
+		</property>
+		<property  name="roadAddress">
+			<column length="250" name="roadAddress" />
+		</property>
+		<property  name="carNum">
+			<column length="250" name="carNum" />
+		</property>
+		<property  name="permitNum">
+			<column length="250" name="permitNum" />
+		</property>
+		<property  name="tonnage">
+			<column length="250" name="tonnage" />
+		</property>
+		<property  name="carType">
+			<column  length="256" name="carType" />
+		</property>
+		<property  name="carLwh">
+			<column  length="256" name="carLwh" />
+		</property>
+		<property  name="businessRange">
+			<column  length="256" name="businessRange" />
+		</property>
+		<property  name="cardDate">
+			<column   name="cardDate" />
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property  name="carpeople">
+			<column length="250" name="carpeople" />
+		</property>
+	</class>
+</hibernate-mapping>

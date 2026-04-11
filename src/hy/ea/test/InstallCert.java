@@ -1,5 +1,8 @@
 package hy.ea.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.net.ssl.*;
 import java.io.*;
 import java.security.KeyStore;
@@ -26,7 +29,7 @@ public class InstallCert {
             String p = (h.length == 1) ? "changeit" : h[1];
             passphrase = p.toCharArray();
         } else {
-            System.out.println("Usage: java InstallCert <host>[:port] [passphrase]");
+            logger.info("调试信息");
             return;
         }
 
@@ -40,7 +43,7 @@ public class InstallCert {
                 file = new File(dir, "cacerts");
             }
         }
-        System.out.println("Loading KeyStore " + file + "...");
+        logger.info("调试信息");
         InputStream in = new FileInputStream(file);
         KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
         ks.load(in, passphrase);
@@ -55,15 +58,15 @@ public class InstallCert {
         context.init(null, new TrustManager[]{tm}, null);
         SSLSocketFactory factory = context.getSocketFactory();
 
-        System.out.println("Opening connection to " + host + ":" + port + "...");
+        logger.info("调试信息");
         SSLSocket socket = (SSLSocket) factory.createSocket(host, port);
         socket.setSoTimeout(10000);
         try {
-            System.out.println("Starting SSL handshake...");
+            logger.info("调试信息");
             socket.startHandshake();
             socket.close();
             System.out.println();
-            System.out.println("No errors, certificate is already trusted");
+            logger.info("调试信息");
         } catch (SSLException e) {
             System.out.println();
             e.printStackTrace(System.out);
@@ -71,7 +74,7 @@ public class InstallCert {
 
         X509Certificate[] chain = tm.chain;
         if (chain == null) {
-            System.out.println("Could not obtain server certificate chain");
+            logger.info("调试信息");
             return;
         }
 
@@ -79,7 +82,7 @@ public class InstallCert {
                 new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println();
-        System.out.println("Server sent " + chain.length + " certificate(s):");
+        logger.info("调试信息");
         System.out.println();
         MessageDigest sha1 = MessageDigest.getInstance("SHA1");
         MessageDigest md5 = MessageDigest.getInstance("MD5");
@@ -87,21 +90,21 @@ public class InstallCert {
             X509Certificate cert = chain[i];
             System.out.println
                     (" " + (i + 1) + " Subject " + cert.getSubjectDN());
-            System.out.println("   Issuer  " + cert.getIssuerDN());
+            logger.info("调试信息");
             sha1.update(cert.getEncoded());
-            System.out.println("   sha1    " + toHexString(sha1.digest()));
+            logger.info("调试信息");
             md5.update(cert.getEncoded());
-            System.out.println("   md5     " + toHexString(md5.digest()));
+            logger.info("调试信息");
             System.out.println();
         }
 
-        System.out.println("Enter certificate to add to trusted keystore or 'q' to quit: [1]");
+        logger.info("调试信息");
         String line = reader.readLine().trim();
         int k;
         try {
             k = (line.length() == 0) ? 0 : Integer.parseInt(line) - 1;
         } catch (NumberFormatException e) {
-            System.out.println("KeyStore not changed");
+            logger.info("调试信息");
             return;
         }
 
@@ -114,7 +117,7 @@ public class InstallCert {
         out.close();
 
         System.out.println();
-        System.out.println(cert);
+        logger.info("调试信息");
         System.out.println();
         System.out.println
                 ("Added certificate to keystore 'jssecacerts' using alias '"

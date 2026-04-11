@@ -1,5 +1,8 @@
 package com.wechat.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.wechatpay.utils.WeChatUtils;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -30,6 +33,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
  * 媒体图片只支持JPG、BMP、PNG格式，文件大小不能超过2M。
  */
 public class HttpImage {
+	private static final Logger logger = LoggerFactory.getLogger(HttpImage.class);
     /**
      * 正确的做法   HttpClient
      *
@@ -89,16 +93,16 @@ public class HttpImage {
             sb.append(timestamp).append("\n");
             sb.append(nonce_str).append("\n");
             sb.append("{\"filename\":\"" + filename + "\",\"sha256\":\"" + fileSha256 + "\"}").append("\n");
-            System.out.println("签名原串:" + sb.toString());
+            logger.info("调试信息");
 
             //计算签名
             String sign = new String(Base64.encodeBase64(signRSA(sb.toString(), rsaPrivateKey)));
-            System.out.println("签名sign值:" + sign);
+            logger.info("签名sign值:: {}", sign);
 
 
             //拼装http头的Authorization内容
             String authorization = "WECHATPAY2-SHA256-RSA2048 mchid=\"" + mchid + "\",nonce_str=\"" + nonce_str + "\",signature=\"" + sign + "\",timestamp=\"" + timestamp + "\",serial_no=\"" + serial_no + "\"";
-            System.out.println("authorization值:" + authorization);
+            logger.info("authorization值:: {}", authorization);
             //接口URL
             String url = "https://api.mch.weixin.qq.com/v3/merchant/media/upload";
             CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -125,12 +129,12 @@ public class HttpImage {
             CloseableHttpResponse response = httpclient.execute(httpPost);
             HttpEntity httpEntity = response.getEntity();
             String rescontent = new String(InputStreamTOByte(httpEntity.getContent()));
-            System.out.println("返回内容:" + rescontent);
+            logger.info("返回内容:: {}", rescontent);
             //获取返回的http header
             Header headers[] = response.getAllHeaders();
             int i = 0;
             while (i < headers.length) {
-                System.out.println(headers[i].getName() + ":  " + headers[i].getValue());
+                logger.info("调试信息");
                 i++;
             }
 
@@ -145,17 +149,17 @@ public class HttpImage {
             ss.append(rescontent).append("\n");
             //验证签名
             if (verifyRSA(ss.toString(), Base64.decodeBase64(Wsign.getBytes()), rsaPublicKeyFile)) {
-                System.out.println("签名验证成功");
+                logger.info("签名验证成功");
             } else {
-                System.out.println("签名验证失败");
+                logger.info("签名验证失败");
             }
 
             EntityUtils.consume(httpEntity);
             response.close();
 
         } catch (Exception e) {
-            System.out.println("发送POST请求异常！" + e);
-            e.printStackTrace();
+            logger.info("发送POST请求异常！: {}", e);
+            logger.error("操作异常", e);
         }
 
     }

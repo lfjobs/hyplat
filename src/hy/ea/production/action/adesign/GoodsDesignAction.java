@@ -1,5 +1,8 @@
 package hy.ea.production.action.adesign;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
@@ -63,6 +66,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Controller
 @Scope("prototype")
 public class GoodsDesignAction {
+	private static final Logger logger = LoggerFactory.getLogger(GoodsDesignAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -572,7 +576,7 @@ public class GoodsDesignAction {
             }
             baseBeanService.saveBeansListAndexecuteHqlsByParams(beans,null,null);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return "success";
@@ -698,7 +702,7 @@ public class GoodsDesignAction {
             }
             baseBeanService.executeHqlsByParamsList(beans, sqlbeans.toArray(new String[]{}), ppbeans);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -1026,7 +1030,7 @@ public class GoodsDesignAction {
         try {
             baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, hqls.toArray(new String[]{}), parms.toArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
 
@@ -1050,7 +1054,7 @@ public class GoodsDesignAction {
                     content, path);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
 
         }
 
@@ -1067,7 +1071,7 @@ public class GoodsDesignAction {
         try {
             contentToFileService.saveContent(content, path);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -1088,7 +1092,7 @@ public class GoodsDesignAction {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "";
         }
 
@@ -1161,8 +1165,8 @@ public class GoodsDesignAction {
             jjPath = filePath.split("\\.")[0] + "small." + filePath.split("\\.")[1];
             ImageCut.scale(path + filePath, path + jjPath, 414, 413);
         } catch (Exception e) {
-            System.out.println("保存上传图片失败");
-            e.printStackTrace();
+            logger.info("保存上传图片失败");
+            logger.error("操作异常", e);
         }
 
         Map<String, Object> map = new HashMap<String, Object>();

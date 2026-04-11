@@ -1,5 +1,8 @@
 package hy.ea.finance.service.brokerage.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.finance.BenDis.ProSetupSub;
 import hy.ea.bo.finance.BenDis.ProSetupSubBackup;
@@ -95,7 +98,7 @@ public class RetailPriceMobileServiceImpl implements RetailPriceMobileService {
             result.put("beanList", subResult);
         } catch (Exception e) {
             // 处理异常
-            e.printStackTrace();
+            logger.error("操作异常", e);
             // 可以添加日志记录或其他错误处理机制
         }
 
@@ -243,7 +246,7 @@ public class RetailPriceMobileServiceImpl implements RetailPriceMobileService {
             baseBeanService.executeSqlsByParmsList(saveBean, array, parm);
         } catch (Exception e) {
             flag = "500";
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         result.put("flag", flag);
         return result;

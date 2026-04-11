@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.portmanage">
+	<!--接口管理API文档表-->
+	<class name="APIDocuments" table="api_documents">
+		<!--主键-->
+		<id length="50" name="documentsKey">
+			<column length="50" name="documentsKey" />
+			<generator class="uuid" /> 
+		</id>
+		<!--文档id-->
+		<property name="documentsId">
+			<column length="50" name="documentsId" />
+		</property>
+		<!--文档名称-->
+		<property name="documentsName">
+			<column length="250" name="documentsName" />
+		</property>
+		<!--创建人id-->
+		<property name="documentsCreaterId">
+			<column length="50" name="documentsCreaterId" />
+		</property>
+		<!--创建人-->
+		<property name="documentsCreaterName">
+			<column length="50" name="documentsCreaterName" ></column>
+		</property>
+		<!--创建时间-->
+		<property name="documentsCreatTime">
+			<column length="50" name="documentsCreatTime"/>
+		</property>
+		<!--修改人id-->
+		<property name="documentsModifierId">
+			<column length="50" name="documentsModifierId" />
+		</property>
+		<!--修改人-->
+		<property name="documentsModifierName">
+			<column length="50" name="documentsModifierName" ></column>
+		</property>
+		<!--修改时间-->
+		<property name="documentsModificationTime">
+			<column length="50" name="documentsModificationTime"/>
+		</property>
+		<!--项目id(外键)-->
+		<property name="projectId">
+			<column length="50" name="projectId" />
+		</property>
+
+
+
+		
+	</class>
+</hibernate-mapping>

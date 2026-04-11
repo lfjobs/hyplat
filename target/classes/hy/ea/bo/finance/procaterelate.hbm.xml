@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="ProCateRelate" table="dt_ProCateRelate">
+		<comment>产品和类目关联表</comment>
+		<id length="50" name="pcrKey">
+			<column length="50" name="pcrKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="pcrId">
+			<column length="50" name="pcrId" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="ppID">
+			<column length="50" name="ppID" >
+			<comment>产品ID</comment>
+			</column>
+		</property>
+		<property name="codeID">
+			<column length="50" name="codeID" >
+			<comment>产品类目ID</comment>
+			</column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" >
+				<comment>产品所在公司ID</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

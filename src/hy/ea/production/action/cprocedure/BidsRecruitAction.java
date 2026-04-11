@@ -1,5 +1,8 @@
 package hy.ea.production.action.cprocedure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.WfjJifen;
@@ -48,6 +51,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class BidsRecruitAction {
+	private static final Logger logger = LoggerFactory.getLogger(BidsRecruitAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -1303,7 +1307,7 @@ public class BidsRecruitAction {
             }
         } catch (Exception e) {
             map.put("result", "fail");
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         JSONObject jo = JSONObject.fromObject(map);
         this.result = jo.toString();
@@ -1375,7 +1379,7 @@ public class BidsRecruitAction {
             }
         } catch (Exception e) {
             map.put("result", "fail");
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         JSONObject jo = JSONObject.fromObject(map);
         this.result = jo.toString();
@@ -1473,7 +1477,7 @@ public class BidsRecruitAction {
             this.result = jo.toString();
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
 
@@ -1509,7 +1513,7 @@ public class BidsRecruitAction {
             this.result = jo.toString();
         } catch (Exception e) {
 
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
 

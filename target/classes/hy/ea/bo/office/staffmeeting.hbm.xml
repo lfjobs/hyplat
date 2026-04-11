@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="StaffMeeting" table="dtStaffMeeting">
+		<id length="50" name="meetingKey">
+			<column length="50" name="meetingKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="meetingID">
+			<column length="50" name="meetingID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="meetingNum">
+			<column length="50" name="meetingNum"/>
+		</property>
+		<property name="principal">
+			<column length="50" name="principal" />
+		</property>
+			<property name="principalID">
+			<column length="50" name="principalID" />
+		</property>
+			<property name="principaltel">
+			<column length="50" name="principaltel" />
+		</property>
+		<property name="meetingName">
+			<column length="100" name="meetingName" />
+		</property>
+		<property  name="meetingTheme">
+			<column length="256" name="meetingTheme" />
+		</property>
+		<property  name="meetingRequire">
+			<column length="250" name="meetingRequire" />
+		</property>
+		<property  name="meetingType">
+			<column length="5" name="meetingType" />
+		</property>
+		<property  name="meetingMinutes">
+			<column length="250" name="meetingMinutes" />
+		</property>
+		<property  name="meetingSummary">
+			<column  length="500" name="meetingSummary" />
+		</property>
+		<property  name="meetingBrief">
+			<column  length="256" name="meetingBrief" />
+		</property>
+		<property  name="meetingRecord">
+			<column length="256" name="meetingRecord" />
+		</property>
+		
+		<property name="recorderID">
+			<column length="50" name="recorderID"/>
+		</property>
+		<property name="startDate">
+			<column length="7" name="startDate"/>
+		</property>
+		<property name="endDate">
+			<column length="7" name="endDate" />
+		</property>
+		<property  name="factStartDate">
+			<column length="7" name="factStartDate" />
+		</property>
+		<property  name="factEndDate">
+			<column length="7" name="factEndDate" />
+		</property>
+		<property  name="meetingPlace">
+			<column length="50" name="meetingPlace" />
+		</property>
+		
+		<property  name="factPlace">
+			<column length="50" name="factPlace" />
+		</property>
+		<property  name="placeUpdate">
+			<column length="7" name="placeUpdate" />
+		</property>
+		<property  name="placeCause">
+			<column length="250" name="placeCause" />
+		</property>
+		<property  name="dateUpdate">
+			<column length="7" name="dateUpdate" />
+		</property>
+			<property  name="dateCause">
+			<column length="50" name="dateCause" />
+		</property>
+		<property  name="smsNotice">
+			<column length="7" name="smsNotice" />
+		</property>
+		<property  name="emailNotice">
+			<column length="7" name="emailNotice" />
+		</property>
+		<property  name="qqNotice">
+			<column length="7" name="qqNotice" />
+		</property>
+			<property  name="noticeContent">
+			<column length="250" name="noticeContent" />
+		</property>
+		<property  name="noticeType">
+			<column length="7" name="noticeType" />
+		</property>
+		<property  name="status">
+			<column length="7" name="status" />
+		</property>
+		<property  name="cmCause">
+			<column length="250" name="cmCause" />
+		</property>
+		<property  name="accessory">
+			<column length="250" name="accessory" />
+		</property>
+		<property  name="recordfile">
+			<column length="250" name="recordfile" />
+		</property>
+
+		<property  name="mrecordAttach">
+			<column length="250" name="mrecordAttach" />
+		</property>
+			<property  name="mroomoID">
+			<column length="250" name="mroomoID" />
+		</property>
+			<property  name="updateTime">
+			<column length="7" name="updateTime" />
+		</property>
+		<property  name="roomtype">
+			<column length="1" name="roomtype" />
+		</property>
+		<property  name="roomid">
+			<column length="32" name="roomid" />
+		</property>
+		<property  name="meetingpsw">
+			<column length="32" name="meetingpsw" />
+		</property>
+		<property  name="chairpsw">
+			<column length="32" name="chairpsw" />
+		</property>
+	</class>
+</hibernate-mapping>

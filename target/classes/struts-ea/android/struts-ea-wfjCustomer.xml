@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="wfjcus-token" namespace="/ea/wfjcustomer" extends="struts-default">
+		
+		<action name="ea_*" class="com.tiantai.wfj.front.WfjEcusInfoAction" method="{1}">
+			<result name="editInfor">/page/WFJClient/Customer/CustomerInfo.jsp</result>
+			<result name="login">/page/WFJClient/Login.jsp?loginPage=login</result>	
+			<result name="address">/page/WFJClient/Customer/addressManagement.jsp</result>
+			<result name="success">/page/ea/success.jsp</result>
+			<result name="chanpingfabu">/page/mobile/shengwei/wechartMenuchanpinadd.jsp</result>
+			<result name="chanpinxiugai">/page/mobile/shengwei/wechartMenuchanpinupdate.jsp</result>
+			<result name="chanpindaili">/page/mobile/shengwei/wechartMenuchanpdl.jsp</result>
+			<result name="chanpinkdl">/page/mobile/shengwei/wechartMenusocp.jsp</result>
+			<result name="getlist">/page/mobile/shengwei/wechartMenugrcp.jsp</result>
+		    <result name="personal_list">/page/WFJClient/backpage/personal_list.jsp</result>
+		    <result name="productAgency">/page/mobile/shengwei/wechartMenuProductAgency.jsp</result>
+		    <result name="share">/page/mobile/shengwei/share.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="wfjcus-tokena" namespace="/ajax/wfjcustomer" extends="json-default">
+	<action name="sajax_ea_*" class="com.tiantai.wfj.front.WfjEcusInfoAction" method="{1}">
+            <result type="json">  
+       
+                <param name="root">result</param>
+            </result>  
+		</action>
+	
+		
+	
+	</package>
+	
+</struts>

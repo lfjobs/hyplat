@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="StoreDeviceHistory" table="DT_StoreDeviceHistory" schema="HYPLAT" dynamic-insert="true">
+	<comment>商户绑定设备</comment>
+		<id length="50" name="sdhKey" type="java.lang.String">
+			<column length="50" name="sdhKey" />
+			<generator class="uuid" />
+		</id>
+
+		<property name="sdhID" type="java.lang.String">
+			<column length="50" name="sdhID" >
+			</column>
+		</property>
+		<property name="subCompanyID" type="java.lang.String">
+			<column length="50" name="subCompanyID" >
+			</column>
+		</property>
+		<property name="storeID" type="java.lang.String">
+			<column length="32" name="storeID" >
+			</column>
+		</property>
+		<property name="storeName" type="java.lang.String">
+			<column length="50" name="storeName" >
+			</column>
+		</property>
+		<property name="subAppID" type="java.lang.String">
+			<column name="subAppID" length="50">
+				<comment>特约商户APPID</comment>
+			</column>
+		</property>
+		<property name="subMchid" type="java.lang.String">
+			<column name="subMchid" length="50">
+				<comment>特约商户号</comment>
+			</column>
+		</property>
+
+		<property name="sn" type="java.lang.String">
+			<column name="sn" length="50">
+				<comment>设备序列号</comment>
+			</column>
+		</property>
+		<property name="pfdID" type="java.lang.String">
+			<column name="pfdID" length="50">
+				<comment>设备ID</comment>
+			</column>
+		</property>
+
+
+		<property name="bindDate" type="java.util.Date">
+			<column name="bindDate" >
+				<comment>绑定日期</comment>
+			</column>
+		</property>
+
+		<property name="removeDate" type="java.util.Date">
+			<column name="removeDate" >
+				<comment>解绑日期</comment>
+			</column>
+		</property>
+
+
+
+		<property name="removeID" type="java.lang.String">
+			<column length="50" name="removeID" >
+				<comment>解绑人ID</comment>
+			</column>
+		</property>
+		<property name="removeName" type="java.lang.String">
+			<column length="50" name="removeName" >
+				<comment>解绑人姓名</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

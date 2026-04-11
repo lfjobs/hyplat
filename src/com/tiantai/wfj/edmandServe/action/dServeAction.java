@@ -1,5 +1,8 @@
 package com.tiantai.wfj.edmandServe.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.telrec.tool.JsonDateValueProcessor;
@@ -40,6 +43,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class dServeAction {
+	private static final Logger logger = LoggerFactory.getLogger(dServeAction.class);
     @Resource
     private DserveService dsservice;
     @Resource
@@ -85,7 +89,7 @@ public class dServeAction {
             request.setAttribute("user", t.getAccount());//数字地球帐号
             request.setAttribute("name", a.getStaffName());//数字地球帐号名称
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return "industryList";
@@ -149,8 +153,8 @@ public class dServeAction {
         HttpServletRequest request = ServletActionContext.getRequest();
         String type = request.getParameter("type");//区分页面按钮
         originPage=getOriginPage();
-        System.out.println("originPage = " + originPage);
-        System.out.println("otype = " + otype);
+        logger.info("originPage = : {}", originPage);
+        logger.info("otype = : {}", otype);
         //cAccount = getcAccount();
         try {
             String id=getOtype();
@@ -162,7 +166,7 @@ public class dServeAction {
             request.setAttribute("dlsccid", id);
             request.setAttribute("staffid", getcAccount().getStaffID());//人员id
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "ddlist";
     }
@@ -176,15 +180,15 @@ public class dServeAction {
     public String toPage_demandListBydssccid() {
         HttpServletRequest request = ServletActionContext.getRequest();
         originPage=getOriginPage();
-        System.out.println("originPage = " + originPage);
-        System.out.println("otype = " + otype);
+        logger.info("originPage = : {}", originPage);
+        logger.info("otype = : {}", otype);
         try {
             String id=getOtype();
             request.setAttribute("sccid", id);//抢单人id
             List<Object> ObjectList = dsservice.detailListBydssccid(id);
             request.setAttribute("ObjectList", ObjectList);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "detailListBydssccid";
     }
@@ -198,8 +202,8 @@ public class dServeAction {
         HttpServletRequest request = ServletActionContext.getRequest();
         Integer pageNumber = Integer.parseInt(request.getParameter("pagenumber"));//页数
         originPage=getOriginPage();
-        System.out.println("originPage = " + originPage);
-        System.out.println("otype = " + otype);
+        logger.info("originPage = : {}", originPage);
+        logger.info("otype = : {}", otype);
         try {
             String id=getOtype();
             PageForm pageForm = dsservice.detailListBydssccid(id, pageNumber);
@@ -211,7 +215,7 @@ public class dServeAction {
             json.putAll(map, jsonConfig);
             this.result = json.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }
@@ -302,7 +306,7 @@ public class dServeAction {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
         }
         request.setAttribute("wts", wts);//工中id集合
@@ -649,7 +653,7 @@ public class dServeAction {
             List<BaseBean> ObjectList = dsservice.detailhyListBydssccid(id);
             map.put("hylist",ObjectList);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         JSONObject jo = JSONObject.fromObject(map);
         this.result = jo.toString();

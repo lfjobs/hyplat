@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="WfjHuiyuan" table="DT_WFJ_HUIYUAN" schema="HYPLAT" dynamic-insert="true">
+		<id length="50" name="huiyuanKey" type="java.lang.String">
+			<column length="50" name="HUIYUAN_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="huiyuanId" type="java.lang.String">
+			<column length="50" name="HUIYUAN_ID" />
+		</property>
+		<property name="staffId" type="java.lang.String">
+			<column length="50" name="STAFF_ID" default="'root'"/>
+		</property>	
+		<property name="huiyuanSn" type="java.lang.Long">
+			<column length="9" name="HUIYUAN_SN"  />
+		</property>
+		<property name="huiyuanPas" type="java.lang.String">
+			<column length="50" name="HUIYUAN_PAS" />
+		</property>
+		<property name="huiyuanState" type="java.lang.Integer">
+			<column length="1" name="HUIYUAN_STATE" default="0"/>
+		</property>
+		<property name="huiyuanDate" type="java.util.Date">
+			<column name="HUIYUAN_DATE" default="sysdate"/>
+		</property>
+	
+		<property name="huiyuanLevel" type="java.lang.Integer">
+			<column length="2" name="HUIYUAN_LEVEL" default="1"/>
+		</property>
+	</class>
+</hibernate-mapping>

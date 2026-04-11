@@ -1,5 +1,8 @@
 package com.tiantai.telrec.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +44,7 @@ public class ClientMissCalledServiceImpl implements ClientMissCalledService {
 		try {
 			list = this.telInDao.getMissedCallForUserId(date1, date2, userid);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} finally {
 			return list;
 		}

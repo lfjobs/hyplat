@@ -1,10 +1,14 @@
 package hy.ea.util;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 public class UdpGetClientMacAddr{
+	private static final Logger logger = LoggerFactory.getLogger(UdpGetClientMacAddr.class);
 	
     private String sRemoteAddr;
     private int iRemotePort=137;
@@ -84,7 +88,7 @@ public class UdpGetClientMacAddr{
        ds.close();
     }
     catch (Exception ex){
-       ex.printStackTrace();
+       logger.error("操作异常", ex);
     }
     }
     

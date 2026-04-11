@@ -1,5 +1,8 @@
 package com.tiantai.telrec.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -67,7 +70,7 @@ public class ClientMissCallShow extends ActionSupport {
 				response.getWriter().print(outString);
 				response.flushBuffer();
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 	
 	

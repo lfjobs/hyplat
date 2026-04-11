@@ -1,5 +1,8 @@
 package com.wechatpay.utils.http;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 
@@ -28,12 +31,12 @@ public class MySSLSocketFactory extends SSLSocketFactory{
 		try {
 			sslcontext = SSLContext.getInstance("SSL");
 		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		try {
 			sslcontext.init(null, new TrustManager[]{new TrustAnyTrustManager()}, null);
 		} catch (KeyManagementException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return null;
 		}
 		return sslcontext;

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="Agencies" table="dtAgencies">
+		<id length="50" name="agenciesKey">
+			<column length="50" name="agenciesKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="agenciesID">
+			<column length="50" name="agenciesID" />
+		</property>
+		<property name="agenciesCode">
+			<column length="250" name="agenciesCode" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="agenciesName">
+			<column length="250" name="agenciesName"/>
+		</property>
+		<property name="organizationPID">
+			<column length="256" name="organizationPID" />
+		</property>
+		<property name="statDate">
+			<column  name="statDate" />
+		</property>
+		<property  name="endDate">
+			<column name="endDate" />
+		</property>
+		<property  name="tep">
+			<column name="tep" length="256" />
+		</property>
+		<property  name="agenciesContent">
+			<column length="256" name="agenciesContent" />
+		</property>
+		<property  name="octep">
+			<column length="256" name="octep" />
+		</property>
+		<property  name="photoPath">
+			<column length="256" name="photoPath" />
+		</property>
+		<property  name="remarks">
+			<column length="256" name="remarks" />
+		</property>
+		<property  name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property  name="isHost">
+			<column length="1" name="isHost" />
+		</property>
+	</class>
+</hibernate-mapping>

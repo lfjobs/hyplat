@@ -1,5 +1,8 @@
 package hy.ea.office.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 
 import org.springframework.stereotype.Service;
@@ -43,7 +46,7 @@ public class PhotoManagerServiceImpl implements PhotoManagerService {
 					output += java.lang.Character.toString(input[i]);
 			}
 		} catch (BadHanyuPinyinOutputFormatCombination e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return output;
 	}
@@ -59,11 +62,11 @@ public class PhotoManagerServiceImpl implements PhotoManagerService {
 			if (bool == true) {
 
 			} else {
-				System.out.println("删除图片失败");
+				logger.info("删除图片失败");
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 }

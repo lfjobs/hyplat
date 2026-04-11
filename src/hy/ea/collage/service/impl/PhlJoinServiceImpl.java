@@ -1,5 +1,8 @@
 package hy.ea.collage.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Company;
 import hy.ea.bo.company.ContactRelation;
@@ -103,7 +106,7 @@ public class PhlJoinServiceImpl implements PhlJoinService {
 			if (cre == null) {
 				cre = new StaffCertificate();
 				cre.setCredentialsID(serverService.getServerID("credentials"));
-				System.out.println("身份证：" + cre.getCredentialsID());
+				logger.info("调试信息");
 				cre.setCompanyID(tc.getCompanyId());
 				cre.setStaffID(staff.getStaffID());
 				cre.setCredentialsName("身份证");
@@ -120,7 +123,7 @@ public class PhlJoinServiceImpl implements PhlJoinService {
 			if (cre == null) {
 				cre = new StaffCertificate();
 				cre.setCredentialsID(serverService.getServerID("credentials"));
-				System.out.println("驾驶证：" + cre.getCredentialsID());
+				logger.info("调试信息");
 				cre.setCompanyID(tc.getCompanyId());
 				cre.setStaffID(staff.getStaffID());
 				cre.setCredentialsName("驾驶证");
@@ -137,7 +140,7 @@ public class PhlJoinServiceImpl implements PhlJoinService {
 
 			cre = new StaffCertificate();
 			cre.setCredentialsID(serverService.getServerID("credentials"));
-			System.out.println("行驶证：" + cre.getCredentialsID());
+			logger.info("调试信息");
 			cre.setCompanyID(tc.getCompanyId());
 			cre.setStaffID(staff.getStaffID());
 			cre.setCredentialsName("行驶证");

@@ -85,9 +85,9 @@ public class testAction {
         try {
             WebBookHelper.玄巫秦耳();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -160,10 +160,10 @@ public class testAction {
                             new String[]{payCashierBill.getOriJournalNum()});
 
                     if (dd == null) {
-                        System.out.println("没有查询出订单,订单号:" + payCashierBill.getOriJournalNum());
+                        logger.info("调试信息");
                         continue;
                     } else if (!dd.getFkStatus().equals("01") && !dd.getFkStatus().equals("09")) {
-                        System.out.println("该订单已经付款,订单号：" + payCashierBill.getOriJournalNum());
+                        logger.info("调试信息");
                         return null;
                     }
 
@@ -339,7 +339,7 @@ public class testAction {
                                 contractService.docTempleateParams(cashierBills, tsc.getStaffid(), ddid, gbs.getPpID(), gbs.getMoney());
 
                             } catch (Exception ec) {
-                                ec.printStackTrace();
+                                logger.error("操作异常", e);
                             }
                         } else if (gbs.getTypeID() != null && gbs.getTypeID().equals("学员协议")) {
                             try {
@@ -347,7 +347,7 @@ public class testAction {
 
                                 contractService.updateDocState(pb.getCoID());
                             } catch (Exception ec) {
-                                ec.printStackTrace();
+                                logger.error("操作异常", e);
                             }
                         }
 //                        else if (bo && (tsc.getCusType().equals("7") || tsc.getCusType().equals("6")) && (totalprice.compareTo(yb) == 1 || totalprice.compareTo(yb) == 0)) {
@@ -591,16 +591,16 @@ public class testAction {
 
 
         } catch (BeansException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         }
 
@@ -717,7 +717,7 @@ public class testAction {
                     if (proxyMap != null && !proxyMap.isEmpty()) {
                         pp = proxyMap.get(psup[1]);
                     }
-                    //System.out.println("key = " + entry.getKey() + ", value = " + entry.getValue());
+                    //logger.info("调试信息");
                     if (psup[0] != null || !psup[0].equals("")) {
                         BigDecimal jinbi = new BigDecimal(psup[0].toString()).multiply(quantityNum).multiply(new BigDecimal(100));
                         if (jinbi.compareTo(BigDecimal.ZERO) > 0) {
@@ -935,9 +935,9 @@ public class testAction {
         try  {
             //这里和普通的接口调用不同，使用的是sdkExecute
             AlipayTradeAppPayResponse response = alipayClient.sdkExecute( request );
-            System.out.println(response.getBody()); //就是orderString 可以直接给客户端请求，无需再做处理。
+            logger.info("调试信息"); //就是orderString 可以直接给客户端请求，无需再做处理。
         }  catch (AlipayApiException e ) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return "success";
     }

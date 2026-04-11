@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="enroll-token" namespace="/ea/enroll"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.EnrollAction" method="{1}">
+			<result name="list">/page/ea/main/human/cstaff/cstaff_enroll.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="enroll-ntoken" namespace="/ea/enroll"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.EnrollAction" method="{1}">
+			 <result name="list">/page/ea/main/human/cstaff/cstaff_enroll.jsp</result>
+			 <!-- 学员报名管理子模块列表  -->
+			 <result name="listCompany">/page/ea/main/driving/signup/driving_student_companyInfor.jsp</result>
+			 <result name="listSharge">/page/ea/main/driving/signup/driving_student_chargeInfor.jsp</result>
+			 <result name="listPapers">/page/ea/main/driving/signup/driving_student_papersInfor.jsp</result>
+			 <result name="listShuttle">/page/ea/main/driving/signup/driving_student_shuttleInfor.jsp</result>
+			 <result name="listTiming">/page/ea/main/driving/signup/driving_student_timingInfor.jsp</result>
+			 <result name="listShuttleFenChe">/page/ea/main/driving/signup/driving_student_fenCheInfor.jsp</result>
+			 
+			 <result name="listCoach">/page/ea/main/driving/signup/driving_student_coachInfor.jsp</result>
+			 <result name="listTrain">/page/ea/main/driving/signup/driving_student_trainInfor.jsp</result>
+			 <result name="listExam">/page/ea/main/driving/signup/driving_student_examInfor.jsp</result>
+			 <result name="listArchive">/page/ea/main/driving/signup/driving_student_archiveInfor.jsp</result>
+			 <result name="listCollect">/page/ea/main/driving/signup/driving_student_collect.jsp</result>
+			 <result name="infortrack">/page/ea/main/marketing/track/student_infortrack.jsp</result>
+			 <result name="success">/page/ea/success.jsp</result> 
+			 <result name="fail">/page/ea/success.jsp?message=10</result>
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="enroll.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="enroll-njsonajax" namespace="/ea/enroll" extends="json-default">
+		<action name="sajax_n_ea_*"
+			class="hy.ea.human.action.EnrollAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

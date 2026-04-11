@@ -1,5 +1,8 @@
 package hy.ea.production.action.cprocedure.scmanage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 
@@ -44,6 +47,7 @@ import net.sf.json.JsonConfig;
 @Controller
 @Scope("prototype")
 public class MaterialManageAction {
+	private static final Logger logger = LoggerFactory.getLogger(MaterialManageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -185,7 +189,7 @@ public class MaterialManageAction {
 					pageForm = baseBeanService.getPageForm((null != pageForm ? pageForm.getPageNumber() : 1), 3, hql,
 							new Object[] { materialGroup.getMgId(),  "01",params});
 				} catch (Exception e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 				Map<String, Object> map = new HashMap<String, Object>();
 				map.put("pageForm", pageForm);
@@ -462,7 +466,7 @@ public class MaterialManageAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
     	return "success";

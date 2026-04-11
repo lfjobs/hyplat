@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	
+	<package strict-method-invocation="false" name="clogbook-token" namespace="/ea/clogbook"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.action.CLogBookAction" method="{1}">
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="clogbook-ntoken" namespace="/ea/clogbook" extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.action.CLogBookAction" method="{1}">
+			<result name="list">/page/ea/main/clogbook/clogbook_list.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="SearchHistory" table="DT_SearchHistory" schema="HYPLAT"
+		dynamic-insert="true">
+		<comment>搜索历史</comment>
+		<id length="50" name="shkey" type="java.lang.String">
+			<column length="50" name="shkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="shId" type="java.lang.String">
+			<column length="50" name="shId">
+			</column>
+		</property>
+		<property name="staffId" type="java.lang.String">
+			<column length="50" name="staffId">
+				<comment>人员Id</comment>
+			</column>
+		</property>
+			<property name="shname" type="java.lang.String">
+			<column length="200" name="shname">
+				<comment>搜索词语</comment>
+			</column>
+		</property>
+		<property name="shdate">
+			<column name="shdate">
+				<comment>时间</comment>
+			</column>
+		</property>
+		<property name="ccomIDPlatform">
+			<column length="50" name="ccomIDPlatform" >
+				<comment>行业平台对应的往来单位ID；</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>                                 

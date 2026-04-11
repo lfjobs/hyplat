@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CorPhotoBox" table="DT_OA_CorPhotoBox">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="photoBoxID" type="java.lang.String">
+			<column name="photoBoxID" length="255" />
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50" />
+		</property>
+		<property name="companyName" type="java.lang.String">
+			<column name="companyName" length="50" />
+		</property>
+		<property name="photoBoxCode" type="java.lang.String">
+			<column name="photoBoxCode" length="50" />
+		</property>
+		<property name="photoBoxName" type="java.lang.String">
+			<column name="photoBoxName" length="250" />
+		</property>
+		<property name="pbnShort" type="java.lang.String">
+			<column name="pbnShort" length="30" />
+		</property>
+		<property name="photoBoxDepict" type="java.lang.String">
+			<column name="photoBoxDepict" length="50" />
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column name="createTime" length="7" />
+		</property>
+		<property name="creatorID" type="java.lang.String">
+			<column name="creatorID" length="50" />
+		</property>
+		<property name="creatorName" type="java.lang.String">
+			<column name="creatorName" length="50" />
+		</property>
+		<property name="photoNumber" type="java.lang.Integer">
+			<column name="photoNumber" length="50" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" length="400" />
+		</property>
+		<property name="coverUrl" type="java.lang.String">
+			<column name="coverUrl" length="250" />
+		</property>
+		<property name="sortType" type="java.lang.String">
+			<column name="sortType" length="250" />
+		</property>
+		<set name="corPhotos" inverse="true" lazy="false" cascade="all-delete-orphan">
+			<key>
+				<column name="corPhotoBoxKey" length="50" />
+			</key>
+			<one-to-many class="hy.ea.bo.office.CorPhoto" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

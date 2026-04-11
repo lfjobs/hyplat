@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mysl.bo.administrative.DtMycertificateapply" table="dt_Mycertificateapply" schema="HYPLAT">
+        <id name="key" type="java.lang.String">
+            <column name="key" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="id" type="java.lang.String">
+            <column name="id" length="50" />
+        </property>
+        <property name="companyname" type="java.lang.String">
+            <column name="companyname" length="50" />
+        </property>
+        <property name="companyid" type="java.lang.String">
+            <column name="companyid" length="50" />
+        </property>
+        <property name="organizationname" type="java.lang.String">
+            <column name="organizationname" length="50" />
+        </property>
+        <property name="organizationid" type="java.lang.String">
+            <column name="organizationid" length="50" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" length="50" />
+        </property>
+        <property name="staffid" type="java.lang.String">
+            <column name="staffid" length="50" />
+        </property>
+        <property name="staffname" type="java.lang.String">
+            <column name="staffname" length="50" />
+        </property>
+        <property name="addtime" type="java.util.Date">
+            <column name="addtime"/>
+        </property>
+        <property name="serialNumber" type="java.lang.String">
+            <column name="serialNumber" length="50" />
+        </property>
+        <property name="catename" type="java.lang.String">
+            <column name="catename" length="50" />
+        </property>
+        <property name="cateuse" type="java.lang.String">
+            <column name="cateuse" length="50" />
+        </property>
+        <property name="catenum" type="java.lang.String">
+            <column name="catenum" length="10" />
+        </property>
+        <property name="cateusername" type="java.lang.String">
+            <column name="cateusername" length="50" />
+        </property>
+        <property name="cateuserid" type="java.lang.String">
+            <column name="cateuserid" length="50" />
+        </property>
+        <property name="cateusedate" type="java.util.Date">
+            <column name="cateusedate"/>
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="remarks" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,5 +1,8 @@
 package com.tiantai.telrec.tool;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * <p>
  * Title: Description:中文转换为拼音
@@ -7,6 +10,7 @@ package com.tiantai.telrec.tool;
  * @version 1.0
  */
 public class ChineseSpelling {
+	private static final Logger logger = LoggerFactory.getLogger(ChineseSpelling.class);
 
 	private static int[] pyvalue = new int[] { -20319, -20317, -20304, -20295,
 			-20292, -20283, -20265, -20257, -20242, -20230, -20051, -20036,
@@ -134,7 +138,7 @@ public class ChineseSpelling {
 				// log
 
 				throw new RuntimeException("illegal resource string");
-				// System.out.println("error");
+				// logger.info("error");
 
 			}
 			if (bytes.length == 1) { // 英文字符
@@ -151,7 +155,7 @@ public class ChineseSpelling {
 			System.out
 					.println("ERROR:ChineseSpelling.class-getChsAscii(String chs)"
 							+ e);
-			// e.printStackTrace();
+			// logger.error("操作异常", e);
 
 		}
 		return asc;
@@ -160,7 +164,7 @@ public class ChineseSpelling {
 	public String convert(String str) {
 		String result = null;
 		int ascii = getChsAscii(str);
-		// System.out.println(ascii);
+		// logger.info("值：{}", ascii);
 
 		if (ascii > 0 && ascii < 160) {
 			result = String.valueOf((char) ascii);
@@ -210,7 +214,7 @@ public class ChineseSpelling {
 			spellFirst += tmp.substring(0, 1).toUpperCase();
 		}
 		return spellFirst;
-		// System.out.println(finder.getSelling("英文字符Eng"));
+		// logger.info("调试信息");
 	}
 
 	public String getFullSpelling(String chinese) {
@@ -225,10 +229,10 @@ public class ChineseSpelling {
 			spellFull += tmp;
 		}
 		return spellFull;
-		// System.out.println(finder.getSelling("英文字符Eng"));
+		// logger.info("调试信息");
 	}
 
 	public static void main(String[] args) {
-		System.out.println(new ChineseSpelling().getFullSpelling("藏"));
+		logger.info("调试信息");
 	}
 }

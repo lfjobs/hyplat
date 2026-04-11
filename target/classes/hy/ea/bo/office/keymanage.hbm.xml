@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="KeyManage" table="dtKeyManage">
+		<id length="50" name="keyManageKey">
+			<column length="50" name="keyManageKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="keyManageID">
+			<column length="50" name="keyManageID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="deptName">
+			<column length="250" name="deptName" />
+		</property>
+		<property  name="roomNum">
+			<column length="250" name="roomNum" />
+		</property>
+		<property  name="keyCount">
+			<column length="250" name="keyCount" />
+		</property>
+		<property  name="custodian">
+			<column length="250" name="custodian" />
+		</property>
+				<property  name="borrowDate">
+			<column  name="borrowDate" />
+		</property>
+		<property  name="returnDate">
+			<column  name="returnDate" />
+		</property>
+		<property  name="memorandum">
+			<column  length="256" name="memorandum" />
+		</property>
+	</class>
+</hibernate-mapping>

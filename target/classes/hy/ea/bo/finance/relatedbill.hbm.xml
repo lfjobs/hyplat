@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="RelatedBill" table="dtrelatedbill">
+		<id length="50" name="rbKey">
+			<column length="50" name="rbKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="rbID">
+			<column length="50" name="rbID" />
+		</property>
+		<property name="cashid">
+			<column length="50" name="cashid" />
+		</property>
+		<property name="cashfid">
+			<column length="50" name="cashfid" />
+		</property>
+		<property name="billtype">
+			<column length="50" name="billtype" />
+		</property>
+	</class>
+</hibernate-mapping>

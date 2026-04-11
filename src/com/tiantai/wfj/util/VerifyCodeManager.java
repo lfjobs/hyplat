@@ -1,5 +1,8 @@
 package com.tiantai.wfj.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import groovy.util.logging.Log4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -11,6 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Log4j
 @Component
 public class VerifyCodeManager {
+	private static final Logger logger = LoggerFactory.getLogger(VerifyCodeManager.class);
 
 
 
@@ -37,7 +41,7 @@ public class VerifyCodeManager {
             codeMap.remove(mobile);
             return false;
         }
-        System.out.println("输入code:"+inputCode+"保存的code:"+entry.code);
+        logger.info("调试信息");
         boolean match = entry.code.equals(inputCode);
         if (match) codeMap.remove(mobile);
         return match;

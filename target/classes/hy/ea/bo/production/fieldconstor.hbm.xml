@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="FieldConStor" table="dtFieldConStor">
+		<id length="50" name="fieldConKey">
+			<column length="50" name="fieldConKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="fieldConID">
+			<column length="50" name="fieldConID"/>
+		</property>
+		<property name="ppID">
+			<column length="50" name="ppID"><comment>产品ID</comment></column>
+		</property>
+		<property name="fieldPpID">
+			<column length="50" name="fieldPpID"><comment>产品下字段ID</comment></column>
+		</property>
+		<property name="textID">
+			<column length="50" name="textID"><comment>内容ID</comment></column>
+		</property>
+		<property name="content">
+			<column length="500" name="content"><comment>内容</comment></column>
+		</property>
+		<property name="primaryField">
+			<column length="50" name="primaryField"><comment>一级格式</comment></column>
+		</property>
+		<property name="twoLevelField">
+			<column length="50" name="twoLevelField"><comment>二级格式</comment></column>
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID"><comment>单据ID</comment></column>
+		</property>
+		<property name="goodsName">
+			<column length="50" name="goodsName"><comment>产品名称</comment></column>
+		</property>
+		<property name="fieldPpName">
+			<column length="50" name="fieldPpName"><comment>产品下字段名称</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

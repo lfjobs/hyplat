@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="VehicleBinding" table="DT_VehicleBinding">
+		<id length="50" name="vbKey">
+			<column length="50" name="vbKey" />
+			<generator class="uuid" />
+		</id> 
+		<property name="vbID">
+			<column length="50" name="vbID" >
+				<comment>主键</comment>
+			</column>
+		</property>
+		<property name="carID">
+			<column length="50" name="carID" >
+				<comment>车辆ID</comment>
+			</column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" >
+				<comment>人员ID</comment>
+			</column>
+		</property>
+		<property name="bindingTime">
+			<column length="50" name="bindingTime" >
+				<comment>绑定时间</comment>
+			</column>
+		</property>
+		<property name="unbundlingTime">
+			<column length="50" name="unbundlingTime" >
+				<comment>解绑时间</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column length="2" name="status" >
+				<comment>状态00:正常,01:删除</comment>
+			</column>
+		</property>
+		<property name="isDefault">
+			<column length="2" name="isDefault" >
+				<comment>默认00 不默认，01 默认</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

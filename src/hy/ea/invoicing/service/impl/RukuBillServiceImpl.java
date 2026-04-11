@@ -1,5 +1,8 @@
 package hy.ea.invoicing.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import hy.ea.bo.finance.BenDis.ConsigneeSheet;
@@ -105,7 +108,7 @@ public class RukuBillServiceImpl implements RukuBillService{
             if (serializeJson != null && !serializeJson.equals("")) {
                 JSONArray serializeArray = JSON.parseArray(serializeJson);
                 for (int i = 0; i < serializeArray.size(); i++) {
-                    System.out.println(serializeArray.getJSONObject(i).get("goodsname"));
+                    logger.info("调试信息");
                     //String rkgoodsid, String rkid, String goodsid, String goodname, String unit, String quantity, String warehouse, String warehousename, String goodstype, String ppid, String ccompanyID, String ccompanyName, String contactUserID, String ctUserName, Date manufactureDate, String codeid, String codename
                     RukuGoods goods = new RukuGoods(
                             serverService.getServerID("RukuGoods"),
@@ -158,7 +161,7 @@ public class RukuBillServiceImpl implements RukuBillService{
             if (serializeJson != null && !serializeJson.equals("")) {
                 JSONArray serializeArray = JSON.parseArray(serializeJson);
                 for (int i = 0; i < serializeArray.size(); i++) {
-                    System.out.println(serializeArray.getJSONObject(i).get("goodsname"));
+                    logger.info("调试信息");
                     //String shgoodsid, String shid, String goodsid, String goodname, String unit, String requantity, String goodstype, String ppid, String ccompanyID, String ccompanyName, String contactUserID, String ctUserName, Date manufactureDate, String codeid, String codename
                     ShouhuoGoods goods = new ShouhuoGoods(
                             serverService.getServerID("ShouhuoGoods"),
@@ -207,7 +210,7 @@ public class RukuBillServiceImpl implements RukuBillService{
             if (serializeJson != null && !serializeJson.equals("")) {
                 JSONArray serializeArray = JSON.parseArray(serializeJson);
                 for (int i = 0; i < serializeArray.size(); i++) {
-                    System.out.println(serializeArray.getJSONObject(i).get("goodsname"));
+                    logger.info("调试信息");
                     //String yhgoodsid, String yhid, String goodsid, String goodname, String unit, String isqualify, String goodstype, String ppid, String ccompanyID, String ccompanyName, String contactUserID, String ctUserName, Date manufactureDate, String codeid, String codename
                     YanhuoGoods goods = new YanhuoGoods(
                             serverService.getServerID("YanhuoGoods"),

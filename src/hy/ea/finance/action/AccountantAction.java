@@ -1,5 +1,8 @@
 package hy.ea.finance.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -42,6 +45,7 @@ import com.opensymphony.xwork2.ActionContext;
  * 
  */
 public class AccountantAction {
+	private static final Logger logger = LoggerFactory.getLogger(AccountantAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -300,7 +304,7 @@ public class AccountantAction {
 				cBills = (CashierBills)bills.cloneCashierBills();
 			} catch (CloneNotSupportedException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			cBills.setCashierBillsID(serverService.getServerID("cashierTally"));
 			cashid=cBills.getCashierBillsID();
@@ -316,7 +320,7 @@ public class AccountantAction {
 					goodsBills2=(GoodsBills)goodsBills.cloneGoodsBills();
 				} catch (CloneNotSupportedException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 				goodsBills2.setCashierBillsID(cBills.getCashierBillsID());
 				goodsBills2.setGoodsBillsID(serverService.getServerID("goodsbills"));
@@ -333,7 +337,7 @@ public class AccountantAction {
 			billCheck2=(BillCheck)billCheck.cloneBillCheck();
 		} catch (CloneNotSupportedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		billCheck2.setCheckid(serverService.getServerID("billcheck"));
 		billCheck2.setCheckkey(null);

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="mobile.tiantai.android.bo">
+    <class name="WeiZhi" table="DT_WeiZhi" schema="HYPLAT">
+        <comment>单车位置获取</comment>
+        <id name="weizhikey" type="java.lang.String">
+            <column name="weizhikey" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="weizhiid" type="java.lang.String">
+            <column name="weizhiid" length="50" />
+        </property>
+        <property name="userid" type="java.lang.String">
+            <column name="userid" length="50" >
+                <comment>用户唯一标识，十六位数字或者字符</comment>
+            </column>
+        </property>
+        <property name="cmd" type="java.lang.Integer">
+            <column name="cmd" length="50" >
+                <comment>0表示位置信息由开锁动作触发，1表示位置信息由关锁动作触发，2表示位置信息由定时回传触发</comment>
+            </column>
+        </property>
+         <property name="deviceId" type="java.lang.String">
+            <column name="deviceId" length="50" >
+                <comment>设备的编号</comment>
+            </column>
+        </property>
+        <property name="battery" type="java.lang.Integer">
+            <column name="battery" length="50" >
+                <comment>电池电量剩余百分比,正表示充电，负表示放电</comment>
+            </column>
+        </property>
+          <property name="bike" type="java.lang.Integer">
+            <column name="bike" length="50" >
+                <comment>固定为 0</comment>
+            </column>
+        </property>
+         <property name="lockstatus" type="java.lang.Integer">
+            <column name="lockstatus" length="50" >
+                <comment>锁的状态，值：0-锁车、1-开锁、2-异常</comment>
+            </column>
+        </property>
+        <property name="lng" type="java.lang.Float">
+            <column name="lng" length="50" >
+                <comment>智能锁位置的经度，单位是度</comment>
+            </column>
+        </property>
+        <property name="lat" type="java.lang.Float">
+            <column name="lat" length="50" >
+                <comment>智能锁位置的纬度，单位是度</comment>
+            </column>
+        </property>
+        <property name="gx" type="java.lang.Integer">
+            <column name="gx" length="50" >
+                <comment>电池电压，单位是 0.01 伏</comment>
+            </column>
+        </property>
+        <property name="gy" type="java.lang.Integer">
+            <column name="gy" length="50" >
+                <comment>充电电压，单位是 0.01 伏</comment>
+            </column>
+        </property>
+        <property name="gz" type="java.lang.Integer">
+            <column name="gz" length="50" >
+                <comment>求余 100 的值为卫星数，除以 100 的值为信号强度</comment>
+            </column>
+        </property>
+        <property name="wtime" type="java.util.Date">
+            <column name="wtime" length="50" >
+                <comment>位置信息的时间</comment>
+            </column>
+        </property>
+        <property name="serialnum" type="java.lang.Integer">
+            <column name="serialnum" length="50" >
+                <comment>用户下发指令的流水号，-1表示不是用户下发的指令应答，而是普通定时回传的位置信息</comment>
+            </column>
+        </property>
+        <property name="sign" type="java.lang.String">
+            <column name="sign" length="50" >
+                <comment>以上字段值+userkey 组成的字符串后进行 uft-8 编码的字节流进行 md5 计算</comment>
+            </column>
+        </property>
+        <property name="sccid" type="java.lang.String">
+            <column name="sccid" length="50" >
+                <comment>购买此车辆的人员sccid</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

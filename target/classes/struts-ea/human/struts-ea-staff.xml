@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="staff-ntoken" namespace="/ea/staff"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.StaffAction" method="{1}">
+			<result name="query">/page/WFJClient/pc/5l5C/human/staff/staffData.jsp?type=query</result>
+            <result name="readonly">/page/WFJClient/pc/5l5C/human/staff/staffData.jsp?type=readonly</result>
+			<result name="edit">/page/WFJClient/pc/5l5C/human/staff/staffData.jsp?type=edit</result>
+			<result name="staffContract">/page/WFJClient/pc/5l5C/human/staff/staffContract.jsp</result>
+            <result name="entryStaffRecord">/page/WFJClient/pc/5l5C/human/staff/staffRecord.jsp</result>
+            <result name="add_resign">/page/WFJClient/pc/5l5C/human/staff/resignStaffDetail.jsp?type=add</result>
+            <result name="query_resign">/page/WFJClient/pc/5l5C/human/staff/resignStaffDetail.jsp?type=query</result>
+            <result name="edit_resign">/page/WFJClient/pc/5l5C/human/staff/resignStaffDetail.jsp?type=edit</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="staff-jsonajax" namespace="/ea/staff" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.StaffAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>
+		</action>
+	</package>
+</struts>

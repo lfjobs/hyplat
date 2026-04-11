@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="distr-token" namespace="/ea/distribution" extends="struts-default">
+		
+		<action name="ea_*" class="com.tiantai.wfj.front.WfjEDistributionAction" method="{1}">
+			<result name="login">/page/WFJClient/Login.jsp?loginPage=login</result>			
+			
+			<result name="agencyRetail">/page/WFJClient/Distribution/WFJAgencyRetail.jsp</result>
+			<result name="agencyVIP">/page/WFJClient/Distribution/WFJAgencyVIP.jsp</result>
+			<result name="agencyRetailDetail">/page/WFJClient/Distribution/WFJAgencyRetailDetail.jsp</result>
+			<result name="agencyVIPDetail">/page/WFJClient/Distribution/WFJAgencyVIPDetail.jsp</result>
+			
+			<result name="consumer">/page/WFJClient/Distribution/WFJConsumer.jsp</result>
+			<result name="consumerDetail">/page/WFJClient/Distribution/WFJConsumerDetail.jsp</result>
+			<result name="company">/page/WFJClient/Distribution/WFJCompany.jsp</result>	
+			<result name="consumerVIP">/page/WFJClient/Distribution/WFJConsumerVIP.jsp</result>
+			<result name="commission">/page/WFJClient/Distribution/WFJCommission.jsp</result>
+			
+			<result name="goodsAgency">/page/WFJClient/Distribution/WFJgoodsAgency.jsp</result>			
+			<result name="home">/page/WFJClient/Distribution/WFJHome.jsp</result>			
+			<result name="highPartner">/page/WFJClient/Distribution/WFJHighPartner.jsp</result>	
+			
+			<result name="integral">/page/WFJClient/Distribution/WFJIntegral.jsp</result>			
+			<result name="orderInfo">/page/WFJClient/Distribution/WFJOrderInfo.jsp</result>			
+			<result name="orderDetail">/page/WFJClient/Distribution/WFJOrderDetail.jsp</result>
+			<result name="product">/page/WFJClient/Distribution/WFJProduct.jsp</result>	
+			<result name="partner">/page/WFJClient/Distribution/WFJPartner.jsp</result>	
+			<result name="shop">/page/WFJClient/Distribution/WFJShop.jsp</result>						
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="distr-notoken" namespace="/ea/distribution" extends="json-default">
+		
+		<action name="ajax_ea_*" class="com.tiantai.wfj.front.WfjEDistributionAction" method="{1}">
+			<result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

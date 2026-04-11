@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="ProductComment" table="dt_ProductComment">
+		<comment>产品评论表</comment>
+		<id length="50" name="pcKey">
+			<column length="50" name="pcKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="pcID">
+			<column length="50" name="pcID" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="ppid">
+			<column length="50" name="ppid" >
+			<comment>物品表主键</comment>
+			</column>
+		</property>
+		<property name="goodsId">
+			<column length="50" name="goodsId" >
+			<comment>产品ID</comment>
+			</column>
+		</property>
+		<property name="StaffId">
+			<column length="50" name="StaffId" >
+			<comment>人员ID</comment>
+			</column>
+		</property>
+		<property name="content">
+			<column length="1000" name="content" >
+			<comment>评论内容</comment>
+			</column>
+		</property>
+		<property name="praise">
+			<column length="50" name="praise" >
+			<comment>被赞数</comment>
+			</column>
+		</property>
+		<property name="commentdate">
+		    <column name="commentdate">
+			<comment>评论时间</comment>
+			</column>
+		</property>
+		<property name="count">
+		    <column  length ="50" name="count">
+			<comment>评论数</comment>
+			</column>
+		</property>
+		<property name="pcPID">
+        	<column name="pcPID" length="50">
+			<comment>评论ID</comment>
+			</column>
+        </property>
+        <property name="type">
+        	<column name="type" length="50">
+			<comment>类型 0评论  1点赞</comment>
+			</column>
+        </property>
+        <property name="ispraise">
+        	<column name="ispraise" length="50">
+			<comment>是否点赞 0未赞  1已赞</comment>
+			</column>
+        </property>
+        <property name="iscollect">
+        	<column name="iscollect" length="50">
+			<comment>是否点赞 0未收藏  1已收藏</comment>
+			</column>
+        </property>
+        <property name="isread">
+        	<column name="isread" length="50">
+			<comment>是否查看 0未查看  1已查看</comment>
+			</column>
+        </property>
+        <property name="toStaffId">
+			<column length="50" name="toStaffId" >
+			<comment>上级评论人员id</comment>
+			</column>
+		</property>
+		<property name="whichFloor">
+			<column length="50" name="whichFloor" >
+			<comment>第几楼</comment>
+			</column>
+		</property>
+		<property name="vedioID">
+			<column length="50" name="vedioID" >
+			<comment>如果是针对视频的有视频ID</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

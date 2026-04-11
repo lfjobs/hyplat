@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="wfjplatform-token" namespace="/ea/wfjplatform" extends="struts-default">
+		
+		<action name="ea_*" class="com.tiantai.wfj.front.WfjPlatformAction" method="{1}">
+		<result name="Platform">/page/WFJClient/PersonalJoining/JointPlatform.jsp</result>
+		<result name="Platformnotice">/page/WFJClient/PersonalJoining/PlatformNoticeList.jsp</result>
+		<result name="Platformnews">/page/WFJClient/PersonalJoining/PlatformNewList.jsp</result>
+		<result name="newdetail">/page/WFJClient/PersonalJoining/PlatformNew.jsp</result>
+		<result name="noticeDetail">/page/WFJClient/PersonalJoining/PlatformNotice.jsp</result>
+		<result name="platformCompany">/page/WFJClient/PersonalJoining/PlatformCompanyList.jsp</result>
+		<result name="PlatformSummary">/page/WFJClient/PersonalJoining/PlatformSummary.jsp</result>
+		<result name="platformAdd">/page/WFJClient/PersonalJoining/PlatformAdd.jsp</result>
+		<result name="platformnewscomment">/page/WFJClient/PersonalJoining/PlatformNewComment.jsp</result>
+		<result name="getPlatform">/page/WFJClient/PersonalJoining/IndustryPlatform.jsp</result>
+		<result name="PlatformB">/page/WFJClient/PersonalJoining/IndustryPlatformTwo.jsp</result>
+		<result name="PlatformC">/page/WFJClient/PersonalJoining/IndustryPlatformThree.jsp</result>
+		<result name="PlatformD">/page/WFJClient/PersonalJoining/IndustryPlatformPayment.jsp</result>
+		<result name="Platform1">/page/WFJClient/PersonalJoining/AgentCompamy/IndustryPlatformTwo2.jsp</result>
+		<result name="PlatformC1">/page/WFJClient/PersonalJoining/AgentCompamy/IndustryPlatformThree3.jsp</result>
+		<result name="MyjiaruCompany">/page/WFJClient/PersonalJoining/MyjiaruCompany.jsp</result>
+		<result name="MyjiaruPersonal">/page/WFJClient/PersonalJoining/MyjiaruPersonal.jsp</result>
+		<result name="login">/page/WFJClient/pc/pc_login.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="wfjplatform-jsonajax" namespace="/ea/wfjplatform" extends="json-default">
+		<action name="sajax_ea_*" class="com.tiantai.wfj.front.WfjPlatformAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+	
+</struts>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="Responsibilities" table="dtResponsibilities" >
+		<id length="50" name="responsibilitiesKey">
+			<column length="50" name="responsibilitiesKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="responsibilitiesID" >
+			<column length="50" name="responsibilitiesID" />
+		</property>
+		<property name="companyID" >
+			<column length="50" name="companyID" />
+		</property>
+		<property name="staffID" >
+			<column length="50" name="staffID" />
+		</property>
+		<property name="organizationID" >
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="departmentID" >
+			<column length="50" name="departmentID" />
+		</property>
+			<property name="organizationPID" >
+			<column length="50" name="organizationPID" />
+		</property>
+			<property name="organizationCID">
+			<column length="50" name="organizationCID" />
+		</property>
+		<property name="responsibilitiesNum">
+			<column length="250" name="responsibilitiesNum" />
+		</property>
+		<property name="recordNum">
+			<column length="250" name="recordNum" />
+		</property>
+		<property name="startDate">
+			<column  name="startDate" />
+		</property>
+		<property name="endDate">
+			<column  name="endDate" />
+		</property>
+		<property name="postName">
+			<column length="250" name="postName" />
+		</property>
+		<property name="dutyName">
+			<column length="250" name="dutyName" />
+		</property>
+		<property name="postmanage">
+			<column length="250" name="postmanage" />
+		</property>
+		<property name="fileNum">
+			<column length="256" name="fileNum" />
+		</property>
+		
+		<property name="companyName">
+			<column length="250" name="companyName" />
+		</property>
+		<property name="managesCope">
+			<column length="256" name="managesCope" />
+		</property>
+		<property name="jobContent1">
+			<column length="256" name="jobContent1" />
+		</property>
+			<property name="jobContent2">
+			<column length="256" name="jobContent2" />
+		</property>
+			<property name="jobContent3">
+			<column length="256" name="jobContent3" />
+		</property>
+			<property name="jobContent4">
+			<column length="256" name="jobContent4" />
+		</property>
+			<property name="jobContent5">
+			<column length="256" name="jobContent5" />
+		</property>
+	</class>
+</hibernate-mapping>

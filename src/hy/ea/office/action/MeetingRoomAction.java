@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Company;
@@ -45,6 +48,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class MeetingRoomAction {
+	private static final Logger logger = LoggerFactory.getLogger(MeetingRoomAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -109,7 +113,7 @@ public class MeetingRoomAction {
 				date = sdf.parse(dates);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		} else {
 			
@@ -117,7 +121,7 @@ public class MeetingRoomAction {
 			try {
 				date = sdf.parse(dates);
 			} catch (ParseException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(date);
@@ -175,7 +179,7 @@ public class MeetingRoomAction {
 			date = sdf.parse(dates);
 		} catch (ParseException e) {
 			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		Map<String, Object> session = ActionContext.getContext().getSession();
@@ -277,7 +281,7 @@ public class MeetingRoomAction {
 
 		
 		}catch(Exception e){
-		 e.printStackTrace();
+		 logger.error("操作异常", e);
 		}
 		return "myroomorder";
 	}
@@ -369,7 +373,7 @@ public class MeetingRoomAction {
 				
 				
 			} catch (ParseException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
            
 			
@@ -389,7 +393,7 @@ public class MeetingRoomAction {
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, null,
 					null);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "succ";
 	}
@@ -452,7 +456,7 @@ public class MeetingRoomAction {
 			params.add(endDay);
 			params.add(startDay);
 			params.add(endDay);
-//			System.out.println(mroomOrder.getMroomoID());
+//			logger.info("调试信息");
 			
 		   if(mroomOrder.getMroomoID()!=null&&!mroomOrder.getMroomoID().equals("")){
 			   hql+=" and  mroomoID not like ?";
@@ -462,7 +466,7 @@ public class MeetingRoomAction {
 
 		
 		} catch (ParseException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 	

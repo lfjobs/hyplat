@@ -1,5 +1,8 @@
 package com.tiantai.nwa.tbank.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -51,7 +54,7 @@ public class CallBankClientServiceImpl implements CallBankClientService {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		try {
@@ -92,18 +95,18 @@ public class CallBankClientServiceImpl implements CallBankClientService {
 			String line = null;
 			while ((line = serverIn.readLine()) != null && line.length() != 0) {
 				sb.append(line);
-				System.out.println(line);
+				logger.info("值：{}", line);
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} finally {
 			try {
 				serverIn.close();
 				out.close();
 				socket.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 
 		}
@@ -112,7 +115,7 @@ public class CallBankClientServiceImpl implements CallBankClientService {
 			return CallBankServiceClientUtil.makeCallBankReturnBean(
 					sb.toString(), reqBean);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return null;
@@ -171,7 +174,7 @@ public class CallBankClientServiceImpl implements CallBankClientService {
 			}
 			// 循环结束
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return null;
 		} finally {
 			// 关闭

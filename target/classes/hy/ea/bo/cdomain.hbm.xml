@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="CDomain"  table="dtCDomain">
+		<id length="50" name="domainKey">
+			<column length="50" name="domainKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="domainID">
+			<column length="50" name="domainID" not-null="true" />
+		</property>
+		<property name="domain">
+			<column length="200" name="domain" not-null="true" />
+		</property>
+		<property  name="domainContent">
+			<column length="2000" name="domainContent" not-null="true" />
+		</property>
+		<property  name="state">
+			<column length="3" name="state" not-null="true" />
+		</property>
+		<property  name="domainTitle">
+			<column length="200" name="domainTitle" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

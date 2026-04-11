@@ -1,5 +1,8 @@
 package com.tiantai.nwa.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 import java.io.IOException;
@@ -31,6 +34,7 @@ import org.xml.sax.SAXException;
  *  
  */
 public class XMLHelper {
+	private static final Logger logger = LoggerFactory.getLogger(XMLHelper.class);
 
 	//调试标志
 	private static boolean m_debug = false;
@@ -135,7 +139,7 @@ public class XMLHelper {
 			return (Element) nodes.item(0);
 		} catch (Exception e) {
 			if (m_debug) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 
@@ -158,7 +162,7 @@ public class XMLHelper {
 			return nodes;
 		} catch (Exception e) {
 			if (m_debug) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		return null;

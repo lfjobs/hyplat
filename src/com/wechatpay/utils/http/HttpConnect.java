@@ -1,5 +1,8 @@
 package com.wechatpay.utils.http;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 
@@ -15,7 +18,8 @@ import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.params.HttpMethodParams;
 
 
-public class HttpConnect { 
+public class HttpConnect {
+	private static final Logger logger = LoggerFactory.getLogger(HttpConnect.class); 
 	 private static HttpConnect httpConnect = new HttpConnect();
 	    /**
 	     * 工厂方法
@@ -39,7 +43,7 @@ public class HttpConnect {
             HttpResponse response = new HttpResponse();
             try {
 				client.executeMethod(method);
-				System.out.println("调接口返回的时间:"+(System.currentTimeMillis()-time1));
+				logger.info("调试信息");
 				response.setStringResult(method.getResponseBodyAsString());
 			} catch (HttpException e) {
 				method.releaseConnection();

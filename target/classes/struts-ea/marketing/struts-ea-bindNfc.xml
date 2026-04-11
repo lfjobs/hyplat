@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package strict-method-invocation="false" name="bindnfc-token" namespace="/ea/bindnfc"  extends="struts-default">
+        <action name="ea_*" class="com.tiantai.wfj.secure.nfc.bindNfcAction" method="{1}">
+            <result name="bingNfc">/page/WFJClient/secure/nfc/setUpNFC.jsp</result>
+            <result name="NfcList" type="redirect">/page/WFJClient/pc/5l5C/office/securityManage.jsp?companyID=${companyID}</result>
+            <result name="Patrol">/page/WFJClient/secure/nfc/setUpPatrol.jsp</result>
+            <result name="getnfc">/page/WFJClient/secure/nfc/getNFC.jsp</result>
+            <result name="login">/page/WFJClient/pc/pc_login.jsp</result>
+            <result name="LoadPage">/page/WFJClient/secure/nfc/LoadingPage.jsp</result>
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="bindnfc-jsonajax" namespace="/ea/bindnfc"  extends="json-default">
+        <action name="sajax_ea_*" class="com.tiantai.wfj.secure.nfc.bindNfcAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

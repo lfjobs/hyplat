@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="ccompany-token" namespace="/ea/ccompany"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.ccompany.action.CCompanyAction" method="{1}">
+		     <result name="to_edit">/page/ea/ccompany/company/cdetail_edit.jsp</result>
+		     <result name="to_edit2">/page/ea/main/company/cdetail_edit.jsp</result>
+		     <result name="success">/page/ea/main/company/cdetail_edit.jsp</result>
+		     <result name="invalid.token">/page/ea/main/company/cdetail_edit.jsp</result>	
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ccompany-ntoken" namespace="/ea/ccompany"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.ccompany.action.CCompanyAction" method="{1}">
+		    <result name="to_edit">/page/ea/ccompany/company/cdetail_edit.jsp</result>
+		    <result name="to_bonding">/page/ea/ccompany/company/company_bonding.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ccompany-sajax" namespace="/ea/ccompany" extends="ea-sajax">
+		<action name="sajax_ea_*" class="hy.ea.ccompany.action.CCompanyAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="ccompany-njsonajax" namespace="/ea/ccompany"
+		extends="json-default">
+		<action name="sajax_n_ea_*"
+			class="hy.ea.ccompany.action.CCompanyAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

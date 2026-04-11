@@ -1,5 +1,8 @@
 package hy.ea.invoicing.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.telrec.tool.JsonDateValueProcessor;
 import hy.ea.bo.Company;
 import hy.ea.bo.finance.BenDis.ConsigneeSheet;
@@ -29,6 +32,7 @@ import java.util.Map;
  * Created by Administrator on 2021-03-18.
  */
 public class RukuBillAction {
+	private static final Logger logger = LoggerFactory.getLogger(RukuBillAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -62,7 +66,7 @@ public class RukuBillAction {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         JsonConfig jsonConfig = new JsonConfig();
         jsonConfig.registerJsonValueProcessor(java.util.Date.class,
@@ -244,7 +248,7 @@ public class RukuBillAction {
             rukuBillService.SaveRuku(formjum, serializeJson);
             map.put("falg", "完成");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             map.put("falg", "失败");
         }
         JSONObject jsonArray = JSONObject.fromObject(map);

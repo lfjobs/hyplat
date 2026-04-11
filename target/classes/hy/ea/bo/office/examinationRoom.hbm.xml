@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="ExaminationRoom" table="DT_ExaminationRoom">
+		<id length="50" name="erkey">
+			<column length="50" name="erkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="erId">
+			<column length="50" name="erId">
+				<comment>考场id</comment>
+			</column>
+		</property>
+		<property name="companyId">
+			<column length="50" name="companyId">
+				<comment>所属公司id</comment>
+			</column>
+		</property>
+		<property name="erDate">
+			<column length="50" name="erDate">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column length="50" name="status">
+				<comment>状态</comment>
+			</column>
+		</property>
+		<property name="ItsLocation">
+			<column length="50" name="ItsLocation">
+				<comment>地址</comment>
+			</column>
+		</property>
+		<property name="erNumber">
+			<column length="50" name="erNumber">
+				<comment>考场编号</comment>
+			</column>
+		</property>
+		<property name="erName">
+			<column length="50" name="erName">
+				<comment>考场名称</comment>
+			</column>
+		</property>
+		<property name="staffId">
+			<column length="50" name="staffId">
+				<comment>考场负责人id</comment>
+			</column>
+		</property>
+		<property name="eastLongitude">
+			<column length="20" name="eastLongitude">
+				<comment>东经</comment>
+			</column>
+		</property>
+		<property name="northLatitude">
+		<column length="20" name="northLatitude">
+			<comment>北纬</comment>
+		</column>
+	</property>
+	<property  name="reviewerStaffId">
+		<column length="50" name="reviewerStaffId">
+			<comment>审核人id</comment>
+		</column>
+	</property>
+	<property  name="whetherStatus">
+		<column length="2" name="whetherStatus">
+			<comment>是否启用,00:是,01:否</comment>
+		</column>
+	</property>
+	<property  name="reservedField3">
+		<column length="50" name="reservedField3">
+			<comment>预留字段3</comment>
+		</column>
+	</property>
+	<property  name="siteType">
+		<column length="2" name="siteType">
+			<comment>场地类型0:考场,1:练习场</comment>
+		</column>
+	</property>
+	<property  name="reservedField1">
+		<column length="50" name="reservedField1">
+			<comment>预留字段1</comment>
+		</column>
+	</property>
+	<property  name="reservedField2">
+		<column length="50" name="reservedField2">
+			<comment>预留字段2</comment>
+		</column>
+	</property>
+	</class>
+</hibernate-mapping>

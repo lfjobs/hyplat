@@ -1,5 +1,8 @@
 package com.tiantai.wfj.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.InspectAnnex;
 import com.tiantai.wfj.bo.InspectKind;
 import com.tiantai.wfj.bo.NfcChip;
@@ -66,7 +69,7 @@ public class SafetyInspectServiceImpl implements SafetyInspectService {
             beandao.executeHqlsByParmsList(beans,null,null);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return false;
         }
     }

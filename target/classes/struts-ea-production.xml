@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+   <!-- 生产部分 -->
+	
+	<include file="struts-ea/production/struts-ea-gooddesign.xml" />
+	<include file="struts-ea/production/struts-ea-productiondesign.xml" />
+	<include file="struts-ea/production/struts-ea-amountplan.xml" />
+    <include file="struts-ea/production/struts-ea-budgetplan.xml" />
+    <include file="struts-ea/production/struts-ea-onduty.xml" />
+	<include file="struts-ea/production/struts-ea-itemQuantity.xml" />
+	<include file="struts-ea/production/struts-ea-productStorage.xml" />
+	<include file="struts-ea/production/struts-ea-member.xml" />
+	<include file="struts-ea/production/struts-ea-proedpdist.xml" />
+	<include file="struts-ea/production/struts-ea-dcheck.xml" />
+	<include file="struts-ea/production/struts-ea-ptrack.xml" />
+	<include file="struts-ea/production/struts-ea-bsimtest.xml" />
+	<include file="struts-ea/production/struts-ea-fieldDistribution.xml" />
+	<include file="struts-ea/production/struts-ea-finishedProduct.xml" />
+	<include file="struts-ea/production/struts-ea-purchasebids.xml" />
+	<include file="struts-ea/production/struts-ea-bidsrecruit.xml" />
+	<include file="struts-ea/production/struts-ea-sourcingStock.xml" />
+	<include file="struts-ea/production/struts-ea-setProduction.xml" />
+	<include file="struts-ea/production/struts-ea-productionAssembly.xml" />
+	<include file="struts-ea/production/struts-ea-productInspection.xml" />
+
+	<!-- 个人简历-->
+	<include file="struts-ea/production/struts-ea-resume.xml" />
+	<include file="struts-ea/production/struts-ea-resultInventory.xml" />
+	<include file="struts-ea/production/struts-ea-talentResume.xml" />
+	<!-- 素材管理 -->
+	<include file="struts-ea/production/struts-ea-scmanage.xml" />
+	<!-- 添加文章分享 -->
+	<include file="struts-ea/production/struts-ea-qrshare.xml" />
+	<!-- 驾校 -->
+	<include file="struts-ea/production/struts-ea-drivemanage.xml" />
+	
+	<include file="struts-ea/production/struts-ea-carSchool.xml" />
+	<!-- 公司维护 -->
+	<include file="struts-ea/production/struts-ea-companyMaintain.xml" />
+	<!-- 公司论坛 -->
+	<include file="struts-ea/production/struts-ea-companyforum.xml" />
+	<!-- 咨询 -->
+	<include file="struts-ea/production/struts-ea-consult.xml" />
+</struts>

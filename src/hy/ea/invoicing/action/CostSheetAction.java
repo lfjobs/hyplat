@@ -1,5 +1,8 @@
 package hy.ea.invoicing.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -68,6 +71,7 @@ import com.tiantai.wfj.bo.OrderProduct;
 @Controller
 @Scope("prototype")
 public class CostSheetAction {
+	private static final Logger logger = LoggerFactory.getLogger(CostSheetAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -481,7 +485,7 @@ public class CostSheetAction {
 	@SuppressWarnings("unchecked")
 	public DetachedCriteria getDc() {
 
-		System.out.println(billsType);
+		logger.info("值：{}", billsType);
 
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		CAccount account = (CAccount) session.get("account");
@@ -512,7 +516,7 @@ public class CostSheetAction {
 				dc.add(Restrictions.in("cashierBillsID", billlist));
 			} catch (Exception e) {
 
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		// 项目预算列表
@@ -888,7 +892,7 @@ public class CostSheetAction {
 					null);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "success";
@@ -999,7 +1003,7 @@ public class CostSheetAction {
 			beans.add(newBillCheck);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return beans;
 	}
@@ -1093,7 +1097,7 @@ public class CostSheetAction {
 			JSONObject obj = JSONObject.fromObject(map, jsonConfig);
 			this.result = obj.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "success";
@@ -1434,7 +1438,7 @@ public class CostSheetAction {
 
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "pdetailist";
 	}
@@ -1760,7 +1764,7 @@ public class CostSheetAction {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return type;
 	}
@@ -1823,7 +1827,7 @@ public class CostSheetAction {
 			JSONObject oj = JSONObject.fromObject(map);
 			result = oj.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}
@@ -1847,7 +1851,7 @@ public class CostSheetAction {
 					URLDecoder.decode(parameter, "UTF-8"), MatchMode.ANYWHERE));
 		} catch (UnsupportedEncodingException e) {
 
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		dc.add(Restrictions.eq("companyID", account.getCompanyID()));
 
@@ -1877,7 +1881,7 @@ public class CostSheetAction {
 					URLDecoder.decode(parameter, "UTF-8"), MatchMode.ANYWHERE));
 		} catch (UnsupportedEncodingException e) {
 
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		dc.add(Restrictions.eq("companyID", account.getCompanyID()));
 
@@ -2011,13 +2015,13 @@ public class CostSheetAction {
 								cal2.setTime(good2.getTargetStart());
 								int month = cal2.get(Calendar.MONTH) + 1;// 获取月份
 								String years = cal2.get(Calendar.YEAR) + "";// 获取年份
-								// System.out.println(years);
+								// logger.info("值：{}", years);
 
 								String numys = "";
 								String numts = "";
 								String numfs = "";
 
-								// System.out.println(map1.get(years)+"开始");
+								// logger.info("调试信息");
 								if (map1.get(years) != null) {
 									if (map1.get(years).get(month) != null) {
 										numys = map1.get(years).get(month)
@@ -2090,7 +2094,7 @@ public class CostSheetAction {
 								map2.put(new Integer(month), map3);
 
 								map1.put(years, map2);
-								// System.out.println(map1.get(years)+"111111111");
+								// logger.info("调试信息");
 
 							}
 
@@ -2213,7 +2217,7 @@ public class CostSheetAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "success";
@@ -2317,7 +2321,7 @@ public class CostSheetAction {
 			this.result = jo.toString();
 		} catch (Exception e) {
 
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}

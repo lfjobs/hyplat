@@ -19,6 +19,7 @@ import java.util.Locale;
  * @author yaloo
  */
 public class DateUtil {
+	private static final Logger logger = LoggerFactory.getLogger(DateUtil.class);
 
     private final static Logger logger = LoggerFactory.getLogger(DateUtil.class);
 
@@ -192,7 +193,7 @@ public class DateUtil {
             c1.setTime(df.parse(startDay));
             c2.setTime(df.parse(endDay));
         } catch (Exception e3) {
-            System.out.println("wrong occured");
+            logger.info("wrong occured");
         }
         // List list = new ArrayList();
         while (!c1.after(c2)) { // 循环对比，直到相等，n 就是所要的结果
@@ -208,7 +209,7 @@ public class DateUtil {
         if (stype == 2) {
             n = (int) n / 365;
         }
-        // System.out.println(startDay+" -- "+endDay+" 相差多少"+u[stype]+":"+n);
+        // logger.info("调试信息");
         return n;
     }
 
@@ -240,7 +241,7 @@ public class DateUtil {
         try {
             d = sd.parse(date);
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return sdw.format(d);
     }
@@ -270,10 +271,10 @@ public class DateUtil {
     public static String getCurrentMonday(String format) {
         weeks = 0;
         int mondayPlus = getMondayPlus();
-        System.out.println(mondayPlus);
+        logger.info("值：{}", mondayPlus);
         Calendar currentDate = Calendar.getInstance();
         currentDate.add(Calendar.DATE, mondayPlus);
-        System.out.println(currentDate.getTime());
+        logger.info("调试信息");
         SimpleDateFormat sdf = new SimpleDateFormat(format);// "yyyy-MM-dd"
         String date = sdf.format(currentDate.getTime());
         return date;
@@ -332,7 +333,7 @@ public class DateUtil {
         try {
             date = dateFormat.parse(dateString);
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         // java.sql.Timestamp dateTime = new java.sql.Timestamp(date.getTime());
         return new java.sql.Timestamp(date.getTime());// Timestamp类型,timeDate.getTime()返回一个long型
@@ -352,7 +353,7 @@ public class DateUtil {
         try {
             date = dateFormat.parse(dateString);
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         // java.sql.Date dateTime = new java.sql.Date(date.getTime());// sql类型
         return new java.sql.Date(date.getTime());

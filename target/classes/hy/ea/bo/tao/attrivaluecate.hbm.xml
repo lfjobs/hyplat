@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.tao">
+	<class name="AttriValueCate" table="tao_attrivaluecate">
+		<id length="50" name="avcKey">
+			<column length="50" name="avcKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="avcID">
+			<column length="50" name="avcID" not-null="true" />
+		</property>
+		<property name="acID">
+			<column length="50" name="acID" />
+		</property>
+		 <property name="orders">
+        	<column name="orders" length="10" />
+        </property>
+         <property name="value">
+        	<column name="value" length="50" />
+        </property>
+         <property name="status">
+        	<column name="status" length="1" />
+        </property>
+        
+        	
+	</class>
+</hibernate-mapping>

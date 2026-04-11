@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+    <class name="InspectAnnex" table="Dt_InspectAnnex" schema="HYPLAT"
+           dynamic-insert="true">
+        <comment>安全巡查</comment>
+        <id length="50" name="iaKey" type="java.lang.String">
+            <column length="50" name="iaKey" />
+            <generator class="uuid" />
+        </id>
+        <property name="iaid" type="java.lang.String">
+            <column length="50" name="iaid"/>
+        </property>
+        <property name="siid" type="java.lang.String">
+            <column length="50" name="siid">
+                <comment>安全巡查id SafetyInspect</comment>
+            </column>
+        </property>
+        <property name="fildType" type="java.lang.String">
+            <column length="4" name="fildType">
+                <comment>文件类型： 01:图片  02:视频</comment>
+            </column>
+        </property>
+        <property name="fildPath" type="java.lang.String">
+            <column length="200" name="fildPath">
+                <comment>文件地址</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

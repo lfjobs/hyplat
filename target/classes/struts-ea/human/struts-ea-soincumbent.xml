@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 人事-正式员工汇总 -->
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="soincumbentt-token" namespace="/ea/soincumbent"   extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.SOIncumbentAction" method="{1}">
+		<result name="to_incumbent">/page/ea/main/human/office/production/cstaff_incumbent.jsp</result>
+		<result name="to_companyincumbent">/page/ea/main/human/office/company/company_incumbent.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="soincumbent-ntoken" namespace="/ea/soincumbent"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.SOIncumbentAction" method="{1}">
+		<result name="to_companyincumbent">/page/ea/main/human/office/company/company_incumbent.jsp</result>
+			<result name="to_incumbent">/page/ea/main/human/office/production/cstaff_incumbent.jsp</result>
+			<result name="to_postincumbent">/page/ea/main/human/office/production/cstaffpost_incumbent.jsp</result>
+			<result name="to_post">/page/ea/main/human/office/production/staff_post.jsp</result>
+			<result name="dimission_list">/page/ea/main/human/office/production/cstaff_dimission.jsp</result>
+			<result name="information">/page/ea/main/human/office/production/StaffBasicInformation.jsp</result>
+			<result name="wensuitMinicontact">/page/ea/websuitMini/contact.jsp</result>
+			
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="staff.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="soincumbent-jsonajax" namespace="/ea/soincumbent" extends="ea-sajax">
+		<action name="sajax_ea_*" class="hy.ea.human.action.SOIncumbentAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json" name="success">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>
+              <result name="to_incumbent">/page/ea/main/human/adance/printroster.jsp</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="soincumbent-njsonajax" namespace="/ea/soincumbent" extends="json-default">
+		<action name="sajax_n_ea_*" class="hy.ea.human.action.SOIncumbentAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json" name="success">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

@@ -1,5 +1,8 @@
 package hy.ea.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.service.UpLoadFileService;
 
 import java.awt.Rectangle;
@@ -216,7 +219,7 @@ public class UpLoadFileServiceImpl implements UpLoadFileService {
 			try {
 				FileUtils.copyFile(sourcePath[i], target);
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 
 		}
@@ -251,7 +254,7 @@ public class UpLoadFileServiceImpl implements UpLoadFileService {
 			try {
 				FileUtils.copyFile(sp, target);
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 
 		}
@@ -362,7 +365,7 @@ public class UpLoadFileServiceImpl implements UpLoadFileService {
 					resultFile.getParentFile().mkdirs();
 				}
 				boolean b = mergeFiles(files, resultFile);
-				System.out.println(b ? "合并成功" : "合并失败");
+				logger.info("调试信息");
 				//在合成文件的时候已经删除临时文件 现在删除临时文件夹
 				fileDir.delete();
 				map.put("siSuccess", true);
@@ -370,7 +373,7 @@ public class UpLoadFileServiceImpl implements UpLoadFileService {
 				map.put("name", fileName);
 			}
 		}
-		System.out.println(path + path2);
+		logger.info("调试信息");
 		return map;
 	}
 
@@ -392,14 +395,14 @@ public class UpLoadFileServiceImpl implements UpLoadFileService {
 			}
 			resultFileChannel.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return false;
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return false;
 		}
 		for (int i = 0; i < files.length; i++) {
-			System.out.println("临时文件:" + files[i].getName() + " 已删除");
+			logger.info("调试信息");
 			files[i].delete();
 		}
 		return true;
@@ -431,7 +434,7 @@ public class UpLoadFileServiceImpl implements UpLoadFileService {
 				fos.write(buffer, 0, len);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} finally {
 			if (null != fos) {
 				try {
@@ -478,7 +481,7 @@ public class UpLoadFileServiceImpl implements UpLoadFileService {
 			}
 		}
 		for (File file : array) {
-			System.out.println(file.getName());
+			logger.info("调试信息");
 		}
 		return array;
 	}

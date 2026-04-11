@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="ProductCommentMain" table="dt_ProductCommentMain">
+		<comment>产品评论表主表</comment>
+		<id length="50" name="pcmKey">
+			<column length="50" name="pcmKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="pcmID">
+			<column length="50" name="pcmID" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="ppid">
+			<column length="50" name="ppid" >
+			<comment>物品表主键</comment>
+			</column>
+		</property>
+		<property name="praise">
+			<column length="50" name="praise" >
+			<comment>被赞数</comment>
+			</column>
+		</property>
+
+		<property name="plcount">
+		    <column   name="plcount">
+			<comment>评论数</comment>
+			</column>
+		</property>
+
+		<property name="readcount">
+			<column   name="readcount">
+				<comment>阅读量</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

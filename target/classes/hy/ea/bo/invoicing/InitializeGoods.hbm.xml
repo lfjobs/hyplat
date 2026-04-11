@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.invoicing.InitializeGoods" table="DT_INITIALIZE_GOODS" schema="HYPLAT">
+        <id name="initgoodskey">
+            <column name="INITGOODSKEY" sql-type="varchar2(50)" length="50"/>
+            <generator class="uuid"></generator>
+        </id>
+        <property name="initgoodsid">
+            <column name="INITGOODSID" sql-type="varchar2(50)" length="50" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="initializeid">
+            <column name="INITIALIZEID" sql-type="varchar2(50)" length="50">
+                <comment>初始库存表id</comment>
+            </column>
+        </property>
+        <property name="warehouse">
+            <column name="WAREHOUSE" sql-type="varchar2(50)" length="50">
+                <comment>库房id</comment>
+            </column>
+        </property>
+        <property name="warehousename">
+            <column name="WAREHOUSENAME" sql-type="varchar2(50)" length="50">
+                <comment>库房名称</comment>
+            </column>
+        </property>
+        <property name="goodsid">
+            <column name="GOODSID" sql-type="varchar2(50)" length="50">
+                <comment>物品id</comment>
+            </column>
+        </property>
+        <property name="goodname">
+            <column name="GOODNAME" sql-type="varchar2(500)" length="50">
+                <comment>物品名字</comment>
+            </column>
+        </property>
+        <property name="unit">
+            <column name="UNIT" sql-type="varchar2(50)" length="50">
+                <comment>单位</comment>
+            </column>
+        </property>
+        <property name="quantity">
+            <column name="QUANTITY" sql-type="varchar2(50)" length="50">
+                <comment>数量/重量</comment>
+            </column>
+        </property>
+        <property name="codeid">
+            <column name="CODEID" sql-type="varchar2(50)" length="50">
+                <comment>商品分类id</comment>
+            </column>
+        </property>
+        <property name="codename">
+            <column name="CODENAME" sql-type="varchar2(100)" length="100">
+                <comment>商品分类名称</comment>
+            </column>
+        </property>
+        <property name="ppid">
+            <column name="PPID" sql-type="varchar2(50)" length="50">
+                <comment>产品id</comment>
+            </column>
+        </property>
+        <property name="showweixin">
+            <column name="SHOWWEIXIN" sql-type="varchar2(50)" length="50">
+                <comment>是否在微商店显示 0否 01是</comment>
+            </column>
+        </property>
+        <property name="staffid">
+            <column name="STAFFID" sql-type="varchar2(50)" length="50">
+                <comment>责任人id</comment>
+            </column>
+        </property>
+        <property name="staffname">
+            <column name="STAFFNAME" sql-type="varchar2(50)" length="50">
+                <comment>责任人名字</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

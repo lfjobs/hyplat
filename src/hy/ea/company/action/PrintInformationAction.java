@@ -1,5 +1,8 @@
 package hy.ea.company.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 印信息
  *@author 
@@ -36,6 +39,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class PrintInformationAction {
+	private static final Logger logger = LoggerFactory.getLogger(PrintInformationAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -154,7 +158,7 @@ public class PrintInformationAction {
 									.parse(printInfo.getCreateDate()
 											+ " 23:59:59:999")));
 				} catch (ParseException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 			if (null != printInfo.getAddress()

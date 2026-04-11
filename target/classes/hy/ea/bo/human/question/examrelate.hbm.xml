@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.human.question">
+	<class name="ExamRelate" table="dt_q_ExamRelate">
+		<id length="50" name="erKey">
+			<column length="50" name="erKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="erId">
+			<column length="50" name="erId"><comment>ID</comment></column>
+		</property>
+
+		<property name="tqeID">
+			<column length="50" name="tqeID"><comment>考试ID</comment></column>
+		</property>
+		<property name="tqID">
+			<column length="50" name="tqID"><comment>题库</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>考生ID</comment></column>
+		</property>
+		<property name="staffName">
+			<column length="50" name="staffName"><comment>考生姓名</comment></column>
+		</property>
+		<property name="telphone">
+			<column length="11" name="telphone"><comment>手机号</comment></column>
+		</property>
+		<property name="card">
+			<column length="18" name="card"><comment>考生ID</comment></column>
+		</property>
+		<property name="startDate">
+			<column  name="startDate"><comment>开始时间</comment></column>
+		</property>
+		<property name="endDate">
+			<column name="endDate"><comment>结束时间</comment></column>
+		</property>
+		<property name="isHg">
+			<column length="2" name="isHg"><comment>是否合格空位还没有成绩00 已合格01未合格</comment></column>
+		</property>
+		<property name="tscore">
+			<column length="10" name="tscore"><comment>总得分</comment></column>
+		</property>
+
+		<property name="status">
+			<column length="2" name="status"><comment>状态</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

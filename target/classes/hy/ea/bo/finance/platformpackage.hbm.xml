@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="PlatformPackage" table="dt_phl_PlatformPackage">
+		<comment>新闻分享等发布的行业平台</comment>
+		<id length="50" name="pfKey">
+			<column length="50" name="pfKey" />
+			<generator class="uuid" /> 
+		</id>
+		<property name="pfID">
+			<column length="50" name="pfID" >
+			<comment>业务主键</comment>
+			</column>
+		</property>
+		<property name="ppID">
+			<column length="50" name="ppID" >
+			<comment>新闻等ID即ProductPackaging的ID</comment>
+			</column>
+		</property>
+		<property name="ccomIDPlatform">
+			<column length="50" name="ccomIDPlatform" >
+			<comment>行业平台对应的往来单位ID；</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

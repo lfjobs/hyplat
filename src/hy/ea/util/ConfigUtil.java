@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -9,6 +12,7 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class ConfigUtil {
+	private static final Logger logger = LoggerFactory.getLogger(ConfigUtil.class);
 	private static Object lock = new Object();
 	private static Properties props;
 	private static ConfigUtil config = null;
@@ -26,7 +30,7 @@ public class ConfigUtil {
 					props.load(new FileInputStream(config_file));
 					config = new ConfigUtil();
 				} catch (FileNotFoundException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 					System.exit(-1);
 				} catch (IOException e) {
 					System.exit(-1);

@@ -1,5 +1,8 @@
 package hy.ea.marketing.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.service.EarthIndexService;
@@ -24,6 +27,7 @@ import java.util.Map;
 @Scope("prototype")
 public class ProductAgentAction 
 {
+	private static final Logger logger = LoggerFactory.getLogger(ProductAgentAction.class);
     @Resource
     private ProductAgentService productAgentService;
     private String result;
@@ -257,7 +261,7 @@ public class ProductAgentAction
      */
     public String saveProAgent()
     {
-        System.out.println(ppId);
+        logger.info("值：{}", ppId);
         if (ppId !=null && ppId.length() > 0)
         {
             JSONObject jsonObject = new JSONObject();

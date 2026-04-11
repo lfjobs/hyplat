@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="EnterpriseCulture" table="dtEnterpriseCulture">
+		<id length="50" name="cultureKey">
+			<column length="50" name="cultureKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="cultureID">
+			<column length="50" name="cultureID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="culture">
+			<column length="250" name="culture" />
+		</property>
+		<property  name="cultureContent">
+			<column length="256" name="cultureContent" />
+		</property>
+		<property  name="cultureNote">
+			<column length="250" name="cultureNote" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+    <struts>
+    	<package strict-method-invocation="false" name="productslaunch-token" namespace="/ea/productslaunch" extends="struts-default">
+    		<action name="ea_*" class="com.tiantai.wfj.front.ProductsLaunchAction" method="{1}">
+    			<result name="add">/page/WFJClient/ProductsLaunch/ProductsLaunch.jsp</result>
+				<result name="advlist">/page/WFJClient/pc/my/vip/perVip1.jsp</result>
+
+				<result name="feeaudit">/page/ea/main/production/cprocedure/qrshare/feeChargeAudit.jsp</result>
+
+ 				<result name="productsmanage">/page/WFJClient/ProductsLaunch/ProductsManage.jsp</result>
+ 				<result name="promotionDetail">/page/WFJClient/ShopOwner/PromotionMix.jsp</result>
+ 				<result name="productInquiry">/page/WFJClient/ProductsLaunch/ProductPromotion.jsp</result>
+				<result name="ProductCategories">/page/WFJClient/ProductsLaunch/ProductCategories.jsp</result>
+ 				<result name="queryPromotionProduct">/page/WFJClient/ProductsLaunch/ProductPromotion.jsp</result>
+ 				<result name="allGiftsProducts">/page/WFJClient/ProductsLaunch/ChoosePromotionalProducts.jsp</result>
+				<result name="erweima">/page/ea/main/production/adesign/prodesign_erweima.jsp</result>
+				<result name="shengerweima">/page/ea/main/human/office/SersonnelSystem/productdesin_erweima.jsp</result	>
+				<result name="qrCode">/page/ea/main/human/office/scanPay/QRCode.jsp</result>
+				<result name="login">/page/WFJClient/NewLogin.jsp?loginPage=login</result>
+ 				<result name="addSalesPromotion" type="redirectAction">
+			 		<param name="actionName">/ea_productsManage.jspa</param>
+			 		<param name="namespace">/ea/productslaunch</param>
+					<param name="user">${user}</param>
+			 	</result>
+ 				<result> 
+					<param name="contentType">
+						application/vnd.ms-excel
+					</param>
+					<param name="inputName">excelStream</param>
+					<param name="contentDisposition">
+						filename="productslaunch.xls"
+					</param>
+					<param name="bufferSize">1024</param>
+				</result>
+    		</action>
+    	</package>
+    	<package strict-method-invocation="false" name="productslaunch-jsonajax" namespace="/ea/productslaunch" extends="json-default">
+    		<action name="sajax_ea_*" class="com.tiantai.wfj.front.ProductsLaunchAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+    	</package>
+    </struts>

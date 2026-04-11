@@ -1,5 +1,8 @@
 package hy.ea.office.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
  
 import hy.ea.bo.office.vo.ViewCarcheckresults;
@@ -51,7 +54,7 @@ public class CheckResultsServiceImpl extends
 			}
 			finder.append(" order by checkdatetime desc");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return getPageForm(pageNo, pageSize, finder);
 	}

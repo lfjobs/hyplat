@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="supermarketGoods-ntoken" namespace="/ea/smg"  extends="struts-default">
+
+		<action name="sm_*" class="hy.ea.marketing.action.supermaket.SupermarketAction" method="{1}">
+			<result name="supermarketGoods">/page/ea/main/marketing/unmannedsupermarket/supermarketGoods_home.jsp</result>
+			<result name="goodsSearch">/page/ea/main/marketing/unmannedsupermarket/goodsSearch.jsp</result>
+
+		</action>
+	</package>	
+	<package strict-method-invocation="false" name="supermarketGoods-jsonajax" namespace="/ea/smg"  extends="json-default">
+
+		<action name="sajax_sm_*" class="hy.ea.marketing.action.supermaket.SupermarketAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="supermarketGoods-android" namespace="/ea/smg"  extends="json-default">
+
+		<action name="sajax_a_*" class="hy.ea.marketing.action.supermaket.SupermarketAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">results</param>
+			</result>
+		</action>
+	</package>
+</struts>

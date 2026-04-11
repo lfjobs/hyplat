@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.vo">
+	<class name="LogBookSummary" table="view_LogBookSummary" >
+		<id length="50" name="logBookKey">
+			<column length="50" name="logBookKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="logBookID">
+        	<column name="logBookID" length="50"/>
+        </property>
+		 <property name="companyID">
+        	<column name="companyID" length="50"/>
+        </property>
+         <property name="companyName">
+        	<column name="companyName" length="250"/>
+        </property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property name="categoryname">
+        	<column name="categoryname" length="250"/>
+        </property>
+        <property name="staffcategoryid">
+        	<column name="staffcategoryid" length="250"/>
+        </property>
+		<property name="startdate">
+			<column length="50" name="startdate" />
+		</property>
+		<property name="jobLocation">
+			<column length="256" name="jobLocation"/>
+		</property>
+		<property name="enddate">
+			<column length="50" name="enddate"/>
+		</property>
+		<property name="scoreSort">
+			<column length="250" name="scoreSort"/>
+		</property>
+		<property name="scoreSortName">
+			<column length="250" name="scoreSortName"/>
+		</property>
+		<property name="jobContent">
+			<column length="256" name="jobContent"/>
+		</property>
+		<property name="bisect">
+			<column length="250"  name="bisect" />
+		</property>
+		<property  name="attachment">
+			<column length="256" name="attachment" />
+		</property>
+		<property name="supervisor">
+			<column length="250" name="supervisor"/>
+		</property>
+		<property name="staffingManage">
+			<column length="250" name="staffingManage"/>
+		</property>
+		<property name="manager">
+			<column length="250" name="manager" />
+		</property>
+		<property name="todaydate">
+			<column  name="todaydate" />
+		</property>
+		<property name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+		<property name="staffCode">
+			<column  name="staffCode" />
+		</property>
+		<property name="status">
+			<column name="status" length="2" />
+		</property>
+		<property name="logoStatus">
+			<column name="logoStatus" length="2" />
+		</property>
+		<property name="postname">
+			<column name="postname" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,5 +1,8 @@
 package hy.ea.driving.dao.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import hy.ea.driving.dao.AflovacationDao;
 import hy.ea.util.elkc.DateUtilElkc;
@@ -47,8 +50,8 @@ public class AflovacationDaoImpl implements AflovacationDao {
 		    ct.close();
 			
 		} catch (SQLException e) {	
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+			logger.info("调试信息");
+			logger.error("操作异常", e);
 		}
 	}
 }

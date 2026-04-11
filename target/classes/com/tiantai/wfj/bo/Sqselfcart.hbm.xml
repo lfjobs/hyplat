@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="com.tiantai.wfj.bo.SqSelfCart" table="DT_SqSelfCart" schema="HYPLAT" dynamic-insert="true">
+	<comment>社区订单购物车</comment>
+		<id length="50" name="sqKey" type="java.lang.String">
+			<column length="50" name="sqKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="sqId" type="java.lang.String">
+			<column length="50" name="sqId" >
+			</column>
+		</property>
+		<property name="comID" type="java.lang.String">
+			<column length="50" name="comID" >
+				<comment>超市</comment>
+			</column>
+		</property>
+		<property name="posNum" type="java.lang.String">
+			<column name="posNum" length="50">
+			<comment>人员Id</comment>
+			</column>
+		</property>
+		<property name="pid" type="java.lang.String">
+			<column length="50" name="pid" >
+			<comment>商品ID</comment>
+			</column>
+		</property>
+
+		<property name="companyId" type="java.lang.String">
+			<column length="50" name="companyId" >
+			<comment>商品对应的公司ID</comment>
+			</column>
+		</property>
+		<property name="itemNum" type="java.lang.String">
+			<column length="50" name="itemNum" >
+			<comment>商品的数量</comment>
+			</column>
+		</property>
+		<property name="sendNum" type="java.lang.String">
+			<column length="50" name="sendNum" >
+				<comment>需要配送的商品的数量</comment>
+			</column>
+		</property>
+		<property name="showNum" type="java.lang.String">
+			<column length="50" name="showNum" >
+				<comment>显示的数量</comment>
+			</column>
+		</property>
+		<property name="barCode" type="java.lang.String">
+		<column length="50" name="barCode" >
+			<comment>条码</comment>
+		</column>
+	</property>
+		<property name="organazitionID" type="java.lang.String">
+			<column length="50" name="organazitionID" >
+				<comment>社区管辖部门也就是哪个社区</comment>
+			</column>
+		</property>
+		<property name="stardard" type="java.lang.String">
+			<column length="50" name="stardard" >
+				<comment>规格</comment>
+			</column>
+		</property>
+		<property name="sgrId" type="java.lang.String">
+			<column length="50" name="sgrId" >
+				<comment>扫描记录ID</comment>
+			</column>
+		</property>
+		<property name="relateID" type="java.lang.String">
+			<column length="50" name="relateID" >
+				<comment>关联ID</comment>
+			</column>
+		</property>
+		<property name="hgCode" type="java.lang.String">
+			<column length="50" name="hgCode" >
+				<comment>货柜编号</comment>
+			</column>
+		</property>
+		<property name="addDate" type="java.util.Date">
+			<column  name="addDate" >
+				<comment>添加时间</comment>
+			</column>
+		</property>
+		<property name="deptId">
+			<column length="50" name="deptId">
+				<comment>库房ID</comment>
+			</column>
+		</property>
+		<property name="deptName">
+			<column length="50" name="deptName">
+				<comment>库房名称</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

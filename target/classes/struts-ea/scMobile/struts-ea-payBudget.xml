@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="scBudget-inter" namespace="/ea/scBudget" extends="struts-default">
+		<!--自定义拦截器 -->
+		<interceptors>
+			<!-- 定义权限拦截器 -->
+			<interceptor name="admin_interceptor" class="mobile.tiantai.android.common.PayBudget_Interceptor"></interceptor>
+			<!-- 定义拦截器栈,所谓拦截器栈,是指由一个或多个拦截器组成 -->
+			<interceptor-stack name="admin_interceptor_stack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="admin_interceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 为此包下的所有action应用拦截器 -->
+		<default-interceptor-ref name="admin_interceptor_stack"></default-interceptor-ref>
+		<!--全局result(global-results)-->
+		<global-results>
+			<result name="logout" >/page/WFJClient/Login/Login.jsp</result>
+		</global-results>
+	</package>
+
+	<package strict-method-invocation="false" name="scBudget-ntoken" namespace="/ea/scBudget" extends="struts-default,scBudget-inter">
+		<action name="ea_*" class="mobile.tiantai.android.action.storeProduction.budgetSheet.PayBudgetSheetAction" method="{1}">
+			<result name="payBudgetList">/page/scMobile/payBudget/budgetList/payBudgetList.jsp</result><!--支出预算单列表-->
+			<result name="toAddPayBudget">/page/scMobile/payBudget/addBudget/addPayBudget.jsp</result><!--添加支出预算单-->
+			<result name="scanningInventoryInfo">/page/scMobile/payBudget/inventory/addInventory.jsp</result><!--添加详细产品信息-->
+			<result name="toDetail">/page/scMobile/payBudget/budgetList/payBudgetDetail.jsp</result><!--预算单详情页-->
+			<result name="toUpPayBudget">/page/scMobile/payBudget/addBudget/upPayBudget.jsp</result><!--修改支出预算单-->
+			<result name="toRelease">/page/scMobile/payBudget/budgetRelease/budgetRelease.jsp</result><!--预算单发布页-->
+			<result name="toBudgetReleaseList">/page/scMobile/payBudget/budgetRelease/budgetReleaseList.jsp</result><!--预算单发布列表页-->
+			<result name="toBarCodeInfo">/page/scMobile/payBudget/inventory/inventoryInfor.jsp</result><!-- 详细产品信息-->
+			<result name="costBudgetBillList">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetBillList.jsp</result><!--招标投标列表-->
+			<result name="addCostBudgetBill">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetBillAdd.jsp</result><!--招标投标列表-->
+			<result name="scanningCostBudgetInfo">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetItemAdd.jsp</result><!--招标投标扫码跳转页面-->
+			<result name="costBudgetDetail">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetBillDetail.jsp</result><!--招标投标单详情页-->
+			<result name="costBudgetUpdate">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetBillUpdate.jsp</result><!--修改招标投标单-->
+			<result name="costBudgetItemUpdate">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetItemUpdate.jsp</result><!-- 招标投标详细产品信息修改-->
+			<result name="costBudgetItemDetail">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetItemDetail.jsp</result><!-- 招标投标详细产品信息查看-->
+			<result name="addCostBudgetItem">/page/WFJClient/pc/5l5C/office/budgetBill/toCostBudgetItemAdd.jsp</result>
+			<result name="noData">/page/WFJClient/pc/5l5C/office/budgetBill/noData.jsp</result>
+			<result name="costBudgetBillCirculationList">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetBillCirculationList.jsp</result><!--传阅列表-->
+			<result name="costBudgetBillSentList">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetBillSentList.jsp</result><!--已发送列表-->
+			<result name="costBudgetBillReceiveList">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetBillReceiveList.jsp</result><!--接收列表-->
+			<result name="costBudgetBillApprovalList">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetBillApprovalList.jsp</result><!--审批列表-->
+
+			<!--项目订单-->
+			<result name="projectBillList">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetBillList.jsp</result>
+			<result name="projectBillPrint">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetBillPrint.jsp</result>
+			<result name="projectBudgetDetail">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetBillDetail.jsp</result>
+			<result name="projectOrderManage">/page/WFJClient/pc/5l5C/office/budgetBill/OrderManage.jsp</result>
+			<result name="projectBillReceiveList">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetBillReceiveList.jsp</result>
+			<result name="projectBillSentList">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetBillSentList.jsp</result>
+			<result name="addProjectBill">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetBillAdd.jsp</result>
+			<result name="addProjectItem">/page/WFJClient/pc/5l5C/office/projectBudgetBill/toCostBudgetItemAdd.jsp</result>
+			<result name="projectItemUpdate">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetItemUpdate.jsp</result>
+			<result name="updateProjectBill">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetBillUpdate.jsp</result>
+			<result name="scanningProjectInfo">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetItemAdd.jsp</result>
+			<result name="projectItemDetail">/page/WFJClient/pc/5l5C/office/projectBudgetBill/costBudgetItemDetail.jsp</result>
+			<result name="businessTypeSearch">/page/WFJClient/pc/5l5C/office/projectBudgetBill/businessTypeSearch.jsp</result>
+			<result name="goodsSearch">/page/WFJClient/pc/5l5C/office/projectBudgetBill/goodsSearch.jsp</result>
+
+			<!--项目计划-->
+			<result name="planCostBudgetBillList">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetBillList.jsp</result><!--项目计划列表-->
+			<result name="addPlanCostBudgetBill">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetBillAdd.jsp</result><!--项目计划添加-->
+			<result name="addPlanCostBudgetItem">/page/WFJClient/pc/5l5C/office/plan/toPlanCostBudgetItemAdd.jsp</result>
+			<result name="planCostBudgetBillCirculationList">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetBillCirculationList.jsp</result><!--项目计划传阅列表-->
+			<result name="planCostBudgetBillReceiveList">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetBillReceiveList.jsp</result><!--项目计划接收列表-->
+			<result name="planCostBudgetBillSentList">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetBillSentList.jsp</result><!--项目计划已发送列表-->
+			<result name="planNoData">/page/WFJClient/pc/5l5C/office/plan/planNoData.jsp</result>
+			<result name="scanningPlanCostBudgetInfo">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetItemAdd.jsp</result><!--项目计划扫码跳转页面-->
+			<result name="planCostBudgetDetail">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetBillDetail.jsp</result><!--项目计划单详情页-->
+			<result name="addPlanCostBudgetBill">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetBillAdd.jsp</result><!--项目计划列表-->
+			<result name="addPlanCostBudgetItem">/page/WFJClient/pc/5l5C/office/plan/toPlanCostBudgetItemAdd.jsp</result>
+			<result name="planCostBudgetUpdate">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetBillUpdate.jsp</result><!--修改项目计划单-->
+			<result name="planCostBudgetItemUpdate">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetItemUpdate.jsp</result><!-- 项目计划详细产品信息修改-->
+			<result name="planCostBudgetItemDetail">/page/WFJClient/pc/5l5C/office/plan/planCostBudgetItemDetail.jsp</result><!-- 招标投标详细产品信息查看-->
+			<result name="costBudgetBillPrint">/page/WFJClient/pc/5l5C/office/budgetBill/costBudgetBillPrint.jsp</result><!-- 初始项目单据打印-->
+		</action>
+	</package>
+
+	<package strict-method-invocation="false"  name="scBudget-jsonajax" namespace="/ea/scBudget" extends="json-default,scBudget-inter">
+		<action name="sajax_ea_*" class="mobile.tiantai.android.action.storeProduction.budgetSheet.PayBudgetSheetAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="com.tiantai.wfj.bo.HgRelateUser" schema="HYPLAT" table="dt_HgRelateUser">
+  <id name="hrukey" type="java.lang.String">
+   <column length="50" name="hrukey"/>
+   <generator class="uuid"/>
+  </id>
+  <property  name="hruId" type="java.lang.String">
+   <column length="50" name="hruId"/>
+  </property>
+  <property  name="sccId" type="java.lang.String">
+   <column length="50" name="sccId"/>
+  </property>
+  <property  name="hgCode" type="java.lang.String">
+   <column length="50" name="hgCode"/>
+  </property>
+  <property  name="loginMode" type="java.lang.String">
+   <column length="10" name="loginMode"/>
+  </property>
+  <property  name="doorState" type="java.lang.String">
+   <column length="1" name="doorState"/>
+  </property>
+  <property  name="scanDate" type="java.util.Date">
+   <column name="scanDate">
+    <comment>扫码开门时间</comment>
+   </column>
+  </property>
+
+ </class>
+</hibernate-mapping>

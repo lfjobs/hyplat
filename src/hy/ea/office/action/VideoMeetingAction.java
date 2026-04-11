@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.human.Staff;
 import hy.ea.bo.office.StaffMeeting;
@@ -27,6 +30,7 @@ import com.tiantai.wfj.bo.TEshopCusCom;
 @Controller
 @Scope("prototype")
 public class VideoMeetingAction {
+	private static final Logger logger = LoggerFactory.getLogger(VideoMeetingAction.class);
 	@Resource
 	private VideoConfreService videoconService;
 	@Resource
@@ -89,7 +93,7 @@ public class VideoMeetingAction {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		}
 		JSONObject jo = JSONObject.fromObject(map);
@@ -117,7 +121,7 @@ public class VideoMeetingAction {
 
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "roomlist";
@@ -137,7 +141,7 @@ public class VideoMeetingAction {
 			map.put("result", psw);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo.toString();
@@ -158,7 +162,7 @@ public class VideoMeetingAction {
 			map.put("result", psw);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo.toString();
@@ -181,7 +185,7 @@ public class VideoMeetingAction {
 			map.put("result", res);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo.toString();
@@ -201,7 +205,7 @@ public class VideoMeetingAction {
 			List<Object> list = videoconService.getPersonList(orgID, companyID, "", sccid);
 			map.put("stafflist", list);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo.toString();
@@ -229,7 +233,7 @@ public class VideoMeetingAction {
 					"01",account.getCompanyID(),account.getStaffID());
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return "succ";
@@ -248,7 +252,7 @@ public class VideoMeetingAction {
 			String code = videoconService.delRoominfo(staffMeeting.getMeetingID());
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "succ";
 

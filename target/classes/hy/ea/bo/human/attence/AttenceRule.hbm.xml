@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                                   
+<hibernate-mapping package="hy.ea.bo.human.attence">
+	<class name="AttenceRule" table="DT_At_AttenceRule" schema="HYPLAT" dynamic-insert="true">
+	<comment>考勤规则</comment>
+		<id length="50" name="rulekey" type="java.lang.String">
+			<column length="50" name="rulekey" />
+			<generator class="uuid" />
+		</id>
+		<property name="ruleID" type="java.lang.String">
+			<column length="50" name="ruleID" >
+			</column>
+		</property>
+		<property name="sn" type="java.lang.String">
+			<column name="sn" length="50">
+				<comment>序号</comment>
+			</column>
+		</property>
+		<property name="monday" type="java.lang.String">
+			<column length="2" name="monday" >
+				<comment>00未选 01选中</comment>
+			</column>
+		</property>
+		<property name="tuesday" type="java.lang.String">
+			<column length="2" name="tuesday" >
+				<comment>00未选 01选中</comment>
+			</column>
+		</property>
+		<property name="wednesday" type="java.lang.String">
+			<column length="2" name="wednesday" >
+			<comment>00未选 01选中</comment>
+			</column>
+		</property>
+		<property name="thursday" type="java.lang.String">
+			<column length="2" name="thursday" >
+				<comment>00未选 01选中</comment>
+			</column>
+		</property>
+		<property name="friday" type="java.lang.String">
+			<column length="2" name="friday" >
+				<comment>00未选 01选中</comment>
+			</column>
+		</property>
+		<property name="saturday" type="java.lang.String">
+			<column length="2" name="saturday" >
+				<comment>00未选 01选中</comment>
+			</column>
+		</property>
+		<property name="sunday" type="java.lang.String">
+			<column length="2" name="sunday" >
+				<comment>00未选 01选中</comment>
+			</column>
+		</property>
+		<property name="classID" type="java.lang.String">
+			<column length="50" name="classID" >
+				<comment>班次ID</comment>
+			</column>
+		</property>
+		<property name="attenceDate" type="java.lang.String">
+			<column length="50" name="attenceDate" >
+				<comment>考勤时间</comment>
+			</column>
+		</property>
+	
+		<property name="companyID" type="java.lang.String">
+			<column name="companyID" length="50">
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>创建人ID</comment>
+			</column>
+		</property>
+         <property name="createDate" type="java.util.Date">
+			<column name="createDate" >
+				<comment>创建日期</comment>
+			</column>
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

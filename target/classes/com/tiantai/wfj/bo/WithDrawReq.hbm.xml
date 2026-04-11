@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="WithDrawReq" table="dtWithDrawReq">
+		<id length="50" name="withDrawKey">
+			<column length="50" name="withDrawKey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="withDrawID">
+        	<column name="withDrawID" length="50"/>
+        </property>
+        <property name="sccID">
+        	<column name="sccID" length="50"><comment>提现发起账号</comment></column>
+        </property>
+		<property name="withDrawWay">
+			<column name="withDrawWay" length="50"><comment>提现方式 01:支付宝 02:微信 03: 银行卡</comment></column>
+		</property>
+        <property name="withDrawDate">
+        	<column name="withDrawDate" sql-type="date"><comment>提现时间</comment></column>
+        </property>
+        <property name="state">
+        	<column name="state" length="2"><comment>提现状态 00 :提现成功   01:提现成功(生成订单失败)  10:提现失败(正常情况:如企业账户余额不足) 11:提现失败(非正常情况:报错进入catch)</comment></column>
+        </property>
+        <property name="jNumOrder">
+        	<column name="jNumOrder" length="50"><comment>提现订单号</comment></column>
+        </property>
+        <property name="amount">
+			<column name="amount" length="10" ><comment>提现金额</comment></column>
+		</property>
+		<property name="message">
+			<column name="message" length="1000" ><comment>提现信息</comment></column>
+		</property>
+	</class> 
+	
+</hibernate-mapping>

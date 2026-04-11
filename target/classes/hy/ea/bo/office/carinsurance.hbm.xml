@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarInsurance" table="DT_Car_Insurance">
+		<id length="50" name="insuranceKey">
+			<column length="50" name="insuranceKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="insuranceID">
+			<column length="50" name="insuranceID" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="carID">
+			<column length="50" name="carID" />
+		</property>
+		<property name="insuranceCode">
+			<column length="250" name="insuranceCode" />
+		</property>
+		<property name="insuranceComName">
+			<column length="250" name="insuranceComName" />
+		</property>
+		<property name="insuranceName">
+			<column length="250" name="insuranceName" />
+		</property>
+		<property name="purchaseCode">
+			<column length="250" name="purchaseCode" />
+		</property>
+
+		<property name="useNature">
+			<column length="250" name="useNature" />
+		</property>
+		<property name="brandModel">
+			<column length="256" name="brandModel" />
+		</property>
+		<property name="passengerNum">
+			<column length="250" name="passengerNum" />
+		</property>
+		<property name="startTime">
+			<column name="startTime" />
+		</property>
+		<property name="endTime">
+			<column name="endTime" />
+		</property>
+		<property name="insuranceAmount">
+			<column length="250" name="insuranceAmount" />
+		</property>
+		<property name="insurancePhone">
+			<column length="250" name="insurancePhone" />
+		</property>
+		<property name="sellInsurer">
+			<column length="250" name="sellInsurer" />
+		</property>
+		<property name="sellInsurerPhone">
+			<column length="250" name="sellInsurerPhone" />
+		</property>
+		<property name="remarks">
+			<column length="250" name="remarks" />
+		</property>
+		<property name="carType">
+			<column length="250" name="carType"/>
+		</property>
+		<property name="carNum">
+			<column length="250" name="carNum"/>
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property name="carPeople">
+			<column length="250" name="carPeople"/>
+		</property>
+	</class>
+</hibernate-mapping>

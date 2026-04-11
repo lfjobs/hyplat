@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.net.URLEncoder;
 
 import hy.ea.util.bean.SmsClientAccessTool;
@@ -15,6 +18,7 @@ import hy.ea.util.bean.SmsClientAccessTool;
  * @version 1.0.1
  */
 public class SmsClientSend {
+	private static final Logger logger = LoggerFactory.getLogger(SmsClientSend.class);
 
 	public static String url = "http://118.145.18.144:7777/sms.aspx";
 	public static String userid = "1169";
@@ -153,7 +157,7 @@ public class SmsClientSend {
 						send.toString(), backEncodType);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 			return "未发送，编码异常";
 		}
 	}

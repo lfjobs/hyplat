@@ -1,5 +1,8 @@
 package hy.ea.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -21,6 +24,7 @@ import javax.imageio.ImageIO;
  * 
  */
 public class ImageCut {
+	private static final Logger logger = LoggerFactory.getLogger(ImageCut.class);
 	/**
 	 * @Description: 裁剪 将srcImageFile裁剪后生成dirImageFile
 	 * @param srcImageFile
@@ -60,7 +64,7 @@ public class ImageCut {
 				ImageIO.write(tag, "JPEG", new File(dirImageFile));
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 
@@ -99,7 +103,7 @@ public class ImageCut {
 			g.dispose();
 			ImageIO.write(tag, "JPEG", new File(result));//
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 
@@ -181,7 +185,7 @@ public class ImageCut {
 				ImageIO.write(tag, "JPEG", new File(result));//
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 
@@ -213,7 +217,7 @@ public class ImageCut {
 			BufferedImage src = ImageIO.read(f);
 			ImageIO.write(src, "JPG", new File(result));
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 
@@ -231,7 +235,7 @@ public class ImageCut {
 			src = op.filter(src, null);
 			ImageIO.write(src, "JPEG", new File(result));
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 

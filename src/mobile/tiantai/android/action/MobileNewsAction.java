@@ -1,5 +1,8 @@
 package mobile.tiantai.android.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.base.action.BaseAction;
 import hy.ea.bo.company.CcomCom;
 import hy.ea.bo.company.GoodsManage;
@@ -470,7 +473,7 @@ public class MobileNewsAction extends BaseAction<Object> {
 					content, path);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 	
 		}
 		

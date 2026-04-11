@@ -1,5 +1,8 @@
  package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -46,6 +49,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class COSJobTaskAction {
+	private static final Logger logger = LoggerFactory.getLogger(COSJobTaskAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -141,7 +145,7 @@ public class COSJobTaskAction {
 				jbt.setProjectName(jobTask.getProjectName());
 				jbt.setDatemonth(Utilities.getDateFromString(start,"yyyy-MM"));
 				jbt.setStartDate(jobTask.getStartDate());
-				System.out.println(start);
+				logger.info("值：{}", start);
 				jbt.setEndDate(jobTask.getEndDate());
 				jbt.setGroupCompanySn((String)session.get("groupCompanySn"));
 				beans.add(jbt);
@@ -496,7 +500,7 @@ public class COSJobTaskAction {
 		jobTask = new COSJobTask();
 		beans = new ArrayList<BaseBean>();
 		if(null!=jobTaskmap){
-			//System.out.println(jobTaskmap.size());
+			//logger.info("调试信息");
 			for(COSJobTask jbt:jobTaskmap.values()){
 				this.staffID = jbt.getStaffID();
 				if (null == jbt.getJobTaskID() || "".equals(jbt.getJobTaskID())) {

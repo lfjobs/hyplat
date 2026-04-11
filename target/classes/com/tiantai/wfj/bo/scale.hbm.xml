@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="Scale" table="DT_scale" schema="HYPLAT" dynamic-insert="true">
+
+	<comment>电子秤信息</comment>
+		<id length="50" name="scKey" type="java.lang.String">
+			<column length="50" name="scKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="scId" type="java.lang.String">
+			<column length="50" name="scId" >
+			</column>
+		</property>
+		<property name="deviceID" type="java.lang.String">
+			<column name="deviceID" length="50">
+			<comment>设备号</comment>
+			</column>
+		</property>
+		<property name="scaleNo" type="java.lang.Integer">
+			<column  name="scaleNo" >
+			<comment>秤号</comment>
+			</column>
+		</property>
+		<property name="scaleType" type="java.lang.String">
+			<column length="20" name="scaleType" >
+			<comment>//bCom,RL00</comment>
+			</column>
+		</property>
+		<property name="connectType" type="java.lang.String">
+			<column length="10" name="connectType" >
+			<comment>通讯类型：Network：局域网 Internet：广域网;目前用局域网</comment>
+			</column>
+		</property>
+		<property name="address" type="java.lang.String">
+			<column length="20" name="address" >
+			<comment>IP地址</comment>
+			</column>
+		</property>
+		<property name="port" type="java.lang.String">
+			<column length="4" name="port" >
+			<comment>端口号默认：局域网默认：3001</comment>
+			</column>
+		</property>
+		<property name="decimalDigits" type="java.lang.String">
+			<column length="1" name="decimalDigits" >
+			<comment>金额精度默认为2</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>责任ID</comment>
+			</column>
+		</property>
+		<property name="staffname" type="java.lang.String">
+			<column length="50" name="staffname" >
+				<comment>责任人姓名</comment>
+			</column>
+		</property>
+		<property name="companyID" type="java.lang.String">
+			<column length="50" name="companyID" >
+				<comment>公司ID</comment>
+			</column>
+		</property>
+		<property name="cdate" type="java.util.Date">
+			<column name="cate" >
+				<comment>添加日期</comment>
+			</column>
+		</property>
+		<property name="keycount" type="java.lang.String">
+			<column length="10" name="keycount" >
+				<comment>键个数</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

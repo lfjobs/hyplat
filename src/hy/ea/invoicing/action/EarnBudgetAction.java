@@ -1,5 +1,8 @@
 package hy.ea.invoicing.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -49,6 +52,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class EarnBudgetAction {
+	private static final Logger logger = LoggerFactory.getLogger(EarnBudgetAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -403,7 +407,7 @@ public class EarnBudgetAction {
 		baseBeanService.saveBeansListAndexecuteHqlsByParams(baseBeanList, null,
 				null);
 	}catch(Exception e){
-		e.printStackTrace();
+		logger.error("操作异常", e);
 	}
 		return "success";
 	}
@@ -655,7 +659,7 @@ public class EarnBudgetAction {
 				
 			
 			}catch(Exception e){
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		return "printebb";
 	}
@@ -723,7 +727,7 @@ public class EarnBudgetAction {
 					hql, paramlist.toArray());
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("pageForm", pageForm);
@@ -1151,7 +1155,7 @@ public class EarnBudgetAction {
       
 		
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return comp;
@@ -1196,7 +1200,7 @@ public class EarnBudgetAction {
 						}else{
 							gg = Float.parseFloat(ebd.getBmamount());
 						}
-						System.out.println(gg);
+						logger.info("值：{}", gg);
 						budgetofxl.put(Integer.parseInt(ebd.getMonth()),gg+"");
 					}
 					if(ebd.getTmamount()!=null){
@@ -1207,7 +1211,7 @@ public class EarnBudgetAction {
 							}else{
 								hh = Float.parseFloat(ebd.getTmamount());
 							}
-							System.out.println(hh);
+							logger.info("值：{}", hh);
 							tiaotofxl.put(Integer.parseInt(ebd.getMonth()),hh+"");
 					}
 				}
@@ -1255,7 +1259,7 @@ public class EarnBudgetAction {
 			tz.put(10L, t+"");
 			tz.put(11L, z+"");
 		    bttoxm.put(ebb.getEbbID(),tz);
-//		     System.out.println(bttoxm.get(ebb.getEbbID()).get(10L));
+//		     logger.info("调试信息");
 			
 			
 		}
@@ -1429,7 +1433,7 @@ public class EarnBudgetAction {
 
 		
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return comp;

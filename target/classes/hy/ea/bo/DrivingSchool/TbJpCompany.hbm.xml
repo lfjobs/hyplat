@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.DrivingSchool.TbJpCompany" table="TB_JP_COMPANY" schema="HYPLAT">
+        <id length="50" name="tbjpcompanykey">
+            <column length="50" name="TBJPCOMPANYKEY" />
+            <generator class="uuid" />
+        </id>
+        <property name="tbjpcompanyId" type="java.lang.String">
+            <column name="TBJPCOMPANYID"  length="50"><comment>ID</comment></column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="COMPANY_ID"  length="64"><comment>驾校ID</comment></column>
+        </property>
+        <property name="inscode" type="java.lang.String">
+            <column name="INSCODE"  length="16" ><comment>全国统一编码</comment></column>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME"  length="256" ><comment>培训机构名称</comment></column>
+        </property>
+        <property name="shortname" type="java.lang.String">
+            <column name="SHORTNAME"  length="256" ><comment>培训机构简称</comment></column>
+        </property>
+        <property name="business" type="java.lang.String">
+            <column name="BUSINESS"  length="20" ><comment>营业执照注册号</comment></column>
+        </property>
+        <property name="licnum" type="java.lang.String">
+            <column name="LICNUM" length="32" ><comment>经营许可证编号</comment></column>
+        </property>
+        <property name="licetime" type="java.util.Date">
+            <column name="LICETIME"  ><comment>经营许可日期</comment></column>
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS"  length="512" ><comment>地址</comment></column>
+        </property>
+        <property name="creditcode" type="java.lang.String">
+            <column name="CREDITCODE"  length="18" ><comment>统一社会信用代码</comment></column>
+        </property>
+        <property name="taxregcer" type="java.lang.String">
+            <column name="TAXREGCER"  length="18" ><comment>税务登记证编号</comment></column>
+        </property>
+        <property name="postcode" type="java.lang.String">
+            <column name="POSTCODE"  length="6" ><comment>邮政编码</comment></column>
+        </property>
+        <property name="legal" type="java.lang.String">
+            <column name="LEGAL"  length="64" ><comment>法人代表</comment></column>
+        </property>
+        <property name="contact" type="java.lang.String">
+            <column name="CONTACT"  length="64" ><comment>联系人</comment></column>
+        </property>
+        <property name="phone"  type="java.lang.String">
+            <column name="PHONE"  length="64" ><comment>联系电话</comment></column>
+        </property>
+        <property name="busiscope" type="java.lang.String">
+            <column name="BUSISCOPE"  length="64" ><comment>经营范围(下列编码可多选，以英文逗号分隔：A1,A2,A3,B1,B2,C1,C2,C3,C4,C5,D,E,F,M,N,P)</comment></column>
+        </property>
+        <property name="busistatus" type="java.lang.String">
+            <column name="BUSISTATUS"  length="8" ><comment>经营状态（采用1 位数字码，定义如下：1:营业2:停业3:整改4:停业整顿5:歇业6:注销9:其他)</comment></column>
+        </property>
+        <property name="checkStatus" type="java.lang.String">
+            <column name="CHECK_STATUS"  length="8" ><comment>审核状态</comment></column>
+        </property>
+        <property name="syncType" type="java.lang.String">
+            <column name="SYNC_TYPE"  length="8" ><comment>同步类型（1新增；2修改；3删除）</comment></column>
+        </property>
+        <property name="syncStatus" type="java.lang.String">
+            <column name="SYNC_STATUS"  length="8" ><comment>同步状态（0待同步1同步成功2同步失败）</comment></column>
+        </property>
+        <property name="companyLevel" type="java.lang.String">
+            <column name="COMPANY_LEVEL"  length="8" ><comment>分类等级（1:一级2:二级3:三级）</comment></column>
+        </property>
+        <property name="economicType" type="java.lang.String">
+            <column name="ECONOMIC_TYPE"  length="64" ><comment>经济类型</comment></column>
+        </property>
+        <property name="busisEndDate" type="java.util.Date">
+            <column name="BUSIS_END_DATE"  ><comment>经营截止日期</comment></column>
+        </property>
+        <property name="district" type="java.lang.String">
+            <column name="DISTRICT"  length="6" ><comment>所属行政区域</comment></column>
+        </property>
+        <property name="firstIssueDate" type="java.util.Date">
+            <column name="FIRST_ISSUE_DATE"  ><comment>初次发证日期</comment></column>
+        </property>
+        <property name="legalIdcard" type="java.lang.String">
+            <column name="LEGAL_IDCARD"  length="32" ><comment>法人身份证号</comment></column>
+        </property>
+        <property name="registeredFund" type="java.lang.String">
+            <column name="REGISTERED_FUND"  length="64" ><comment>注册资金</comment></column>
+        </property>
+        <property name="coachnumber" type="java.lang.String">
+            <column name="COACHNUMBER"  length="16" ><comment>教练员总数</comment></column>
+        </property>
+        <property name="grasupvnum" type="java.lang.String">
+            <column name="GRASUPVNUM"  length="16" ><comment>考核员总数</comment></column>
+        </property>
+        <property name="safmngnum" type="java.lang.String">
+            <column name="SAFMNGNUM"  length="16" ><comment>安全员总数</comment></column>
+        </property>
+        <property name="tracarnum" type="java.lang.String">
+            <column name="TRACARNUM"  length="16" ><comment>教练车总数</comment></column>
+        </property>
+        <property name="classroom" type="java.lang.String">
+            <column name="CLASSROOM"  length="16" ><comment>教室总面积</comment></column>
+        </property>
+        <property name="thclassroom" type="java.lang.String">
+            <column name="THCLASSROOM"  length="16" ><comment>理论教室总面积</comment></column>
+        </property>
+        <property name="praticefield" type="java.lang.String">
+            <column name="PRATICEFIELD"  length="16" ><comment>教练场总面积</comment></column>
+        </property>
+        <property name="delFlag" type="java.lang.String">
+            <column name="DEL_FLAG"   length="1" ><comment>删除标志</comment></column>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK"  length="256" ><comment>备注</comment></column>
+        </property>
+        <property name="createdate" type="java.util.Date">
+            <column name="CREATEDATE" ><comment>创建时间</comment></column>
+        </property>
+        <property name="updatedate" type="java.util.Date">
+            <column name="UPDATEDATE" ><comment>更新时间</comment></column>
+        </property>
+        <property name="createperson" type="java.lang.String">
+            <column name="CREATEPERSON"  length="60" ><comment>创建人</comment></column>
+        </property>
+        <property name="updateperson" type="java.lang.String">
+            <column name="UPDATEPERSON"  length="60" ><comment>更新人</comment></column>
+        </property>
+        <property name="syncXlycStatus" type="java.lang.String">
+            <column name="SYNC_XLYC_STATUS"  length="8" ><comment>同步状态（0待同步1同步成功2同步失败）</comment></column>
+        </property>
+        <property name="syncXlgjStatus" type="java.lang.String">
+            <column name="SYNC_XLGJ_STATUS"  length="8" ><comment>同步状态（0待同步1同步成功2同步失败）</comment></column>
+        </property>
+        <property name="pkTbJpCompanyid"  type="java.lang.String">
+            <column name="PK_TB_JP_COMPANYID"  length="50" ><comment>公司id</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

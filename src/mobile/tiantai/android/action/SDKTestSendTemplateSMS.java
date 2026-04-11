@@ -1,11 +1,15 @@
 package mobile.tiantai.android.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Set;
 
 import com.cloopen.rest.sdk.CCPRestSmsSDK;
 
 public class SDKTestSendTemplateSMS {
+	private static final Logger logger = LoggerFactory.getLogger(SDKTestSendTemplateSMS.class);
 
 
       public  void  getduan(String phone,String Verification)
@@ -64,7 +68,7 @@ public class SDKTestSendTemplateSMS {
   			}
   		}else{
   			//异常返回输出错误码和错误信息
-  			System.out.println("错误码=" + result.get("statusCode") +" 错误信息= "+result.get("statusMsg"));
+  			logger.info("调试信息");
   		}
       }
 
@@ -95,7 +99,7 @@ public class SDKTestSendTemplateSMS {
 			}
 		}else{
 			//异常返回输出错误码和错误信息
-			System.out.println("错误码=" + result.get("statusCode") +" 错误信息= "+result.get("statusMsg"));
+			logger.info("调试信息");
 		}
 	}
       /**

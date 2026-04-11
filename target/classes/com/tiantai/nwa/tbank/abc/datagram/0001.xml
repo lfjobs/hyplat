@@ -1,0 +1,19 @@
+<ap>
+	<CCTransCode></CCTransCode>
+    <ProductID>ICC</ProductID>
+	<ChannelType>ERP</ChannelType>
+	<CorpNo></CorpNo>
+	<OpNo></OpNo>
+	<AuthNo></AuthNo>
+	<ReqSeqNo></ReqSeqNo>
+	<ReqDate></ReqDate>
+	<ReqTime></ReqTime>
+	<Sign></Sign>	    
+	<Cmp>
+		<DbAccNo></DbAccNo>
+		<DbProv></DbProv>
+		<DbCur></DbCur>
+	</Cmp>	
+</ap>
+
+

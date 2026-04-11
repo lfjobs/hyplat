@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<package strict-method-invocation="false" name="debtasset-token" namespace="/ea/debtasset"  extends="struts-default">
+		<action name="ea_*" class="hy.ea.invoicing.action.voucher.DebtToAssetsAction" method="{1}">
+		     <result name="total">/page/ea/main/finance/invoicing/voucher/totalassetsdebt.jsp</result>
+			<result name="assets">/page/ea/main/finance/invoicing/voucher/assetsdebtlist.jsp</result>
+			
+			<result name="income">/page/ea/main/finance/invoicing/voucher/incomestatelist.jsp</result>
+			
+			<result name="success">/page/ea/success.jsp</result> 
+			
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="debtasset-jsonajax" namespace="/ea/debtasset" extends="json-default">
+		<action name="sajax_ea_*"
+			class="hy.ea.invoicing.action.voucher.DebtToAssetsAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="CarFeeAudit" table="DT_CarFeeAudit">
+		<id length="50" name="cfkey">
+			<column length="50" name="cfkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="cfID">
+			<column length="50" name="cfID">
+				<comment>主键</comment>
+			</column>
+		</property>
+		<property name="carNumber">
+			<column length="50" name="carNumber">
+				<comment>车牌号</comment>
+			</column>
+		</property>
+		<property name="createdate">
+			<column length="50" name="createdate">
+				<comment>添加时间</comment>
+			</column>
+		</property>
+
+		<property name="staffID">
+			<column length="50" name="staffID">
+				<comment>提交人</comment>
+			</column>
+		</property>
+		<property name="siteId">
+			<column length="50" name="siteId">
+				<comment>场地ID</comment>
+			</column>
+		</property>
+		<property name="siteName">
+			<column length="50" name="siteName">
+				<comment>场地名称</comment>
+			</column>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID">
+				<comment>公司ID </comment>
+			</column>
+		</property>
+
+		<property name="staffName">
+			<column length="50" name="staffName">
+				<comment>提交人姓名 </comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

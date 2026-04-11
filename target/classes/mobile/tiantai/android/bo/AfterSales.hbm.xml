@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="mobile.tiantai.android.bo">
+    <class name="AfterSales" table="sh_after_sales" schema="HYPLAT">
+        <id name="id" type="java.lang.String">
+            <column name="id" length="50" not-null="true"/>
+        </id>
+        <property name="goodsCoding">
+            <column length="250" name="goods_coding">
+                <comment>设备编号</comment>
+            </column>
+        </property>
+        <property name="account">
+            <column length="250" name="account">
+                <comment>购买人账号</comment>
+            </column>
+        </property>
+        <property name="accountName">
+            <column length="250" name="account_name">
+                <comment>购买人账号</comment>
+            </column>
+        </property>
+        <property name="goodsName">
+            <column length="250" name="goods_name">
+                <comment>设备名称</comment>
+            </column>
+        </property>
+        <property name="mnemonicCode">
+            <column length="250" name="mnemonic_code">
+                <comment>设备品牌</comment>
+            </column>
+        </property>
+        <property name="validityPeriod">
+            <column name="validity_period" length="250">
+                <comment>有效期</comment>
+            </column>
+        </property>
+        <property name="chargingTime">
+            <column name="charging_time" length="250">
+                <comment>收费时间</comment>
+            </column>
+        </property>
+
+
+        <property name="ccompanyID">
+            <column length="250" name="ccompany_id">
+                <comment>客户往来单位ID</comment>
+            </column>
+        </property>
+        <property name="ccompanyName">
+            <column length="250" name="ccompany_name">
+                <comment>客户往来单位name</comment>
+            </column>
+        </property>
+
+        <property name="cresponsible">
+            <column length="250" name="cresponsible">
+                <comment>责任人</comment>
+            </column>
+        </property>
+        <property name="responsibleTel">
+            <column length="250" name="responsible_tel">
+                <comment>责任人电话</comment>
+            </column>
+        </property>
+
+        <property name="staffID">
+            <column length="250" name="staff_id">
+                <comment>售后客服ID</comment>
+            </column>
+        </property>
+        <property name="staffName">
+            <column name="staff_name" length="250">
+                <comment>售后客服name</comment>
+            </column>
+        </property>
+        <property name="staffPhone">
+            <column name="staff_phone" length="250">
+                <comment>售后客服电话</comment>
+            </column>
+        </property>
+
+        <property name="customerOpinion">
+            <column length="250" name="customer_opinion">
+                <comment>客户意见</comment>
+            </column>
+        </property>
+        <property name="isProcess">
+            <column length="250" name="is_process">
+                <comment>是否处理</comment>
+            </column>
+        </property>
+        <property name="processResult">
+            <column length="250" name="process_result">
+                <comment>处理结果</comment>
+            </column>
+        </property>
+        <property name="address">
+            <column length="250" name="address">
+                <comment>客户定位地址</comment>
+            </column>
+        </property>
+
+        <property name="processPerson">
+            <column length="250" name="process_person">
+                <comment>处理责任人</comment>
+            </column>
+        </property>
+        <property name="processPersonPhone">
+            <column length="250" name="process_person_phone">
+                <comment>联系方式</comment>
+            </column>
+        </property>
+        <property name="cashierbillsId">
+            <column length="250" name="cashierbills_id">
+                <comment>单据 ID</comment>
+            </column>
+        </property>
+        <property name="goodsNameBill">
+            <column length="250" name="goods_name_bill">
+                <comment>商品名字</comment>
+            </column>
+        </property>
+        <property name="goodsId">
+            <column length="250" name="goods_id">
+                <comment>商品id</comment>
+            </column>
+        </property>
+        <property name="customerStaffId">
+            <column length="250" name="customer_staff_id">
+                <comment>客户id</comment>
+            </column>
+        </property>
+        <property name="quantity">
+            <column length="250" name="quantity">
+                <comment>够买数量</comment>
+            </column>
+        </property>
+        <property name="goodsbillsId">
+            <column length="250" name="goodsbills_id">
+                <comment>单据详情 ID</comment>
+            </column>
+        </property>
+
+    </class>
+</hibernate-mapping>

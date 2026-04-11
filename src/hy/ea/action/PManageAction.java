@@ -401,7 +401,7 @@ public class PManageAction extends ActionSupport {
                     try {
                         this.baseBeanService.update(aDocuments);
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        logger.error("操作异常", e);
                     }
                     map.put("updateAPIDocuments", "修改成功！");
                     map.put("code", "200");
@@ -524,7 +524,7 @@ public class PManageAction extends ActionSupport {
             try {
                 this.baseBeanService.saveBeansListAndexecuteHqlsByParams(null,new String[]{hql}, new Object[]{parameterId});
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
                 bl=false;
             }
 

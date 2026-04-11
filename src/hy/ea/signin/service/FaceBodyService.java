@@ -1,5 +1,8 @@
 package hy.ea.signin.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.exceptions.ClientException;
@@ -10,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FaceBodyService {
+	private static final Logger logger = LoggerFactory.getLogger(FaceBodyService.class);
 
     private IAcsClient getClient() {
         String accessKeyId = "LTAIhoOYsMdxmhy1";
@@ -29,14 +33,14 @@ public class FaceBodyService {
 
         try {
             AddFaceEntityResponse response = getClient().getAcsResponse(request);
-            System.out.println("AddFaceRequest, " + request.getUrl());
-            System.out.println("AddFaceEntityResponse, requestId:" + response.getRequestId());
+            logger.info("AddFaceRequest, : {}", request.getUrl());
+            logger.info("AddFaceEntityResponse, requestId:: {}", response.getRequestId());
 
             return response;
         } catch (ClientException e) {
-            System.out.println("Failed to add face.");
-            System.out.println("Error code: " + e.getErrCode());
-            System.out.println("Error message: " + e.getErrMsg());
+            logger.info("Failed to add face.");
+            logger.info("Error code: : {}", e.getErrCode());
+            logger.info("Error message: : {}", e.getErrMsg());
             throw new JsonHandlerException(e.getErrCode(), e.getErrMsg(), e);
         }
     }
@@ -54,16 +58,16 @@ public class FaceBodyService {
 
         try {
             AddFaceResponse response = getClient().getAcsResponse(request);
-            System.out.println("AddFaceRequest, " + request.getUrl());
-            System.out.println("getAcsResponse, requestId:" + response.getRequestId());
-            System.out.println("FaceId, " + response.getData().getFaceId());
-            System.out.println("QualitieScore, " + response.getData().getQualitieScore());
+            logger.info("AddFaceRequest, : {}", request.getUrl());
+            logger.info("getAcsResponse, requestId:: {}", response.getRequestId());
+            logger.info("调试信息");
+            logger.info("调试信息");
 
             return response;
         } catch (ClientException e) {
-            System.out.println("Failed to add face.");
-            System.out.println("Error code: " + e.getErrCode());
-            System.out.println("Error message: " + e.getErrMsg());
+            logger.info("Failed to add face.");
+            logger.info("Error code: : {}", e.getErrCode());
+            logger.info("Error message: : {}", e.getErrMsg());
             throw new JsonHandlerException(e.getErrCode(), e.getErrMsg(), e);
         }
     }
@@ -80,15 +84,15 @@ public class FaceBodyService {
 //            request.setMaxFaceNum(1L);
 
             SearchFaceResponse response = getClient().getAcsResponse(request);
-            System.out.println("SearchFaceRequest, " + request.getUrl());
-            System.out.println("SearchFaceResponse, requestId:" + response.getRequestId());
-            System.out.println("MatchList: " + response.getData().getMatchList().size());
+            logger.info("SearchFaceRequest, : {}", request.getUrl());
+            logger.info("SearchFaceResponse, requestId:: {}", response.getRequestId());
+            logger.info("调试信息");
 
             return response;
         } catch (ClientException e) {
-            System.out.println("Failed to search face.");
-            System.out.println("Error code: " + e.getErrCode());
-            System.out.println("Error message: " + e.getErrMsg());
+            logger.info("Failed to search face.");
+            logger.info("Error code: : {}", e.getErrCode());
+            logger.info("Error message: : {}", e.getErrMsg());
             throw new JsonHandlerException(e.getErrCode(), e.getErrMsg(), e);
         }
     }
@@ -102,15 +106,15 @@ public class FaceBodyService {
             request.setQuality(true);
 
             RecognizeFaceResponse response = getClient().getAcsResponse(request);
-            System.out.println("SearchFaceRequest, " + request.getUrl());
-            System.out.println("SearchFaceResponse, requestId:" + response.getRequestId());
-            System.out.println("ScoreList: " + response.getData().getQualities().getScoreList().size());
+            logger.info("SearchFaceRequest, : {}", request.getUrl());
+            logger.info("SearchFaceResponse, requestId:: {}", response.getRequestId());
+            logger.info("调试信息");
 
             return response;
         } catch (ClientException e) {
-            System.out.println("Failed to search face.");
-            System.out.println("Error code: " + e.getErrCode());
-            System.out.println("Error message: " + e.getErrMsg());
+            logger.info("Failed to search face.");
+            logger.info("Error code: : {}", e.getErrCode());
+            logger.info("Error message: : {}", e.getErrMsg());
             throw new JsonHandlerException(e.getErrCode(), e.getErrMsg(), e);
         }
     }

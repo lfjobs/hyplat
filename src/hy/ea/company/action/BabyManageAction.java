@@ -1,5 +1,8 @@
 package hy.ea.company.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 
@@ -30,6 +33,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 @Scope("prototype")
 public class BabyManageAction {
+	private static final Logger logger = LoggerFactory.getLogger(BabyManageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -83,7 +87,7 @@ public class BabyManageAction {
 		List<BaseBean> valuelist = null;
 		for(BaseBean b:list){
 			AttriCate attr = (AttriCate) b;
-			System.out.println(attr.getAttriname());
+			logger.info("调试信息");
 			if(attr.getIsMultiValue().equals("0")){
 				valuelist = baseBeanService.getListBeanByHqlAndParams(hqlvalue,new Object[]{attr.getAcID(),"0"});
 			   mapvalue.put(attr.getAcID(),valuelist);

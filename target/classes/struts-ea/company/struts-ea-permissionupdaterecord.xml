@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<!-- 系统权限修改记录 -->
+	<package strict-method-invocation="false" name="permissionRecord-token" namespace="/ea/permissionupdaterecord"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.company.action.office.PermissionUpdateRecordAction" method="{1}">
+		</action>
+	</package>
+	
+	<package strict-method-invocation="false" name="permissionRecord-ntoken" namespace="/ea/permissionupdaterecord" extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.company.action.office.PermissionUpdateRecordAction" method="{1}">
+			<result name="list">/page/ea/ccompany/company/permissionUpdateRecord.jsp</result>
+		</action>
+	</package>
+	
+</struts>

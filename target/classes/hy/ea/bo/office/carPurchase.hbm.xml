@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="carPurchase" table="DT_PURCHASE_TAXCARD">
+		<id length="50" name="purchaseKey">
+			<column length="50" name="purchaseKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="purchaseID">
+			<column length="50" name="purchaseID"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" />
+		</property>
+		<property name="carID">
+			<column length="50" name="carID"/>
+		</property>
+		<property name="numbers">
+			<column length="250" name="numbers" />
+		</property>
+		<property  name="taxpayer">
+			<column length="250" name="taxpayer" />
+		</property>
+		<property  name="brandModel">
+			<column length="250" name="brandModel" />
+		</property>
+		<property  name="engineNum">
+			<column length="250" name="engineNum" />
+		</property>
+		<property  name="frameNum">
+			<column length="250" name="frameNum" />
+		</property>
+		<property  name="collectionNum">
+			<column length="250" name="collectionNum" />
+		</property>
+		<property  name="agentSignature">
+			<column length="250" name="agentSignature" />
+		</property>
+		<property  name="carNum">
+			<column length="250" name="carNum" />
+		</property>
+		<property  name="carType">
+			<column length="250" name="carType" />
+		</property>
+		<property  name="carPeople">
+			<column length="250" name="carPeople" />
+		</property>
+	</class>
+</hibernate-mapping>

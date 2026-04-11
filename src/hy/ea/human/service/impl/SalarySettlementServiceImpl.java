@@ -1,5 +1,8 @@
 package hy.ea.human.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.human.SocialSecuritySetup;
@@ -680,7 +683,7 @@ public class SalarySettlementServiceImpl implements SalarySettlementService {
 //                try {
 //                    baseBeanService.saveBeansListAndexecuteSqlsByParams(salarySettlementMonthList,null,null);
 //                }catch (Exception e){
-//                    e.printStackTrace();
+//                    logger.error("操作异常", e);
 //                }
 //            }
 //        }
@@ -1032,7 +1035,7 @@ public class SalarySettlementServiceImpl implements SalarySettlementService {
                     try {
                         baseBeanService.saveBeansListAndexecuteSqlsByParams(salaryMonthAddList,null,null);
                     }catch (Exception e){
-                        e.printStackTrace();
+                        logger.error("操作异常", e);
                     }
                 }
             }
@@ -1207,7 +1210,7 @@ public class SalarySettlementServiceImpl implements SalarySettlementService {
                 try {
                     baseBeanService.saveBeansListAndexecuteSqlsByParams(salaryMonthAddList,null,null);
                 }catch (Exception e){
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
         }
@@ -1990,7 +1993,7 @@ public class SalarySettlementServiceImpl implements SalarySettlementService {
     public static void main(String[] args){
         String[] years = {"2024","2025"};
         String year = Arrays.asList(years).toString();
-        System.out.println(year);
+        logger.info("值：{}", year);
     }
 
     /**

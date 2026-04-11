@@ -1,5 +1,8 @@
 package com.alipay.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.CertAlipayRequest;
@@ -11,6 +14,7 @@ import com.alipay.api.response.AlipayTradeRefundResponse;
  * 账号：ttsw2010@163.com
  */
 public class AlipayConfigTtsw {
+	private static final Logger logger = LoggerFactory.getLogger(AlipayConfigTtsw.class);
     // ↓↓↓↓↓↓↓↓↓↓请在这里配置您的基本信息↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
     // 合作身份者ID，以2088开头由16位纯数字组成的字符串
     public static String PARTNER = "2021002107677293";
@@ -61,7 +65,7 @@ public class AlipayConfigTtsw {
         try {
             alipayClient = new DefaultAlipayClient(certAlipayRequest);
         } catch (AlipayApiException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return alipayClient;
     }

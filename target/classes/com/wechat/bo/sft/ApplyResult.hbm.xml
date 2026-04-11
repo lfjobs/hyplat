@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wechat.bo.sft">
+	<class name="ApplyResult" table="dt_sft_ApplyResult">
+	<comment>通过业务申请编号查询申请状态  </comment>
+		<id length="50" name="arKey">
+			<column length="50" name="arKey" ><comment></comment></column>
+			<generator class="uuid" />
+		</id>
+		<property name="arId">
+			<column length="50" name="arId" ><comment>业务主键</comment></column>
+		</property>
+		<property name="applyment_state">
+			<column length="50" name="applyment_state" ><comment>申请状态 </comment></column>
+		</property>
+		<property name="applyment_state_desc">
+			<column length="50" name="applyment_state_desc" ><comment>申请状态描述</comment></column>
+		</property>
+		<property name="sign_url">
+			<column length="200" name="sign_url" ><comment>签约链接</comment></column>
+		</property>
+		<property name="sub_mchid">
+			<column length="50" name="sub_mchid" ><comment>电商平台二级商户号</comment></column>
+		</property>
+		<property name="out_request_no">
+			<column length="50" name="out_request_no" ><comment>提交接口填写的业务申请编号</comment></column>
+		</property>
+		<property name="applyment_id">
+			<column length="50" name="applyment_id" ><comment>微信支付分配的申请单号</comment></column>
+		</property>
+		<property name="account_validationID">
+			<column length="50" name="account_validationID" ><comment>汇款账户验证信息</comment></column>
+		</property>
+		<property name="jzqresultCode">
+			<column length="50" name="jzqresultCode" ><comment>君子签返回代码</comment></column>
+		</property>
+		<property name="jzqmsg">
+			<column length="50" name="jzqmsg" ><comment>君子签返回结果</comment></column>
+		</property>
+		<property name="emailOrMobile">
+			<column length="50" name="emailOrMobile" ><comment>返回的邮件</comment></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

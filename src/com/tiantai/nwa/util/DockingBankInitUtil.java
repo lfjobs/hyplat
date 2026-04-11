@@ -1,5 +1,8 @@
 package com.tiantai.nwa.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.util.Constant;
 
 import java.io.FileInputStream;
@@ -24,6 +27,7 @@ import com.tiantai.nwa.tbank.bo.BankSX;
  * 
  */
 public class DockingBankInitUtil {
+	private static final Logger logger = LoggerFactory.getLogger(DockingBankInitUtil.class);
 
 	private static Map<String, Map<String, String>> sysMap;//银行的交易特有数据
 	private static Map<String, String> mapBankList;//银行列表
@@ -158,9 +162,9 @@ public class DockingBankInitUtil {
 		try {
 			prop.load(new FileInputStream(path));
 		} catch (FileNotFoundException e) {			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} catch (IOException e) {			
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return prop;
 	}

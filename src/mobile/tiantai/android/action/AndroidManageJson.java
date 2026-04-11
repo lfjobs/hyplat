@@ -1,5 +1,8 @@
 package mobile.tiantai.android.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.util.DateJsonValueProcessor;
 import hy.plat.bo.PageForm;
 
@@ -19,6 +22,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 @Scope("prototype")
 public class AndroidManageJson {
+	private static final Logger logger = LoggerFactory.getLogger(AndroidManageJson.class);
 	private String result;
 	/**
 	 * @param 分页
@@ -53,7 +57,7 @@ public class AndroidManageJson {
 					jsonObjList.accumulate("pageCount", pageForm.getPageCount());
 					jsonObjList.accumulate("message", "成功");
 				} catch (Exception e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 					jsonObjList.accumulate("content", "数据异常");
 					jsonObjList.accumulate("message", "失败");
 				}

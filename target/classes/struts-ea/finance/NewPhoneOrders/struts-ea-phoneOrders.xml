@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package strict-method-invocation="false" name="pobuy-sajaxs" namespace="/ea/pobuy" extends="json-default">
+		<action name="sajax_*" class="phoneOrdersAction_Buyers" method="{1}">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="pobuy-ntoken" namespace="/ea/pobuy" extends="struts-default">
+		<action name="ea_*" class="phoneOrdersAction_Buyers" method="{1}">
+			<result name="list">/page/ea/main/finance/NewPhoneOrders/phoneOrdersList_Buyers.jsp</result>
+			<result name="edit">/page/ea/main/finance/NewPhoneOrders/phoneOrdersDetail_Buyers.jsp</result>
+			<result name="refund">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/refundDetails.jsp</result>
+			<result name="refundDetails">/page/ea/main/finance/mobile/mobileRight_list1.jsp</result>
+			<result name="getWuliuDetails">/page/ea/main/finance/NewPhoneOrders/RefundReimburse/viewLogistics.jsp</result>
+			<result name="buyer">/page/ea/main/finance/NewPhoneOrders/ReceiptList.jsp</result>		
+			<result name="assess">/page/ea/main/finance/NewPhoneOrders/OrderEvaluation.jsp</result>
+			
+			<result name="sh" type="redirectAction">
+			    <param name="actionName">ea_getReceiptList.jspa?</param>
+			    <param name="namespace">/ea/pobuy/</param>
+			    <param name="user">${user}</param>
+			    <param name="state">00</param>
+			</result>       
+		</action>
+	</package>
+</struts>

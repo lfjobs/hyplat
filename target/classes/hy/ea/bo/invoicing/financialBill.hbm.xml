@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.invoicing">
+	<class name="FinancialBill" table="dt_inv_fb">
+		<id length="50" name="financialbillKey">
+			<column length="50" name="financialbillKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="financialbillID">
+			<column length="50" name="financialbillID" />
+		</property>
+		<property name="cashierBillsID">
+			<column length="50" name="cashierBillsID" />
+		</property>
+		<property name="groupCompanySn">
+			<column length="50" name="groupCompanySn" />
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" />
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID"/>
+		</property>
+		<property name="departmentID">
+			<column length="50" name="departmentID" />
+		</property>
+		<property  name="ccompanyID">
+			<column length="50" name="ccompanyID" />
+		</property>
+		<property  name="ccompanyName">
+			<column length="250" name="ccompanyName" />
+		</property>
+		<property  name="ccompanyTel">
+			<column length="250" name="ccompanyTel" />
+		</property>
+		<property  name="drccompanyID">
+			<column length="50" name="drccompanyID" />
+		</property>
+		<property  name="drccompanyName">
+			<column length="250" name="drccompanyName" />
+		</property>
+		<property  name="drccompanyTel">
+			<column length="250" name="drccompanyTel" />
+		</property>
+		 <!-- xyz添加 -->
+		<property name="frontMoney">
+			<column length="50" name="frontMoney" />
+		</property>
+		<property name="moneyType">
+			<column length="50" name="moneyType" />
+		</property>
+		<property name="staffPhone">
+			<column length="50" name="staffPhone" />
+		</property>
+		<property name="purchaseDate">
+			<column length="50" name="purchaseDate" />
+		</property>
+		<property name="examinegoodsDate">
+			<column length="50" name="examinegoodsDate" />
+		</property>
+		<property name="subjectName">
+			<column length="50" name="subjectName" />
+		</property>
+		<property name="subjectID">
+			<column length="50" name="subjectID" />
+		</property>
+		<property name="paymentType">
+			<column length="50" name="paymentType" />
+		</property>
+		<property name="logisticsType">
+			<column length="50" name="logisticsType" />
+		</property>
+		<property name="goodsmoney">
+			<column length="50" name="goodsmoney" />
+		</property>
+		<property name="depotName">
+			<column length="50" name="depotName" />
+		</property>
+		<property name="depotID">
+			<column length="50" name="depotID" />
+		</property>
+		<property name="drdepotName">
+			<column length="50" name="drdepotName" />
+		</property>
+		<property name="drdepotID">
+			<column length="50" name="drdepotID" />
+		</property>
+		<property  name="staffID">
+			<column length="50" name="staffID" />
+		</property>
+		<property  name="staffName">
+			<column length="250" name="staffName" />
+		</property>
+		<property  name="staffsID">
+			<column length="50" name="staffsID" />
+		</property>
+		<property  name="staffsName">
+			<column length="250" name="staffsName" />
+		</property>
+		<property  name="billsType">
+			<column length="250" name="billsType" />
+		</property>
+		<property  name="journalNum">
+			<column length="250" name="journalNum" />
+		</property>
+		<property  name="billsDate">
+			<column name="billsDate" />
+		</property>
+		<property  name="billStaffID">
+			<column length="50" name="billStaffID" />
+		</property>
+		<property  name="billStaffName">
+			<column length="250" name="billStaffName" />
+		</property>
+		<property  name="billStatus">
+			<column length="50" name="billStatus" />
+		</property>
+		<!--未使用字段  -->
+		<property  name="companyBankNum">
+			<column length="250" name="companyBankNum" />
+		</property>
+		<property  name="cstaffID">
+			<column length="50" name="cstaffID" />
+		</property>
+		<property  name="cstaffName">
+			<column length="250" name="cstaffName" />
+		</property>
+		<property  name="cstaffRelationship">
+			<column length="50" name="cstaffRelationship" />
+		</property>
+		<property  name="userAccountNum">
+			<column length="50" name="userAccountNum" />
+		</property>
+		<property  name="ccompanyRelationship">
+			<column length="250" name="ccompanyRelationship" />
+		</property>
+		<property  name="accountNum">
+			<column length="50" name="accountNum" />
+		</property>
+		<property name="accessoriesUrl">
+			<column length="500" name="accessoriesUrl" />
+		</property>
+		<property name="goodsReceiptDate">
+			<column length="500" name="goodsReceiptDate" />
+		</property>
+		<property name="consigneeID">
+			<column length="500" name="consigneeID" />
+		</property>
+		<property name="consigneeName">
+			<column length="500" name="consigneeName" />
+		</property>
+		<property name="category">
+			<column length="50" name="category" />
+		</property>
+		<property name="fiveClear">
+			<column length="50" name="fiveClear" />
+		</property>
+		<property  name="area">
+			<column length="250" name="area" />
+		</property>
+		<property  name="frame">
+			<column length="250" name="frame" />
+		</property>
+		<property  name="position">
+			<column length="250" name="position" />
+		</property>
+		<property  name="areaName">
+			<column length="50" name="areaName" />
+		</property>
+		<property  name="frameName">
+			<column length="50" name="frameName" />
+		</property>
+		<property  name="positionName">
+			<column length="50" name="positionName" />
+		</property>
+	</class>
+</hibernate-mapping>

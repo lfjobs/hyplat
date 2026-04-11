@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.recruit">
+	<class name="CollectThing" table="dtCollectThing">
+		<id length="50" name="cokey">
+			<column length="50" name="cokey" />
+			<generator class="uuid" />
+		</id>
+		<property name="coId">
+			<column length="50" name="coId"><comment>ID</comment></column>
+		</property>
+		<property name="id">
+			<column length="50" name="id"><comment>收藏东西的ID</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>人员ID</comment></column>
+		</property>
+		<property name="type">
+			<column length="2" name="type"><comment>00 职位 01 简历</comment></column>
+		</property>
+		<property name="colDate">
+			<column name="colDate"><comment>收藏时间</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

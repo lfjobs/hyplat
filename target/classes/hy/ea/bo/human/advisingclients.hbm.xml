@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="AdvisingClients" table="dtAdvisingClients">
+		<id length="50" name="advisingClientsKey">
+			<column length="50" name="advisingClientsKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="advisingClientsID">
+			<column length="50" name="advisingClientsID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true"/>
+		</property>
+		<property name="companyCode">
+			<column length="250" name="companyCode"/>
+		</property>
+		<property name="companyName">
+			<column length="250" name="companyName"/>
+		</property>
+		<property name="department">
+			<column length="250" name="department" />
+		</property>
+		<property  name="contactPeople">
+			<column length="250" name="contactPeople" />
+		</property>
+		<property  name="contactPhone">
+			<column length="250" name="contactPhone" />
+		</property>
+		<property  name="customerServiceContent">
+			<column length="250" name="customerServiceContent" />
+		</property>
+		<property  name="note">
+			<column length="256" name="note" />
+		</property>
+	</class>
+</hibernate-mapping>

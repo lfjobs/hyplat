@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="TransactionService" table="dtTransactionService">
+		<id length="50" name="transactionServiceKey">
+			<column length="50" name="transactionServiceKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="transactionServiceID">
+			<column length="50" name="transactionServiceID" not-null="true"/>
+		</property>
+		<property name="companyID">
+			<column length="50" name="companyID" not-null="true"/>
+		</property>
+		<property name="organizationID">
+			<column length="50" name="organizationID" not-null="true"/>
+		</property>
+		<property name="transactionServiceCode">
+			<column length="250" name="transactionServiceCode"/>
+		</property>
+		<property name="serviceCode">
+			<column length="250" name="serviceCode"/>
+		</property>
+		<property name="customerCode">
+			<column length="250" name="customerCode" />
+		</property>
+		<property  name="customerName">
+			<column length="250" name="customerName" />
+		</property>
+		<property  name="customerContact">
+			<column length="250" name="customerContact" />
+		</property>
+		<property  name="serviceType">
+			<column length="250" name="serviceType" />
+		</property>
+		<property  name="serviceMode">
+			<column length="250" name="serviceMode" />
+		</property>
+		<property  name="ServiceDepartment">
+			<column length="250" name="ServiceDepartment" />
+		</property>
+		<property  name="ServiceExecutor">
+			<column length="56" name="ServiceExecutor" />
+		</property>
+	</class>
+</hibernate-mapping>

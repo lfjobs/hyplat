@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.production.view">
+	<class name="UtboundOrderVo" table="utboundordervo">
+		<id length="50" name="cashierbillskey">
+			<column length="50" name="cashierbillskey" />
+			<generator class="uuid" />
+		</id>
+		 <property name="cashierbillsid">
+        	<column name="cashierbillsid" length="50"/>
+        </property>
+        <property name="staffID">
+        	<column name="staffID" length="50"/>
+        </property>
+        <property name="staffName">
+        	<column name="staffName" length="50"/>
+        </property>
+         <property name="cashierDate">
+        	<column name="cashierDate" length="250"/>
+        </property>
+        <property name="journalnum">
+        	<column name="journalnum" length="250"/>
+        </property>
+		<property name="goodsbillsid">
+        	<column name="goodsbillsid" length="50"/>
+        </property>
+        <property name="inventoryID">
+        	<column name="inventoryID" length="50"/>
+        </property>
+        <property name="stockinvID">
+        	<column name="stockinvID" length="250"/>
+        </property>
+         <property name="goodsnum">
+        	<column name="goodsnum" length="50"/>
+        </property>
+        <property name="goodsname">
+        	<column name="goodsname" length="250"/>
+        </property>
+        <property name="standard">
+			<column name="standard" length="250" />
+		</property>
+		<property name="quantity">
+			<column name="quantity" length="250" />
+		</property>
+		<property name="price">
+			<column name="price" length="250" />
+		</property>
+		<property name="money">
+		   <column name="money" length="250"/>
+		</property>
+		<property name="financialbillid">
+		   <column name="financialbillid" length="250"/>
+		</property>
+		<property name="depotname">
+			<column name="depotname" length="250" />
+		</property>
+		<property name="depotid">
+			<column name="depotid" length="250" />
+		</property>
+		<property name="drdepotName">
+			<column length="50" name="drdepotName" />
+		</property>
+		<property name="drdepotID">
+			<column length="250" name="drdepotID" />
+		</property>
+		<property name="billstype">
+			<column length="250" name="billstype" />
+		</property>
+		<property name="status">
+			<column length="250" name="status" />
+		</property>
+		<property name="companyid">
+			<column length="250" name="companyid" />
+		</property>
+		<property name="organizationid">
+			<column length="250" name="organizationid" />
+		</property>
+		<property name="statusbill">
+			<column length="250" name="statusbill" />
+		</property>
+		<property name="goodsId">
+			<column length="250" name="goodsid" />
+		</property>
+		<property name="typeId">
+			<column length="250" name="typeId" />
+		</property>
+		<property name="staffsID">
+			<column length="250" name="staffsID" />
+		</property>
+		<property name="staffsName">
+			<column length="250" name="staffsName" />
+		</property>
+		<property name="examinegoodsDate">
+			<column length="250" name="examinegoodsDate" />
+		</property>
+		<property name="ppId">
+			<column length="250" name="ppId" />
+		</property>
+		<property name="profitMargin">
+			<column length="50" name="profitMargin" />
+		</property>
+		<property name="profitAmount">
+			<column length="50" name="profitAmount" />
+		</property>
+		<property name="pretium">
+			<column length="50" name="pretium" />
+		</property>
+		<property name="purchaseDate">
+			<column length="50" name="purchaseDate" />
+		</property>
+		<property name="subjectName">
+			<column length="50" name="subjectName" />
+		</property>
+		<property name="subjectID">
+			<column length="50" name="subjectID" />
+		</property>
+		<property name="logisticsType">
+			<column length="50" name="logisticsType" />
+		</property>
+		<property name="contactUserID">
+			<column length="50" name="contactUserID" />
+		</property>
+		<property name="ctUserName">
+			<column length="50" name="ctUserName" />
+		</property>
+		<property name="reference">
+			<column length="50" name="reference" />
+		</property>
+		<property name="proInspectionID">
+			<column length="50" name="proInspectionID" />
+		</property>
+		<property name="jNumOrder">
+			<column length="50" name="jNumOrder" />
+		</property>
+		<property name="category">
+			<column length="50" name="category" />
+		</property>
+		<property name="fiveClear">
+			<column length="50" name="fiveClear" />
+		</property>
+	</class> 
+	
+</hibernate-mapping>

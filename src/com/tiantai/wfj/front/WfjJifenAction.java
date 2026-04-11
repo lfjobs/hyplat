@@ -1,5 +1,8 @@
 package com.tiantai.wfj.front;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.base.action.BaseAction;
 import hy.ea.util.Constant;
 
@@ -75,7 +78,7 @@ public class WfjJifenAction extends BaseAction<WfjJifen>{
 				rep="ccc";
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		request.setAttribute("chargeInput", bean);
 		return rep;

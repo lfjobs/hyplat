@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="cmenu-token" namespace="/ea/cmenu" extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.action.CMenuAction" method="{1}">
+			<result name="failed">/page/ea/main/cmenu/cmenu_edit.jsp</result>
+			<result name="list">/page/ea/main/cmenu/cmenu_list.jsp</result>
+			<result name="invalid.token" type="redirectAction">ea_getListCMenu</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="cmenu-ntoken"  namespace="/ea/cmenu" extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.action.CMenuAction" method="{1}">
+			<result name="list">/page/ea/main/cmenu/cmenu_list.jsp</result>
+			<result name="to_edit">/page/ea/main/cmenu/cmenu_edit.jsp</result>
+		</action>
+	</package>
+</struts>

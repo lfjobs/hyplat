@@ -1,5 +1,8 @@
 package com.tiantai.wfj.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
 import com.tiantai.wfj.service.EarthIndexService;
@@ -73,7 +76,7 @@ public class EarthIndexServiceImpl
             String sql = "select c.logopath,c.companyname,c.ccompanyID,c.industryType from dtContactCompany c,dt_hr_StaffBrowseHistory h where c.ccompanyID=h.ccompanyID and h.sccid = ? order by h.createDate desc";
              pageForm = baseBeanService.getPageFormBySQL(pageNumber, pageSize, sql, "select count(*) from(" + sql + ")", new Object[]{sccid});
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return pageForm;
     }
@@ -288,7 +291,7 @@ public class EarthIndexServiceImpl
             }
             baseBeanDao.saveBeansListAndexecuteHqlsByParams(beans, null, null);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 }

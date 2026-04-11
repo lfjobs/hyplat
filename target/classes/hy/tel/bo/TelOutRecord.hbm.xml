@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping package="hy.tel.bo">
+    <class name="TelOutRecord" table="dt_tel_TelOutRecord" schema="HYPLAT">
+        <id name="id" type="string">
+            <column name="id" length="50" not-null="true"/> 
+        </id> 
+        <property name="visitedUser" type="string">
+            <column name="visitedUser" length="50" />
+        </property>
+        <property name="visitedTime" type="java.util.Date">
+            <column name="visitedTime" length="50" not-null="true"  />
+        </property>
+        <property name="visitedContent" type="string">
+            <column name="visitedContent" length="500" not-null="true" />
+        </property>
+        <property name="visitedType" type="string">
+            <column name="visitedType" length="50"/>
+        </property>        
+        <property name="telType" type="string">
+            <column name="telType" length="50" />
+        </property>
+        <property name="isDel" type="long">
+            <column name="isDel" precision="22" scale="0" not-null="true" />
+        </property> 
+        <property name="company" type="string" not-null="true" >
+            <column name="company" length="50" />
+        </property>
+        <property name="telcodeType" type="string" not-null="false" >
+            <column name="telcodeType" length="1" />
+        </property>
+        <property name="beginTime" type="java.util.Date">
+            <column name="beginTime" length="50" />
+        </property>
+        <property name="endTime" type="java.util.Date">
+            <column name="endTIme" length="50" />
+        </property>
+        <property name="savePath" type="string">
+            <column name="savePath" length="50" />
+        </property> 
+        <property name="telNumber" type="string">
+            <column name="telNumber" length="50" not-null="true" />
+        </property>
+        <many-to-one name="user"  column="userId" class="hy.ea.bo.human.Staff"  lazy="false">
+        </many-to-one>
+    </class>
+</hibernate-mapping>

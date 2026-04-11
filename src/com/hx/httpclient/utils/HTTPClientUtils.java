@@ -1,5 +1,8 @@
 package com.hx.httpclient.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.ws.rs.core.MediaType;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -54,6 +57,7 @@ import com.hx.httpclient.vo.Token;
  *
  */
 public class HTTPClientUtils {
+	private static final Logger logger = LoggerFactory.getLogger(HTTPClientUtils.class);
 
 	private static final JsonNodeFactory factory = new JsonNodeFactory(false);
 
@@ -270,7 +274,7 @@ public class HTTPClientUtils {
 		try {
 			url = new URL(Constants.API_HTTP_SCHEMA, Constants.API_SERVER_HOST, "/" + path);
 		} catch (MalformedURLException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return url;

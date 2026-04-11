@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.plat.bo">
+	<class name="SBO" table="dtSBO">
+		<id name="boKey">
+			<column length="50" name="boKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="boID">
+			<column length="50" name="boID" unique="true" not-null="true" />
+		</property>
+		<property name="eaID">
+			<column length="50" name="eaID" not-null="true" />
+		</property>
+		<property name="boName">
+			<column length="50" name="boName" not-null="true" />
+		</property>
+		<property name="boCreateDate">
+			<column name="boCreateDate" not-null="true" />
+		</property>
+		<property name="boUpdateDate">
+			<column name="boUpdateDate" not-null="true" />
+		</property>
+		<property name="boTeam">
+			<column length="50" name="boTeam" not-null="true" />
+		</property>
+		<property name="boStatus">
+			<column length="2" name="boStatus" not-null="true" />
+		</property>
+		<property name="boDesc">
+			<column length="256" name="boDesc" />
+		</property>
+	</class>
+</hibernate-mapping>

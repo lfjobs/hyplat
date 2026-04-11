@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="SystemRemind" table="dtSystemRemind">
+		<id length="50" name="sremindKey">
+			<column length="50" name="sremindKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="sremindID">
+			<column length="50" name="sremindID" />
+		</property>
+        <property name="scircularType">
+			<column length="2" name="scircularType" />
+		</property>
+		<property name="scircularTitle">
+			<column length="100" name="scircularTitle" />
+		</property>
+		<property name="scircularText">
+			<column length="1000" name="scircularText" />
+		</property>
+        <property name="sreceiveType">
+			<column length="10" name="sreceiveType" />
+		</property>
+		<property name="sreceiveDate">
+			<column name="sreceiveDate" sql-type="Date"></column>
+		</property>
+		<property name="sremindType">
+			<column length="2" name="sremindType" />
+		</property>
+		<property name="sremindStatus">
+			<column length="2" name="sremindStatus" />
+		</property>
+		<property name="saddDate">
+			<column name="saddDate" sql-type="Date"></column>
+		</property>
+	</class>
+</hibernate-mapping>

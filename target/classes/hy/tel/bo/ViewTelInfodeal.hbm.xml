@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping package="hy.tel.bo">
+    <class name="ViewTelInfodeal"  table="VIEW_TEL_INFODEAL">
+        <id length="50" name="id">
+			<column length="50" name="ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="userid">
+			<column length="50" name="USERID" />
+		</property>
+		<property name="recordid">
+			<column length="50" name="RECORDID" />
+		</property>
+		<property name="staffname">
+			<column length="50" name="STAFFNAME" />
+		</property>
+		<property name="reference">
+			<column length="50" name="REFERENCE" />
+		</property>
+		<property name="telnumber">
+			<column length="50" name="TELNUMBER" />
+		</property>
+		<property name="customname">
+			<column length="50" name="CUSTOMNAME" />
+		</property>
+		<property name="recordcontent">
+			<column length="500" name="RECORDCONTENT" />
+		</property>
+		<property name="isdeal">
+			<column length="22" name="ISDEAL" />
+		</property>
+		<property name="company">
+			<column length="50" name="COMPANY" />
+		</property>
+		<property name="companyname">
+			<column length="50" name="COMPANYNAME" />
+		</property>
+		<property name="recodedate">
+			<column length="16" name="RECODEDATE" />
+		</property>
+		<property name="dealuser">
+			<column length="50" name="DEALUSER" />
+		</property>
+		<property name="dealdate">
+			<column length="11" name="DEALDATE" />
+		</property>
+		<property name="dealcontent">
+			<column length="500" name="DEALCONTENT" />
+		</property>
+		<property name="telcodetype">
+			<column length="1" name="TELCODETYPE" />
+		</property>
+		<property name="recordtype">
+			<column length="50" name="RECORDTYPE" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

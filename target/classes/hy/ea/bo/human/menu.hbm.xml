@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human">
+	<class name="Menu" table="DT_MENU">
+		<id length="50" name="menuKey" >
+			<column length="50" name="MENU_KEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="menuId" >
+			<column length="50" name="MENU_ID" not-null="true"/>
+		</property>
+		<property name="menuPID" >
+			<column length="50" name="MENU_PID"/>
+		</property>
+		<property name="menuName" >
+			<column length="250" name="MENU_NAME"/>
+		</property>
+		<property name="menuURL" >
+			<column length="250" name="MENU_URL"/>
+		</property>
+		<property name="menuType" >
+			<column length="2" name="MENU_TYPE" />
+		</property>
+		<property name="sortNum">
+			<column length="250" name="SORT_NUM" />
+		</property>
+		<property  name="menuMark">
+			<column length="250" name="MENU_MARK" />
+		</property>
+		<property  name="rolePermission">
+			<column length="250" name="ROLE_PERMISSION" />
+		</property>
+		<property  name="status">
+			<column length="2" name="STATUS" not-null="true"/>
+		</property>
+		<property  name="menuLevel">
+			<column length="2" name="MENU_LEVEL" not-null="true"/>
+		</property>
+		<property  name="menuDesc">
+			<column length="250" name="MENU_DESC" />
+		</property>
+		<property  name="menuPIDList">
+			<column length="2500" name="MENU_PID_LIST" />
+		</property>
+
+
+	</class>
+</hibernate-mapping>

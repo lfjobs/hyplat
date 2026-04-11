@@ -1,5 +1,8 @@
 package com.tiantai.wfj.certificate.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tiantai.wfj.certificate.service.certificateService;
 import hy.ea.bo.company.ContactCompany;
 import hy.ea.bo.human.StaffCertificate;
@@ -59,7 +62,7 @@ public class certificateServiceImpl implements certificateService {
             b.add(certificate);
             beandao.saveBeansListAndexecuteHqlsByParams(b,null,null);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             map.put("success", false);
             map.put("message", "保存失败！");
         }
@@ -114,7 +117,7 @@ public class certificateServiceImpl implements certificateService {
             pageForm = bbservice.getPageFormByDC(PageNumber, pageSize,dc);
             
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return pageForm;
     }
@@ -138,7 +141,7 @@ public class certificateServiceImpl implements certificateService {
             cer= bbservice.getListByDC(dc);
 
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return cer;
     }

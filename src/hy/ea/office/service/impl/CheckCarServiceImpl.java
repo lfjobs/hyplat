@@ -1,5 +1,8 @@
 package hy.ea.office.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.office.CarInformation;
 import hy.ea.office.dao.CheckCarDao;
 import hy.ea.office.service.CheckCarService;
@@ -41,7 +44,7 @@ public class CheckCarServiceImpl extends CoreManagerImpl<CarInformation>
 								"%"+car.getCarNum().trim()+"%");
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return getPageForm(pageNo, pageSize, finder);
 	}
@@ -65,7 +68,7 @@ public class CheckCarServiceImpl extends CoreManagerImpl<CarInformation>
 								"%"+car.getCarNum().trim()+"%");
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return getPageForm(pageNo, pageSize, finder);
 	}

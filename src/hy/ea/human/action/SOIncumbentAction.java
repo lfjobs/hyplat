@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.base.action.BaseAction;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
@@ -126,7 +129,7 @@ public class SOIncumbentAction extends BaseAction<Object>{
 		try {
 			oj.putAll(map,JsonConfigFactory.getInstance());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = oj;
 		return "success";

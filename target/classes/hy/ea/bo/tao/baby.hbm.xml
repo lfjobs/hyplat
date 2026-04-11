@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.tao">
+	<class name="Baby" table="tao_baby">
+		<id length="50" name="babyKey">
+			<column length="50" name="babyKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="babyID">
+			<column length="50" name="babyID" not-null="true" />
+		</property>
+		<property name="category">
+			<column length="50" name="category" not-null="true" />
+		</property>
+		 <property name="babytype">
+        	<column name="babytype" length="1" />
+        </property>
+        	<property name="babytitle">
+        	<column name="babytitle" length="60"/>
+        </property>
+        <property name="sellpoints">
+              <column name="sellpoints" length="300"/>
+        </property>
+        <property name="aprice">
+          <column name="aprice" length="10"/>
+        </property>
+        <property name="presaletype">
+          <column name="presaletype" length="1"/>
+        </property>
+           <property name="babynum">
+          <column name="babynum" length="10"/>
+        </property>
+        <property name="purchaseland">
+           <column name="purchaseland" length="1"/>
+        </property>
+        <property name="sellercode">
+           <column name="sellercode" length="30"/>
+        </property>
+		<property name="barcode">
+			<column length="30" name="barcode"/>
+		</property>
+		<property name="descriptxt">
+			<column length="300" name="descriptxt"/>
+		</property>
+		<property name="freightcostid">
+			<column length="50" name="freightcostid"/>
+		</property>
+		<property name="volume">
+			<column length="10" name="volume"/>
+		</property>
+		<property name="weight">
+			<column length="10" name="weight"/>
+		</property>
+		<property name="invoice">
+			<column length="1" name="invoice"/>
+		</property>
+		<property name="guarantee">
+			<column length="1" name="guarantee"/>
+		</property>
+		<property name="expromise">
+			<column length="1" name="expromise"/>
+		</property>
+		<property name="serguarantee">
+			<column length="1" name="serguarantee"/>
+		</property>
+		<property name="threegug">
+			<column length="1" name="threegug"/>
+		</property>
+		<property name="discount">
+			<column length="1" name="discount"/>
+		</property>
+		<property name="inventorycount">
+			<column length="1" name="inventorycount"/>
+		</property>
+		
+		<property name="validityperiod">
+			<column length="1" name="validityperiod" />
+		</property>
+        <property name="starttype">
+        	<column name="starttype" length="1"/>
+        </property>
+		<property name="seckill">
+			<column length="1" name="seckill"/>
+		</property>
+		<property name="window">
+			<column length="1" name="window"/>
+		</property>
+		<property name="createtime">
+			<column length="9" name="createtime" />
+		</property>
+		<property name="companyid">
+			<column length="50" name="companyid" />
+		</property>
+		<property name="companyname">
+			<column length="50" name="companyname" />
+		</property>
+		<property name="creatorid">
+			<column length="50" name="creatorid" />
+		</property>
+		<property name="creatorname">
+			<column length="20" name="creatorname" />
+		</property>
+		<property name="updateid">
+        	<column name="updateid" length="50"/>
+        </property>
+         <property name="updatename">
+        	<column name="updateidname" length="20"/>
+        </property>
+        <property name="updatetime">
+        	<column name="updatetime" length="9"/>
+        </property>
+	</class>
+</hibernate-mapping>

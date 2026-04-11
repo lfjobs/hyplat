@@ -184,10 +184,10 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                             new String[]{payCashierBill.getOriJournalNum()});
 
                     if (dd == null) {
-                        System.out.println("没有查询出订单,订单号:" + payCashierBill.getOriJournalNum());
+                        logger.info("没有查询出订单,订单号:: {}", payCashierBill.getOriJournalNum());
                         continue;
                     } else if (!dd.getFkStatus().equals("01") && !dd.getFkStatus().equals("09")&& !dd.getFkStatus().equals("19")) {
-                        System.out.println("该订单已经付款,订单号：" + payCashierBill.getOriJournalNum());
+                        logger.info("该订单已经付款,订单号：: {}", payCashierBill.getOriJournalNum());
                         return null;
                     }
 
@@ -387,7 +387,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                                 contractService.docTempleateParams(cashierBills, tsc.getStaffid(), ddid, gbs.getPpID(), gbs.getMoney());
 
                             } catch (Exception ec) {
-                                ec.printStackTrace();
+                                logger.error("操作异常", ec);
                             }*/
                         } else if (gbs.getTypeID() != null && gbs.getTypeID().equals("学员协议")) {
                             try {
@@ -395,7 +395,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
                                 contractService.updateDocState(pb.getCoID());
                             } catch (Exception ec) {
-                                ec.printStackTrace();
+                                logger.error("操作异常", ec);
                             }
                         }
 //                        else if (bo && (tsc.getCusType().equals("7") || tsc.getCusType().equals("6")) && (totalprice.compareTo(yb) == 1 || totalprice.compareTo(yb) == 0)) {
@@ -676,16 +676,16 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
 
         } catch (BeansException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         }
 
@@ -707,7 +707,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                  beandao.update(unPayRecord);
              }
          }catch (Exception e){
-             e.printStackTrace();
+             logger.error("操作异常", e);
          }
 
 
@@ -835,7 +835,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             backList.add(mk);
             beandao.executeHqlsByParmsList(backList, null, null);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             flag = false;
         }
         return flag;
@@ -1346,7 +1346,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                 Staff staff = (Staff) beandao.getBeanByHqlAndParams(hql,
                         new String[]{cuscom[0].toString()});
                 if (staff == null) {
-                    System.out.println((cuscom[7] == null ? "" : cuscom[7].toString()) + "-staffname为空");
+                    logger.info("调试信息");
                 } else {
                     dmb.setStaffName(staff.getStaffName());
                 }
@@ -1377,7 +1377,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
         try {
             tableNeame=billDayService.getTableNeame(2,journalNum,2);
         }catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         String caHql = "from "+tableNeame+" where journalNum=?";
         CashierBills ca = (CashierBills) beandao.getBeanByHqlAndParams(
@@ -1549,10 +1549,10 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
 
                     if (dd == null) {
-                        System.out.println("没有查询出订单,订单号:" + payCashierBill.getOriJournalNum());
+                        logger.info("没有查询出订单,订单号:: {}", payCashierBill.getOriJournalNum());
                         return null;
                     } else if (!dd.getFkStatus().equals("01") && !dd.getFkStatus().equals("09")) {
-                        System.out.println("该订单积分已付款,订单号：" + payCashierBill.getOriJournalNum());
+                        logger.info("该订单积分已付款,订单号：: {}", payCashierBill.getOriJournalNum());
                         return null;
                     }
 
@@ -2156,13 +2156,13 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                 b = false;
             }
         } catch (BeansException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             b = false;
         }
         return b;
@@ -2237,10 +2237,10 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
 
                     if (cashierBills == null) {
-                        System.out.println("没有查询出订单,订单号:" + payCashierBill.getOriJournalNum());
+                        logger.info("没有查询出订单,订单号:: {}", payCashierBill.getOriJournalNum());
                         return null;
                     } else if (!cashierBills.getFkStatus().equals("01") && !cashierBills.getFkStatus().equals("09")) {
-                        System.out.println("该订单积分已付款,订单号：" + payCashierBill.getOriJournalNum());
+                        logger.info("该订单积分已付款,订单号：: {}", payCashierBill.getOriJournalNum());
                         return null;
                     }
 
@@ -2650,7 +2650,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                 b = false;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
 
         }
         return b;
@@ -2674,10 +2674,10 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
 
             if (cashierBills == null) {
-                System.out.println("没有查询出订单,订单号:" +ddid);
+                logger.info("调试信息");
                 return null;
             } else if (!cashierBills.getFkStatus().equals("01")) {
-                System.out.println("该订单积分已付款,订单号：" + ddid);
+                logger.info("该订单积分已付款,订单号：: {}", ddid);
                 return null;
             }
             List<BaseBean> backList = new ArrayList<BaseBean>();
@@ -3083,7 +3083,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
 
         }
 
@@ -3556,7 +3556,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                     if (proxyMap != null && !proxyMap.isEmpty()) {
                         pp = proxyMap.get(psup[1]);
                     }
-                    //System.out.println("key = " + entry.getKey() + ", value = " + entry.getValue());
+                    //logger.info("调试信息");
                     if (psup[0] != null || !psup[0].equals("")) {
                         BigDecimal jinbi = new BigDecimal(psup[0].toString()).multiply(quantityNum).multiply(new BigDecimal(100));
                         if (jinbi.compareTo(BigDecimal.ZERO) > 0) {
@@ -4215,7 +4215,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             msage.setMessage("恭喜您已成功升级微分金会员，请重新登陆App！！！");
             msage.sendMsg("【微分金平台】");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         //保存账号
         List<String> slist = new ArrayList<String>();//极光推送设备号
@@ -4247,10 +4247,10 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             msage.setMobiles(cellphoneMark);
             msage.setMessage(content);
             msage.sendMsg("【数字地球】");
-            //  System.out.println(cellphoneMark);
-            //  System.out.println(content);
+            //  logger.info("值：{}", cellphoneMark);
+            //  logger.info("值：{}", content);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         //xgb
         // logger.error("生成订单-----提醒人账号:" + cus.getAccount() + "------公司下员工账号:" + cellphoneMark);
@@ -4289,7 +4289,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
         //极光推送
         if (content.indexOf("您有新的数字地球5L5C订单") != -1) {
             content = "您有新的数字地球5L5C订单，请及时处理!";
-            //System.out.println(content);
+            //logger.info("值：{}", content);
         }
         JushMain.sendjiguangMessage(content, type, body, id, slist);
 
@@ -4635,7 +4635,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "11"; //出现异常
         }
     }
@@ -4655,13 +4655,13 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
             tableNeame=billDayService.getTableNeame(2,journalNum,2);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         CashierBills dd = (CashierBills) beandao.getBeanByHqlAndParams("from "+tableNeame+" where journalNum = ?",
                 new String[]{journalNum});
 
         if (dd != null) {
-            System.out.println("订单已生成,订单号:" + journalNum);
+            logger.info("订单已生成,订单号:: {}", journalNum);
             return null;
         }
 
@@ -4814,7 +4814,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
             tableNeame=billDayService.getTableNeame(2,cashierBillsID,2);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         String hql = "update "+tableNeame+" set fkStatus = ? where cashierBillsID = ? and fkStatus = ?";
         DtOrderBillAdd billAdd = (DtOrderBillAdd) beandao
@@ -4829,7 +4829,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             beanList.add(status);
             baseBeanService.saveBeansListAndexecuteHqlsByParams(beanList, new String[]{hql}, new Object[]{"03", cashierBillsID, "00"});
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -4867,7 +4867,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
      * @return
      */
     public String generateMuliProOrder(String waiterID, String companyID, String morre, String sccid, String journalNum, String coID) {
-        System.out.println("generateMuliProOrder:" + sccid);
+        logger.info("generateMuliProOrder:: {}", sccid);
         //用户信息
         TEshopCusCom scc = (TEshopCusCom) baseBeanService
                 .getBeanByHqlAndParams("from TEshopCusCom where sccid = ?",
@@ -5013,7 +5013,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
         try {
             baseBeanService.executeHqlsByParamsList(operator, new String[]{hql}, parmsList);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return cb.getCashierBillsID();
 
@@ -5033,7 +5033,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
         try {
             tableNeame=billDayService.getTableNeame(2,journalNum,2);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         CashierBills cc = (CashierBills) baseBeanService.getBeanByHqlAndParams("from  CashierBills where journalNum = ?", new Object[]{journalNum});
 
@@ -5358,7 +5358,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
             baseBeanService.executeHqlsByParamsList(operator, hqls.toArray(new String[]{}), parms);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
         return cb.getCashierBillsID();
 
@@ -5425,9 +5425,9 @@ public class GoldOrderServiceImpl implements GoldOrderService {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
-        System.out.println(cb.getJournalNum());
+        logger.info("调试信息");
         cb.setjNumOrder(cb.getJournalNum());
         cb.setStatusbill("04");
 
@@ -5645,7 +5645,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
                 }
 
-                System.out.println(json);
+                logger.info("值：{}", json);
                 //  logger.error("body" + json.toString());
 
                 zfMessage(com, "您有一笔新的数字地球5L5C订单，请及时处理!", "餐饮订单", json.toString(), "canyin");
@@ -5663,7 +5663,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
     }
 
@@ -5697,7 +5697,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             beanList.add(cc);
             baseBeanService.saveBeansListAndexecuteHqlsByParams(beanList, null, null);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
 
         }
         return ss;
@@ -5723,7 +5723,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             return "-1";
         }
 
@@ -5792,13 +5792,13 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             }
             TemplateMsgResult templateMsgResult = WeixinUtil.sendTemplate(accessTokens, wechatTemplateMsg);
             if (templateMsgResult != null) {
-                // System.out.println(templateMsgResult.getErrcode() + templateMsgResult.getErrmsg() + templateMsgResult.getMsgid());
+                // logger.info("调试信息");
                 //  logger.error("tmsg:" + templateMsgResult.getErrcode() + templateMsgResult.getErrmsg() + templateMsgResult.getMsgid());
 
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
     }
@@ -5842,13 +5842,13 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             }
             TemplateMsgResult templateMsgResult = WeixinUtil.sendTemplate(accessTokens, wechatTemplateMsg);
             if (templateMsgResult != null) {
-                // System.out.println(templateMsgResult.getErrcode() + templateMsgResult.getErrmsg() + templateMsgResult.getMsgid());
+                // logger.info("调试信息");
                 //  logger.error("tmsg:" + templateMsgResult.getErrcode() + templateMsgResult.getErrmsg() + templateMsgResult.getMsgid());
 
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
     }
@@ -5892,7 +5892,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                 ck.setBillsType("销售出库单");
                 ck.setStatus("19");
             } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
+                logger.error("操作异常", e);
             }
             //beanList.add(dd);
             beanList.add(ck);
@@ -5998,7 +5998,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
                        }
                    }catch (Exception e){
-                       e.printStackTrace();
+                       logger.error("操作异常", e);
                    }
                     if (!"智能货柜".equals(dd.getGoodsName())) {
                         obj[0] = newGoods.getQuantity();//
@@ -6031,7 +6031,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
 
                 } catch (CloneNotSupportedException e) {
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
 
             }
@@ -6041,7 +6041,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
 
@@ -6140,7 +6140,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
      * @return
      */
     private void setCarManage(String journalNum, String wfStatus4, TEshopCusCom tcc, String ppid) {
-        System.out.println("journalNumz"+journalNum);
+        logger.info("调试信息");
         String hqlbb = "from PayBackupBill where journalNum = ?";
         PayBackupBill blb = (PayBackupBill) baseBeanService.getBeanByHqlAndParams(hqlbb, new Object[]{journalNum});
         if (blb != null && blb.getCoID() != null && !blb.getCoID().equals("")) {
@@ -6386,7 +6386,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
     public String getComBz(String journalNum) {
         String hql = "from PayBackupBill where journalNum = ?";
         PayBackupBill pb = (PayBackupBill) baseBeanService.getBeanByHqlAndParams(hql, new Object[]{journalNum});
-        System.out.println(pb == null ? "" : pb.getCompanyName());
+        logger.info("调试信息");
         return pb == null ? "" : pb.getCompanyName();
     }
 
@@ -6589,7 +6589,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                 String sqls = "select c.journalNum,c.companyID,c.projectName,cashierBillsID,c.priceSub from "+tableNeame+" c where c.journalNum in(select p.oriJournalNum from dtPayCashierBill p where p.payJournalNum = ?)";
                 orderlist = baseBeanService.getListBeanBySqlAndParams(sqls, new Object[]{payDto.getOrderId()});
             }
-            System.out.println("orderlist:" + orderlist.size());
+            logger.info("orderlist:: {}", orderlist.size());
             boolean b = true;
             for (int i = 0; i < orderlist.size(); i++) {
                 Object[] bbs = (Object[]) orderlist.get(i);
@@ -6609,7 +6609,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                     b = false;
                     sub_orderslist.clear();
                     sub_orderslist = null;
-                    System.out.println(bbs[1].toString() + "公司没有认证");
+                    logger.info("调试信息");
                     break;
                 }
                 subOrders.setSub_mchid(obj.toString());
@@ -6744,12 +6744,12 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             }
 
             baseBeanService.executeHqlsByParamsList(beans, null, null);
-            System.out.println("sub_orderslist" + sub_orderslist);
+            logger.info("sub_orderslist: {}", sub_orderslist);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             sub_orderslist.clear();
             sub_orderslist = null;
-            System.out.println("报错啦");
+            logger.info("报错啦");
         }
         return sub_orderslist;
     }
@@ -6850,7 +6850,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return tableRalate;
@@ -6911,7 +6911,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
         }
 
         return tableRalate;
@@ -6965,7 +6965,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
             for (BaseBean b : list) {
                 CashierBills dd = (CashierBills) b;
                 copyTable("dtCashierBills", cashierBills.getCompanyID(), "CashierBills", "cashierBillsID", dd.getCashierBillsID());//复制订单到新表
-                System.out.println(dd.getJournalNum() + "-" + dd.getBillsType());
+                logger.info("调试信息");
 
             }
 
@@ -7012,7 +7012,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                     List<Object[]> paramslist = new ArrayList<>();
                     Object[] obj = {cashierBills.getCashierBillsID()};
                     paramslist.add(obj);
-                    System.out.println("订单：" + cashierBills.getCashierBillsID());
+                    logger.info("订单：: {}", cashierBills.getCashierBillsID());
                     beandao.executeSqlsByParmsList(null, new String[]{sql}, paramslist);
 
                     String hql1 = "from CashierBills where jNumOrder = ? and ((billsType = '收款单' and projectName != '金币兑换' and projectName != '供应商成本') or (billsType = '积分入库单' and projectName = '积分购物') or  (billsType = '金币入库单' and projectName = '金币购物'))";
@@ -7023,11 +7023,11 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                         List<Object[]> paramslist2 = new ArrayList<>();
                         Object[] obj2 = {cashierBills2.getCashierBillsID()};
                         paramslist2.add(obj2);
-                        System.out.println("收款单：" + cashierBills2.getCashierBillsID());
+                        logger.info("收款单：: {}", cashierBills2.getCashierBillsID());
                         beandao.executeSqlsByParmsList(null, new String[]{sql}, paramslist2);
                     }
                 }catch (Exception e){
-                    e.printStackTrace();
+                    logger.error("操作异常", e);
                 }
             }
 

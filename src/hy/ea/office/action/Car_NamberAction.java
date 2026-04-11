@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.office.CarInformation;
@@ -31,6 +34,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class Car_NamberAction {
+	private static final Logger logger = LoggerFactory.getLogger(Car_NamberAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -178,7 +182,7 @@ public class Car_NamberAction {
 				(null != pageForm ? pageForm.getPageNumber() : 1),
 				(pageNumber == 0 ? 10 : pageNumber), sbsql.toString(),sqlcount, parms.toArray());
 		}catch(Exception e){
-		 e.printStackTrace();
+		 logger.error("操作异常", e);
 		}
 		return "getCarRoadList";
 		
@@ -251,7 +255,7 @@ public class Car_NamberAction {
 		baseBeansList.add(carNumber);
 		baseBeanService.saveBeansListAndexecuteHqlsByParams(baseBeansList, null, null);	
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return "success";
 	}

@@ -1,5 +1,8 @@
 package hy.ea.human.action.adance;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.base.action.BaseAction;
 import hy.ea.bo.human.COS;
 import hy.ea.bo.human.adance.AttendConf;
@@ -96,7 +99,7 @@ public class AttendLogAction extends BaseAction<AttendLog>{
 			try {
 				als.setAlDate(DateUtil.string2Date(DateUtil.toStrDateFromUtilDateByFormat(new Date(), "yyyy-MM-dd")));
 			} catch (ParseException e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 			AttendConf conf = new AttendConf();
 			if(sign.equals("01")){

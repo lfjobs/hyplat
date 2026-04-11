@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="ClerkDeviceHistory" table="DT_ClerkDeviceHistory" schema="HYPLAT" dynamic-insert="true">
+	<comment>设备和业务员绑定历史记录</comment>
+		<id length="50" name="cdhKey" type="java.lang.String">
+			<column length="50" name="cdhKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="cdhID" type="java.lang.String">
+			<column length="50" name="cdhID" >
+			</column>
+		</property>
+		<property name="sn" type="java.lang.String">
+			<column name="sn" length="50">
+				<comment>设备序列号</comment>
+			</column>
+		</property>
+		<property name="pfdID" type="java.lang.String">
+			<column length="50" name="pfdID" >
+				<comment>设备ID</comment>
+			</column>
+		</property>
+		<property name="removeID" type="java.lang.String">
+			<column length="50" name="removeID" >
+				<comment>解绑人ID</comment>
+			</column>
+		</property>
+		<property name="removeName" type="java.lang.String">
+			<column length="50" name="removeName" >
+				<comment>解绑人姓名</comment>
+			</column>
+		</property>
+
+		<property name="clerkID" type="java.lang.String">
+			<column length="50" name="clerkID" >
+				<comment>业务员ID</comment>
+			</column>
+		</property>
+		<property name="clerkName" type="java.lang.String">
+			<column length="50" name="clerkName" >
+				<comment>业务员姓名</comment>
+			</column>
+		</property>
+		<property name="clerkSccid" type="java.lang.String">
+			<column length="50" name="clerkSccid" >
+				<comment>业务员账号ID</comment>
+			</column>
+		</property>
+		<property name="clearkAccount" type="java.lang.String">
+			<column length="50" name="clearkAccount" >
+				<comment>业务员微分金账号手机号</comment>
+			</column>
+		</property>
+		<property name="bindDate" type="java.util.Date">
+			<column name="bindDate" >
+				<comment>绑定日期</comment>
+			</column>
+		</property>
+		<property name="removeDate" type="java.util.Date">
+			<column name="removeDate" >
+				<comment>解绑日期</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

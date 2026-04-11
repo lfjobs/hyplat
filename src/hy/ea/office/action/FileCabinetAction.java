@@ -1,5 +1,8 @@
 package hy.ea.office.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Company;
 import hy.ea.bo.human.Staff;
@@ -50,6 +53,7 @@ import com.opensymphony.xwork2.ActionContext;
  * 文件柜管理
  */
 public class FileCabinetAction {
+	private static final Logger logger = LoggerFactory.getLogger(FileCabinetAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -384,7 +388,7 @@ public class FileCabinetAction {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		if (uploadMode == "folder" || uploadMode.equalsIgnoreCase("folder")) {
 			fileCabinetIdmark = fileCabinetIdcurrent;
@@ -514,8 +518,8 @@ public class FileCabinetAction {
 
 			}
 		} catch (Exception e) {
-			System.out.println("文件移动失败！");
-			e.printStackTrace();
+			logger.info("文件移动失败！");
+			logger.error("操作异常", e);
 		}
 
 		if (uploadMode == "folder" || uploadMode.equalsIgnoreCase("folder")) {
@@ -651,8 +655,8 @@ public class FileCabinetAction {
 
 			}
 		} catch (Exception e) {
-			System.out.println("文件移动失败！");
-			e.printStackTrace();
+			logger.info("文件移动失败！");
+			logger.error("操作异常", e);
 		}
 		if (uploadMode == "folder" || uploadMode.equalsIgnoreCase("folder")) {
 			fileCabinetIdmark = fileCabinetIdcurrent;
@@ -990,7 +994,7 @@ public class FileCabinetAction {
 					fileName);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", swfPath);

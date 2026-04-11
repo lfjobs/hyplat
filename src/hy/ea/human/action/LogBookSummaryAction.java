@@ -1,5 +1,8 @@
 package hy.ea.human.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -60,6 +63,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class LogBookSummaryAction {
+	private static final Logger logger = LoggerFactory.getLogger(LogBookSummaryAction.class);
 	@Resource
 	private ShowExcelService excelService;
 	public InputStream excelStream;
@@ -277,7 +281,7 @@ public class LogBookSummaryAction {
 		try {
 			c.setTime(new SimpleDateFormat("yy-MM-dd").parse(date.toLocaleString()));
 		} catch (ParseException e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} 
 		int month=c.get(Calendar.MONTH);
 		c.set(Calendar.MONTH,month-3); 
@@ -560,7 +564,7 @@ public class LogBookSummaryAction {
 				parms1.add(index2, salaryIntegral.getStaffID());
 				if(arg!=null&&arg.equals("1")){
 					/*if(monthNum==1){
-						System.out.println("无操作");
+						logger.info("无操作");
 					}*/
 					if(monthNum>=2){
 						if(salaryIntegral.getLogBookKey().equals(sdate.substring(0, 7))){
@@ -569,7 +573,7 @@ public class LogBookSummaryAction {
 								parms1.set(2, Utilities.getDateFromString(DateUtil.getDateOfMonthEnd(sdate,"yyyy-MM-dd"), "yyyy-MM-dd"));
 							} catch (ParseException e) {
 								// TODO Auto-generated catch block
-								e.printStackTrace();
+								logger.error("操作异常", e);
 							}
 						}
 						if(salaryIntegral.getLogBookKey().equals(edate.substring(0, 7))){
@@ -577,7 +581,7 @@ public class LogBookSummaryAction {
 								parms1.set(1, Utilities.getDateFromString(DateUtil.getDateOfMonthBegin(edate,"yyyy-MM-dd"), "yyyy-MM-dd"));
 							} catch (ParseException e) {
 								// TODO Auto-generated catch block
-								e.printStackTrace();
+								logger.error("操作异常", e);
 							}
 							parms1.set(2, Utilities.getDateFromString(edate, "yyyy-MM-dd"));
 						}
@@ -587,7 +591,7 @@ public class LogBookSummaryAction {
 								parms1.set(2, Utilities.getDateFromString(DateUtil.getDateOfMonthEnd(salaryIntegral.getLogBookKey()+"-01" ,"yyyy-MM-dd"), "yyyy-MM-dd"));
 							} catch (ParseException e) {
 								// TODO Auto-generated catch block
-								e.printStackTrace();
+								logger.error("操作异常", e);
 							}
 						}
 					}
@@ -795,7 +799,7 @@ public class LogBookSummaryAction {
 					dc.add(Restrictions.between("todaydate", dateFormat
 							.parse(sdate), dateFormat.parse(edate)));
 				} catch (ParseException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 		}

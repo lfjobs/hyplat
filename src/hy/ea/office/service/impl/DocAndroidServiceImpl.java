@@ -1,5 +1,8 @@
 package hy.ea.office.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.office.DocumentFileAttach;
 import hy.ea.office.service.DocAndroidService;
 
@@ -70,9 +73,9 @@ public class DocAndroidServiceImpl implements DocAndroidService {
 			}
 			bw.write(content);
 		} catch (FileNotFoundException fnfe) {
-			fnfe.printStackTrace();
+			fnflogger.error("操作异常", e);
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			iologger.error("操作异常", e);
 		} finally {
 			try {
 				if (bw != null)
@@ -105,8 +108,8 @@ public class DocAndroidServiceImpl implements DocAndroidService {
 				public String savePicture(byte[] content,
 						PictureType pictureType, String suggestedName,
 						float widthInches, float heightInches) {
-					System.out.println(suggestedName);
-					System.out.println(j);
+					logger.info("值：{}", suggestedName);
+					logger.info("值：{}", j);
 					filenamess[j] = suggestedName;
 					   j++;
 					return "test/" + suggestedName;
@@ -119,18 +122,18 @@ public class DocAndroidServiceImpl implements DocAndroidService {
 				for (int i = 0; i < pics.size(); i++) {
 					Picture pic = (Picture) pics.get(i);
 
-					System.out.println("_________");
-					System.out.println(filenamess[i]);
+					logger.info("_________");
+					logger.info("调试信息");
 					try {
 						if (filenamess[i] != null
 								&& !filenamess[i].toString().equals("null")) {
 							pic.writeImageContent(new FileOutputStream(
 									picpath+filenamess[i]));
-							System.out.println(picpath+filenamess[i]);
+							logger.info("调试信息");
 						}
 
 					} catch (FileNotFoundException e) {
-						e.printStackTrace();
+						logger.error("操作异常", e);
 					}
 				}
 			}
@@ -310,7 +313,7 @@ public class DocAndroidServiceImpl implements DocAndroidService {
 
 						sb.append("font-weight:" + boldWeight + ";"); // 字体加粗
 
-						// System.out.println(hf.getFontHeight());
+						// logger.info("调试信息");
 
 						sb
 								.append("font-size: " + hf.getFontHeight() / 2
@@ -379,7 +382,7 @@ public class DocAndroidServiceImpl implements DocAndroidService {
 			writeFile(sb.toString(), htmlpath,"E");
 		} catch (Exception e) {
 			flag = 1;
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return flag;
@@ -447,15 +450,15 @@ private String getPictures(HSSFWorkbook workbook){
 		        	    HSSFPicture pic = (HSSFPicture) shape;   
 		        	    int row = anchor.getRow1();   
 		        	    int col = anchor.getCol1();
-		        	    System.out.println(i + "--->" + anchor.getRow1() + ":"  + anchor.getCol1());   
+		        	    logger.info("调试信息");   
 		        	    int pictureIndex = pic.getPictureIndex()-1;   
 		        	    HSSFPictureData picData = pictures.get(pictureIndex);   
-		        	    System.out.println(i + "--->" + pictureIndex);   
+		        	    logger.info("调试信息");   
 		        	    try {
 										savePic(row, picData);
 									} catch (Exception e) {
 										
-										e.printStackTrace();
+										logger.error("操作异常", e);
 									}   
 		        	             }   
 
@@ -624,7 +627,7 @@ private String getPictures(HSSFWorkbook workbook){
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return htmlsb;
 	}

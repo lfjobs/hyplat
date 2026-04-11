@@ -1,5 +1,8 @@
 package mobile.tiantai.android.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.human.COS;
 import hy.ea.bo.human.COSJobPlan;
 import hy.ea.bo.human.Jobplanrecord;
@@ -31,6 +34,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class AndroidJobPlanAction {
+	private static final Logger logger = LoggerFactory.getLogger(AndroidJobPlanAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -101,7 +105,7 @@ public class AndroidJobPlanAction {
 			jsonObjList.accumulate("result", "success");
 		} catch (Exception e) {
 			jsonObjList.accumulate("result", "fail");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = jsonObjList.toString();
 		return "success";
@@ -195,7 +199,7 @@ public class AndroidJobPlanAction {
 			jsonObjList.accumulate("result", "success");
 		} catch (Exception e) {
 			jsonObjList.accumulate("result", "fail");
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		result = jsonObjList.toString();
 		return "success";

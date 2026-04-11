@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.human.question">
+	<class name="QuestionsValueExam" table="dt_q_QuestionsValueExam">
+		<id length="50" name="qrvKey">
+			<column length="50" name="qrvKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="qrveID">
+			<column length="50" name="qrveID"><comment>ID</comment></column>
+		</property>
+		<property name="qrvID">
+			<column length="50" name="qrvID"><comment>ID</comment></column>
+		</property>
+		<property name="qrID">
+			<column length="50" name="qrID"><comment>题目ID</comment></column>
+		</property>
+		<property name="codeName">
+			<column length="1" name="codeName"><comment>/A，B，</comment></column>
+		</property>
+		<property name="codeValue">
+			<column length="500" name="codeValue"><comment>答案1，答案2</comment></column>
+		</property>
+		<property name="seq">
+			<column  name="seq"><comment>序号</comment></column>
+		</property>
+		<property name="staffID">
+			<column length="50" name="staffID"><comment>考试人</comment></column>
+		</property>
+		<property name="qreID">
+			<column length="50" name="qreID"><comment>考试ID</comment></column>
+		</property>
+	</class>
+</hibernate-mapping>

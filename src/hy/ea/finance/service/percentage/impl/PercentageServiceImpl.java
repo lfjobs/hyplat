@@ -1,5 +1,8 @@
 package hy.ea.finance.service.percentage.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.finance.percentage.BPercentage;
 import hy.ea.bo.finance.percentage.PPercentage;
 import hy.ea.finance.service.percentage.PercentageService;
@@ -45,7 +48,7 @@ public class PercentageServiceImpl implements PercentageService {
         try {
             this.baseBeanService.save(ppercentage);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             flag = false;
         }
         return flag;
@@ -70,7 +73,7 @@ public class PercentageServiceImpl implements PercentageService {
         try {
             this.baseBeanService.update(ppercentage);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             flag = false;
         }
         return flag;
@@ -95,7 +98,7 @@ public class PercentageServiceImpl implements PercentageService {
         try {
             this.baseBeanService.save(bpercentage);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             flag = false;
         }
         return flag;
@@ -123,7 +126,7 @@ public class PercentageServiceImpl implements PercentageService {
         try {
             this.baseBeanService.update(bPercentage);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             flag = false;
         }
         return flag;

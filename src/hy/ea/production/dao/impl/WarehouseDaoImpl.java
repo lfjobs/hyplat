@@ -1,5 +1,8 @@
 package hy.ea.production.dao.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -56,8 +59,8 @@ public class WarehouseDaoImpl implements WarehouseDao {
 		    cs.close();
 		    ct.close();
 		  } catch (Exception e) {
-		    System.out.println(e.getMessage());
-		    e.printStackTrace();
+		    logger.info("调试信息");
+		    logger.error("操作异常", e);
 		  }
 	}
 
@@ -83,8 +86,8 @@ public class WarehouseDaoImpl implements WarehouseDao {
 		    cs.close();
 		    ct.close();
 		  } catch (Exception e) {
-		    System.out.println(e.getMessage());
-		    e.printStackTrace();
+		    logger.info("调试信息");
+		    logger.error("操作异常", e);
 		  }
 	}
 
@@ -382,8 +385,8 @@ public List<Object> getProductMix(String[] str) {
 	    cs.close();
 	    ct.close();
 	  } catch (Exception e) {
-	    System.out.println(e.getMessage());
-	    e.printStackTrace();
+	    logger.info("调试信息");
+	    logger.error("操作异常", e);
 	  }
 	return list;
 }

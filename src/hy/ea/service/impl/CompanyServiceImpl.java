@@ -1,5 +1,8 @@
 package hy.ea.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.wechat.bo.sft.ApplyParam;
 import com.wechat.bo.sft.SalesSceneInfo;
 import hy.ea.bo.CDetail;
@@ -225,7 +228,7 @@ public class CompanyServiceImpl implements CompanyService {
             //七.执行保存
             this.beandao.saveBeansListAndexecuteHqlsByParams(beans,null,null);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("操作异常", e);
             throw new RuntimeException("保存公司信息失败，请联系管理员");
         }
     }
@@ -301,7 +304,7 @@ public class CompanyServiceImpl implements CompanyService {
         depot.setDepotState("02");
         depot.setDepotType("1");
         beans.add(depot);
-        System.out.println(depot.getDepotID()+"--"+depot.getDepotPID()+":"+depot.getDepotName());
+        logger.info("调试信息");
         return depot.getDepotID();
     }
 

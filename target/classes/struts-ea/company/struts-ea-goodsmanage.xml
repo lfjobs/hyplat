@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>	
+	<package strict-method-invocation="false" name="goodsmanage-token" namespace="/ea/goodsmanage"  extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.company.action.GoodsManageAction" method="{1}">
+			<result name="list">/page/ea/main/goodsmanage/goodsmanage_list.jsp</result>
+			<result type="freemarker" name="bar">/page/ea/main/barCode.html</result> 
+		</action>
+	</package> 
+	<package strict-method-invocation="false" name="goodsmanage-ntoken" namespace="/ea/goodsmanage" extends="struts-default">
+		<action name="ea_*" class="hy.ea.company.action.GoodsManageAction" method="{1}">
+			<result name="succ">/page/ea/success.jsp</result>
+			<result name="list">/page/ea/main/goodsmanage/goodsmanage_list.jsp</result>
+			<result name="addGoodsmanage">/page/ea/main/goodsmanage/goodsmanage_listadd.jsp</result>
+			<result name="chaGoodsmanage">/page/ea/main/goodsmanage/Goodsmanage_listcha.jsp</result>
+			<result name="assetslist">/page/ea/main/goodsmanage/assetswater_list.jsp</result> 
+	        <result type="freemarker" name="bar">/page/ea/main/barCode.html</result> 
+			<result name="showexcel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					filename="responsibilities.xls"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="goodsmanage-sajax" namespace="/ea/goodsmanage" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.company.action.GoodsManageAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+
+		</action>
+	</package>
+	
+</struts>

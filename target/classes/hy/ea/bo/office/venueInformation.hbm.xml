@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="VenueInformation" table="DT_VENUEINFORMATION">
+		<id length="50" name="sitekey">
+			<column length="50" name="sitekey" />
+			<generator class="uuid" />
+		</id>
+		<property name="siteId">
+			<column length="50" name="siteId">
+				<comment>场地id</comment>
+			</column>
+		</property>
+		<property name="companyId">
+			<column length="50" name="companyId">
+				<comment>所属公司id</comment>
+			</column>
+		</property>
+		<property name="siteDate">
+			<column length="50" name="siteDate">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="ItsLocation">
+			<column length="50" name="ItsLocation">
+				<comment>地址</comment>
+			</column>
+		</property>
+		<property name="status">
+			<column length="50" name="status">
+				<comment>状态</comment>
+			</column>
+		</property>
+		<property name="siteNumber">
+			<column length="50" name="siteNumber">
+				<comment>场地编号</comment>
+			</column>
+		</property>
+		<property name="siteName">
+			<column length="50" name="siteName">
+				<comment>场地名称</comment>
+			</column>
+		</property>
+		<property name="staffId">
+			<column length="50" name="staffId">
+				<comment>场地负责人id</comment>
+			</column>
+		</property>
+		<property name="siteArea">
+			<column length="50" name="siteArea">
+				<comment>总面积</comment>
+			</column>
+		</property>
+		<property name="fieldCapacity">
+			<column length="10" name="fieldCapacity">
+				<comment>容纳数量</comment>
+			</column>
+		</property>
+		<property name="eastLongitude">
+			<column length="20" name="eastLongitude">
+				<comment>东经</comment>
+			</column>
+		</property>
+		<property name="northLatitude">
+			<column length="20" name="northLatitude">
+				<comment>北纬</comment>
+			</column>
+		</property>
+		<property name="isAudit">
+			<column length="2" name="isAudit">
+				<comment>默认开启00 或者空  01关闭</comment>
+			</column>
+		</property>
+		<property name="siteType">
+			<column length="1" name="siteType">
+				<comment>场地类型</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

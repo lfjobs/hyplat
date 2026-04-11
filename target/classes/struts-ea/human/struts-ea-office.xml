@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="office-token" namespace="/ea/office"   extends="ea-token">
+		<action name="t_ea_*" class="hy.ea.human.action.OfficeAction" method="{1}">
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="office-ntoken" namespace="/ea/office"  extends="ea-ntoken">
+		<action name="ea_*" class="hy.ea.human.action.OfficeAction" method="{1}">
+			<result name="fiveMenu">/page/ea/main/navigation/automenu/fiveMenu.jsp</result>
+			<result name="to_office">/page/ea/main/human/office/office.jsp</result>
+			<result name="to_office_body">/page/ea/main/human/office/office_body.jsp</result>
+			<result name="SersonnelSystem">/page/ea/main/human/office/SersonnelSystem.jsp</result>
+			<result name="SersonnelSystemsum">/page/ea/main/human/office/SersonnelSystemsum.jsp</result>
+			<result name="to_Finance">/page/ea/main/human/office/SersonnelSystem_finance.jsp</result>
+			<result name="to_Office">/page/ea/main/human/office/SersonnelSystem_office.jsp</result>
+			<result name="to_Boarding">/page/ea/main/human/office/SersonnelSystem_boarding.jsp</result>
+			<result name="to_Committee">/page/ea/main/human/office/SersonnelSystem_committee.jsp</result>
+			<result name="to_Congress">/page/ea/main/human/office/SersonnelSystem_congress.jsp</result>
+			<result name="to_Director">/page/ea/main/human/office/SersonnelSystem_director.jsp</result>
+			<result name="to_Executiveoffice">/page/ea/main/human/office/SersonnelSystem_executiveoffice.jsp</result>
+			<result name="to_JobDepartment">/page/ea/main/human/office/SersonnelSystem_jobDepartment.jsp</result>
+			<result name="to_Presidentroom">/page/ea/main/human/office/SersonnelSystem_presidentroom.jsp</result>
+			<result name="to_Shareholder">/page/ea/main/human/office/SersonnelSystem_shareholder.jsp</result>
+			<result name="to_TeachingAffairsDepartment">/page/ea/main/human/office/SersonnelSystem_TeachingAffairsDepartment.jsp</result>
+			<result name="to_IncomeDepartment">/page/ea/main/human/office/SersonnelSystem_incomeDepartment.jsp</result>
+			<result name="to_Home_office">/page/ea/main/human/office/SersonnelSystem_home_office.jsp</result>
+			<result name="orror">/page/ea/no_authority.jsp</result>
+			<result name="newsec">/page/ea/main/navigation/new_sec.jsp</result>
+			<result name="newsecTree">/page/ea/main/navigation/newsecTree.jsp</result>
+		</action>
+		
+	</package>
+	<package strict-method-invocation="false" name="office-jsonajax" namespace="/ea/office" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.OfficeAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+		</action>
+	</package>
+</struts>

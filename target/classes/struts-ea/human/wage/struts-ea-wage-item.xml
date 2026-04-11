@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="witem-ntoken" namespace="/ea/witem"   extends="struts-default">
+		<action name="ea_*" class="hy.ea.human.action.wage.WageItemAction" method="{1}">
+		     <result name="wageItem">/page/ea/main/human/wage/wageItem.jsp</result>
+		     <result name="redoder">/page/ea/main/human/wage/wage_reorder.jsp</result> 
+		</action>
+	</package>
+	<package strict-method-invocation="false" name="witem-jsonajax" namespace="/ea/witem" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.human.action.wage.WageItemAction" method="{1}">
+            <result type="json">  
+                <param name="root">result</param>
+            </result>  
+		</action>
+	</package>
+</struts>

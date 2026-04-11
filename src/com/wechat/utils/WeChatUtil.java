@@ -1,5 +1,8 @@
 package com.wechat.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import okhttp3.HttpUrl;
 import org.apache.commons.codec.binary.Base64;
@@ -26,6 +29,7 @@ import java.util.UUID;
  * Created by Administrator on 2020-12-07.
  */
 public class WeChatUtil {
+	private static final Logger logger = LoggerFactory.getLogger(WeChatUtil.class);
 
     public static final String USER_AGENT = "用户代理(https://zh.wikipedia.org/wiki/User_agent)";
     // 证书url
@@ -242,7 +246,7 @@ public class WeChatUtil {
      * @throws IllegalBlockSizeException
      */
     public static String rsaEncryptOAEP(String message, Cipher cipher) throws IllegalBlockSizeException {
-        System.out.println("message:"+message);
+        logger.info("调试信息");
         try {
 //            if (StringUtils.isBlank(message)) {
 //                return null;

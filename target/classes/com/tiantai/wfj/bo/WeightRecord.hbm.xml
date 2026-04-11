@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.wfj.bo">
+	<class name="com.tiantai.wfj.bo.WeightRecord" table="DT_WeightRecord" schema="HYPLAT" dynamic-insert="true">
+	<comment>重量记录</comment>
+		<id length="50" name="wrKey" type="java.lang.String">
+			<column length="50" name="wrKey" />
+			<generator class="uuid" />
+		</id>
+		<property name="wrd" type="java.lang.String">
+			<column length="50" name="wrd" >
+			</column>
+		</property>
+		<property name="weightB" type="java.lang.String">
+			<column length="500" name="weightB" >
+			<comment>初始重量</comment>
+			</column>
+		</property>
+
+		<property name="weightA" type="java.lang.String">
+			<column length="500" name="weightA" >
+			<comment>拿之后重量</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column  name="createDate" >
+			<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="hgcode" type="java.lang.String">
+			<column length="50" name="hgcode" >
+				<comment>货柜编号</comment>
+			</column>
+		</property>
+		<property name="staffID" type="java.lang.String">
+			<column length="50" name="staffID" >
+				<comment>用户</comment>
+			</column>
+		</property>
+		<property name="journalNum" type="java.lang.String">
+			<column length="50" name="journalNum" >
+				<comment>订单</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

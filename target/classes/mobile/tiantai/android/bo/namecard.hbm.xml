@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="mobile.tiantai.android.bo">
+    <class name="NameCard" table="DT_ad_nameCard" schema="HYPLAT">
+        <id name="key" type="java.lang.String">
+            <column name="key" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="id" type="java.lang.String">
+            <column name="id" length="50" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="50" />
+        </property>
+        <property name="telphone" type="java.lang.String">
+            <column name="telphone" length="11" />
+        </property>
+        <property name="homephone" type="java.lang.String">
+            <column name="homephone" length="20" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" length="50" />
+        </property>
+        <property name="microblog" type="java.lang.String">
+            <column name="microblog" length="100" />
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="remarks"  length="250"/>
+        </property>
+        <property name="qq" type="java.lang.String">
+            <column name="qq"  length="20"/>
+        </property>
+        <property name="website" type="java.lang.String">
+            <column name="website" length="100"/>
+        </property>
+         <property name="company" type="java.lang.String">
+            <column name="company" length="50" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="address" length="100" />
+        </property>
+         <property name="imageurl" type="java.lang.String">
+            <column name="imageurl" length="200" />
+        </property>
+          <property name="staffID" type="java.lang.String">
+            <column name="staffID" length="50" />
+        </property>
+       
+    </class>
+</hibernate-mapping>

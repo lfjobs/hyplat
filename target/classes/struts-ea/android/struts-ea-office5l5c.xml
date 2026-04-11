@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package strict-method-invocation="false" name="5l5c-token" namespace="/ea/5l5c" extends="struts-default">
+
+        <action name="ea_*" class="com.tiantai.wfj.front.Office5L5CAction" method="{1}">
+            <result name="success">/page/ea/success.jsp</result>
+            <result name="index5l5c">/page/WFJClient/pc/5l5C/5l5cindex.jsp</result>
+            <!--<result name="work5l5c">/page/WFJClient/pc/5l5C/5l5cwork.jsp</result>
+            <result name="0">/page/WFJClient/pc/5l5C/funclayer.jsp</result>
+            <result name="1">/page/WFJClient/pc/5l5C/funclayer.jsp</result>
+            <result name="2">/page/WFJClient/pc/5l5C/funclayer.jsp</result>
+            <result name="3">/page/WFJClient/pc/5l5C/funclayer.jsp</result>
+            <result name="4">/page/WFJClient/pc/5l5C/funclayer.jsp</result>
+            <result name="5">/page/WFJClient/pc/5l5C/funclayergys.jsp</result>
+            -->
+            <result name="selectCompany">/page/WFJClient/pc/5l5C/selectCompanyActivity.jsp</result>
+            <result name="work5l5c">/page/WFJClient/pc/5l5C/menuFunclayer.jsp</result>
+
+        </action>
+    </package>
+    <package strict-method-invocation="false" name="5l5c-jsonajax" namespace="/ea/5l5c" extends="json-default">
+        <action name="sajax_ea_*" class="com.tiantai.wfj.front.Office5L5CAction" method="{1}">
+            <!-- 返回类型为json 在sjon-default中定义 -->
+            <result type="json">
+                <!-- root的值对应要返回的值的属性 -->
+                <!-- 这里的result值即是 对应action中的 result -->
+                <param name="root">result</param>
+            </result>
+
+        </action>
+    </package>
+
+</struts>

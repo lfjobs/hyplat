@@ -1,5 +1,8 @@
 package hy.plat.dao.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.company.DepotManage;
 import hy.ea.util.Converter;
 import hy.plat.bo.BaseBean;
@@ -27,6 +30,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BaseBeanDao {
+	private static final Logger logger = LoggerFactory.getLogger(BaseBeanDao.class);
 
 
 	@Resource
@@ -564,7 +568,7 @@ public class BaseBeanDao {
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return page;
 	}
@@ -621,7 +625,7 @@ public class BaseBeanDao {
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return page;
 	}

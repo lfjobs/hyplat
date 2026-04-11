@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hy.ea.bo.office">
+	<class name="DocumentAuditing" table="DT_OA_DOCUMENT_AUDITING">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<many-to-one name="document" class="hy.ea.bo.office.Document"  cascade="save-update" fetch="join">
+			<column name="documentKey" length="50" />
+		</many-to-one>
+		<property name="round" type="java.lang.Long">
+			<column name="round" precision="22" scale="0" />
+		</property>
+		<property name="companyIDofSubscriber" type="java.lang.String">
+			<column name="companyIDofSubscriber" length="50" />
+		</property>
+		<property name="deptIDofSubscriber" type="java.lang.String">
+			<column name="deptIDofSubscriber" length="50" />
+		</property>
+		<property name="subscriberID" type="java.lang.String">
+			<column name="subscriberID" length="50" />
+		</property>
+		<property name="subscriberComment" type="java.lang.String">
+			<column name="subscriberComment" length="200" />
+		</property>
+		<property name="subscribTime" type="java.util.Date">
+			<column name="subscribTime" length="50" />
+		</property>
+		<property name="result" type="java.lang.String">
+			<column name="result" length="50" />
+		</property>
+		<property name="preSubscriberKey" type="java.lang.String">
+			<column name="preSubscriberKey" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

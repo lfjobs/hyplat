@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                     
+<hibernate-mapping package="hy.ea.bo.production">
+	<class name="PlanAmount"  table="dtPlanAmount">
+		<id length="50" name="pakey">
+			<column length="50" name="pakey" />
+			<generator class="uuid" />
+		</id>
+		<property name="paid">
+			<column length="50" name="paid" not-null="true" ><comment>业务主键</comment></column>
+		</property>
+		<property name="tradeCode">
+			<column length="50" name="tradeCode"><comment>行业代码</comment></column>
+		</property>
+		<property name="productCode">
+			<column length="50" name="productCode"><comment>产品编号</comment></column>
+		</property>
+		<property  name="productName">
+			<column length="50" name="productName"><comment>产品名称</comment></column>
+		</property>
+		<property  name="productID">
+			<column length="50" name="productID"><comment>产品ID</comment></column>
+		</property>
+		<property  name="createDate">
+			<column  name="createDate"><comment>制定日期</comment></column>
+		</property>
+		<property  name="quantity">
+			<column length="10" name="quantity"><comment>数量(结构数量)</comment></column>
+		</property>
+			<property name="planProductNum">
+			<column length="10" name="planProductNum"><comment>生产量</comment></column>
+		</property>
+		<property name="hours">
+			<column length="2" name="hours"><comment>每日工作多长时间/时</comment></column>
+		</property>
+		<property  name="dayProductNum">
+			<column length="10" name="dayProductNum"><comment>日生产量</comment></column>
+		</property>
+		<property  name="dutorID">
+			<column length="50" name="dutorID"><comment>负责人ID </comment></column>
+		</property>
+		<property  name="dutorName">
+			<column length="50" name="dutorName"><comment>负责人Name</comment></column>
+		</property>
+	
+		<property  name="companyID">
+			<column length="50" name="companyID"><comment>公司ID</comment></column>
+		</property>
+		<property  name="barCode">
+			<column length="50" name="barCode"><comment>条码</comment></column>
+		</property>
+		<property  name="remark">
+			<column length="250" name="remark"><comment>备注</comment></column>
+		</property>
+	
+		
+	</class>
+</hibernate-mapping>

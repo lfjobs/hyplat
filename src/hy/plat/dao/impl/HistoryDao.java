@@ -1,5 +1,8 @@
 package hy.plat.dao.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.invoicing.voucher.Subs;
 import hy.ea.util.Utilities;
 import hy.plat.bo.BaseBean;
@@ -25,6 +28,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class HistoryDao {
+	private static final Logger logger = LoggerFactory.getLogger(HistoryDao.class);
 	@Resource
 	private SessionFactory sessionFactory;
 	@Resource
@@ -96,7 +100,7 @@ public class HistoryDao {
 							listo = baseBeanService.getListBeanBySqlAndParams("select ivs.* from dt_inv_vouchers ivs,dt_inv_voucher ivr where ivr.voucherid=ivs.voucherid and ivs.subjectsID=? and ivr.tallyDate between ? and ? and ivr.companyid=? and ivr.status=?",new Object[]{subs.getSubjectsNumbers(),sdFormat.parse(year+"-"+month+"-01 00:00:00"),sdFormat.parse(year+"-"+month+"-"+day+" 23:59:59"),subs.getCompanyID(),"10"});
 						} catch (ParseException e) {
 							// TODO Auto-generated catch block
-							e.printStackTrace();
+							logger.error("操作异常", e);
 						}
 						if(listo.size()>0){
 							for (int j = 0; j < listo.size(); j++) {

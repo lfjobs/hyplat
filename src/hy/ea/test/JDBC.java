@@ -1,5 +1,8 @@
 package hy.ea.test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,15 +19,15 @@ public class JDBC {
 		try {
 			Class.forName(DRIVER);
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-			//System.out.println("连接数据库成功。。。。。。。。");
+			//logger.info("调试信息");
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("数据库连接失败");
-			e.printStackTrace();
+			logger.info("调试信息");
+			logger.error("操作异常", e);
 		}
 		
 	}
@@ -40,7 +43,7 @@ public class JDBC {
 				conn.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		

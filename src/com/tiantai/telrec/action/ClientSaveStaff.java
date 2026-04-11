@@ -1,5 +1,8 @@
 package com.tiantai.telrec.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.human.Staff;
 import hy.plat.service.BaseBeanService;
 import hy.plat.service.ServerService;
@@ -32,8 +35,8 @@ public class ClientSaveStaff extends ActionSupport {
 	}
 
 	public String execute() {
-		//System.out.println("staffid is "+cstaff.getStaffID());
-		//System.out.println("staffkey is "+cstaff.getStaffKey());
+		//logger.info("调试信息");
+		//logger.info("调试信息");
 		String hql = "select count(*) from Staff where  staffIdentityCard = ? ";
 		Object[] params = { cstaff.getStaffIdentityCard() };
 		int count = baseBeanService.getConutByByHqlAndParams(hql, params);
@@ -63,7 +66,7 @@ public class ClientSaveStaff extends ActionSupport {
 				response.setCharacterEncoding("UTF-8");
 				response.getWriter().print("error");
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("操作异常", e);
 			}
 		}
 		cstaff.setStaffStatus("00");
@@ -73,7 +76,7 @@ public class ClientSaveStaff extends ActionSupport {
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(cstaff.getStaffID());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return null;
 	}

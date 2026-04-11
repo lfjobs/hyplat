@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+	<hibernate-mapping>
+		 <class name="hy.ea.bo.finance.PromotionAssociation" table="DT_PromotionAssociation" schema="HYPLAT">
+        <id name="paKey" type="java.lang.String">
+            <column name="paKey" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="paId" type="java.lang.String">
+        	<column name="paId" length="50"></column>
+        </property>
+        <property name="cashierBillsID" type="java.lang.String">
+        	<column name="cashierBillsID" length="50">
+        		<comment>主产品订单Id</comment>
+        	</column>
+        </property>
+        <property name="ptcashierBillsID" type="java.lang.String">
+        	<column name="ptcashierBillsID" length="50">
+        		<comment>促销产品订单Id</comment>
+        	</column>
+        </property>
+        <property name="ppId" type="java.lang.String">
+        	<column name="ppId" length="50">
+        		<comment>产品id</comment>
+        	</column>
+        </property>
+        <property name="ppName" type="java.lang.String">
+        	<column name="ppName" length="250">
+        		<comment>产品名称</comment>
+        	</column>
+        </property>
+        <property name="companyId" type="java.lang.String">
+        	<column name="companyId" length="50">
+        		<comment>公司id</comment>
+        	</column>
+        </property>
+        <property name="price" type="java.lang.String">
+        	<column name="price" length="50">
+        		<comment>产品价格</comment>
+        	</column>
+        </property>
+        <property name="state" type="java.lang.String">
+        	<column name="state" length="10">
+        		<comment>0未付款1已付款</comment>
+        	</column>
+        </property>
+        <property name="creatDate">
+        	<column name="creatDate">
+        		<comment>生成时间</comment>	
+        	</column>
+        </property>
+        <property name="standard" type="java.lang.String">
+        	<column name="standard" length="50">
+        		<comment>促销品规格</comment>
+        	</column>
+        </property>
+        <property name="count" type="java.lang.Integer">
+        	<column name="count" length="8">
+        		<comment>促销品的数量</comment>
+        	</column>
+        </property>
+        </class>
+	</hibernate-mapping>

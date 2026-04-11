@@ -96,11 +96,11 @@ public class TelMessageServiceImpl implements TelMessageService {
 			mobileMessage.setContent(content);
 			mobileMessage.setMobile(t);
 			reStr = mobileMessage.sendMsg();
-			System.out.println(reStr);
+			logger.info("值：{}", reStr);
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+			logger.info("调试信息");
+			logger.error("操作异常", e);
 		}
 
 		// 记录消息到系统
@@ -396,7 +396,7 @@ public class TelMessageServiceImpl implements TelMessageService {
 
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return reStr;

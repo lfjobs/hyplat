@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo.finance">
+	<class name="productPackajiage" table="dtProductPackajiage">
+		<id length="50" name="pckkey">
+			<column length="50" name="pckkey" />
+			<generator class="uuid" />
+		</id>
+		<property name="pckID">
+			<column  length="250"  name="pckID" />
+		</property>
+		<property name="ppID">
+			<column  length="250"  name="ppID" />
+		</property>
+		<property name="compID">
+			<column  length="250"  name="compID" />
+		</property>
+		<property name="ppccj">
+			<column  length="250"  name="ppccj" />
+		</property>
+		<property name="pplsj">
+			<column  length="250"  name="pplsj" />
+		</property>
+				<property name="compyxyj">
+			<column  length="250"  name="compyxyj" />
+		</property>
+				<property name="compgjhhryj">
+			<column  length="250"  name="compgjhhryj" />
+		</property>
+				<property name="comphhryj">
+			<column  length="250"  name="comphhryj" />
+		</property>
+		<property name="wfjdyj">
+			<column  length="250"  name="wfjdyj" />
+		</property>
+		<property name="dlsVIPhyyj">
+			<column  length="250"  name="dlsVIPhyyj" />
+		</property>
+		<property name="dlshyyj">
+			<column  length="250"  name="dlshyyj" />
+		</property>
+		<property name="xfzjf">
+			<column  length="250"  name="xfzjf" />
+		</property> 
+		<property name="pckdeta">
+			<column  name="pckdeta" />
+		</property>
+	</class>
+</hibernate-mapping>

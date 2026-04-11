@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hy.ea.bo">
+	<class name="Cmodal"  table="DTCMODAL">
+		<id length="50" name="modalkey">
+			<column length="50" name="MODALKEY" />
+			<generator class="uuid" />
+		</id>
+		<property name="companyid">
+			<column length="50" name="COMPANYID" />
+		</property>
+		<property name="modalid">
+			<column length="50" name="MODALID" />
+		</property>
+		<property name="modalname">
+			<column length="250" name="MODALNAME" />
+		</property>
+		<property name="pmodalid">
+			<column length="50" name="PMODALID" />
+		</property>
+		<property name="sortsn">
+			<column length="5" name="SORTSN" />
+		</property>
+		<property name="murl">
+			<column length="1000" name="MURL" />
+		</property>
+		<property name="status">
+			<column length="50" name="STATUS" />
+		</property>
+		<property name="menuState">
+			<column length="5" name="menuState" default="0"/>
+		</property>
+	</class>
+</hibernate-mapping>

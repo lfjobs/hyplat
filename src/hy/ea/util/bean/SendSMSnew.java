@@ -18,6 +18,7 @@ import java.util.Map;
 
 @Component
 public class SendSMSnew {
+	private static final Logger logger = LoggerFactory.getLogger(SendSMSnew.class);
 	
 	/**
 	 * 发送短信
@@ -47,7 +48,7 @@ public class SendSMSnew {
 			is.close();
 		} catch (Exception e) {
 			log.error("发送短信失败!---{}",e.getMessage());
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		
 		return result;
@@ -83,7 +84,7 @@ public class SendSMSnew {
 			is.close();
 		} catch (Exception e) {
 			//log.error("获取余额失败!---{}",e.getMessage());
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return result;
@@ -117,7 +118,7 @@ public class SendSMSnew {
 			is.close();
 		} catch (Exception e) {
 			//log.error("获取余额失败!---{}",e.getMessage());
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return result;
@@ -326,7 +327,7 @@ public class SendSMSnew {
 			this.content = URLEncoder.encode(Content, this.getEncode());
 		} catch (UnsupportedEncodingException e) { 
 			Log.error(e.getMessage());
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 	}
 	

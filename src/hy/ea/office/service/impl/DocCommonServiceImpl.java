@@ -330,7 +330,7 @@ public class DocCommonServiceImpl implements DocCommonService {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return doclist;
 
@@ -528,7 +528,7 @@ public class DocCommonServiceImpl implements DocCommonService {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return pageForm;
 
@@ -832,7 +832,7 @@ public class DocCommonServiceImpl implements DocCommonService {
 
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return document;
 	}
@@ -913,7 +913,7 @@ public class DocCommonServiceImpl implements DocCommonService {
 	      }
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 	}
@@ -1060,7 +1060,7 @@ public class DocCommonServiceImpl implements DocCommonService {
 
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 		return doc;
 	}
@@ -1356,7 +1356,7 @@ public class DocCommonServiceImpl implements DocCommonService {
 			reStr = mobileMessage.sendMsg();
 		} catch (IOException e) {
 			log.error("DocCommonServiceImpl.sendPhoneMessage():" + e.getMessage());
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return reStr;
@@ -1438,10 +1438,10 @@ public class DocCommonServiceImpl implements DocCommonService {
 
 			out.close();
 
-//			System.out.println("生成office.zip成功");
+//			logger.info("生成office.zip成功");
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("操作异常", e);
 		}
 
 		return strZipName;

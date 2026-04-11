@@ -1,5 +1,8 @@
 package hy.ea.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.plat.bo.PageForm;
@@ -23,6 +26,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class CLogBookAction {
+	private static final Logger logger = LoggerFactory.getLogger(CLogBookAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	
@@ -82,7 +86,7 @@ public class CLogBookAction {
 				try {
 					dc.add(Restrictions.between("clogbookDay",dateFormat.parse(sdate+" 00:00:00:000"),dateFormat.parse(edate+" 23:59:59:999")));
 				} catch (ParseException e) {
-					e.printStackTrace();
+					logger.error("操作异常", e);
 				}
 			}
 			if(clogbook.getClogbookUrl()!=null&&!"".equals(clogbook.getClogbookUrl()))

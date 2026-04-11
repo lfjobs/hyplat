@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hy.ea.bo.DrivingSchool.TbSysFileinfo" table="TB_SYS_FILEINFO" schema="HYPLAT">
+        <id length="50" name="fileKey">
+            <column length="50" name="fileKey" ><comment>文件编号</comment></column>
+            <generator class="uuid" />
+        </id>
+       
+        <property name="fileBh" type="java.lang.String">
+            <column name="FILE_BH"  length="50"><comment>文件编号</comment></column>
+        </property>
+        <property name="fileName" type="java.lang.String">
+            <column name="FILE_NAME"  length="200" ><comment>文件名称</comment></column>
+        </property>
+        <property name="mimeType" type="java.lang.String">
+            <column name="MIME_TYPE"  length="50" ><comment>MIME类型</comment></column>
+        </property>
+        <property name="fileSize" type="java.lang.Long">
+            <column name="FILE_SIZE"  length="50" ><comment>文件大小</comment></column>
+        </property>
+        <property name="fileMd5" type="java.lang.String">
+            <column name="FILE_MD5" length="32" ><comment>MD5值</comment></column>
+        </property>
+        <property name="serverPath" type="java.lang.String">
+            <column name="SERVER_PATH" length="200" ><comment>服务器路径</comment></column>
+        </property>
+        <property name="ftpPath" type="java.lang.String">
+            <column name="FTP_PATH" length="200" ><comment>FTP路径</comment></column>
+        </property>
+        <property name="uploadTime" type="java.util.Date">
+            <column name="UPLOAD_TIME"  ><comment>上传时间</comment></column>
+        </property>
+        <property name="uploadUser"  type="java.lang.String">
+            <column name="UPLOAD_USER"  length="50" ><comment>上传用户</comment></column>
+        </property>
+        <property name="mocFileId" type="java.lang.String">
+            <column name="MOC_FILE_ID"  length="50" ><comment>全国平台返回文件ID</comment></column>
+        </property>
+        <property name="syncType" type="java.lang.String">
+            <column name="SYNC_TYPE"  length="50" ><comment>同步类型：1新增；2修改；3删除</comment></column>
+        </property>
+        <property name="syncStatus" type="java.lang.String">
+            <column name="SYNC_STATUS"  length="8" ><comment>同步状态：0待同步1同步成功2同步失败</comment></column>
+        </property>
+        <property name="aspFileId" type="java.lang.String">
+            <column name="ASP_FILE_ID"  length="16" ><comment>省监管平台返回文件ID</comment></column>
+        </property>
+        <property name="aspSyncType" type="java.lang.String">
+            <column name="ASP_SYNC_TYPE"  length="8" ><comment>省监管平台同步类型</comment></column>
+        </property>
+        <property name="aspSyncStatus"  type="java.lang.String">
+            <column name="ASP_SYNC_STATUS"   length="8" ><comment>省监管平台同步状态</comment></column>
+        </property>
+    </class>
+</hibernate-mapping>

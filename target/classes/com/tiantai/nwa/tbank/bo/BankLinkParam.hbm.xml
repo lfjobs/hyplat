@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tiantai.nwa.tbank.bo">
+	<class name="BankLinkParam" table="T_BankLinkParam">
+		<id length="50" name="key">
+			<column length="50" name="key" />
+			<generator class="uuid" />
+		</id>
+		<property name="bpID" type="java.lang.String">
+			<column name="bpID" length="50" />
+		</property>
+		<property name="bankBusiname" type="java.lang.String">
+			<column name="bankBusiname" length="50" />
+		</property>
+		<property name="bankName" type="java.lang.String">
+			<column name="bankName" length="30" />
+		</property>
+		<property name="enameSx" type="java.lang.String">
+			<column name="enameSx" length="10" />
+		</property>
+		<property name="isEnabled" type="java.lang.String">
+			<column name="isEnabled" length="1" />
+		</property>
+		<property name="enterpriseID" type="java.lang.String">
+			<column name="enterpriseID" length="32" />
+		</property>
+		<property name="customerCode" type="java.lang.String">
+			<column name="customerCode" length="32" />
+		</property>
+		<property name="bankID" type="java.lang.String">
+			<column name="bankID" length="32" />
+		</property>
+		<property name="useCode" type="java.lang.String">
+			<column name="useCode" length="20" />
+		</property>
+		<property name="loginPassword" type="java.lang.String">
+			<column name="loginPassword" length="20" />
+		</property>
+		<property name="testAccount" type="java.lang.String">
+			<column name="testAccount" length="20" />
+		</property>
+		<property name="interfaceIp" type="java.lang.String">
+			<column name="interfaceIp" length="30" />
+		</property>
+		<property name="port" type="java.lang.String">
+			<column name="port" length="5" />
+		</property>
+		<property name="protocol" type="java.lang.String">
+			<column name="protocol" length="5" />
+		</property>
+		<property name="path" type="java.lang.String">
+			<column name="path" length="100" />
+		</property>
+	</class>
+</hibernate-mapping>
