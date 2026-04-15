@@ -45,6 +45,8 @@ git rm --cached .myumldata 2>/dev/null || true
 echo "  - 构建产物 (build/)"
 git rm -r --cached build 2>/dev/null || true
 git rm -r --cached build/artifacts 2>/dev/null || true
+git rm -r --cached target 2>/dev/null || true
+git rm -r --cached target/artifacts 2>/dev/null || true
 
 # JAR 包（如果有直接提交的）
 echo "  - 直接提交的 JAR 包"

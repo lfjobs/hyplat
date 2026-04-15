@@ -49,7 +49,7 @@
 	<!-- 测试：123.57.26.228 --><!--本地: 192.168.3.9 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@123.57.26.228:1521:ttsw?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@123.57.26.228:1521:ttsw" />
 		<!--<property name="jdbcUrl" value="jdbc:oracle:thin:@60.205.156.248:1521:TTSW" />-->
 		<!--连接池中保留的最小连接数。-->
 		<property name="minPoolSize" value="5" />
