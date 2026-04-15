@@ -1,8 +1,5 @@
 package com.tiantai.telrec.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -191,7 +188,7 @@ public class ClientQueryCustomerList extends ActionSupport {
 	 * this.position + "%"); } if (!this.postcode.equals("")) {
 	 * map.put("customer_postcode", "%" + this.postcode + "%"); } if
 	 * (!this.type.equals("")) { map.put("customer_type", "%" + this.type +
-	 * "%"); } } catch (Exception e) { logger.error("操作异常", e); } return map; }
+	 * "%"); } } catch (Exception e) { e.printStackTrace(); } return map; }
 	 */
 
 	public String getAddress() {

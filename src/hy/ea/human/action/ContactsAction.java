@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.company.ContactCompany;
@@ -33,7 +30,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class ContactsAction {
-	private static final Logger logger = LoggerFactory.getLogger(ContactsAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -111,7 +107,7 @@ public class ContactsAction {
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(list, null,null);
 		} catch (Exception e) {
 			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return "addPersonal";

@@ -143,7 +143,7 @@ public class SignInServiceImpl implements SignInService {
             map.put("signId", signId);
             map.put("signDate", Utilities.getDateString(sign.getSignDate(), "yyyy-MM-dd HH:mm:ss"));
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             throw new JsonHandlerException("", "签到失败，请稍后重试！");
         }
         return map;

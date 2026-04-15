@@ -1,8 +1,5 @@
 package hy.ea.human.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CDetail;
@@ -248,7 +245,7 @@ public class PostServiceImpl implements PostService {
             JSONObject obj = JSONObject.fromObject(map);
             return  obj.toString();
         }catch(Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return "success";

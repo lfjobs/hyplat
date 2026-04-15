@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionSupport;
 import hy.plat.service.BaseBeanService;
 import hy.plat.service.ServerService;
@@ -48,7 +45,7 @@ public class ElkcAction extends ActionSupport {
 
 		}catch(Exception e){
 			map.put("returnCode", "-1");//失败登录
-			logger.error("操作异常", e);;
+			e.printStackTrace();;
 		}
 		map.put("returnCode", "0");// 正常登录
 		result = JSONObject.fromObject(map);

@@ -1,8 +1,5 @@
 package com.hx.httpclient.bi;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.net.URL;
 
 import org.apache.commons.lang3.StringUtils;
@@ -25,7 +22,6 @@ import com.hx.httpclient.vo.Credential;
  * 
  */
 public class EasemobIMUsers {
-	private static final Logger logger = LoggerFactory.getLogger(EasemobIMUsers.class);
 
 	private static final JsonNodeFactory factory = new JsonNodeFactory(false);
 
@@ -40,7 +36,7 @@ public class EasemobIMUsers {
 		String username = "15210819620";
         ObjectNode modifyIMUserPasswordWithAdminTokenNode = modifyIMUserPasswordWithAdminToken(username, "123456");
         if (null != modifyIMUserPasswordWithAdminTokenNode) {
-            logger.info("调试信息");
+            System.out.println("重置IM用户密码 提供管理员token: " + modifyIMUserPasswordWithAdminTokenNode.toString());
         }
 
     }
@@ -64,7 +60,7 @@ public class EasemobIMUsers {
 
 		// check Constants.APPKEY format
 		if (!HTTPClientUtils.match("^(?!-)[0-9a-zA-Z\\-]+#[0-9a-zA-Z]+", Constants.APPKEY)) {
-			logger.info("调试信息");
+			System.out.println("Bad format of Constants.APPKEY: " + Constants.APPKEY);
 
 			objectNode.put("message", "Bad format of Constants.APPKEY");
 
@@ -72,7 +68,7 @@ public class EasemobIMUsers {
 		}
 
 		if (StringUtils.isEmpty(userName)) {
-			logger.info("Property that named userName must be provided，the value is username of imuser.");
+			System.out.println("Property that named userName must be provided，the value is username of imuser.");
 
 			objectNode.put("message",
 					"Property that named userName must be provided，the value is username or imuser.");
@@ -81,7 +77,7 @@ public class EasemobIMUsers {
 		}
 
 		if (null != dataObjectNode && !dataObjectNode.has("newpassword")) {
-			logger.info("Property that named newpassword must be provided .");
+			System.out.println("Property that named newpassword must be provided .");
 
 			objectNode.put("message", "Property that named newpassword must be provided .");
 
@@ -95,7 +91,7 @@ public class EasemobIMUsers {
 					dataObjectNode, HTTPMethod.METHOD_PUT);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return objectNode;

@@ -1,8 +1,5 @@
 package hy.ea.invoicing.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.invoicing.service.CcpbsglService;
 
 import java.io.ByteArrayInputStream;
@@ -135,7 +132,7 @@ public class CcpbsglServiceImpl implements CcpbsglService {
 			os.close();   
 			/*list.clear();*/
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return new ByteArrayInputStream(os.toByteArray());
@@ -265,7 +262,7 @@ public class CcpbsglServiceImpl implements CcpbsglService {
 			os.close();   
 			/*list.clear();*/
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return new ByteArrayInputStream(os.toByteArray());
@@ -355,7 +352,7 @@ public class CcpbsglServiceImpl implements CcpbsglService {
 			os.close();   
 			/*list.clear();*/
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return new ByteArrayInputStream(os.toByteArray());

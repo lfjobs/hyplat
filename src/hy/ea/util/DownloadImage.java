@@ -1,8 +1,5 @@
 package hy.ea.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -12,7 +9,6 @@ import java.net.URLConnection;
 
 
 	public class DownloadImage {
-	private static final Logger logger = LoggerFactory.getLogger(DownloadImage.class);
 
    /**
      * @param args
@@ -49,7 +45,7 @@ import java.net.URLConnection;
 		       // 完毕，关闭所有链接
 		       os.close();
 	        is.close();
-        logger.info("调试信息");
+        System.out.println(savePath+"/"+filename);
        return savePath+"/"+filename;
   }
 

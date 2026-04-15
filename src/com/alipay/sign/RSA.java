@@ -1,9 +1,6 @@
 
 package com.alipay.sign;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -16,7 +13,6 @@ import java.security.spec.X509EncodedKeySpec;
 import javax.crypto.Cipher;
 
 public class RSA{
-	private static final Logger logger = LoggerFactory.getLogger(RSA.class);
 	
 	public static final String  SIGN_ALGORITHMS = "SHA1WithRSA";
 	
@@ -47,7 +43,7 @@ public class RSA{
         }
         catch (Exception e) 
         {
-        	logger.error("操作异常", e);
+        	e.printStackTrace();
         }
         
         return null;
@@ -82,7 +78,7 @@ public class RSA{
 		} 
 		catch (Exception e) 
 		{
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return false;

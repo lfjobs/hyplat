@@ -1,8 +1,5 @@
 package com.tiantai.nwa.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,7 +14,6 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
 public class XMLReader {
-	private static final Logger logger = LoggerFactory.getLogger(XMLReader.class);
 
 	protected Element m_RootElement = null;
 	
@@ -31,7 +27,7 @@ public class XMLReader {
 			document = builder.build(new FileInputStream(xmlFile));
 			m_RootElement = document.getRootElement();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 
@@ -130,7 +126,7 @@ public class XMLReader {
 			xmlout.output(m_RootElement, bo);
 			return bo.toString();//.replaceAll("<AuthNo />", "<AuthNo></AuthNo>").replaceAll("<Sign />", "<Sign></Sign>").replaceAll("\r\n", "").replaceAll(" ", ""); 
 		} catch (IOException e) {			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}

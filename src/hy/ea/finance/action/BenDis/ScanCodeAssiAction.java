@@ -1,8 +1,5 @@
 package hy.ea.finance.action.BenDis;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.MarKeting;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
@@ -42,7 +39,6 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 public class ScanCodeAssiAction {
-	private static final Logger logger = LoggerFactory.getLogger(ScanCodeAssiAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -245,7 +241,7 @@ public class ScanCodeAssiAction {
 
 		}
 		}catch (Exception e){
-			logger.error("操作异常", e);;
+			e.printStackTrace();;
 		}
 
 		return "success";
@@ -297,7 +293,7 @@ public class ScanCodeAssiAction {
 
 		} catch (Exception e) {
 			map.put("goodNum",goodNum);
-			//logger.error("操作异常", e);
+			//e.printStackTrace();
 		}
 		JSONObject obj = JSONObject.fromObject(map);
 		result = obj.toString();

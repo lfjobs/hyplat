@@ -1,8 +1,5 @@
 package com.batch.chinapay.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.zip.Deflater;
@@ -33,7 +30,6 @@ import java.util.zip.Inflater;
  * 
  */
 public class MsgUtil {
-	private static final Logger logger = LoggerFactory.getLogger(MsgUtil.class);
 
 	/**
 	 * 压缩编码
@@ -45,13 +41,13 @@ public class MsgUtil {
 	public byte[] deflateEncode(byte[] inputByte) throws IOException {
 		try {
 			if (inputByte == null || inputByte.length == 0) {
-				logger.info("压缩编码异常:输入不能为空指针!");
+				System.out.println("压缩编码异常:输入不能为空指针!");
 				throw new IOException("压缩编码异常:输入不能为空指针!");
 			}
 			byte[] tmpByte = deflater(inputByte);
 			return encode(tmpByte);
 		} catch (IOException ioex) {
-			logger.info("压缩编码异常:IO异常!");
+			System.out.println("压缩编码异常:IO异常!");
 			throw ioex;
 		}
 
@@ -72,7 +68,7 @@ public class MsgUtil {
 			byte[] tmpByte = decode(inputByte);
 			return inflater(tmpByte);
 		} catch (IOException ioex) {
-			logger.info("解码解压缩异常异常:IO异常!");
+			System.out.println("解码解压缩异常异常:IO异常!");
 			throw ioex;
 		}
 	}
@@ -95,7 +91,7 @@ public class MsgUtil {
 		} finally {
 			o.close();
 		}
-		// logger.info("调试信息");
+		// System.out.println("compressed data length:"+compressedDataLength);
 		compresser.end();
 
 		return o.toByteArray();
@@ -127,12 +123,12 @@ public class MsgUtil {
 			}
 		} catch (Exception ex) {
 			System.err.println("Data format error!\n");
-			logger.error("操作异常", ex);
+			ex.printStackTrace();
 		} finally {
 			o.close();
 		}
 		compresser.end();
-		// logger.info("调试信息");
+		// System.out.println("decompressed data length:"+compressedDataLength);
 		return o.toByteArray();
 	}
 
@@ -156,17 +152,17 @@ public class MsgUtil {
 	public static void main(String[] args) {
 
 		String ss = "123456789abcdefghijklmnopqrstuvwxyz你好测试文件!@#$%^&*()_+-=<>?,./";
-		logger.info("原始字符串=[{}{}", ss, "]");
+		System.out.println("原始字符串=[" + ss + "]");
 
 		MsgUtil msgUtil = new MsgUtil();
 
 		try {
 			String st = new String(msgUtil.deflateEncode(ss.getBytes()));
-			logger.info("压缩编码后=[{}{}", st, "]");
+			System.out.println("压缩编码后=[" + st + "]");
 			String ts = new String(msgUtil.decodeInflate(st.getBytes()));
-			logger.info("解压缩解码后=[{}{}", ts, "]");
+			System.out.println("解压缩解码后=[" + ts + "]");
 		} catch (IOException ioex) {
-			iologger.error("操作异常", ex);
+			ioex.printStackTrace();
 		}
 
 	}

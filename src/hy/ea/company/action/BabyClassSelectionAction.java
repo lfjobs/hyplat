@@ -1,8 +1,5 @@
 package hy.ea.company.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +23,6 @@ import net.sf.json.JSONObject;
 @Controller
 @Scope("prototype")
 public class BabyClassSelectionAction {
-	private static final Logger logger = LoggerFactory.getLogger(BabyClassSelectionAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -112,7 +108,7 @@ public class BabyClassSelectionAction {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("list",arr);

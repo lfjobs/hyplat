@@ -1,8 +1,5 @@
 package mobile.tiantai.android.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import hy.plat.service.BaseBeanService;
 import org.springframework.context.annotation.Scope;
@@ -17,7 +14,6 @@ import javax.annotation.Resource;
 @Controller
 @Scope("prototype")
 public class QueryForMobileUtil {
-	private static final Logger logger = LoggerFactory.getLogger(QueryForMobileUtil.class);
     @Resource
     private BaseBeanService baseBeanService;
 
@@ -32,7 +28,7 @@ public class QueryForMobileUtil {
      */
     public String toQuery() {
         try {
-            logger.info("跳转查询: {}", jumpType);
+            System.out.println("跳转查询" + jumpType);
             innerHtml = new StringBuffer();
             switch (jumpType) {
                 case "YSD_LB"://预算单列表
@@ -56,7 +52,7 @@ public class QueryForMobileUtil {
                     innerHtml.append("<li class=\"ttsw_li\" onclick=\"toCheck(this,12);\">物品类型</li>");
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "toQuery";
     }
@@ -68,7 +64,7 @@ public class QueryForMobileUtil {
      */
     public String toCostBudgetQuery() {
         try {
-            logger.info("跳转查询: {}", jumpType);
+            System.out.println("跳转查询" + jumpType);
             innerHtml = new StringBuffer();
             switch (jumpType) {
                 case "DJFB_LB"://招标投标列表
@@ -92,7 +88,7 @@ public class QueryForMobileUtil {
                     innerHtml.append("<li class=\"ttsw_li\" onclick=\"toCheck(this,12);\">物品类型</li>");
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "toCostBudgetQuery";
     }
@@ -104,7 +100,7 @@ public class QueryForMobileUtil {
      */
     public String toPlanCostBudgetQuery() {
         try {
-            logger.info("跳转查询: {}", jumpType);
+            System.out.println("跳转查询" + jumpType);
             innerHtml = new StringBuffer();
             switch (jumpType) {
                 case "XMJH_LB"://项目计划列表
@@ -128,7 +124,7 @@ public class QueryForMobileUtil {
                     innerHtml.append("<li class=\"ttsw_li\" onclick=\"toCheck(this,12);\">物品类型</li>");
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "toPlanCostBudgetQuery";
     }

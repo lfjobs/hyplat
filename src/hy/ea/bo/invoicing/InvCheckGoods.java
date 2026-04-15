@@ -3,7 +3,6 @@ package hy.ea.bo.invoicing;
 import hy.plat.bo.BaseBean;
 
 import java.util.Date;
-import java.util.Objects;
 
 /**
  * Created by lyc on 2018-10-12.盘点
@@ -127,22 +126,4 @@ public class InvCheckGoods implements BaseBean, java.io.Serializable {
         this.invenUnderline = invenUnderline;
     }
 
-    @Override
-    public String toString() {
-        return "\"InvCheckGoods\":{" +
-                "\"checkinvKey \":\"" + checkinvKey + '\"' +
-                ", \"checkinvId \":\"" + checkinvId + '\"' +
-                ", \"goodsID \":\"" + goodsID + '\"' +
-                ", \"goodsType \":\"" + goodsType + '\"' +
-                ", \"goodsName \":\"" + goodsName + '\"' +
-                ", \"ppID \":\"" + ppID + '\"' +
-                ", \"invenQuantity \":\"" + invenQuantity + '\"' +
-                ", \"realQuantity \":\"" + realQuantity + '\"' +
-                ", \"price \":\"" + price + '\"' +
-                ", \"invenOnline \":\"" + invenOnline + '\"' +
-                ", \"invenUnderline \":\"" + invenUnderline + '\"' +
-                ", \"FBILLID \":\"" + FBILLID + '\"' +
-                ", \"error\":" + error +
-                "},";
-    }
 }

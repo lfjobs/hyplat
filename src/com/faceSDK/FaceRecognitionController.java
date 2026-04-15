@@ -412,7 +412,7 @@ public class FaceRecognitionController extends ActionSupport {
             String name = jsonObject.get("name").toString();
             String imageUrl = jsonObject.get("imageUrl").toString();
             String[] split = imageUrl.split("/");
-            logger.info("调试信息");
+            System.out.println(fileUrl+imageUrl);
             File files=new File(fileUrl+imageUrl);
             importSavePersonEmpower(split[split.length-1],files,name);
         }
@@ -425,7 +425,7 @@ public class FaceRecognitionController extends ActionSupport {
         //判断文件大小，大于200k,就直接压缩0.5
         String  photoPath= scaleImage(path,fileName, files, "faceImage","staff/headimage/"
                 + Utilities.getDateString(new Date(), "yyyy-MM-dd"));
-        logger.info("值：{}", photoPath);
+        System.out.println(photoPath);
         OfficeFaceEmpower officeFaceEmpower=new OfficeFaceEmpower();
         officeFaceEmpower.setPersonImage(photoPath);
         officeFaceEmpower.setStaffName(name);
@@ -567,7 +567,7 @@ public class FaceRecognitionController extends ActionSupport {
                     }
                 }
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
     private void concatenateFiles(File destFile, File chunkFile) throws IOException {

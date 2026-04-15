@@ -1,8 +1,5 @@
 package com.tiantai.wfj.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.service.ProductsMmanagService;
 import hy.ea.bo.company.GoodsManage;
 import hy.ea.bo.finance.ProductPackaging;
@@ -139,7 +136,7 @@ public class ProductsMmanagServiceImpl implements ProductsMmanagService {
                     resultFile.getParentFile().mkdirs();
                 }
                 boolean b = mergeFiles(files, resultFile);
-                logger.info("调试信息");
+                System.out.println(b ? "合并成功" : "合并失败");
                 //在合成文件的时候已经删除临时文件 现在删除临时文件夹
                 fileDir.delete();
                 map.put("siSuccess", true);
@@ -147,7 +144,7 @@ public class ProductsMmanagServiceImpl implements ProductsMmanagService {
                 map.put("name", fileName);
             }
         }
-        logger.info("调试信息");
+        System.out.println(path + path2);
         return map;
     }
 
@@ -179,7 +176,7 @@ public class ProductsMmanagServiceImpl implements ProductsMmanagService {
                 fos.write(buffer, 0, len);
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } finally {
             if (null != fos) {
                 try {
@@ -289,7 +286,7 @@ public class ProductsMmanagServiceImpl implements ProductsMmanagService {
         try {
             contentToFileService.saveContent(id, content, path);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "/upload_files/goodDetail/" + id
                 + UploadContentToFileService.suffix;
@@ -311,7 +308,7 @@ public class ProductsMmanagServiceImpl implements ProductsMmanagService {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
     }
@@ -334,14 +331,14 @@ public class ProductsMmanagServiceImpl implements ProductsMmanagService {
             }
             resultFileChannel.close();
         } catch (FileNotFoundException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return false;
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return false;
         }
         for (int i = 0; i < files.length; i++) {
-            logger.info("调试信息");
+            System.out.println("临时文件:" + files[i].getName() + " 已删除");
             files[i].delete();
         }
         return true;
@@ -376,7 +373,7 @@ public class ProductsMmanagServiceImpl implements ProductsMmanagService {
             }
         }
         for (File file : array) {
-            logger.info("调试信息");
+            System.out.println(file.getName());
         }
         return array;
     }

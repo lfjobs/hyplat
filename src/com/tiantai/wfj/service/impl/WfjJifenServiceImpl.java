@@ -168,7 +168,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
                 }
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return str;
     }
@@ -227,10 +227,10 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         String cbid2 = this.idgec.getServerID("CashierBills");
         String cbid3 = this.idgec.getServerID("CashierBills");
         String cbid4 = this.idgec.getServerID("CashierBills");
-        logger.info("值：{}", cbid);
-        logger.info("值：{}", cbid2);
-        logger.info("值：{}", cbid3);
-        logger.info("值：{}", cbid4);
+        System.out.println(cbid);
+        System.out.println(cbid2);
+        System.out.println(cbid3);
+        System.out.println(cbid4);
         String journum = tscBean.getMerSeqId();
         String pzid = this.idgec.getBillID(comId);
         String pzid2 = this.idgec.getBillID(comId);
@@ -257,7 +257,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb.setCashierDate(new Date());
         cb.setBillsType("金币出库单");
         cb.setJournalNum(pzid);
-        logger.info("金币出库单:: {}", cb.getJournalNum());
+        System.out.println("金币出库单:" + cb.getJournalNum());
         cb.setTrade_no(journum);
         cb.setStaffID(staffId);
         cb.setStaffName(staname);
@@ -326,7 +326,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb1.setBillsType("收款单");
         cb1.setStatus("45");
         cb1.setJournalNum(pzid2);
-        logger.info("收款单:: {}", cb1.getJournalNum());
+        System.out.println("收款单:" + cb1.getJournalNum());
         cb1.setGroupCompanySn(null);
 
 
@@ -400,7 +400,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb1.setBillsType("金币入库单");
         cb1.setStatus("15");
         cb1.setJournalNum(pzid3);
-        logger.info("金币入库单:: {}", cb1.getJournalNum());
+        System.out.println("金币入库单:" + cb1.getJournalNum());
         cb1.setStaffID(null);
         cb1.setStaffName(null);
         cb1.setStaffCode(null);
@@ -451,7 +451,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb1.setBillsType("支款单");
         cb1.setStatus("46");
         cb1.setJournalNum(pzid4);
-        logger.info("支款单:: {}", cb1.getJournalNum());
+        System.out.println("支款单:" + cb1.getJournalNum());
         cb1.setStaffID(null);
 
         cb1.setStaffCode(null);
@@ -553,7 +553,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         wt.setWfjTaskDate(new Date());
         beans.add(wt);
 
-        logger.info("调试信息");
+        System.out.println(tscBean.getTransAmt());
 
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("wfj_comId", wfj_comid);
@@ -633,7 +633,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             }
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return str;
     }
@@ -694,10 +694,10 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         String cbid2 = this.idgec.getServerID("CashierBills");
         String cbid3 = this.idgec.getServerID("CashierBills");
         String cbid4 = this.idgec.getServerID("CashierBills");
-        logger.info("值：{}", cbid);
-        logger.info("值：{}", cbid2);
-        logger.info("值：{}", cbid3);
-        logger.info("值：{}", cbid4);
+        System.out.println(cbid);
+        System.out.println(cbid2);
+        System.out.println(cbid3);
+        System.out.println(cbid4);
         String journum = serverService.getBillID(comId);
         String pzid = this.idgec.getBillID(comId);
         String pzid2 = this.idgec.getBillID(comId);
@@ -747,7 +747,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb.setCashierDate(new Date());
         cb.setBillsType("金币出库单");
         cb.setJournalNum(pzid);
-        logger.info("金币出库单:: {}", cb.getJournalNum());
+        System.out.println("金币出库单:" + cb.getJournalNum());
         cb.setTrade_no(journum);
         cb.setStaffID(staffId);
         cb.setStaffName(staname);
@@ -816,7 +816,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb1.setBillsType("收款单");
         cb1.setStatus("45");
         cb1.setJournalNum(pzid2);
-        logger.info("收款单:: {}", cb1.getJournalNum());
+        System.out.println("收款单:" + cb1.getJournalNum());
         cb1.setGroupCompanySn(null);
 
 
@@ -891,7 +891,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb1.setBillsType("金币入库单");
         cb1.setStatus("15");
         cb1.setJournalNum(pzid3);
-        logger.info("金币入库单:: {}", cb1.getJournalNum());
+        System.out.println("金币入库单:" + cb1.getJournalNum());
         cb1.setStaffID(null);
         cb1.setStaffName(null);
         cb1.setStaffCode(null);
@@ -942,7 +942,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb1.setBillsType("支款单");
         cb1.setStatus("46");
         cb1.setJournalNum(pzid4);
-        logger.info("支款单:: {}", cb1.getJournalNum());
+        System.out.println("支款单:" + cb1.getJournalNum());
         cb1.setStaffID(null);
 
         cb1.setStaffCode(null);
@@ -1044,7 +1044,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         wt.setWfjTaskDate(new Date());
         beans.add(wt);
 
-        logger.info("值：{}", totalmoney);
+        System.out.println(totalmoney);
 
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("wfj_comId", wfj_comid);
@@ -1167,10 +1167,10 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             String cbid2 = this.idgec.getServerID("CashierBills");
             String cbid3 = this.idgec.getServerID("CashierBills");
             String cbid4 = this.idgec.getServerID("CashierBills");
-            logger.info("值：{}", cbid);
-            logger.info("值：{}", cbid2);
-            logger.info("值：{}", cbid3);
-            logger.info("值：{}", cbid4);
+            System.out.println(cbid);
+            System.out.println(cbid2);
+            System.out.println(cbid3);
+            System.out.println(cbid4);
             String journum = tscBean.getMerSeqId();
             String pzid = this.idgec.getBillID(comId);
             String pzid2 = this.idgec.getBillID(comId);
@@ -1197,7 +1197,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             cb.setCashierDate(new Date());
             cb.setBillsType("金币出库单");
             cb.setJournalNum(pzid);
-            logger.info("金币出库单:: {}", cb.getJournalNum());
+            System.out.println("金币出库单:" + cb.getJournalNum());
             cb.setTrade_no(journum);
             cb.setStaffID(staffId);
             cb.setStaffName(staname);
@@ -1266,7 +1266,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             cb1.setBillsType("收款单");
             cb1.setStatus("45");
             cb1.setJournalNum(pzid2);
-            logger.info("收款单:: {}", cb1.getJournalNum());
+            System.out.println("收款单:" + cb1.getJournalNum());
             cb1.setGroupCompanySn(null);
 
 
@@ -1340,7 +1340,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             cb1.setBillsType("金币入库单");
             cb1.setStatus("15");
             cb1.setJournalNum(pzid3);
-            logger.info("金币入库单:: {}", cb1.getJournalNum());
+            System.out.println("金币入库单:" + cb1.getJournalNum());
             cb1.setStaffID(null);
             cb1.setStaffName(null);
             cb1.setStaffCode(null);
@@ -1391,7 +1391,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             cb1.setBillsType("支款单");
             cb1.setStatus("46");
             cb1.setJournalNum(pzid4);
-            logger.info("支款单:: {}", cb1.getJournalNum());
+            System.out.println("支款单:" + cb1.getJournalNum());
             cb1.setStaffID(null);
 
             cb1.setStaffCode(null);
@@ -1493,7 +1493,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             wt.setWfjTaskDate(new Date());
             beans.add(wt);
 
-            logger.info("调试信息");
+            System.out.println(tscBean.getTransAmt());
 
             Map<String, Object> paramMap = new HashMap<String, Object>();
             paramMap.put("wfj_comId", wfj_comid);
@@ -1611,7 +1611,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             }
             subtract = true;
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             subtract = false;
         }
         return subtract;
@@ -1940,7 +1940,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             }
             scc.setCompanyId(company.getCompanyID());
             scc.setState("2");
-            logger.info("scc公司ID:: {}", scc.getCompanyId());
+            System.out.println("scc公司ID:" + scc.getCompanyId());
             scc.setPseudoCompanyName(company.getCompanyName());
             beans.add(scc);
 
@@ -2032,7 +2032,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             this.beandao.save(customerCompanyRef);
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -2127,7 +2127,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
 
             this.beandao.saveBeansListAndexecuteHqlsByParams(beans, new String[]{"update Staff set groupCompanySn = ? where staffID = ?"}, new Object[]{company.getGroupCompanySn(), scc.getStaffid()});
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -2224,7 +2224,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
 
             this.beandao.saveBeansListAndexecuteHqlsByParams(beans, new String[]{"update Staff set groupCompanySn = ? where staffID = ?"}, new Object[]{company.getGroupCompanySn(), scc.getStaffid()});
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -2305,7 +2305,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             }
             tcc.setPpid(tuicus.getPpid());
         }
-        logger.info("用户{}{}{}", phones, "  推荐人sccid   ", sccid);
+        System.out.println("用户" + phones + "  推荐人sccid   " + sccid);
         if (staff != null && staff.getStaffName() != null) {
             sf.setStaffName(staff.getStaffName());
         }
@@ -2410,10 +2410,6 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             demandDetail.setDdBool('Y');
             demandDetail.setDdadddate(new Date());
             demandDetail.setDscount(0);
-            demandDetail.setDdtype("1");
-            demandDetail.setDdcid(tcc.getStaffid());
-            demandDetail.setDdsccid(tcc.getSccId());
-            demandDetail.setDdstaffid(tcc.getStaffid());
             beans.add(demandDetail);
         }
 
@@ -2480,10 +2476,10 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         String cbid2 = this.idgec.getServerID("CashierBills");
         String cbid3 = this.idgec.getServerID("CashierBills");
         String cbid4 = this.idgec.getServerID("CashierBills");
-        logger.info("值：{}", cbid);
-        logger.info("值：{}", cbid2);
-        logger.info("值：{}", cbid3);
-        logger.info("值：{}", cbid4);
+        System.out.println(cbid);
+        System.out.println(cbid2);
+        System.out.println(cbid3);
+        System.out.println(cbid4);
         String journum = trade_no;
         String pzid = this.idgec.getBillID(comId);
         String pzid2 = this.idgec.getBillID(comId);
@@ -2509,7 +2505,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb.setCashierDate(new Date());
         cb.setBillsType("金币出库单");
         cb.setJournalNum(pzid);
-        logger.info("金币出库单:: {}", cb.getJournalNum());
+        System.out.println("金币出库单:" + cb.getJournalNum());
         cb.setTrade_no(journum);
         cb.setStaffID(staffId);
         cb.setStaffName(staname);
@@ -2580,7 +2576,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb1.setBillsType("收款单");
         cb1.setStatus("45");
         cb1.setJournalNum(pzid2);
-        logger.info("收款单:: {}", cb1.getJournalNum());
+        System.out.println("收款单:" + cb1.getJournalNum());
         cb1.setGroupCompanySn(null);
 
 
@@ -2654,7 +2650,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb1.setBillsType("金币入库单");
         cb1.setStatus("15");
         cb1.setJournalNum(pzid3);
-        logger.info("金币入库单:: {}", cb1.getJournalNum());
+        System.out.println("金币入库单:" + cb1.getJournalNum());
         cb1.setStaffID(null);
         cb1.setStaffName(null);
         cb1.setStaffCode(null);
@@ -2705,7 +2701,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         cb1.setBillsType("支款单");
         cb1.setStatus("46");
         cb1.setJournalNum(pzid4);
-        logger.info("支款单:: {}", cb1.getJournalNum());
+        System.out.println("支款单:" + cb1.getJournalNum());
         cb1.setStaffID(null);
 
         cb1.setStaffCode(null);
@@ -2788,14 +2784,8 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         WfjJifen wfjJifen = (WfjJifen) beandao.getBeanByHqlAndParams(" from WfjJifen where wfjJifenId=? ", new Object[]{jifenId});
         String JifenScore = wfjJifen.getWfjJifenScore();
         float golds = Float.parseFloat(JifenScore) - Float.parseFloat(tempjifen.toString());
-        if (golds < 0) {
-            str="提现"+money+"元现金，金币不够扣除！";
-            throw new Exception(str);
-        } else {
-            wfjJifen.setWfjJifenScore(golds + "");
-            beans.add(wfjJifen);
-        }
-
+        wfjJifen.setWfjJifenScore(golds + "");
+        beans.add(wfjJifen);
 
         edetail.setJifenDetailScore(tempjifen.toString());
         edetail.setWfjGuizeId(eguize.getWfjGuizeId());
@@ -2813,7 +2803,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
         wt.setWfjTaskDate(new Date());
         beans.add(wt);
 
-        logger.info("值：{}", money);
+        System.out.println(money);
 
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("wfj_comId", wfj_comid);
@@ -2995,7 +2985,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
                     wxAccountDetail.setStaffName(staff.getStaffName());
                 }
             }catch (Exception e){
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
             WxMainAccount wxMainAccount = (WxMainAccount) baseBeanDao.getBeanByHqlAndParams("from WxMainAccount where companyID = ?", new Object[]{wxAccountDetail.getCompanyID()});
 
@@ -3040,7 +3030,7 @@ public class WfjJifenServiceImpl implements WfjJifenService {
             baseBeanDao.executeHqlsByParmsList(beans, null, null);
         }
     }catch (Exception e){
-           logger.error("操作异常", e);
+           e.printStackTrace();
        }
     }
 

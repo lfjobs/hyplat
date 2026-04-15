@@ -1,8 +1,5 @@
 package com.tiantai.telrec.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +53,7 @@ public class ClientQueryTelForDate extends ActionSupport {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		List list = new ArrayList();
 		list = this.getTelInfoService().queryTelrecForDate(user_id, date);
-	//	logger.info("值：{}", list);
+	//	System.out.println(list);
 		JSONArray jsonArray = JSONArray.fromObject(list);
 		String outString = jsonArray.toString();
 		response.setCharacterEncoding("UTF-8");

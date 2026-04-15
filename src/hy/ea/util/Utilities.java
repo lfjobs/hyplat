@@ -1,8 +1,5 @@
 package hy.ea.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.util.bean.MailConfiguration;
 
 import java.lang.reflect.InvocationTargetException;
@@ -29,7 +26,6 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
 public class Utilities {
-	private static final Logger logger = LoggerFactory.getLogger(Utilities.class);
 	
 	private static Utilities utilities;
 	private JavaMailSenderImpl jmail;
@@ -135,7 +131,7 @@ public class Utilities {
 		try {
 			rootPath = java.net.URLDecoder.decode(rootPath, "utf-8");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return rootPath;
 	}
@@ -153,7 +149,7 @@ public class Utilities {
 			SimpleDateFormat dateFormat = new SimpleDateFormat(format);
 			result = dateFormat.format(date);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -174,7 +170,7 @@ public class Utilities {
 		try {
 			date = sdFormat.parse(formatDate);
 		} catch (ParseException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return date;
 	}
@@ -199,7 +195,7 @@ public class Utilities {
 				newDateStr +=  oldDateStr.substring(8);
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return newDateStr;
 	}
@@ -229,7 +225,7 @@ public class Utilities {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		
@@ -279,7 +275,7 @@ public class Utilities {
 	                num = isLeapYear(year)?29:28;
 	                break;
 	            default:
-	                logger.info("非法月份");
+	                System.out.println("非法月份");
 	                break;
 	            }
 	        return num;
@@ -317,7 +313,7 @@ public class Utilities {
 		   		cal3.setTime(sdf.parse(etime));
 		   	  } catch (ParseException e) {
 		   		// TODO Auto-generated catch block
-		   		logger.error("操作异常", e);
+		   		e.printStackTrace();
 		   	  }
 		   	  
 		   	  if((cal2.before(cal1)&& cal3.after(cal1))||ntime.equals(stime)||ntime.equals(etime))
@@ -363,7 +359,7 @@ public class Utilities {
 
 		} catch (Exception e) {
 			result = 1;
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return result;
@@ -419,10 +415,10 @@ public class Utilities {
 			BeanUtils.copyProperties(newObject, oldObject);
 		} catch (IllegalAccessException e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} catch (InvocationTargetException e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 	
@@ -558,7 +554,7 @@ public class Utilities {
 					mystack1.push(new Double(d));
 					i++;
 				} else {
-					logger.info("Error!");
+					System.out.println("Error!");
 				}
 				break;
 			default:
@@ -589,78 +585,6 @@ public class Utilities {
 	}
 
 	/**
-	 * unicode 转换成 中文
-	 *
-	 * @param theString
-	 * @return
-	 */
-	public static String decodeUnicode(String theString) {
-		char aChar;
-		int len = theString.length();
-		StringBuffer outBuffer = new StringBuffer(len);
-		for (int x = 0; x < len; ) {
-			aChar = theString.charAt(x++);
-			if (aChar == '\\') {
-				aChar = theString.charAt(x++);
-				if (aChar == 'u') {
-					int value = 0;
-					for (int i = 0; i < 4; i++) {
-						aChar = theString.charAt(x++);
-						switch (aChar) {
-							case '0':
-							case '1':
-							case '2':
-							case '3':
-							case '4':
-							case '5':
-							case '6':
-							case '7':
-							case '8':
-							case '9':
-								value = (value << 4) + aChar - '0';
-								break;
-							case 'a':
-							case 'b':
-							case 'c':
-							case 'd':
-							case 'e':
-							case 'f':
-								value = (value << 4) + 10 + aChar - 'a';
-								break;
-							case 'A':
-							case 'B':
-							case 'C':
-							case 'D':
-							case 'E':
-							case 'F':
-								value = (value << 4) + 10 + aChar - 'A';
-								break;
-							default:
-								throw new IllegalArgumentException(
-										"Malformed  encoding.");
-						}
-					}
-					outBuffer.append((char) value);
-				} else {
-					if (aChar == 't') {
-						aChar = '\t';
-					} else if (aChar == 'r') {
-						aChar = '\r';
-					} else if (aChar == 'n') {
-						aChar = '\n';
-					} else if (aChar == 'f') {
-						aChar = '\f';
-					}
-					outBuffer.append(aChar);
-				}
-			} else {
-				outBuffer.append(aChar);
-			}
-		}
-		return outBuffer.toString();
-	}
-
-	/**
 	 * 发送邮件 title ：邮件标题 content:邮件内容 toMail:对方邮件EMail
 	 */
 	private Boolean sendMail(String title, String content, String toMail) {
@@ -672,7 +596,7 @@ public class Utilities {
 			String mailServer = ConfigUtil
 					.getInstance(Constant.SYS_CONFIG_PATH).getKeyValue(
 							"mail_Server");
-			logger.info("调试信息");
+			System.out.println(username + " " + password + " " + mailServer);
 			jmail = new JavaMailSenderImpl();
 			jmail.setHost(mailServer);
 			jmail.setUsername(username);
@@ -691,7 +615,7 @@ public class Utilities {
 			jmail.send(mailMessage);
 			return true;
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return false;
 		}
 

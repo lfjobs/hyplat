@@ -1,8 +1,5 @@
 package hy.ea.util.isms;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -50,7 +47,6 @@ error:Account balance is insufficient  余额不足
  */
 
 public class MobileSMS {
-	private static final Logger logger = LoggerFactory.getLogger(MobileSMS.class);
 	//private static final  String encode = "GBK"; //页面编码和短信内容编码为GBK。重要说明：如提交短信后收到乱码，请将GBK改为UTF-8测试。如本程序页面为编码格式为：ASCII/GB2312/GBK则该处为GBK。如本页面编码为UTF-8或需要支持繁体，阿拉伯文等Unicode，请将此处写为：UTF-8
 	private static final String encode = "UTF-8";
 	private static final String username = "tiantai";//用户名
@@ -75,7 +71,7 @@ public class MobileSMS {
 			//把发送链接存入buffer中，如连接超时，可能是您服务器不支持域名解析，请将下面连接中的：【m.5c.com.cn】修改为IP：【115.28.23.78】
 			buffer.append("http://m.5c.com.cn/api/send/index.php?username="+username+"&password_md5="+password_md5+"&mobile=+86"+mobile+"&apikey="+apikey+"&content="+contentUrlEncode+"&encode="+encode);
 			
-			//logger.info("值：{}", buffer); //调试功能，输入完整的请求URL地址
+			//System.out.println(buffer); //调试功能，输入完整的请求URL地址
 			
 			//把buffer链接存入新建的URL中
 			URL url = new URL(buffer.toString());
@@ -96,10 +92,10 @@ public class MobileSMS {
 			result = reader.readLine();
 			
 			//输出result内容，查看返回值，成功为success，错误为error，详见该文档起始注释
-			logger.info("值：{}", result);
+			System.out.println(result);
 			
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		if(result.equals("error:Missing recipient")){
 			return "1";

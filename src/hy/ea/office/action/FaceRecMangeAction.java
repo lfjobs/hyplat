@@ -29,7 +29,6 @@ public class FaceRecMangeAction {
  private PageForm pageForm;
  private int pageSize;
  private String search;
-
  @Resource
  private FaceRecService faceRecService;
 

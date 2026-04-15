@@ -1,8 +1,5 @@
 package hy.ea.driving.action.elkc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
 import com.tiantai.wfj.util.SessionWrap;
@@ -35,7 +32,6 @@ import java.util.List;
 @Controller
 @Scope("prototype")
 public class StaffManageAction {
-	private static final Logger logger = LoggerFactory.getLogger(StaffManageAction.class);
 
     @Resource
     private ServerService serverService;
@@ -172,7 +168,7 @@ public class StaffManageAction {
 //                    beans.add(cashierBills2);
 //                }
 //            }catch (Exception e){
-//                logger.error("操作异常", e);
+//                e.printStackTrace();
 //            }
 //        }
         Staff staff = (Staff)baseBeanService.getBeanByHqlAndParams("from Staff e where e.staffID = ?",new Object[]{staffId});

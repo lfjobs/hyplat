@@ -1,8 +1,5 @@
 package com.tiantai.telrec.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.human.Staff;
 import hy.ea.service.impl.CLoginServiceImpl;
 import hy.ea.util.DateUtil;
@@ -94,7 +91,7 @@ public class ClientInsertTelRec extends ActionSupport {
 				response.flushBuffer();
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}

@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * 离职员工
  *@author 陈小丰
@@ -40,7 +37,6 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class MobileCOSDimissionAction {
-	private static final Logger logger = LoggerFactory.getLogger(MobileCOSDimissionAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -103,11 +99,11 @@ public class MobileCOSDimissionAction {
 			response.setCharacterEncoding("UTF-8");
 			try {
 				response.getWriter().write(outString);
-				//logger.info("值：{}", outString);
+				//System.out.println(outString);
 				response.flushBuffer();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			return null;
 	}

@@ -55,7 +55,7 @@ public class transferDaoImpf implements transferDao{
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
         logger.error(cashi_id+"发货存储过程执行时间为："+(System.currentTimeMillis()-a));
 		return list;
@@ -116,7 +116,7 @@ public class transferDaoImpf implements transferDao{
 		} catch (Exception e) {
 			String a=e.getMessage().toString().substring(3);
 			b=a.substring(a.indexOf(":")+1,a.indexOf("ORA"));
-			//logger.error("操作异常", e);
+			//e.printStackTrace();
 		}
 		return b;
 	}
@@ -143,7 +143,7 @@ public class transferDaoImpf implements transferDao{
 		} catch (Exception e) {
 			String a=e.getMessage().toString().substring(3);
 			b=a.substring(a.indexOf(":")+1,a.indexOf("ORA"));
-			//logger.error("操作异常", e);
+			//e.printStackTrace();
 		}
 		return b;
 	}
@@ -167,7 +167,7 @@ public class transferDaoImpf implements transferDao{
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 	
@@ -187,8 +187,8 @@ public class transferDaoImpf implements transferDao{
 		    cs.close();
 		    ct.close();
 		  } catch (Exception e) {
-		    logger.info("调试信息");
-		    logger.error("操作异常", e);
+		    System.out.println(e.getMessage());
+		    e.printStackTrace();
 		  }
 	}
 	
@@ -219,8 +219,8 @@ public class transferDaoImpf implements transferDao{
 		    cs.close();
 		    ct.close();
 		  } catch (Exception e) {
-		    logger.info("调试信息");
-		    logger.error("操作异常", e);
+		    System.out.println(e.getMessage());
+		    e.printStackTrace();
 		  }
 	}
 }

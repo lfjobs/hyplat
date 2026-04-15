@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 
 public class SafetyInspectAction {
-	private static final Logger logger = LoggerFactory.getLogger(SafetyInspectAction.class);
     private final Logger logger = LoggerFactory.getLogger(SafetyInspectAction.class);
     @Resource
     private BaseBeanService baseBeanService;
@@ -108,7 +107,7 @@ public class SafetyInspectAction {
             JSONObject oj = JSONObject.fromObject(map,jc);
             result = oj.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }

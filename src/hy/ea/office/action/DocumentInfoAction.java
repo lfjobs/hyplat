@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Company;
@@ -61,7 +58,6 @@ import com.opensymphony.xwork2.ActionContext;
  * 公文流转管理
  */
 public class DocumentInfoAction {
-	private static final Logger logger = LoggerFactory.getLogger(DocumentInfoAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -128,7 +124,7 @@ public class DocumentInfoAction {
 			document.setModule((String) session.get("module"));
 			baseBeanService.save(document);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "toNewDoc";
 	}
@@ -150,7 +146,7 @@ public class DocumentInfoAction {
 					session);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -271,7 +267,7 @@ public class DocumentInfoAction {
 						pageForm =(PageForm) docCommonService.getFullPageForm(pageForm);
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
-						logger.error("操作异常", e);
+						e.printStackTrace();
 					}
 					return "receivermobile";
 					
@@ -729,7 +725,7 @@ public class DocumentInfoAction {
 				baseBeanService.update(doc);
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -779,7 +775,7 @@ public class DocumentInfoAction {
 			document.setReceiverDeptID(null);
 			document.setReceiverCompanyID(null);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "toNewDoc";
@@ -1450,7 +1446,7 @@ public class DocumentInfoAction {
 					(String) session.get("module"), "infoplat");
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -1653,7 +1649,7 @@ public class DocumentInfoAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";

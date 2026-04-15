@@ -1,8 +1,5 @@
 package com.batch.chinapay.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import chinapay.SecureLink;
 
 /**
@@ -12,7 +9,6 @@ import chinapay.SecureLink;
  * 
  */
 public class SignData {
-	private static final Logger logger = LoggerFactory.getLogger(SignData.class);
 
 	/**
 	 *根据商户ID，待签名数据，调用签名API得到签名串(该签名串用户发送给CP)
@@ -28,14 +24,14 @@ public class SignData {
 		String ChkValue2;
 		//得到商户私钥存放路径
 		if (path == null || "".equals(path)) {
-			logger.info("can't find the PrivateKey path!");
+			System.out.println("can't find the PrivateKey path!");
 			return null;
 		}
-		logger.info("path=[{}{}", path, "]");
+		System.out.println("path=[" + path + "]");
 		//初始化，签名
 		flag = key.buildKey(merId, 0, path);
 		if (flag == false) {
-			logger.info("build key error! merId={}{}{}", merId, " path=", path);
+			System.out.println("build key error! merId=" + merId + " path=" + path);
 			return null;
 		}
 		t = new chinapay.SecureLink(key);
@@ -55,14 +51,14 @@ public class SignData {
 		boolean flag;
 		// 得到CP公钥存放路径
 		if (path == null || "".equals(path)) {
-			logger.info("can't find the PubKey path!");
+			System.out.println("can't find the PubKey path!");
 			return false;
 		}
-		logger.info("path=[{}{}", path, "]");
+		System.out.println("path=[" + path + "]");
 		//  初始化，验签
 		flag = key.buildKey(merId, 0, path);
 		if (!flag) {
-			logger.info("verifyForCP:生成公钥失败!merId={}{}{}", merId, ",path=", path);
+			System.out.println("verifyForCP:生成公钥失败!merId=" + merId + ",path=" + path);
 			return false;
 		}
 		SecureLink t = new chinapay.SecureLink(key);

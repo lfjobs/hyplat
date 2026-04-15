@@ -1,8 +1,5 @@
 package hy.ea.driving.dao.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import hy.ea.driving.dao.ElkcCompanyConfigDao;
 import hy.ea.util.DateUtil;
@@ -47,8 +44,8 @@ public class ElkcCompanyConfigDaoImpl implements ElkcCompanyConfigDao {
 		    ct.close();
 			
 		} catch (SQLException e) {	
-			logger.info("调试信息");
-			logger.error("操作异常", e);
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 	@Override
@@ -64,8 +61,8 @@ public class ElkcCompanyConfigDaoImpl implements ElkcCompanyConfigDao {
 			ct.close();
 
 		} catch (SQLException e) {
-			logger.info("调试信息");
-			logger.error("操作异常", e);
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 

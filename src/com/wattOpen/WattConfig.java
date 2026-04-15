@@ -1,8 +1,8 @@
 package com.wattOpen;
 
-/*import cn.hutool.core.codec.Base64;
+import cn.hutool.core.codec.Base64;
 import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpResponse;*/
+import cn.hutool.http.HttpResponse;
 import com.alibaba.fastjson.JSONObject;
 
 import java.util.Optional;
@@ -43,7 +43,7 @@ public class WattConfig {
      */
     public static String handleTokenPost(String authStr) {
         try {
-            /*HttpRequest request = HttpRequest.post(TEST_API_URL + getTokenUrl);
+            HttpRequest request = HttpRequest.post(TEST_API_URL + getTokenUrl);
             request.body("{}", "application/json");
             request.header("Authorization", "Basic " + authStr);
             request.header("Content-Type", "application/json");
@@ -51,8 +51,7 @@ public class WattConfig {
             HttpResponse response = request.execute();
 
             return Optional.ofNullable(response.body())
-                    .orElseThrow(() -> new RuntimeException("响应体为空"));*/
-            return "";
+                    .orElseThrow(() -> new RuntimeException("响应体为空"));
         } catch (Exception e) {
             throw new RuntimeException("请求第三方接口失败", e);
         }
@@ -65,7 +64,7 @@ public class WattConfig {
      */
     public static String getToken() {
 
-        /*String authStr = Base64.encode(testClientId + ":" + testSecret);
+        String authStr = Base64.encode(testClientId + ":" + testSecret);
         String r = handleTokenPost(authStr);
         JSONObject rJson = JSONObject.parseObject(r);
 
@@ -75,8 +74,7 @@ public class WattConfig {
 
         // TODO: 2024/6/1 redis 缓存token
 
-        return token;*/
-        return "";
+        return token;
     }
 
 
@@ -89,7 +87,7 @@ public class WattConfig {
      */
     public static String handlePost(String bodyStr, String serverUrl) {
         try {
-            /*HttpRequest request = HttpRequest.post(TEST_API_URL + serverUrl);
+            HttpRequest request = HttpRequest.post(TEST_API_URL + serverUrl);
             request.body(bodyStr, "application/json");
             request.header("Authorization", "Bearer " + getToken());
             request.header("Content-Type", "application/json");
@@ -97,8 +95,7 @@ public class WattConfig {
             HttpResponse response = request.execute();
 
             return Optional.ofNullable(response.body())
-                    .orElseThrow(() -> new RuntimeException("响应体为空"));*/
-            return "";
+                    .orElseThrow(() -> new RuntimeException("响应体为空"));
         } catch (Exception e) {
             throw new RuntimeException("请求第三方接口失败", e);
         }
@@ -113,14 +110,13 @@ public class WattConfig {
      */
     public static String handleGet(String serverUrl) {
         try {
-            /*HttpRequest request = HttpRequest.get(TEST_API_URL + serverUrl);
+            HttpRequest request = HttpRequest.get(TEST_API_URL + serverUrl);
             request.header("Authorization", "Bearer " + getToken());
 
             HttpResponse response = request.execute();
 
             return Optional.ofNullable(response.body())
-                    .orElseThrow(() -> new RuntimeException("响应体为空"));*/
-            return "";
+                    .orElseThrow(() -> new RuntimeException("响应体为空"));
         } catch (Exception e) {
             throw new RuntimeException("请求第三方接口失败", e);
         }
@@ -136,7 +132,7 @@ public class WattConfig {
      */
     public static String handlePut(String bodyStr, String serverUrl) {
         try {
-            /*HttpRequest request = HttpRequest.put(TEST_API_URL + serverUrl);
+            HttpRequest request = HttpRequest.put(TEST_API_URL + serverUrl);
             request.body(bodyStr, "application/json");
             request.header("Authorization", "Bearer " + getToken());
             request.header("Content-Type", "application/json");
@@ -144,8 +140,7 @@ public class WattConfig {
             HttpResponse response = request.execute();
 
             return Optional.ofNullable(response.body())
-                    .orElseThrow(() -> new RuntimeException("响应体为空"));*/
-            return "";
+                    .orElseThrow(() -> new RuntimeException("响应体为空"));
         } catch (Exception e) {
             throw new RuntimeException("请求第三方接口失败", e);
         }
@@ -160,7 +155,7 @@ public class WattConfig {
      */
     public static String handleDelete(String bodyStr, String serverUrl) {
         try {
-            /*HttpRequest request = HttpRequest.delete(TEST_API_URL + serverUrl);
+            HttpRequest request = HttpRequest.delete(TEST_API_URL + serverUrl);
             request.body(bodyStr, "application/json");
             request.header("Authorization", "Bearer " + getToken());
             request.header("Content-Type", "application/json");
@@ -168,8 +163,7 @@ public class WattConfig {
             HttpResponse response = request.execute();
 
             return Optional.ofNullable(response.body())
-                    .orElseThrow(() -> new RuntimeException("响应体为空"));*/
-            return "";
+                    .orElseThrow(() -> new RuntimeException("响应体为空"));
         } catch (Exception e) {
             throw new RuntimeException("请求第三方接口失败", e);
         }

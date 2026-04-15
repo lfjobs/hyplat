@@ -1,8 +1,5 @@
 package hy.ea.util.bean;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
@@ -32,7 +29,6 @@ import java.util.*;
  * </pre>
  */
 public class Bean {
-	private static final Logger logger = LoggerFactory.getLogger(Bean.class);
 
 	/* 获取对象的属性描述，如果此属性没有getter或setter方法，则此属性的描述不存在 */
 	public  static PropertyDescriptor getPropertyDescriptor(String propertyName, Class<?> beanClass) {
@@ -156,7 +152,7 @@ public class Bean {
 					try {
 						currentPd.getWriteMethod().invoke(result, currentMapValue);
 					} catch (Exception e) {
-						logger.error("操作异常", e);
+						e.printStackTrace();
 						throw e;
 					}
 				}

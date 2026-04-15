@@ -22,7 +22,10 @@ import hy.ea.bo.finance.ProSetup;
 import hy.ea.bo.finance.ProductPackaging;
 import hy.ea.bo.human.COrganization;
 import hy.ea.bo.human.Staff;
-import hy.ea.bo.invoicing.*;
+import hy.ea.bo.invoicing.FinancialBill;
+import hy.ea.bo.invoicing.InvCheckGoods;
+import hy.ea.bo.invoicing.Inventory;
+import hy.ea.bo.invoicing.InvtFbCheck;
 import hy.ea.bo.office.FeeScale;
 import hy.ea.bo.office.VenueInformation;
 import hy.ea.bo.production.*;
@@ -40,7 +43,6 @@ import net.sf.json.JSONObject;
 import org.apache.struts2.ServletActionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -139,8 +141,6 @@ public class ProductsLaunchAction extends ActionSupport {
     private CAccount account;
     private String companyId;// 公司id
     private String user;// 用户
-
-    private productDepot productDepot;  //商品库房关联表
 
     private int pageNumber;
     private String industryId;
@@ -359,7 +359,7 @@ public class ProductsLaunchAction extends ActionSupport {
         try {
             operateImage.cut();
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }*/
@@ -573,7 +573,7 @@ public class ProductsLaunchAction extends ActionSupport {
     }
 
     /**
-     * 移动端产品库存列表
+     * 移动端产品列表
      *
      * @return
      */
@@ -602,11 +602,7 @@ public class ProductsLaunchAction extends ActionSupport {
     //ajax加载产品
     public String ajaxProducts() {
         if (companyId == null || companyId.equals("")) {
-            request  = ServletActionContext.getRequest();
             companyId = CookieUtil.getCookieValue("comID", request);
-            if(companyId == null || companyId.equals("")){
-                companyId=getCompanyId();
-            }
         }
         if (flag != null && !flag.equals("")) {
             pageForm = productlaunchService.productsPageForm
@@ -696,7 +692,7 @@ public class ProductsLaunchAction extends ActionSupport {
         try {
             contentToFileService.saveContent(id, content, path);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "/upload_files/goodDetail/" + id
                 + UploadContentToFileService.suffix;
@@ -717,7 +713,7 @@ public class ProductsLaunchAction extends ActionSupport {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
     }
@@ -764,7 +760,7 @@ public class ProductsLaunchAction extends ActionSupport {
                         URLDecoder.decode(this.getProductPackaging()
                                 .getGoodsName(), "UTF-8"));
             } catch (UnsupportedEncodingException e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
         }
 
@@ -1007,7 +1003,7 @@ public class ProductsLaunchAction extends ActionSupport {
         json.accumulate("goodsId", goodsId);
         json.accumulate("sccId", sccId);
         result = json.toString();
-        logger.info("值：{}", result);
+        System.out.println(result);
         return "success";
     }
 
@@ -1095,15 +1091,15 @@ public class ProductsLaunchAction extends ActionSupport {
         Double efprice1 = ef.setScale(6, BigDecimal.ROUND_DOWN).doubleValue();
         String efprice = null;
         efprice = String.format("%.6f", efprice1);
-    //    logger.info("efprice=: {}", efprice);
+    //    System.out.println("efprice=" + efprice);
      //   Double reprice1 = re.setScale(6, BigDecimal.ROUND_DOWN).doubleValue();
         String reprice = null;
         reprice = String.format("%.6f", re);
-   //     logger.info("reprice=: {}", reprice);
+   //     System.out.println("reprice=" + reprice);
        // Double brokerage1 = br.setScale(6, BigDecimal.ROUND_DOWN).doubleValue();
         String brokerage = null;
         brokerage = String.format("%.6f", br);
-    //    logger.info("brokerage=: {}", brokerage);
+    //    System.out.println("brokerage=" + brokerage);
         BigDecimal dlsum = new BigDecimal(0);
         if (ps == null) {
             // 佣金设计
@@ -1281,7 +1277,7 @@ public class ProductsLaunchAction extends ActionSupport {
         json.accumulate("ppId", ppId);
         json.accumulate("goodsId", goodsId);
         result = json.toString();
-        logger.info("值：{}", result);
+        System.out.println(result);
         return "success";
     }
 
@@ -1401,7 +1397,7 @@ public class ProductsLaunchAction extends ActionSupport {
                     pp.setTradeID(goodsManage.getTradeID());
                     pp.setTradeName(goodsManage.getTradeName());
                     pp.setType("物品类别暂定");
-                    if (flag != null && (flag.equals("tocang")||flag.equals("container"))) {
+                    if (flag != null && flag.equals("tocang")) {
                         pp.setShowweixin("00");
                     } else {
                         pp.setShowweixin("01");
@@ -1428,10 +1424,9 @@ public class ProductsLaunchAction extends ActionSupport {
                     pp.setBarCode(goodsManage.getBarCode());
                     pp.setBrand(goodsManage.getBrand());
                     pp.setIsScale(goodsManage.getIsScale());
-
-                    /*pp.setDepotID(productPackaging.getDepotID());
+                    pp.setDepotID(productPackaging.getDepotID());
                     pp.setDepotName(productPackaging.getDepotName());
-                    pp.setDepotCoding(productPackaging.getDepotCoding());*/
+                    pp.setDepotCoding(productPackaging.getDepotCoding());
                     pp.setSingleWeight(productPackaging.getSingleWeight());
                     pp.setStanpro(productPackaging.getStanpro());
                     pp.setVariableID(goodsManage.getVariableID());
@@ -1468,7 +1463,7 @@ public class ProductsLaunchAction extends ActionSupport {
             pp.setCategoryName(goodsManage.getCategoryName());
             pp.setBrand(goodsManage.getBrand());
             pp.setTemporary("1");//成功发布
-            if (flag != null && (flag.equals("tocang")||flag.equals("container"))) {
+            if (flag != null && flag.equals("tocang")) {
                 pp.setShowweixin("00");
             } else {
                 pp.setShowweixin("01");
@@ -1513,19 +1508,6 @@ public class ProductsLaunchAction extends ActionSupport {
             }
             setsetup(pp, beans);
             beans.add(gm);
-        }
-
-        if (flag != null && flag.equals("container")) {
-            String pdhql="from productDepot where ppid=? and depotid=?";
-            productDepot pd=(productDepot)baseBeanService.getBeanByHqlAndParams(pdhql.toString(),new Object[]{pp.getPpID(), productDepot.getDepotid()});
-            if (pd==null){
-                pd=new productDepot();
-                BeanUtils.copyProperties(pd,productDepot);
-                pd.setPdid(serverService.getServerID("pd"));
-                pd.setPpid(pp.getPpID());
-                pd.setProComid(pp.getCompanyID());
-                beans.add(pd);
-            }
         }
 
         // 保存产品颜色，规格
@@ -1850,14 +1832,14 @@ public class ProductsLaunchAction extends ActionSupport {
             for (int i = 0; i < beans.size(); i++) {
                 try {
                     String json = mapper.writeValueAsString(beans.get(i));
-                    logger.info("调试信息");
+                    System.out.println("\"" + BaseBean.class.getName() + i + "\":" + json + ",");
 
                 } catch (JsonProcessingException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
             }*/
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             logger.error("保存失败");
             s = "0";
         }
@@ -2191,7 +2173,7 @@ public class ProductsLaunchAction extends ActionSupport {
         try {
             baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, new String[]{sql, sql2, hql_del}, new Object[]{gm.getGoodsID()});
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             logger.error("保存失败");
             s = "0";
         }
@@ -2531,262 +2513,6 @@ public class ProductsLaunchAction extends ActionSupport {
         map.put("flag", flag);
         JSONObject oj = JSONObject.fromObject(map);
         result = oj.toString();
-        return "success";
-    }
-
-    public String getDepotByProid() {
-        HttpServletRequest request = ServletActionContext.getRequest();
-        String depotid = request.getParameter("depotid");
-        Map<String, Object> map = new HashMap<>();
-        int flag = 1; //0:成功，1：失败
-        // 输入验证
-        if (ppId == null || ppId.equals("") || depotid == null || depotid.equals("")) {
-            map.put("code", "02");
-            map.put("msg", "参数信息错误");
-        } else {
-            try {
-                List<BaseBean> invl = productlaunchService.getDepotByProid(ppId, depotid);
-                if (invl == null) {
-                    map.put("code", "03");
-                    map.put("msg", "库存信息不存在");
-                } else {
-                    map.put("invl", invl);
-                    flag = 0;
-                }
-            } catch (Exception e) {
-                map.put("code", "05");
-                map.put("msg", "获取库存失败(系统错误，请稍后再试)");
-                // 记录日志以便调试
-                logger.error("获取秤重失败", e);
-            }
-        }
-        map.put("flag", flag);
-        JSONObject oj = JSONObject.fromObject(map);
-        result = oj.toString();
-        return "success";
-    }
-
-    /**
-     * 移动端产品列表
-     *
-     * @return
-     */
-    public String getProductByParam() {
-        companyId = getCompanyId();
-        Map<String, Object> map = new HashMap<>();
-        request = ServletActionContext.getRequest();
-        String param = request.getParameter("param");
-        if (param == null || param.equals("")) {
-            map.put("flag", 1);
-            map.put("error", 2);
-            map.put("meg", "参数错误");
-        }
-        if (companyId == null || companyId.equals("")) {
-            map.put("flag", 1);
-            map.put("error", 0);
-            map.put("meg", "登录信息错误");
-        } else {
-            map = productlaunchService.getProductByParam(param,companyId);
-        }
-        JSONObject json = JSONObject.fromObject(map);
-        result = json.toString();
-        return "success";
-    }
-
-    /**
-     *
-     * 验证会员促销品
-     * @return
-     */
-    public String checkVip(){
-        String r = productlaunchService.checkVip(ppId);
-
-        Map<String, Object> map = new HashMap<>();
-        map.put("r", r);
-        JSONObject oj = JSONObject.fromObject(map);
-        result = oj.toString();
-        return "success";
-    }
-
-    /**
-     *
-     * VIP会员加促销品
-     * @return
-     */
-    public  String getVipList(){
-        tcc = getTcc();
-
-        if(tcc!=null) {
-            pageForm = productlaunchService.getVipList(tcc.getSccId(), 30, pageNumber);
-            List<Object> cxlist = new ArrayList<Object>();
-            if(pageForm!=null) {
-                cxlist = productlaunchService.getCxList(pageForm);
-            }
-            Map<String, Object> map = new HashMap<>();
-            map.put("pageForm", pageForm);
-            map.put("cxlist", cxlist);
-            JSONObject oj = JSONObject.fromObject(map);
-            result = oj.toString();
-        }
-        return "success";
-    }
-
-    /**
-     *
-     * 带有公司列表加主产品3个加对应的促销品，推荐，是按照用户上级，以及北京天太优先，行业就是按行业。
-     * @return
-     */
-    public  String getVipList1(){
-        tcc = getTcc();
-
-        String sccid = "";
-        if(tcc!=null) {
-            sccid = tcc.getSccId();
-        }
-
-        HttpServletRequest request = ServletActionContext.getRequest();
-        String parameter = request.getParameter("parameter");
-
-        Map<String, Object> map = new HashMap<>();
-
-
-        pageForm = productlaunchService.getComViplist(sccid, 10, pageNumber,industryId,parameter);
-        List<Object> cxlist = new ArrayList<Object>();
-        if(pageForm!=null) {
-            Map<String,List<Object>> clist = productlaunchService.getproList(pageForm);
-            cxlist = productlaunchService.getCxList(clist);
-            map.put("pageForm", pageForm);
-            map.put("clist", clist);
-            map.put("cxlist", cxlist);
-        }
-
-
-
-
-        JSONObject oj = JSONObject.fromObject(map);
-        result = oj.toString();
-        return "success";
-    }
-    /**
-     * 查询产品
-     * @return
-     */
-    public  String getVipList2(){
-        HttpServletRequest request = ServletActionContext.getRequest();
-
-        String parameter = request.getParameter("parameter");
-
-        Map<String, Object> map = new HashMap<>();
-
-        //查询产品
-        pageForm = productlaunchService.getVipListALL(10,pageNumber, industryId,parameter);
-
-        List<Object> cxlist = new ArrayList<Object>();
-        if(pageForm!=null) {
-            cxlist = productlaunchService.getCxList(pageForm);
-        }
-        map.put("pageForm", pageForm);
-        map.put("cxlist", cxlist);
-
-        JSONObject oj = JSONObject.fromObject(map);
-        result = oj.toString();
-        return "success";
-    }
-    /**
-     *  获取广告首页
-     *
-     * @return
-     */
-    public String getAdvList() {
-
-        advlist =  productlaunchService.advList();
-
-        return "advlist";
-    }
-
-    /**
-     * 获取店铺信息
-     * @return
-     */
-    public String getShopInfo(){
-        tcc = getTcc();
-        String sccid = "";
-        if(tcc!=null) {
-            sccid = tcc.getSccId();
-        }
-        ContactCompany contactCompany = productlaunchService.getShopInfo(companyId);
-        Map<String, String> m = productlaunchService.getJoinFans(sccid, companyId);
-
-        Map<String, Object> map = new HashMap<>();
-
-        map.put("contactCompany", contactCompany);
-        map.put("g", m.get("g"));
-        map.put("c", m.get("c"));
-
-        JSONObject oj = JSONObject.fromObject(map);
-        result = oj.toString();
-        return "success";
-
-    }
-
-
-    /**
-     * 根据公司ID获取公司带会员的产品
-     * @return
-     */
-    public String getVipListCompany(){
-
-        pageForm = productlaunchService.getVipListCompany(5,pageNumber, companyId,productPackaging!=null?productPackaging.getGoodsName():"");
-
-        Map<String, Object> map = new HashMap<>();
-        List<Object> cxlist = new ArrayList<Object>();
-        if(pageForm!=null) {
-            cxlist = productlaunchService.getCxList(pageForm);
-        }
-        map.put("pageForm", pageForm);
-        map.put("cxlist", cxlist);
-
-        JSONObject oj = JSONObject.fromObject(map);
-        result = oj.toString();
-        return "success";
-
-    }
-
-    /**
-     * 关注取消关注
-     * @return
-     */
-    public String addJoinFans(){
-        tcc = getTcc();
-        Map<String, Object> map = new HashMap<>();
-
-        if(tcc==null){
-            map.put("login","login");
-
-
-        }else{
-            String res =  productlaunchService.addJoinFans(companyId, tcc.getSccId());
-            map.put("result",res);
-
-        }
-
-        JSONObject oj = JSONObject.fromObject(map);
-        result = oj.toString();
-        return "success";
-
-
-    }
-
-    public String getProductCountByCo(){
-        HttpServletRequest request = ServletActionContext.getRequest();
-        String companyid = request.getParameter("companyid");
-        StringBuilder sb=new StringBuilder();
-        sb.append("select count(*) from  dt_ProductPackaging p");
-        sb.append("where p.companyid = ? and p.showweixin = ? and p.type != ? and ps.state = ?");
-        Integer Count=baseBeanService.getConutByByHqlAndParams(sb.toString(),new Object[]{companyid,"01","扫码收款","00"});
-        JSONObject jobj = new JSONObject();
-        jobj.accumulate("count", count);
-        result = jobj;
         return "success";
     }
 
@@ -3219,6 +2945,197 @@ public class ProductsLaunchAction extends ActionSupport {
 
     public void setProWeight(Map<String, ScaleWeight> proWeight) {
         this.proWeight = proWeight;
+    }
+
+
+    /**
+     *
+     * 验证会员促销品
+     * @return
+     */
+     public String checkVip(){
+         String r = productlaunchService.checkVip(ppId);
+
+         Map<String, Object> map = new HashMap<>();
+         map.put("r", r);
+         JSONObject oj = JSONObject.fromObject(map);
+         result = oj.toString();
+         return "success";
+     }
+
+    /**
+     *
+     * VIP会员加促销品
+     * @return
+     */
+    public  String getVipList(){
+        tcc = getTcc();
+
+        if(tcc!=null) {
+            pageForm = productlaunchService.getVipList(tcc.getSccId(), 30, pageNumber);
+            List<Object> cxlist = new ArrayList<Object>();
+            if(pageForm!=null) {
+                cxlist = productlaunchService.getCxList(pageForm);
+            }
+            Map<String, Object> map = new HashMap<>();
+            map.put("pageForm", pageForm);
+            map.put("cxlist", cxlist);
+            JSONObject oj = JSONObject.fromObject(map);
+            result = oj.toString();
+        }
+        return "success";
+    }
+
+    /**
+     *
+     * 带有公司列表加主产品3个加对应的促销品，推荐，是按照用户上级，以及北京天太优先，行业就是按行业。
+     * @return
+     */
+    public  String getVipList1(){
+        tcc = getTcc();
+
+        String sccid = "";
+        if(tcc!=null) {
+            sccid = tcc.getSccId();
+        }
+
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String parameter = request.getParameter("parameter");
+
+        Map<String, Object> map = new HashMap<>();
+
+
+        pageForm = productlaunchService.getComViplist(sccid, 10, pageNumber,industryId,parameter);
+        List<Object> cxlist = new ArrayList<Object>();
+        if(pageForm!=null) {
+            Map<String,List<Object>> clist = productlaunchService.getproList(pageForm);
+            cxlist = productlaunchService.getCxList(clist);
+            map.put("pageForm", pageForm);
+            map.put("clist", clist);
+            map.put("cxlist", cxlist);
+        }
+
+
+
+
+        JSONObject oj = JSONObject.fromObject(map);
+        result = oj.toString();
+        return "success";
+    }
+    /**
+     *
+     * 查询产品
+     * @return
+     */
+    public  String getVipList2(){
+        HttpServletRequest request = ServletActionContext.getRequest();
+
+        String parameter = request.getParameter("parameter");
+
+        Map<String, Object> map = new HashMap<>();
+
+        //查询产品
+        pageForm = productlaunchService.getVipListALL(10,pageNumber, industryId,parameter);
+
+        List<Object> cxlist = new ArrayList<Object>();
+        if(pageForm!=null) {
+            cxlist = productlaunchService.getCxList(pageForm);
+        }
+        map.put("pageForm", pageForm);
+        map.put("cxlist", cxlist);
+
+        JSONObject oj = JSONObject.fromObject(map);
+        result = oj.toString();
+        return "success";
+    }
+    /**
+     *  获取广告首页
+     *
+     * @return
+     */
+    public String getAdvList() {
+
+        advlist =  productlaunchService.advList();
+
+        return "advlist";
+    }
+
+    /**
+     *
+     * 获取店铺信息
+     * @return
+     */
+    public String getShopInfo(){
+        tcc = getTcc();
+        String sccid = "";
+        if(tcc!=null) {
+            sccid = tcc.getSccId();
+        }
+        ContactCompany contactCompany = productlaunchService.getShopInfo(companyId);
+        Map<String, String> m = productlaunchService.getJoinFans(sccid, companyId);
+
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("contactCompany", contactCompany);
+        map.put("g", m.get("g"));
+        map.put("c", m.get("c"));
+
+        JSONObject oj = JSONObject.fromObject(map);
+        result = oj.toString();
+        return "success";
+
+    }
+
+
+
+
+    /**
+     *
+     * 根据公司ID获取公司带会员的产品
+     * @return
+     */
+    public String getVipListCompany(){
+
+        pageForm = productlaunchService.getVipListCompany(5,pageNumber, companyId,productPackaging!=null?productPackaging.getGoodsName():"");
+
+        Map<String, Object> map = new HashMap<>();
+        List<Object> cxlist = new ArrayList<Object>();
+        if(pageForm!=null) {
+            cxlist = productlaunchService.getCxList(pageForm);
+        }
+        map.put("pageForm", pageForm);
+        map.put("cxlist", cxlist);
+
+        JSONObject oj = JSONObject.fromObject(map);
+        result = oj.toString();
+        return "success";
+
+    }
+
+    /**
+     *
+     * 关注取消关注
+     * @return
+     */
+    public String addJoinFans(){
+        tcc = getTcc();
+        Map<String, Object> map = new HashMap<>();
+
+        if(tcc==null){
+            map.put("login","login");
+
+
+        }else{
+            String res =  productlaunchService.addJoinFans(companyId, tcc.getSccId());
+            map.put("result",res);
+
+        }
+
+        JSONObject oj = JSONObject.fromObject(map);
+        result = oj.toString();
+        return "success";
+
+
     }
 
     public int getPageNumber() {

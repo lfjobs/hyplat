@@ -1,8 +1,5 @@
 package hy.ea.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.WxMainAccount;
 import com.wechat.bo.sft.*;
 import com.wechat.utils.HTTPV3;
@@ -125,7 +122,7 @@ public class MerchanetsRegisServiceImpl implements MerchanetsRegisService {
 	public ApplyResult  synwx(String out_request_no,String staffID,String path){
 		 ApplyParam applyParam = (ApplyParam)baseBeanDao.getBeanByHqlAndParams("from ApplyParam where out_request_no = ?",new Object[]{out_request_no});
 
-		  logger.info("调试信息");
+		  System.out.println("Out_request_no"+applyParam.getOut_request_no());
 		    //默认值设定
 		 //  applyParam.setNeed_account_info(true);
 		   applyParam.setId_doc_type("IDENTIFICATION_TYPE_MAINLAND_IDCARD");
@@ -160,10 +157,10 @@ public class MerchanetsRegisServiceImpl implements MerchanetsRegisService {
 		   BusinessLicenseInfo businessLicenseInfo = applyParam.getBusiness_license_info();
 
 		if(businessLicenseInfo!=null) {
-			logger.info("blikey:: {}", businessLicenseInfo.getBliKey());
-			logger.info("调试信息");
+			System.out.println("blikey:" + businessLicenseInfo.getBliKey());
+			System.out.println("Business_license_copy" + path + businessLicenseInfo.getBusiness_license_copy());
 			businessLicenseInfo.setBusiness_license_copy(HTTPV3.httpImage(path + businessLicenseInfo.getBusiness_license_copy()));
-			logger.info("Business_license_copy: {}", businessLicenseInfo.getBusiness_license_copy());
+			System.out.println("Business_license_copy" + businessLicenseInfo.getBusiness_license_copy());
 			applyParam.setBusiness_license_info(businessLicenseInfo);
 		}
 		   OrganizationCertInfo organization_cert_info = applyParam.getOrganization_cert_info();
@@ -172,8 +169,8 @@ public class MerchanetsRegisServiceImpl implements MerchanetsRegisService {
 			   applyParam.setOrganization_cert_info(organization_cert_info);
 		   }
 		  IdCardInfo idCardInfo = applyParam.getId_card_info();
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println("tCardKey"+idCardInfo.getCardKey());
+		System.out.println("getId_card_copy:"+idCardInfo.getId_card_copy());
 		  idCardInfo.setId_card_copy(HTTPV3.httpImage(path+idCardInfo.getId_card_copy()));  //身份证人像面照片
 		  idCardInfo.setId_card_national(HTTPV3.httpImage(path+idCardInfo.getId_card_national()));//身份证国徽面照片
 		 //该字段需进行加密处理
@@ -184,7 +181,7 @@ public class MerchanetsRegisServiceImpl implements MerchanetsRegisService {
 		  applyParam.setId_card_info(idCardInfo);
 
 		AccountInfo accountInfo = applyParam.getAccount_info();
-		logger.info("调试信息");
+		System.out.println("getAccount_name"+accountInfo.getAccount_name());
 		//该字段需进行加密处理
 		accountInfo.setAccount_name(RsaCryptoUtil.ncrypt(accountInfo.getAccount_name()));
 		//该字段需进行加密处理
@@ -205,9 +202,9 @@ public class MerchanetsRegisServiceImpl implements MerchanetsRegisService {
 		SalesSceneInfo salesSceneInfo = applyParam.getSales_scene_info();
 		salesSceneInfo.setStore_url("http://www.impf2010.com");
 		 applyParam.setSales_scene_info(salesSceneInfo);
-         logger.info("调试信息");
+         System.out.println(applyParam.toString());
 		 JSONObject body = HTTPV3.applyments(applyParam);
-		logger.info("调试信息");
+		System.out.println(body.toString());
 //		 String code = body.getString("code");
 //		 String message = body.getString("message");
 
@@ -243,7 +240,7 @@ public class MerchanetsRegisServiceImpl implements MerchanetsRegisService {
 			baseBeanDao.executeHqlsByParmsList(beans,new String[]{hql},params);
 
 		}catch (Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 
@@ -308,7 +305,7 @@ public class MerchanetsRegisServiceImpl implements MerchanetsRegisService {
             baseBeanDao.executeHqlsByParmsList(beans,new String[]{hql},params);
 
 		}catch (Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 
@@ -770,7 +767,7 @@ public class MerchanetsRegisServiceImpl implements MerchanetsRegisService {
 			msage.setMessage(content);
 			msage.sendMsg("【微分金平台】");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		//保存账号
 		List<String> slist = new ArrayList<String>();//极光推送设备号

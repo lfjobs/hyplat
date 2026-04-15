@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 
 import java.io.ByteArrayInputStream;
@@ -377,7 +374,7 @@ public class PersonalAction extends BaseAction<Activities> {
 			contentToFileService.saveContent(id,
 					content, path);
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 	
 		}	
 		return "/upload_files/activitiesDetails/"+id+UploadContentToFileService.suffix;
@@ -407,7 +404,7 @@ public class PersonalAction extends BaseAction<Activities> {
 			telService.updateTel(sccId,user, tel);
 			result = new JSONObject().accumulate("ret", "0");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			result = new JSONObject().accumulate("ret", "1");
 		}
 		return Action.SUCCESS;
@@ -466,7 +463,7 @@ public class PersonalAction extends BaseAction<Activities> {
 				result = temp1;
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			result = new JSONObject().accumulate("ret", "1");
 		}
 		return Action.SUCCESS;
@@ -605,7 +602,7 @@ public class PersonalAction extends BaseAction<Activities> {
 			result = temp;
 		} catch (Exception e) {
 			result = new JSONObject().accumulate("ret", "2");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return Action.SUCCESS;
 	}
@@ -633,10 +630,10 @@ public class PersonalAction extends BaseAction<Activities> {
             out.write(buffer);
             out.close();
         } catch (FileNotFoundException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return null;
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return null;
         }
 		return photopath+"\\"+upName;
@@ -687,7 +684,7 @@ public class PersonalAction extends BaseAction<Activities> {
 			XmlParserX xmlParser = new XmlParserX(is);
 			if (xmlParser.parse_status) {
 				if (xmlParser.length > 0) {
-					logger.info("调试信息");
+					System.out.println("证件类型：" + xmlParser.recon_status);
 					temp.accumulate("type", xmlParser.recon_status);
 					for (int i = 0; i < xmlParser.length; i++) {
 						String name = xmlParser.fieldname[i].replaceAll("\"", "&quot;").replaceAll("&",
@@ -701,19 +698,19 @@ public class PersonalAction extends BaseAction<Activities> {
 						temp.accumulate(name, value);
 					}
 				} else {
-					 logger.info("调试信息");
-					 logger.info("调试信息");
+					 System.out.println("错误编码：" + xmlParser.recon_status);
+					 System.out.println("错误描述：" + xmlParser.recon_error);
 				}
 			} else {
-				 logger.info("调试信息");
+				 System.out.println("解析xml出错：" + xmlParser.parse_error);
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		try {
 			is.close();
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return temp;
 	}
@@ -738,12 +735,12 @@ public class PersonalAction extends BaseAction<Activities> {
 					instream.close();  
 				}  
 			} catch (Exception e) {
-				logger.error("操作异常", e);  
+				e.printStackTrace();  
 			}finally{  
 				response.close();  
 			}	 
 		} catch (Exception e) {
-			logger.error("操作异常", e);  
+			e.printStackTrace();  
 		}
 		return result;
 	}

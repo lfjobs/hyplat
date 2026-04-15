@@ -1,8 +1,5 @@
 package hy.ea.invoicing.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -70,7 +67,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class PurchaseAction1 {
-	private static final Logger logger = LoggerFactory.getLogger(PurchaseAction1.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -1066,7 +1062,7 @@ public class PurchaseAction1 {
 				return "toinvoicingstorage";
 			}
 		}catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}

@@ -1,8 +1,5 @@
 package hy.ea.company.action.human;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.human.vo.CStaffCos;
@@ -38,7 +35,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class StaffDimPayCompanyAction {
-	private static final Logger logger = LoggerFactory.getLogger(StaffDimPayCompanyAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	private PageForm pageForm;
@@ -192,7 +188,7 @@ public class StaffDimPayCompanyAction {
 				parms1.add(index2, salaryIntegral.getStaffID());
 				if(arg!=null&&arg.equals("1")){
 					/*if(monthNum==1){
-						logger.info("无操作");
+						System.out.println("无操作");
 					}*/
 					if(monthNum>=2){
 						if(salaryIntegral.getLogBookKey().equals(sdate.substring(0, 7))){
@@ -201,7 +197,7 @@ public class StaffDimPayCompanyAction {
 								parms1.set(2, Utilities.getDateFromString(DateUtil.getDateOfMonthEnd(sdate,"yyyy-MM-dd"), "yyyy-MM-dd"));
 							} catch (ParseException e) {
 								// TODO Auto-generated catch block
-								logger.error("操作异常", e);
+								e.printStackTrace();
 							}
 						}
 						if(salaryIntegral.getLogBookKey().equals(edate.substring(0, 7))){
@@ -209,7 +205,7 @@ public class StaffDimPayCompanyAction {
 								parms1.set(1, Utilities.getDateFromString(DateUtil.getDateOfMonthBegin(edate,"yyyy-MM-dd"), "yyyy-MM-dd"));
 							} catch (ParseException e) {
 								// TODO Auto-generated catch block
-								logger.error("操作异常", e);
+								e.printStackTrace();
 							}
 							parms1.set(2, Utilities.getDateFromString(edate, "yyyy-MM-dd"));
 						}
@@ -219,7 +215,7 @@ public class StaffDimPayCompanyAction {
 								parms1.set(2, Utilities.getDateFromString(DateUtil.getDateOfMonthEnd(salaryIntegral.getLogBookKey()+"-01" ,"yyyy-MM-dd"), "yyyy-MM-dd"));
 							} catch (ParseException e) {
 								// TODO Auto-generated catch block
-								logger.error("操作异常", e);
+								e.printStackTrace();
 							}
 						}
 					}

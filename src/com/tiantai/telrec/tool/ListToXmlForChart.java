@@ -1,8 +1,5 @@
 package com.tiantai.telrec.tool;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.List;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
@@ -23,7 +20,7 @@ public abstract class ListToXmlForChart {
 			writer.write(document);
 			s = out.toString("GBK");
 		} catch (Exception ex) {
-			logger.error("操作异常", ex);
+			ex.printStackTrace();
 		}
 		return s;
 	}

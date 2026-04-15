@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -64,7 +61,6 @@ import com.tiantai.wfj.service.ProductlaunchService;
  * 	产品包装设计
  */
 public class ProductdesignAction {
-	private static final Logger logger = LoggerFactory.getLogger(ProductdesignAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -348,7 +344,7 @@ public class ProductdesignAction {
         }
 
         sql.append(" and pp.delstatus ='00' order by pp.packagingdate desc");
-        //logger.info("调试信息");
+        //System.out.println(sql.toString());
         result.add(sql.toString());
         result.add(parms.toArray());
         return result;
@@ -612,7 +608,7 @@ public class ProductdesignAction {
             baseBeanService.saveBeansListAndexecuteHqlsByParams(null, new String[]{hql}, new Object[]{fiveClear, productDesign.getPpID()});
         } catch (Exception e) {
 
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return "success";
@@ -945,7 +941,7 @@ public class ProductdesignAction {
 
             return null;
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return null;
         }
     }
@@ -978,7 +974,7 @@ public class ProductdesignAction {
             response.getWriter().print(contentToFileService.getContent(path));
             return null;
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
     }
@@ -1091,7 +1087,7 @@ public class ProductdesignAction {
                 ps.add(prosetup);
             }
             ActionContext.getContext().put("pclist", ps);
-            //logger.info("调试信息");
+            //System.out.println(ps.size());
         } else {
             getval(account.getCompanyID());
         }
@@ -1212,7 +1208,7 @@ public class ProductdesignAction {
                 ps.add(prosetup);
             }
             ActionContext.getContext().put("pclist", ps);
-            //logger.info("调试信息");
+            //System.out.println(ps.size());
         } else {
             getval(account.getCompanyID());
         }
@@ -1577,7 +1573,7 @@ public class ProductdesignAction {
         map.put("serverID", serverService.getServerID("productpackaging"));
         JSONObject obj = JSONObject.fromObject(map);
         result = obj.toString();
-        //logger.info("值：{}", result);
+        //System.out.println(result);
         return "success";
     }
 
@@ -1733,7 +1729,7 @@ public class ProductdesignAction {
 
         result.add(sql);
         result.add(parms.toArray());
-        //logger.info("值：{}", sql);
+        //System.out.println(sql);
         return result;
     }
 
@@ -1808,7 +1804,7 @@ public class ProductdesignAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -1855,7 +1851,7 @@ public class ProductdesignAction {
             JSONObject obj = JSONObject.fromObject(map, jsonConfig);
             this.result = obj.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return "success";
@@ -1905,7 +1901,7 @@ public class ProductdesignAction {
             JSONObject obj = JSONObject.fromObject(map, jsonConfig);
             this.result = obj.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return "success";

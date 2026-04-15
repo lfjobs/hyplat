@@ -63,7 +63,7 @@ mvn -version
 ### 步骤 2: 创建标准目录结构
 
 ```bash
-cd /home/admin/openclaw/workspace/hyplat
+cd /E/my-first-project/hyplat
 
 # 创建 Maven 标准目录
 mkdir -p src/main/java

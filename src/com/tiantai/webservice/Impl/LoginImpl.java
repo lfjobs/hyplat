@@ -60,7 +60,7 @@ public class LoginImpl implements ILogin {
 			else
 				result = JSON.toJSONString(obj);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			log.error(e.getMessage());
 			result = "result:-500";
 		}
@@ -130,7 +130,7 @@ public class LoginImpl implements ILogin {
 		
 		StringBuilder buffer = new StringBuilder();
 		buffer.append("select bean.locationid,bean.locationname from dt_archives_inventorylocation bean where bean.userid=?");
-		logger.info("调试信息");
+		System.out.println(buffer.toString());
 		return getString(buffer.toString(),false,staffId);
 
 	}
@@ -332,7 +332,7 @@ public class LoginImpl implements ILogin {
 			result = buffer.toString();
 			buffer = null;
 		}
-		logger.info("调试信息");
+		System.out.println("结果为："+result);
 		return result;
 	}
 	/**

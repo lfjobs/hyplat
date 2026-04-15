@@ -1,8 +1,5 @@
 package com.tiantai.wfj.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import cn.emay.mina.util.Base64;
 import org.eclipse.paho.client.mqttv3.*;
 
@@ -12,7 +9,6 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 public class MqttService {
-	private static final Logger logger = LoggerFactory.getLogger(MqttService.class);
 
     // 连接参数
     private static final String serverURI = "tcp://post-cn-1ls43nmas01.mqtt.aliyuncs.com:1883";
@@ -36,8 +32,8 @@ public class MqttService {
         try {
             connect();
         } catch (MqttException e) {
-            logger.info("售货柜服务器MQTT客户端初始化连接失败！");
-            logger.error("操作异常", e);
+            System.out.println("售货柜服务器MQTT客户端初始化连接失败！");
+            e.printStackTrace();
         }
     }
 
@@ -56,24 +52,24 @@ public class MqttService {
         @Override
         public void connectComplete(boolean reconnect, String serverURI) {
             if (reconnect) {
-                //logger.info("Reconnected to : : {}", serverURI);
+                System.out.println("Reconnected to : " + serverURI);
                 // Because Clean Session is true, we need to re-subscribe
             } else {
-                logger.info("connectComplete");
-                logger.info("Connected to: : {}", serverURI);
+                System.out.println("connectComplete");
+                System.out.println("Connected to: " + serverURI);
                 subscribeToTopic();
             }
         }
 
         @Override
         public void connectionLost(Throwable cause) {
-            //logger.info("mqtt客户端连接丢失:: {}", cause.getLocalizedMessage());
-            //causlogger.error("操作异常", e);
+            System.out.println("mqtt客户端连接丢失:" + cause.getLocalizedMessage());
+            cause.printStackTrace();
         }
 
         @Override
         public void messageArrived(String topic, MqttMessage message) {
-            logger.info("调试信息");
+            System.out.println("消息到达: " + new String(message.getPayload()));
             String data = new String(message.getPayload());
         }
 
@@ -95,7 +91,7 @@ public class MqttService {
 
         mqttClient.setCallback(mCallback);
 
-        logger.info("Start Connecting to : {}", serverURI);
+        System.out.println("Start Connecting to " + serverURI);
         mqttClient.connect(options);
     }
 
@@ -103,7 +99,7 @@ public class MqttService {
         try {
             if (mqttClient != null && mqttClient.isConnected()) {
                 mqttClient.disconnect();
-                logger.info("Disconnected from MQTT broker");
+                System.out.println("Disconnected from MQTT broker");
 
 
             }
@@ -113,7 +109,7 @@ public class MqttService {
     }
 
     private void subscribeToTopic() {
-        logger.info("Subscribe to topic");
+        System.out.println("Subscribe to topic");
         try {
             mqttClient.subscribe(new String[]{
                     MQTT_THING_WILL,
@@ -124,9 +120,9 @@ public class MqttService {
                     new IMqttMessageListener() {
                         @Override
                         public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
-                            logger.info(" 设备下线遗嘱 ");
-                            logger.info("Message arrived - Topic: : {}", s);
-                            logger.info("调试信息");
+                            System.out.println(" 设备下线遗嘱 ");
+                            System.out.println("Message arrived - Topic: " + s);
+                            System.out.println("Message arrived - Payload: " + new String(mqttMessage.getPayload()));
                         }
                     },
                     new IMqttMessageListener() {
@@ -134,15 +130,15 @@ public class MqttService {
                         public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
 
 
-                            logger.info(" 继电器开关结果反馈 ");
-                            logger.info("Message arrived - Topic: : {}", s);
-                            logger.info("调试信息");
+                            System.out.println(" 继电器开关结果反馈 ");
+                            System.out.println("Message arrived - Topic: " + s);
+                            System.out.println("Message arrived - Payload: " + new String(mqttMessage.getPayload()));
                         }
                     }
             });
         } catch (MqttException ex) {
-            logger.error("Exception whilst subscribing");
-            logger.error("操作异常", ex);
+            System.err.println("Exception whilst subscribing");
+            ex.printStackTrace();
         }
     }
 
@@ -152,7 +148,7 @@ public class MqttService {
      * @throws MqttException
      */
     public void openRelay(int num, String posNum) throws MqttException {
-        logger.info("openRelay");
+        System.out.println("openRelay");
         String topic = "sys/avm/" + posNum + "/thing/service/open_relay";
 //        String[] commands = new String[]{
 //                "A00101A2",
@@ -173,7 +169,7 @@ public class MqttService {
      * @throws MqttException
      */
     public void closeRelay(int num, String posNum) throws MqttException {
-        logger.info("closeRelay");
+        System.out.println("closeRelay");
 //        String[] commands = new String[]{
 //                "A00100A1",
 //                "A00200A2",
@@ -194,7 +190,7 @@ public class MqttService {
      * @throws MqttException
      */
     public void openWeb(String posNum, String url) throws MqttException {
-        logger.info("url: {}", url);
+        System.out.println("url" + url);
         String topic = "sys/avm/" + posNum + "/thing/service/open_web";
         publishMessage(topic, url);
     }
@@ -205,7 +201,7 @@ public class MqttService {
      * @throws MqttException
      */
     public void pubAudio(String posNum, String audio) throws MqttException {
-        logger.info("audio: {}", audio);
+        System.out.println("audio" + audio);
         String topic = "sys/avm/" + posNum + "/thing/service/pub_audio";
         publishMessage(topic, audio);
     }
@@ -216,7 +212,7 @@ public class MqttService {
      * @throws MqttException
      */
     public void pubSeq(String posNum, String seq) throws MqttException {
-        logger.info("seq: {}", seq);
+        System.out.println("seq" + seq);
         String topic = "sys/avm/" + posNum + "/thing/service/pub_seq";
         publishMessage(topic, seq);
     }
@@ -256,7 +252,7 @@ public class MqttService {
             byte[] bytes = mac.doFinal(text.getBytes(charset));
             return new String(Base64.encodeBase64(bytes), charset);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return null;
         }
     }

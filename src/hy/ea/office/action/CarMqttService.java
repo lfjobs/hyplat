@@ -1,14 +1,10 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tiantai.wfj.util.MqttService;
 import org.eclipse.paho.client.mqttv3.*;
-import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -21,12 +17,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class CarMqttService {
-	private static final Logger logger = LoggerFactory.getLogger(CarMqttService.class);
 
-    //private final String serverURI = "tcp://112.126.87.226:1883";
-    //String request = "https://impf2010.com/ea/carmanage/r_ea_mqttShenZhenShiBie.jspa";
-    private final String serverURI = "tcp://192.168.124.52:1883";//测试环境
-    private String request = "http://127.0.0.1:8080/ea/carmanage/r_ea_mqttShenZhenShiBie.jspa";//测试环境
+    private final String serverURI = "tcp://112.126.87.226:1883";
+    String request = "https://impf2010.com/ea/carmanage/r_ea_mqttShenZhenShiBie.jspa";
+    //private final String serverURI = "tcp://127.0.0.1:1883";//测试环境
+    //private String request = "http://127.0.0.1:8080/ea/carmanage/r_ea_mqttShenZhenShiBie.jspa";//测试环境
     private final int keepAliveInterval = 60;
     private final int connectionTimeout = 30;
     private final boolean cleanSession = true;
@@ -37,8 +32,12 @@ public class CarMqttService {
     public static Map<String, Boolean> deviceStatusMap = new HashMap<>();
     public static Map<String, Date> deviceTimeMap = new HashMap<>();
     private static MqttClient mqttClient;
+    private int number=1;
 
-    private CarMqttService() throws MqttException {
+
+
+    private CarMqttService(){
+        System.out.println("开始连接1");
         connect();
     }
 
@@ -48,7 +47,7 @@ public class CarMqttService {
         if (instance == null) {
             synchronized (MqttService.class) {
                 if (instance == null) {
-                    //instance = new CarMqttService();
+                    instance = new CarMqttService();
                 }
             }
         }
@@ -60,27 +59,43 @@ public class CarMqttService {
         @Override
         public void connectComplete(boolean reconnect, String serverURI) {
             if (reconnect) {
-                logger.info("重新连接到 : : {}", serverURI);
+                System.out.println("重新连接到 : " + serverURI);
+                if(number==2){
+                    subscribeToTopic();
+                }
             } else {
-                logger.info("连接完成");
-                logger.info("连接目标: : {}", serverURI);
+                System.out.println("连接完成");
+                System.out.println("连接目标: " + serverURI);
                 subscribeToTopic();
+                number=1;
             }
         }
 
         @Override
         public void connectionLost(Throwable cause) {
-            logger.info("连接已断开，自动开始重连");
-            /*try {
-                connect();
-            } catch (MqttException e) {
-                throw new RuntimeException(e);
-            }*/
+            System.out.println("连接已断开，自动开始重连");
+            while (true){
+                try {
+                    Thread.sleep(5000);
+                    number=2;
+                    MqttConnectOptions options = new MqttConnectOptions();
+                    options.setUserName(userName);
+                    options.setPassword(password.toCharArray());
+                    options.setKeepAliveInterval(keepAliveInterval);
+                    options.setConnectionTimeout(connectionTimeout);
+                    options.setCleanSession(cleanSession);
+                    options.setAutomaticReconnect(autoReconnect);
+                    mqttClient.connect(options);
+                    break;
+                } catch (Exception e) {
+                    System.out.println("连接错误："+e.getMessage());
+                }
+            }
         }
 
         @Override
         public void messageArrived(String topic, MqttMessage message) {
-            //logger.info("调试信息");
+            //System.out.println("订阅的消息" + new String(message.getPayload()));
             // 收到消息的处理逻辑
             String info = new String(message.getPayload());
             JSONObject jsonObject = JSONObject.parseObject(info);
@@ -97,7 +112,7 @@ public class CarMqttService {
 
         @Override
         public void deliveryComplete(IMqttDeliveryToken token) {
-            logger.info("消息成功发送到服务器上回调");
+            //System.out.println("消息成功发送到服务器上回调");
         }
     };
 
@@ -116,30 +131,29 @@ public class CarMqttService {
         options.setConnectionTimeout(connectionTimeout);
         options.setCleanSession(cleanSession);
         options.setAutomaticReconnect(autoReconnect);
-        logger.info("开始连接到: {}", serverURI);
+        System.out.println("开始连接到" + serverURI);
         mqttClient.connect(options);
         } catch (MqttException e) {
-            logger.info("连接失败: {}", e.getMessage());
-            //throw e;
+            System.out.println("连接失败" + e.getMessage());
         }
     }
 
     private void subscribeToTopic() {
-        logger.info("订阅主题");
+        System.out.println("订阅主题");
         try {
             // 订阅多个主题
             String[] topics = {"device/+/message/up/ivs_result", "device/+/message/up/keep_alive"};
             mqttClient.subscribe(topics); // 订阅所有主题
         } catch (MqttException ex) {
             System.err.println("订阅时出现异常:" + ex.getMessage());
-            logger.error("操作异常", ex);
+            ex.printStackTrace();
         }
     }
 
 
     public void vehicleInformation(JSONObject jsonObject) {
         try {
-            logger.info("处理接收到的车辆信息：: {}", jsonObject);
+            System.out.println("处理接收到的车辆信息：" + jsonObject);
             String line;
             StringBuilder response = new StringBuilder();
             //开始处理接收到的消息
@@ -151,7 +165,7 @@ public class CarMqttService {
             byte[] decodedBytes = Base64.getDecoder().decode(license);
             license = new String(decodedBytes, "UTF-8");
             if ("_无_".equals(license) || license == null || "".equals(license)) {
-                logger.info("当前车牌号：{}{}", license, "，无需进行任何处理");
+                System.out.println("当前车牌号：" + license + "，无需进行任何处理");
             } else {
                 String urlParameters = "payloadJson=" + payload;
                 byte[] bytes = urlParameters.getBytes("UTF-8");
@@ -177,7 +191,7 @@ public class CarMqttService {
                         response.append(line);
                     }
                     JSONObject responseObject = JSONObject.parseObject(response.toString());
-                    //logger.info("值：{}", responseObject);
+                    //System.out.println(responseObject);
                     String open = responseObject.getJSONObject("Response_AlarmInfoPlate").getString("info");
                     String id = jsonObject.getString("id");
                     String sn = jsonObject.getString("sn");
@@ -187,8 +201,8 @@ public class CarMqttService {
                         org.json.JSONObject json = new org.json.JSONObject(content);
                         String string = json.get("pronunciationgMap").toString();
                         String string2 = json.get("showTextMap").toString();
-                        //logger.info("值：{}", string);
-                        //logger.info("值：{}", string2);
+                        //System.out.println(string);
+                        //System.out.println(string2);
                         ObjectMapper objectMapper = new ObjectMapper();
                         LinkedHashMap<String, String> pronunciationgMap = objectMapper.readValue(string, LinkedHashMap.class);//语音
                         LinkedHashMap<String, String> showTextMap = objectMapper.readValue(string2, LinkedHashMap.class);//显示
@@ -206,8 +220,8 @@ public class CarMqttService {
                             jsonStr = json.get("pronunciationgMap").toString();
                         }
                         String string2 = json.get("showTextMap").toString();
-                        //logger.info("值：{}", string);
-                        // logger.info("值：{}", string2);
+                        //System.out.println(string);
+                        // System.out.println(string2);
 
                         ObjectMapper objectMapper = new ObjectMapper();
                         LinkedHashMap<String, String> pronunciationgMap = objectMapper.readValue(jsonStr, LinkedHashMap.class);//语音
@@ -218,7 +232,7 @@ public class CarMqttService {
                     in.close();
                 } else {
                     // error, handle error
-                    logger.info("请求失败");
+                    System.out.println("请求失败");
                 }
                 connection.disconnect();
             }
@@ -236,11 +250,11 @@ public class CarMqttService {
             MqttTopic topic1 = mqttClient.getTopic("device/" + sn + "/message/down/gpio_out");
             MqttDeliveryToken token = topic1.publish(publishMessage);
             token.waitForCompletion();
-            logger.info("调试信息");
+            System.out.println("sn:"+sn+",idString："+idString);
             if (token.isComplete()) {
-                logger.info("通知道闸开门消息发送完成");
+                System.out.println("通知道闸开门消息发送完成");
             } else {
-                logger.info("消息发送未完成");
+                System.out.println("消息发送未完成");
             }
         } catch (Exception e) {
             System.err.println("发送异常:" + e.getMessage());
@@ -248,16 +262,16 @@ public class CarMqttService {
     }
 
     public void heartbeatData(JSONObject jsonObject) {
-        //logger.info("调试信息");
+        //System.out.println("处理接收到的心跳信息："+jsonObject);
         //维护一个全局的设备是否在线的map,心跳为60秒
         String sn = jsonObject.getString("sn");
-        //logger.info("值：{}", sn);
+        //System.out.println(sn);
         long date = jsonObject.getLong("timestamp");
-        //logger.info("值：{}", date);
+        //System.out.println(date);
         deviceStatusMap.put(sn, true);
         deviceTimeMap.put(sn, new Date(date));
-        //logger.info("调试信息");
-        //logger.info("调试信息");
+        //System.out.println("设备在线情况："+deviceStatusMap.toString());
+        //System.out.println("设备心跳时间情况："+deviceTimeMap.toString());
     }
 
 
@@ -306,7 +320,7 @@ public class CarMqttService {
             List<Map<String, Object>> list = new ArrayList<>();
             for (Map.Entry<String, String> entry : showTextMap.entrySet()) {
                 Map<String, Object> serialMap = new HashMap<>();
-                //logger.info("调试信息");
+                //System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
                 String licenseInfo = CarShenZhenManageActionUtiles.displayFourLines(entry.getValue(), entry.getKey());
                 serialMap.put("serialChannel", 0);
                 serialMap.put("data", licenseInfo);
@@ -325,7 +339,7 @@ public class CarMqttService {
 		/*String idString = jsonObject.getString("id");
 		String sn = jsonObject.getString("sn");*/
             String openSignal = serial_data(id, sn, list);
-            //logger.info("调试信息");
+            //System.out.println("发送文字的数据:"+openSignal);
             MqttMessage publishMessage = new MqttMessage(openSignal.getBytes());
             publishMessage.setQos(2);
             publishMessage.setRetained(false);
@@ -333,12 +347,12 @@ public class CarMqttService {
             MqttDeliveryToken token = topic1.publish(publishMessage);
             token.waitForCompletion();
             if (token.isComplete()) {
-                logger.info("文字消息发送完成");
+                System.out.println("文字消息发送完成");
             } else {
-                logger.info("文字消息发送未完成");
+                System.out.println("文字消息发送未完成");
             }
         } catch (Exception e) {
-            logger.info("文字消息发生异常：: {}", e.getMessage());
+            System.out.println("文字消息发生异常：" + e.getMessage());
         }
     }
 
@@ -352,14 +366,14 @@ public class CarMqttService {
             serialMap.put("dataLen", licenseInfo.length());
             list.add(serialMap);
             if (licenseInfo == null) {
-                logger.info("发生异常，不能发布订阅");
+                System.out.println("发生异常，不能发布订阅");
                 return;
             }
             //发送开门信号
 		/*String idString = jsonObject.getString("id");
 		String sn = jsonObject.getString("sn");*/
             String openSignal = serial_data(id, sn, list);
-            //logger.info("调试信息");
+            //System.out.println("发送语音的数据:"+openSignal);
             MqttMessage publishMessage = new MqttMessage(openSignal.getBytes());
             publishMessage.setQos(2);
             publishMessage.setRetained(false);
@@ -367,12 +381,12 @@ public class CarMqttService {
             MqttDeliveryToken token = topic1.publish(publishMessage);
             token.waitForCompletion();
             if (token.isComplete()) {
-                logger.info("语音消息发送完成");
+                System.out.println("语音消息发送完成");
             } else {
-                logger.info("语音消息发送未完成");
+                System.out.println("语音消息发送未完成");
             }
         } catch (Exception e) {
-            logger.info("语音消息发生异常：: {}", e.getMessage());
+            System.out.println("语音消息发生异常：" + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -426,12 +440,12 @@ public class CarMqttService {
             MqttDeliveryToken token = topic1.publish(publishMessage);
             token.waitForCompletion();
             if (token.isComplete()) {
-                logger.info("消息发送完成");
+                System.out.println("消息发送完成");
             } else {
-                logger.info("消息发送未完成");
+                System.out.println("消息发送未完成");
             }
         } catch (Exception e) {
-            logger.info("发生错误，无法开门：: {}", e.getMessage());
+            System.out.println("发生错误，无法开门：" + e.getMessage());
         }
     }
 
@@ -461,7 +475,7 @@ public class CarMqttService {
 		String idString = "123";
 		String sn = "9cfce3ef-e127c3e5";
 		String openSignal = serial_data(idString, sn,list);
-		logger.info("调试信息");
+		System.out.println("发送文字的数据:"+openSignal);
 		MqttMessage publishMessage = new MqttMessage(openSignal.getBytes());
 		publishMessage.setQos(2);
 		publishMessage.setRetained(false);
@@ -469,15 +483,15 @@ public class CarMqttService {
 		MqttDeliveryToken token = topic1.publish(publishMessage);
 		token.waitForCompletion();
 		if (token.isComplete()) {
-			logger.info("消息发送完成");
+			System.out.println("消息发送完成");
 		} else {
-			logger.info("消息发送未完成");
+			System.out.println("消息发送未完成");
 		}*/
 
 
         //String content="{}";
        // org.json.JSONObject json = new org.json.JSONObject(content);
-       // logger.info("值：{}", json);
+       // System.out.println(json);
     //}
 
     public static String getIP() {
@@ -485,9 +499,9 @@ public class CarMqttService {
         try {
             InetAddress address = InetAddress.getLocalHost();
             ip = address.getHostAddress();
-            logger.info("当前服务器的IP地址是：: {}", ip);
+            System.out.println("当前服务器的IP地址是：" + ip);
         } catch (UnknownHostException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return ip;
     }

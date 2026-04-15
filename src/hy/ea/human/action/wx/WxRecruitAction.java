@@ -1,8 +1,5 @@
 package hy.ea.human.action.wx;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.base.action.BaseAction;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -55,7 +52,7 @@ public class WxRecruitAction extends BaseAction<WXRecruit> {
 					(null != pageForm ? pageForm.getPageNumber() : 1),
 					(pageNumber == 0 ? 10 : pageNumber), getList());
 		} catch (ParseException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "itemList";

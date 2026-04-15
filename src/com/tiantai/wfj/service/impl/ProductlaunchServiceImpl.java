@@ -1,8 +1,5 @@
 package com.tiantai.wfj.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tiantai.wfj.bo.Promotion;
@@ -24,14 +21,11 @@ import hy.ea.bo.finance.BenDis.ProSetupSubBackup;
 import hy.ea.bo.finance.*;
 import hy.ea.bo.human.COrganization;
 import hy.ea.bo.human.Staff;
-import hy.ea.bo.invoicing.FinancialBill;
 import hy.ea.bo.invoicing.InvCheckGoods;
 import hy.ea.bo.invoicing.Inventory;
 import hy.ea.bo.invoicing.InvtFbCheck;
-import hy.ea.bo.production.view.UtboundOrderVo;
 import hy.ea.company.service.DepotManageService;
 import hy.ea.util.Constant;
-import hy.ea.util.DateUtil;
 import hy.ea.util.StringUtil;
 import hy.plat.bo.BaseBean;
 import hy.plat.bo.PageForm;
@@ -1016,10 +1010,10 @@ public class ProductlaunchServiceImpl implements ProductlaunchService {
         for (int i = 0; i < beans.size(); i++) {
             try {
                 String json = mapper.writeValueAsString(beans.get(i));
-                logger.info("调试信息");
+                System.out.println("\"" + BaseBean.class.getName() + i + "\":" + json + ",");
 
             } catch (JsonProcessingException e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
         }
     }
@@ -1326,21 +1320,6 @@ public class ProductlaunchServiceImpl implements ProductlaunchService {
         baseBeanDao.save(organization);
 
     }
-
-    /**
-     * 根据产品id查询库存信息
-     *
-     * @param ppid 产品id
-     * @return list 库存记录集合
-     * @throws Exception
-     */
-    public List<BaseBean> getDepotByProid(String ppid, String depotid) throws Exception {
-        String hql = "from Inventory where productId=? and warehouse=?";
-        List<BaseBean> list = baseBeanService.getListBeanByHqlAndParams(hql, new Object[]{ppid, depotid});
-        return list;
-    }
-
-
 
     /**
      *
@@ -1835,7 +1814,7 @@ public class ProductlaunchServiceImpl implements ProductlaunchService {
      * @param
      * @return
      */
-    public List<Object> getCxList(PageForm pageForm){
+      public List<Object> getCxList(PageForm pageForm){
 
           StringBuilder sql = new StringBuilder();
           sql.append("select p.goodsname, m.ptppid, p.image,m.ppid,ps.re_price");
@@ -1988,40 +1967,4 @@ public class ProductlaunchServiceImpl implements ProductlaunchService {
         return result;
 
       }
-
-    /**
-     * 获取商品信息
-     *
-     * @param param
-     * @param companyId
-     * @return
-     */
-    public Map<String, Object> getProductByParam(String param, String companyId) {
-        List<Object> params = new ArrayList<Object>();
-        Map<String, Object> map = new HashMap<>();
-        try {
-            StringBuffer sql = new StringBuffer();
-            sql.append("SELECT P.GOODSNAME,P.BARCODE,P.PPID,P.GOODSID,P.COMPANYID,NVL(I.WAREHOUSENAME,'-'),");
-            sql.append("NVL(I.INVENQUANTITY,0),NVL(P.VARIABLEID,'-'),P.STANPRO,NVL(P.SINGLEWEIGHT,'-')");
-            sql.append(" FROM DT_PRODUCTPACKAGING P LEFT JOIN DT_INV_INVT I ON P.PPID = I.PRODUCTID");
-            sql.append(" WHERE P.COMPANYID = ?");
-            params.add(companyId);
-            sql.append(" AND P.DELSTATUS = ?");
-            params.add("00");
-            if (param != null && !param.equals("")) {
-                sql.append("  and (p.goodsname like ? or p.barcode like ?)");
-                params.add("%" + param + "%");
-                params.add("%" + param + "%");
-            }
-            sql.append(" ORDER BY P.PPID DESC");
-            List<Object> list = baseBeanService.getListBeanBySqlAndParams(sql.toString(), params.toArray());
-            map.put("list", list);
-            map.put("flag", 0);
-        } catch (Exception e) {
-            map.put("flag", 1);
-            map.put("error", 1);
-            map.put("msg", e.getMessage());
-        }
-        return map;
     }
-}

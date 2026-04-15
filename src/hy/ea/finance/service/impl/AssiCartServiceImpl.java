@@ -477,7 +477,7 @@ public class AssiCartServiceImpl
             msage.setMessage(content);
             msage.sendMsg("【微分金平台】");
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         //xgb
         logger.error("生成订单-----提醒人账号:" + cus.getAccount() + "------公司下员工账号:" + cellphoneMark);
@@ -523,7 +523,7 @@ public class AssiCartServiceImpl
 
 
 
-            logger.info("调试信息");
+            System.out.println(json.toString());
             logger.error("body" + json.toString());
 
             zfMessage(com,"您有一笔新的微分金订单，请及时处理!","餐饮订单",json.toString(),"canyin");

@@ -1,8 +1,5 @@
 package hy.ea.production.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -76,7 +73,7 @@ public class CarSchoolServiceImpl implements CarSchoolService {
 			return contentToFileService.getContent(path);
 
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return "";
 		}
 	}
@@ -382,11 +379,11 @@ public class CarSchoolServiceImpl implements CarSchoolService {
 			URL postUrl = new URL(URL + "/api/weizhang/query_task?");
 			String content = "car_info=" + URLEncoder.encode(carInfo, "utf-8") + "&sign=" + sign + "&timestamp=" + timestamp + "&app_id=" + appId;
 		
-			logger.info("调试信息");
+			System.out.println("请求URL="+postUrl+content);
 			
 			line = post(postUrl, content);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return line;
 	}
@@ -405,7 +402,7 @@ public class CarSchoolServiceImpl implements CarSchoolService {
 			String content = "";
 			line = post(postUrl, content);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return line;
 
@@ -443,7 +440,7 @@ public class CarSchoolServiceImpl implements CarSchoolService {
 			connection.disconnect();
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return line;
 
@@ -463,7 +460,7 @@ public class CarSchoolServiceImpl implements CarSchoolService {
 			byte[] md = instance.digest();
 			return byteArrayToHex(md);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}
@@ -500,7 +497,7 @@ public class CarSchoolServiceImpl implements CarSchoolService {
             connection.disconnect();// 断开连接
             return sb.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 		return "";
 	}

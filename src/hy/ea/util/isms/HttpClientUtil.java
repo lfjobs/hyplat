@@ -1,8 +1,5 @@
 package hy.ea.util.isms;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.net.Socket;
 
 import org.apache.http.ConnectionReuseStrategy;
@@ -37,7 +34,6 @@ import org.apache.http.util.EntityUtils;
  * @author guanmofeng@126.com
  */
 public class HttpClientUtil {
-	private static final Logger logger = LoggerFactory.getLogger(HttpClientUtil.class);
 
 	HttpParams params;
 	HttpProcessor httpproc;
@@ -87,7 +83,7 @@ public class HttpClientUtil {
 			// sender, URLEncoder.encode(msg, "GB2312"));
 			BasicHttpEntityEnclosingRequest request = new BasicHttpEntityEnclosingRequest("GET", url);
 
-			logger.info("调试信息");
+			System.out.println(">> Request URI: " + request.getRequestLine().getUri());
 
 			request.setParams(params);
 			httpexecutor.preProcess(request, httpproc, context);
@@ -103,7 +99,7 @@ public class HttpClientUtil {
 			if (!connStrategy.keepAlive(response, context)) {
 				conn.close();
 			} else {
-				logger.info("Connection kept alive...");
+				System.out.println("Connection kept alive...");
 				conn.close();
 			}
 
@@ -123,9 +119,9 @@ public class HttpClientUtil {
 			// String url = String.format(par, user, pwd, ServiceID, dest,
 			// sender, URLEncoder.encode(msg, "GB2312"));
 			BasicHttpEntityEnclosingRequest request = new BasicHttpEntityEnclosingRequest("POST", sendURL.trim());
-			logger.info("调试信息");
+			System.out.println(">> Request URI: " + request.getRequestLine().getUri());
 
-			logger.info(">> Request URI:: {}", par);
+			System.out.println(">> Request URI:" + par);
 			byte[] data1 = par.getBytes("ASCII");
 			ByteArrayEntity entiy = new ByteArrayEntity(data1);
 			// hwRequest.ContentType = "application/x-www-form-urlencoded";
@@ -133,7 +129,7 @@ public class HttpClientUtil {
 			entiy.setContentType("application/x-www-form-urlencoded");
 			request.setEntity(entiy);
 
-			logger.info("调试信息");
+			System.out.println(">> Request URI: " + request.getRequestLine().getMethod());
 			request.setParams(params);
 
 			if (!conn.isOpen()) {
@@ -144,7 +140,7 @@ public class HttpClientUtil {
 			HeaderIterator it = request.headerIterator();
 			while (it.hasNext()) {
 				Header hesd = it.nextHeader();
-				logger.info("调试信息");
+				System.out.println(">> Request Header: " + hesd.getName() + " : " + hesd.getValue());
 			}
 
 			httpexecutor.preProcess(request, httpproc, context);
@@ -160,7 +156,7 @@ public class HttpClientUtil {
 			if (!connStrategy.keepAlive(response, context)) {
 				conn.close();
 			} else {
-				logger.info("Connection kept alive...");
+				System.out.println("Connection kept alive...");
 				conn.close();
 			}
 
@@ -172,7 +168,7 @@ public class HttpClientUtil {
 	}
 
 	public static void DeBug(Object obj) {
-		logger.info("值：{}", obj);
+		System.out.println(obj);
 	}
 
 }

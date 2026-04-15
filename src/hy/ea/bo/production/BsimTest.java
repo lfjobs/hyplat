@@ -248,35 +248,4 @@ public class BsimTest implements BaseBean, ExcelBean ,Serializable {
 				money, auditor, organizationName, auditTime, "00".equals(status)?"待检测":("02".equals(status)?"合格":"不合格") };
 		return properties;
 	}
-
-	@Override
-	public String toString() {
-		return "\"BsimTest\":{" +
-				"\"bsimTestkey\":\"" + bsimTestkey + '\"' +
-				", \"bsimTestId\":\"" + bsimTestId + '\"' +
-				", \"id\":\"" + id + '\"' +
-				", \"industryClassification\":\"" + industryClassification + '\"' +
-				", \"productClassification\":\"" + productClassification + '\"' +
-				", \"itemNumber\":\"" + itemNumber + '\"' +
-				", \"goodBar\":\"" + goodBar + '\"' +
-				", \"goodName\":\"" + goodName + '\"' +
-				", \"goodStandard\":\"" + goodStandard + '\"' +
-				", \"price\":\"" + price + '\"' +
-				", \"btnumber\":\"" + btnumber + '\"' +
-				", \"yieldnumber\":\"" + yieldnumber + '\"' +
-				", \"noyieldnumber\":\"" + noyieldnumber + '\"' +
-				", \"money\":\"" + money + '\"' +
-				", \"auditTime\":\"" + auditTime + '\"' +
-				", \"auditor\":\"" + auditor + '\"' +
-				", \"auditorId\":\"" + auditorId + '\"' +
-				", \"companyId\":\"" + companyId + '\"' +
-				", \"companyName\":\"" + companyName + '\"' +
-				", \"organizationId\":\"" + organizationId + '\"' +
-				", \"organizationName\":\"" + organizationName + '\"' +
-				", \"auditoroption\":\"" + auditoroption + '\"' +
-				", \"status\":\"" + status + '\"' +
-				", \"category\":\"" + category + '\"' +
-				", \"fiveClear\":\"" + fiveClear + '\"' +
-				"},";
-	}
 }

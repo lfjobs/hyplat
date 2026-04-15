@@ -40,7 +40,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class WfjLoginAction {
-	private static final Logger logger = LoggerFactory.getLogger(WfjLoginAction.class);
 	
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -87,14 +86,14 @@ public class WfjLoginAction {
 		String tjsccid = request.getParameter("tjsccid");
 
 		String url = request.getRequestURL() + "?" + request.getQueryString();   //当前链接
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println("redirectUrl:"+redirectUrl);
+		System.out.println("url:"+url);
 		try {
 		if (code == null || code.equals("")) {//如果第一次进来
 
 			String urlmicro = wfjAccountService.isWxLogin(request, url);
 			if (urlmicro != null && !urlmicro.equals("")) {
-				logger.info("调试信息");
+				System.out.println("urlmicro:"+urlmicro);
 				response.sendRedirect(urlmicro);//跳转授权
 				return null;
 
@@ -135,7 +134,7 @@ public class WfjLoginAction {
 			response.sendRedirect(redirectUrl);//跳转授权
 		 }
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
          return null;
 	}
@@ -152,8 +151,8 @@ public class WfjLoginAction {
 		String tjsccid = request.getParameter("tjsccid");
 
 		String url = request.getRequestURL() + "?" + request.getQueryString();   //当前链接
-//		logger.info("调试信息");
-//		logger.info("调试信息");
+//		System.out.println("redirectUrl:"+redirectUrl);
+//		System.out.println("url:"+url);
 		try {
 //			response.sendRedirect(redirectUrl+"?nickName=11&openid=21212");//跳转授权
 
@@ -161,7 +160,7 @@ public class WfjLoginAction {
 
 				String urlmicro = wfjAccountService.isWxLogin(request, url);
 				if (urlmicro != null && !urlmicro.equals("")) {
-					logger.info("调试信息");
+					System.out.println("urlmicro:"+urlmicro);
 					response.sendRedirect(urlmicro);//跳转授权
 					return null;
 
@@ -185,7 +184,7 @@ public class WfjLoginAction {
 				}
 			}
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}
@@ -316,7 +315,7 @@ public class WfjLoginAction {
 			msage.sendMsg("【数字地球】");
 			phones="";
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 
@@ -346,7 +345,7 @@ public class WfjLoginAction {
 	    	session.setAttribute("session_value", Math.random() + "");
 			response.sendRedirect(request.getContextPath()+"/ea/wfjshop/ea_getjspzc.jspa?sccid="+sccid);
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 	}
@@ -564,7 +563,7 @@ public class WfjLoginAction {
             	request.setAttribute("nickName",nickName);
 				return "bintel";
 			}else {
-            	logger.info("调试信息");
+            	System.out.println("scid:"+re);
 			TEshopCusCom cus = (TEshopCusCom) baseBeanService.getObjectByHqlAndParams("from TEshopCusCom where sccId = ?", new Object[]{re});
 			TEshopCustomer customer = null;
 			SessionWrap sw = SessionWrap.getInstance();
@@ -614,7 +613,7 @@ public class WfjLoginAction {
 			try {
 				contractService.receiveDoc(cus.getAccount());
 			}catch (Exception e){
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		Map<String, Object> map = new HashMap<String,Object>();

@@ -1,8 +1,5 @@
 package hy.ea.util.milvus.db;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 
 import io.milvus.param.MetricType;
@@ -26,7 +23,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class CollectionsManager {
-	private static final Logger logger = LoggerFactory.getLogger(CollectionsManager.class);
 
     private MilvusClientV2 clientV2;
 
@@ -40,7 +36,7 @@ public class CollectionsManager {
 
 
     public void createCollection(String collName,AddFieldReq[] addFieldReqs) {
-        logger.info("创建成功");
+        System.out.println("创建成功");
 
         CreateCollectionReq.CollectionSchema build = CreateCollectionReq.CollectionSchema.builder().build();
         for (AddFieldReq fieldType:addFieldReqs){

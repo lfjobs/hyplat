@@ -1,8 +1,5 @@
 package hy.ea.websitemall.card.dao.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -92,7 +89,7 @@ public class QRCodeDaoImpl implements QRCodeDao{
           ImageIO.write(bufImg, imgType, imgFile);  
           return "upload_files\\image\\qrcode\\"+imgPath+"\\"+imgName+"."+imgType;
       } catch (Exception e) {  
-          logger.error("操作异常", e);  
+          e.printStackTrace();  
       }  
       return "error";
   }  
@@ -110,7 +107,7 @@ public class QRCodeDaoImpl implements QRCodeDao{
           // 生成二维码QRCode图片  
           ImageIO.write(bufImg, imgType, output);  
       } catch (Exception e) {  
-          logger.error("操作异常", e);  
+          e.printStackTrace();  
       }  
   }  
      
@@ -160,7 +157,7 @@ public class QRCodeDaoImpl implements QRCodeDao{
           gs.dispose();  
           bufImg.flush();  
       } catch (Exception e) {  
-          logger.error("操作异常", e);  
+          e.printStackTrace();  
       }  
       return bufImg;  
   }  
@@ -180,11 +177,11 @@ public class QRCodeDaoImpl implements QRCodeDao{
           QRCodeDecoder decoder = new QRCodeDecoder();  
           content = new String(decoder.decode(new TwoDimensionCodeImage(bufImg)), "utf-8");   
       } catch (IOException e) {  
-          logger.info("Error: : {}", e.getMessage());  
-          logger.error("操作异常", e);  
+          System.out.println("Error: " + e.getMessage());  
+          e.printStackTrace();  
       } catch (DecodingFailedException dfe) {  
-          logger.info("Error: : {}", dfe.getMessage());  
-          dflogger.error("操作异常", e);  
+          System.out.println("Error: " + dfe.getMessage());  
+          dfe.printStackTrace();  
       }  
       return content;  
   }  
@@ -202,11 +199,11 @@ public class QRCodeDaoImpl implements QRCodeDao{
           QRCodeDecoder decoder = new QRCodeDecoder();  
           content = new String(decoder.decode(new TwoDimensionCodeImage(bufImg)), "utf-8");   
       } catch (IOException e) {  
-          logger.info("Error: : {}", e.getMessage());  
-          logger.error("操作异常", e);  
+          System.out.println("Error: " + e.getMessage());  
+          e.printStackTrace();  
       } catch (DecodingFailedException dfe) {  
-          logger.info("Error: : {}", dfe.getMessage());  
-          dflogger.error("操作异常", e);  
+          System.out.println("Error: " + dfe.getMessage());  
+          dfe.printStackTrace();  
       }  
       return content;  
   }  
@@ -227,7 +224,7 @@ public class QRCodeDaoImpl implements QRCodeDao{
           qrcodeHandler.setQrcodeEncodeMode('B');  
           qrcodeHandler.setQrcodeVersion(7);  
 
-          // logger.info("值：{}", content);  
+          // System.out.println(content);  
           byte[] contentBytes = content.getBytes("gb2312");  
           BufferedImage bufImg = new BufferedImage(140, 140,   
           BufferedImage.TYPE_INT_RGB);  
@@ -289,7 +286,7 @@ public class QRCodeDaoImpl implements QRCodeDao{
 
       } catch (Exception e) 
       {  
-          logger.error("操作异常", e);  
+          e.printStackTrace();  
       }    
       return "error";
 }      

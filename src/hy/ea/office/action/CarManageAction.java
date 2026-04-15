@@ -43,7 +43,7 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class CarManageAction {
-	private static final Logger logger = LoggerFactory.getLogger(CarManageAction.class);
+	private Logger logger = LoggerFactory.getLogger(CarManageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -249,7 +249,7 @@ public class CarManageAction {
 		}
 
 		StringBuilder sb =  new StringBuilder();
-		logger.debug("设施列表查询开始");
+		System.out.println(11111);
 		List<Object> list  = new ArrayList<Object>();
 		sb.append("select e.equipmentid,y.companyname,e.unittype,e.equipmentnumber, ");
 		sb.append("e.devicename,e.manufacturer,to_char(e.equipmentdate, 'YYYY-MM-DD HH24:MI:SS'), ");
@@ -893,7 +893,7 @@ public class CarManageAction {
 			InputStream in=request1.getInputStream();
 			int size=request1.getContentLength();
 
-			// logger.info("调试信息");
+			// System.out.println("size1"+size);
 			if (in != null && size > 0) {
 				int readCount = 0; // 已经成功读取的字节的个数
 				int nRead = 0;
@@ -907,7 +907,7 @@ public class CarManageAction {
 					}
 					readCount += nRead;
 				}
-				//	  logger.info("调试信息");
+				//	  System.out.println("size2"+size);
 					JSONObject json = null;
 					try {
 					json = JSONObject.fromObject(new String(buf));
@@ -919,8 +919,8 @@ public class CarManageAction {
 					if (xtparam != null) {
 							if (xtparam.toString().indexOf("ROMID") != -1) {
 									 romID = xtparam.getString("ROMID");// 相机ID
-									//	logger.info("值：{}", xtparam);
-										logger.info("romID: {}", romID);
+									//	System.out.println(xtparam);
+										System.out.println("romID"+romID);
 							//   romID = request1.getParameter("romID");
 
 									if (romID != null && !romID.equals("")) {
@@ -937,14 +937,14 @@ public class CarManageAction {
                                           		//如果是出去的心跳
                                                       if("1".equals(cs.getOpen())){
 														  //说明抬过杆了
-														  logger.info("[道闸控制] 出口抬杆完成");
+														  System.out.println("说明抬过杆了出口");
 														  return Action.SUCCESS;
 													  }
 
 											}else {
 												if("1".equals(cs.getOpen1())){
 													//说明抬过杆了
-													logger.info("[道闸控制] 入口抬杆完成");
+													System.out.println("说明抬过杆了入口");
 
 													return Action.SUCCESS;
 												}
@@ -952,7 +952,7 @@ public class CarManageAction {
 										  }
 
 //
-//										//logger.info("心跳请求");
+//										//System.out.println("心跳请求");
 //										// 如果没有进入的数据先查询下有没有最新未结算的记录，如果有的话，不给开门提示有未结算的，先处理未结算的
 //										String hqlout = "from CarManage where equipmentNumber = ? and status = ? and open = ? and outdate is not null order by outdate desc";
 //										List<BaseBean> listcmout = baseBeanService
@@ -975,7 +975,7 @@ public class CarManageAction {
 //											// 等于0的时候没太过杆
 //											cmout.setOpen("1");//222
 //											baseBeanService.update(cmout);
-//											logger.info("抬杆");
+//											System.out.println("抬杆");
 //
 //											Open = 1;// 抬杆
 //											JSONObject jsonObjList = new JSONObject();
@@ -1012,8 +1012,8 @@ public class CarManageAction {
 	}
 				}
 					} catch (Exception e) {
-						logger.info("车辆粗加工完成");
-						logger.error("操作异常", e);
+						System.out.println("出哦粗");
+						e.printStackTrace();
 					}
 					if (romID == null|| romID.equals("")) {
 						jsonalarm = json.getJSONObject("AlarmInfoPlate");
@@ -1024,10 +1024,10 @@ public class CarManageAction {
 						channel = jsonalarm.getString("channel");
 
 
-						logger.info("值：{}", channel);
-						logger.info("值：{}", equipmentNumber);
+						System.out.println(channel);
+						System.out.println(equipmentNumber);
 						number = jsonplate.getString("license");
-						logger.info("值：{}", number);
+						System.out.println(number);
 
 					}
 					if(number!=null&&!number.equals("")) {
@@ -1035,12 +1035,12 @@ public class CarManageAction {
 							 date = jsonplate.getString("recotime");// 识别时间
 							System.out.print(date + "shibie");
 							 equipmentNumber = jsonalarm.getString("seriaIno");// 设备编号
-							logger.info("equipmentNumber: {}", equipmentNumber);
+							System.out.println("equipmentNumber" + equipmentNumber);
 					    	panoramabase64 = jsonplate.getString("imageFile");//全景图
 						     plateNumberbase64 = jsonplate.getString("imageFragmentFile");//车牌图
 							 numberType = jsonplate.getString("type");//车牌类型
 							String triggerType = jsonplate.getString("triggerType");//车牌类型
-							logger.info("triggerType: {}", triggerType);
+							System.out.println("triggerType" + triggerType);
 						;
 						}
 						// 通过设备id查询到公司id以及人员id
@@ -1053,7 +1053,7 @@ public class CarManageAction {
 								.getBeanByHqlAndParams(sb.toString(),
 										new Object[]{equipmentNumber});
 						if (cuscom == null) {
-							logger.info("录入车辆失败请根据下面设备编号查询账号是否存在--------设备编号:: {}", equipmentNumber);
+							System.out.println("录入车辆失败请根据下面设备编号查询账号是否存在--------设备编号:" + equipmentNumber);
 							Open = 0;
 						} else {
 							// 图片存储路径
@@ -1128,7 +1128,7 @@ public class CarManageAction {
 								}
 
 							} else if (channel.equals("0")) {// 离开停车场
-								logger.info("[车辆检测] 车辆离开，车牌号：{}", number);
+								System.out.println("离开");
 								String hql = "from CarManage where carNumber=? and status=? and indate is not null order by indate desc";
 								List<BaseBean> listcm = baseBeanService.getListBeanByHqlAndParams(hql,
 										new Object[]{number, "1"});
@@ -1138,25 +1138,25 @@ public class CarManageAction {
 
 
 								if (cm != null) {
-									logger.info("[车辆检测] 存在未完成的进入记录，车牌号：{}", number);
+									System.out.println("有进入记录");
 
 									cmService.updateManageCar(cm, number, date, equipmentNumber, photopath, upName1, upName2, channel);
-									logger.info("[车辆检测] 存在未完成的进入记录，车牌号：{}", number);
+									System.out.println("有进入记录");
 									String state = cmService.programCalls(cm.getCarmID());
 									if ("01".equals(state)) {
 										Open = 1;//开
-										logger.info("0元和套餐直接成功");
+										System.out.println("0元和套餐直接成功");
 									} else {
 										Open = 0;//不开
 
-										logger.info("[门禁控制] 未支付车辆拒绝开门，车牌号：{}", number);
+										System.out.println("未支付不开门");
 
 									}
 									cmService.pushJG(cuscom.getCompanyId(), "out", null, cm.getCarmID(), equipmentNumber,"");
 
 
 								} else {
-									logger.info("离开时二次识别车辆");
+									System.out.println("离开时二次识别车辆");
 									//如果没有进入的数据先查询下有没有最新未结算的记录，如果有的话，不给开门提示有未结算的，先处理未结算的
 									String hqlout = "from CarManage where carNumber=? and status=? and outdate is not null order by outdate desc";
 									List<BaseBean> listcmout = baseBeanService.getListBeanByHqlAndParams(hqlout,
@@ -1194,7 +1194,7 @@ public class CarManageAction {
 									}
 
 									if(cmout!=null&&"00".equals(cmout.getChargeState())){
-										logger.info("之前有未结算的提示结算");
+										System.out.println("之前有未结算的提示结算");
 										//说明之前有未结算的提示结算
 										Open = 0;//不开
 										if("0".equals(estss)){
@@ -1203,18 +1203,18 @@ public class CarManageAction {
 										}
 
 									}else{
-										logger.info("没有未结算");
+										System.out.println("没有未结算");
 										if(cmout!=null&&!"00".equals(cmout.getChargeState())){  //说明上一个离开的付款了，现在没有进入记录，查询上一个离开时间，如果在20分钟内算是同一次出去
-											logger.info("查询上次结算记录");
+											System.out.println("查询上次结算记录");
 											Date start  = new Date();
 											Date  out = cmout.getOutdate();
 
 											long diff = start.getTime()-out.getTime();
-											logger.info("diff: {}", diff);
+											System.out.println("diff"+diff);
 											long minute = diff/60/1000;
-											logger.info("minute: {}", minute);
+											System.out.println("minute"+minute);
 											if(minute<20){//算是同一次出去
-												logger.info("小于20分钟");
+												System.out.println("小于20分钟");
 												Open = 1;//开门
 
                                                 if("0".equals(estss)){
@@ -1225,11 +1225,11 @@ public class CarManageAction {
 
 
 											}else{
-												logger.info("大于20分钟");
+												System.out.println("大于20分钟");
 												Open = 0;//不开门
 
 											}
-											logger.info("开门状态：{}", Open);
+											System.out.println("开门状态"+Open);
 										}
 
 										if(Open==0){//异常数据处理，没有进入记录
@@ -1244,15 +1244,15 @@ public class CarManageAction {
 
 											}
 											String carmID = cmService.addErrorOut(number, date, equipmentNumber, photopath, upName1, upName2,cuscom.getCompanyId(),channel,numberType,parksId);
-											logger.info("异常添加一个出去记录");
+											System.out.println("异常添加一个出去记录");
 											String state = cmService.programCalls(carmID);
 											if ("01".equals(state)) {
 												Open = 1;//开
-												logger.info("0元和套餐直接成功");
+												System.out.println("0元和套餐直接成功");
 											} else {
 												Open = 0;//不开
 
-												logger.info("[门禁控制] 未支付车辆拒绝开门，车牌号：{}", number);
+												System.out.println("未支付不开门");
 
 											}
 											cmService.pushJG(cuscom.getCompanyId(), "out", null, carmID, equipmentNumber,"");
@@ -1273,12 +1273,12 @@ public class CarManageAction {
 					}
 					bl = true;
 				} catch (Exception e) {
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 			}
 			else{
 				Open = 0;
-				logger.info("size没有值");
+				System.out.println("size没有值");
 
 			}
 
@@ -1286,14 +1286,14 @@ public class CarManageAction {
 
 		} catch (IOException e) {
 			Open = 0;
-			logger.info("报错1");
-			logger.error("操作异常", e);
+			System.out.println("报错1");
+			e.printStackTrace();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			Open = 0;
-			logger.info("报错2");
+			System.out.println("报错2");
 		}
-		logger.info("Open: {}", Open);
+		System.out.println("Open"+Open);
 		if(Open==1){
 
 			JSONObject jsonObjList = new JSONObject();
@@ -1383,7 +1383,7 @@ public class CarManageAction {
           request = ServletActionContext.getRequest();
             InputStream in = request.getInputStream();
             int size = request.getContentLength();
-            //	 logger.info("调试信息");
+            //	 System.out.println("size1"+size);
             if (in != null && size > 0) {
                 int readCount = 0; // 已经成功读取的字节的个数
                 int nRead = 0;
@@ -1397,11 +1397,11 @@ public class CarManageAction {
                         }
                         readCount += nRead;
                     }
-                    //    logger.info("调试信息");
+                    //    System.out.println("size2"+size);
                     jsonObject = JSONObject.fromObject(new String(buf,"UTF-8"));
-                   // logger.info("调试信息");
+                   // System.out.println("4444444::"+jsonObject);
                 } catch (IOException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
             }
         }catch(Exception e){
@@ -1419,14 +1419,14 @@ public class CarManageAction {
 		JSONObject channelNum = jsonObject.getJSONObject("channel_num");
 		if(channelNum.isEmpty() && channelNum.equals("1")){
 
-                logger.info("channelNum: {}", channelNum);
+                System.out.println("channelNum"+channelNum);
 
 			//这个值表示是摄像头通过轮询调用服务器
 			//获取摄像头id
 			String cameraId = jsonObject.getString("serialno");
 			//channel_num等于1表示是相机轮询问过来的数据
 			if (cameraId != null && !cameraId.equals("")) {
-				logger.info("cameraId: {}", cameraId);
+				System.out.println("cameraId"+cameraId);
 				// 如果没有进入的数据先查询下有没有最新未结算的记录，如果有的话，不给开门提示有未结算的，先处理未结算的
 				String hqlout = "from CarManage where equipmentNumber = ? and status = ? and open = ? and outdate is not null order by outdate desc";
 				List<BaseBean> listcmout = baseBeanService
@@ -1449,7 +1449,7 @@ public class CarManageAction {
 					// 等于0的时候没太过杆
 					cmout.setOpen("1");//222
 					baseBeanService.update(cmout);
-					logger.info("抬杆");
+					System.out.println("抬杆");
 
 					Open = 1;// 抬杆
 					info = "ok";
@@ -1500,13 +1500,13 @@ public class CarManageAction {
 
 //			 String number = "A1232";
 //			 String equipmentNumber = request.getParameter("equipmentNumber");
-			logger.info("number: {}", number);
-		//	logger.info("调试信息");
-			logger.info("equipmentNumber: {}", equipmentNumber);
+			System.out.println("number:"+number);
+		//	System.out.println("number:"+plateid);
+			System.out.println("equipmentNumber"+equipmentNumber);
 			if(number!=null&&!number.equals("")) {
 				JSONObject timeStamp = jsonplate.getJSONObject("timeStamp").getJSONObject("Timeval");
 				String date1 = timeStamp.getString("usec");// 识别时间,毫秒值
-				logger.info("date1: {}", date1);
+				System.out.println("date1:"+date1);
               //  String date = Utilities.getDateString(new Date(Long.valueOf(date1)),"yyyy-MM-dd HH:mm:ss");
 				String panoramabase64 = "";
 				String plateNumberbase64="";
@@ -1514,14 +1514,14 @@ public class CarManageAction {
 					panoramabase64 = jsonplate.getString("imageFile");//全景图
 					plateNumberbase64 = jsonplate.getString("imageFragmentFile");//车牌图
 				}catch (Exception e){
-                   logger.info("没有图片");
+                   System.out.println("没有图片");
 				}
 				String numberType = jsonplate.getString("type");//车牌类型
 
 				String date = Utilities.getDateString(new Date(),"yyyy-MM-dd HH:mm:ss");
-				logger.info("date: {}", date);
+				System.out.println("date:"+date);
 
-		//		logger.info("调试信息");
+		//		System.out.println("numberType:"+numberType);
 				// 通过设备id查询到公司id以及人员id
 				StringBuilder sb = new StringBuilder();
 				sb.append("select t from ");
@@ -1562,10 +1562,10 @@ public class CarManageAction {
 						// 生成车牌jpeg图片
 						GenerateImage(plateNumberbase64, photopath, upName2);
 					}
-                      logger.info("channel: {}", channel);
+                      System.out.println("channelzz"+channel);
 
 					if (channel.equals("1")) {// 进入停车场
-						logger.info("进入停车场");
+						System.out.println("进入停车场");
                          if(indateMap!=null){
 							 indateMap.put(siteid+number,date);//记录进入最新识别时间
 						 }
@@ -1573,17 +1573,17 @@ public class CarManageAction {
 						    if(outdateMap!=null) {
 								String dateout = outdateMap.get(siteid+number);//最后离开识别时间
 								if(dateout!=null) {
-									logger.info("dateout: {}", dateout);
+									System.out.println("dateout" + dateout);
 									Date end = Utilities.getDateFromString(dateout, "yyyy-MM-dd HH:mm:ss");
 									long diff = start.getTime() - end.getTime();//最新进入时间-最后离开识别时间
-									logger.info("diff1: {}", diff);
+									System.out.println("diff1" + diff);
 									long minute = diff /1000;
-									logger.info("minute: {}", minute);
+									System.out.println("minute" + minute);
 									if (minute <= 60) {//
-										logger.info("小于等于1分钟");
+										System.out.println("小于等于1分钟");
 										Open = 0;//出去的时间和进入的时间小于一分钟可能是车尾识别到了，此次识别作废
 										info = "no";
-										logger.info("车尾识别到了进去的摄像头");
+										System.out.println("车尾识别到了进去的摄像头");
 										return Action.SUCCESS;
 									}
 								}
@@ -1598,7 +1598,7 @@ public class CarManageAction {
 							parksId = parking.get("parksId");
 
 						}
-						logger.info("parkingCode: {}", parkingCode);
+						System.out.println("parkingCode"+parkingCode);
 						if (parkingCode == null
 								|| parkingCode.equals("")) {
 							Open = 0;// 不开无停车位
@@ -1618,29 +1618,29 @@ public class CarManageAction {
 
 
 							 if(dateMap!=null){
-							 //	logger.info("调试信息");
+							 //	System.out.println("dateMap"+dateMap+"-"+carmID);
 									String dates = dateMap.get(carmID);
-								 logger.info("dates: {}", dates);
+								 System.out.println("dates"+dates);
                                     if(dates!=null&&!dates.equals("")){
-										logger.info("dates: {}", dates);
+										System.out.println("dates"+dates);
 										Date end1 = Utilities.getDateFromString(dates,"yyyy-MM-dd HH:mm:ss");
 										long diff = start.getTime()-end1.getTime();
 										long second = diff/1000;
 										if(second<=15){
 											ests = "1";
-											logger.info("second: {}", second);
+											System.out.println("second"+second);
 										}else{
 											//大于15
 											dateMap.put(carmID,date);
-											logger.info("大于15");
+											System.out.println("大于15");
 										}
 
 									}else{
-										logger.info("第一次");
-										logger.info("carmID: {}", carmID);
-										logger.info("调试信息");
+										System.out.println("第一次");
+										System.out.println("carmID"+carmID);
+										System.out.println("date"+date);
 										dateMap.put(carmID,date);
-									//	logger.info("调试信息");
+									//	System.out.println("dateMap.get(carmID):"+dateMap.get(carmID));
 
 									}
 
@@ -1660,7 +1660,7 @@ public class CarManageAction {
 						}
 
 					} else if (channel.equals("0")) {// 离开停车场
-						logger.info("离开停车场");
+						System.out.println("离开停车场");
 						if(outdateMap!=null){
 							outdateMap.put(siteid+number,date);//记录离开最新识别时间
 						}
@@ -1673,39 +1673,39 @@ public class CarManageAction {
 
 
 						if (cm != null) {
-							logger.info("[车辆检测] 存在未完成的进入记录，车牌号：{}", number);
+							System.out.println("有进入记录");
                                 if(indateMap!=null){
 									Date start = Utilities.getDateFromString(date,"yyyy-MM-dd HH:mm:ss");//当前离开识别时间
 									String datein = indateMap.get(siteid+number);//最后进来识别时间
-									logger.info("datein: {}", datein);
+									System.out.println("datein" + datein);
 									if(datein!=null) {
 
 										Date in = Utilities.getDateFromString(datein, "yyyy-MM-dd HH:mm:ss");
 										long diff = start.getTime() - in.getTime();
-										logger.info("diff1: {}", diff);
+										System.out.println("diff1" + diff);
 										long minute = diff /1000;
-										logger.info("minute: {}", minute);
+										System.out.println("minute" + minute);
 										if (minute <= 60) {//算是同一次出去
-											logger.info("小于等于1分钟");
+											System.out.println("小于等于1分钟");
 											Open = 0;//说明可能是进去的时候车尾识别到了出去的摄像头，此次识别作废
 											info = "no";
-											logger.info("车尾识别到了出去的摄像头");
+											System.out.println("车尾识别到了出去的摄像头");
 											return Action.SUCCESS;
 										}
 									}
 								}
 
 								cmService.updateManageCar(cm, number, date, equipmentNumber, photopath, upName1, upName2, channel);
-								logger.info("[车辆检测] 存在未完成的进入记录，车牌号：{}", number);
+								System.out.println("有进入记录");
 								String state = cmService.programCalls(cm.getCarmID());
 								if ("01".equals(state)) {
 									Open = 1;//开
 									info = "ok";
-									logger.info("0元和套餐直接成功");
+									System.out.println("0元和套餐直接成功");
 								} else {
 									Open = 0;//不开
 									info = "no";
-									logger.info("[门禁控制] 未支付车辆拒绝开门，车牌号：{}", number);
+									System.out.println("未支付不开门");
 
 								}
 								cmService.pushJG(cuscom.getCompanyId(), "out", null, cm.getCarmID(), equipmentNumber,"");
@@ -1714,7 +1714,7 @@ public class CarManageAction {
 
 
 						} else {
-							logger.info("离开时二次识别车辆");
+							System.out.println("离开时二次识别车辆");
 							//如果没有进入的数据先查询下有没有最新未结算的记录，如果有的话，不给开门提示有未结算的，先处理未结算的
 
 							String hqlout = "from CarManage c where c.carNumber=? and c.status=? and c.outdate is not null and c.equipmentNumber in (select n.equipmentNumber from EquipmentInformation n where n.siteId = ?) order by c.outdate desc";
@@ -1727,20 +1727,20 @@ public class CarManageAction {
 								if(indateMap!=null){
 									Date startcc = Utilities.getDateFromString(date,"yyyy-MM-dd HH:mm:ss");//当前离开识别时间
 									String datein = indateMap.get(siteid+number);//最后进来识别时间
-									logger.info("datein: {}", datein);
+									System.out.println("datein" + datein);
 									if(datein!=null) {
 										Date incc = Utilities.getDateFromString(datein, "yyyy-MM-dd HH:mm:ss");
 
 										long diffcc = startcc.getTime() - incc.getTime();
-										logger.info("diff1cc: {}", diffcc);
+										System.out.println("diff1cc" + diffcc);
 										long minutecc = diffcc /1000;
-										logger.info("minutecc: {}", minutecc);
+										System.out.println("minutecc" + minutecc);
 
 										if (minutecc <= 60) {//算是同一次出去
-											logger.info("minutecc小于等于1分钟");
+											System.out.println("minutecc小于等于1分钟");
 											Open = 0;//说明可能是进去的时候车尾识别到了出去的摄像头，此次识别作废
 											info = "no";
-											logger.info("车尾识别到了出去的摄像头");
+											System.out.println("车尾识别到了出去的摄像头");
 											return Action.SUCCESS;
 										}
 									}
@@ -1772,7 +1772,7 @@ public class CarManageAction {
 
 
 							if(cmout!=null&&"00".equals(cmout.getChargeState())){
-								logger.info("之前有未结算的提示结算");
+								System.out.println("之前有未结算的提示结算");
 								//说明之前有未结算的提示结算
 								Open = 0;//不开
 								info = "no";
@@ -1782,18 +1782,18 @@ public class CarManageAction {
 
 
 							}else{
-								logger.info("没有未结算");
+								System.out.println("没有未结算");
 								if(cmout!=null&&!"00".equals(cmout.getChargeState())){  //说明上一个离开的付款了，现在没有进入记录，查询上一个离开时间，如果在20分钟内算是同一次出去
-									logger.info("查询上次结算记录");
+									System.out.println("查询上次结算记录");
 									Date start  = new Date();
 									Date  out = cmout.getOutdate();
 
 									long diff = start.getTime()-out.getTime();
-									logger.info("diff: {}", diff);
+									System.out.println("diff"+diff);
 									long minute = diff/60/1000;
-									logger.info("minute: {}", minute);
+									System.out.println("minute"+minute);
 									if(minute<20){//算是同一次出去
-										logger.info("小于20分钟");
+										System.out.println("小于20分钟");
 										Open = 1;//开门
 										info = "ok";
 										if("0".equals(estss)) {
@@ -1801,11 +1801,11 @@ public class CarManageAction {
                                             dateMap.remove(cmout.getCarmID());
 										}
 									}else{
-										logger.info("大于20分钟");
+										System.out.println("大于20分钟");
 										Open = 0;//不开门
 										info = "no";
 									}
-									logger.info("开门状态：{}", Open);
+									System.out.println("开门状态"+Open);
 								}
 
 								if(Open==0){//异常数据处理，没有进入记录
@@ -1820,16 +1820,16 @@ public class CarManageAction {
 
 									}
 									String carmID = cmService.addErrorOut(number, date, equipmentNumber, photopath, upName1, upName2,cuscom.getCompanyId(),channel,numberType,parksId);
-									logger.info("异常添加一个出去记录");
+									System.out.println("异常添加一个出去记录");
 									String state = cmService.programCalls(carmID);
 									if ("01".equals(state)) {
 										Open = 1;//开
 										info = "ok";
-										logger.info("0元和套餐直接成功");
+										System.out.println("0元和套餐直接成功");
 									} else {
 										Open = 0;//不开
 										info = "no";
-										logger.info("[门禁控制] 未支付车辆拒绝开门，车牌号：{}", number);
+										System.out.println("未支付不开门");
 									}
 									cmService.pushJG(cuscom.getCompanyId(), "out", null, carmID, equipmentNumber,"");
 
@@ -1853,12 +1853,12 @@ public class CarManageAction {
 
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			Open = 0;
 			info = "no";
-			logger.info("报错2");
+			System.out.println("报错2");
 		}
-		logger.info("Open: {}", Open);
+		System.out.println("Open"+Open);
 
 
 			JSONObject jsonObjList = new JSONObject();
@@ -1909,7 +1909,7 @@ public class CarManageAction {
 
 			InputStream in=request1.getInputStream();
 			int size=request1.getContentLength();
-			logger.info("调试信息");
+			System.out.println("size1"+size);
 			if (in != null && size > 0) {
 				int readCount = 0; // 已经成功读取的字节的个数
 				int nRead = 0;
@@ -1942,27 +1942,27 @@ public class CarManageAction {
 //		String ctime = request1.getParameter("ctime");//时间戳
 //		String number = request1.getParameter("carno");//车牌号
 		//String panoramabase64 = request1.getParameter("imageData");//全景
-		//	logger.info("调试信息");
+		//	System.out.println(json+"");
 
 		String  equipmentNumber = json.getString("gwid");
 		String ctime = json.getString("ctime");
 		String number = json.getString("carno");//车牌号
-		logger.info("值：{}", number);
+		System.out.println(number);
 //		try {
 //			number = URLDecoder.decode(number, "utf-8");
-//			logger.info("值：{}", number);
+//			System.out.println(number);
 //		}catch (UnsupportedEncodingException e){
-//			logger.error("操作异常", e);
+//			e.printStackTrace();
 //		}
 
 		String panoramabase64 = json.getString("imageData");
 		String plateNumberbase64 = json.getString("Plateimg");
 
-		logger.info("值：{}", equipmentNumber);
-		logger.info("值：{}", ctime);
+		System.out.println(equipmentNumber);
+		System.out.println(ctime);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String date = sdf.format(new Date(Long.valueOf(ctime+"000")));
-		logger.info("值：{}", date);
+		System.out.println(date);
 
 
 		String hqlc = "from EquipmentInformation where equipmentNumber = ?";
@@ -1971,7 +1971,7 @@ public class CarManageAction {
 		if(ei!=null) {
 			channel = ei.getChannel();
 		}else{
-			logger.info("未录入设备序号");
+			System.out.println("未录入设备序号");
 		}
 
 		boolean bl = false;
@@ -1997,7 +1997,7 @@ public class CarManageAction {
 						.getBeanByHqlAndParams(sb.toString(),
 								new Object[]{equipmentNumber});
 				if (cuscom == null) {
-					logger.info("录入车辆失败请根据下面设备编号查询账号是否存在--------设备编号:: {}", equipmentNumber);
+					System.out.println("录入车辆失败请根据下面设备编号查询账号是否存在--------设备编号:" + equipmentNumber);
 					Open = 0;
 				} else {
 					// 图片存储路径
@@ -2013,7 +2013,7 @@ public class CarManageAction {
 					if (channel.equals("1")) {// 进入停车场
 						// 生成全景jpeg图片
 						GenerateImage(panoramabase64, photopath, upName1);
-						logger.info("调试信息");
+						System.out.println(photopath+"\\"+upName1);
 						// 生成车牌jpeg图片
 						GenerateImage(plateNumberbase64, photopath, upName2);
 
@@ -2040,7 +2040,7 @@ public class CarManageAction {
 						}
 
 					} else if (channel.equals("0")) {// 离开停车场
-						logger.info("[车辆检测] 车辆离开，车牌号：{}", number);
+						System.out.println("离开");
 						String hql = "from CarManage where carNumber=? and status=? and indate is not null order by indate desc";
 						List<BaseBean> listcm = baseBeanService.getListBeanByHqlAndParams(hql,
 								new Object[]{number, "1"});
@@ -2052,28 +2052,28 @@ public class CarManageAction {
 						if (cm != null) {
 							// 生成全景jpeg图片
 							GenerateImage(panoramabase64, photopath, upName1);
-							logger.info("调试信息");
+							System.out.println(photopath+"\\"+upName1);
 							// 生成车牌jpeg图片
 							GenerateImage(plateNumberbase64, photopath, upName2);
 
-							logger.info("[车辆检测] 存在未完成的进入记录，车牌号：{}", number);
+							System.out.println("有进入记录");
 							cmService.updateManageCar(cm,number,date,equipmentNumber,photopath,upName1,upName2,channel);
-							logger.info("[车辆检测] 存在未完成的进入记录，车牌号：{}", number);
+							System.out.println("有进入记录");
 							String state = cmService.programCalls(cm.getCarmID());
 							if ("01".equals(state)) {
 								Open = 1;//开
-								logger.info("0元和套餐直接成功");
+								System.out.println("0元和套餐直接成功");
 							} else {
 								Open = 0;//不开
 
-								logger.info("[门禁控制] 未支付车辆拒绝开门，车牌号：{}", number);
+								System.out.println("未支付不开门");
 
 							}
 							cmService.pushJG(cuscom.getCompanyId(), "out", null, cm.getCarmID(), equipmentNumber,"");
 
 
 						} else {
-							logger.info("离开时二次识别车辆");
+							System.out.println("离开时二次识别车辆");
 							//如果没有进入的数据先查询下有没有最新未结算的记录，如果有的话，不给开门提示有未结算的，先处理未结算的
 							String hqlout = "from CarManage where carNumber=? and status=? and outdate is not null order by outdate desc";
 							List<BaseBean> listcmout = baseBeanService.getListBeanByHqlAndParams(hqlout,
@@ -2085,37 +2085,37 @@ public class CarManageAction {
 
 							}
 							if(cmout!=null&&"00".equals(cmout.getChargeState())){
-								logger.info("之前有未结算的提示结算");
+								System.out.println("之前有未结算的提示结算");
 								//说明之前有未结算的提示结算
 								Open = 0;//不开
 
 								cmService.pushJG(cuscom.getCompanyId(), "out", null, cmout.getCarmID(), equipmentNumber,"");
 
 							}else{
-								logger.info("没有未结算");
+								System.out.println("没有未结算");
 								if(cmout!=null&&!"00".equals(cmout.getChargeState())){  //说明上一个离开的付款了，现在没有进入记录，查询上一个离开时间，如果在20分钟内算是同一次出去
-									logger.info("查询上次结算记录");
+									System.out.println("查询上次结算记录");
 									Date start  = new Date();
 									Date  out = cmout.getOutdate();
 
 									long diff = start.getTime()-out.getTime();
-									logger.info("diff: {}", diff);
+									System.out.println("diff"+diff);
 									long minute = diff/60/1000;
-									logger.info("minute: {}", minute);
+									System.out.println("minute"+minute);
 									if(minute<20){//算是同一次出去
-										logger.info("小于20分钟");
+										System.out.println("小于20分钟");
 										Open = 1;//开门
 										// 等于0的时候没太过杆
 										cmout.setOpen("1");//222
 										baseBeanService.update(cmout);
-										logger.info("抬杆");
+										System.out.println("抬杆");
 
 									}else{
-										logger.info("大于20分钟");
+										System.out.println("大于20分钟");
 										Open = 0;//不开门
 
 									}
-									logger.info("开门状态：{}", Open);
+									System.out.println("开门状态"+Open);
 								}
 
 								if(Open==0){//异常数据处理，没有进入记录
@@ -2130,19 +2130,19 @@ public class CarManageAction {
 
 									}
 									String carmID = cmService.addErrorOut(number, date, equipmentNumber, photopath, upName1, upName2,cuscom.getCompanyId(),channel,numberType,parksId);
-									logger.info("异常添加一个出去记录");
+									System.out.println("异常添加一个出去记录");
 									String state = cmService.programCalls(carmID);
 									if ("01".equals(state)) {
 										Open = 1;//开
-										logger.info("0元和套餐直接成功");
+										System.out.println("0元和套餐直接成功");
 										// 等于0的时候没太过杆
 										cmout.setOpen("1");//222
 										baseBeanService.update(cmout);
-										logger.info("抬杆");
+										System.out.println("抬杆");
 									} else {
 										Open = 0;//不开
 
-										logger.info("[门禁控制] 未支付车辆拒绝开门，车牌号：{}", number);
+										System.out.println("未支付不开门");
 
 									}
 									cmService.pushJG(cuscom.getCompanyId(), "out", null, carmID, equipmentNumber,"");
@@ -2161,12 +2161,12 @@ public class CarManageAction {
 			}
 			bl = true;
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 
 
-		logger.info("Open: {}", Open);
+		System.out.println("Open"+Open);
 		JSONObject jsonObjList1 = new JSONObject();
 
 		jsonObjList1.accumulate("Open",Open);
@@ -2188,9 +2188,9 @@ public class CarManageAction {
 			}
 			br.close();
 		} catch (IOException e) {
-			logger.info("IOException: : {}", e);
+			System.out.println("IOException: " + e);
 		}
-		logger.info("str:: {}", str);
+		System.out.println("str:" + str);
 		return str;
 	}
 
@@ -2211,7 +2211,7 @@ public class CarManageAction {
 	}
 
 	public  String sbsb(){
-		logger.info("11111111111");
+		System.out.println("11111111111");
 
 		return null;
 	}
@@ -3647,7 +3647,7 @@ public class CarManageAction {
         list.add("1");
         if (timeNumber != null && !"0".equals(timeNumber)) {
             Map<String, Date> dateMap = DateUtils.determineTimeNumber(timeNumber);
-            logger.info("值：{}", dateMap);
+            System.out.println(dateMap);
             sb.append("and c.indate >= ?");
             list.add(dateMap.get("startTime"));
             sb.append("and c.outdate<= ?");
@@ -3731,7 +3731,7 @@ public class CarManageAction {
         list.add(staffID);
         if (timeNumber != null && !"0".equals(timeNumber)) {
             Map<String, Date> dateMap = DateUtils.determineTimeNumber(timeNumber);
-            logger.info("值：{}", dateMap);
+            System.out.println(dateMap);
             sb.append("and e.START_TIME >= ?");
             list.add(dateMap.get("startTime"));
             sb.append("and e.START_TIME<= ?");
@@ -3792,14 +3792,14 @@ public class CarManageAction {
 		JSONObject channelNum = jsonObject.getJSONObject("channel_num");
 		if(channelNum.isEmpty() && channelNum.equals("1")){
 
-			logger.info("channelNum: {}", channelNum);
+			System.out.println("channelNum"+channelNum);
 
 			//这个值表示是摄像头通过轮询调用服务器
 			//获取摄像头id
 			String cameraId = jsonObject.getString("serialno");
 			//channel_num等于1表示是相机轮询问过来的数据
 			if (cameraId != null && !cameraId.equals("")) {
-				logger.info("cameraId: {}", cameraId);
+				System.out.println("cameraId"+cameraId);
 				// 如果没有进入的数据先查询下有没有最新未结算的记录，如果有的话，不给开门提示有未结算的，先处理未结算的
 				String hqlout = "from CarManage where equipmentNumber = ? and status = ? and open = ? and outdate is not null order by outdate desc";
 				List<BaseBean> listcmout = baseBeanService
@@ -3822,7 +3822,7 @@ public class CarManageAction {
 					// 等于0的时候没太过杆
 					cmout.setOpen("1");//222
 					baseBeanService.update(cmout);
-					logger.info("抬杆");
+					System.out.println("抬杆");
 
 					Open = 1;// 抬杆
 					info = "ok";
@@ -3875,12 +3875,12 @@ public class CarManageAction {
 //			 String equipmentNumber = request.getParameter("equipmentNumber");
 			if(number!=null){
 				//number = number.replace(" ", "+");
-				//logger.info("调试信息");
+				//System.out.println("解码器的base64："+number);
 				byte[] decodedBytes = Base64.getDecoder().decode(number);
 				String decodedString = new String(decodedBytes, "UTF-8");
-				//logger.info("调试信息");
+				//System.out.println("解码后的车牌号："+decodedString);
 				if("_无_".equals(decodedString)){
-					logger.info("无车牌号  不进行任何的操作");
+					System.out.println("无车牌号  不进行任何的操作");
 					number=null;
 				}else{
 					number=decodedString;
@@ -3888,13 +3888,13 @@ public class CarManageAction {
 			}else{
 				number=null;
 			}
-			logger.info("number: {}", number);
-			//	logger.info("调试信息");
-			logger.info("equipmentNumber: {}", equipmentNumber);
+			System.out.println("number:"+number);
+			//	System.out.println("number:"+plateid);
+			System.out.println("equipmentNumber"+equipmentNumber);
 			if(number!=null&&!number.equals("")) {
 				JSONObject timeStamp = jsonplate.getJSONObject("timeStamp").getJSONObject("Timeval");
 				String date1 = timeStamp.getString("usec");// 识别时间,毫秒值
-				logger.info("date1: {}", date1);
+				System.out.println("date1:"+date1);
 				//  String date = Utilities.getDateString(new Date(Long.valueOf(date1)),"yyyy-MM-dd HH:mm:ss");
 				String panoramabase64 = "";
 				String plateNumberbase64="";
@@ -3902,14 +3902,14 @@ public class CarManageAction {
 					panoramabase64 = jsonplate.getString("imageFile");//全景图
 					plateNumberbase64 = jsonplate.getString("imageFragmentFile");//车牌图
 				}catch (Exception e){
-					logger.info("没有图片");
+					System.out.println("没有图片");
 				}
 				String numberType = jsonplate.getString("type");//车牌类型
 
 				String date = Utilities.getDateString(new Date(),"yyyy-MM-dd HH:mm:ss");
-				logger.info("date: {}", date);
+				System.out.println("date:"+date);
 
-				//		logger.info("调试信息");
+				//		System.out.println("numberType:"+numberType);
 				// 通过设备id查询到公司id以及人员id
 				StringBuilder sb = new StringBuilder();
 				sb.append("select t from ");
@@ -3931,7 +3931,7 @@ public class CarManageAction {
 						.getBeanByHqlAndParams(sb.toString(),
 								new Object[]{equipmentNumber});
 				if (cuscom == null) {
-					logger.info("录入车辆失败请根据下面设备编号查询账号是否存在--------设备编号:: {}", equipmentNumber);
+					System.out.println("录入车辆失败请根据下面设备编号查询账号是否存在--------设备编号:" + equipmentNumber);
 					Open = 0;
 					info = "no";
 				} else {
@@ -3963,13 +3963,13 @@ public class CarManageAction {
 							Object outDate = objInfo[2];
 							if(inDate!=null && outDate==null){
 								//开始更新当前这条记录的进入时间
-								logger.info("当前车辆：{} 有未离开记录，直接更新进入时间。", number);
+								System.out.println("当前车辆："+number+"有未离开记录，直接更新进入时间。");
 								String updateSql = "update DT_CARMANAGE set INDATE=? where CARMKEY=? and CARNUMBER=?";
 								baseBeanService.saveBeansListAndexecuteSqlsByParams(null,
 										new String[] { updateSql }, new Object[] {new Date(),carmkey,number});
 							}
 						}
-						logger.info("进入停车场");
+						System.out.println("进入停车场");
 						if(indateMap!=null){
 							indateMap.put(siteid+number,date);//记录进入最新识别时间
 						}
@@ -3977,17 +3977,17 @@ public class CarManageAction {
 						if(outdateMap!=null) {
 							String dateout = outdateMap.get(siteid+number);//最后离开识别时间
 							if(dateout!=null) {
-								logger.info("dateout: {}", dateout);
+								System.out.println("dateout" + dateout);
 								Date end = Utilities.getDateFromString(dateout, "yyyy-MM-dd HH:mm:ss");
 								long diff = start.getTime() - end.getTime();//最新进入时间-最后离开识别时间
-								logger.info("diff1: {}", diff);
+								System.out.println("diff1" + diff);
 								long minute = diff /1000;
-								logger.info("minute: {}", minute);
+								System.out.println("minute" + minute);
 								if (minute <= 60) {//
-									logger.info("小于等于1分钟");
+									System.out.println("小于等于1分钟");
 									Open = 0;//出去的时间和进入的时间小于一分钟可能是车尾识别到了，此次识别作废
 									info = "no";
-									logger.info("车尾识别到了进去的摄像头");
+									System.out.println("车尾识别到了进去的摄像头");
 									return Action.SUCCESS;
 								}
 							}
@@ -4002,7 +4002,7 @@ public class CarManageAction {
 							parksId = parking.get("parksId");
 
 						}
-						logger.info("parkingCode: {}", parkingCode);
+						System.out.println("parkingCode"+parkingCode);
 						if (parkingCode == null
 								|| parkingCode.equals("")) {
 							Open = 0;// 不开无停车位
@@ -4018,7 +4018,7 @@ public class CarManageAction {
 							showTextMap.put("禁止通行","03");
 							showTextMap.put("请联系管理员","04");
 							//显示屏文字
-							//logger.info("值：{}", equipmentNumber);
+							//System.out.println(equipmentNumber);
 							CarMqttService.xianshishuju("1234567890",equipmentNumber,showTextMap,"ok");
 							//语音
 							CarMqttService.pronunciation("1234567890",equipmentNumber,pronunciationgMap);
@@ -4034,29 +4034,29 @@ public class CarManageAction {
 
 
 							if(dateMap!=null){
-								//	logger.info("调试信息");
+								//	System.out.println("dateMap"+dateMap+"-"+carmID);
 								String dates = dateMap.get(carmID);
-								logger.info("dates: {}", dates);
+								System.out.println("dates"+dates);
 								if(dates!=null&&!dates.equals("")){
-									logger.info("dates: {}", dates);
+									System.out.println("dates"+dates);
 									Date end1 = Utilities.getDateFromString(dates,"yyyy-MM-dd HH:mm:ss");
 									long diff = start.getTime()-end1.getTime();
 									long second = diff/1000;
 									if(second<=15){
 										ests = "1";
-										logger.info("second: {}", second);
+										System.out.println("second"+second);
 									}else{
 										//大于15
 										dateMap.put(carmID,date);
-										logger.info("大于15");
+										System.out.println("大于15");
 									}
 
 								}else{
-									logger.info("第一次");
-									logger.info("carmID: {}", carmID);
-									logger.info("调试信息");
+									System.out.println("第一次");
+									System.out.println("carmID"+carmID);
+									System.out.println("date"+date);
 									dateMap.put(carmID,date);
-									//	logger.info("调试信息");
+									//	System.out.println("dateMap.get(carmID):"+dateMap.get(carmID));
 
 								}
 
@@ -4076,7 +4076,7 @@ public class CarManageAction {
 						}
 
 					} else if (channel.equals("0")) {// 离开停车场
-						logger.info("离开停车场");
+						System.out.println("离开停车场");
 						if(outdateMap!=null){
 							outdateMap.put(siteid+number,date);//记录离开最新识别时间
 						}
@@ -4089,39 +4089,39 @@ public class CarManageAction {
 
 
 						if (cm != null) {
-							logger.info("[车辆检测] 存在未完成的进入记录，车牌号：{}", number);
+							System.out.println("有进入记录");
 							if(indateMap!=null){
 								Date start = Utilities.getDateFromString(date,"yyyy-MM-dd HH:mm:ss");//当前离开识别时间
 								String datein = indateMap.get(siteid+number);//最后进来识别时间
-								logger.info("datein: {}", datein);
+								System.out.println("datein" + datein);
 								if(datein!=null) {
 
 									Date in = Utilities.getDateFromString(datein, "yyyy-MM-dd HH:mm:ss");
 									long diff = start.getTime() - in.getTime();
-									logger.info("diff1: {}", diff);
+									System.out.println("diff1" + diff);
 									long minute = diff /1000;
-									logger.info("minute: {}", minute);
+									System.out.println("minute" + minute);
 									if (minute <= 60) {//算是同一次出去
-										logger.info("小于等于1分钟");
+										System.out.println("小于等于1分钟");
 										Open = 0;//说明可能是进去的时候车尾识别到了出去的摄像头，此次识别作废
 										info = "no";
-										logger.info("车尾识别到了出去的摄像头");
+										System.out.println("车尾识别到了出去的摄像头");
 										return Action.SUCCESS;
 									}
 								}
 							}
 
 							cmService.updateManageCar(cm, number, date, equipmentNumber, photopath, upName1, upName2, channel);
-							logger.info("[车辆检测] 存在未完成的进入记录，车牌号：{}", number);
+							System.out.println("有进入记录");
 							String state = cmService.programCalls(cm.getCarmID());
 							if ("01".equals(state)) {
 								Open = 1;//开
 								info = "ok";
-								logger.info("0元和套餐直接成功");
+								System.out.println("0元和套餐直接成功");
 							} else {
 								Open = 0;//不开
 								info = "no";
-								logger.info("[门禁控制] 未支付车辆拒绝开门，车牌号：{}", number);
+								System.out.println("未支付不开门");
 
 							}
 							resultMap = cmService.pushMqtt(cuscom.getCompanyId(), "out", null, cm.getCarmID(), equipmentNumber,"");
@@ -4130,7 +4130,7 @@ public class CarManageAction {
 
 
 						} else {
-							logger.info("离开时二次识别车辆");
+							System.out.println("离开时二次识别车辆");
 							//如果没有进入的数据先查询下有没有最新未结算的记录，如果有的话，不给开门提示有未结算的，先处理未结算的
 
 							String hqlout = "from CarManage c where c.carNumber=? and c.status=? and c.outdate is not null and c.equipmentNumber in (select n.equipmentNumber from EquipmentInformation n where n.siteId = ?) order by c.outdate desc";
@@ -4143,20 +4143,20 @@ public class CarManageAction {
 								if(indateMap!=null){
 									Date startcc = Utilities.getDateFromString(date,"yyyy-MM-dd HH:mm:ss");//当前离开识别时间
 									String datein = indateMap.get(siteid+number);//最后进来识别时间
-									logger.info("datein: {}", datein);
+									System.out.println("datein" + datein);
 									if(datein!=null) {
 										Date incc = Utilities.getDateFromString(datein, "yyyy-MM-dd HH:mm:ss");
 
 										long diffcc = startcc.getTime() - incc.getTime();
-										logger.info("diff1cc: {}", diffcc);
+										System.out.println("diff1cc" + diffcc);
 										long minutecc = diffcc /1000;
-										logger.info("minutecc: {}", minutecc);
+										System.out.println("minutecc" + minutecc);
 
 										if (minutecc <= 60) {//算是同一次出去
-											logger.info("minutecc小于等于1分钟");
+											System.out.println("minutecc小于等于1分钟");
 											Open = 0;//说明可能是进去的时候车尾识别到了出去的摄像头，此次识别作废
 											info = "no";
-											logger.info("车尾识别到了出去的摄像头");
+											System.out.println("车尾识别到了出去的摄像头");
 											return Action.SUCCESS;
 										}
 									}
@@ -4188,7 +4188,7 @@ public class CarManageAction {
 
 
 							if(cmout!=null&&"00".equals(cmout.getChargeState())){
-								logger.info("之前有未结算的提示结算");
+								System.out.println("之前有未结算的提示结算");
 								//说明之前有未结算的提示结算
 								Open = 0;//不开
 								info = "no";
@@ -4198,18 +4198,18 @@ public class CarManageAction {
 
 
 							}else{
-								logger.info("没有未结算");
+								System.out.println("没有未结算");
 								if(cmout!=null&&!"00".equals(cmout.getChargeState())){  //说明上一个离开的付款了，现在没有进入记录，查询上一个离开时间，如果在20分钟内算是同一次出去
-									logger.info("查询上次结算记录");
+									System.out.println("查询上次结算记录");
 									Date start  = new Date();
 									Date  out = cmout.getOutdate();
 
 									long diff = start.getTime()-out.getTime();
-									logger.info("diff: {}", diff);
+									System.out.println("diff"+diff);
 									long minute = diff/60/1000;
-									logger.info("minute: {}", minute);
+									System.out.println("minute"+minute);
 									if(minute<20){//算是同一次出去
-										logger.info("小于20分钟");
+										System.out.println("小于20分钟");
 										Open = 1;//开门
 										info = "ok";
 										if("0".equals(estss)) {
@@ -4217,11 +4217,11 @@ public class CarManageAction {
 											dateMap.remove(cmout.getCarmID());
 										}
 									}else{
-										logger.info("大于20分钟");
+										System.out.println("大于20分钟");
 										Open = 0;//不开门
 										info = "no";
 									}
-									logger.info("开门状态：{}", Open);
+									System.out.println("开门状态"+Open);
 								}
 
 								if(Open==0){//异常数据处理，没有进入记录
@@ -4236,16 +4236,16 @@ public class CarManageAction {
 
 									}
 									String carmID = cmService.addErrorOut(number, date, equipmentNumber, photopath, upName1, upName2,cuscom.getCompanyId(),channel,numberType,parksId);
-									logger.info("异常添加一个出去记录");
+									System.out.println("异常添加一个出去记录");
 									String state = cmService.programCalls(carmID);
 									if ("01".equals(state)) {
 										Open = 1;//开
 										info = "ok";
-										logger.info("0元和套餐直接成功");
+										System.out.println("0元和套餐直接成功");
 									} else {
 										Open = 0;//不开
 										info = "no";
-										logger.info("[门禁控制] 未支付车辆拒绝开门，车牌号：{}", number);
+										System.out.println("未支付不开门");
 									}
 									resultMap = cmService.pushMqtt(cuscom.getCompanyId(), "out", null, carmID, equipmentNumber, "");
 
@@ -4269,12 +4269,12 @@ public class CarManageAction {
 
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			Open = 0;
 			info = "no";
-			logger.info("报错2");
+			System.out.println("报错2");
 		}
-		logger.info("Open: {}", Open);
+		System.out.println("Open"+Open);
 
 
 		JSONObject jsonObjList = new JSONObject();

@@ -1,8 +1,9 @@
 package hy.ea.office.service.impl;
 
+import com.tiantai.wfj.bo.PosDeviceHistory;
+import hy.ea.bo.Company;
 import hy.ea.bo.human.Staff;
 import hy.ea.bo.office.FaceRec;
-import hy.ea.office.action.response.PersonResponse;
 import hy.ea.office.service.FaceRecService;
 import hy.plat.bo.BaseBean;
 import hy.plat.bo.PageForm;
@@ -23,7 +24,7 @@ import java.util.List;
 @Transactional
 public class FaceRecServiceImpl implements FaceRecService {
 
-	private final Logger logger = LoggerFactory.getLogger(FaceRecServiceImpl.class);
+	private Logger logger = LoggerFactory.getLogger(FaceRecServiceImpl.class);
 	@Resource
 	private BaseBeanDao beandao;
 	@Resource
@@ -111,30 +112,6 @@ public class FaceRecServiceImpl implements FaceRecService {
 			return "1";
 		}
 
-	}
-
-	@Override
-	public Staff findStaffById(String staffId) {
-		String hql = "from Staff where staffID = ?";
-		return (Staff) beandao.getBeanByHqlAndParams(hql, new Object[]{staffId});
-
-	}
-
-	@Override
-	public List<PersonResponse> findAll() {
-		String sql = "select STAFFID,STAFFNAME,STAFFIDENTITYCARD,FACEPICTURE from Staff";
-		/*List<Staff> staffList = beandao.findAll(sql);*/
-		List<PersonResponse> responeList = new ArrayList<>();
-		/*for (Staff staff : staffList) {
-			PersonResponse personRespone = new PersonResponse();
-			personRespone.setCmd("add");
-			personRespone.setId(staff.getStaffID());
-			personRespone.setIdCard(staff.getStaffIdentityCard());
-			personRespone.setName(staff.getStaffName());
-			personRespone.setFacePicture(staff.getFacePicture());
-			responeList.add(personRespone);
-		}*/
-		return responeList;
 	}
 
 }

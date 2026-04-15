@@ -1,8 +1,5 @@
 package mobile.tiantai.android.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,7 +20,6 @@ import com.aspose.words.WrapType;
 
 public class SealOffice
 {
-	private static final Logger logger = LoggerFactory.getLogger(SealOffice.class);
 	
 
 	//将图片印章插入到Word
@@ -46,10 +42,10 @@ public class SealOffice
 					- shape.getWidth() - rightMargin);
 			doc.save(realPath+filepath, SaveFormat.DOC);
 			
-			logger.info("finished~~~~~");
+			System.out.println("finished~~~~~");
 		} catch (Exception e) {
 			result = "1";
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return result;
 		
@@ -77,7 +73,7 @@ public class SealOffice
 			book.close();
 			}catch(Exception e) {
 				result = "1";
-			logger.info("值：{}", e);
+			System.out.println(e);
 			}
 
 		        
@@ -102,7 +98,7 @@ public class SealOffice
 		
 		 } catch (Exception e) {
 			result="1";
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} 
 		
 		return result;

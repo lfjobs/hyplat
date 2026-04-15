@@ -1,8 +1,5 @@
 package com.alipay;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
@@ -22,7 +19,6 @@ import java.net.URLEncoder;
  * Created by Administrator on 2017/3/10 0010.
  */
 public class AlipayDemo {
-	private static final Logger logger = LoggerFactory.getLogger(AlipayDemo.class);
     public static void main(String[] args) {
 
 
@@ -51,7 +47,7 @@ public class AlipayDemo {
 //            AlipayConfig.response = AlipayConfig.alipayClient.execute(request);
 //        } catch (AlipayApiException e) {
 //            // TODO Auto-generated catch block
-//            logger.error("操作异常", e);
+//            e.printStackTrace();
 //        }
 //        String aa=null;
 //        if(AlipayConfig.response.isSuccess()){
@@ -88,11 +84,11 @@ public class AlipayDemo {
         try {
             //code查询user_id和access_token
             AlipaySystemOauthTokenResponse oauthTokenResponse = alipayClient.execute(request);
-            logger.info("调试信息");
+            System.out.println(oauthTokenResponse.getAccessToken());
             //根据access_token查询用户信息
             AlipayUserInfoShareRequest userInfoRequest = new AlipayUserInfoShareRequest();
             AlipayUserInfoShareResponse userInfoResponse = alipayClient.execute(userInfoRequest,oauthTokenResponse.getAccessToken());
-            logger.info("值：{}", userInfoResponse);
+            System.out.println(userInfoResponse);
 
 
             //转账
@@ -108,9 +104,9 @@ public class AlipayDemo {
                     "  }");
             AlipayFundTransToaccountTransferResponse toaTranRes  = alipayClient.execute(toaTranReq);
             if(toaTranRes.isSuccess()){
-                logger.info("调用转账成功");
+                System.out.println("调用转账成功");
             } else {
-                logger.info("调用转账失败");
+                System.out.println("调用转账失败");
             }
 
 
@@ -124,14 +120,14 @@ public class AlipayDemo {
             AlipayFundTransOrderQueryResponse orderQueryRes = alipayClient.execute(orderQueryReq);
 
             if(orderQueryRes.isSuccess()){
-                logger.info("调用查询接口成功");
+                System.out.println("调用查询接口成功");
             } else {
-                logger.info("调用查询接口失败");
+                System.out.println("调用查询接口失败");
             }
 
         } catch (AlipayApiException e) {
             //处理异常
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
 //        String content="apiname=com.alipay.account.auth&app_id="+AlipayConfig.APP_ID+"&app_name=mc&auth_type=AUTHACCOUNT&biz_type=openservice&method=alipay.open.auth.sdk.code.get&pid=2088011999101771&product_id=APP_FAST_LOGIN&scope=kuaijie&target_id="+System.currentTimeMillis()+"&sign_type=RSA";
@@ -139,16 +135,16 @@ public class AlipayDemo {
 //        try {
 //            sign = AlipaySignature.rsaSign(content, AlipayConfig.APP_PRIVATE_KEY, CHARSET, AlipayConfig.sign_type);
 //        } catch (AlipayApiException e) {
-//            logger.error("操作异常", e);
+//            e.printStackTrace();
 //        }
 //        String enCodesign = null;
 //        try {
 //            enCodesign = URLEncoder.encode(sign, "UTF-8");
 //        } catch (UnsupportedEncodingException e) {
-//            logger.error("操作异常", e);
+//            e.printStackTrace();
 //        }
 //        String authInfo = content+"&sign="+enCodesign;
-//        logger.info("值：{}", authInfo);
+//        System.out.println(authInfo);
 //
 //    }
     }

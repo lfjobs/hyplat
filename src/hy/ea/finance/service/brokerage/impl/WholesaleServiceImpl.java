@@ -1,8 +1,5 @@
 package hy.ea.finance.service.brokerage.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.finance.ProCateRelate;
 import hy.ea.bo.finance.brokerage.PWhoBrokerage;
@@ -253,7 +250,7 @@ public class WholesaleServiceImpl implements WholesaleService {
                 this.baseBeanService.saveBeansListAndexecuteSqlsByParams(null, new String[]{sql1}, new Object[]{wholesale.getPpid()});
                 map.put("code", "200");
             } catch (Exception e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
                 map.put("code", "500");
             }
         } else {

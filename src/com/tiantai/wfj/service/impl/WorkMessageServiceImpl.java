@@ -1,8 +1,5 @@
 package com.tiantai.wfj.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -106,7 +103,7 @@ public class WorkMessageServiceImpl implements WorkMessageService{
 			msage.setMessage(content);
 			msage.sendMsg("【微分金平台】");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		//保存账号
 		List<String> slist = new ArrayList<String>();//极光推送设备号

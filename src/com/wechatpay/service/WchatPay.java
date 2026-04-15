@@ -1,8 +1,5 @@
 package com.wechatpay.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.SortedMap;
@@ -26,7 +23,6 @@ import com.wechatpay.utils.WeChatUtils;
 import hy.ea.util.Constant;
 
 public class WchatPay {
-	private static final Logger logger = LoggerFactory.getLogger(WchatPay.class);
 
 	// 微信支付成功后通知地址 必须要求80端口并且地址不能带参数
 
@@ -104,7 +100,7 @@ public class WchatPay {
 
 		WxPayDto pto = new GetWxOrderno().getPayNo(createOrderURL, xml);
 
-		logger.info("调试信息");
+		System.out.println("获取到的预支付ID：" + pto.getPrepay_id());
 
 		// 获取prepay_id后，拼接最后请求支付所需要的package
 
@@ -130,7 +126,7 @@ public class WchatPay {
 		finalPackages.setSignType("MD5");
 		finalPackages.setPaySign(finalsign);
 
-		logger.info("V3 jsApi package:: {}", finaPackage);
+		System.out.println("V3 jsApi package:" + finaPackage);
 		return finalPackages;
 	}
 
@@ -211,7 +207,7 @@ public class WchatPay {
 
 		WxPayDto pto = new GetWxOrderno().getPayNo(createOrderURL, xml);
 
-		logger.info("调试信息");
+		System.out.println("App微信支付获取到的预支付ID：" + pto.getPrepay_id());
 
 		// 获取prepay_id后，拼接最后请求支付所需要的package
 		String finalsign = "";
@@ -229,7 +225,7 @@ public class WchatPay {
 
 			// 要签名
 			finalsign = reqHandler.createSign(finalpackage);
-			logger.info("finalsign:: {}", finalsign);
+			System.out.println("finalsign:" + finalsign);
 		}
 		AppPackage appPackage = new AppPackage();
 		appPackage.setAppid(appid);
@@ -354,16 +350,16 @@ public class WchatPay {
 			certPath="D:/certwx/gzh/apiclient_cert.p12";
 		}
 		try {
-            logger.info("退款开始");
+            System.out.println("退款开始");
 			s = ClientCustomSSL.doRefund(createOrderURL, xml, mch_id,certPath);
-            logger.info("退款结束");
+            System.out.println("退款结束");
 			//查询退款订单申请详情
-            logger.info("查询开始");
+            System.out.println("查询开始");
 			payDto = searchOrder(out_trade_no,tpWxPayDto.getWechatbz());
-            logger.info("查询结束");
+            System.out.println("查询结束");
 
 		} catch (Exception e) {
-			logger.info("值：{}", e);
+			System.out.println(e);
 		}
 
 		return payDto;
@@ -605,7 +601,7 @@ public class WchatPay {
 			System.out.print("fail");
 		}
 	  }catch (Exception e){
-		  logger.error("操作异常", e);
+		  e.printStackTrace();
 	  }
 
 //		 tpWxPayDto.setRefundno("2017052210355800007");// 退款单号

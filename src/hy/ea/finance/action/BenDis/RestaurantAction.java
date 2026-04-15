@@ -57,7 +57,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class RestaurantAction {
-	private static final Logger logger = LoggerFactory.getLogger(RestaurantAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -540,14 +539,14 @@ public class RestaurantAction {
         if (posNum == null || posNum.equals("")) {
             if(cus!=null) {
                 staffid = cus.getStaffid();
-                logger.info("值：{}", staffid);
+                System.out.println(staffid);
             }
         }
         String[] ppid = pid.split(",");
         if (ppid != null) {
             for (int i = 0; i < ppid.length; i++) {
                 String star = ppid[i].trim();
-                logger.info("值：{}", star);
+                System.out.println(star);
                 if (posNum != null && !posNum.equals("")) {
                     String hql = " from SqSelfCart where pid = ? and posNum = ?";
                     SqSelfCart cc = (SqSelfCart) baseBeanService.getBeanByHqlAndParams(hql, new Object[]{star, posNum});
@@ -886,7 +885,7 @@ public class RestaurantAction {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
 
@@ -1174,7 +1173,7 @@ public class RestaurantAction {
                         response.sendRedirect(urlmicro);
                         return null;
                     } catch (IOException e) {
-                        logger.error("操作异常", e);
+                        e.printStackTrace();
                     }
 
                 } else {
@@ -1238,8 +1237,8 @@ public class RestaurantAction {
                 JSONObject jsonObj = new JSONObject();
                 boolean bl = mappService.signInOrCheckOut("pos".equals(pos)?"pos":cus.getSccId(), ppid);
                 if (bl == true||(bl==false&&("pos").equals(pos))) {
-                    logger.info("调试信息");
-                    logger.info("调试信息");
+                    System.out.println("scancode--------"+scancode);
+                    System.out.println("ppid--------"+ppid);
                     Object[] os=(Object[])cmService.testRecord(ppid);//实体强转数组
                     if(os!=null) {
                         for (int i = 0; i < os.length; i++) {
@@ -1249,7 +1248,7 @@ public class RestaurantAction {
                         }
 
                     }
-                    logger.info("调试信息");
+                    System.out.println("os--------"+os);
                     jsonObj.accumulate("os", os);
                 }
                 jsonObj.accumulate("bl", bl);

@@ -1,8 +1,5 @@
 package com.tiantai.telrec.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 
 import java.util.List;
@@ -41,7 +38,7 @@ public class WebQueryTelForCustomer extends ActionSupport {
 			response.getWriter().print(outString);
 			response.flushBuffer();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}

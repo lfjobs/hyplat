@@ -1,8 +1,5 @@
 package hy.ea.invoicing.dao.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.invoicing.dao.proDao;
 import hy.ea.util.Converter;
 import hy.plat.bo.BaseBean;
@@ -51,7 +48,7 @@ public class proDaoImpl implements proDao {
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 	
@@ -80,7 +77,7 @@ public class proDaoImpl implements proDao {
 		} catch (Exception e) {
 			String a=e.getMessage().toString().substring(3);
 			b=a.substring(a.indexOf(":")+1,a.indexOf("ORA"));
-			//logger.error("操作异常", e);
+			//e.printStackTrace();
 		}
 		return b;
 	}
@@ -133,8 +130,8 @@ public class proDaoImpl implements proDao {
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			logger.info("调试信息");  
-			logger.error("操作异常", e);
+			System.out.println(e.getMessage());  
+			e.printStackTrace();
 		}
 		return list;
 	}
@@ -192,8 +189,8 @@ public class proDaoImpl implements proDao {
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			logger.info("调试信息");  
-			logger.error("操作异常", e);
+			System.out.println(e.getMessage());  
+			e.printStackTrace();
 		}
 		return list;
 	}
@@ -250,8 +247,8 @@ public class proDaoImpl implements proDao {
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			logger.info("调试信息");  
-			logger.error("操作异常", e);
+			System.out.println(e.getMessage());  
+			e.printStackTrace();
 		}
 		return list;
 	}
@@ -284,8 +281,8 @@ public class proDaoImpl implements proDao {
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			logger.info("调试信息");  
-			logger.error("操作异常", e);
+			System.out.println(e.getMessage());  
+			e.printStackTrace();
 		}
 	}
 }

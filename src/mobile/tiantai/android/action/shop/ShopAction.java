@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action.shop;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -87,13 +84,13 @@ public class ShopAction extends ActionSupport implements ServletRequestAware,
 						jo.accumulate("company", temp);
 					}
 					result = jo;
-					logger.info("结果：: {}", result);
+					System.out.println("结果：" + result);
 				}
 			} else {
 				result = "word参数必传";
 			}
 		} catch (Exception e) {
-			logger.info("findComBy异常");
+			System.out.println("findComBy异常");
 		}
 
 		return Action.SUCCESS;
@@ -201,7 +198,7 @@ public class ShopAction extends ActionSupport implements ServletRequestAware,
 			}
 			result = jo;
 		} catch (NumberFormatException e) {
-			logger.info("findShopBy异常");
+			System.out.println("findShopBy异常");
 		}
 		return Action.SUCCESS;
 	}
@@ -286,7 +283,7 @@ public class ShopAction extends ActionSupport implements ServletRequestAware,
 				jo.accumulate("resultValue", "0");
 			}
 		} catch (Exception e) {
-			logger.info("findProductList异常");
+			System.out.println("findProductList异常");
 		}
 		if (jo.size() > 0) {
 			result = jo;
@@ -355,7 +352,7 @@ public class ShopAction extends ActionSupport implements ServletRequestAware,
 				}
 			}
 		} catch (Exception e) {
-			logger.info("findProductDetail异常");
+			System.out.println("findProductDetail异常");
 		}
 		if (jo.size() > 0) {
 			result = jo;
@@ -1772,7 +1769,7 @@ public class ShopAction extends ActionSupport implements ServletRequestAware,
 								.getCompanyID()));
 						cbi.setCashierBillsKey(null);
 						cbi.setBillsType("收款单");
-						logger.info("调试信息");
+						System.out.println("生成的收款单："+cbi.getJournalNum());
 						cbi.setStatus("40");
 						cbi.setCashierDate(new Date());
 						cbi.setStatusbill("01");
@@ -1818,7 +1815,7 @@ public class ShopAction extends ActionSupport implements ServletRequestAware,
 						
 
 					} catch (CloneNotSupportedException e) {
-						logger.error("操作异常", e);
+						e.printStackTrace();
 					}
 
 				}else if("3".equals(orderType))

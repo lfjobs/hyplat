@@ -29,7 +29,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static oracle.net.aso.C01.q;
 
 /**
  * 创建人: lnn
@@ -401,7 +400,7 @@ public class PManageAction extends ActionSupport {
                     try {
                         this.baseBeanService.update(aDocuments);
                     } catch (Exception e) {
-                        logger.error("操作异常", e);
+                        e.printStackTrace();
                     }
                     map.put("updateAPIDocuments", "修改成功！");
                     map.put("code", "200");
@@ -524,7 +523,7 @@ public class PManageAction extends ActionSupport {
             try {
                 this.baseBeanService.saveBeansListAndexecuteHqlsByParams(null,new String[]{hql}, new Object[]{parameterId});
             } catch (Exception e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
                 bl=false;
             }
 

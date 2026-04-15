@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.office.CarCheckDefect;
 import hy.ea.bo.office.CarCheckPlan;
@@ -183,7 +180,7 @@ public class CheckAction implements SessionAware{
 			pageForm = checkTaskSvs.getPageForm(pageNumber, (pageSize == 0 ? 10
 					: pageSize), taskbean);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "task";
 	}
@@ -291,7 +288,7 @@ public class CheckAction implements SessionAware{
 				}
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -316,7 +313,7 @@ public class CheckAction implements SessionAware{
 				checkPointItemSvs.delete(taskitembean);
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -481,7 +478,7 @@ public class CheckAction implements SessionAware{
 				checkPointItemSvs.update(pointitem);
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -508,7 +505,7 @@ public class CheckAction implements SessionAware{
 			}
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -668,7 +665,7 @@ public class CheckAction implements SessionAware{
 
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -771,7 +768,7 @@ public class CheckAction implements SessionAware{
 			pageForm = checkPointItemSvs.getPageForm(pageNumber,
 					(pageSize == 0 ? 10 : pageSize), pointitembean);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "pointitem";
 	}
@@ -820,7 +817,7 @@ public class CheckAction implements SessionAware{
 				checkPointItemSvs.save(pointitembean);
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -880,7 +877,7 @@ public class CheckAction implements SessionAware{
 					.getPageForm((pageNumber == 0 ? 1 : pageNumber),
 							(pageSize == 0 ? 10 : pageSize), resultsbean);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "results";
@@ -916,7 +913,7 @@ public class CheckAction implements SessionAware{
 							(pageSize == 0 ? 10 : pageSize), resultsbean);
 			List<ViewCarcheckresults> list = checkResultsSvs.findByProperty("companyid", account.getCompanyID());
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "chart";
 	}*/

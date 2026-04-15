@@ -1,8 +1,5 @@
 package hy.ea.finance.action.BenDis;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 
 import hy.ea.bo.finance.BenDis.JoinFans;
@@ -39,7 +36,6 @@ import com.tiantai.wfj.util.SessionWrap;
 @Controller
 @Scope("prototype")
 public class ResourseNetwork {
-	private static final Logger logger = LoggerFactory.getLogger(ResourseNetwork.class);
 
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -391,7 +387,7 @@ public class ResourseNetwork {
 				try {
 					
 
-					logger.info("值：{}", chooseCusType);
+					System.out.println(chooseCusType);
 					//代理商级别以上
 					if (((int)Integer.parseInt(chooseCusType))<=5) {
      
@@ -450,7 +446,7 @@ public class ResourseNetwork {
 					}
    
 				} catch (Exception e) {
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 				
 				String sqlcount = "select count(*) from ("+str+")";
@@ -461,7 +457,7 @@ public class ResourseNetwork {
 				this.result = jo.toString();
 			} catch (Exception e) {
 				
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 	       
 
@@ -773,7 +769,7 @@ public class ResourseNetwork {
 			
 
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			HttpServletRequest  request = ServletActionContext.getRequest();
 			request.setAttribute("countlist",listt);

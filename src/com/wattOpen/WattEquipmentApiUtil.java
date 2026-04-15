@@ -1,8 +1,8 @@
 package com.wattOpen;
 
-/*import cn.hutool.core.codec.Base64;
+import cn.hutool.core.codec.Base64;
 import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpResponse;*/
+import cn.hutool.http.HttpResponse;
 import com.alibaba.fastjson.JSONObject;
 
 import java.util.*;

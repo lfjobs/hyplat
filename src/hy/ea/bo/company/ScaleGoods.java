@@ -72,17 +72,4 @@ public class ScaleGoods implements BaseBean ,java.io.Serializable{
 	public void setCompanyID(String companyID) {
 		this.companyID = companyID;
 	}
-
-	@Override
-	public String toString() {
-		return "\"ScaleGoods\":{" +
-				"\"sgKey\":\"" + sgKey + '\"' +
-				", \"sgID\":\"" + sgID + '\"' +
-				", \"unitOfMeasureCode\":\"" + unitOfMeasureCode + '\"' +
-				", \"plu\":" + plu +
-				", \"alternativeItemID\":\"" + alternativeItemID + '\"' +
-				", \"goodsID\":\"" + goodsID + '\"' +
-				", \"companyID\":\"" + companyID + '\"' +
-				"},";
-	}
 }

@@ -1,8 +1,5 @@
 package hy.ea.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.portmanage.APIDocuments;
 import hy.ea.bo.portmanage.Project;
 import hy.ea.service.PManageService;
@@ -156,7 +153,7 @@ public class PManageServiceImpl implements PManageService {
             this.baseBeanDao.saveBeansListAndexecuteHqlsByParams(null, new String[]{hql}, new Object[]{portId});
             this.baseBeanDao.saveBeansListAndexecuteHqlsByParams(null, new String[]{hql1}, new Object[]{portId});
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             bl = false;
         }
         return bl;
@@ -191,7 +188,7 @@ public class PManageServiceImpl implements PManageService {
             String hql = "delete from APIDocuments where documentsId = ?";
             this.baseBeanDao.saveBeansListAndexecuteHqlsByParams(null, new String[]{hql}, new Object[]{documentsId});
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             bl = false;
         }
         return bl;
@@ -205,7 +202,7 @@ public class PManageServiceImpl implements PManageService {
             String hql = "delete from Project where projectId = ?";
             this.baseBeanDao.saveBeansListAndexecuteHqlsByParams(null, new String[]{hql}, new Object[]{projectId});
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             bl = false;
         }
         return bl;

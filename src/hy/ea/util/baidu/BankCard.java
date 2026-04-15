@@ -1,8 +1,5 @@
 package hy.ea.util.baidu;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import com.wechat.bo.sft.AccountInfo;
 import net.sf.json.JSONObject;
@@ -13,7 +10,6 @@ import java.net.URLEncoder;
  * 银行卡识别
  */
 public class BankCard {
-	private static final Logger logger = LoggerFactory.getLogger(BankCard.class);
 
     /**
      * 重要提示代码中所需工具类
@@ -41,7 +37,7 @@ public class BankCard {
             String accessToken = AuthService.getAuth();
 
             String result = HttpUtil.post(url, accessToken, param);
-            logger.info("值：{}", result);
+            System.out.println(result);
             JSONObject jo = JSONObject.fromObject(result);
             JSONObject jsonObject = jo.getJSONObject("result");
             accountInfo.setAccount_number(jsonObject.getString("bank_card_number"));
@@ -51,7 +47,7 @@ public class BankCard {
 
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return null;
     }

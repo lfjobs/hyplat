@@ -1,8 +1,5 @@
 package hy.ea.production.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import hy.ea.bo.company.CcomCom;
 import hy.ea.bo.human.Audition;
@@ -413,7 +410,7 @@ public class BidsRecruitServiceImpl implements BidsRecruitService {
 			msage.setMessage(smscont.toString());
 			msage.sendMsg("【数字地球】");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		//极光推送

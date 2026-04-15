@@ -1,8 +1,5 @@
 package hy.ea.util.milvus.Xfyun;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -16,7 +13,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class SparkHttpClient {
-	private static final Logger logger = LoggerFactory.getLogger(SparkHttpClient.class);
 
     /**
      * 向讯飞 Spark Chat 接口发送请求
@@ -61,7 +57,7 @@ public class SparkHttpClient {
             body.put("header", header);
             body.put("parameter", parameter);
             body.put("payload", new JSONObject().put("messages",messages));
-            logger.info("调试信息");
+            System.out.println(body.toString());
             // 3️⃣ 写出请求体
             try (OutputStream os = connection.getOutputStream()) {
                 os.write(body.toString().getBytes(StandardCharsets.UTF_8));
@@ -83,7 +79,7 @@ public class SparkHttpClient {
             return response.toString();
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "{\"error\": \"" + e.getMessage() + "\"}";
         } finally {
             if (connection != null) {
@@ -141,9 +137,9 @@ public class SparkHttpClient {
         // 2️⃣ 发送请求
         String result = sendSparkRequest(requestUrl, appId, jsonObject.toString());
 //
-        logger.info("✅ 响应结果：");
-        logger.info("值：{}", result);
+        System.out.println("✅ 响应结果：");
+        System.out.println(result);
         float[] floats = parserMessage(result);
-        logger.info("调试信息");
+        System.out.println(Arrays.toString(floats));
     }
 }

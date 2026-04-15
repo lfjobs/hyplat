@@ -1,8 +1,5 @@
 package hy.ea.collage.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.company.CcomCom;
 import hy.ea.bo.finance.RecentViewProCate;
 import hy.ea.bo.human.Staff;
@@ -211,7 +208,7 @@ public class PhlIndexServiceImpl implements PhlIndexSerivce {
 		           }
 		           
 		        } catch (IOException e) {
-		            logger.error("操作异常", e);
+		            e.printStackTrace();
 		        }
 		         }
 		}
@@ -283,7 +280,7 @@ public class PhlIndexServiceImpl implements PhlIndexSerivce {
 				}
 					
 			}
-			//logger.info("调试信息");
+			//System.out.println("匹配到的内容："+srcList);
       return srcList; 
     } 
     

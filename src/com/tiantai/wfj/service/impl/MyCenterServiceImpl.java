@@ -1,8 +1,5 @@
 package com.tiantai.wfj.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
 import com.tiantai.wfj.service.MyCenterService;
@@ -255,7 +252,7 @@ public class MyCenterServiceImpl
 	public static void main(String[] args) {
 		for (int i=0;i<10;i++){
 			UUID uuid = UUID.randomUUID();
-			logger.info("调试信息");
+			System.out.println(uuid.toString().replace("-",""));
 		}
 	}
 }

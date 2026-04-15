@@ -1,8 +1,5 @@
 package com.tiantai.telrec.tool;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
@@ -69,7 +66,7 @@ public class customerListToxmlForChart extends ListToXmlForChart {
 								.intValue()));
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return doc2String(document);
 	}

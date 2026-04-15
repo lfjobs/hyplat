@@ -1,8 +1,5 @@
 package hy.ea.driving.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -25,7 +22,6 @@ import net.sf.json.JsonConfig;
 
 import com.opensymphony.xwork2.ActionContext;
 public class CarProductregisterAction {
-	private static final Logger logger = LoggerFactory.getLogger(CarProductregisterAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -362,7 +358,7 @@ public class CarProductregisterAction {
 					}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		}
 		
@@ -383,7 +379,7 @@ public class CarProductregisterAction {
 				result=json.toString();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			return "success";
 		}

@@ -1,8 +1,5 @@
 package com.tiantai.telrec.dao.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -98,7 +95,7 @@ public class TelrecTelInfoDaoImpl implements TelrecTelInfoDao {
 
 			list = query.list();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} finally {
 			return list;
 		}
@@ -133,7 +130,7 @@ public class TelrecTelInfoDaoImpl implements TelrecTelInfoDao {
 
 			list = query.list();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} finally {
 			return list;
 		}
@@ -207,7 +204,7 @@ public class TelrecTelInfoDaoImpl implements TelrecTelInfoDao {
 					+ this.ONEDAYCOUNT));
 		}
 		query.setMaxResults(rp);
-		// logger.info("调试信息");
+		// System.out.println(pages*rp+1);
 		query.setFirstResult((pages - 1) * rp );
 		List list = query.list();
 		return list;

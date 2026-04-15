@@ -17,7 +17,6 @@ import java.util.Base64;
 @Controller
 @Scope("prototype")
 public class CarManageActionUtiles {
-	private static final Logger logger = LoggerFactory.getLogger(CarManageActionUtiles.class);
     private Logger logger = LoggerFactory.getLogger(CarManageActionUtiles.class);
     /**
      * 组装显示器需要显示的内容，显示器显示的内容可以进行自定义
@@ -51,7 +50,7 @@ public class CarManageActionUtiles {
         }else {
             info= LID+DM+DS+DT+DR+FINDEX+FLAGS+TCGreen+TL+TEXT;
         }
-        logger.info("调试信息");
+        System.out.println("第"+LIDInfo+"组装的信息："+info);
         return info;
     }
 
@@ -88,25 +87,25 @@ public class CarManageActionUtiles {
         String voideInfo=VF+VTL+VOICE;
         //计算data数据位长度DL（计算之后才能计算校验位）
         String data=SF+GST+TEXT_CONTEXT_NUMBER+oneInfo+separate+towInfo+end+voideInfo+end;
-        logger.info("调试信息");
+        System.out.println("计算data成都DL的原始数据："+data);
         Integer DLLength=(data.length()/2);//data长度
         String DLLengthInfo=Integer.toHexString(DLLength);
         if(DLLengthInfo.length()<=1){
             DLLengthInfo="0"+DLLengthInfo;
         }
-        logger.info("值：{}", DLLengthInfo);
+        System.out.println(DLLengthInfo);
         DL=DLLengthInfo;
         String infos=info+DL+SF+GST+TEXT_CONTEXT_NUMBER+oneInfo+separate+towInfo+end+voideInfo+end;
         //最后校验位的计算
         String checkCode = getCheckCode(infos);
         //完整数据
         infos=infos+checkCode;
-        logger.info("调试信息");
+        System.out.println("完整组装好的数据："+infos);
         //base64处理
         byte[] byteArray = hexToByteArray(infos);
         byte base64_data[] = Base64.getEncoder().encode(byteArray);
         String base64_str = new String(base64_data);
-        logger.info("调试信息");
+        System.out.println("base64之后的数据："+base64_str);
         return base64_str;
     }
 
@@ -120,7 +119,7 @@ public class CarManageActionUtiles {
         try {
             utf8Bytes=text.getBytes("GB2312");
         }catch (Exception e){
-            logger.info("调试信息");
+            System.out.println(e.getMessage());
         }
         String txtInfo = new BigInteger(1,utf8Bytes).toString(16);
         return txtInfo;
@@ -136,10 +135,10 @@ public class CarManageActionUtiles {
         try {
             utf8Bytes=text.getBytes("GB2312");
         }catch (Exception e){
-            logger.info("调试信息");
+            System.out.println(e.getMessage());
         }
         String txtInfo = new BigInteger(1,utf8Bytes).toString(16);
-        logger.info("调试信息");
+        System.out.println("data数据位："+txtInfo);
         String behavior="01";//立即执行
 
         Integer textLength=(txtInfo.length()/2)+1;//data长度（为什么要+1不清楚，反正+1计算出来时对的）
@@ -151,11 +150,11 @@ public class CarManageActionUtiles {
         String txt="0064FFFF"+command+textLengthInfo+behavior+txtInfo;
         String checkCode=getCheckCode(txt);
         txt = txt+checkCode;
-        logger.info("值：{}", txt);
+        System.out.println(txt);
         byte[] byteArray = hexToByteArray(txt);
         byte base64_data[] = Base64.getEncoder().encode(byteArray);
         String base64_str = new String(base64_data);
-        logger.info("值：{}", base64_str);
+        System.out.println(base64_str);
         return base64_str;
     }
 
@@ -206,7 +205,7 @@ public class CarManageActionUtiles {
     public static String getCheckCode(String info) {
         byte[] byteArray = hexToByteArray(info);
         int crc = calculate(byteArray);
-        logger.info("值：{}", crc);
+        System.out.println(crc);
         String hexString = Integer.toHexString(crc);
         //为校验码补0
         if(hexString.length()<=3){

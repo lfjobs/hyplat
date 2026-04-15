@@ -1,8 +1,5 @@
 package hy.ea.driving.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.DrivingSchool.TbJpStudentInfo;
 import hy.ea.bo.DrivingSchool.TbJpTeacher;
 import hy.ea.bo.human.Staff;
@@ -76,7 +73,7 @@ public class StaffManageServiceImpl implements StaffManageService{
             baseBeanService.update(staff);
             baseBeanService.update(coach);
         }catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
     }
@@ -120,10 +117,10 @@ public class StaffManageServiceImpl implements StaffManageService{
             out.write(buffer);
             out.close();
         } catch (FileNotFoundException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
 

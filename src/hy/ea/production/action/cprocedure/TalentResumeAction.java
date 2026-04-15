@@ -1,8 +1,5 @@
 package hy.ea.production.action.cprocedure;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.util.SessionWrap;
@@ -28,7 +25,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class TalentResumeAction {
-	private static final Logger logger = LoggerFactory.getLogger(TalentResumeAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Autowired
@@ -239,7 +235,7 @@ public class TalentResumeAction {
 				 
 				 msg.setMessage(smscont.toString());
 				 String reStr = msg.sendMsg();
-				 logger.info("值：{}", reStr);
+				 System.out.println(reStr);
 				 }
 			 }
 		 }

@@ -1,8 +1,5 @@
 package hy.ea.driving.action.elkc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.DrivingSchool.elyc.TbElycTeacherRScheduling;
@@ -25,7 +22,6 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 public class ElkcTeacherSchedulingAction {
-	private static final Logger logger = LoggerFactory.getLogger(ElkcTeacherSchedulingAction.class);
 
     @Resource
     private BaseBeanService baseBeanService;
@@ -141,7 +137,7 @@ public class ElkcTeacherSchedulingAction {
             try {
                 teacherPbService.deleteTeacherPbById(teacherRScheduling.getTrsId());
             } catch (Exception e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
 
         }

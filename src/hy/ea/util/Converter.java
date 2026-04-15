@@ -1,8 +1,5 @@
 package hy.ea.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
@@ -17,7 +14,6 @@ import java.util.Collection;
  *
  */
 public class Converter {
-	private static final Logger logger = LoggerFactory.getLogger(Converter.class);
 	/**
 	 * 匹配指定class中数据,并返回包含get和set方法的object
 	 * 
@@ -113,7 +109,7 @@ public class Converter {
 				setter.invoke(object, cache);
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 

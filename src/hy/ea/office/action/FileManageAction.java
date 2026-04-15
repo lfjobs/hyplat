@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Company;
@@ -48,7 +45,6 @@ import com.zhuozhengsoft.pageoffice.FileSaver;
 @Controller
 @Scope("prototype")
 public class FileManageAction {
-	private static final Logger logger = LoggerFactory.getLogger(FileManageAction.class);
 	private int pageNumber;
 	private InputStream excelStream;
 	private PageForm pageForm;
@@ -197,7 +193,7 @@ public class FileManageAction {
 		beans.add(logbook);
 		baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, null, null);
     	}catch(Exception e){
-    		logger.error("操作异常", e);
+    		e.printStackTrace();
     	}
 		return "success";
     }
@@ -252,7 +248,7 @@ public class FileManageAction {
 	 				map.put("result", pdfPath);
 	 			} catch (Exception e) {
 	 			
-	 				logger.error("操作异常", e);
+	 				e.printStackTrace();
 	 			}
 	 	    }
 		
@@ -282,12 +278,12 @@ public class FileManageAction {
 			
 			fs.saveToFile(path+docPath);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} finally {
 			try {
 				fs.close();
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		return "none";

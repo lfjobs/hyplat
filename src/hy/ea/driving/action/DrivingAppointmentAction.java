@@ -1,8 +1,5 @@
 package hy.ea.driving.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -322,7 +319,7 @@ public class DrivingAppointmentAction implements SessionAware{
 		try {
 			dc.add(Restrictions.eq("appointmentdate", dateFormat.parse(dateFormat.format(new Date()))));
 		} catch (ParseException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return dc;
 	}

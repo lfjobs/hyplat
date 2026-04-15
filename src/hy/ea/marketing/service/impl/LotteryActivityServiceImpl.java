@@ -1,8 +1,5 @@
 package hy.ea.marketing.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.service.GoldOrderService;
 import com.tiantai.wfj.util.SessionWrap;
@@ -531,10 +528,10 @@ public class LotteryActivityServiceImpl implements LotteryActivitySerivce
             out.write(buffer);
             out.close();
         } catch (FileNotFoundException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
 
@@ -554,7 +551,7 @@ public class LotteryActivityServiceImpl implements LotteryActivitySerivce
         try {
             date = dateFormat.parse(dateString);
         } catch (ParseException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         // java.sql.Timestamp dateTime = new java.sql.Timestamp(date.getTime());
         return new Timestamp(date.getTime());// Timestamp类型,timeDate.getTime()返回一个long型
@@ -1200,7 +1197,7 @@ public class LotteryActivityServiceImpl implements LotteryActivitySerivce
             beans.add(prizeDesc);
             baseBeanDao.saveBeansListAndexecuteHqlsByParams(beans,null,null);
         }catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
             flag = false;
         }
         return flag;
@@ -1294,7 +1291,7 @@ public class LotteryActivityServiceImpl implements LotteryActivitySerivce
         try {
             contentToFileService.saveContent(id, content, path);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "/upload_files/meetingActivity/" + id
                 + UploadContentToFileService.suffix;
@@ -1415,7 +1412,7 @@ public class LotteryActivityServiceImpl implements LotteryActivitySerivce
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
     }

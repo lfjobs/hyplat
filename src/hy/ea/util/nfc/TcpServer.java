@@ -1,8 +1,5 @@
 package hy.ea.util.nfc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.util.MqttService;
 import hy.ea.office.action.CarMqttService;
 import io.grpc.netty.shaded.io.netty.bootstrap.ServerBootstrap;
@@ -19,7 +16,6 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class TcpServer {
-	private static final Logger logger = LoggerFactory.getLogger(TcpServer.class);
 
     private EventLoopGroup bossGroup;
     private EventLoopGroup workerGroup;
@@ -50,7 +46,7 @@ public class TcpServer {
                 if (future.isSuccess()) {
                     serverChannel = future.channel();
 
-                    logger.info("TCP Server 启动成功，端口 9000");
+                    System.out.println("TCP Server 启动成功，端口 9000");
 
                 } else {
                     System.err.println("TCP Server 启动失败");
@@ -62,7 +58,7 @@ public class TcpServer {
 
     @PreDestroy
     public void stop() {
-        logger.info("TCP Server 正在关闭...");
+        System.out.println("TCP Server 正在关闭...");
 
         if (serverChannel != null) {
             serverChannel.close();

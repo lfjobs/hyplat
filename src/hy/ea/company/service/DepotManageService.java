@@ -84,5 +84,4 @@ public interface DepotManageService {
      * @return
      */
     List<Object> ParenByDepotid(String depotid, String companyId, int selectType);
-
 }

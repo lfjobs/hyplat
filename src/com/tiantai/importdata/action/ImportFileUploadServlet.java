@@ -1,8 +1,5 @@
 package com.tiantai.importdata.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -62,9 +59,9 @@ public class ImportFileUploadServlet extends HttpServlet {
 				}
 			}
 		} catch (FileUploadException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 }

@@ -1,8 +1,5 @@
 package com.tiantai.wfj.front;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -46,7 +43,6 @@ import net.sf.json.JSONObject;
 @Controller
 @Scope("prototype")
 public class WfjEcusRegisterAction {
-	private static final Logger logger = LoggerFactory.getLogger(WfjEcusRegisterAction.class);
 	@Resource
 	private  BaseBeanService baseBeanService;
 	@Resource
@@ -250,7 +246,7 @@ public class WfjEcusRegisterAction {
 				response.sendRedirect(request.getContextPath()+"/ea/wfjshop/ea_register.jspa?user="+user+"&ccompanyId="+ccompanyId+"&paramter=error");
 			}
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 
@@ -292,7 +288,7 @@ public class WfjEcusRegisterAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}

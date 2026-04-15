@@ -1,8 +1,5 @@
 package hy.ea.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.ExcelBean;
 import hy.ea.service.ShowExcelService;
 import hy.plat.bo.BaseBean;
@@ -108,7 +105,7 @@ public class ShowExcelServiceImpl implements ShowExcelService {
 			os.close();   
 			list.clear();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return new ByteArrayInputStream(os.toByteArray());
@@ -242,7 +239,7 @@ public class ShowExcelServiceImpl implements ShowExcelService {
 				os.close();   
 				list.clear();
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			
 			return new ByteArrayInputStream(os.toByteArray());
@@ -371,7 +368,7 @@ public class ShowExcelServiceImpl implements ShowExcelService {
 				os.close();   
 				list.clear();
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			
 			return new ByteArrayInputStream(os.toByteArray());
@@ -388,8 +385,8 @@ public class ShowExcelServiceImpl implements ShowExcelService {
 			  workBook = Workbook.getWorkbook(is);   
 			  
 			  Sheet sheet = workBook.getSheet(0);
-			  //logger.info("调试信息");//查看sheet的列   
-	         // logger.info("调试信息");//查看sheet的行   
+			  //System.out.println(sheet.getColumns());//查看sheet的列   
+	         // System.out.println(sheet.getRows());//查看sheet的行   
 	          Cell cell = null;//
 	          for (int j = 0; j < sheet.getRows(); j++) {   
 	        	  String[] dataCells = new String[sheet.getColumns()+1];   
@@ -402,7 +399,7 @@ public class ShowExcelServiceImpl implements ShowExcelService {
 	          }
 	          workBook.close();//记得关闭   
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return list;
 	}
@@ -537,8 +534,8 @@ public class ShowExcelServiceImpl implements ShowExcelService {
 						i++;
 				}
 			} catch (Exception e) {
-				logger.info("sssssssssssssssss");
-		        logger.error("操作异常", e);
+				System.out.println("sssssssssssssssss");
+		        e.printStackTrace();
 				
 			}
 //			int s = list.size()+5;
@@ -564,7 +561,7 @@ public class ShowExcelServiceImpl implements ShowExcelService {
 			os.close();   
 			list.clear();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return new ByteArrayInputStream(os.toByteArray());
@@ -723,7 +720,7 @@ public class ShowExcelServiceImpl implements ShowExcelService {
 			os.close();
 			list.clear();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return new ByteArrayInputStream(os.toByteArray());

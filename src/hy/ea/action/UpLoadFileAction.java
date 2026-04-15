@@ -1,8 +1,5 @@
 package hy.ea.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.service.UpLoadFileService;
 import net.sf.json.JSONObject;
 import org.apache.struts2.ServletActionContext;
@@ -14,7 +11,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UpLoadFileAction {
-	private static final Logger logger = LoggerFactory.getLogger(UpLoadFileAction.class);
     @Resource
     private UpLoadFileService fileService;
 
@@ -40,7 +36,7 @@ public class UpLoadFileAction {
         try {
            map = fileService.upLoadFile(chunk, chunks, name, file, path, companyID);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         JSONObject oj = JSONObject.fromObject(map);
         result = oj.toString();

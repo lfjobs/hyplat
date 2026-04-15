@@ -1,8 +1,5 @@
 package hy.ea.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -26,7 +23,6 @@ import sun.misc.BASE64Encoder;
  * Created by Administrator on 2019-10-28.
  */
 public class BankCardVerifiUtil {
-	private static final Logger logger = LoggerFactory.getLogger(BankCardVerifiUtil.class);
     //腾讯云银行卡四要素接口
     //微信公众号扫码登录
     public static String calcAuthorization(String source, String secretId, String secretKey, String datetime)
@@ -67,13 +63,13 @@ public class BankCardVerifiUtil {
         try {
             result = BankCardVerifiUtil.jiekou(map);
         } catch (NoSuchAlgorithmException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } catch (InvalidKeyException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
-        logger.info("值：{}", result);
+        System.out.println(result);
     }
 
     public static String jiekou(Map<String, String> map) throws NoSuchAlgorithmException, UnsupportedEncodingException, InvalidKeyException {
@@ -150,10 +146,10 @@ public class BankCardVerifiUtil {
             while ((line = in.readLine()) != null) {
                 result += line;
             }
-            logger.info("值：{}", result);
+            System.out.println(result);
         } catch (Exception e) {
-            logger.info("值：{}", e);
-            logger.error("操作异常", e);
+            System.out.println(e);
+            e.printStackTrace();
         } finally {
             try {
                 if (in != null) {

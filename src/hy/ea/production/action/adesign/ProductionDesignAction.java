@@ -5,9 +5,6 @@
 
 package hy.ea.production.action.adesign;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
@@ -45,7 +42,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class ProductionDesignAction {
-	private static final Logger logger = LoggerFactory.getLogger(ProductionDesignAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -374,7 +370,7 @@ public class ProductionDesignAction {
 	private DetachedCriteria getListTree() {
 		Map session = ActionContext.getContext().getSession();
 		CAccount account = (CAccount)session.get("account");
-		logger.info("account should not null===: {}", account);
+		System.out.println("account should not null===" + account);
 		DetachedCriteria dc = DetachedCriteria.forClass(ProductPackaging.class);
 		dc.add(Restrictions.eq("companyID", account.getCompanyID()));
 		dc.add(Restrictions.isNull("parentId"));

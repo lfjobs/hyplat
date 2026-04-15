@@ -1,8 +1,5 @@
 package hy.ea.util.elkc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,7 +12,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 public class DateUtilElkc {
-	private static final Logger logger = LoggerFactory.getLogger(DateUtilElkc.class);
 	private static final long serialVersionUID = 1L;
 	private static Log log = LogFactory.getLog(DateUtilElkc.class);
 	public static String DatePattern = "yyyy-MM-dd";
@@ -33,10 +29,10 @@ public class DateUtilElkc {
 		try {
 			SimpleDateFormat e = new SimpleDateFormat(DateTimePattern);
 			String strDate = e.format(new Date());
-			logger.info("值：{}", strDate);
+			System.out.println(strDate);
 			return convertStringToDate(DateTimePattern, strDate);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return null;
 		}
 	}
@@ -45,10 +41,10 @@ public class DateUtilElkc {
 		try {
 			SimpleDateFormat e = new SimpleDateFormat(DatePattern);
 			String strDate = e.format(new Date());
-			logger.info("值：{}", strDate);
+			System.out.println(strDate);
 			return convertStringToDate(DatePattern, strDate);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return null;
 		}
 	}
@@ -150,7 +146,7 @@ public class DateUtilElkc {
 				date = df.parse(strDate);
 				return date;
 			} catch (ParseException e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 				throw new ParseException(e.getMessage(), e.getErrorOffset());
 			}
 		}
@@ -202,7 +198,7 @@ public class DateUtilElkc {
 			return aDate;
 		} catch (ParseException e) {
 			log.error("Could not convert \'" + strDate + "\' to a date, throwing exception");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			throw new ParseException(e.getMessage(), e.getErrorOffset());
 		}
 	}
@@ -384,15 +380,15 @@ public class DateUtilElkc {
 		try {
 			SimpleDateFormat e = new SimpleDateFormat(pattern);
 			String strDate = e.format(datestr);
-			logger.info("值：{}", strDate);
+			System.out.println(strDate);
 			return convertStringToDate(pattern, strDate);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return null;
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
-		logger.info("调试信息");
+		System.out.println(convertStringToDate("2015-04-02").compareTo(new Date()));
 	}
 }

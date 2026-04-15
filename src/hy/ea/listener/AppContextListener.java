@@ -1,8 +1,5 @@
 package hy.ea.listener;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -25,15 +22,15 @@ public class AppContextListener implements ServletContextListener {
         if (dataSource != null) {
             try {
                 dataSource.close();
-                logger.info("✅ C3P0 数据源关闭成功");
+                System.out.println("✅ C3P0 数据源关闭成功");
             } catch (Exception e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
         }
     }
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        logger.info("🌱 Web 应用已启动");
+        System.out.println("🌱 Web 应用已启动");
     }
 }

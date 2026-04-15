@@ -12,7 +12,6 @@ import com.wechat.bo.sft.SubOrders;
 import com.wechatpay.bo.WxPayDto;
 import com.wechatpay.utils.WeChatUtils;
 import hy.ea.bo.Company;
-import hy.ea.bo.Enroll;
 import hy.ea.bo.company.DepotManage;
 import hy.ea.bo.finance.BenDis.*;
 import hy.ea.bo.finance.*;
@@ -124,8 +123,10 @@ public class transferServiceImpf implements transferService {
                         .getListBeanByHqlAndParams(
                                 hqlg,
                                 new Object[]{cashierBills.getCashierBillsID()});
+
                 for (int i = 0; i < goList.size(); i++) {
                     GoodsBills goodsBills = (GoodsBills) goList.get(i);
+
                     if (goodsBills.getPremiums() != null && goodsBills.getPremiums().equals("1")) {
                         continue;
                     }
@@ -205,10 +206,10 @@ public class transferServiceImpf implements transferService {
         } catch (Exception e) {
             String a = e.toString();
             String b = a.substring(a.indexOf(":") + 1);
-            logger.error("操作异常", e);
+            e.printStackTrace();
             str = b;
         }
-        //logger.info("值：{}", str);
+        //System.out.println(str);
         return str;
     }
 
@@ -219,14 +220,14 @@ public class transferServiceImpf implements transferService {
      * @return
      */
     private void addWillfishiHdBill(String journalNum,String companyID,List<String> liststr){
-        logger.info("addWillfishiHdBill");
+        System.out.println("addWillfishiHdBill");
         List<BaseBean> beans = new ArrayList<BaseBean>();
 
       try {
           PayBackupBill pb = (PayBackupBill) baseBeanDao.getBeanByHqlAndParams("from PayBackupBill where journalNum = ?", new Object[]{journalNum});
           //确认订单是合单支付
           if (pb != null && "1".equals(pb.getHdpay())) {
-              logger.info("pb");
+              System.out.println("pb");
 
               HdBackupBill hdBackupBill = (HdBackupBill) baseBeanDao.getBeanByHqlAndParams("from HdBackupBill where journalNum = ?", new Object[]{journalNum});
 
@@ -246,7 +247,7 @@ public class transferServiceImpf implements transferService {
                       beans.add(hdBackupBill);
                       pb.setHdfinish("1");
                       beans.add(pb);
-                      logger.info("调试信息");
+                      System.out.println("addBeans"+beans.size());
                       baseBeanDao.saveBeansListAndexecuteHqlsByParams(beans,null,null);
 
                   }
@@ -255,7 +256,7 @@ public class transferServiceImpf implements transferService {
               }
           }
       }catch (Exception e){
-          logger.error("操作异常", e);
+          e.printStackTrace();
       }
 
     }
@@ -363,7 +364,7 @@ public class transferServiceImpf implements transferService {
                                wxAccountDetail.setStaffName(staff.getStaffName());
                            }
                        }catch (Exception e){
-                           logger.error("操作异常", e);
+                           e.printStackTrace();
                        }
                    }else{
                        wxAccountDetail.setSztype("A");
@@ -373,19 +374,19 @@ public class transferServiceImpf implements transferService {
                            Staff staff = (Staff) baseBeanDao.getBeanByHqlAndParams(hql, new Object[]{hdBackupBill.getJournalNum()});
                            wxAccountDetail.setStaffName(staff.getStaffName());
                        }catch (Exception e){
-                           logger.error("操作异常", e);
+                           e.printStackTrace();
                        }
                    }
 
                    beans.add(wxMainAccount);
                    beans.add(wxMonthAccount);
                    beans.add(wxAccountDetail);
-                   logger.info("beans: {}", beans.size());
+                   System.out.println("beans" + beans.size());
                    baseBeanDao.executeHqlsByParmsList(beans, null, null);
                }
            }
         }catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
     }
@@ -425,7 +426,7 @@ public class transferServiceImpf implements transferService {
             msage.setMessage("产品消费返回微金币" + backup.getJbNum() + "个");
             msage.sendMsg("【微分金平台】");
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -467,10 +468,10 @@ public class transferServiceImpf implements transferService {
      * @param status 要改成的状态
      */
     public void getCoasUpdate(String cashid, String status) {
-        //	logger.info("开始调用-修改订单状态-存储过程");
+        //	System.out.println("开始调用-修改订单状态-存储过程");
         //调用修改订单状态存储过程
         transferDao.getCoasUpdate(cashid, status);
-        //	logger.info("调用-修改订单状态-存储过程结束");
+        //	System.out.println("调用-修改订单状态-存储过程结束");
     }
 
     /**
@@ -501,7 +502,7 @@ public class transferServiceImpf implements transferService {
             baseBeanDao.saveBeansListAndexecuteHqlsByParams(beanList, null, null);
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
     }
@@ -542,12 +543,12 @@ public class transferServiceImpf implements transferService {
 						+ "的订单，系统自动收货分配金币时出错，错误信息为：" + str);
 				String reStr;*/
                 //reStr = msage.sendMsg();
-                //	logger.info("值：{}", reStr);
+                //	System.out.println(reStr);
 
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return str;
     }
@@ -604,7 +605,7 @@ public class transferServiceImpf implements transferService {
             //logger.error("结束调用-金币充值-存储过程");
 
         } else {
-            logger.info("该订单已经生成过了");
+            System.out.println("该订单已经生成过了");
             //logger.error("该订单已经生成过了");
         }
 
@@ -747,9 +748,9 @@ public class transferServiceImpf implements transferService {
 //		        	  param.append(entry.getKey());
 //		        	  param.append("=");
 //		        	  param.append(entry.getValue());
-//		        	  //logger.info("调试信息");
+//		        	  //System.out.println(entry.getKey()+":"+entry.getValue());
 //		          }
-//		          //logger.info("调试信息");
+//		          //System.out.println("param:"+param.toString());
 //		          out.write(param.toString());
 //            }
 //            // flush输出流的缓冲
@@ -762,7 +763,7 @@ public class transferServiceImpf implements transferService {
 //                result.append(line);
 //            }
 //        } catch (Exception e) {
-//            logger.error("操作异常", e);
+//            e.printStackTrace();
 //        }
 //        //使用finally块来关闭输出流、输入流
 //        finally{
@@ -775,7 +776,7 @@ public class transferServiceImpf implements transferService {
 //                }
 //            }
 //            catch(IOException ex){
-//                logger.error("操作异常", ex);
+//                ex.printStackTrace();
 //            }
 //        }
 //        return result.toString();
@@ -835,9 +836,9 @@ public class transferServiceImpf implements transferService {
         try {
             HttpResponse response = HttpUtils.doGet(host, path, method, headers, querys);
             result = EntityUtils.toString(response.getEntity());//这个就是返回值呦
-            logger.info("值：{}", result);
+            System.out.println(result);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return result;
     }
@@ -852,7 +853,6 @@ public class transferServiceImpf implements transferService {
         CashierBills c = (CashierBills) baseBeanDao.getBeanByHqlAndParams("from CashierBills where cashierBillsID=?", new Object[]{cashid});
         List<BaseBean> gs = baseBeanDao.getListBeanByHqlAndParams("from GoodsBills where cashierBillsID=?", new Object[]{cashid});
         StatusEntity s = (StatusEntity) baseBeanDao.getBeanByHqlAndParams("from StatusEntity where cashierbillsid=?", new Object[]{cashid});
-        transferPay t = (transferPay) baseBeanDao.getBeanByHqlAndParams("from transferPay where cashierbillsid=?", new Object[]{cashid});
         if (c != null) {
             Delivery d = null;
             d = (Delivery) baseBeanDao.getBeanByHqlAndParams("from Delivery where cashierbillsid=?", new Object[]{cashid});
@@ -865,12 +865,7 @@ public class transferServiceImpf implements transferService {
                 d.setJournalnum(c.getjNumOrder());
                 d.setOrderid(serverService.getServerID("order"));
                 d.setSellermessage(c.getRemark());
-                if(t!=null&&t.getMapkey()!=null&&!t.getMapkey().equals("")){
-                   String pname=t.getMapval().substring(t.getMapval().indexOf("-",1)+1,t.getMapval().indexOf("-",2));
-                   String pcid=t.getMapval().substring(t.getMapval().indexOf("-",1)+1,t.getMapval().indexOf("-",2));
-                   d.setPurchaserid(pcid);
-                   d.setPurchasername(pname);
-                }
+                d.setPurchasername("未拣货");
                 d.setAdddate(new Date());
                 d.setStatus("01");
 
@@ -1023,8 +1018,7 @@ public class transferServiceImpf implements transferService {
                 b.setJournalnum(c.getjNumOrder());
                 b.setSendid(serverService.getServerID("send"));
                 b.setSellermessage(c.getRemark());
-                b.setPurchasername(d.getPurchasername());
-                b.setPurchaserid(d.getPurchaserid());
+                b.setPurchasername("未发货");
                 b.setCashierbillsid(c.getCashierBillsID());
                 b.setAdddate(new Date());
                 b.setStatus("01");
@@ -1115,8 +1109,7 @@ public class transferServiceImpf implements transferService {
                 b.setJournalnum(c.getjNumOrder());
                 b.setTransportid(serverService.getServerID("send"));
                 b.setSellermessage(c.getRemark());
-                b.setPurchasername(d.getPurchasername());
-                b.setPurchaserid(d.getPurchaserid());
+                b.setPurchasername("未送货");
                 b.setCashierbillsid(c.getCashierBillsID());
                 b.setAdddate(new Date());
                 b.setStatus("01");
@@ -1200,7 +1193,6 @@ public class transferServiceImpf implements transferService {
     public String addOverdraft(String cashid, String raddressId, String flag) throws Exception {
         CashierBills c = (CashierBills) baseBeanDao.getBeanByHqlAndParams("from CashierBills where cashierBillsID=?", new Object[]{cashid});
         StatusEntity s = (StatusEntity) baseBeanDao.getBeanByHqlAndParams("from StatusEntity where cashierbillsid=?", new Object[]{cashid});
-        transferPay t = (transferPay) baseBeanDao.getBeanByHqlAndParams("from transferPay where cashierbillsid=?", new Object[]{cashid});
         List<BaseBean> list_g = baseBeanDao.getListBeanByHqlAndParams("from GoodsBills where cashierBillsID=?", new Object[]{cashid});
         List<BaseBean> list = new ArrayList<BaseBean>();
         OverdraftBill b = null;
@@ -1212,12 +1204,7 @@ public class transferServiceImpf implements transferService {
             b.setOverdraftnum(serverService.getBillID(c.getCompanyID()));
             b.setJournalnum(c.getjNumOrder());
             b.setOverdraftid(serverService.getServerID("send"));
-            if(t!=null&&t.getMapkey()!=null&&!t.getMapkey().equals("")){
-                String pname=t.getMapval().substring(t.getMapval().indexOf("-",1)+1,t.getMapval().indexOf("-",2));
-                String pcid=t.getMapval().substring(t.getMapval().indexOf("-",1)+1,t.getMapval().indexOf("-",2));
-                b.setPurchaserid(pcid);
-                b.setPurchasername(pname);
-            }
+            b.setPurchasername("未发货");
             b.setCashierbillsid(c.getCashierBillsID());
             b.setAdddate(new Date());
             b.setStatus("01");
@@ -1379,7 +1366,7 @@ public class transferServiceImpf implements transferService {
                     baseBeanDao.saveBeansListAndexecuteSqlsByParams(null, new String[]{sql}, new Object[]{fkStatus,cashierBillsID});
                 }
             }catch (Exception e){
-                logger.error("操作异常", e);;
+                e.printStackTrace();;
             }
         }
 

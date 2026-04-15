@@ -1,8 +1,5 @@
 package hy.ea.marketing.action.supermaket;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tiantai.wfj.bo.Cart;
@@ -39,7 +36,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class SupermarketAction {
-	private static final Logger logger = LoggerFactory.getLogger(SupermarketAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -248,7 +244,7 @@ public class SupermarketAction {
                     //    logger.info("获取购物车商品数量" + goodNum);
                 } catch (Exception e) {
                     map.put("goodNum", goodNum);
-                    //  logger.error("操作异常", e);
+                    //  e.printStackTrace();
                     //  logger.error("获取购物车商品数量异常");
                 }
             }
@@ -298,7 +294,7 @@ public class SupermarketAction {
                     //   logger.info("获取购物车某个商品的数量" + goodNum);
                 } catch (Exception e) {
                     map.put("goodNum", goodNum);
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                     logger.error("获取购物车某个商品的数量异常");
                 }
             } else {
@@ -610,12 +606,12 @@ public class SupermarketAction {
             return "success";
         }
         List shoplist = pageForm.getList();
-        /*Map<String, Shop> shopMap = new HashMap<String, Shop>();
+        Map<String, Shop> shopMap = new HashMap<String, Shop>();
         List<Shop> result1 = new ArrayList<Shop>();
-        List<Goods> goodsList = new ArrayList<Goods>();*/
+        List<Goods> goodsList = new ArrayList<Goods>();
         for (Object good : goods) {
             Object[] obj=(Object[])good;
-            /*Goods g = new Goods();
+            Goods g = new Goods();
             g.setCompanyId(obj[0]==null?"":obj[0].toString());
             g.setCcompanyId(obj[1]==null?"":obj[1].toString());
             g.setCompanyName(obj[2]==null?"":obj[2].toString());
@@ -624,12 +620,12 @@ public class SupermarketAction {
             g.setPhotoPath(obj[5]==null?"":obj[5].toString());
             g.setGoodsName(obj[6]==null?"":obj[6].toString());
             g.setNum(obj[7]==null?"":obj[1].toString());
-            goodsList.add(g);*/
+            goodsList.add(g);
         }
 // 2. shoplist 转成 Shop 对象列表，并挂接商品
         for (Object b : shoplist) {
             Object[] obj=(Object[])b;
-            /*Shop shop = new Shop();
+            Shop shop = new Shop();
 
             shop.setCompanyId(obj[0]==null?"":obj[0].toString());
             shop.setCcompanyId(obj[1]==null?"":obj[1].toString());
@@ -638,11 +634,11 @@ public class SupermarketAction {
             shop.setPhone(obj[4]==null?"":obj[4].toString());
             shop.setGoodsList(new ArrayList<>());
             shopMap.put(obj[0].toString(),shop);
-            result1.add(shop);*/
+            result1.add(shop);
         }
 
         // 3. 挂商品到店铺（最多 3 个）
-        /*for (Goods g : goodsList) {
+        for (Goods g : goodsList) {
             if (g.getCompanyId() == null) continue;
             Shop shop = shopMap.get(g.getCompanyId());
             if (shop != null) {
@@ -651,13 +647,13 @@ public class SupermarketAction {
                     shopGoods.add(g);
                 }
             }
-        }*/
+        }
 
 
         if (pageForm==null||pageNumber>pageForm.getPageNumber()){
             return "success";
         }
-        //map.put("pageForm", result1);
+        map.put("pageForm", result1);
         map.put("pageCount", pageForm.getPageCount());
         map.put("recordCount", pageForm.getRecordCount());
         map.put("pageNumber", pageForm.getPageNumber());

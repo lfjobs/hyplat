@@ -1,7 +1,4 @@
 package hy.ea.util;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.InputStreamReader;
@@ -12,7 +9,6 @@ import java.util.Vector;
  *
  */
 public class GetNetMACShell {
-	private static final Logger logger = LoggerFactory.getLogger(GetNetMACShell.class);
 	private Process process = null;
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -50,7 +46,7 @@ public class GetNetMACShell {
 			Runtime sys = Runtime.getRuntime();
 			process = sys.exec(shellCommand);
 		} catch (Exception e) {
-			logger.info("调试信息");
+			System.out.println(e.toString());
 		}
 	}
 

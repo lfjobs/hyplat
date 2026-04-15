@@ -1,8 +1,5 @@
 package com.wechatpay.utils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 
 
@@ -23,7 +20,6 @@ import java.util.SortedMap;
 '============================================================================
 '*/
 public class Sha1Util {
-	private static final Logger logger = LoggerFactory.getLogger(Sha1Util.class);
 
 	public static String getNonceStr() {
 		Random random = new Random();
@@ -46,8 +42,8 @@ public class Sha1Util {
 			//要采用URLENCODER的原始值！
 		}
 		String params = sb.substring(0, sb.lastIndexOf("&"));
-//		logger.info("sha1之前:: {}", params);
-//		logger.info("调试信息");
+//		System.out.println("sha1之前:" + params);
+//		System.out.println("SHA1签名为："+getSha1(params));
 		return getSha1(params);
 	}
 	//Sha1签名

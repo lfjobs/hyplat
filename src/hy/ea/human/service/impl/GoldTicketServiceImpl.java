@@ -1,8 +1,5 @@
 package hy.ea.human.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -79,8 +76,8 @@ public class GoldTicketServiceImpl implements GoldTicketService{
 		
 		String cdid1 = idgec.getServerID("CashierBills");//用户金币出库单
 		String cdid2 = idgec.getServerID("CashierBills");//平台金币入库单
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println("用户金币出库单:"+cdid1);
+		System.out.println("平台金币入库单:"+cdid2);
 		//凭证号
 		String pzid1 = idgec.getBillID(company.getCompanyID());//用户金币出库单
 		String pzid2 = idgec.getBillID(company.getCompanyID());//平台金币入库单
@@ -221,7 +218,7 @@ public class GoldTicketServiceImpl implements GoldTicketService{
 		//测试规则  WfjGuize201701118RU8JA6IG60000000001  本地  WfjGuize20161227Z4S665XKBB0000000005
 		WfjJifenDetail edetail = new WfjJifenDetail();
 		edetail.setJifenDetailId(idgec.getServerID("WfjJifenDetail"));	
-		logger.info("调试信息");
+		System.out.println("详情:"+edetail.getJifenDetailId());
 		String temp = null;
 		BigDecimal tempjifen = new BigDecimal(0);
 		BaseBean bguize = beandao.getBeanByHqlAndParams("from WfjGuize where companyId=? and wfjGuizeId=?", new Object[]{Constant.COMPAYN_ID,"WfjGuize201701118RU8JA6IG60000000001"});
@@ -258,7 +255,7 @@ public class GoldTicketServiceImpl implements GoldTicketService{
 		//获得金币数人	本地 WfjGuize201701113KR9JGB8MT0000000001 测试 	WfjGuize2017011192CRSBGFZ70000000001
 		WfjJifenDetail adetail = new WfjJifenDetail();
 		adetail.setJifenDetailId(idgec.getServerID("WfjJifenDetail"));	
-		logger.info("调试信息");
+		System.out.println("获得金币详情:"+adetail.getJifenDetailId());
 		String atemp = null;
 		BigDecimal jinfen = new BigDecimal(0);
 		TEshopCusCom cus = (TEshopCusCom) baseBeanService.getBeanByHqlAndParams(" from TEshopCusCom where companyId = ? and acquiesce=? ", new Object[]{publicreceipts.getCompanyID(),"01"});				
@@ -301,7 +298,7 @@ public class GoldTicketServiceImpl implements GoldTicketService{
 		//积分任务
 		WfjTask wt = new WfjTask();
 		wt.setWfjTaskId(idgec.getServerID("WfjTask"));
-		logger.info("调试信息");
+		System.out.println("积分id:"+wt.getWfjTaskId());
 		wt.setStaffId(publicreceipts.getAccountinformID());
 		wt.setWfjGuizeId(eguize.getWfjGuizeId());
 		wt.setWfjTaskDate(new Date());

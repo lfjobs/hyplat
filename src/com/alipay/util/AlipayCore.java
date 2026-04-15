@@ -1,8 +1,5 @@
 package com.alipay.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -29,7 +26,6 @@ import com.alipay.config.AlipayConfig;
  */
 
 public class AlipayCore {
-	private static final Logger logger = LoggerFactory.getLogger(AlipayCore.class);
 
     /** 
      * 除去数组中的空值和签名参数
@@ -92,13 +88,13 @@ public class AlipayCore {
             writer = new FileWriter(AlipayConfig.log_path + "alipay_log_" + System.currentTimeMillis()+".txt");
             writer.write(sWord);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } finally {
             if (writer != null) {
                 try {
                     writer.close();
                 } catch (IOException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
             }
         }

@@ -1,8 +1,5 @@
 package hy.ea.finance.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.finance.CSubjects;
@@ -43,7 +40,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class CSubjectsAction {
-	private static final Logger logger = LoggerFactory.getLogger(CSubjectsAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -150,8 +146,8 @@ public class CSubjectsAction {
 		CAccount account = (CAccount) ActionContext.getContext().getSession()
 				.get("account");
 		csbjects.setCompanyID(account.getCompanyID());
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println(csbjects.getSubjectsCategory());
+		System.out.println(csbjects.getSubjectsDirection());
 		if (null == csbjects.getSubjectsID()
 				|| "".equals(csbjects.getSubjectsID())) {
 			csbjects.setSubjectsID(serverService.getServerID("csbjects"));

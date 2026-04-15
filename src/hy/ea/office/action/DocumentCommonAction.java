@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.util.SessionWrap;
 import hy.ea.bo.CAccount;
@@ -229,7 +226,7 @@ public class DocumentCommonAction  extends ActionSupport{
 			CAccount account = (CAccount) session.get("account");
 			String companyId = account.getCompanyID();
 	        String realpath = ServletActionContext.getServletContext().getRealPath("/document/"+ companyId);
-	       // logger.info("调试信息");
+	       // System.out.println("realpath: "+realpath);
 	       String filename  =  randomdatas.getRandomString(10);
 	        if (files != null) {
 	        	String fileType = contentType.substring(contentType.lastIndexOf("."));
@@ -278,7 +275,7 @@ public class DocumentCommonAction  extends ActionSupport{
 					(String) session.get("organizationID"), account
 							.getCompanyID(), "从回收站中还原");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -514,7 +511,7 @@ public class DocumentCommonAction  extends ActionSupport{
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 	}
@@ -685,7 +682,7 @@ public class DocumentCommonAction  extends ActionSupport{
 					.getPageNumber() : 1), (pageNumber == 0 ? 5 : pageNumber),
 					hql, params);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "formallist";
@@ -713,7 +710,7 @@ public class DocumentCommonAction  extends ActionSupport{
 					.getPageNumber() : 1), (pageNumber == 0 ? 5 : pageNumber),
 					hql, params);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 
@@ -1125,7 +1122,7 @@ public class DocumentCommonAction  extends ActionSupport{
 				 mobileMessage.setMobiles(staff.getReference());
 			 
 				  reStr = mobileMessage.sendMsg();
-				  logger.info("值：{}", reStr);
+				  System.out.println(reStr);
 				  doc.setTipStatus("00");
 				
 			}
@@ -1137,7 +1134,7 @@ public class DocumentCommonAction  extends ActionSupport{
 
 	     baseBeanService.saveBeansListAndexecuteHqlsByParams(doclist,null,null);
 		 }catch(Exception e){
-			 logger.error("操作异常", e);
+			 e.printStackTrace();
 		 }
 	 }
 		

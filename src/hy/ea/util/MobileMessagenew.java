@@ -19,7 +19,6 @@ import java.util.Map;
  */
 @Component
 public class MobileMessagenew {
-	private static final Logger logger = LoggerFactory.getLogger(MobileMessagenew.class);
 	// 短信平台登录地址http://112.124.10.199:8888/sms.aspx
 	
 	private static final String basePath = "http://sms.37037.com/sms.aspx";
@@ -89,7 +88,7 @@ public class MobileMessagenew {
 			sendSMS.setServicesRequestAddRess(basePath);
 			map = sendSMS.sendSMS();
 		}catch(Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return map.get("message");
@@ -113,7 +112,7 @@ public class MobileMessagenew {
 			sendSMS.setServicesRequestAddRess(basePath);
 			map = sendSMS.overage();
 		}catch(Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return map.get("overage");
@@ -137,7 +136,7 @@ public class MobileMessagenew {
 			sendSMS.setServicesRequestAddRess(basePath);
 			map = sendSMS.checkkeyword();
 		}catch(Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return map.get("message");

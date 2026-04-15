@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * 离职员工
  *@author 陈小丰
@@ -122,7 +119,7 @@ public class COSDimissionAction extends BaseAction<Object>{
 		try {
 			pageForm = baseBeanService.getPageFormByDC((null != pageForm ? pageForm.getPageNumber() : 1), (pageNumber==0?10:pageNumber),getListBYDC());
 		} catch (RuntimeException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "list";
 	}
@@ -261,7 +258,7 @@ public class COSDimissionAction extends BaseAction<Object>{
 				parms1.add(index2, salaryIntegral.getStaffID());
 				if(arg!=null&&arg.equals("1")){
 					/*if(monthNum==1){
-						logger.info("无操作");
+						System.out.println("无操作");
 					}*/
 					if(monthNum>=2){
 						if(salaryIntegral.getLogBookKey().equals(sdate.substring(0, 7))){
@@ -269,14 +266,14 @@ public class COSDimissionAction extends BaseAction<Object>{
 							try {
 								parms1.set(2, Utilities.getDateFromString(DateUtil.getDateOfMonthEnd(sdate,"yyyy-MM-dd"), "yyyy-MM-dd"));
 							} catch (ParseException e) {
-								logger.error("操作异常", e);
+								e.printStackTrace();
 							}
 						}
 						if(salaryIntegral.getLogBookKey().equals(edate.substring(0, 7))){
 							try {
 								parms1.set(1, Utilities.getDateFromString(DateUtil.getDateOfMonthBegin(edate,"yyyy-MM-dd"), "yyyy-MM-dd"));
 							} catch (ParseException e) {
-								logger.error("操作异常", e);
+								e.printStackTrace();
 							}
 							parms1.set(2, Utilities.getDateFromString(edate, "yyyy-MM-dd"));
 						}
@@ -285,7 +282,7 @@ public class COSDimissionAction extends BaseAction<Object>{
 								parms1.set(1, Utilities.getDateFromString(DateUtil.getDateOfMonthBegin(salaryIntegral.getLogBookKey()+"-01","yyyy-MM-dd"), "yyyy-MM-dd"));
 								parms1.set(2, Utilities.getDateFromString(DateUtil.getDateOfMonthEnd(salaryIntegral.getLogBookKey()+"-01" ,"yyyy-MM-dd"), "yyyy-MM-dd"));
 							} catch (ParseException e) {
-								logger.error("操作异常", e);
+								e.printStackTrace();
 							}
 						}
 					}

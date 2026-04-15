@@ -44,7 +44,6 @@ import org.apache.commons.httpclient.params.HttpMethodParams;
 @Controller("MobileOfficeAction")
 @Scope("prototype")
 public class MobileOfficeAction {
-	private static final Logger logger = LoggerFactory.getLogger(MobileOfficeAction.class);
 	@Resource
 	private MobileOfficeService moservice;
 
@@ -271,47 +270,47 @@ public class MobileOfficeAction {
 		Map<String,Object> map=new HashMap<String,Object>();
 		//学员ID
 		String studentId = str[0].substring(str[0].indexOf(":")+2,str[0].toString().length()-1);
-		logger.info("调试信息");
+		System.out.println(str[0].substring(str[0].indexOf(":")+2,str[0].toString().length()-1));
 		ActionContext.getContext().put("studentId", studentId);
 		//科一理论么么
 		int LLLearnTime1 = Integer.parseInt(str[11].substring(str[11].indexOf(":")+1, str[11].toString().length()));
-		logger.info("调试信息");
+		System.out.println(Integer.parseInt(str[11].substring(str[11].indexOf(":")+1,str[11].toString().length())));
 		ActionContext.getContext().put("LLLearnTime1",LLLearnTime1);
 		//科三理论
 		int LLLearnTime3 = Integer.parseInt(str[13].substring(str[13].indexOf(":")+1, str[13].toString().length()));
-		logger.info("调试信息");
+		System.out.println(Integer.parseInt(str[13].substring(str[13].indexOf(":")+1, str[13].toString().length())));
 		ActionContext.getContext().put("LLLearnTime3",LLLearnTime3);
 		//学员姓名
 		String name = str[1].substring(str[1].indexOf(":")+2,str[1].toString().length()-1);
-		logger.info("调试信息");
+		System.out.println(str[1].substring(str[1].indexOf(":")+2,str[1].toString().length()-1));
 		ActionContext.getContext().put("name",name);
 		//科二实操
 		int SelearnTime2 = Integer.parseInt(str[15].substring(str[15].indexOf(":")+1, str[15].toString().length()));
-		logger.info("调试信息");
+		System.out.println(Integer.parseInt(str[15].substring(str[15].indexOf(":")+1, str[15].toString().length())));
 		ActionContext.getContext().put("SelearnTime2",SelearnTime2);
 		//科三实操
 		int SelearnTime3 = Integer.parseInt(str[16].substring(str[16].indexOf(":")+1, str[16].toString().length()));
-		logger.info("调试信息");
+		System.out.println(Integer.parseInt(str[16].substring(str[16].indexOf(":")+1, str[16].toString().length())));
 		ActionContext.getContext().put("SelearnTime3",SelearnTime3);
 		//科一理论剩余
 		int LLSurplusTime1 = Integer.parseInt(str[17].substring(str[17].indexOf(":")+1,str[17].toString().length()));
-		logger.info("调试信息");
+		System.out.println(Integer.parseInt(str[17].substring(str[17].indexOf(":")+1,str[17].toString().length())));
 		ActionContext.getContext().put("LLSurplusTime1",LLSurplusTime1);
 		//科三理论剩余
 		int LLSurplusTime3 = Integer.parseInt(str[19].substring(str[19].indexOf(":")+1, str[19].toString().length()));
-		logger.info("调试信息");
+		System.out.println(Integer.parseInt(str[19].substring(str[19].indexOf(":")+1, str[19].toString().length())));
 		ActionContext.getContext().put("LLSurplusTime3",LLSurplusTime3);
 		//科二实操剩余
 		int SCSurplusTime2 = Integer.parseInt(str[21].substring(str[21].indexOf(":")+1, str[21].toString().length()));
-		logger.info("调试信息");
+		System.out.println(Integer.parseInt(str[21].substring(str[21].indexOf(":")+1, str[21].toString().length())));
 		ActionContext.getContext().put("SCSurplusTime2",SCSurplusTime2);
 		//科三实操剩余
 		int SCSurplusTime3 = Integer.parseInt(str[22].substring(str[22].indexOf(":")+1, str[22].toString().length()));
-		logger.info("调试信息");
+		System.out.println(Integer.parseInt(str[22].substring(str[22].indexOf(":")+1, str[22].toString().length())));
 		ActionContext.getContext().put("SCSurplusTime3",SCSurplusTime3);
 		//科三里程
 		int K3XSLCS = Integer.parseInt(str[30].substring(str[30].indexOf(":")+1, str[30].toString().length()-2));
-		logger.info("调试信息");
+		System.out.println(Integer.parseInt(str[30].substring(str[30].indexOf(":")+1, str[30].toString().length()-2)));
 		ActionContext.getContext().put("K3XSLCS",K3XSLCS/1000);
 
 

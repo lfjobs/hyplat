@@ -1,8 +1,5 @@
 package com.hst;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.hst.ces.util.SHAUtil;
 import com.wechat.utils.WeChatUtil;
 import net.sf.json.JSONObject;
@@ -35,7 +32,6 @@ import java.util.*;
  * 说明：用户保护好自己的key和secret,如有泄漏，联系管理员更新
  */
 public class App {
-	private static final Logger logger = LoggerFactory.getLogger(App.class);
     private static  String wsUrl = "https://47.94.154.17:8443/api/v1/";
     public static void main(String[] args) {
 
@@ -53,7 +49,7 @@ public class App {
         // SM3算法加密
         //String signature = SM3.encrypt(header + load + secret);
 
-        logger.info("调试信息");
+        System.out.println(header + "." + load + "." + signature);
     }
 
     /**
@@ -77,7 +73,7 @@ public class App {
         // SM3算法加密
         //String signature = SM3.encrypt(header + load + secret);
 
-        logger.info("调试信息");
+        System.out.println(header + "." + load + "." + signature);
 
         return header + "." + load + "." + signature;
     }
@@ -117,7 +113,7 @@ public class App {
                   String responseEntityStr = EntityUtils.toString(httpResponseEntity, "UTF-8");
 
                   httpResponse.close();
-                  logger.info("值：{}", responseEntityStr);
+                  System.out.println(responseEntityStr);
                   jsonObject = JSONObject.fromObject(responseEntityStr);
               }else{
 
@@ -140,12 +136,12 @@ public class App {
                   HttpEntity httpResponseEntity = httpResponse.getEntity();
                   String responseEntityStr = EntityUtils.toString(httpResponseEntity,"UTF-8");
                   httpResponse.close();
-                  logger.info("值：{}", responseEntityStr);
+                  System.out.println(responseEntityStr);
                   jsonObject = JSONObject.fromObject(responseEntityStr);
               }
 
         }catch(Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
 

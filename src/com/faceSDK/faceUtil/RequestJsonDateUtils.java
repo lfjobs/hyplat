@@ -1,8 +1,5 @@
 package com.faceSDK.faceUtil;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +12,6 @@ import java.io.InputStreamReader;
  * 获取取请求中Josn传输数据
  */
 public class RequestJsonDateUtils {
-	private static final Logger logger = LoggerFactory.getLogger(RequestJsonDateUtils.class);
 
     //获取请求体中的数据
     public  static String  getRequestJsonStr() {
@@ -33,7 +29,7 @@ public class RequestJsonDateUtils {
             reader.close();
             inputStream.close();
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return strResponse;
     }

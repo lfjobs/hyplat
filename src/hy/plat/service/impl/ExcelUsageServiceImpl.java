@@ -1,8 +1,5 @@
 package hy.plat.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.plat.service.ExcelUsageService;
 
 import java.io.BufferedInputStream;
@@ -28,7 +25,7 @@ public class ExcelUsageServiceImpl implements ExcelUsageService {
 		try {
 			return getWorkbook(new BufferedInputStream(new FileInputStream(fileName)));
 		} catch (FileNotFoundException e) {			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return null;
 		}
 	}
@@ -38,10 +35,10 @@ public class ExcelUsageServiceImpl implements ExcelUsageService {
 		try {
 			return  WorkbookFactory.create(in);
 		} catch (InvalidFormatException e) {			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return null;
 		} catch (IOException e) {			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return null;
 		}
 	}

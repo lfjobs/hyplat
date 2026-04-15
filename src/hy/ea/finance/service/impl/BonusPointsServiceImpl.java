@@ -161,7 +161,7 @@ public class BonusPointsServiceImpl implements BonusPointsService{
 		}
 		String flag = "";
 		logger.error("ppid="+ppid);
-		logger.info("调试信息"); 
+		System.out.println("ppid="+ppid); 
 		String type = "shareArticle";//分享文章的标识
 		List<BaseBean> beans = new ArrayList<BaseBean>();
 		BigDecimal JF = new BigDecimal("500");//规定分享文章  可获得  500 个积分
@@ -570,7 +570,7 @@ public class BonusPointsServiceImpl implements BonusPointsService{
 				}
 			}
 		} catch (CloneNotSupportedException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			subtract = false;
 		}
 		return subtract;
@@ -703,7 +703,7 @@ public class BonusPointsServiceImpl implements BonusPointsService{
 				baseBeanService.executeHqlsByParamsList(backList, null, null);
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 
@@ -992,7 +992,7 @@ public class BonusPointsServiceImpl implements BonusPointsService{
 		}
 		catch (Exception e)
 		{
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			flag = "操作失败";
 		}
 		map.put("flag", flag);

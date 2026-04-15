@@ -6,6 +6,7 @@ import hy.ea.bo.finance.GoodsBills;
 import hy.ea.finance.action.response.OrderDetailResponse;
 import hy.ea.finance.service.turnovermanage.MakeOrderService;
 import hy.ea.util.StringUtil;
+import hy.plat.bo.BaseBean;
 import hy.plat.bo.PageForm;
 import hy.plat.service.BaseBeanService;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class MakeOrderServiceImpl implements MakeOrderService {

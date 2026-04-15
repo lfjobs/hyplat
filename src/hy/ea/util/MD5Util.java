@@ -1,8 +1,5 @@
 package hy.ea.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -12,7 +9,6 @@ import java.security.NoSuchAlgorithmException;
  * 
  */
 public class MD5Util {
-	private static final Logger logger = LoggerFactory.getLogger(MD5Util.class);
  @SuppressWarnings("unused")
 private static String str;
 
@@ -36,7 +32,7 @@ private static String str;
    str = buf.toString();
    return buf.toString();//32位的加密
   } catch (NoSuchAlgorithmException e) {
-   logger.error("操作异常", e);
+   e.printStackTrace();
 
   }
   return "";
@@ -44,7 +40,7 @@ private static String str;
 
  public static void main(String agrs[]) { 
 	 String md5Password =  MD5Util.md5s("12345");
-	 logger.info("值：{}", md5Password);
+	 System.out.println(md5Password);
  }
 
 }

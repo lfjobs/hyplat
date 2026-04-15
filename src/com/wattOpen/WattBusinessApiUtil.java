@@ -1,10 +1,10 @@
 package com.wattOpen;
 
-/*import cn.hutool.core.codec.Base64;
+import cn.hutool.core.codec.Base64;
 import cn.hutool.core.util.ObjUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpResponse;*/
+import cn.hutool.http.HttpResponse;
 import com.alibaba.fastjson.JSONObject;
 import com.aliyun.oss.model.LiveChannelListing;
 import com.wattOpen.businessTO.FollowerTO;
@@ -99,10 +99,10 @@ public class WattBusinessApiUtil {
      */
     public static JSONObject handleSpaceUnitDevice(String sn, String spaceId, Integer pageNumb, Integer pageSize) {
 
-        /*Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
+        Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
         Assert.isTrue(StrUtil.isNotEmpty(spaceId), "设备序列号不能为空");
         Assert.isTrue(ObjUtil.isNotNull(pageNumb), "设备序列号不能为空");
-        Assert.isTrue(ObjUtil.isNotNull(pageSize), "设备序列号不能为空");*/
+        Assert.isTrue(ObjUtil.isNotNull(pageSize), "设备序列号不能为空");
 
         StringBuffer strUrl = new StringBuffer();
         strUrl.append("?sn=" + sn);
@@ -178,8 +178,8 @@ public class WattBusinessApiUtil {
      */
     public static JSONObject handleUpdateDevicePrice(String sn, PriceTemplateTO priceTemplate, String priceType, Integer freeType, Integer overdraft) {
 
-        /*Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
-        Assert.isTrue(StrUtil.isNotEmpty(priceType), "价格类型不能为空");*/
+        Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
+        Assert.isTrue(StrUtil.isNotEmpty(priceType), "价格类型不能为空");
 
         String getDevicePriceUrl = updateDevicePriceUrl;
         getDevicePriceUrl.replace("{sn}", sn).replace("{priceType}", priceType);
@@ -208,7 +208,7 @@ public class WattBusinessApiUtil {
      */
     public static JSONObject handleSurrender(String spaceId) {
 
-        /*Assert.isTrue(StrUtil.isNotEmpty(spaceId), "房间ID不能为空");*/
+        Assert.isTrue(StrUtil.isNotEmpty(spaceId), "房间ID不能为空");
 
 
         String getSurrenderUrl = surrenderUrl;
@@ -239,10 +239,10 @@ public class WattBusinessApiUtil {
      */
     public static JSONObject handleRecharge(String sn, String orderId, BigDecimal amount, String remark) {
 
-       /* Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
+        Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
         Assert.isTrue(StrUtil.isNotEmpty(orderId), "订单ID不能为空");
         Assert.isTrue(ObjUtil.isNotNull(amount), "充值金额不能为空");
-        Assert.isTrue(StrUtil.isNotEmpty(remark), "描述订单情况不能为空");*/
+        Assert.isTrue(StrUtil.isNotEmpty(remark), "描述订单情况不能为空");
 
         // 充值接口处理
         String getRechargeUrl = rechargeUrl;
@@ -275,10 +275,10 @@ public class WattBusinessApiUtil {
      */
     public static JSONObject handleRefund(String sn, String orderId, BigDecimal amount, String remark) {
 
-        /*Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
+        Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
         Assert.isTrue(StrUtil.isNotEmpty(orderId), "订单ID不能为空");
         Assert.isTrue(ObjUtil.isNotNull(amount), "充值金额不能为空");
-        Assert.isTrue(StrUtil.isNotEmpty(remark), "描述订单情况不能为空");*/
+        Assert.isTrue(StrUtil.isNotEmpty(remark), "描述订单情况不能为空");
 
         String getRefundUrl = refundUrl;
         getRefundUrl.replace("{sn}", sn);
@@ -304,7 +304,7 @@ public class WattBusinessApiUtil {
      */
     public static JSONObject handleBalance(String sn) {
 
-        //Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
+        Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
 
         String getBalanceUrl = balanceUrl;
         getBalanceUrl.replace("{sn}", sn);
@@ -326,7 +326,7 @@ public class WattBusinessApiUtil {
      */
     public static JSONObject handleRechargeRecord(String sn) {
 
-        //Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
+        Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
 
         String getRechargeRecordUrl = rechargeRecordUrl;
         getRechargeRecordUrl.replace("{sn}", sn);
@@ -352,8 +352,8 @@ public class WattBusinessApiUtil {
      */
     public static JSONObject handleUpdateTenantInfo(String spaceId, List<FollowerTO> followerList, PriceTemplatesTO priceTemplates, Boolean waterElectricLinkage, Integer overdraft, BigDecimal insufficientBalance) {
 
-        /*Assert.isTrue(ObjUtil.isNotNull(followerList), "租客信息不能为空");
-        Assert.isTrue(ObjUtil.isNotNull(priceTemplates), "计费模板不能为空");*/
+        Assert.isTrue(ObjUtil.isNotNull(followerList), "租客信息不能为空");
+        Assert.isTrue(ObjUtil.isNotNull(priceTemplates), "计费模板不能为空");
 
         JSONObject bodyJson = new JSONObject();
 
@@ -403,7 +403,7 @@ public class WattBusinessApiUtil {
      */
     public static JSONObject handlePaymentInfo(String sn) {
 
-        //Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
+        Assert.isTrue(StrUtil.isNotEmpty(sn), "设备序列号不能为空");
 
         String getPaymentInfoUrl = paymentInfoUrl;
         getPaymentInfoUrl.replace("{sn}", sn);

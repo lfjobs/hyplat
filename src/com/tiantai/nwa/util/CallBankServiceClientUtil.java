@@ -1,8 +1,5 @@
 package com.tiantai.nwa.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.util.Utilities;
 import hy.plat.bo.BaseBean;
@@ -32,7 +29,6 @@ import com.tiantai.nwa.tbank.bo.BankLinkParam;
  */
 
 public class CallBankServiceClientUtil {
-	private static final Logger logger = LoggerFactory.getLogger(CallBankServiceClientUtil.class);
 	
 	@Resource
 	private static BaseBeanService baseBeanService;
@@ -107,7 +103,7 @@ public class CallBankServiceClientUtil {
         bean.setReqDatagram(xmlString.toString());
         
 		}catch(Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 	
@@ -176,7 +172,7 @@ public class CallBankServiceClientUtil {
 			judgeReturnRight(doc);
 			setProperty(doc,returnBean,reqBean);
 		} catch (Exception e) {				
-			logger.error("操作异常", e);				
+			e.printStackTrace();				
 			throw e;				
 		}		
 		

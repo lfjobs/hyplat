@@ -1,8 +1,5 @@
 package hy.tel.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -218,7 +215,7 @@ public class TelRecordAction implements SessionAware,ServletContextAware {
 			}
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}
@@ -275,7 +272,7 @@ public class TelRecordAction implements SessionAware,ServletContextAware {
 				response.getWriter().print(json.toString());
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}
@@ -303,7 +300,7 @@ public class TelRecordAction implements SessionAware,ServletContextAware {
 			response.getWriter().print(json.toString());
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}
@@ -499,7 +496,7 @@ public class TelRecordAction implements SessionAware,ServletContextAware {
 //			TelInRecord telRe= (TelInRecord) b;
 //		  List<BaseBean> list2 = baseBeanService.getListBeanByHqlAndParams(hql, new Object[]{telRe});
 //		  if(list2.size()==0){
-//			  logger.info("调试信息");
+//			  System.out.println(telRe.getId());
 //			  TelInRecordDeal newDeal = new TelInRecordDeal();
 //				newDeal.setId(serverService.getServerID("TelInRecordDeal")); 
 //				newDeal.setCompany(telRe.getCompany());
@@ -509,7 +506,7 @@ public class TelRecordAction implements SessionAware,ServletContextAware {
 //			  n++;
 //		  }
 //		}
-//		logger.info("值：{}", n);
+//		System.out.println(n);
 		
 		
 		

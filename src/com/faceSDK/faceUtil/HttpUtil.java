@@ -1,8 +1,5 @@
 package com.faceSDK.faceUtil;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -12,7 +9,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.zip.GZIPInputStream;
 
 public class HttpUtil {
-	private static final Logger logger = LoggerFactory.getLogger(HttpUtil.class);
     public static String doGet(String httpurl) {
         HttpURLConnection connection = null;
         InputStream is = null;
@@ -46,16 +42,16 @@ public class HttpUtil {
                 result = sbf.toString();
             }
         } catch (MalformedURLException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } finally {
             // 关闭资源
             if (null != br) {
                 try {
                     br.close();
                 } catch (IOException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
             }
 
@@ -63,7 +59,7 @@ public class HttpUtil {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
             }
 
@@ -119,30 +115,30 @@ public class HttpUtil {
                 result = sbf.toString();
             }
         } catch (MalformedURLException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } finally {
             // 关闭资源
             if (null != br) {
                 try {
                     br.close();
                 } catch (IOException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
             }
             if (null != os) {
                 try {
                     os.close();
                 } catch (IOException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
             }
             if (null != is) {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
             }
             // 断开与远程地址url的连接
@@ -194,7 +190,7 @@ public class HttpUtil {
                 return result.toString();
             }
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "";
     }

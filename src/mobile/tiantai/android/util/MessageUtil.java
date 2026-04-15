@@ -21,7 +21,7 @@ public class MessageUtil {
         Content content = new Content("user","#content#");
         List<Content> contentList = new ArrayList<>();
         contentList.add(content);
-        //userMessage.setInput(contentList);
+        userMessage.setInput(contentList);
         return userMessage;
     }
     public static UserMessage generateWebSearchMessage(){

@@ -82,7 +82,6 @@ import java.util.Map.Entry;
 @Controller
 @Scope("prototype")
 public class WfjEshopProductAction {
-	private static final Logger logger = LoggerFactory.getLogger(WfjEshopProductAction.class);
 
     private final Logger logger = LoggerFactory.getLogger(WfjEshopProductAction.class);
     @Resource
@@ -618,7 +617,7 @@ public class WfjEshopProductAction {
         try {
             list = goldOrderService.getReward(ppid);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("list", list);
@@ -640,7 +639,7 @@ public class WfjEshopProductAction {
         try {
             genScanCodePay(trade_no, ppid, WeChatUtils.changeF2Y(morre), sccid, journalNum, "00", wfStatus1, "");
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
 
@@ -678,8 +677,8 @@ public class WfjEshopProductAction {
                         //收款单生成后复制订单和收款单到新表
                         goldOrderService.copyCash(journalNum, "d");
                     }catch (Exception e){
-                        logger.error("操作异常", e);
-                        logger.info("复制订单收款单错误");
+                        e.printStackTrace();
+                        System.out.println("复制订单收款单错误");
                     }
                     //把订单状态改程03已收货
                     goldOrderService.updateFkState(cashierBillsID);
@@ -690,7 +689,7 @@ public class WfjEshopProductAction {
 
         } catch (Exception e) {
             bool = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return bool;
     }
@@ -718,8 +717,8 @@ public class WfjEshopProductAction {
                             //收款单生成后复制订单和收款单到新表
                             goldOrderService.copyCash(journalNum, "d");
                         }catch (Exception e){
-                            logger.error("操作异常", e);
-                            logger.info("复制订单收款单错误");
+                            e.printStackTrace();
+                            System.out.println("复制订单收款单错误");
                         }
 
                         System.out.print(bo + "111111111111111111111111");
@@ -738,7 +737,7 @@ public class WfjEshopProductAction {
 
         } catch (Exception e) {
             bool = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return bool;
@@ -774,8 +773,8 @@ public class WfjEshopProductAction {
                         //收款单生成后复制订单和收款单到新表
                         goldOrderService.copyCash(journalNum, "d");
                     }catch (Exception e){
-                        logger.error("操作异常", e);
-                        logger.info("复制订单收款单错误");
+                        e.printStackTrace();
+                        System.out.println("复制订单收款单错误");
                     }
                     //把订单状态改程03已收货
                     goldOrderService.updateFkState(cashierBillsID);
@@ -788,7 +787,7 @@ public class WfjEshopProductAction {
 
         } catch (Exception e) {
             bool = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return bool;
     }
@@ -813,8 +812,8 @@ public class WfjEshopProductAction {
                 //收款单生成后复制订单和收款单到新表
                 goldOrderService.copyCash(journalNum, "d");
             }catch (Exception e){
-                logger.error("操作异常", e);
-                logger.info("复制订单收款单错误");
+                e.printStackTrace();
+                System.out.println("复制订单收款单错误");
             }
             CashierBills cashierBills = (CashierBills) baseBeanService.getBeanByHqlAndParams("from CashierBills where journalNum = ?", new Object[]{journalNum});
             //把订单状态改程03已收货
@@ -840,7 +839,7 @@ public class WfjEshopProductAction {
      */
 
     public Boolean genSelfPay(String tradeCode, String morre, String sccid, String journalNum, String wfStatus4, String wfStatus1, String addressID) {
-        logger.info("genSelfPay");
+        System.out.println("genSelfPay");
         Boolean bool = true;
         try {
             //生成订单
@@ -860,7 +859,7 @@ public class WfjEshopProductAction {
                     cashierBillsID = cc.getCashierBillsID();
                 }
             }catch (Exception ef){
-                logger.error("操作异常", ef);
+                ef.printStackTrace();
             }
             if(cashierBillsID.equals("")) {
                 cashierBillsID = goldOrderService.generateSelfPayOrder(morre, sccid, journalNum, wfStatus4, addressID);
@@ -877,12 +876,13 @@ public class WfjEshopProductAction {
                         //收款单生成后复制订单和收款单到新表
                         goldOrderService.copyCash(journalNum, "d");
                     }catch (Exception e){
-                        logger.error("操作异常", e);
-                        logger.info("复制订单收款单错误");
+                        e.printStackTrace();
+                        System.out.println("复制订单收款单错误");
                     }
 
                     if (smSerivce.isSqPos(journalNum)) {//不是社区就超市内就发货
                         if(!"智能货柜".equals(cc.getGoodsName())){
+                            System.out.println("自动发货");
                             //发货
                             goldOrderService.autoFh(cashierBillsID);
                         }
@@ -897,7 +897,7 @@ public class WfjEshopProductAction {
 
         } catch (Exception e) {
             bool = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return bool;
     }
@@ -963,7 +963,7 @@ public class WfjEshopProductAction {
 
                 }
                 f++;
-                logger.info("值：{}", f);
+                System.out.println(f);
 
                 String phql = " from CashierBills where journalNum = ?";
                 CashierBills payc = (CashierBills) baseBeanService.getBeanByHqlAndParams(phql, new Object[]{journalNum});
@@ -978,8 +978,8 @@ public class WfjEshopProductAction {
                                 //收款单生成后复制订单和收款单到新表
                                 goldOrderService.copyCash(journalNum, "d");
                             }catch (Exception e){
-                                logger.error("操作异常", e);
-                                logger.info("复制订单收款单错误");
+                                e.printStackTrace();
+                                System.out.println("复制订单收款单错误");
                             }
 
                             //发货
@@ -996,14 +996,14 @@ public class WfjEshopProductAction {
                 }
 
 
-                logger.debug("");
+                System.out.println();
 
             }
 
 
         } catch (Exception e) {
             bool = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "";
     }
@@ -1051,8 +1051,8 @@ public class WfjEshopProductAction {
                             //收款单生成后复制订单和收款单到新表
                             goldOrderService.copyCash(journalNum, "j");
                         }catch (Exception e3){
-                            logger.error("操作异常", e3);
-                            logger.info("复制订单积分或者金币入库单错误");
+                            e3.printStackTrace();
+                            System.out.println("复制订单积分或者金币入库单错误");
                         }
 
 
@@ -1072,7 +1072,7 @@ public class WfjEshopProductAction {
             }
         } catch (Exception e) {
             bool = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("result", bool);
@@ -1269,7 +1269,7 @@ public class WfjEshopProductAction {
         try {
             response.sendRedirect(request.getContextPath() + "/ea/wfjshop/ea_getjspzc.jspa?sccid=" + sccid);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
     }
@@ -1876,7 +1876,7 @@ public class WfjEshopProductAction {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
     }
@@ -2247,7 +2247,7 @@ public class WfjEshopProductAction {
             result = sbf.toString();
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return Action.SUCCESS;
@@ -2327,7 +2327,7 @@ public class WfjEshopProductAction {
                         wfjserv.registerCompanyInfo(ppk.getModel(), scc, company, cdl);
                     } else if (scc != null && scc.getAccount().equals(cdl.getManagertel())) {
                         //登陆后为业务员给别人注册公司 登陆人和负责人是同一个人
-                        logger.info("调试信息");
+                        System.out.println(scc.getState());
                         if ("2".equals(scc.getState())) {
 //                            obj1.accumulate("result", "2");
 //                            result = obj1.toString();
@@ -2420,7 +2420,7 @@ public class WfjEshopProductAction {
         RefundAddress address = (RefundAddress) baseBeanService.getBeanByHqlAndParams(queryAddressHQL, new Object[]{ppk.getCompanyID(), 1, "00"});
 
         cb.setCashierBillsID(serverService.getServerID("CashierBills"));
-        logger.info("调试信息");
+        System.out.println(cb.getCashierBillsID());
         cb.setOrganizationID("organization20110425U539EJC3VF0000012237");
         cb.setCashierDate(new Date());
         cb.setStaffName("系统生成");
@@ -2483,9 +2483,9 @@ public class WfjEshopProductAction {
 //        try {
 //            Thread.sleep(1000);
 //        } catch (InterruptedException e) {
-//            logger.error("操作异常", e);
+//            e.printStackTrace();
 //        }
-        logger.info("调试信息");
+        System.out.println(cb.getJournalNum());
         cb.setjNumOrder(cb.getJournalNum());
         cb.setStatusbill("04");
         cb.setCcompanyID(ccompanyId);
@@ -2773,7 +2773,7 @@ public class WfjEshopProductAction {
 
                 }
             }catch (Exception ff){
-                logger.error("操作异常", ff);
+                ff.printStackTrace();
             }
 
 
@@ -2801,8 +2801,8 @@ public class WfjEshopProductAction {
                         //收款单生成后复制订单和收款单到新表
                       goldOrderService.copyCash( pc.getPayJournalNum(), "j");
                     }catch (Exception e3){
-                        logger.error("操作异常", e3);
-                        logger.info("复制订单积分或者金币入库单错误");
+                        e3.printStackTrace();
+                        System.out.println("复制订单积分或者金币入库单错误");
                     }
 
                 }
@@ -2827,7 +2827,7 @@ public class WfjEshopProductAction {
                 jg = "shibai";
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             jg = "shibai";
         }
         obj1.accumulate("chenggong", jg);
@@ -2868,8 +2868,8 @@ public class WfjEshopProductAction {
                         //收款单生成后复制订单和收款单到新表
                         goldOrderService.copyCash(pc.getPayJournalNum(), "j");
                     }catch (Exception e3){
-                        logger.error("操作异常", e3);
-                        logger.info("复制订单积分或者金币入库单错误");
+                        e3.printStackTrace();
+                        System.out.println("复制订单积分或者金币入库单错误");
                     }
 
 
@@ -3202,7 +3202,7 @@ public class WfjEshopProductAction {
         try {
             baseBeanService.executeHqlsByParamsList(operator, hqls.toArray(new String[]{}), parms);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         result = pb.getPayJournalNum();
 
@@ -3226,15 +3226,15 @@ public class WfjEshopProductAction {
             goldOrderService.addMarKeting(e);
         }
         Boolean bo = goldOrderService.generateBill(cash.getTrade_no(), pc.getPayJournalNum(), cash.getPriceSub(), "03", "");
-        logger.info("{}{}", bo, "33333333333");
+        System.out.println(bo + "33333333333");
         if (bo == true) {
 
             try {
                 //收款单生成后复制订单和收款单到新表
                 goldOrderService.copyCash(pc.getPayJournalNum(), "d");
             }catch (Exception e3){
-                logger.error("操作异常", e3);
-                logger.info("复制订单收款单错误");
+                e3.printStackTrace();
+                System.out.println("复制订单收款单错误");
             }
 
             //会员产品只能单独下订单
@@ -3614,7 +3614,7 @@ public class WfjEshopProductAction {
 ////            msage.setMessage("主人您好，有催单的请尽快给客户发货，以下产品" + goodsName);
 ////            msage.sendMsg("【微分金平台】");
 //        } catch (IOException e) {
-//            logger.error("操作异常", e);
+//            e.printStackTrace();
 //        }
         //xgb
         String sql = "select t.contactway  from dt_hr_staff_contact t where t.staffid= ? and t.contactType in (select e.codeID from dtCCode e where  e.codevalue= ? )";
@@ -3839,8 +3839,8 @@ public class WfjEshopProductAction {
                         //收款单生成后复制订单和收款单到新表
                         goldOrderService.copyCash(journalNum, "d");
                     }catch (Exception e){
-                        logger.error("操作异常", e);
-                        logger.info("复制订单收款单错误");
+                        e.printStackTrace();
+                        System.out.println("复制订单收款单错误");
                     }
                     //把订单状态改程03已收货
                     goldOrderService.updateFkState(cashierBillsID);
@@ -3853,7 +3853,7 @@ public class WfjEshopProductAction {
 
         } catch (Exception e) {
             bool = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return bool;
     }
@@ -3880,7 +3880,7 @@ public class WfjEshopProductAction {
 
         String ip = request.getRemoteAddr();
         String params = request.getParameter("params");
-        logger.info("调试信息");
+        System.out.println("params"+params);
         String[] arry = params.split("-");
         String ppid = "";
         // 生成预支付单
@@ -3890,9 +3890,9 @@ public class WfjEshopProductAction {
         //获取微信支付需要的openID
 
         String code = request.getParameter("code");
-        // logger.info("authcode:: {}", code);
+        // System.out.println("authcode:" + code);
         String openId = getOpenID(code);
-        //  logger.info("openId:: {}", openId);
+        //  System.out.println("openId:" + openId);
 
         tpWxPay.setWechatbz("wxa1b3f84c027804c3");
 
@@ -3912,8 +3912,11 @@ public class WfjEshopProductAction {
                 // this.logger.error(arry[6]);
                 //  System.out.print(arry[6]);
                 attach = arry[6];
+                System.out.println("6attach"+attach);
             }
         }
+        System.out.println("77attach"+attach);
+
         //    System.out.print(attach + "attach");
         //this.logger.error(attach + "attach");
         tpWxPay.setAttach(attach);
@@ -3937,7 +3940,7 @@ public class WfjEshopProductAction {
             tpWxPay.setBody(URLDecoder.decode(arry[1], "UTF-8"));
         } catch (UnsupportedEncodingException e) {
 
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         tpWxPay.setOrderId(arry[0]);
@@ -3947,7 +3950,7 @@ public class WfjEshopProductAction {
         if (ppid != null && !ppid.equals("")) {
             par = "-" + ppid;
         }
-        logger.info("调试信息");
+        System.out.println(tpWxPay.getAttach() + "-" + staffid + "-" + sccid + par);
         tpWxPay.setAttach(tpWxPay.getAttach() + "-" + staffid + "-" + sccid + par);
         // this.logger.error("zattach" + tpWxPay.getAttach());
         //  System.out.print("zattach" + tpWxPay.getAttach());
@@ -3960,15 +3963,15 @@ public class WfjEshopProductAction {
         if (sub_orderslist == null || sub_orderslist.size() == 0) {
 
 //          finalPackage = WchatPay.getPackage(tpWxPay);//普通模式
-//          logger.info("普通模式");
+//          System.out.println("普通模式");
 
            finalPackage = HTTPV3.getPackage(tpWxPay);//服务商模式
-            logger.info("服务商模式");
+            System.out.println("服务商模式");
         } else {
             CombinePayerInfo combine_payer_info = new CombinePayerInfo();  //合单模式
             combine_payer_info.setOpenid(openId);
             finalPackage = HTTPV3.getPackageV3(tpWxPay, sub_orderslist, combine_payer_info, ConstantURL.JSAPI_PAY);
-            logger.info("V3模式");
+            System.out.println("V3模式");
 
         }
         map.put("finalPackage", finalPackage);
@@ -4010,7 +4013,7 @@ public class WfjEshopProductAction {
             Map<String, String> map = GetWxOrderno.getOpenID(accessurl, strparams);
             if (map.get("errcode") != null && map.get("errcode").equals("1")) {
 
-                logger.info("openid获取失败");
+                System.out.println("openid获取失败");
 
             } else {
                 openid = map.get("openid");
@@ -4022,7 +4025,7 @@ public class WfjEshopProductAction {
 
         } catch (Exception e) {
 
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return openid;
@@ -4110,20 +4113,20 @@ public class WfjEshopProductAction {
         AppPackage appPackage = null;
         if (sub_orderslist == null || sub_orderslist.size() == 0 || "true".equals(isiOS)) {
             appPackage = HTTPV3.getAppPackage(payDto);
-            logger.info("支付V2");
+            System.out.println("支付V2");
         } else {
             appPackage = HTTPV3.getAppPackageV3(payDto, sub_orderslist, null, ConstantURL.APP_PAY);
-            logger.info("支付V3");
+            System.out.println("支付V3");
         }
 
 
-//        logger.info("appid:: {}", appPackage.getAppid());
-//        logger.info("noncestr:: {}", appPackage.getNoncestr());
-//        logger.info("package:: {}", appPackage.getPackages());
-//        logger.info("partnerid:: {}", appPackage.getPartnerid());
-//        logger.info("prepayid:: {}", appPackage.getPrepayid());
-//        logger.info("timestamp:: {}", appPackage.getTimestamp());
-//        logger.info("sign:: {}", appPackage.getSign());
+//        System.out.println("appid:" + appPackage.getAppid());
+//        System.out.println("noncestr:" + appPackage.getNoncestr());
+//        System.out.println("package:" + appPackage.getPackages());
+//        System.out.println("partnerid:" + appPackage.getPartnerid());
+//        System.out.println("prepayid:" + appPackage.getPrepayid());
+//        System.out.println("timestamp:" + appPackage.getTimestamp());
+//        System.out.println("sign:" + appPackage.getSign());
 
 
         Map<String, Object> map = new HashMap<String, Object>();
@@ -4158,15 +4161,15 @@ public class WfjEshopProductAction {
 
 
         } catch (Exception e) {
-            // logger.error("操作异常", e);
+            // e.printStackTrace();
         }
         int suc = 0;
-        logger.info("接收到的报文：: {}", notity);
+        System.out.println("接收到的报文：" + notity);
         WxPayResult wxPayResult = null;
         String wfStatus1 = "01";
         String wechatbz = "";
         try {
-            logger.info("V2模式");
+            System.out.println("V2模式");
             wxPayResult = WeChatUtils.parseXmlToResult(notity);
             if ("SUCCESS".equals(wxPayResult.getResultCode())) {
 
@@ -4181,14 +4184,14 @@ public class WfjEshopProductAction {
                 }
             }
         } catch (Exception e) {
-            logger.info("服务商模式");
+            System.out.println("服务商模式");
 
             try {
-                logger.info("调试信息");
+                System.out.println("noticeServerResult"+notity);
 
                 wxPayResult = HTTPV3.noticeServerResult(notity, request);
-                logger.info("调试信息");
-                logger.info("wxPayResult:: {}", wxPayResult.getResultCode());
+                System.out.println("wxPayResult"+wxPayResult.toString());
+                System.out.println("wxPayResult:" + wxPayResult.getResultCode());
                 if ("SUCCESS".equals(wxPayResult.getResultCode())) {
                     String tradeType = wxPayResult.getTradeType();
 
@@ -4198,10 +4201,10 @@ public class WfjEshopProductAction {
                     }
                     suc = 1;
                 } else {
-                    logger.info("合单模式1");
+                    System.out.println("合单模式1");
                     Map<String, String> submap = new HashMap<String, String>();
                     wxPayResult = HTTPV3.noticeResult(notity, request, submap);
-                    logger.info("调试信息");
+                    System.out.println(submap == null ? "kong" : submap.size());
                     goldOrderService.setPayCashiber(submap, wxPayResult.getOutTradeNo());
                     if ("TRANSACTION.SUCCESS".equals(wxPayResult.getResultCode())) {
                         String tradeType = wxPayResult.getTradeType();
@@ -4216,10 +4219,10 @@ public class WfjEshopProductAction {
                 }
 
             } catch (Exception ee) {
-                logger.info("合单模式");
+                System.out.println("合单模式");
                 Map<String, String> submap = new HashMap<String, String>();
                 wxPayResult = HTTPV3.noticeResult(notity, request, submap);
-                logger.info("调试信息");
+                System.out.println(submap == null ? "kong" : submap.size());
                 goldOrderService.setPayCashiber(submap, wxPayResult.getOutTradeNo());
                 if ("TRANSACTION.SUCCESS".equals(wxPayResult.getResultCode())) {
                     String tradeType = wxPayResult.getTradeType();
@@ -4238,7 +4241,7 @@ public class WfjEshopProductAction {
         try {
             if (suc == 1) {
 
-                logger.info("进入主方法");
+                System.out.println("进入主方法");
 
                 //修改订单的状态
                 String journalNum = wxPayResult.getOutTradeNo();//商户订单
@@ -4246,9 +4249,9 @@ public class WfjEshopProductAction {
                 String trade_no = wxPayResult.getTransactionId();//第三方
                 morre = wxPayResult.getTotalFee();
                 String attach = wxPayResult.getAttach();
-                logger.info("journalNum: {}", journalNum);
-                logger.info("attach: {}", attach);
-                logger.info("morre: {}", morre);
+                System.out.println("journalNum" + journalNum);
+                System.out.println("attach" + attach);
+                System.out.println("morre" + morre);
                 //判断是否回调过
                 if (goldOrderService.isCalledPay(journalNum)) {
 
@@ -4272,13 +4275,13 @@ public class WfjEshopProductAction {
                         }
 
                     } else if (wxPayResult.getAttach().indexOf("smsk") != -1) {
-                        logger.info("值：{}", attach);
+                        System.out.println(attach);
 
                         String[] str = attach.split("-");
                         genScanCodePay(trade_no, str[3], WeChatUtils.changeF2Y(morre), str[2], journalNum, "00", wfStatus1, "");
 
                     } else if (wxPayResult.getAttach().indexOf("gsmzs") != -1 || wxPayResult.getAttach().indexOf("xdsmzs") != -1) {
-                        //  logger.info("11111111111111");
+                        //  System.out.println("11111111111111");
 
                         PayBackupBill payBackupBill = assiCartService.getPayBakupByJum(journalNum);
                         genScanAssiCodePay(trade_no, payBackupBill.getWaiterID(), payBackupBill.getCompanyId(), WeChatUtils.changeF2Y(morre), payBackupBill.getSccid(), journalNum, "00", wfStatus1, payBackupBill.getCoID());
@@ -4331,7 +4334,7 @@ public class WfjEshopProductAction {
 
 
                     } else {
-                        logger.info("2222222222222");
+                        System.out.println("2222222222222");
                         boolean bool = genCanYin(trade_no, journalNum, WeChatUtils.changeF2Y(morre), "00", wfStatus1);
                         if (bool == false) {
                             CashierBills c=(CashierBills) baseBeanService.getBeanByHqlAndParams("from CashierBills where journalNum=?",new Object[]{journalNum});
@@ -4346,8 +4349,8 @@ public class WfjEshopProductAction {
                                 //收款单生成后复制订单和收款单到新表
                                 goldOrderService.copyCash(journalNum, "d");
                             }catch (Exception e){
-                                logger.error("操作异常", e);
-                                logger.info("复制订单收款单错误");
+                                e.printStackTrace();
+                                System.out.println("复制订单收款单错误");
                             }
                         }
                     }
@@ -4366,11 +4369,11 @@ public class WfjEshopProductAction {
             res = "{\"code\": \"ERROR_NAME\",\"message\": \"ERROR_DESCRIPTION\",}";
             resXml = WeChatUtils.backWeixinResult("FAIL", wxPayResult.getReturnMsg());
 
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
-        //  logger.info("微信支付回调数据结束");
-        // logger.info("值：{}", resXml);
+        //  System.out.println("微信支付回调数据结束");
+        // System.out.println(resXml);
         HttpServletResponse response = ServletActionContext.getResponse();
         BufferedOutputStream out = new BufferedOutputStream(
                 response.getOutputStream());
@@ -4436,10 +4439,7 @@ public class WfjEshopProductAction {
 
             return "paysuc";
         }
-        if (attach != null && attach.indexOf("selfpay") != -1) {
 
-            return "paysuc";
-        }
         if (attach != null && attach.indexOf("book") != -1) {
             request.setAttribute("jump", "book");
             return "paysuc";
@@ -4479,14 +4479,14 @@ public class WfjEshopProductAction {
         try {
             morre = WeChatUtils.changeF2Y(payDto.getTotalFee());
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         request.setAttribute("shijian", shijian);
         ddid = out_trade_no;
 
-        logger.info("订单号：: {}", ddid);
-        logger.info("金额：: {}", morre);
+        System.out.println("订单号：" + ddid);
+        System.out.println("金额：" + morre);
 
         String mealNum = null;
         try {
@@ -4497,7 +4497,7 @@ public class WfjEshopProductAction {
                 return "bindingSuccess";
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
 
@@ -4557,13 +4557,13 @@ public class WfjEshopProductAction {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String shijian = formatter.format(currentTime);
         request.setAttribute("shijian", shijian);
-        logger.info("订单号：: {}", ddid);
-        logger.info("金额：: {}", morre);
+        System.out.println("订单号：" + ddid);
+        System.out.println("金额：" + morre);
         String mealNum = null;
         try {
             mealNum = goldOrderService.genMealNum(ddid);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         request.setAttribute("mealNum", mealNum);
         if (tct != null && (tct.getPassword() == null || tct.getPassword().equals(""))) {
@@ -4638,7 +4638,7 @@ public class WfjEshopProductAction {
 //            msage.setMessage("微分金订单" + goodsname);
 //            msage.sendMsg("【微分金平台】");
 //        } catch (IOException e) {
-//            logger.error("操作异常", e);
+//            e.printStackTrace();
 //        }
         logger.error("线下/钱盒子支付-----提醒人账号:" + cus.getAccount());
         //保存账号
@@ -4708,7 +4708,7 @@ public class WfjEshopProductAction {
             String userAccount = "15210904250";
             cut.setAccount(userAccount);
             xMessage(cut, ddid);
-            logger.info("调试信息");
+            System.out.println(cut.getAccount() + "==========" + ddid);
         }
         result = obj.toString();
         return Action.SUCCESS;
@@ -4725,7 +4725,7 @@ public class WfjEshopProductAction {
         HttpServletResponse response = ServletActionContext.getResponse();
         Map<String, String> params = new HashMap<String, String>();
         Map requestParams = request.getParameterMap();
-        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
         String body = "";
         try {
             for (Iterator iter = requestParams.keySet().iterator(); iter.hasNext(); ) {
@@ -4754,9 +4754,9 @@ public class WfjEshopProductAction {
             String trade_status = new String(request.getParameter("trade_status").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
             String total_fee = new String(request.getParameter("total_fee").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
             String seller_id = new String(request.getParameter("seller_id").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
-            logger.error(stackTraceElements[2].getLineNumber()+"total_fee----------------------"+total_fee);
-            // 获取支付宝的通知返回参数，可参考技术文档中页面跳转同步通知参数列表(以上仅供参考)//
 
+            // 获取支付宝的通知返回参数，可参考技术文档中页面跳转同步通知参数列表(以上仅供参考)//
+          System.out.println("1body"+body);
             if (AlipayNotify.verify(params)) {// 验证成功
 
                 if (trade_status.equals("TRADE_SUCCESS")) {
@@ -4793,10 +4793,6 @@ public class WfjEshopProductAction {
                                     PayCashierBill payc = (PayCashierBill) pcbs.get(i);
                                     CashierBills cbs = (CashierBills) baseBeanService.getBeanByHqlAndParams(hqls,
                                             new String[]{payc.getOriJournalNum(), "项目收入预算单"});
-                                    logger.error(stackTraceElements[2].getLineNumber()+"cbs.getJournalNum()----------------------"+cbs.getJournalNum());
-                                    logger.error(stackTraceElements[2].getLineNumber()+"cbs.getProjectName()----------------------"+cbs.getProjectName());
-                                    logger.error(stackTraceElements[2].getLineNumber()+"cbs.getPriceSub()----------------------"+cbs.getPriceSub());
-                                    logger.error(stackTraceElements[2].getLineNumber()+"pricesum1----------------------"+pricesum1);
                                     pricesum1 = pricesum1.add(new BigDecimal(cbs.getPriceSub()));
                                 }
                                 if (total_fee1.compareTo(pricesum1) <= 0) {
@@ -4822,44 +4818,45 @@ public class WfjEshopProductAction {
                                             // 生成收款单
                                             Boolean bo = goldOrderService.generateBill(trade_no, journalNum, pricesum.toString(), "01", "");
 
-                                        try {
-                                            //收款单生成后复制订单和收款单到新表
-                                            goldOrderService.copyCash(journalNum, "d");
-                                        }catch (Exception e){
-                                            logger.error("操作异常", e);
-                                            logger.info("复制订单收款单错误");
-                                        }
+                                            try {
+                                                //收款单生成后复制订单和收款单到新表
+                                                goldOrderService.copyCash(journalNum, "d");
+                                            } catch (Exception e) {
+                                                e.printStackTrace();
+                                                System.out.println("复制订单收款单错误");
+                                            }
 
-                                        try {
-                                            addPeriod(journalNum);//购买学时产品时增加学时
-                                        } catch (Exception e) {
-                                            logger.error("操作异常", e);
+                                            try {
+                                                addPeriod(journalNum);//购买学时产品时增加学时
+                                            } catch (Exception e) {
+                                                e.printStackTrace();
+                                            }
                                         }
                                     }
+                                } else {
+                                    logger.error("实际金额是：" + pricesum1 + "---支付宝金额是:" + total_fee1);
                                 }
-                            } else {
-                                logger.error("实际金额是：" + pricesum1 + "---支付宝金额是:" + total_fee1);
                             }
                         }
                         response.getWriter().write("success");
                     }
                 }
             } else {// 验证失败
-                logger.info("验证失败");
+                System.out.println("验证失败");
                 logger.error("验证失败");
                 response.getWriter().write("fail");
             }
-        }
-        }catch (UnsupportedEncodingException e) {
-            logger.error("操作异常", e);
-        }catch (IOException e) {
-            logger.error("操作异常", e);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     // 同步地址
     @SuppressWarnings("rawtypes")
     public String call_back() {
+
         HttpSession session = ServletActionContext.getRequest().getSession();
 
         SessionWrap sessionWrap = SessionWrap.getInstance();
@@ -4887,7 +4884,7 @@ public class WfjEshopProductAction {
                 //valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
                 params.put(name, valueStr);
             }
-
+            System.out.println("body:"+body);
             // 支付宝交易号
             String trade_no = new String(request.getParameter("trade_no")
                     .getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
@@ -4909,7 +4906,7 @@ public class WfjEshopProductAction {
                 request.setAttribute("shijian", shijian);
             } else {
                 //该页面可做页面美工编辑
-                logger.info("验证失败");
+                System.out.println("验证失败");
             }
 
 
@@ -4959,7 +4956,7 @@ public class WfjEshopProductAction {
             }
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return "cg";
@@ -5173,7 +5170,6 @@ public class WfjEshopProductAction {
         SessionWrap sw = SessionWrap.getInstance();
         TEshopCustomer cus = (TEshopCustomer) sw.getObject(session,
                 SessionWrap.KEY_CUSTOMER);
-        String returnPage=request.getParameter("returnPage");
         if (cus == null) {
             if (posNum == null || posNum.equals("")) {
                 String url = request.getHeader("Referer");
@@ -5309,11 +5305,8 @@ public class WfjEshopProductAction {
         ActionContext.getContext().getValueStack().set("comps", comps);
         ActionContext.getContext().getValueStack().set("num", beanList.size());
         ActionContext.getContext().getValueStack().set("ccmap", ccmap);
-        if (returnPage != null&&returnPage.equals("01")) {
-            return "shopList";
-        }else {
-            return "newcity";
-        }
+        return "newcity";
+
     }
 
     /**
@@ -5384,7 +5377,7 @@ public class WfjEshopProductAction {
             baseBeanService.executeHqlsByParamsList(null, hqls.toArray(new String[]{}), parms);
             obj.accumulate("succes", "1");
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             obj.accumulate("succes", "-1");
         }
         result = obj.toString();
@@ -5593,7 +5586,7 @@ public class WfjEshopProductAction {
 //                result = "success";
 //
 //            } catch (Exception e) {
-//                logger.info("发送短信失败");
+//                System.out.println("发送短信失败");
 //            }
         }
 
@@ -5633,7 +5626,7 @@ public class WfjEshopProductAction {
         if (stype != null) {
             return "Address";
         } else {
-            logger.info("else");
+            System.out.println("else");
             return "toadd";
         }
     }
@@ -5759,7 +5752,7 @@ public class WfjEshopProductAction {
             } else {
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         ServletActionContext.getResponse().setHeader("Access-Control-Allow-Origin", "*");
         return "success";
@@ -5821,7 +5814,7 @@ public class WfjEshopProductAction {
                     DataOutputStream out = new DataOutputStream(conn.getOutputStream());
                     out.writeBytes(urlencode(params));
                 } catch (Exception e) {
-                    logger.info("值：{}", e);
+                    System.out.println(e);
                 }
             }
             InputStream is = conn.getInputStream();
@@ -5832,7 +5825,7 @@ public class WfjEshopProductAction {
             }
             rs = sb.toString();
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } finally {
             if (reader != null) {
                 reader.close();
@@ -5850,7 +5843,7 @@ public class WfjEshopProductAction {
             try {
                 sb.append(i.getKey()).append("=").append(URLEncoder.encode(i.getValue() + "", "UTF-8")).append("&");
             } catch (UnsupportedEncodingException e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
         }
         return sb.toString();
@@ -6054,7 +6047,7 @@ public class WfjEshopProductAction {
         String companyID = request.getParameter("companyID");
         String year = request.getParameter("year");
         TableRalate tableRalate = goldOrderService.createTableDealData(companyID,"CashierBills",year);
-        logger.info("调试信息");
+        System.out.println(tableRalate.getTablename());
         return "success";
     }
 
@@ -6070,7 +6063,7 @@ public class WfjEshopProductAction {
         String year = request.getParameter("year");
         String nyr = request.getParameter("nyr");
          goldOrderService.copyData(companyID,year,nyr);
-        logger.info("执行完成");
+        System.out.println("执行完成");
         return "success";
     }
 

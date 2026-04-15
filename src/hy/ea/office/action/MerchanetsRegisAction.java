@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.bo.WxMainAccount;
@@ -42,7 +39,6 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 public class MerchanetsRegisAction {
-	private static final Logger logger = LoggerFactory.getLogger(MerchanetsRegisAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -236,8 +232,8 @@ public class MerchanetsRegisAction {
 	 * @return
 	 */
 	public String saveMaterial(){
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println("companyID:"+companyID);
+		System.out.println("mode:"+mode);
 
 		CAccount account = (CAccount) ActionContext.getContext().getSession()
 				.get("account");

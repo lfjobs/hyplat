@@ -1,8 +1,5 @@
 package com.tiantai.telrec.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -71,7 +68,7 @@ public class ClientQueryCustomerTelRecord extends ActionSupport {
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(json.toString());
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} 
 		return null;
 	}
@@ -92,7 +89,7 @@ public class ClientQueryCustomerTelRecord extends ActionSupport {
 			}
 		} catch (Exception e) {
 
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return doc2String(document);
 	}
@@ -106,7 +103,7 @@ public class ClientQueryCustomerTelRecord extends ActionSupport {
 			writer.write(document);
 			s = out.toString("UTF-8");
 		} catch (Exception ex) {
-			logger.error("操作异常", ex);
+			ex.printStackTrace();
 		}
 		return s;
 	}

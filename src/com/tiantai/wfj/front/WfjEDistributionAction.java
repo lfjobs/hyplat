@@ -1,8 +1,5 @@
 package com.tiantai.wfj.front;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Company;
 import hy.ea.bo.human.Staff;
@@ -253,7 +250,7 @@ public class WfjEDistributionAction<AccountName> {
 				company = (Company) baseBeanService.getObjectByHqlAndParams(hql, params.toArray());
 				map1.put("companyID",map1.get("companyID")==null?(company.getCompanyID()==null?"":company.getCompanyID()):map1.get("companyID")+","+(company.getCompanyID()==null?"":company.getCompanyID()));
 				map1.put("companyName",map1.get("companyName")==null?(company.getCompanyName()==null?"":company.getCompanyName()):map1.get("companyName")+","+(company.getCompanyName()==null?"":company.getCompanyName()));
-				logger.info("调试信息");
+				System.out.println(map1.get("companyID"));
 				hql = " from Company where isSt='0' and showwechat='00' ";
 				params.clear();
 				if(result!="" && result!=null){

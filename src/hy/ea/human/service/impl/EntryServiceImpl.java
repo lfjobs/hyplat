@@ -1,8 +1,5 @@
 package hy.ea.human.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.TEshopCusCom;
 import hy.ea.bo.Company;
 import hy.ea.bo.human.Audition;
@@ -413,7 +410,7 @@ public class EntryServiceImpl implements EntryService {
 //				   msage.setMessage(smscont.toString());
 //				   msage.sendMsg("【数字地球】");
 //			   } catch (Exception e) {
-//				   logger.error("操作异常", e);
+//				   e.printStackTrace();
 //			   }
 
 		   }

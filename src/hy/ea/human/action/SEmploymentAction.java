@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import cn.jpush.api.utils.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -40,7 +37,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class SEmploymentAction {
-	private static final Logger logger = LoggerFactory.getLogger(SEmploymentAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -393,7 +389,7 @@ public class SEmploymentAction {
 		try {
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, null, null);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -1166,7 +1162,7 @@ public class SEmploymentAction {
 			net.sf.json.JSONObject obj = net.sf.json.JSONObject.fromObject(map);
 			result = obj.toString();
 		}catch(Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";

@@ -1,8 +1,5 @@
 package hy.ea.human.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.ExcelBean;
 import hy.ea.bo.human.vo.SalaryIntegral;
@@ -181,7 +178,7 @@ public class LogBookServiceImp implements LogBookService{
 			os.close();   
 			list.clear();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return new ByteArrayInputStream(os.toByteArray());

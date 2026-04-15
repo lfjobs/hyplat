@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.UnsupportedEncodingException;
@@ -45,7 +42,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class OfficeImageManagerAction {
-	private static final Logger logger = LoggerFactory.getLogger(OfficeImageManagerAction.class);
   
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -117,12 +113,12 @@ public class OfficeImageManagerAction {
 	//上传图片
 	public void ProcessRequest(HttpServletRequest request,
             HttpServletResponse response) throws Exception{
-	        logger.info("进来了");
-	        logger.info("调试信息");
+	        System.out.println("进来了");
+	        System.out.println(request.getParameter("Filedata"));
 	        try {
 	            // 上传文件的临时目录
 	            String temp=request.getParameter("folder");
-	            logger.info("值：{}", temp);
+	            System.out.println(temp);
 	            String tempDir = request.getSession().getServletContext()
 	                    .getRealPath("UploadFile");
 	            File tFile = new File(tempDir);
@@ -157,7 +153,7 @@ public class OfficeImageManagerAction {
 	            Random r = new Random(10);
 	            response.getWriter().write("" + r.nextInt());
 	        } catch (Exception e) {http://localhost:8888/hyplat
-	            logger.info("调试信息");
+	            System.out.println(e.getMessage());
 	        }
 	    }
 	public String getPhotoname() {

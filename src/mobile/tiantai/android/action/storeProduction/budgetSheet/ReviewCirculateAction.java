@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action.storeProduction.budgetSheet;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import com.opensymphony.xwork2.ActionContext;
@@ -104,7 +101,7 @@ public class ReviewCirculateAction extends HttpServlet {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -136,7 +133,7 @@ public class ReviewCirculateAction extends HttpServlet {
                 }
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "costBudgetDetail";
     }
@@ -168,7 +165,7 @@ public class ReviewCirculateAction extends HttpServlet {
                 }
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "costBudgetDetail1";
     }
@@ -229,7 +226,7 @@ public class ReviewCirculateAction extends HttpServlet {
             }
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "costBudgetItemDetail";
     }
@@ -262,7 +259,7 @@ public class ReviewCirculateAction extends HttpServlet {
             }
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "costBudgetItemDetailReview";
     }
@@ -284,7 +281,7 @@ public class ReviewCirculateAction extends HttpServlet {
                 result = reviewCirculateService.updateStatus(ids, status);
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -422,7 +419,7 @@ public class ReviewCirculateAction extends HttpServlet {
             jsonObjList.accumulate("result", "suc");
         } catch (Exception e) {
             jsonObjList.accumulate("result", "fail");
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         result = jsonObjList.toString();
         return "success";
@@ -444,7 +441,7 @@ public class ReviewCirculateAction extends HttpServlet {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }

@@ -1,15 +1,11 @@
 package com.batch.chinapay.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class IntegralityUtil {
-	private static final Logger logger = LoggerFactory.getLogger(IntegralityUtil.class);
 
 	private static MessageDigest alg;
 	private static int length;
@@ -20,7 +16,7 @@ public class IntegralityUtil {
 			alg = MessageDigest.getInstance("MD5");
 			length = alg.getDigestLength();
 		} catch (NoSuchAlgorithmException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 
@@ -61,7 +57,7 @@ public class IntegralityUtil {
 				is.close();
 			}
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return digestToReturn;
 	}

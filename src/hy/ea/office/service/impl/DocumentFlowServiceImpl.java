@@ -1,8 +1,5 @@
 package hy.ea.office.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.office.DocGsendInfo;
 import hy.ea.bo.office.Document;
@@ -124,7 +121,7 @@ public class DocumentFlowServiceImpl implements DocumentFlowService {
 			executionService.signalExecutionById(exec.getId(),
 					"to Examine and Approve");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return doc.getDocId();
@@ -179,7 +176,7 @@ public class DocumentFlowServiceImpl implements DocumentFlowService {
 			executionService.signalExecutionById(exec.getId(),
 					"to Examine and Approve");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return doc.getDocId();
 	}
@@ -375,7 +372,7 @@ public class DocumentFlowServiceImpl implements DocumentFlowService {
 			oldDoc.setStatus("S"); // 设置公文为待审批状态
 			baseBeanDao.update(oldDoc);
            }catch(Exception e){
-        	   logger.error("操作异常", e);
+        	   e.printStackTrace();
            }
            finally{
    			envImpl.close();
@@ -586,7 +583,7 @@ public class DocumentFlowServiceImpl implements DocumentFlowService {
 			executionService.setVariable(executionId, name + "_READER_INFO",
 					docReadInfo);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} finally {
 			if (env != null) {
 				env.close();

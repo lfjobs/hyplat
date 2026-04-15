@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action.storeProduction.wholesaleMall;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
 import com.tiantai.wfj.util.SessionWrap;
@@ -37,7 +34,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")//作用域
 public class WholesaleMallAction {
-	private static final Logger logger = LoggerFactory.getLogger(WholesaleMallAction.class);
 
     @Resource
     private BaseBeanService baseBeanService;
@@ -198,7 +194,7 @@ public class WholesaleMallAction {
                 companyName = backParmaInfor.get("companyName").toString();
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "toWholesaleMall";
     }
@@ -233,7 +229,7 @@ public class WholesaleMallAction {
             result = wholesaleMallService.ajaxGetOneGoodsClassify(ccompanyID, codePID);
        	 }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -247,7 +243,7 @@ public class WholesaleMallAction {
         try {
             result = wholesaleMallService.ajaxGetTwoGoodsClassify(ccompanyID, codePID,ccomIDPlatform);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -277,7 +273,7 @@ public class WholesaleMallAction {
             JSONObject obj = JSONObject.fromObject(map);
             result = obj.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -291,7 +287,7 @@ public class WholesaleMallAction {
         try {
             result = wholesaleMallService.ajaxGetGGFlList(goodsId);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -329,7 +325,7 @@ public class WholesaleMallAction {
             //2.查询保存的购物车中的数量、金额、商品种类
             result = wholesaleMallService.getShopCartInfor(new HashMap<String, Object>(), pscId,cus.getStaffid(),cus.getCompanyId());
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -360,7 +356,7 @@ public class WholesaleMallAction {
             //3.查询保存的购物车中的数量、金额、商品种类
             result = wholesaleMallService.getShopCartInfor(new HashMap<String, Object>(), null,cus.getStaffid(),cus.getCompanyId());
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -395,7 +391,7 @@ public class WholesaleMallAction {
             JSONObject obj = JSONObject.fromObject(mapObj);
             result = obj.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -423,7 +419,7 @@ public class WholesaleMallAction {
             }
             result = "succ";
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             result = "false";
         }
         return "success";
@@ -438,7 +434,7 @@ public class WholesaleMallAction {
         try {
             mapObj = wholesaleMallService.toSettlement(staffAddress, shoppingCartParmStr);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "orderdetailss";
     }
@@ -478,7 +474,7 @@ public class WholesaleMallAction {
                 request.setAttribute("qbsjCompanyID", backParmaInfor.get("qbsjCompanyID").toString());//当前登录人companyid对应的往来单位ccompanyid
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "toBussList";
     }
@@ -500,7 +496,7 @@ public class WholesaleMallAction {
             JSONObject obj = JSONObject.fromObject(map);
             result = obj.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -546,7 +542,7 @@ public class WholesaleMallAction {
             JSONObject jo = JSONObject.fromObject(map);
             this.result = jo.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }

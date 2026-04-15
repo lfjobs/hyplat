@@ -1,8 +1,5 @@
 package hy.ea.driving.action.elkc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.DrivingSchool.elyc.TbElycReservationDetail;
@@ -29,7 +26,6 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 public class ElkcSchedulingAction {
-	private static final Logger logger = LoggerFactory.getLogger(ElkcSchedulingAction.class);
 
     @Resource
     private BaseBeanService baseBeanService;
@@ -122,7 +118,7 @@ public class ElkcSchedulingAction {
             try {
                 schedulingService.deleteSchedul(scheduling.getClassId());
             } catch (Exception e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
 
         }

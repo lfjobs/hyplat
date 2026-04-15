@@ -1,8 +1,5 @@
 package com.wechat.utils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import org.apache.http.impl.client.CloseableHttpClient;
 
 import javax.crypto.BadPaddingException;
@@ -21,7 +18,6 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
 
 public class SFTUtil {
-	private static final Logger logger = LoggerFactory.getLogger(SFTUtil.class);
     private static String mchId = ""; // 商户号
     private static String mchSerialNo = ""; // 商户证书序列号
     private static String apiV3Key = ""; // api密钥
@@ -131,7 +127,7 @@ public class SFTUtil {
                     (file_inputstream);
             String ciphertext =   rsaEncryptOAEP("210522198903092024", certificate);
 
-            logger.info("值：{}", ciphertext);
+            System.out.println(ciphertext);
 
             byte[] keyBytes = org.apache.commons.codec.binary.Base64.decodeBase64(priKey);
 
@@ -144,7 +140,7 @@ public class SFTUtil {
            String  mtext = rsaDecryptOAEP(ciphertext, privateKey);
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 }

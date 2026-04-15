@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
@@ -38,7 +35,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class TelMessageAction {
-	private static final Logger logger = LoggerFactory.getLogger(TelMessageAction.class);
     private Log log = LogFactory.getFactory().getInstance(TelMessageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -149,11 +145,11 @@ public class TelMessageAction {
 			mobileMessage.setContent(telMessage.getContent());
 			mobileMessage.setMobile(t);
 			reStr = mobileMessage.sendMsg(); 
-			logger.info("值：{}", reStr);
+			System.out.println(reStr);
 			 
 		} catch (Exception e) {
 			log.error("TelMessageAction.sendMessage()" + e.getMessage());
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		String[] fulldatas = fulldata.split(",");
 		
@@ -313,7 +309,7 @@ public class TelMessageAction {
 			mobileMessage.setContent(telMessage.getContent());
 			mobileMessage.setMobile(tels);
 			reStr = mobileMessage.sendMsg(); 
-			logger.info("值：{}", reStr);
+			System.out.println(reStr);
 			
 			//根据返回状态修改
 			
@@ -348,7 +344,7 @@ public class TelMessageAction {
 			 
 		} catch (Exception e) {
 			log.error("TelMessageAction.sendMessage()" + e.getMessage());
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	
 		return "success";
@@ -410,7 +406,7 @@ public class TelMessageAction {
 
 		} catch (Exception e) {
 
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return "success";
@@ -448,7 +444,7 @@ public class TelMessageAction {
 				
 			} catch (IOException e) {
 				
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 	    }
 		
@@ -591,7 +587,7 @@ public class TelMessageAction {
 					try {
 						dc.add(Restrictions.between("sendDate",dateFormat.parse(sdate),dateFormat.parse(edate)));
 					} catch (ParseException e) {
-						logger.error("操作异常", e);
+						e.printStackTrace();
 					}
 				}
 				if(telMessage.getRalation()!=null&&!telMessage.getRalation().equals("")){
@@ -675,7 +671,7 @@ public class TelMessageAction {
 		JSONObject jo = JSONObject.fromObject(map);
 		this.result = jo.toString();
 	}catch(Exception e){
-		logger.error("操作异常", e);
+		e.printStackTrace();
 	}
 		return "success";
 	}
@@ -750,7 +746,7 @@ public class TelMessageAction {
 	     map.put("result",qmsID);
     	 }catch(Exception e){
     		 map.put("result","fail"); 
-    		 logger.error("操作异常", e);
+    		 e.printStackTrace();
     		
     	 }
          JSONObject jo = JSONObject.fromObject(map);
@@ -769,7 +765,7 @@ public class TelMessageAction {
      	 map.put("result", "suc");
      	 }catch(Exception e){
      		 map.put("result", "fail");
-     		 logger.error("操作异常", e);
+     		 e.printStackTrace();
      	 }
          JSONObject jo = JSONObject.fromObject(map);
          this.result = jo.toString();
@@ -818,7 +814,7 @@ public class TelMessageAction {
 			map.put("result", "0");
 		}catch(Exception e){
 			map.put("result", "1");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		this.results = jo;
@@ -889,7 +885,7 @@ public class TelMessageAction {
 			map.put("result", "0");
 		}catch(Exception e){
 			map.put("result", "1");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		this.results = jo;
@@ -953,7 +949,7 @@ public class TelMessageAction {
 
 
 		 } catch (Exception e) {
-			 logger.error("操作异常", e);
+			 e.printStackTrace();
 		 }
           return  null;
 
@@ -1172,13 +1168,13 @@ public class TelMessageAction {
 			String content = request.getParameter("content");
 			mobileMessage.setContent(content);
 			String reStr = mobileMessage.checkkeyword();
-			logger.info("值：{}", reStr);
+			System.out.println(reStr);
 			map.put("result", reStr);
 
 			JSONObject jo = JSONObject.fromObject(map);
 			this.results = jo;
 		}catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
 		}
 		return "success";
 	}

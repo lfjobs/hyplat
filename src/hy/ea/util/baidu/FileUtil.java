@@ -1,15 +1,11 @@
 package hy.ea.util.baidu;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.*;
 
 /**
  * 文件读取工具类
  */
 public class FileUtil {
-	private static final Logger logger = LoggerFactory.getLogger(FileUtil.class);
 
     /**
      * 读取文件内容，作为字符串返回

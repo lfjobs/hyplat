@@ -1,8 +1,5 @@
 package hy.ea.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -79,7 +76,7 @@ public class FileUpload extends HttpServlet {
 		resp.setCharacterEncoding("utf-8");
 		boolean isMultipart = ServletFileUpload.isMultipartContent(req);
 		if (!isMultipart) {
-			logger.info(">> This wasn't a file upload request!");
+			System.out.println(">> This wasn't a file upload request!");
 			return;
 		}
 
@@ -103,7 +100,7 @@ public class FileUpload extends HttpServlet {
 			for (FileItem item : items) {
 				if (item.isFormField()) { 
 					prop.put(item.getFieldName(), item.getString());
-					//logger.info("调试信息");
+					//System.out.println(item.getFieldName() + " :" + item.getString());
 				} else { 
 					uplFile = (FileItem) item; 
 					
@@ -195,7 +192,7 @@ public class FileUpload extends HttpServlet {
 			//此处删除Temp图
 			//FileUtil.deleteFile(TEMPPath);
 //			savepath +=imgUploadPath.replace("//","/") + ",";
-		//	logger.info("调试信息"); 
+		//	System.out.println(savepath +=(imgUploadPath.replace("//","/") + ",")); 
 			
 			
 			
@@ -203,7 +200,7 @@ public class FileUpload extends HttpServlet {
 			savepath +=imgUploadPath.replace("//","/") + ",";
 			out.print(savepath.replace("\t","").replace("\n",""));
 		} catch (Exception e) {
-			logger.info("调试信息");
+			System.out.println(">> " + e.getMessage());
 			throw new IOException(e.getMessage());
 		}
 

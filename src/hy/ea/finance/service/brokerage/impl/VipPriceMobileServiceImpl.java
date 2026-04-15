@@ -1,8 +1,5 @@
 package hy.ea.finance.service.brokerage.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.finance.ProductPackaging;
 import hy.ea.bo.finance.brokerage.*;
@@ -94,7 +91,7 @@ public class VipPriceMobileServiceImpl implements VipPriceMobileService {
             result.put("beanList", subResult);
         } catch (Exception e) {
             // 处理异常
-            logger.error("操作异常", e);
+            e.printStackTrace();
             // 可以添加日志记录或其他错误处理机制
         }
         return result;
@@ -158,7 +155,7 @@ public class VipPriceMobileServiceImpl implements VipPriceMobileService {
             PVip pVips = this.vipService.getPVipById(mapPro.get("priceid").toString());
             //批发价添加
             String vipId = serverService.getServerID("vipId");
-            logger.info("vipId:: {}", vipId);
+            System.out.println("vipId:" + vipId);
             result.put("priceid", vipId);
             PVip vip = new PVip();
             vip.setVipId(vipId);
@@ -195,7 +192,7 @@ public class VipPriceMobileServiceImpl implements VipPriceMobileService {
             List<Object[]> parm = new ArrayList<>();
             if (pVips != null) {
                 vip.setUpdateTimes(new Date());
-                logger.info("调试信息");
+                System.out.println(pVips.getVipId());
                 flag = getPRetailByPpid(saveBean, pVips);
                 if (!flag.equals("201")) {
                     throw new Exception("数据异常");
@@ -218,7 +215,7 @@ public class VipPriceMobileServiceImpl implements VipPriceMobileService {
             }
             baseBeanService.executeSqlsByParmsList(saveBean, array, parm);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             flag = "500";
         }
         result.put("flag", flag);

@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.human.CS;
@@ -41,7 +38,6 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class CSAction {
-	private static final Logger logger = LoggerFactory.getLogger(CSAction.class);
 	@Resource
 	private ServerService serverService;
 	@Resource
@@ -174,7 +170,7 @@ public class CSAction {
 				}
 			}
 		}
-		//logger.info("调试信息");
+		//System.out.println(staffmap.size());
 		CLogBook logBook = logBookService.saveCLogBook(organizationID, "社会单位("
 				+ companyName + ")添加了" + staffmap.size() + "个成员", account);
 		beans.add(logBook);

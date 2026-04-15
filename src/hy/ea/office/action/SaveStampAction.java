@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.office.EnterpriseStamp;
 import hy.plat.service.BaseBeanService;
@@ -53,7 +50,7 @@ public class SaveStampAction extends ActionSupport {
 			response.flushBuffer();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}

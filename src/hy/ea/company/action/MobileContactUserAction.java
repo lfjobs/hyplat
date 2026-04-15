@@ -1,8 +1,5 @@
 package hy.ea.company.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * 往来个人
  *@author 陈小丰
@@ -45,7 +42,6 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class MobileContactUserAction {
-	private static final Logger logger = LoggerFactory.getLogger(MobileContactUserAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -72,7 +68,7 @@ public class MobileContactUserAction {
 			session.put("tablesearch", contactUser);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return getListContactUser();
 	}
@@ -123,7 +119,7 @@ public class MobileContactUserAction {
 		dc.add(Restrictions.eq("companyID", account.getCompanyID()));
 		if (search != null && search.equals("search")) {
 			this.contactUser = (ContactUser) session.get("tablesearch");
-			//logger.info("值：{}", contactUser);
+			//System.out.println(contactUser);
 			if(contactUser.getStaffName()!=null&&!"".equals(contactUser.getStaffName()))
 			{
 				dc.add(Restrictions.like("staffName", contactUser.getStaffName(),MatchMode.ANYWHERE));
@@ -152,7 +148,7 @@ public class MobileContactUserAction {
 					dc.add(Restrictions.eq("relation",Relation));
 				} catch (UnsupportedEncodingException e) {
 					// TODO Auto-generated catch block
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 			}
 		}
@@ -179,11 +175,11 @@ public class MobileContactUserAction {
 			response.setCharacterEncoding("UTF-8");
 			try {
 				response.getWriter().write(outString);
-				//logger.info("值：{}", outString);
+				//System.out.println(outString);
 				response.flushBuffer();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			return null;	
 		}

@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.service.CLogBookService;
 import hy.ea.service.ShowExcelService;
 import hy.plat.bo.BaseBean;
@@ -35,7 +32,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class SafetyHealthAction {
-	private static final Logger logger = LoggerFactory.getLogger(SafetyHealthAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -73,7 +69,7 @@ public class SafetyHealthAction {
 				"d.totlescore,d.safetykey,d.companyid,d.organizationid from Dtsafetyhealth d  " +
 				"left join dtcorganization c on c.organizationid = d.organizationid  where d.companyID = ? and d.organizationid= ?";
 		accountname = account.getAccountName();
-		//logger.info("值：{}", organizationID);
+		//System.out.println(organizationID);
 		pageForm = baseBeanService.getPageFormBySQL(
 				(null != pageForm ? pageForm.getPageNumber() : 1),
 				(pageNumber == 0 ? 10 : pageNumber), sql, "select count(1) "+sql.substring(sql.indexOf("from")), params);

@@ -187,7 +187,7 @@ public class DanCheServiceImpl implements DanCheService {
             }
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             log.error("----关锁后结算出现问题的单车编号为，查看JiShi表-----"+deviceid);
         }
 

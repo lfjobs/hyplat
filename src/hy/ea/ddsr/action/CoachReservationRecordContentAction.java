@@ -1,8 +1,5 @@
 package hy.ea.ddsr.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Remind;
 import hy.ea.bo.ddsr.Ddsrcoach;
@@ -56,7 +53,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class CoachReservationRecordContentAction {
-	private static final Logger logger = LoggerFactory.getLogger(CoachReservationRecordContentAction.class);
 	private int pageNumber;
 	private InputStream excelStream;
 	private PageForm pageForm;
@@ -209,7 +205,7 @@ public class CoachReservationRecordContentAction {
 										calendar.set(Calendar.HOUR_OF_DAY,startdate.getHours()+i+1);
 										ddsrrr.setRereEnddate(DateUtil.toStrDateFromUtilDateByFormat(calendar.getTime(),"HH:mm"));
 									} catch (ParseException e) {
-										logger.error("操作异常", e);
+										e.printStackTrace();
 									}
 									ddsrrr.setRerePeoplesum(Byte.valueOf("0"));
 									//ddsrrr.setRereSubjects(subject.getDssrsubject().getSubjType());
@@ -321,7 +317,7 @@ public class CoachReservationRecordContentAction {
 		        	dateStr=DateUtil.toStrDateFromUtilDateByFormat(cal.getTime(),"yyyy-MM-dd");
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 		        Date date=DateUtil.parseDate("yyyy-MM-dd", dateStr);
 		        if(bean.getRereAppdate().compareTo(date)!=1){
@@ -424,7 +420,7 @@ public class CoachReservationRecordContentAction {
 		        	dateStr=DateUtil.toStrDateFromUtilDateByFormat(cal.getTime(),"yyyy-MM-dd");
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 		        Date date=DateUtil.parseDate("yyyy-MM-dd", dateStr);
 		        if(((Ddsrreservationrecord) reDssrstDdsList2.get(0)).getRereAppdate().compareTo(date)!=1){
@@ -791,7 +787,7 @@ public class CoachReservationRecordContentAction {
 				searchEndDate=DateUtil.parseDate("yyyy-MM-dd", DateUtil.toStrDateFromUtilDateByFormat(calendarEndDate.getTime(),"yyyy-MM-dd"));
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			sqlWhereStatic.append(" and dsrr.rere_appdate between ? and ? ");
 			param.add(searchStaDate);
@@ -811,18 +807,18 @@ public class CoachReservationRecordContentAction {
 	public static void main(String[] args) {
 			/*Date date=DateUtil.parseDate("HH:mm", "05:30");
 			Date date1=DateUtil.parseDate("HH:mm","07:30");
-			logger.info("调试信息");
+			System.out.println(DateUtil.getHourOfDate(date1)-DateUtil.getHourOfDate(date));
 			Date t1 = new Date();
 	        Calendar cal = Calendar.getInstance();
 	        cal.setTime(t1);
 	        cal.set(Calendar.DAY_OF_MONTH, 1);
-	        logger.info("调试信息");
+	        System.out.println(cal.getTime());
 	        cal.add(Calendar.DAY_OF_MONTH, 1);
 	        try {
-				logger.info("调试信息");
+				System.out.println(DateUtil.toStrDateFromUtilDateByFormat(cal.getTime(),"yyyy-MM-dd"));
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}*/
 	      
 	        
@@ -836,16 +832,16 @@ public class CoachReservationRecordContentAction {
 				ss.setMessage("测试");
 				ss.sendSMS().get("message");
 				for (String str : ss.sendSMS().values()) {
-					logger.info("调试信息");
+					System.out.println( str);
 				}
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				
 			}*/
-		/*logger.info("调试信息");
-		logger.info("调试信息");
-		logger.info("调试信息");*/
+		/*System.out.println(System.getProperty("java.io.tmpdir"));
+		System.out.println(System.getProperty("user.home"));
+		System.out.println(System.getProperty("user.dir"));*/
 		// TODO Auto-generated method stub
 		  String string = "慈";
 		  byte [] b = null;
@@ -853,10 +849,10 @@ public class CoachReservationRecordContentAction {
 		    b = string.getBytes("GBK");
 		  } catch (UnsupportedEncodingException e) {
 		   // TODO Auto-generated catch block
-		   logger.error("操作异常", e);
+		   e.printStackTrace();
 		  }
 		  for(int i=0; i< b.length ; i++){
-		   logger.info("调试信息");
+		   System.out.println(Integer.toBinaryString(b[i]&0xff));
 		  }
 		  String fString = new String(b);
 		  System.out.print(fString);

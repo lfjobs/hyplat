@@ -1,8 +1,5 @@
 package hy.ea.company.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * 往来单位
  *@author 王汝明
@@ -48,7 +45,6 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class MobileContactCompanyAction {
-	private static final Logger logger = LoggerFactory.getLogger(MobileContactCompanyAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -156,11 +152,11 @@ public class MobileContactCompanyAction {
 		response.setCharacterEncoding("UTF-8");
 		try {
 			response.getWriter().write(outString);
-			//logger.info("值：{}", outString);
+			//System.out.println(outString);
 			response.flushBuffer();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;	
 	}

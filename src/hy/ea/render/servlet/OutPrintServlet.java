@@ -1,8 +1,5 @@
 package hy.ea.render.servlet;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -48,7 +45,7 @@ public class OutPrintServlet extends HttpServlet {
 
 		// byte[] bb=fName.getBytes("ISO-8859-1");
 		// fName=new String(bb,"UTF-8");
-		// logger.info("值：{}", fName);
+		// System.out.println(fName);
 		String ffName = java.net.URLDecoder.decode(fName, "UTF-8");
 		String fileName = ffName.trim();
 		String postfix = "";
@@ -79,7 +76,7 @@ public class OutPrintServlet extends HttpServlet {
 		// try {
 		// ff = new File(strPathFile + fileName);
 		// } catch (Exception e) {
-		// logger.error("操作异常", e);
+		// e.printStackTrace();
 		// }
 		// Long filelength = ff.length();
 		// int len = filelength.intValue();
@@ -170,7 +167,7 @@ public class OutPrintServlet extends HttpServlet {
 		// }
 		// output.flush();
 		// } catch (Exception e) {
-		// logger.error("操作异常", e);
+		// e.printStackTrace();
 		// } finally {
 		// if (fis != null) {
 		// fis.close();

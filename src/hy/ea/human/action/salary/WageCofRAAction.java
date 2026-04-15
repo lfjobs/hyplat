@@ -1,8 +1,5 @@
 package hy.ea.human.action.salary;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.base.action.BaseAction;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.human.salary.WageCofcl;
@@ -120,7 +117,7 @@ public class WageCofRAAction extends BaseAction<WageCofra> {
 				java.util.Date date=sdf.parse(wcofra.getYyyyCofDate()+"-1-1");  
 				wcofra.setCofRaDate(date);
 			} catch (ParseException e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			if(null != wcofra.getSumMoneyT() && !"".equals(wcofra.getSumMoneyT().trim())){
 				//构造以字符串内容为值的BigDecimal类型的变量bd   
@@ -143,7 +140,7 @@ public class WageCofRAAction extends BaseAction<WageCofra> {
 				java.util.Date date=sdf.parse(wcofra.getYyyyCofDate()+"-1-1");  
 				wcofra.setCofRaDate(date);
 			} catch (ParseException e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			if(null != wcofra.getSumMoneyT() && !"".equals(wcofra.getSumMoneyT().trim())){
 				//构造以字符串内容为值的BigDecimal类型的变量bd   

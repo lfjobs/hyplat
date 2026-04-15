@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package strict-method-invocation="false" name="doubaoai-token" namespace="/ea/ai"   extends="struts-default">
+		<action name="t_ea_*" class="hy.ea.office.action.DoubaoAIAction" method="{1}">
+		      <result name="addressip">/page/ea/main/office_ea/information/DomainName.jsp</result>
+		</action>
+	</package>
+
+	<package strict-method-invocation="false" name="doubaoai-jsonajax" namespace="/ea/ai" extends="json-default">
+		<action name="sajax_ea_*" class="hy.ea.office.action.DoubaoAIAction" method="{1}">
+			<!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>
+
+		</action>
+
+		<!-- 配置流式聊天接口 -->
+		<action name="stream" class="hy.ea.office.action.DoubaoAIAction" method="streamChat">
+			<!-- 无需配置 result，因为直接输出流 -->
+			<interceptor-ref name="defaultStack">
+				<!-- 排除压缩拦截器 -->
+				<param name="excludeParams">compression</param>
+			</interceptor-ref>
+		</action>
+
+	</package>
+
+</struts>

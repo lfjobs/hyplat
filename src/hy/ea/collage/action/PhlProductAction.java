@@ -1,8 +1,5 @@
 package hy.ea.collage.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
 import com.tiantai.wfj.util.SessionWrap;
@@ -33,7 +30,6 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 public class PhlProductAction {
-	private static final Logger logger = LoggerFactory.getLogger(PhlProductAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -120,7 +116,7 @@ public class PhlProductAction {
             map.put("goodNum", goodNum);
         } catch (Exception e) {
             map.put("goodNum", goodNum);
-            //  logger.error("操作异常", e);
+            //  e.printStackTrace();
         }
 
         JSONObject obj = JSONObject.fromObject(map);

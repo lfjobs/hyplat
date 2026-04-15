@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -61,7 +58,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class AATelMessageAction{
-	private static final Logger logger = LoggerFactory.getLogger(AATelMessageAction.class);
     private Log log = LogFactory.getFactory().getInstance(AATelMessageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -359,11 +355,11 @@ public class AATelMessageAction{
 			mobileMessage.setContent(telMessage.getContent());
 			mobileMessage.setMobile(telNumber);
 			reStr = mobileMessage.sendMsg(); 
-			logger.info("值：{}", reStr);
+			System.out.println(reStr);
 			 
 		} catch (Exception e) {
 			log.error("TelMessageAction.sendMessage()" + e.getMessage());
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 			beans = new ArrayList<BaseBean>();
 			List<String> telList = new ArrayList<String>(); 
@@ -477,7 +473,7 @@ public class AATelMessageAction{
 			mobileMessage.setContent(telMessage.getContent());
 			mobileMessage.setMobile(tels);
 			reStr = mobileMessage.sendMsg(); 
-			logger.info("值：{}", reStr);
+			System.out.println(reStr);
 			
 			//根据返回状态修改
 			
@@ -512,7 +508,7 @@ public class AATelMessageAction{
 			 
 		} catch (Exception e) {
 			log.error("TelMessageAction.sendMessage()" + e.getMessage());
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	
 		return "success";
@@ -574,7 +570,7 @@ public class AATelMessageAction{
 
 		} catch (Exception e) {
 
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return "success";
@@ -612,7 +608,7 @@ public class AATelMessageAction{
 				
 			} catch (IOException e) {
 				
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 	    }
 		
@@ -636,7 +632,7 @@ public class AATelMessageAction{
 			   jret.accumulate("result", "suc");
 		} catch (Exception e) {
 			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			jret.accumulate("result", "fail");
 		}  
 		   result=jret;
@@ -655,7 +651,7 @@ public class AATelMessageAction{
 				baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, hql, params.toArray());
 				jret.accumulate("result", "suc");
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 				jret.accumulate("result", "suc");
 			}	    	
  	    	    result=jret;
@@ -717,7 +713,7 @@ public class AATelMessageAction{
 	     map.put("result",qmsID);
     	 }catch(Exception e){
     		 map.put("result","fail"); 
-    		 logger.error("操作异常", e);
+    		 e.printStackTrace();
     		
     	 }
          JSONObject jo = JSONObject.fromObject(map);
@@ -736,7 +732,7 @@ public class AATelMessageAction{
      	 map.put("result", "suc");
      	 }catch(Exception e){
      		 map.put("result", "fail");
-     		 logger.error("操作异常", e);
+     		 e.printStackTrace();
      	 }
          JSONObject jo = JSONObject.fromObject(map);
          this.result = jo.toString();

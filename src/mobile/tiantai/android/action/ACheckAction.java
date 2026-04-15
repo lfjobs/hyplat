@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,7 +32,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class ACheckAction {
-	private static final Logger logger = LoggerFactory.getLogger(ACheckAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -259,7 +255,7 @@ public class ACheckAction {
 
 		} catch (Exception e) {
 			jret.accumulate("result", "fail");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		result = jret;
 		return "success";
@@ -302,8 +298,8 @@ public class ACheckAction {
 			}
 		}
 		sql += " order by c.addtime desc";
-		logger.info("值：{}", sql);
-		logger.info("值：{}", sql);
+		System.out.println(sql);
+		System.out.println(sql);
 
 		pageForm = baseBeanService
 				.getPageFormBySQL(

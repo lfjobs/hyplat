@@ -1,8 +1,5 @@
 package hy.ea.ddsr.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Remind;
 import hy.ea.bo.ddsr.Ddsrcoach;
@@ -57,7 +54,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class AppointmentRecordByWeChatAction {
-	private static final Logger logger = LoggerFactory.getLogger(AppointmentRecordByWeChatAction.class);
 	private int pageNumber;
 	private InputStream excelStream;
 	private PageForm pageForm;
@@ -291,7 +287,7 @@ public class AppointmentRecordByWeChatAction {
 									ddsrrr.setRereEnddate(DateUtil.toStrDateFromUtilDateByFormat(
 											calendar.getTime(), "HH:mm"));
 								} catch (ParseException e) {
-									logger.error("操作异常", e);
+									e.printStackTrace();
 								}
 								ddsrrr.setRerePeoplesum(Byte.valueOf("0"));
 								// ddsrrr.setRereSubjects(subject.getDssrsubject().getSubjType());
@@ -429,7 +425,7 @@ public class AppointmentRecordByWeChatAction {
 							cal.getTime(), "yyyy-MM-dd");
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 				Date date = DateUtil.parseDate("yyyy-MM-dd", dateStr);
 				if (bean.getRereAppdate().compareTo(date) != 1) {
@@ -549,7 +545,7 @@ public class AppointmentRecordByWeChatAction {
 							cal.getTime(), "yyyy-MM-dd");
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 				Date date = DateUtil.parseDate("yyyy-MM-dd", dateStr);
 				if (((Ddsrreservationrecord) reDssrstDdsList2.get(0))
@@ -1010,7 +1006,7 @@ public class AppointmentRecordByWeChatAction {
 								calendarEndDate.getTime(), "yyyy-MM-dd"));
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			sqlWhereStatic.append(" and dsrr.rere_appdate between ? and ? ");
 			param.add(searchStaDate);
@@ -1035,11 +1031,11 @@ public class AppointmentRecordByWeChatAction {
 		 * System.out.println(DateUtil
 		 * .getHourOfDate(date1)-DateUtil.getHourOfDate(date)); Date t1 = new
 		 * Date(); Calendar cal = Calendar.getInstance(); cal.setTime(t1);
-		 * cal.set(Calendar.DAY_OF_MONTH, 1); logger.info("调试信息");
+		 * cal.set(Calendar.DAY_OF_MONTH, 1); System.out.println(cal.getTime());
 		 * cal.add(Calendar.DAY_OF_MONTH, 1); try {
 		 * System.out.println(DateUtil.toStrDateFromUtilDateByFormat
 		 * (cal.getTime(),"yyyy-MM-dd")); } catch (ParseException e) { // TODO
-		 * Auto-generated catch block logger.error("操作异常", e); }
+		 * Auto-generated catch block e.printStackTrace(); }
 		 */
 
 		/*
@@ -1049,16 +1045,16 @@ public class AppointmentRecordByWeChatAction {
 		 * ss.setPassword("9b0616e53eebc7da7c2bb05e0452f65e");
 		 * ss.setMobiles("18600580298"); ss.setMessage("测试");
 		 * ss.sendSMS().get("message"); for (String str : ss.sendSMS().values())
-		 * { logger.info("调试信息"); }
+		 * { System.out.println( str); }
 		 * 
 		 * } catch (Exception e) { // TODO Auto-generated catch block
 		 * 
 		 * }
 		 */
 		/*
-		 * logger.info("调试信息");
-		 * logger.info("调试信息");
-		 * logger.info("调试信息");
+		 * System.out.println(System.getProperty("java.io.tmpdir"));
+		 * System.out.println(System.getProperty("user.home"));
+		 * System.out.println(System.getProperty("user.dir"));
 		 */
 		// TODO Auto-generated method stub
 		String string = "慈";
@@ -1067,10 +1063,10 @@ public class AppointmentRecordByWeChatAction {
 			b = string.getBytes("GBK");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		for (int i = 0; i < b.length; i++) {
-			logger.info("调试信息");
+			System.out.println(Integer.toBinaryString(b[i] & 0xff));
 		}
 		String fString = new String(b);
 		System.out.print(fString);

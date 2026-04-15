@@ -1,8 +1,5 @@
 package hy.ea.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,11 +22,10 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReadUtils {
-	private static final Logger logger = LoggerFactory.getLogger(ExcelReadUtils.class);
 
     public static void main(String[] args) {
 
-        logger.info("调试信息");
+        System.out.println(new BigDecimal("16.799999999999997").setScale(2,BigDecimal.ROUND_HALF_UP));
 
         List<Map<String,String>> list = null;
         //String filePath = "D:\\test.xlsx";
@@ -104,9 +100,9 @@ public class ExcelReadUtils {
             }
 
         } catch (FileNotFoundException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return wb;
     }

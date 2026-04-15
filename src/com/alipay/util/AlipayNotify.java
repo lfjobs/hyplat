@@ -1,8 +1,5 @@
 package com.alipay.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -26,7 +23,6 @@ import com.alipay.sign.RSA;
  *调试通知返回时，可查看或改写log日志的写入TXT里的数据，来检查通知返回是否正常
  */
 public class AlipayNotify {
-	private static final Logger logger = LoggerFactory.getLogger(AlipayNotify.class);
 
     /**
      * 支付宝消息验证地址
@@ -119,7 +115,7 @@ public class AlipayNotify {
                 .getInputStream()));
             inputLine = in.readLine().toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             inputLine = "";
         }
 

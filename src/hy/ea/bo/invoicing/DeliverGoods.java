@@ -7,20 +7,20 @@ import java.util.Objects;
 
 public class DeliverGoods implements BaseBean,Serializable{
     /**
-	 * 拣货单产品
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String deliverykey;
     private String deliveryid;
-    private String orderid;//拣货单id
-    private String goodsid;//物品id
-    private String goodname;//产品名称
-    private String unit;//
-    private String ordernum;//订单数量
-    private String quantity;//实际拣货数量
-    private String error;//误差
-    private String unitprice;//单价
-    private String totalprices;//总金额
+    private String orderid;
+    private String goodsid;
+    private String goodname;
+    private String unit;
+    private String ordernum;
+    private String quantity;
+    private String error;
+    private String unitprice;
+    private String totalprices;
     private String goodstype;
     private String ppid;
 

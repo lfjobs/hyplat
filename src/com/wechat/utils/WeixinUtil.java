@@ -41,7 +41,6 @@ import java.util.TreeMap;
 @Service
 @Transactional
 public class WeixinUtil {
-	private static final Logger logger = LoggerFactory.getLogger(WeixinUtil.class);
 
 	private static Logger log = LoggerFactory.getLogger(WeixinUtil.class);
 
@@ -246,8 +245,8 @@ public class WeixinUtil {
 		// 将对象转换成json字符串
 		String jsonmater = JSONObject.fromObject(articleMain).toString();
 		JSONObject jsonObject = WeixinUtil.httpRequest(url, "POST", jsonmater);
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println(jsonmater.toString());
+		System.out.println(jsonObject.toString());
 
 
 		return "";
@@ -272,8 +271,8 @@ public class WeixinUtil {
 		// 将对象转换成json字符串
 		String jsonmater = JSONObject.fromObject(mpMessage).toString();
 		JSONObject jsonObject = WeixinUtil.httpRequest(url, "POST", jsonmater);
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println(jsonmater.toString());
+		System.out.println(jsonObject.toString());
 		return "";
 
 
@@ -291,8 +290,8 @@ public class WeixinUtil {
 		// 将对象转换成json字符串
 		String jsonmater = JSONObject.fromObject(dsend).toString();
 		JSONObject jsonObject = WeixinUtil.httpRequest(url, "POST", jsonmater);
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println(jsonmater.toString());
+		System.out.println(jsonObject.toString());
 
 		return "";
 	}
@@ -317,8 +316,8 @@ public class WeixinUtil {
 		// 将对象转换成json字符串
 		String jsonmater = JSONObject.fromObject(gsnews).toString();
 		JSONObject jsonObject = WeixinUtil.httpRequest(url, "POST", jsonmater);
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println(jsonmater.toString());
+		System.out.println(jsonObject.toString());
 		return "";
 
 
@@ -339,8 +338,8 @@ public class WeixinUtil {
 		// 将对象转换成json字符串
 		String jsonmater = JSONObject.fromObject(mater).toString();
 		JSONObject jsonObject = httpRequest(url, "POST", jsonmater);
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println(jsonmater.toString());
+		System.out.println(jsonObject.toString());
 
 		return "";
 
@@ -397,7 +396,7 @@ public class WeixinUtil {
 
 		} catch (Exception e) {
 
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return openAccessToken;
@@ -449,7 +448,7 @@ public class WeixinUtil {
 
 		} catch (Exception e) {
 
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return wxUserInfo;
@@ -774,13 +773,13 @@ public class WeixinUtil {
 		// 如果请求成功
 		if (null != jsonObject) {
 			try {
-				logger.info("调试信息");
+				System.out.println("jsonObject:"+jsonObject.toString());
 				nickname =jsonObject.getString("nickname");
 				log.error("nickname:" + jsonObject.getString("nickname"));
 				System.out.print("nickname:" + jsonObject.getString("nickname"));
 
 			} catch (JSONException e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 				nickname= "佚名";
 
 
@@ -838,7 +837,7 @@ public class WeixinUtil {
 //	    // 将对象转换成json字符串
 //	    String jsonmater = JSONObject.fromObject(mater).toString();
 //		JSONObject jsonObject = httpRequest(requestUrl, "POST",jsonmater);
-//		logger.info("11111111");
+//		System.out.println("11111111");
 //		ArticleMain articleMain = new ArticleMain();
 //		Articles articles = new Articles();
 //
@@ -855,7 +854,7 @@ public class WeixinUtil {
 //	    // 将对象转换成json字符串
 //	    String jsonmater = JSONObject.fromObject(articleMain).toString();
 //		JSONObject jsonObject = WeixinUtil.httpRequest(url, "POST",jsonmater);
-//		logger.info("调试信息");
+//		System.out.println( jsonObject.toString());
 
 
 //
@@ -869,7 +868,7 @@ public class WeixinUtil {
 //	    // 将对象转换成json字符串
 //	    String jsonmater = JSONObject.fromObject(mpMessage).toString();
 //		JSONObject jsonObject = WeixinUtil.httpRequest(url, "POST",jsonmater);
-//		logger.info("调试信息");
+//		System.out.println( jsonObject.toString());
 
 		//WeixinUtil.batchget_material();
 		//WeixinUtil.createMaterialMessage();

@@ -1,8 +1,5 @@
 package hy.ea.finance.service.brokerage.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.finance.BenDis.ProSetupSub;
 import hy.ea.bo.finance.BenDis.ProSetupSubBackup;
 import hy.ea.bo.finance.ProSetup;
@@ -209,7 +206,7 @@ public class RetailServiceImpl implements RetailService {
                 this.baseBeanService.saveBeansListAndexecuteSqlsByParams(null, new String[]{sql1}, new Object[]{proSetup.getPpid()});
                 map.put("code", "200");
             } catch (Exception e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
                 map.put("code", "500");
             }
         } else {

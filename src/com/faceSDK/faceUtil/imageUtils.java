@@ -1,8 +1,5 @@
 package com.faceSDK.faceUtil;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -47,7 +44,7 @@ public final class imageUtils {
             // 把图片输出到硬盘上。
             ImageIO.write(imageNew, formatName, outputFile);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -83,7 +80,7 @@ public final class imageUtils {
             // 把图片输出到硬盘上。
             ImageIO.write(imageNew, formatName, outputFile);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -120,7 +117,7 @@ public final class imageUtils {
             // 把图片输出到硬盘上。
             ImageIO.write(imageNew, formatName, outputFile);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -152,7 +149,7 @@ public final class imageUtils {
             // 把图片输出到硬盘上。
             ImageIO.write(imageNew, formatName, outputFile);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -184,7 +181,7 @@ public final class imageUtils {
             // 把图片输出到硬盘上。
             ImageIO.write(imageNew, formatName, outputFile);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 

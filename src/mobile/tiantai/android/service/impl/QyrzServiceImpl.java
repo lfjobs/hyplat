@@ -1,8 +1,5 @@
 package mobile.tiantai.android.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.util.HttpClient;
 import hy.ea.bo.production.GoodFunction;
 import hy.ea.service.UploadContentToFileService;
@@ -223,7 +220,7 @@ public class QyrzServiceImpl implements QyrzService {
 					try {
 						poi.setAddress(jsonObject1.getString("address"));
 					} catch (Exception e) {
-//					logger.info("调试信息");
+//					System.out.println("address" + jsonObject1.getJSONArray("address"));
 					}
 
 					poi.setLocation(jsonObject1.getString("location"));
@@ -231,7 +228,7 @@ public class QyrzServiceImpl implements QyrzService {
 						poi.setTel(jsonObject1.getString("tel"));
 
 					} catch (Exception e) {
-						logger.info("调试信息");
+						System.out.println(jsonObject1.getJSONArray("tel"));
 					}
 					poi.setPname(jsonObject1.getString("pname"));
 					poi.setCityname(jsonObject1.getString("cityname"));
@@ -256,7 +253,7 @@ public class QyrzServiceImpl implements QyrzService {
 							photos[j] = jsonObject2.getString("url");
 						}
 					} catch (Exception e) {
-						logger.error("操作异常", e);
+						e.printStackTrace();
 					}
 					poi.setPhotos(photos);
 					list.add(poi);
@@ -329,14 +326,14 @@ public class QyrzServiceImpl implements QyrzService {
 				pageForm.setList(list);
 			}
 			if (list.size() == 0) {
-				logger.info("----------------");
+				System.out.println("----------------");
 				pageForm.setPageNumber(-1);
 			} else {
 				pageForm.setPageNumber(pageNumber);
 			}
-			logger.info("值：{}", pageNumber);
+			System.out.println(pageNumber);
 		}catch (Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 

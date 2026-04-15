@@ -1,8 +1,5 @@
 package hy.ea.office.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import java.util.List;
  
@@ -61,7 +58,7 @@ public class CheckPointServiceImpl extends CoreManagerImpl<CarCheckPoint>
 			}
 			finder.append(" order by bean.createtime desc");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return getPageForm(pageNo, pageSize, finder);
 	}
@@ -91,7 +88,7 @@ public class CheckPointServiceImpl extends CoreManagerImpl<CarCheckPoint>
 			finder.append(" where exists(select ti.pointid from CarCheckTaskItem ti where ti.taskid=:taskid and ti.pointid = bean.checkpointid)").setParam(
 					"taskid", task.getChecktaskid());
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return getDao().findByList(finder);

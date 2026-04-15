@@ -64,17 +64,7 @@ public class GoodFunction implements BaseBean {
 	public void setGoodsid(String goodsid) {
 		this.goodsid = goodsid;
 	}
-
-	@Override
-	public String toString() {
-		return "\"GoodFunction\":{" +
-				"\"gfkey\":\"" + gfkey + '\"' +
-				", \"gfid\":\"" + gfid + '\"' +
-				", \"name\":\"" + name + '\"' +
-				", \"url\":\"" + url + '\"' +
-				", \"orders\":" + orders +
-				", \"type\":\"" + type + '\"' +
-				", \"goodsid\":\"" + goodsid + '\"' +
-				"},";
-	}
+	
+    
+    
 }

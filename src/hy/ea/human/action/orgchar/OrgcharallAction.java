@@ -1,8 +1,5 @@
 package hy.ea.human.action.orgchar;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.human.orgchar.Orgcharall;
 import hy.ea.service.ShowExcelService;
@@ -34,7 +31,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class OrgcharallAction {
-	private static final Logger logger = LoggerFactory.getLogger(OrgcharallAction.class);
 	@Resource
 	private ShowExcelService excelService;
 	@Resource
@@ -121,7 +117,7 @@ public class OrgcharallAction {
 			
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(null, new String[]{hql0},params);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		Map<String, Object> map = new HashMap<String, Object>();

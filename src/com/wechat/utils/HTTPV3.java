@@ -1,8 +1,5 @@
 package com.wechat.utils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.alibaba.fastjson.JSON;
 import com.wechat.bo.sft.*;
 import com.wechatpay.bo.AppPackage;
@@ -51,7 +48,6 @@ import java.util.List;
 import java.util.Map;
 
 public class HTTPV3 {
-	private static final Logger logger = LoggerFactory.getLogger(HTTPV3.class);
 
     private static String schema = "WECHATPAY2-SHA256-RSA2048";
     //商户私钥（拷贝apiclient_key.pem文件里-----BEGIN PRIVATE KEY-----和-----END PRIVATE KEY-----之间的内容）
@@ -167,7 +163,7 @@ public class HTTPV3 {
         try {
             signature = signRSA(message, WXSP_rsaPrivateKey);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return schema + " mchid=\"" + Constant.WXSP_Mchid + "\","
@@ -186,7 +182,7 @@ public class HTTPV3 {
         try {
             signature = signRSA(message, rsaPrivateKey);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return schema + " mchid=\"" + yourMerchantId + "\","
@@ -300,8 +296,8 @@ public class HTTPV3 {
 
             // 平台证书路径 是必须的
             String serialNo = WeChatUtil.getSerialNo(WeChatUtil.publicKeyPath);
-            logger.info("值：{}", serialNo);
-            logger.info("值：{}", authorization);
+            System.out.println(serialNo);
+            System.out.println(authorization);
 
 
             if("POST".equalsIgnoreCase(method)) {
@@ -320,7 +316,7 @@ public class HTTPV3 {
                 HttpEntity httpResponseEntity = httpResponse.getEntity();
                 String responseEntityStr = EntityUtils.toString(httpResponseEntity);
                 httpResponse.close();
-                logger.info("值：{}", responseEntityStr);
+                System.out.println(responseEntityStr);
                 jsonObject = JSONObject.fromObject(responseEntityStr);
 
             }else{
@@ -337,14 +333,14 @@ public class HTTPV3 {
                 HttpEntity httpResponseEntity = httpResponse.getEntity();
                 String responseEntityStr = EntityUtils.toString(httpResponseEntity);
                 httpResponse.close();
-                logger.info("值：{}", responseEntityStr);
+                System.out.println(responseEntityStr);
                 jsonObject = JSONObject.fromObject(responseEntityStr);
 
             }
 
 
         }catch(Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
 
@@ -364,8 +360,8 @@ public class HTTPV3 {
 
             // 平台证书路径 是必须的
             String serialNo = WeChatUtil.getSerialNo(WeChatUtil.publicsKeyPath);
-            logger.info("值：{}", serialNo);
-            logger.info("值：{}", authorization);
+            System.out.println(serialNo);
+            System.out.println(authorization);
 
 
             if("POST".equalsIgnoreCase(method)) {
@@ -384,7 +380,7 @@ public class HTTPV3 {
                 HttpEntity httpResponseEntity = httpResponse.getEntity();
                 String responseEntityStr = EntityUtils.toString(httpResponseEntity);
                 httpResponse.close();
-                logger.info("值：{}", responseEntityStr);
+                System.out.println(responseEntityStr);
                 jsonObject = JSONObject.fromObject(responseEntityStr);
 
             }else{
@@ -401,14 +397,14 @@ public class HTTPV3 {
                 HttpEntity httpResponseEntity = httpResponse.getEntity();
                 String responseEntityStr = EntityUtils.toString(httpResponseEntity);
                 httpResponse.close();
-                logger.info("值：{}", responseEntityStr);
+                System.out.println(responseEntityStr);
                 jsonObject = JSONObject.fromObject(responseEntityStr);
 
             }
 
 
         }catch(Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
 
@@ -462,14 +458,14 @@ public class HTTPV3 {
             HttpEntity httpEntity = response.getEntity();
             String rescontent = new String(InputStreamTOByte(httpEntity.getContent()),"utf-8");
             JSONObject jo = JSONObject.fromObject(rescontent);
-            logger.info("调试信息");
+            System.out.println(jo.toString());
             mediaID = jo.get("media_id").toString();
-            logger.info("返回内容:: {}", jo.get("media_id"));
+            System.out.println("返回内容:" + jo.get("media_id"));
             //获取返回的http header
             Header headers[] = response.getAllHeaders();
             int i = 0;
             while (i < headers.length) {
-                logger.info("调试信息");
+                System.out.println(headers[i].getName() + ":  " + headers[i].getValue());
                 i++;
             }
 
@@ -484,15 +480,15 @@ public class HTTPV3 {
             ss.append(rescontent).append("\n");
             //验证签名
             if (verifyRSA(ss.toString(), Base64.decodeBase64(Wsign.getBytes()), rsaPublicKeyFile)) {
-                logger.info("签名验证成功");
+                System.out.println("签名验证成功");
             } else {
-                logger.info("签名验证失败");
+                System.out.println("签名验证失败");
             }
 
             EntityUtils.consume(httpEntity);
             response.close();
         } catch (Exception e) {
-logger.error("操作异常", e);
+e.printStackTrace();
         }
 
         return mediaID;
@@ -514,19 +510,19 @@ logger.error("操作异常", e);
 
         try {
             HttpResponse httpResponse = httpClient.execute(httpGet);
-            logger.info("获取平台证书响应");
+            System.out.println("获取平台证书响应");
             if (httpResponse != null && httpResponse.getStatusLine().getStatusCode() == 200) {
                 String responseEntity = EntityUtils.toString(httpResponse.getEntity());
                 JSONObject jsonObject = JSONObject.fromObject(responseEntity);
 
-                logger.info("调试信息");
+                System.out.println(jsonObject.toString());
                 AesUtil aesUtil = new AesUtil(v3key.getBytes(StandardCharsets.UTF_8));
                 List<X509Certificate> x509Certs = new ArrayList<>();
                 JSONArray jsonArray = (JSONArray) jsonObject.get("data");
                 for (Object o : jsonArray) {
-                    logger.info("值：{}", o);
+                    System.out.println(o);
                     JSONObject bo = JSONObject.fromObject(o);
-                    logger.info("值：{}", o);
+                    System.out.println(o);
 //                    //加密内容
                     JSONObject encryptBo = JSONObject.fromObject(bo.get("encrypt_certificate").toString());
 //
@@ -534,7 +530,7 @@ logger.error("操作异常", e);
                     String plainCert = aesUtil.decryptToString(encryptBo.get("associated_data").toString().getBytes(StandardCharsets.UTF_8),
                             encryptBo.get("nonce").toString().getBytes(StandardCharsets.UTF_8),
                             encryptBo.get("ciphertext").toString());
-                    logger.info("证书明文：\n{}{}", plainCert, "\n\n");
+                    System.out.println("证书明文：\n" + plainCert + "\n\n");
 
                     //反序列化证书
                     X509Certificate x509Cert = PemUtil.loadCertificate(new ByteArrayInputStream(plainCert.getBytes("utf-8")));
@@ -544,12 +540,12 @@ logger.error("操作异常", e);
                     try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputAbsoluteFilename), StandardCharsets.UTF_8))) {
                         writer.write(plainCert);
                     }
-                    logger.info("输出证书文件目录：: {}", outputAbsoluteFilename);
+                    System.out.println("输出证书文件目录：" + outputAbsoluteFilename);
                 }
 
             }
         } catch (Exception e) {
-            logger.info("执行httpclient请求平台证书序号错误: {}", e);
+            System.out.println("执行httpclient请求平台证书序号错误" + e);
         }
 
         return null;
@@ -638,7 +634,7 @@ logger.error("操作异常", e);
 
         String responseEntityStr = EntityUtils.toString(httpResponseEntity);
         httpResponse.close();
-        logger.info("值：{}", responseEntityStr);
+        System.out.println(responseEntityStr);
 
         JSONObject jo = JSONObject.fromObject(responseEntityStr);
         if(applyResult==null){
@@ -653,7 +649,7 @@ logger.error("操作异常", e);
         applyResult.setOut_request_no(jo.get("out_request_no").toString());  //业务申请编号
         applyResult.setApplyment_id(jo.get("applyment_id").toString());   //微信支付申请单号
 
-        logger.info("值：{}", applyment_state);
+        System.out.println(applyment_state);
 
 //        //待签约，返回签约链接二维码图片的base64数据
         if (applyment_state.equals("NEED_SIGN")) {
@@ -738,7 +734,7 @@ logger.error("操作异常", e);
 
 
     public static void main(String[] args) {
-       // logger.info("11111111");
+       // System.out.println("11111111");
        /// balanceResult("1627898266");
 //        Withdraw withdraw = new Withdraw();
 //        withdraw.setSub_mchid("1627898266");
@@ -757,7 +753,7 @@ logger.error("操作异常", e);
 //            // apply();
 ////applymentsQuery("APPLYWFJ_00000000004");
 //        }catch (Exception e){
-//            logger.error("操作异常", e);
+//            e.printStackTrace();
 //        }
        getPublicKey();
 
@@ -886,13 +882,13 @@ logger.error("操作异常", e);
             X509Certificate cert = (X509Certificate) certificatefactory.generateCertificate(is);
             pk = cert.getPublicKey();
         } catch (CertificateException | IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         } finally {
             if (is != null) {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
             }
         }
@@ -923,7 +919,7 @@ logger.error("操作异常", e);
         HttpEntity httpResponseEntity = httpResponse.getEntity();
         String responseEntityStr = EntityUtils.toString(httpResponseEntity);
         httpResponse.close();
-        logger.info("值：{}", responseEntityStr);
+        System.out.println(responseEntityStr);
 
 
     }
@@ -1038,7 +1034,7 @@ logger.error("操作异常", e);
         try {
             signature = signRSA(crt, rsaPrivateKey);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         appPackage.setPackages("Sign=WXPay");
         appPackage.setPartnerid(WeChatUtil.MCH_ID);
@@ -1192,7 +1188,7 @@ logger.error("操作异常", e);
         String  prepay_id = serverh5Pay(sapp_PayParam,ConstantURL.JSapiServer_PAY).getString("prepay_id");
 
 
-        logger.info("调试信息");
+        System.out.println("获取到的预支付IDServer：" +prepay_id);
 
 
 
@@ -1211,7 +1207,7 @@ logger.error("操作异常", e);
         try {
             signature = signRSA(crt, WXSP_rsaPrivateKey);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         FinalPackage finalPackages = new FinalPackage();
@@ -1260,7 +1256,7 @@ logger.error("操作异常", e);
 	        String  prepay_id = serverh5Pay(sapp_PayParam,ConstantURL.App_PAY).getString("prepay_id");
 
 
-	        logger.info("调试信息");
+	        System.out.println("获取到的预支付APPIDServer：" +prepay_id);
 
 
 
@@ -1281,7 +1277,7 @@ logger.error("操作异常", e);
 	        	
 	            signature = signRSA(crt, WXSP_rsaPrivateKey);
 	        } catch (Exception e) {
-	            logger.error("操作异常", e);
+	            e.printStackTrace();
 	        }
 
 		
@@ -1365,7 +1361,7 @@ logger.error("操作异常", e);
         try {
             signature = signRSA(crt, rsaPrivateKey);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         FinalPackage finalPackages = new FinalPackage();
         finalPackages.setAppId(appid);
@@ -1589,9 +1585,9 @@ logger.error("操作异常", e);
         String transaction_id = wxPayDto.getTransaction_id();
         String out_order_no = wxPayDto.getOut_order_no();
 
-           logger.info("值：{}", sub_mchid);
-        logger.info("值：{}", transaction_id);
-        logger.info("值：{}", out_order_no);
+           System.out.println(sub_mchid);
+        System.out.println(transaction_id);
+        System.out.println(out_order_no);
         JSONObject body = httpV3("GET", ConstantURL.profitsharing+"?sub_mchid="+sub_mchid+"&transaction_id="+transaction_id+"&out_order_no="+out_order_no, "");
 
         System.out.print(body);
@@ -1635,7 +1631,7 @@ logger.error("操作异常", e);
           JSONObject body = httpV3("POST", ConstantURL.finishOrder, requestParam);
            order_id = body.getString("order_id");
       }catch (Exception e){
-          logger.error("操作异常", e);
+          e.printStackTrace();
       }
 
         return order_id;
@@ -1748,10 +1744,10 @@ logger.error("操作异常", e);
             String Wsign = request.getHeader("Wechatpay-Signature");
             //      String WSERIAL = request.getHeader("WECHATPAY-SERIAL");
 
-            logger.info("调试信息");
-            logger.info("调试信息");
-            logger.info("调试信息");
-            //      logger.info("调试信息");
+            System.out.println("Wtimestamp"+Wtimestamp);
+            System.out.println("Wnonce"+Wnonce);
+            System.out.println("Wsign"+Wsign);
+            //      System.out.println("WSERIAL"+WSERIAL);
 
             //拼装待签名串
             StringBuffer ss = new StringBuffer();
@@ -1760,9 +1756,9 @@ logger.error("操作异常", e);
             ss.append(notity).append("\n");
             //验证签名
             if (verifyRSA(ss.toString(), Base64.decodeBase64(Wsign.getBytes()), WeChatUtil.publicKeyPath)) {
-                logger.info("签名验证成功");
+                System.out.println("签名验证成功");
                 JSONObject  jsonObject = JSONObject.fromObject(notity);
-                logger.info("调试信息");
+                System.out.println(jsonObject.toString());
 
                 String event_type = jsonObject.getString("event_type");
                 wxPayResult.setResultCode(event_type);
@@ -1786,13 +1782,13 @@ logger.error("操作异常", e);
                 String nonce = re.getString("nonce");
                 String original_type = re.getString("original_type");
 
-                logger.info("调试信息");
-                logger.info("调试信息");
-                logger.info("调试信息");
-                logger.info("调试信息");
-                logger.info("调试信息");
+                System.out.println("algorithm________"+algorithm);
+                System.out.println("ciphertext————————————"+ciphertext);
+                System.out.println("associated_data__"+associated_data);
+                System.out.println("nonce__"+nonce);
+                System.out.println("original_type__"+original_type);
 
-                logger.info("调试信息");
+                System.out.println("resource________"+resource);
 
 
 
@@ -1804,7 +1800,7 @@ logger.error("操作异常", e);
                         nonce.getBytes(StandardCharsets.UTF_8),
                         ciphertext);
 
-                logger.info("调试信息");
+                System.out.println("plainCert___________"+plainCert);
 
                 JSONObject plainjo = JSONObject.fromObject(plainCert);
 
@@ -1819,8 +1815,8 @@ logger.error("操作异常", e);
 
 
 
-                logger.info("调试信息");
-                logger.info("调试信息");
+                System.out.println("combine_appid________"+combine_appid);
+                System.out.println("combine_out_trade_no————————————"+combine_out_trade_no);
 
 
 
@@ -1830,7 +1826,7 @@ logger.error("操作异常", e);
                 int zmoney  = 0;
 
                 for (int i = 0;i<joArray.size();i++){
-                    logger.info("调试信息");
+                    System.out.println("size=--"+joArray.size());
                     JSONObject jo =  JSONObject.fromObject(joArray.get(i));
                     String  mchid = jo.getString("mchid");
                     String  trade_type = jo.getString("trade_type");
@@ -1847,19 +1843,19 @@ logger.error("操作异常", e);
                     wxPayResult.setAttach(attach);
                     submap.put(out_trade_no,transaction_id);
 
-                    logger.info("调试信息");
-                    logger.info("调试信息");
-                    logger.info("调试信息");
-                    logger.info("调试信息");
-                    logger.info("调试信息");
-                    logger.info("调试信息");
-                    logger.info("调试信息");
+                    System.out.println("mchid________"+mchid);
+                    System.out.println("trade_type————————————"+trade_type);
+                    System.out.println("trade_state————————————"+trade_state);
+                    System.out.println("transaction_id————————————"+transaction_id);
+                    System.out.println("out_trade_no————————————"+out_trade_no);
+                    System.out.println("sub_mchid————————————"+sub_mchid);
+                    System.out.println("attach————————————"+attach);
                     JSONObject  amount = jo.getJSONObject("amount");
                     int total_amount = amount.getInt("total_amount");
                     int payer_amount = amount.getInt("payer_amount");
                     zmoney+=total_amount;
-                    logger.info("调试信息");
-                    logger.info("调试信息");
+                    System.out.println("total_amount————————————"+total_amount);
+                    System.out.println("payer_amount————————————"+payer_amount);
 
 
                 }
@@ -1867,15 +1863,15 @@ logger.error("操作异常", e);
                 wxPayResult.setTotalFee(zmoney+"");
                 wxPayResult.setSublist(submap);
             } else {
-                logger.info("签名验证失败");
+                System.out.println("签名验证失败");
                 JSONObject  jsonObject = JSONObject.fromObject(notity);
-                logger.info("调试信息");
+                System.out.println(jsonObject.toString());
                 String resource = jsonObject.getString("resource");
-                logger.info("值：{}", resource);
+                System.out.println(resource);
 
             }
         }catch(Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return wxPayResult;
@@ -1892,9 +1888,9 @@ logger.error("操作异常", e);
             String Wsign = request.getHeader("Wechatpay-Signature");
 
 
-            logger.info("调试信息");
-            logger.info("调试信息");
-            logger.info("调试信息");
+            System.out.println("Wtimestamp"+Wtimestamp);
+            System.out.println("Wnonce"+Wnonce);
+            System.out.println("Wsign"+Wsign);
 
 
             //拼装待签名串
@@ -1904,9 +1900,9 @@ logger.error("操作异常", e);
             ss.append(notity).append("\n");
             //验证签名
             if (verifyRSA(ss.toString(), Base64.decodeBase64(Wsign.getBytes()), WeChatUtil.publicsKeyPath)) {
-                logger.info("签名验证成功");
+                System.out.println("签名验证成功");
                 JSONObject  jsonObject = JSONObject.fromObject(notity);
-                logger.info("调试信息");
+                System.out.println(jsonObject.toString());
 
                 String event_type = jsonObject.getString("event_type");
                 wxPayResult.setResultCode(event_type);
@@ -1928,7 +1924,7 @@ logger.error("操作异常", e);
                         nonce.getBytes(StandardCharsets.UTF_8),
                         ciphertext);
 
-                logger.info("调试信息");
+                System.out.println("plainCert___________"+plainCert);
 
                 JSONObject plainjo = JSONObject.fromObject(plainCert);
 
@@ -1943,7 +1939,7 @@ logger.error("操作异常", e);
                 wxPayResult.setAttach(attach);
                 wxPayResult.setTradeType(trade_type);
                 wxPayResult.setResultCode(trade_state);
-                logger.info("调试信息");
+                System.out.println("out_trade_no————————————"+out_trade_no);
                 JSONObject  amount = plainjo.getJSONObject("amount");
 
 
@@ -1951,15 +1947,15 @@ logger.error("操作异常", e);
                 wxPayResult.setTotalFee(total+"");
 
             } else {
-                logger.info("签名验证失败");
+                System.out.println("签名验证失败");
                 JSONObject  jsonObject = JSONObject.fromObject(notity);
-                logger.info("调试信息");
+                System.out.println(jsonObject.toString());
                 String resource = jsonObject.getString("resource");
-                logger.info("值：{}", resource);
+                System.out.println(resource);
 
             }
         }catch(Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return wxPayResult;

@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.audits.Auditor;
 import hy.ea.bo.audits.Phase;
@@ -40,7 +37,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class AuditProcedureAction {
-	private static final Logger logger = LoggerFactory.getLogger(AuditProcedureAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -199,7 +195,7 @@ public class AuditProcedureAction {
 		
 		baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, null, null);
 		}catch(Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			
 		}
 		

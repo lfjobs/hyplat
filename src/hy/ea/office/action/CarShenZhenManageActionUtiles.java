@@ -22,7 +22,6 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 public class CarShenZhenManageActionUtiles {
-	private static final Logger logger = LoggerFactory.getLogger(CarShenZhenManageActionUtiles.class);
     private Logger logger = LoggerFactory.getLogger(CarShenZhenManageActionUtiles.class);
 
 
@@ -31,7 +30,7 @@ public class CarShenZhenManageActionUtiles {
      */
     public static String pronunciationg(LinkedHashMap<String,String> data){
         try {
-            //logger.info("值：{}", data);
+            //System.out.println(data);
             //包头：固定  0xAA,0X55
             String begin="AA55";
             //流水号:00
@@ -70,7 +69,7 @@ public class CarShenZhenManageActionUtiles {
             }
             //校验：去掉包头和结束，校验位补0进行计算
             String aa=serialNumber+ip+reserve+command+length+info+"0000";
-            //logger.info("值：{}", aa);
+            //System.out.println(aa);
             String check=getCheckCode1(aa);
             if(check.length()%2!=0){
                 check="0"+check;
@@ -78,15 +77,15 @@ public class CarShenZhenManageActionUtiles {
             //结束：固定 0xAF
             String end="AF";
             String infos=begin+serialNumber+ip+reserve+command+length+info+check+end;
-            //logger.info("调试信息");
+            //System.out.println("完整组装好的数据："+infos);
             //base64处理
             byte[] byteArray = hexToByteArray(infos);
             byte base64_data[] = Base64.getEncoder().encode(byteArray);
             String base64_str = new String(base64_data);
-            //logger.info("调试信息");
+            //System.out.println("base64之后的数据："+base64_str);
             return base64_str;
         }catch (Exception e){
-            //logger.info("调试信息");
+            //System.out.println(e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -128,7 +127,7 @@ public class CarShenZhenManageActionUtiles {
             info+="0"+info;
         }
         info+=data16TextInfo;
-        //logger.info("值：{}", info);
+        //System.out.println(info);
         //长度：2 字节，指定数据内容的长度，高字节在前，低字节在后，比如 255 个字节的长度应表述为 0x00 0xff
         String length="";
         int size=info.length()/2;
@@ -144,7 +143,7 @@ public class CarShenZhenManageActionUtiles {
         }
         //校验：去掉包头和结束，校验位补0进行计算
         String aa=serialNumber+ip+reserve+command+length+info+"0000";
-        //logger.info("值：{}", aa);
+        //System.out.println(aa);
         String check=getCheckCode(aa);
         if(check.length()%2!=0){
             check="0"+check;
@@ -152,12 +151,12 @@ public class CarShenZhenManageActionUtiles {
         //结束：固定 0xAF
         String end="AF";
         String infos=begin+serialNumber+ip+reserve+command+length+info+check+end;
-        //logger.info("调试信息");
+        //System.out.println("完整组装好的数据："+infos);
         //base64处理
         byte[] byteArray = hexToByteArray(infos);
         byte base64_data[] = Base64.getEncoder().encode(byteArray);
         String base64_str = new String(base64_data);
-        //logger.info("调试信息");
+        //System.out.println("base64之后的数据："+base64_str);
         return base64_str;
     }
 
@@ -188,7 +187,7 @@ public class CarShenZhenManageActionUtiles {
         try {
             utf8Bytes=text.getBytes("GB2312");
         }catch (Exception e){
-            //logger.info("调试信息");
+            //System.out.println(e.getMessage());
         }
         String txtInfo = new BigInteger(1,utf8Bytes).toString(16);
         return txtInfo;
@@ -200,7 +199,7 @@ public class CarShenZhenManageActionUtiles {
      */
     public static byte[] hexToByteArray(String hexString) {
         /*int length = hexString.length();
-        //logger.info("调试信息");
+        //System.out.println(length / 2);
         byte[] byteArray;
         if(length%2==0){
             byteArray = new byte[length/2];
@@ -260,15 +259,15 @@ public class CarShenZhenManageActionUtiles {
         if(hexString.length()%2!=0){
             hexString="0"+hexString;
         }
-        //logger.info("调试信息");
+        //System.out.println("调换前："+hexString);
         /*byte[] x = HexUtil.decodeHex(hexString);
         ByteBuffer buffer = ByteBuffer.wrap(x);
         buffer.order(ByteOrder.BIG_ENDIAN);
         int y = buffer.getChar();
         String checkSum = Integer.toHexString(y);
-        //logger.info("调试信息");*/
+        //System.out.println("调换后："+checkSum);*/
         return hexString;
-        /*//logger.info("调试信息");
+        /*//System.out.println(hexString+"====================");
         //为校验码补0
         if(hexString.length()<=3){
             hexString="0"+hexString;
@@ -295,15 +294,15 @@ public class CarShenZhenManageActionUtiles {
         byte[] byteArray = hexToByteArray(info);
         int crc = calculate(byteArray);
         String hexString = Integer.toHexString(crc);
-       /* //logger.info("调试信息");
+       /* //System.out.println("调换前："+hexString);
         byte[] x = HexUtil.decodeHex(hexString);
         ByteBuffer buffer = ByteBuffer.wrap(x);
         buffer.order(ByteOrder.BIG_ENDIAN);
         int y = buffer.getInt();
         String checkSum = Integer.toHexString(y, 16);
-        //logger.info("调试信息");*/
+        //System.out.println("调换后："+checkSum);*/
         return hexString;
-/*        //logger.info("调试信息");
+/*        //System.out.println(hexString+"====================");
         //为校验码补0
         if(hexString.length()<=3){
             hexString="0"+hexString;
@@ -330,27 +329,27 @@ public class CarShenZhenManageActionUtiles {
            /* String text = "请通行"; // 示例文本，使用GB2312编码
             byte[] bytesGB2312 = text.getBytes("GB2312"); // 将字符串转换为GB2312字节数组
             String hexString = bytesToHex(bytesGB2312); // 转换为16进制字符串
-            //logger.info("16进制字符串: : {}", hexString);
+            //System.out.println("16进制字符串: " + hexString);
             //B4A8413132333435 2E 32CAAE33CCECCAAE35 2F 35CAAE36B7D6
             //B4A84131323334352E32CAAE33CCECCAAE352F35CAAE36B7D6
             // 接下来，如果你想将这个16进制字符串转换回原来的字符串，你需要先将其转换回字节数组，然后使用UTF-8进行解码
             byte[] bytesHex = hexStringToBytes("bea94e48314e3130"); // 将16进制字符串转换回字节数组
             String originalText = new String(bytesHex, "GB2312"); // 使用GB2312解码字节数组为字符串
-            //logger.info("原始文本: : {}", originalText);
+            //System.out.println("原始文本: " + originalText);
             //displayFourLines("03","请通行");*/
 
 
 
             /*String aa="AA5500640027000c02150200c1d9cab1b3b5c1be460AF";
             byte[] bytes = hexToByteArray(aa);
-            //logger.info("调试信息");*/
+            //System.out.println(bytes.toString());*/
 
             String aa="临时车辆";
             String s = get16TextInfo(aa);
-            //logger.info("值：{}", s);
+            //System.out.println(s);
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 

@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.util.SessionWrap;
 import hy.ea.bo.human.COrganization;
@@ -37,7 +34,6 @@ import org.springframework.stereotype.Controller;
 @Controller
 @Scope("prototype")
 public class VideoConfreAction {
-	private static final Logger logger = LoggerFactory.getLogger(VideoConfreAction.class);
 	private Object result;
 
 	@Resource
@@ -78,7 +74,7 @@ public class VideoConfreAction {
 			map.put("result", res);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -116,7 +112,7 @@ public class VideoConfreAction {
 			map.put("result", "0000");
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -139,7 +135,7 @@ public class VideoConfreAction {
 			map.put("result", res);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -174,7 +170,7 @@ public class VideoConfreAction {
 			map.put("result", lists);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -193,7 +189,7 @@ public class VideoConfreAction {
 			map.put("result", psw);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -256,7 +252,7 @@ public class VideoConfreAction {
 			map.put("result", code);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -277,7 +273,7 @@ public class VideoConfreAction {
 			map.put("result", code);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -329,7 +325,7 @@ public class VideoConfreAction {
 			
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -362,7 +358,7 @@ public class VideoConfreAction {
 			map.put("result", lists);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -413,7 +409,7 @@ public class VideoConfreAction {
 			map.put("result", lists);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -436,7 +432,7 @@ public class VideoConfreAction {
 			map.put("result", roomid);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject jo = JSONObject.fromObject(map);
 		result = jo;
@@ -458,7 +454,7 @@ public class VideoConfreAction {
 			map = videoconService.getEditRoomInfo(meetingID);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		JSONObject jo = JSONObject.fromObject(map);

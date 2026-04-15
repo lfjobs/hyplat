@@ -45,9 +45,6 @@
 
 package com.tiantai.nwa.tbank.ftp;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -67,7 +64,6 @@ import java.net.Socket;
  *
  */
  public class FTPControlSocket {
-	private static final Logger logger = LoggerFactory.getLogger(FTPControlSocket.class);
      
      /**
       *   Standard FTP end of line sequence
@@ -411,7 +407,7 @@ import java.net.Socket;
          throws IOException {
 
          if (debugResponses)
-             logger.info("---> : {}", command);
+             System.out.println("---> " + command);
 
          // send it
          writer.write(command + EOL);
@@ -438,7 +434,7 @@ import java.net.Socket;
          StringBuffer reply = new StringBuffer(reader.readLine());
 
          if (debugResponses)
-             logger.info("调试信息");
+             System.out.println(reply.toString());
 
          String replyCode = reply.toString().substring(0, 3);
 
@@ -452,7 +448,7 @@ import java.net.Socket;
                  String line = reader.readLine();
 
                  if (debugResponses)
-                     logger.info("值：{}", line);
+                     System.out.println(line);
 
                  if (line.length() > 3 && line.substring(0, 3).equals(replyCode) && line.charAt(3) == ' ') {
                      reply.append(line.substring(3));

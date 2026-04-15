@@ -1,8 +1,5 @@
 package com.tiantai.telrec.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.human.Staff;
 
 import java.util.Date;
@@ -48,7 +45,7 @@ public class ClientQueryCustomer extends ActionSupport {
 		// password);
 
 		TelrecCustomerInfo info = null;
-		//logger.info("值：{}", telno);
+		//System.out.println(telno);
 		HttpServletResponse response = ServletActionContext.getResponse();
 		telno = telnoSet(telno);
 		// 保存来电信息
@@ -77,7 +74,7 @@ public class ClientQueryCustomer extends ActionSupport {
 		if (list2.size() > 0) {
 			map.put("staff", list2.get(0));
 			//Staff stf = (Staff)list2.get(0);
-			//logger.info("调试信息");
+			//System.out.println(stf.getStaffName() + "\t" + stf.getReference());
 		} else {
 			map.put("staff", new Object());
 		}
@@ -90,7 +87,7 @@ public class ClientQueryCustomer extends ActionSupport {
 			response.getWriter().print(json.toString());
 			//System.out.print(json.toString());
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}
@@ -142,7 +139,7 @@ public class ClientQueryCustomer extends ActionSupport {
 				if (mtc.matches())
 					return telno;
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 
 		}

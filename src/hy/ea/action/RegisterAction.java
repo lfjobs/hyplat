@@ -1,8 +1,5 @@
 package hy.ea.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -36,7 +33,6 @@ import net.sf.json.JSONObject;
 @Controller
 @Scope("prototype")
 public class RegisterAction {
-	private static final Logger logger = LoggerFactory.getLogger(RegisterAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -210,7 +206,7 @@ public class RegisterAction {
 			baseBean4websiteService.saveBeansListAndexecuteHqlsByParams(beans, null, null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		//end
 		

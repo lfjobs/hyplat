@@ -1,8 +1,5 @@
 package hy.ea.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.*;
@@ -28,7 +25,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class CompanyAction {
-	private static final Logger logger = LoggerFactory.getLogger(CompanyAction.class);
 	
 	@Resource
 	private CompanyService companyService;
@@ -148,7 +144,7 @@ public class CompanyAction {
 		beans.add(logBook);
 		baseBeanService.executeHqlsByParamsList(beans, null, null);
 		}catch(Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return toEditCompanyDetail();
 	}

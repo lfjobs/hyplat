@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.office.EnterpriseStamp;
 import hy.ea.service.UpLoadFileService;
@@ -69,7 +66,7 @@ public class UploadFileAction extends ActionSupport {
 				baseBeanService.update(enterstamp);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		try {
@@ -78,7 +75,7 @@ public class UploadFileAction extends ActionSupport {
 			response.flushBuffer();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return null;

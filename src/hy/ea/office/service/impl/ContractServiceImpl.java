@@ -1,8 +1,5 @@
 package hy.ea.office.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.alibaba.fastjson.JSONObject;
 import com.junziqian.sdk.bean.req.sign.ext.SignatoryReq;
 import com.junziqian.sdk.bean.req.user.OrganizationCreateReq;
@@ -1098,7 +1095,7 @@ public class ContractServiceImpl implements ContractService {
                     templateParams.setDmoney(Utilities.digitUppercase(new Double(money)));
                 }
             } catch (Exception e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
 
 //            templateParams.setMoney(money);
@@ -1203,7 +1200,7 @@ public class ContractServiceImpl implements ContractService {
 
             beandao.saveBeansListAndexecuteHqlsByParams(baseBeans, null, null);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -1263,7 +1260,7 @@ public class ContractServiceImpl implements ContractService {
             beandao.update(applyResult);
         } catch (Exception e) {
 
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
 
@@ -1466,7 +1463,7 @@ public class ContractServiceImpl implements ContractService {
         document.setApplyNo(aplNo);
         beandao.update(document);
 
-        logger.info("值：{}", aplNo);
+        System.out.println(aplNo);
     }
 
 
@@ -1593,12 +1590,12 @@ public class ContractServiceImpl implements ContractService {
                     File file = new File(realPath + docFileAttach.getFilePath());
                     long time = file.lastModified();//当前
                     long newtime = time / 1000L * 1000L;
-                    logger.info("newtime: {}", time);
-                    logger.info("time: {}", time);
+                    System.out.println("newtime" + time);
+                    System.out.println("time" + time);
                     Date date = docFileAttach.getCreatetime();
-                    logger.info("date: {}", date);
+                    System.out.println("date" + date);
                     long times = date.getTime();
-                    logger.info("times: {}", times);
+                    System.out.println("times" + times);
                     List<BaseBean> sealerlist = beandao.getListBeanByHqlAndParams("from DocumentSealer where docId = ?", new Object[]{docId});
 
                     //草稿，驳回，待审核,不批准，公文为转他人审批状态 这几种容易修改
@@ -1610,7 +1607,7 @@ public class ContractServiceImpl implements ContractService {
                         } else {
 
                             if (newtime > times) {
-                                logger.info("有修改");
+                                System.out.println("有修改");
                                 //说明修改过 改过就重新生成
                                 Office2PdfUtil.office2Pdf(realPath + docFileAttach.getFilePath(), realPath + pdfPath);
                                 docFileAttach.setCreatetime(new Date());
@@ -1738,7 +1735,7 @@ public class ContractServiceImpl implements ContractService {
             }
             FileCopyUtils.copy(office, fileSave);
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return storePath + "/" + fileSaveName;
@@ -1760,7 +1757,7 @@ public class ContractServiceImpl implements ContractService {
             aplNo = document.getApplyNo();
         }
         String loadUrl = JzqAPI.linkFile(aplNo);
-        logger.info("loadUrl: {}", loadUrl);
+        System.out.println("loadUrl" + loadUrl);
 
 
         return loadUrl;
@@ -1802,7 +1799,7 @@ public class ContractServiceImpl implements ContractService {
             ;
             bis.close();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return savepath + fileName;
@@ -1843,7 +1840,7 @@ public class ContractServiceImpl implements ContractService {
             ;
             bis.close();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
 
@@ -1896,7 +1893,7 @@ public class ContractServiceImpl implements ContractService {
         if (obj != null) {
 
             String data = JzqAPI.uploadEntSign(stampname, obj.toString(), stampimgs);
-            logger.info("值：{}", data);
+            System.out.println(data);
             EnterpriseStamp es = new EnterpriseStamp();
             es.setCompanyID(companyId);
             es.setStampName(stampname);
@@ -2002,7 +1999,7 @@ public class ContractServiceImpl implements ContractService {
 
         if (document.getApplyNo() != null && !document.getApplyNo().equals("")) {
             aplNo = document.getApplyNo();//说明已经发起过签约
-            logger.info("值：{}", aplNo);
+            System.out.println(aplNo);
             try {
 
 
@@ -2085,7 +2082,7 @@ public class ContractServiceImpl implements ContractService {
         String loadLink = getLoadLink(docId);
 
         String filepath = saveFile(loadLink, document.getCompanyID() == null ? document.getDrafterID() : document.getCompanyID(), path);
-        logger.info("filepath: {}", filepath);
+        System.out.println("filepath" + filepath);
         if (!"".equals(filepath)) {
             document.setPdfUrl(filepath);
 
@@ -2797,10 +2794,10 @@ public class ContractServiceImpl implements ContractService {
                     mobileMessage.setMessage(content);
                     mobileMessage.setMobiles(t);
                     reStr = mobileMessage.sendMsg();
-                    logger.info("值：{}", reStr);
+                    System.out.println(reStr);
                 } catch (IOException e) {
 
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
 
 
@@ -3381,7 +3378,7 @@ public class ContractServiceImpl implements ContractService {
             t.setTitle(cashierBills.getCtUserName() + "学员协议");
             beandao.update(t);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 

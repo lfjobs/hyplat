@@ -1,8 +1,5 @@
 package com.tiantai.telrec.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +16,7 @@ public class ClientTestConnection extends ActionSupport {
 			response.getWriter().write("true");
 			response.flushBuffer();
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}

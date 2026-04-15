@@ -1,8 +1,5 @@
 package com.tiantai.nwa.tbank.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.plat.service.BaseBeanService;
 import hy.plat.service.ServerService;
@@ -34,7 +31,6 @@ import com.tiantai.nwa.util.DockingBankInitUtil;
 @Controller
 @Scope("prototype")
 public class BankParamAction {
-	private static final Logger logger = LoggerFactory.getLogger(BankParamAction.class);
 	private String result;
 	private JSONObject resultjson;
 	private String xmlpath;
@@ -102,7 +98,7 @@ public class BankParamAction {
 			}
 			baseBeanService.update(bankLinkParam);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return null;
@@ -133,7 +129,7 @@ public class BankParamAction {
 		try {
 			response.getWriter().print(json.toString());
 		} catch (IOException e) {			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}	
 		
 		return null;
@@ -163,7 +159,7 @@ public class BankParamAction {
 			result = "success";
 		} catch (Exception e) {
 			result = "fail";
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -188,7 +184,7 @@ public class BankParamAction {
 			hy.plat.bo.PageForm pageForm = baseBeanService.getPageForm(page,
 					(rows == 0 ? 5 : rows), hql, new Object[] {
 							account.getCompanyID(), transConf.getEnameSx() });
-			logger.info("调试信息");
+			System.out.println(transConf.getEnameSx());
 			if (pageForm != null) {
 				Map<String, Object> map = new HashMap<String, Object>();
 				map.put("total", pageForm.getRecordCount());
@@ -198,7 +194,7 @@ public class BankParamAction {
 
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 
@@ -218,7 +214,7 @@ public class BankParamAction {
 			map.put("success", "success");
 		} catch (Exception e) {
 			map.put("errorMsg", "delete fail");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		JSONObject jo = JSONObject.fromObject(map);
@@ -252,7 +248,7 @@ public class BankParamAction {
 
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 		
@@ -282,7 +278,7 @@ public class BankParamAction {
 			}
 			baseBeanService.update(ipConf);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -305,7 +301,7 @@ public class BankParamAction {
 			map.put("success", "success");
 		} catch (Exception e) {
 			map.put("errorMsg", "delete fail");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		JSONObject jo = JSONObject.fromObject(map);

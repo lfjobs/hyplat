@@ -145,6 +145,8 @@
 
 
 	<include file="struts-ea/office/struts-ea-merchanetsregis.xml" />
+	<include file="struts-ea/office/struts-ea-doubaoai.xml" />
+
 
 	<!--人脸识别-->
 	<include file="struts-ea/office/struts-ea-face.xml" />

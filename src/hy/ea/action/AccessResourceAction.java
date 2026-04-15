@@ -1,8 +1,5 @@
 package hy.ea.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.human.COrganization;
@@ -29,7 +26,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class AccessResourceAction {
-	private static final Logger logger = LoggerFactory.getLogger(AccessResourceAction.class);
 	@Resource
 	private CCodeService codeService;
 	@Resource
@@ -241,7 +237,7 @@ public class AccessResourceAction {
 			result = obj.toString();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}

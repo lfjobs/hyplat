@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.human.COrganization;
@@ -40,7 +37,6 @@ import com.opensymphony.xwork2.ActionContext;
  *
  */
 public class EnterpriseCitationAction {
-	private static final Logger logger = LoggerFactory.getLogger(EnterpriseCitationAction.class);
 	
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -148,7 +144,7 @@ public class EnterpriseCitationAction {
 					try {
 						dc.add(Restrictions.between("enDate", sdf.parse(sDate), sdf.parse(eDate)));
 					} catch (ParseException e) {
-						logger.error("操作异常", e);
+						e.printStackTrace();
 					}
 				} 
 			} 
@@ -170,7 +166,7 @@ public class EnterpriseCitationAction {
 			try {
 				fu.downFile(downLoadPath);
 			} catch (IOException e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		} 
 		public EnterpriseCitation getEnterpriseCitation() {

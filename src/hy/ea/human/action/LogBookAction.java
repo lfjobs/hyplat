@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -55,7 +52,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class LogBookAction {
-	private static final Logger logger = LoggerFactory.getLogger(LogBookAction.class);
 	@Resource
 	private ShowExcelService excelService;
 	public InputStream excelStream;
@@ -249,7 +245,7 @@ public class LogBookAction {
 						date1 = format1.parse(becomesdate);
 					} catch (ParseException e) {
 						// TODO Auto-generated catch block
-						logger.error("操作异常", e);
+						e.printStackTrace();
 					}
 
 				}*/
@@ -363,7 +359,7 @@ public class LogBookAction {
 			logBookService.saveLogsListAndexecuteHqlsByParams(logbook.getOrganizationID(),parermiters, account);
 		} catch (Exception e) {
 		
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return "success";
@@ -467,7 +463,7 @@ public class LogBookAction {
 					dc.add(Restrictions.between("todaydate", dateFormat
 							.parse(sdate), dateFormat.parse(edate)));
 				} catch (ParseException e) {
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 			}
 			dc.addOrder(Order.desc("todaydate"));
@@ -514,7 +510,7 @@ public class LogBookAction {
 				dc.add(Restrictions.between("todaydate", dateFormat
 						.parse(sdate), dateFormat.parse(edate)));
 			} catch (ParseException e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		dc.addOrder(Order.desc("todaydate"));
@@ -561,7 +557,7 @@ public class LogBookAction {
 				dc.add(Restrictions.between("todaydate", dateFormat
 						.parse(sdate), dateFormat.parse(edate)));
 			} catch (ParseException e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		dc.addOrder(Order.desc("todaydate"));

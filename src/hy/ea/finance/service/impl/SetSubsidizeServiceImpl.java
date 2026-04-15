@@ -49,7 +49,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
             map.put("flag",true);
         }catch (Exception e){
             map.put("flag",false);
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         JSONObject oj =JSONObject.fromObject(map);
         return oj;
@@ -77,7 +77,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
             String hql="select new SetSubsidize(s.sskey, s.ssid, s.companyid, s.codeNum, s.gtid, s.stid, s.totalPct, s.flPct, s.slPct, s.adddate, s.staffid, s.stutas) from SetSubsidize s,ContactCompany c where s.gtid=c.industryType and s.stutas=? and c.ccompanyID=? ";
             setSubsidize =(SetSubsidize)baseBeanService.getBeanByHqlAndParams(hql,new Object[]{"01",ccompanyid});
         }catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return setSubsidize;
     }
@@ -99,7 +99,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
                     " where s.gtid=c.industryType and c.ccompanyID=cc.ccompanyId and s.stutas=? and cc.comanyId=? ";
             setSubsidize =(SetSubsidize)baseBeanService.getBeanByHqlAndParams(hql,new Object[]{"01",companyid});
         }catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return setSubsidize;
     }
@@ -135,7 +135,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
             map.put("typeList",typeSubsidizeList);
         }catch (Exception e){
             map.put("typeList",false);
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         JSONObject oj =JSONObject.fromObject(map);
         return oj;
@@ -157,7 +157,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
             map.put("scodeList",scodeList);
         }catch (Exception e){
             map.put("scodeList",false);
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         JSONObject oj =JSONObject.fromObject(map);
         return oj;
@@ -177,7 +177,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
             map.put("flag",true);
         }catch (Exception e){
             map.put("flag",false);
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         JSONObject oj =JSONObject.fromObject(map);
         return oj;
@@ -198,7 +198,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
             map.put("count",count);
         }catch (Exception e){
             map.put("count",1);
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         JSONObject oj =JSONObject.fromObject(map);
         return oj;
@@ -269,7 +269,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
             }
             baseBeanService.executeHqlsByParamsList(baBe,null,null);
         }catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
     }
@@ -326,7 +326,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
 
             }
         } catch (Exception e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
         }
     }
 
@@ -357,7 +357,7 @@ public class SetSubsidizeServiceImpl implements SetSubsidizeService {
                 map.put("falg", "手机号不正确");
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             map.put("falg", "查询错误");
         }
         jobj =JSONObject.fromObject(map);

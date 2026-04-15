@@ -1,8 +1,5 @@
 package mobile.tiantai.android.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,7 +19,6 @@ import cn.jpush.api.push.model.notification.IosNotification;
 import cn.jpush.api.push.model.notification.Notification;
 
 public class JushMain {
-	private static final Logger logger = LoggerFactory.getLogger(JushMain.class);
 
 	private  static ExecutorService executorService = Executors.newFixedThreadPool(50);
 	
@@ -103,9 +99,9 @@ public class JushMain {
 								JPushClient jPushClient = new JPushClient(jPushMessage.getMasterSecret(),
 										jPushMessage.getAppKey(), true, 86400);
 								 jPushClient.sendPush(pushpayload);
-								logger.info("推送成功");
+								System.out.println("推送成功");
 							} catch (APIConnectionException | APIRequestException e) {
-								logger.info("调试信息");
+								System.out.println(e.getMessage());
 							}
 						}
 

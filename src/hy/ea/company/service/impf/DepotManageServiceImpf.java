@@ -1,8 +1,5 @@
 package hy.ea.company.service.impf;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.PosDevice;
 import hy.ea.bo.company.DepotManage;
 import hy.ea.company.service.DepotManageService;
@@ -36,7 +33,6 @@ public class DepotManageServiceImpf implements DepotManageService {
      * @return
      */
     public BaseBean getDepotToCoding(String depotParam, String companyId, int t) {
-
         String hql = " from DepotManage where 1=1";
         List<Object> params = new ArrayList<Object>();
         switch (t) {
@@ -351,7 +347,7 @@ public class DepotManageServiceImpf implements DepotManageService {
                                 }
                                 depotManage.setDepotPID(bpid);
                                 depotManage.setDepotNum(n + 1);
-                                logger.info("调试信息");
+                                System.out.println(depotManage.getDepotID() + "--" + depotManage.getDepotPID() + ":" + depotManage.getDepotName());
                                 beans.add(depotManage);
                             }
                         } else {
@@ -369,7 +365,7 @@ public class DepotManageServiceImpf implements DepotManageService {
                         }
                         depotManage.setDepotPID(apid);
                         depotManage.setDepotNum(2 + 1);
-                        logger.info("调试信息");
+                        System.out.println(depotManage.getDepotID() + "--" + depotManage.getDepotPID() + ":" + depotManage.getDepotName());
                         beans.add(depotManage);
                     }
                 }
@@ -398,7 +394,7 @@ public class DepotManageServiceImpf implements DepotManageService {
         depot.setDepotState("02");
         depot.setDepotType("1");
         beans.add(depot);
-        logger.info("调试信息");
+        System.out.println(depot.getDepotID() + "--" + depot.getDepotPID() + ":" + depot.getDepotName());
         return depot.getDepotID();
     }
 }

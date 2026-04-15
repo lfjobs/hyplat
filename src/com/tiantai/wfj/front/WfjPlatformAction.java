@@ -1,8 +1,5 @@
 package com.tiantai.wfj.front;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,7 +37,6 @@ import net.sf.json.JSONObject;
 @Controller
 @Scope("prototype")
 public class WfjPlatformAction {
-	private static final Logger logger = LoggerFactory.getLogger(WfjPlatformAction.class);
 
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -107,7 +103,7 @@ public class WfjPlatformAction {
 			return contentToFileService.getContent(path);
 
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return "";
 		}
 	}

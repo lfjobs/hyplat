@@ -703,7 +703,7 @@ public class MakeAppointmentServiceimpl implements MakeAppointmentService {
 	 * @return
 	 */
 	public void setCarManage(String carmID,String journalNum,String wfStatus4){
-		logger.info("调试信息");
+		System.out.println("carmID"+carmID);
 		CarManage carManage = (CarManage)beandao.getBeanByHqlAndParams("from CarManage where carmID = ?",new Object[]{carmID});
 		//付款把原来审核信息置空了。
 		String chargeState = "03";
@@ -721,7 +721,7 @@ public class MakeAppointmentServiceimpl implements MakeAppointmentService {
 				carManage.setChargeType(chargeType);
 				carManage.setChargeState(chargeState);
 			}
-			logger.info("调试信息");
+			System.out.println("chargrState1"+carManage.getChargeState1());
 			carManage.setJournalNum(journalNum);
 			carManage.setAuditStatus("");
 			beans.add(carManage);
@@ -737,12 +737,12 @@ public class MakeAppointmentServiceimpl implements MakeAppointmentService {
 
 		String hql1 = "from CarManageAudit c where c.carmID = ? and status = ?";
 		CarManageAudit carManageAudit = (CarManageAudit)beandao.getBeanByHqlAndParams(hql1,new Object[]{carmID,carManage.getStatus()});
-		logger.info("调试信息");
+		System.out.println("carManage.getStatus()"+carManage.getStatus());
 		if(carManageAudit!=null) {
 
 			DocRelateOther tcs = (DocRelateOther) beandao.getBeanByHqlAndParams("from  DocRelateOther ds where ds.idValue = ?", new Object[]{carManageAudit.getCmaID()});
 			if (tcs != null) {
-				logger.info("tcs.getDocId: {}", tcs.getDocId());
+				System.out.println("tcs.getDocId" + tcs.getDocId());
 				if (carManageAudit != null) {
 
 					String hql = "from Document t where t.docId = ?";
@@ -759,7 +759,7 @@ public class MakeAppointmentServiceimpl implements MakeAppointmentService {
 
 		}
 		beandao.executeSqlsByParmsList(beans, null, null);
-		logger.info("车辆已支付费用，通知主机抬杆");
+		System.out.println("车辆已支付费用，通知主机抬杆");
 		cmService.pushMqtt(null, "pay", null, carmID, null,"");
 	
 		

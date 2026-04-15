@@ -1,8 +1,5 @@
 package hy.ea.invoicing.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -56,7 +53,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class ProductAction {
-	private static final Logger logger = LoggerFactory.getLogger(ProductAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -263,7 +259,7 @@ public class ProductAction {
                 		Date ed = Utilities.getDateFromString(arrays[i]+" 23:59:59","yyy-MM-dd HH:mm:ss");
 
                 		Date sdates = Utilities.getDateFromString(arrays[i],"yyyy-MM-dd");
-                		logger.info("值：{}", sdates);
+                		System.out.println(sdates);
                     	if(type.equals("zddate")){
                     		sql+="(b.cashierDate >=? and b.cashierDate<= ?)";
                     	}else{
@@ -447,7 +443,7 @@ public class ProductAction {
 			this.result = jo.toString();
 		} catch (Exception e) {
 			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		
@@ -732,7 +728,7 @@ public class ProductAction {
 
 				} catch (RuntimeException e) {
 
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 				
 				
@@ -740,7 +736,7 @@ public class ProductAction {
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(
 					baseBeanList, null, null);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 

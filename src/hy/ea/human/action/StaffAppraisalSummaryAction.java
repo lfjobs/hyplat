@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Company;
@@ -37,7 +34,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class StaffAppraisalSummaryAction {
-	private static final Logger logger = LoggerFactory.getLogger(StaffAppraisalSummaryAction.class);
 	
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -84,7 +80,7 @@ public class StaffAppraisalSummaryAction {
 				try {
 					dc.add(Restrictions.between("appraisalDate",dateFormat.parse(startdate),dateFormat.parse(enddate)));
 				} catch (ParseException e) {
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 			}
 		
@@ -136,7 +132,7 @@ public class StaffAppraisalSummaryAction {
 				try {
 					dc.add(Restrictions.between("appraisalDate",dateFormat.parse(startdate),dateFormat.parse(enddate)));
 				} catch (ParseException e) {
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 			}
 		

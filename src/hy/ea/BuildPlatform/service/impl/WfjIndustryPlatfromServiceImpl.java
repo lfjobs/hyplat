@@ -159,7 +159,7 @@ public class WfjIndustryPlatfromServiceImpl
     }
     catch (IOException e)
     {
-      logger.error("操作异常", e);
+      e.printStackTrace();
     }
   }
   

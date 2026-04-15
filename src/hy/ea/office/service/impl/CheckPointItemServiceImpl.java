@@ -1,8 +1,5 @@
 package hy.ea.office.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.office.CarCheckPointItem;
 import hy.ea.office.dao.CheckPointItemDao;
 import hy.ea.office.service.CheckPointItemService;
@@ -46,7 +43,7 @@ public class CheckPointItemServiceImpl extends
 			}
 			finder.append(" order by bean.createtime desc");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return getPageForm(pageNo, pageSize, finder);
 	}

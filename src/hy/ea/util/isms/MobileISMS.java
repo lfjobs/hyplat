@@ -1,15 +1,11 @@
 package hy.ea.util.isms;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 /**
  *
  * @author Administrator
  */
 public class MobileISMS {
-	private static final Logger logger = LoggerFactory.getLogger(MobileISMS.class);
 
 	private static final String ip = "210.51.190.233";
 	private static final  int port = 8085;
@@ -27,8 +23,8 @@ public class MobileISMS {
         String hex = WebNetEncode.encodeHexStr(8,smsTemp(type,param));
         hex = hex.trim() + "&codec=8";
         String msgid = util.sendPostMessage(user,  pwd,  ServiceID,  dest,  sender,  hex);
-        logger.info("POST MT3");
-        logger.info("msgid = : {}", msgid);
+        System.out.println("POST MT3");
+        System.out.println("msgid = " + msgid);
         if(msgid.indexOf("-")!=-1){
         	return "fail";
         }else{

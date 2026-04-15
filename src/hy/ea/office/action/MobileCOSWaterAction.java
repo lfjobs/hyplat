@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.office.COSWater;
 import hy.ea.service.CLogBookService;
@@ -39,7 +36,6 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class MobileCOSWaterAction {
-	private static final Logger logger = LoggerFactory.getLogger(MobileCOSWaterAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -108,11 +104,11 @@ public class MobileCOSWaterAction {
 			response.setCharacterEncoding("UTF-8");
 			try {
 				response.getWriter().write(outString);
-				//logger.info("值：{}", outString);
+				//System.out.println(outString);
 				response.flushBuffer();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 			return null;
 		}

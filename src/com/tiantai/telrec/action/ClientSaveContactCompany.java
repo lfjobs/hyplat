@@ -1,8 +1,5 @@
 package com.tiantai.telrec.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.company.ContactCompany;
 
 import hy.plat.service.BaseBeanService;
@@ -62,7 +59,7 @@ public class ClientSaveContactCompany extends ActionSupport {
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(contactCompany.getCcompanyID());
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 	}

@@ -1,15 +1,20 @@
 package hy.ea.finance.action.NewPhoneOrders;
 
+import com.tiantai.wfj.bo.TEshopCusCom;
+import com.tiantai.wfj.bo.TEshopCustomer;
+import com.tiantai.wfj.util.SessionWrap;
 import com.wechat.utils.HTTPV3;
+import com.wechatpay.bo.WxPayDto;
+import com.wechatpay.service.WchatPay;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.company.Comments;
 import hy.ea.bo.company.DepotManage;
-import hy.ea.bo.finance.CashierBills;
-import hy.ea.bo.finance.GoodsBills;
-import hy.ea.bo.finance.RelatedBill;
 import hy.ea.bo.finance.BenDis.DtOrderBillAdd;
 import hy.ea.bo.finance.BenDis.PhoneBill;
 import hy.ea.bo.finance.BenDis.RefundSheet;
+import hy.ea.bo.finance.CashierBills;
+import hy.ea.bo.finance.GoodsBills;
+import hy.ea.bo.finance.RelatedBill;
 import hy.ea.bo.invoicing.FinancialBill;
 import hy.ea.bo.invoicing.Inventory;
 import hy.ea.bo.invoicing.stockInv;
@@ -20,24 +25,8 @@ import hy.plat.bo.BaseBean;
 import hy.plat.bo.PageForm;
 import hy.plat.service.BaseBeanService;
 import hy.plat.service.ServerService;
-
-import java.io.IOException;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
-
 import org.apache.struts2.ServletActionContext;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
@@ -47,11 +36,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.tiantai.wfj.bo.TEshopCusCom;
-import com.tiantai.wfj.bo.TEshopCustomer;
-import com.tiantai.wfj.util.SessionWrap;
-import com.wechatpay.bo.WxPayDto;
-import com.wechatpay.service.WchatPay;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @author zzl
@@ -59,7 +50,6 @@ import com.wechatpay.service.WchatPay;
 @Controller("SellerOrderAction")
 @Scope("prototype")
 public class SellerOrderAction {
-	private static final Logger logger = LoggerFactory.getLogger(SellerOrderAction.class);
 
     @Resource
     private BaseBeanService baseBeanService;
@@ -145,7 +135,7 @@ public class SellerOrderAction {
             pageForm = baseBeanService.getPageFormByDC(
                     (null != pageForm ? pageForm.getPageNumber() : 1), 7, dc);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         StringBuilder sql = new StringBuilder();
@@ -232,6 +222,9 @@ public class SellerOrderAction {
     public final String deliverGoods() {
         HttpServletRequest request = ServletActionContext.getRequest();
         state = transferService.onkeyfh(companyid, staffId, cashierBillsID);
+        DtOrderBillAdd billAdd = (DtOrderBillAdd) baseBeanService
+                .getBeanByHqlAndParams("from DtOrderBillAdd where oaBillId=?", new Object[]{cashierBillsID});
+        transferService.updateCashState(billAdd.getOaComId(),"02",billAdd.getFkDate(),cashierBillsID);//更改新标状态
         if ("00".equals(state.get(0))) {
             String Waybillno = request.getParameter("Waybillno");
             if (Waybillno != null) {
@@ -339,7 +332,7 @@ public class SellerOrderAction {
             pageForm = baseBeanService.getPageFormByDC(
                     (null != pageForm ? pageForm.getPageNumber() : 1), 7, dc);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         List<Object[]> goodlist = null;
         StringBuffer sql = new StringBuffer();
@@ -578,7 +571,7 @@ public class SellerOrderAction {
             try {
                 response.sendRedirect(url);
             } catch (IOException e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
             return null;
         }else{
@@ -1007,7 +1000,7 @@ public class SellerOrderAction {
             newgoodsBill = (GoodsBills) gb.cloneGoodsBills();
         } catch (Exception e) {
 
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         newgoodsBill.setGoodsBillsID(serverService.getServerID("goodsBillsID"));
         newgoodsBill.setGoodsBillsKey(null);
@@ -1036,7 +1029,7 @@ public class SellerOrderAction {
     	try {
     		transferService.saveSorting(cashid);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			flag="操作失败";
 		}
     	
@@ -1056,7 +1049,7 @@ public class SellerOrderAction {
         List<Object> parms=new ArrayList<Object>();
 		StringBuffer sql=new StringBuffer("SELECT T.ORDERID,T.JOURNALNUM,T.DELIVERYNUM,to_char(S.XDDATE,'YYYY-MM-DD HH24:MI:SS'),to_char(T.ADDDATE,'YYYY-MM-DD HH24:MI:SS'),");
 		sql.append("SUBSTR(CBAT.MAPVAL,INSTR(CBAT.MAPVAL, '-', 1, 1) + 1,");
-		sql.append("INSTR(CBAT.MAPVAL, '-', 1, 2) - INSTR(CBAT.MAPVAL, '-', 1, 1) - 1) CGS_COMNAME,T.PURCHASERNAME,T.pichingname,T.STATUS");
+		sql.append("INSTR(CBAT.MAPVAL, '-', 1, 2) - INSTR(CBAT.MAPVAL, '-', 1, 1) - 1) CGS_COMNAME,T.PURCHASERNAME,T.STATUS");
 		sql.append(" FROM DT_DELIVERY T, DT_CB_A_TRANSFERPAY CBAT, DT_STATUS S");
 		sql.append(" WHERE T.CASHIERBILLSID = CBAT.CASHIERBILLSID");
 		sql.append(" AND T.CASHIERBILLSID=S.CASHIERBILLSID");
@@ -1110,7 +1103,7 @@ public class SellerOrderAction {
     	StringBuffer sql=new StringBuffer("SELECT T.ORDERID,T.JOURNALNUM,T.DELIVERYNUM,S.XDDATE,T.ADDDATE,");
 		sql.append("SUBSTR(CBAT.MAPVAL,INSTR(CBAT.MAPVAL, '-', 1, 1) + 1,");
 		sql.append("INSTR(CBAT.MAPVAL, '-', 1, 2) - INSTR(CBAT.MAPVAL, '-', 1, 1) - 1) CGS_COMNAME,");
-		sql.append("T.PURCHASERNAME,T.pichingname,t.sellermessage,T.STATUS,C.PRICESUB");
+		sql.append("T.PURCHASERNAME,t.sellermessage,T.STATUS,C.PRICESUB");
 		sql.append(" FROM DT_DELIVERY T, DT_CB_A_TRANSFERPAY CBAT, DT_STATUS S,DTCASHIERBILLS C");
 		sql.append(" WHERE T.CASHIERBILLSID = CBAT.CASHIERBILLSID");
 		sql.append(" AND T.CASHIERBILLSID=S.CASHIERBILLSID");
@@ -1146,7 +1139,7 @@ public class SellerOrderAction {
         	JSONObject oj = JSONObject.fromObject(map);
         	result=oj.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
     	return "success";
     }
@@ -1181,7 +1174,7 @@ public class SellerOrderAction {
 		sql.append("TO_CHAR(S.XDDATE, 'YYYY-MM-DD HH24:MI:SS'),TO_CHAR(T.ADDDATE, 'YYYY-MM-DD HH24:MI:SS'),");
 		sql.append("SUBSTR(CBAT.MAPVAL,INSTR(CBAT.MAPVAL, '-', 1, 1) + 1,");
 		sql.append("INSTR(CBAT.MAPVAL, '-', 1, 2) - INSTR(CBAT.MAPVAL, '-', 1, 1) - 1) CGS_COMNAME,");
-		sql.append("T.PURCHASERNAME,T.pichingname,T.STATUS");
+		sql.append("T.PURCHASERNAME,T.STATUS");
 		sql.append(" FROM DT_SEND_BILL T, DT_CB_A_TRANSFERPAY CBAT, DT_STATUS S");
 		sql.append(" WHERE T.CASHIERBILLSID = CBAT.CASHIERBILLSID");
 		sql.append(" AND T.CASHIERBILLSID = S.CASHIERBILLSID");
@@ -1213,16 +1206,16 @@ public class SellerOrderAction {
     	HttpServletRequest request = ServletActionContext.getRequest();
     	String comid=request.getParameter("comid");
     	String sendid=request.getParameter("sendid");
-        StringBuffer sql=new StringBuffer("SELECT T.SENDID,T.JOURNALNUM,T.SENDNUM,S.XDDATE,T.ADDDATE,");
-        sql.append("SUBSTR(CBAT.MAPVAL,INSTR(CBAT.MAPVAL, '-', 1, 1) + 1,");
-        sql.append("INSTR(CBAT.MAPVAL, '-', 1, 2) - INSTR(CBAT.MAPVAL, '-', 1, 1) - 1) CGS_COMNAME,T.PURCHASERNAME,T.pichingname,T.STATUS,");
-        sql.append("O.RECEIVENAME,O.RECEIVETEL,O.RECEIVEADDRESS,C.PRICESUB");
-        sql.append(" FROM DT_SEND_BILL T, DT_CB_A_TRANSFERPAY CBAT, DT_STATUS S,DT_ORDER_BILL_ADD O,DTCASHIERBILLS C");
-        sql.append(" WHERE T.CASHIERBILLSID = CBAT.CASHIERBILLSID");
-        sql.append(" AND T.CASHIERBILLSID=S.CASHIERBILLSID");
-        sql.append(" AND T.CASHIERBILLSID=O.OA_BILL_ID");
+    	StringBuffer sql=new StringBuffer("SELECT T.SENDID,T.JOURNALNUM,T.SENDNUM,S.XDDATE,T.ADDDATE,");
+		sql.append("SUBSTR(CBAT.MAPVAL,INSTR(CBAT.MAPVAL, '-', 1, 1) + 1,");
+		sql.append("INSTR(CBAT.MAPVAL, '-', 1, 2) - INSTR(CBAT.MAPVAL, '-', 1, 1) - 1) CGS_COMNAME,T.PURCHASERNAME,T.STATUS,");
+		sql.append("O.RECEIVENAME,O.RECEIVETEL,O.RECEIVEADDRESS,C.PRICESUB");
+		sql.append(" FROM DT_SEND_BILL T, DT_CB_A_TRANSFERPAY CBAT, DT_STATUS S,DT_ORDER_BILL_ADD O,DTCASHIERBILLS C");
+		sql.append(" WHERE T.CASHIERBILLSID = CBAT.CASHIERBILLSID");
+		sql.append(" AND T.CASHIERBILLSID=S.CASHIERBILLSID");
+		sql.append(" AND T.CASHIERBILLSID=O.OA_BILL_ID");
         sql.append(" AND T.CASHIERBILLSID=C.CASHIERBILLSID");
-        sql.append(" AND T.SENDID=?");
+		sql.append(" AND T.SENDID=?");
 		Object ordObj=baseBeanService.getObjectBySqlAndParams(sql.toString(), new Object[]{sendid});
 		
 		request.setAttribute("ordobj", ordObj);
@@ -1251,7 +1244,7 @@ public class SellerOrderAction {
         	JSONObject oj = JSONObject.fromObject(map);
         	result=oj.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
     	return "success";
     }
@@ -1286,7 +1279,7 @@ public class SellerOrderAction {
 		sql.append("TO_CHAR(S.XDDATE, 'YYYY-MM-DD HH24:MI:SS'),TO_CHAR(T.ADDDATE, 'YYYY-MM-DD HH24:MI:SS'),");
 		sql.append("SUBSTR(CBAT.MAPVAL,INSTR(CBAT.MAPVAL, '-', 1, 1) + 1,");
 		sql.append("INSTR(CBAT.MAPVAL, '-', 1, 2) - INSTR(CBAT.MAPVAL, '-', 1, 1) - 1) CGS_COMNAME,");
-		sql.append("T.PURCHASERNAME,T.T.pichingname,STATUS");
+		sql.append("T.PURCHASERNAME,T.STATUS");
 		sql.append(" FROM DT_TRANSPORT_BILL T, DT_CB_A_TRANSFERPAY CBAT, DT_STATUS S");
 		sql.append(" WHERE T.CASHIERBILLSID = CBAT.CASHIERBILLSID");
 		sql.append(" AND T.CASHIERBILLSID = S.CASHIERBILLSID" );
@@ -1320,7 +1313,7 @@ public class SellerOrderAction {
     	String reansportid=request.getParameter("reansportid");
     	StringBuffer sql=new StringBuffer("SELECT T.TRANSPORTID,T.JOURNALNUM,T.TRANSPORTNUM,S.XDDATE,T.ADDDATE,");
 		sql.append("SUBSTR(CBAT.MAPVAL,INSTR(CBAT.MAPVAL, '-', 1, 1) + 1,");
-		sql.append("INSTR(CBAT.MAPVAL, '-', 1, 2) - INSTR(CBAT.MAPVAL, '-', 1, 1) - 1) CGS_COMNAME,T.PURCHASERNAME,T.pichingname,T.STATUS,");
+		sql.append("INSTR(CBAT.MAPVAL, '-', 1, 2) - INSTR(CBAT.MAPVAL, '-', 1, 1) - 1) CGS_COMNAME,T.PURCHASERNAME,T.STATUS,");
 		sql.append("O.RECEIVENAME,O.RECEIVETEL,O.RECEIVEADDRESS,C.PRICESUB");
 		sql.append(" FROM DT_TRANSPORT_BILL T, DT_CB_A_TRANSFERPAY CBAT, DT_STATUS S,DT_ORDER_BILL_ADD O,DTCASHIERBILLS C");
 		sql.append(" WHERE T.CASHIERBILLSID = CBAT.CASHIERBILLSID");
@@ -1356,7 +1349,7 @@ public class SellerOrderAction {
     		flag=transferService.TransportLogicalProcessing(transportid,Waybillno,ExCode,staffid);
 		} catch (Exception e) {
 			flag="01";
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
     	Map<String, String> map=new HashMap();
     	map.put("flag", flag);
@@ -1408,7 +1401,7 @@ public class SellerOrderAction {
             pageForm = baseBeanService.getPageFormByDC(
                     (null != pageForm ? pageForm.getPageNumber() : 1), 4, dc);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         Map<String,Object> map =new HashMap<String,Object>();
         map.put("pageForm", pageForm);
@@ -1428,7 +1421,7 @@ public class SellerOrderAction {
             falg=transferService.addOverdraft(cashid,raddressId,falg);
         }catch (Exception e){
             falg="01";
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("falg",falg);
@@ -1450,7 +1443,7 @@ public class SellerOrderAction {
             transferService.addAddress(cashid,raddressId);
         }catch (Exception e){
             falg="01";
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("falg",falg);
@@ -1467,7 +1460,7 @@ public class SellerOrderAction {
             String sql="select wm_concat(g.goodsname) from dtgoodsbills g where g.cashierbillsid=?";
             goodname=baseBeanService.getObjectBySqlAndParams(sql,new Object[]{cashid});
         }catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("goodname",goodname);

@@ -33,7 +33,6 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 public class certificatePhoneAction {
-	private static final Logger logger = LoggerFactory.getLogger(certificatePhoneAction.class);
     private Logger logger = LoggerFactory.getLogger(certificatePhoneAction.class);
     @Resource
     private certificateService certificateService;
@@ -147,7 +146,7 @@ public class certificatePhoneAction {
         } catch (Exception e) {
             map.put("success", false);
             map.put("message", "新增失败: " + e.getMessage());
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         JSONObject json = JSONObject.fromObject(map);
         this.result = json.toString();
@@ -164,7 +163,7 @@ public class certificatePhoneAction {
             map.put("message", "删除成功");
         } catch (Exception e) {
             map.put("success", false);
-            logger.info("调试信息");
+            System.out.println(e.getMessage());
             map.put("message", "删除失败: " + e.getMessage());
         }
         JSONObject json = JSONObject.fromObject(map);

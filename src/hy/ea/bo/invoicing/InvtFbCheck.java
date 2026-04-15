@@ -16,7 +16,7 @@ public class InvtFbCheck implements BaseBean, java.io.Serializable{
     private String organizationid;  //部门id
     private String orgName;  //部门名称
     private String departmentid;    //子部门id
-    private String billstatus;     //单据状态  草稿 已调整库存
+    private String billstatus;     //单据状态
     private String staffid;       //盘库人（制单人）id
     private String staffname;       //盘库人（制单人）名字
     private String billstype;//单据类别
@@ -209,28 +209,5 @@ public class InvtFbCheck implements BaseBean, java.io.Serializable{
         result = 31 * result + (goodsmoney != null ? goodsmoney.hashCode() : 0);
         result = 31 * result + (billsdate != null ? billsdate.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "\"InvtFbCheck\":{" +
-                "\"fbillkey \":\"" + fbillkey + '\"' +
-                ", \"fbillid \":\"" + fbillid + '\"' +
-                ", \"groupcompanysn \":\"" + groupcompanysn + '\"' +
-                ", \"companyid \":\"" + companyid + '\"' +
-                ", \"companyName \":\"" + companyName + '\"' +
-                ", \"organizationid \":\"" + organizationid + '\"' +
-                ", \"orgName \":\"" + orgName + '\"' +
-                ", \"departmentid \":\"" + departmentid + '\"' +
-                ", \"billstatus \":\"" + billstatus + '\"' +
-                ", \"staffid \":\"" + staffid + '\"' +
-                ", \"staffname \":\"" + staffname + '\"' +
-                ", \"billstype \":\"" + billstype + '\"' +
-                ", \"journalnum \":\"" + journalnum + '\"' +
-                ", \"warehouse \":\"" + warehouse + '\"' +
-                ", \"warehousename \":\"" + warehousename + '\"' +
-                ", \"goodsmoney \":\"" + goodsmoney + '\"' +
-                ", \"billsdate \":" + billsdate +
-                "},";
     }
 }

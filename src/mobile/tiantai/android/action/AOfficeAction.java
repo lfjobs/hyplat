@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.util.DateUtil;
 import hy.plat.bo.BaseBean;
 import hy.plat.bo.PageForm;
@@ -26,7 +23,6 @@ import com.mysl.bo.administrative.DtMyleave;
 @Controller
 @Scope("prototype")
 public class AOfficeAction  {
-	private static final Logger logger = LoggerFactory.getLogger(AOfficeAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 
@@ -198,7 +194,7 @@ public class AOfficeAction  {
 					null);
 			jret.accumulate("result", "suc");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			jret.accumulate("result", "fail");
 		}
 		result = jret;
@@ -217,7 +213,7 @@ public class AOfficeAction  {
 					.deleteBeanByKey(DtMyleave.class, dtMyleave.getKey());
 			jret.accumulate("result", "suc");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			jret.accumulate("result", "fail");
 		}
 		result = jret;

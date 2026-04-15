@@ -1,8 +1,5 @@
 package hy.ea.collage.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import hy.ea.bo.finance.BenDis.JoinFans;
@@ -837,7 +834,7 @@ public class DspIndexServiceImpl implements DspIndexSerivce {
             }
             baseBeanDao.saveBeansListAndexecuteHqlsByParams(beanList, null, null);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             result = "1";
         }
         return result;

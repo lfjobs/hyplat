@@ -72,17 +72,10 @@ public class AttriProduction implements BaseBean, Serializable {
 		this.sort = sort;
 	}
 
-	@Override
-	public String toString() {
-		return "\"AttriProduction\":{" +
-				"\"apkey\":\"" + apkey + '\"' +
-				", \"apid\":\"" + apid + '\"' +
-				", \"attriname\":\"" + attriname + '\"' +
-				", \"attrivalue\":\"" + attrivalue + '\"' +
-				", \"imgurl\":\"" + imgurl + '\"' +
-				", \"goodsid\":\"" + goodsid + '\"' +
-				", \"type\":\"" + type + '\"' +
-				", \"sort\":" + sort +
-				"},";
-	}
+	
+    
+    
+
+    
+    
 }

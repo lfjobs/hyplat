@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.human.Staff;
 import hy.ea.util.DateUtil;
@@ -29,7 +26,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class AWorkAction {
-	private static final Logger logger = LoggerFactory.getLogger(AWorkAction.class);
 
 	@Resource
 	private BaseBeanService baseBeanService;
@@ -228,7 +224,7 @@ public class AWorkAction {
 					null);
 			jret.accumulate("result", "suc");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			jret.accumulate("result", "fail");
 		}
 		result = jret;
@@ -390,7 +386,7 @@ public class AWorkAction {
 
 		} catch (Exception e) {
 			jret.accumulate("result", "fail");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		result = jret;
 		return "success";
@@ -408,7 +404,7 @@ public class AWorkAction {
 			baseBeanService.deleteBeanByKey(DtMyovertime.class,dtMyovertime.getKey());
 			jret.accumulate("result", "suc");
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			jret.accumulate("result", "fail");
 		}
 		result = jret;

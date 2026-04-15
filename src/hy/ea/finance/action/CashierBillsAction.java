@@ -1,8 +1,5 @@
 package hy.ea.finance.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -53,7 +50,6 @@ import com.opensymphony.xwork2.ActionContext;
  * 
  */
 public class CashierBillsAction {
-	private static final Logger logger = LoggerFactory.getLogger(CashierBillsAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -467,7 +463,7 @@ public class CashierBillsAction {
 					null, null);
 		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 	
@@ -667,7 +663,7 @@ public class CashierBillsAction {
 			goodinfo = (GoodsManage) baseBeanService.getBeanByHqlAndParams(hql,new Object[]{parameter.trim()});
 			
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		Map<String, Object> map = new HashMap<String, Object>();

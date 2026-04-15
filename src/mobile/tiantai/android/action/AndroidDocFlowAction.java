@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.util.SessionWrap;
@@ -48,7 +45,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class AndroidDocFlowAction {
-	private static final Logger logger = LoggerFactory.getLogger(AndroidDocFlowAction.class);
 	@Resource
 	private UpLoadFileService fileService;
 	@Resource
@@ -712,7 +708,7 @@ public class AndroidDocFlowAction {
 
 		} catch (Exception e) {
 			jsonObjList.accumulate("result", 1);
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		result = jsonObjList;
 		return "success";
@@ -918,7 +914,7 @@ public class AndroidDocFlowAction {
 		jsonObjList.accumulate("result", "suc");
 		} catch (Exception e) {
 			jsonObjList.accumulate("result", "fail");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 	        
@@ -978,7 +974,7 @@ public class AndroidDocFlowAction {
 			request.setAttribute("financialBill",financialBill);
 		} catch (Exception e) {
 
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 
@@ -1063,7 +1059,7 @@ public class AndroidDocFlowAction {
 			jsonObjList.accumulate("result", "suc");
 		} catch (Exception e) {
 			jsonObjList.accumulate("result", "fail");	
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	
 		result = jsonObjList;
@@ -1183,7 +1179,7 @@ public class AndroidDocFlowAction {
 			jsonObjList.accumulate("result", "suc");
 		} catch (Exception e) {
 			jsonObjList.accumulate("result", "fail");
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		result = jsonObjList;
 		return "success";
@@ -1381,7 +1377,7 @@ public class AndroidDocFlowAction {
 
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		result = jsonObjList;
@@ -1414,9 +1410,9 @@ public class AndroidDocFlowAction {
 				if(info1[0]==null||info1[0].equals("")){
 					tel = info1[1];
 				}
-				logger.info("值：{}", 1);
+				System.out.println(1);
 				String id = contractService.addRecentContact(account.getStaffID(),account.getCompanyID(),staffid,"",tel,info1[2]);
-				logger.info("调试信息");
+				System.out.println("id1"+id);
 
 				contractService.updateRecentContact(id,"pub");
 			}
@@ -1455,18 +1451,18 @@ public class AndroidDocFlowAction {
 										doc.getPublisherID(),account.getCompanyID(),  messagecontent, doc
 												.getTitle(), doc.getModule(), "read");
 								String id = contractService.addRecentContact(account.getStaffID(),account.getCompanyID(),info[0],info[2],info[1],info[3]);
-								logger.info("值：{}", 2);
-								logger.info("调试信息");
+								System.out.println(2);
+								System.out.println("id2"+id);
 								contractService.updateRecentContact(id,"pub");
 
 							}else{
 								docCommonService.sendPhoneMessage(info[0], "","",
 										doc.getPublisherID(),account.getCompanyID(),  messagecontent, doc
 												.getTitle(), doc.getModule(), "read");
-								logger.info("值：{}", 3);
+								System.out.println(3);
 
 								String id = contractService.addRecentContact(account.getStaffID(),account.getCompanyID(),info[0],"","",info[3]);
-								logger.info("调试信息");
+								System.out.println("id3"+id);
 
 								contractService.updateRecentContact(id,"pub");
 
@@ -1479,7 +1475,7 @@ public class AndroidDocFlowAction {
 				}
 
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		return "success";
@@ -1567,7 +1563,7 @@ public class AndroidDocFlowAction {
 				}
 
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 
 
@@ -1713,7 +1709,7 @@ public class AndroidDocFlowAction {
 		jsonObjList.accumulate("lists",maps);
 		result = jsonObjList;
 		}catch(Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return "success";
@@ -1949,7 +1945,7 @@ public class AndroidDocFlowAction {
 			}
 			result = jsonObjList;
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return "success";
@@ -2024,11 +2020,11 @@ public class AndroidDocFlowAction {
 			HttpServletResponse response = ServletActionContext.getResponse();
 
 
-			logger.info("调试信息");
+			System.out.println("url:"+url);
 			response.sendRedirect(url);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 //		Map<String,Object> map = new HashMap<String,Object>();
 //		map.put("signUrl",signUrl);
@@ -2054,11 +2050,11 @@ public class AndroidDocFlowAction {
 			HttpServletResponse response = ServletActionContext.getResponse();
 
 
-			logger.info("调试信息");
+			System.out.println("url:"+url);
 			response.sendRedirect(url);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";

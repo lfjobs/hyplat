@@ -194,28 +194,4 @@ public class PTrack implements BaseBean, ExcelBean,Serializable {
 		this.companyID = companyID;
 	}
 
-	@Override
-	public String toString() {
-		return "\"PTrack\":{" +
-				"\"ptrackekey\":\"" +ptrackekey + '\"' +
-				", \"ptrackeId\":\"" +ptrackeId + '\"' +
-				", \"id\":\"" +id + '\"' +
-				", \"lot\":\"" +lot + '\"' +
-				", \"productNumber\":\"" +productNumber + '\"' +
-				", \"productName\":\"" +productName + '\"' +
-				", \"productionDepartment\":\"" +productionDepartment + '\"' +
-				", \"departmentID\":\"" +departmentID + '\"' +
-				", \"projectLeader\":\"" +projectLeader + '\"' +
-				", \"projectLeaderID\":\"" +projectLeaderID + '\"' +
-				", \"throughput\":\"" +throughput + '\"' +
-				", \"percent\":\"" +percent + '\"' +
-				", \"yield\":\"" +yield + '\"' +
-				", \"trackTime\":\"" +trackTime + '\"' +
-				", \"trackmanId\":\"" +trackmanId + '\"' +
-				", \"trackman\":\"" +trackman + '\"' +
-				", \"remark\":\"" +remark + '\"' +
-				", \"status\":\"" +status + '\"' +
-				", \"companyID\":\"" +companyID + '\"' +
-				"},";
-	}
 }

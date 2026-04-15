@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class SendBill implements BaseBean,Serializable{
     /**
-	 * 发货单
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String sendkey;

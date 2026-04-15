@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.human.CSP;
@@ -46,7 +43,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class StaffAppraisalAction {
-	private static final Logger logger = LoggerFactory.getLogger(StaffAppraisalAction.class);
 	@Resource
 	private ShowExcelService excelService;
 	public InputStream excelStream;
@@ -79,7 +75,7 @@ public class StaffAppraisalAction {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		CAccount account = (CAccount) session.get("account");
 		String[] remi = result.split("-");
-		// logger.info("值：{}", result);
+		// System.out.println(result);
 		beans = new ArrayList<BaseBean>();
 		if (null == staffappraisal.getAppraisalID()
 				|| "".equals(staffappraisal.getAppraisalID())) {
@@ -382,7 +378,7 @@ public class StaffAppraisalAction {
 								" from StaffAppraisal where companyID = ? and staffID=? and appraisalDate between ? and ? order by appraisalDate desc",
 								params);
 			} catch (ParseException e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		return "list";
@@ -475,7 +471,7 @@ public class StaffAppraisalAction {
 					new Object[] { account.getCompanyID(),
 							staffappraisal.getStaffID() });
 		} else {
-			// logger.info("调试信息");
+			// System.out.println(staffappraisal.getPayScaleID());
 			PayScale payScale = (PayScale) baseBeanService
 					.getBeanByHqlAndParams(
 							"from PayScale where  payScaleID = ? ",

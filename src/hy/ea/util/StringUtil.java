@@ -1,8 +1,5 @@
 package hy.ea.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpResponse;
@@ -22,7 +19,6 @@ import java.util.Map;
  *
  */
 public class StringUtil {
-	private static final Logger logger = LoggerFactory.getLogger(StringUtil.class);
 	/**
 	 * 判断输入的字符串参数是否为空。
 	 * @param args 输入的字串
@@ -195,18 +191,18 @@ public class StringUtil {
 	public static JSONObject strToJson(String content){
 
 		content = content.replace("=","\":\"");
-		logger.info("值：{}", content);
+		System.out.println(content);
 		content = content.replace("&","\",\"");
-		logger.info("值：{}", content);
+		System.out.println(content);
 		content = "{\"" + content +"\"}";
-		logger.info("值：{}", content);
+		System.out.println(content);
 		JSONObject object = JSON.parseObject(content);
-		logger.info("调试信息");
+		System.out.println(object.toJSONString());
 		return object;
 	}
 
 	public static void main(String[] args) {
-		logger.info("调试信息");
+		System.out.println(System.currentTimeMillis());
 	}
 
 	public static String paserMaptoStr(Map<String, Object> dataMap) {
@@ -257,10 +253,10 @@ public class StringUtil {
 	public static String convertUrl(String curl){
 
 		String qurl = curl.substring(0,curl.indexOf("?")+1);
-		//   logger.info("值：{}", qurl);
+		//   System.out.println(qurl);
 
 		String queryString = curl.substring(curl.indexOf("?")+1);
-		//   logger.info("值：{}", queryString);
+		//   System.out.println(queryString);
 		String cs = "";
 		String[] queryStringSplit = queryString.split("&");
 		Map<String,String> queryStringMap =
@@ -283,7 +279,7 @@ public class StringUtil {
 
 		}
 
-//		logger.info("调试信息");
+//		System.out.println(qurl+cs);
 		return qurl+cs;
 	}
 }

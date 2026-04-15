@@ -1,8 +1,5 @@
 package hy.ea.BuildPlatform.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.BuildPlatform.service.WfjIndustryPlatfromService;
 import hy.ea.bo.CDetail;
 import hy.ea.bo.Company;
@@ -28,7 +25,6 @@ import org.springframework.stereotype.Controller;
 @Controller("WfjIndustryPlatformAction")
 @Scope("prototype")
 public class WfjIndustryPlatformAction {
-	private static final Logger logger = LoggerFactory.getLogger(WfjIndustryPlatformAction.class);
 	@Resource
 	private WfjIndustryPlatfromService wfjIndustryPlatfromService;
 	
@@ -215,7 +211,7 @@ public String getIndustryList(){
 			wfjIndustryPlatfromService.addOrDelPlatForm(staffID,ccompanyID,platformID,flag);
 		}catch (Exception e){
 			b = false;
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject json=new JSONObject();
 		json.accumulate("b", b);

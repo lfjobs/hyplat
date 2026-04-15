@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.plat.service.BaseBeanService;
 
@@ -61,7 +58,7 @@ public class QuerySignListByAccount extends ActionSupport {
 			response.flushBuffer();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return null;

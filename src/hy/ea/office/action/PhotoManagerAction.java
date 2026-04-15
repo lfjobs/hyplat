@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Company;
 import hy.ea.bo.human.Staff;
@@ -42,7 +39,6 @@ import com.opensymphony.xwork2.ActionContext;
  * 图片管理
  */
 public class PhotoManagerAction {
-	private static final Logger logger = LoggerFactory.getLogger(PhotoManagerAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -250,7 +246,7 @@ public class PhotoManagerAction {
 				photoManagerService.deletePhoto((path + photoFile).replace("/",
 						"\\"));
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		return "success";
@@ -493,7 +489,7 @@ public class PhotoManagerAction {
 			try {
 				baseBeanService.save(corPhoto);
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		photoBoxIdMark = photoBoxID;
@@ -632,7 +628,7 @@ public class PhotoManagerAction {
 			JSONObject oj = JSONObject.fromObject(map, cfg);
 			result = oj.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}

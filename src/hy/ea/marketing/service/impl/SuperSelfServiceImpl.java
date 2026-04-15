@@ -1,8 +1,5 @@
 package hy.ea.marketing.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.*;
 import com.tiantai.wfj.service.WfjJifenService;
 import com.tiantai.wfj.util.MqttService;
@@ -166,7 +163,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
                         map.put("unit", scaleGoods.getUnitOfMeasureCode());
                     }
                 } catch (Exception el) {
-                    logger.error("操作异常", e);
+                    el.printStackTrace();
                 }
             }
         }
@@ -499,7 +496,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException el) {
-                logger.error("操作异常", e);
+                el.printStackTrace();
             }
             if (c == 0) {
                 payjournalNum = journalNum;
@@ -624,7 +621,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
         try {
             baseBeanService.executeHqlsByParamsList(null, new String[]{hql}, parmsList);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return null;
@@ -789,9 +786,9 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 
         final String ftotalMoney = totalMoney.setScale(2, BigDecimal.ROUND_HALF_UP).toString();
         final String ftotalNum = totalNum + "";
-        logger.info("00000000000:: {}", ftotalNum);
+        System.out.println("00000000000:" + ftotalNum);
         if (PrinterJob.lookupPrintServices().length > 0) {
-            logger.info("调试信息");
+            System.out.println("--------------:" + PrinterJob.lookupPrintServices().length);
             /*
         打印格式
        */
@@ -883,13 +880,13 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
                     , pageFormat);
             //获取默认打印机
             PrinterJob printerJob = PrinterJob.getPrinterJob();
-            logger.info("--------------:: {}", printerJob.getJobName());
+            System.out.println("--------------:" + printerJob.getJobName());
             printerJob.setPageable(book);
             try {
                 printerJob.print();
             } catch (PrinterException e) {
-                logger.error("操作异常", e);
-                logger.info("打印异常");
+                e.printStackTrace();
+                System.out.println("打印异常");
             }
 
 //
@@ -902,7 +899,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 
             //   baseBeanService.executeHqlsByParamsList(null, new String[]{hqldelete}, parmsList);
         } else {
-            logger.info("没法发现打印机服务");
+            System.out.println("没法发现打印机服务");
         }
 
         return null;
@@ -2047,9 +2044,9 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
      * @param staffID
      */
     private void addWeightRecord(String weights, String cplist, String hgcode, String staffID) {
-        logger.info("addWeightRecord");
-        logger.info("值：{}", cplist);
-        logger.info("值：{}", weights);
+        System.out.println("addWeightRecord");
+        System.out.println(cplist);
+        System.out.println(weights);
 
 
         try {
@@ -2063,7 +2060,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 
             baseBeanDao.save(weightRecord);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -2084,7 +2081,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
                 baseBeanDao.update(weightRecord);
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
     }
@@ -2103,7 +2100,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 
         addWeightRecord(weights, cplist, hgcode, staffID);
         String ccompanyID = "";
-        logger.info("posNum: {}", posNum);
+        System.out.println("posNum" + posNum);
 
         String[] arr = weights.split("#");//拿之后秤盘
         String[] arr2 = cplist.split("#");//拿之前初始秤盘
@@ -2117,9 +2114,9 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 
 
         }
-        logger.info("weights: {}", weights);
-        logger.info("afterWeight: {}", afterWeight);
-        logger.info("cplist: {}", cplist);
+        System.out.println("weights" + weights);
+        System.out.println("afterWeight" + afterWeight);
+        System.out.println("cplist" + cplist);
         for (int b = 0; b < arr2.length; b++) {
             String[] arr22 = arr2[b].split(",");
             String cpweight2 = arr22[1];
@@ -2128,10 +2125,10 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
         }
 
 
-        logger.info("beforeWeight: {}", beforeWeight);
+        System.out.println("beforeWeight" + beforeWeight);
 
         float absweight = Math.abs(beforeWeight - afterWeight);
-        logger.info("absweight: {}", absweight);
+        System.out.println("absweight" + absweight);
 
         if (absweight > 0.02) {
 
@@ -2139,16 +2136,16 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
                 String[] arr1 = arr[i].split(",");
                 String cpcode = arr1[0];
                 String cpweight = arr1[1];
-                logger.info("cpcode: {}", cpcode);
-                logger.info("cpweight: {}", cpweight);
+                System.out.println("cpcode" + cpcode);
+                System.out.println("cpweight" + cpweight);
 
                 for (int j = 0; j < arr2.length; j++) {
                     String[] arr21 = arr2[j].split(",");
                     String cpcode2 = arr21[0];
                     String cpweight2 = arr21[1];
 
-                    logger.info("cpcode2: {}", cpcode2);
-                    logger.info("cpweight2: {}", cpweight2);
+                    System.out.println("cpcode2" + cpcode2);
+                    System.out.println("cpweight2" + cpweight2);
                     if (cpcode.equals(cpcode2)) {
 
 
@@ -2156,14 +2153,14 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 
 
                         float cx = Math.abs(BigDecimal.valueOf(cx1).setScale(3, RoundingMode.HALF_UP).floatValue());
-                        logger.info("cx: {}", cx);
+                        System.out.println("cx" + cx);
                         if (cx > 0.02) {//判断到时候增加误差上下范围
                             List<Object[]> listc = computeBar(cx, cpcode);
-                            logger.info("listc: {}", listc);
+                            System.out.println("listc" + listc);
                             for (int u = 0; u < listc.size(); u++) {
                                 totallist.add(listc.get(u));
                             }
-                            logger.info("totallist: {}", totallist);
+                            System.out.println("totallist" + totallist);
 
 
                         }
@@ -2174,7 +2171,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
         }
         if (totallist.size() > 0) {
             hgoinCart(totallist, posNum, hgcode);
-            logger.info("totallist2: {}", totallist);
+            System.out.println("totallist2" + totallist);
 
             Object[] oc = totallist.get(0);
             ccompanyID = oc[4].toString();
@@ -2197,7 +2194,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 
     private int computerPro(int start, int end, int floor, float sum, String p, float target, List<Object[]> b) {
         if (start == end) {//退出递归的方法，进行下次循环 已经达到多重循环的次数了，不用再增加循环，直接执行循环的内容就可以了
-            // logger.info("值：{}", start);
+            // System.out.println(start);
             return 0;
         }
         Object[] obj = b.get(floor - 1);
@@ -2211,13 +2208,13 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 //            if(bc){
 //                break;
 //            }
-            //  logger.info("调试信息");
+            //  System.out.println(floor+"层:"+i);
             String p1 = p + ppid + "," + weight + "," + i * weight + "," + i + "-";
 
             float sum1 = sum + i * weight;
 
             sum1 = BigDecimal.valueOf(sum1).setScale(3, RoundingMode.HALF_UP).floatValue();
-            logger.info("值：{}", sum1);
+            System.out.println(sum1);
 
 //            float sm0 = sum1+i*Float.parseFloat(Constant.Error_Num);
 //
@@ -2234,19 +2231,19 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
                 } else if (absNum < mixNum) {
                     mixNum = absNum;
                     r = p1;
-                    logger.info("r:: {}", r);
+                    System.out.println("r:" + r);
 //                    if(mixNum<=0.02){
 //                        //误差值小于20g
 //                        bc = true;
-//                        logger.info("调试信息");
+//                        System.out.println("bc:"+mixNum);
 //                    }
                 }
-                logger.info("mixNum: {}", mixNum);
-                logger.info("sum1:: {}", sum1);
-                logger.info("p1: {}", p1);
+                System.out.println("mixNum" + mixNum);
+                System.out.println("sum1:" + sum1);
+                System.out.println("p1" + p1);
                 //  if(sum1==target||(target>=sm0&&target<=sm1)){
-                //     logger.info("值：{}", p1);
-                //        logger.info("target:: {}", sum1);
+                //     System.out.println(p1);
+                //        System.out.println("target:" + sum1);
                 //bc = true;
                 //  r = p1;
 
@@ -2384,11 +2381,11 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
             }
             String G1 = (C1 + C2 * 3) + "";
             V = 10 - Integer.parseInt(G1.substring(G1.length() - 1));
-            logger.info("值：{}", money);
-            logger.info("值：{}", al);
-            logger.info("调试信息");
-            logger.info("值：{}", C);
-            logger.info("调试信息");
+            System.out.println(money);
+            System.out.println(al);
+            System.out.println(pad2((money * 100) + "", 5));
+            System.out.println(C);
+            System.out.println(C + V + "");
             cc = C + V + "";
             float cs = cx;
             String numc = cx + "";
@@ -2398,9 +2395,9 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 
             }
             Object[] obj1 = new Object[]{ppid, cc, money, companyID, ccompanyid, cs, numc, cpcode};
-            logger.info("numc:: {}", numc);
+            System.out.println("numc:" + numc);
             if (!"0".equals(numc)) {
-                logger.info("numc12:: {}", numc);
+                System.out.println("numc12:" + numc);
                 clist.add(obj1);
             }
 
@@ -2418,7 +2415,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
     private String pad2(String num, int n) {
         if (num.indexOf(".") != -1) {
             num = (int) Math.floor(Double.parseDouble(num)) + "";
-            logger.info("num: {}", num);
+            System.out.println("num" + num);
         }
         if ((num + "").length() >= n)
             return num;
@@ -2519,7 +2516,7 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
             }
             baseBeanDao.saveBeansListAndexecuteHqlsByParams(beans, hqls, new Object[]{hgcode});
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
 
@@ -2805,11 +2802,11 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
      * @param posNum
      */
     public void pushCloseDoor(String posNum, String door) {
-        logger.info("推送到终端关门posNum: {}", posNum);
+        System.out.println("推送到终端关门posNum" + posNum);
         try {
             MqttService.getInstance().closeRelay(Integer.parseInt(door), posNum);
         } catch (MqttException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -2820,12 +2817,12 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
      * @param posNum
      */
     public void pushOpenDoor(String posNum, String door) {
-        logger.info("推送到终端开门posNum: {}", posNum);
+        System.out.println("推送到终端开门posNum" + posNum);
         //等着推送开门，
         try {
             MqttService.getInstance().openRelay(Integer.parseInt(door), posNum);
         } catch (MqttException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -2837,14 +2834,14 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
      * @param posNum
      */
     public void pushMessage(String posNum, String url) {
-        logger.info("推送到终端打开页面posNum: {}", posNum);
+        System.out.println("推送到终端打开页面posNum" + posNum);
         try {
             MqttService.getInstance().openWeb(posNum, url);
-            logger.info("url:: {}", url);
-            logger.info("推送到终端");
+            System.out.println("url:" + url);
+            System.out.println("推送到终端");
             //basePath+"ea/sm/ea_getOpenSuc.jspa?posNum="+posNum+"&sccId="+sccId+"&loginMode=scan");
         } catch (MqttException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -2859,9 +2856,9 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
 
         try {
             MqttService.getInstance().pubSeq(posNum, seq);
-            logger.info("发送序列号: {}", seq);
+            System.out.println("发送序列号" + seq);
         } catch (MqttException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
     }
@@ -2876,9 +2873,9 @@ public class SuperSelfServiceImpl implements SuperSelfSerivce {
     public void pushAudio(String posNum, String audio) {
         try {
             MqttService.getInstance().pubAudio(posNum, audio);
-            logger.info("推送语音: {}", audio);
+            System.out.println("推送语音" + audio);
         } catch (MqttException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
 

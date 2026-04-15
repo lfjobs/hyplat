@@ -1,8 +1,5 @@
 package com.wechatpay.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 
 import hy.base.action.BaseAction;
@@ -54,10 +51,10 @@ public class NotifyAction extends BaseAction<Object>{
 			}
 			request.getReader().close();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
-		logger.info("接收到的报文：: {}", notityXml);
+		System.out.println("接收到的报文：" + notityXml);
 		
 		Map m = parseXmlToList2(notityXml);
 		WxPayResult wpr = new WxPayResult();
@@ -93,7 +90,7 @@ public class NotifyAction extends BaseAction<Object>{
 			+ "<return_msg><![CDATA[报文为空]]></return_msg>" + "</xml> ";
 		}
 
-		logger.info("微信支付回调数据结束");
+		System.out.println("微信支付回调数据结束");
 
 		BufferedOutputStream out = new BufferedOutputStream(
 				response.getOutputStream());
@@ -133,7 +130,7 @@ public class NotifyAction extends BaseAction<Object>{
 				}
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return retMap;
 	}

@@ -51,7 +51,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class CheckInvAction {
-	private static final Logger logger = LoggerFactory.getLogger(CheckInvAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -201,7 +200,7 @@ public class CheckInvAction {
             //查询页面的字段
             pageForm = checkinvService.getCheckInvList(companyid, staffId, orgid, null != pageForm ? pageForm.getPageNumber() : 1, showFlag);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "checkInvList";
     }
@@ -239,7 +238,7 @@ public class CheckInvAction {
                 }
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "toAddCheckInv";
     }
@@ -288,7 +287,7 @@ public class CheckInvAction {
                 result = null;
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -332,7 +331,7 @@ public class CheckInvAction {
         try {
             checkinvService.saveCostSheet(invtFbCheck, addBean);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return getCheckInvList();
     }
@@ -356,7 +355,7 @@ public class CheckInvAction {
                 }
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "toDetail";
     }
@@ -370,7 +369,7 @@ public class CheckInvAction {
         try {
             result = checkinvService.ajaxStaffForDep(departmentID);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -384,7 +383,7 @@ public class CheckInvAction {
         try {
             checkinvService.removeBeanForKey(mapKey);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -413,7 +412,7 @@ public class CheckInvAction {
                 }
             }
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "toUpCheckInv";
     }
@@ -427,7 +426,7 @@ public class CheckInvAction {
         try {
             checkinvService.upCostSheet(invtFbCheck);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         getCheckInvList();
         return "checkInvList";
@@ -442,7 +441,7 @@ public class CheckInvAction {
         try {
             checkinvService.removeBeanForKey(fbillid);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return getCheckInvList();
     }
@@ -487,7 +486,7 @@ public class CheckInvAction {
         }
         catch (Exception e)
         {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return toUpCheckInv();
     }

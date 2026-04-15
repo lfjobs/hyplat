@@ -1,8 +1,5 @@
 package hy.ea.workflow;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.workflow.DocReadInfo.OprationAuthority;
 
 import java.util.HashMap;
@@ -51,7 +48,7 @@ public class MultiReadActivity implements ExternalActivityBehaviour {
 		//从流程实例中获取信息
 		String executionId = activityExecution.getId();
 		Map<String, Object> variables = executionService.getVariables(executionId, executionService.getVariableNames(executionId));
-//		logger.info("调试信息");
+//		System.out.println(variables.size());
 		
 		List<String> assignees = (List<String>)variables.get("assignees");
 		String transfer = (String)variables.get("transfer");

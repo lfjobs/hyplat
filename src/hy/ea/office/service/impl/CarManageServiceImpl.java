@@ -234,7 +234,7 @@ public class CarManageServiceImpl implements CarManageService {
 			min = ((diff / (60 * 1000)) - day * 24 * 60 - hour * 60);
 			sec = (diff / 1000 - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60);
 		} catch (ParseException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		long[] times = { day, hour, min, sec };
 		return times;
@@ -298,7 +298,7 @@ public class CarManageServiceImpl implements CarManageService {
 						cm.setChargeState("05");
 						cm.setChargeType("01");
 						money = "0";
-						logger.info("过期发现小于免费时长");
+						System.out.println("过期发现小于免费时长");
 					}else {
 						double c = 0;
 						if (timeUnits.equals("0")) { //如果按小时
@@ -325,7 +325,7 @@ public class CarManageServiceImpl implements CarManageService {
 							cm.setChargeState("05");
 							cm.setChargeType("01");
 							money = "0";
-							logger.info("否则过期发现小于免费时长");
+							System.out.println("否则过期发现小于免费时长");
 						}else {
 							double c = 0;
 							if (timeUnits.equals("0")) { //如果按小时
@@ -369,7 +369,7 @@ public class CarManageServiceImpl implements CarManageService {
 					cm.setChargeState("05");
 					cm.setChargeType("01");
 					money = "0";
-					logger.info("没包月现小于免费时长");
+					System.out.println("没包月现小于免费时长");
 				}else {
 					double c = 0;
 					if (timeUnits.equals("0")) { //如果按小时
@@ -1794,7 +1794,7 @@ public class CarManageServiceImpl implements CarManageService {
 
 				beandao.update(cm);
 			}else{
-                 logger.info("金额为空了");
+                 System.out.println("金额为空了");
 				logger.error("金额为空了");
 			}
 
@@ -2073,8 +2073,8 @@ public class CarManageServiceImpl implements CarManageService {
         	map.put("parkingCode",spaces[0]+"");
         	map.put("parksId",spaces[1]+"");
         	map.put("result","suc");
-        	logger.info("调试信息");
-			logger.info("调试信息");
+        	System.out.println(spaces[0]);
+			System.out.println(spaces[1]);
         	
         }else{
         	map.put("result","fail");
@@ -2093,8 +2093,8 @@ public class CarManageServiceImpl implements CarManageService {
 			String carmID, String equipmentNumber,String tip) {
 		String content = "";
 		try {
-			logger.info("进入推送");
-			logger.info("carmID:: {}", carmID);
+			System.out.println("进入推送");
+			System.out.println("carmID:" + carmID);
 
 			String jiguangMark = "";
 
@@ -2127,7 +2127,7 @@ public class CarManageServiceImpl implements CarManageService {
 				String sql = "select c.serialNumber,c.carNumber,p.parkingCode,to_char(c.indate,'YYYY-MM-DD HH24:MI:SS'),to_char(c.outdate,'YYYY-MM-DD HH24:MI:SS'),c.time,c.money,v.siteName,v.ItsLocation,c.status,c.chargeType,c.chargeState,c.equipmentNumber,v.companyid,c.equipin,c.equipout,c.auditStatus,c.chargeState1  from DT_CARMANAGE c  left join DT_EquipmentInformation e on e.equipmentnumber = c.equipmentnumber left join DT_VENUEINFORMATION v  on e.siteid = v.siteId left join DT_ParkingSpace p  on  c.parksId = p.parksId where carmID = ?";
 				Object spobj = beandao.getObjectBySqlAndParams(sql,
 						new Object[]{carmID});
-				logger.info("查询到记录");
+				System.out.println("查询到记录");
 
 				if (spobj != null) {
 
@@ -2189,7 +2189,7 @@ public class CarManageServiceImpl implements CarManageService {
 				// 保存账号
 				String[] arr = jiguangMark.split(",");
 				slist = Arrays.asList(arr);
-				logger.info("jiguangMark: {}", jiguangMark);
+				System.out.println("jiguangMark" + jiguangMark);
 				if ("in".equals(status)) {
 					// 如果是进入的时候
 
@@ -2415,9 +2415,9 @@ public class CarManageServiceImpl implements CarManageService {
 					//type = "1";
 					type = "0";
 				}
-				logger.info("content: {}", content);
-				logger.info("值：{}", type);
-				logger.info("调试信息");
+				System.out.println("content" + content);
+				System.out.println(type);
+				System.out.println(json.toString());
 
 
 			} else {
@@ -2440,7 +2440,7 @@ public class CarManageServiceImpl implements CarManageService {
 				// 保存账号
 				String[] arr = jiguangMark.split(",");
 				slist = Arrays.asList(arr);
-				logger.info("无记录-----------------------");
+				System.out.println("无记录-----------------------");
 			}
 
 
@@ -2450,7 +2450,7 @@ public class CarManageServiceImpl implements CarManageService {
 						slist);
 			}
 		}catch (Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
               return content;
 	}
@@ -2474,8 +2474,8 @@ public class CarManageServiceImpl implements CarManageService {
 		String content = "";
 		try {
 
-			logger.info("进入推送");
-			logger.info("carmID:: {}", carmID);
+			System.out.println("进入推送");
+			System.out.println("carmID:" + carmID);
 
 			String jiguangMark = "";
 
@@ -2513,7 +2513,7 @@ public class CarManageServiceImpl implements CarManageService {
 				String sql = "select c.serialNumber,c.carNumber,p.parkingCode,to_char(c.indate,'YYYY-MM-DD HH24:MI:SS'),to_char(c.outdate,'YYYY-MM-DD HH24:MI:SS'),c.time,c.money,v.siteName,v.ItsLocation,c.status,c.chargeType,c.chargeState,c.equipmentNumber,v.companyid,c.equipin,c.equipout,c.auditStatus,c.chargeState1  from DT_CARMANAGE c  left join DT_EquipmentInformation e on e.equipmentnumber = c.equipmentnumber left join DT_VENUEINFORMATION v  on e.siteid = v.siteId left join DT_ParkingSpace p  on  c.parksId = p.parksId where carmID = ?";
 				Object spobj = beandao.getObjectBySqlAndParams(sql,
 						new Object[]{carmID});
-				logger.info("查询到记录");
+				System.out.println("查询到记录");
 
 				if (spobj != null) {
 
@@ -2638,7 +2638,7 @@ public class CarManageServiceImpl implements CarManageService {
 				// 保存账号
 				String[] arr = jiguangMark.split(",");
 				slist = Arrays.asList(arr);
-				logger.info("jiguangMark: {}", jiguangMark);
+				System.out.println("jiguangMark" + jiguangMark);
 				if ("in".equals(status)) {
 					// 如果是进入的时候
 
@@ -2969,9 +2969,9 @@ public class CarManageServiceImpl implements CarManageService {
 					//type = "1";
 					type = "0";*/
 				}
-				logger.info("content: {}", content);
-				logger.info("值：{}", type);
-				logger.info("调试信息");
+				System.out.println("content" + content);
+				System.out.println(type);
+				System.out.println(json.toString());
 
 
 			} else {
@@ -2994,7 +2994,7 @@ public class CarManageServiceImpl implements CarManageService {
 				// 保存账号
 				String[] arr = jiguangMark.split(",");
 				slist = Arrays.asList(arr);
-				logger.info("无记录-----------------------");
+				System.out.println("无记录-----------------------");
 			}
 
 
@@ -3005,7 +3005,7 @@ public class CarManageServiceImpl implements CarManageService {
 
 			}
 		}catch (Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		resultMap.put("pronunciationgMap",pronunciationgMap);
 		resultMap.put("showTextMap",showTextMap);
@@ -3021,7 +3021,7 @@ public class CarManageServiceImpl implements CarManageService {
 						 String carmID) {
 		String content = "";
 		try{
-		logger.info("进入推送");
+		System.out.println("进入推送");
 		Object[] spbjs = null;
 
 		String state = null;
@@ -3037,7 +3037,7 @@ public class CarManageServiceImpl implements CarManageService {
 			String sql = "select c.serialNumber,c.carNumber,p.parkingCode,to_char(c.indate,'YYYY-MM-DD HH24:MI:SS'),to_char(c.outdate,'YYYY-MM-DD HH24:MI:SS'),c.time,c.money,v.siteName,v.ItsLocation,c.status,c.chargeType,c.chargeState,c.equipmentNumber,v.companyid,c.equipin,c.equipout from DT_CARMANAGE c  left join DT_EquipmentInformation e on e.equipmentnumber = c.equipmentnumber left join DT_VENUEINFORMATION v  on e.siteid = v.siteId left join DT_ParkingSpace p  on  c.parksId = p.parksId where carmID = ?";
 			Object spobj = beandao.getObjectBySqlAndParams(sql,
 					new Object[]{carmID});
-			logger.info("查询到记录");
+			System.out.println("查询到记录");
 
 			if (spobj != null) {
 
@@ -3122,12 +3122,12 @@ public class CarManageServiceImpl implements CarManageService {
 
 				type = "0";
 			}
-			logger.info("content: {}", content);
+			System.out.println("content" + content);
 
 		   }
 		}catch(Exception es){
 
-             logger.error("操作异常", e);
+             es.printStackTrace();
 
 
 		}
@@ -3240,7 +3240,7 @@ public class CarManageServiceImpl implements CarManageService {
 				{
 					if("0".equals(timeType)) {
 						logger.error("包天");
-						logger.info("包天");
+						System.out.println("包天");
 						date = getCurrentDay(current);
 					}else{
 						date = getDayEndDate(current,timeType);
@@ -3313,7 +3313,7 @@ public class CarManageServiceImpl implements CarManageService {
 		beandao.update(tc);
 		logger.error("成功");
 		logger.error("getEndDate()"+tc.getEndDate());
-		logger.info("调试信息");
+		System.out.println("getEndDate()"+tc.getEndDate());
 	}
 
 	/**
@@ -3335,7 +3335,7 @@ public class CarManageServiceImpl implements CarManageService {
 		 date1 =  sdf.parse(endStr);
 
 		} catch (ParseException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return  date1;
 	}
@@ -4080,7 +4080,7 @@ public class CarManageServiceImpl implements CarManageService {
 	 * @return
 	 */
 		public Map<String,Object> checkCarRecord(String number,String date,String photopath,String upName1,String  upName2,String equipmentNumber,String companyID, String channel, String numberType, String parksId){
-           logger.info("checkCarRecord");
+           System.out.println("checkCarRecord");
 		String carmID = "";
 		Map<String, Object> map = new HashMap<String, Object>();
 		int Open = 0;
@@ -4108,7 +4108,7 @@ public class CarManageServiceImpl implements CarManageService {
 		List<BaseBean> clist = baseBeanService.getListBeanByHqlAndParams("from CarManage c where c.carNumber = ? and  c.status = '1' and c.equipmentNumber in (select n.equipmentNumber from EquipmentInformation n where n.siteId = ?)  order by c.indate desc",new Object[]{number,siteid});
 
 		if(tca!=null){
-			logger.info("tca1");
+			System.out.println("tca1");
 			Date indate = tca.getStartDate();
 			Date outdate = tca.getEndDate();
 			Date date1 = Utilities.getDateFromString(date,"yyyy-MM-dd HH:mm:ss");
@@ -4125,13 +4125,13 @@ public class CarManageServiceImpl implements CarManageService {
 							updateInCar(cm.getCarmID(),date,photopath,upName1,upName2);
 							tip = "0"; //免费时长审核已通过可以进入
 							carmID = cm.getCarmID();
-							logger.info("调试信息");
+							System.out.println("1updateInCar"+date);
 						}
 					}else{
 						//有进来的记录但是自动审核的情况
 						updateInCar(cm.getCarmID(),date,photopath,upName1,upName2);//进门识别后没进去又识别更改进入时间
 						carmID = cm.getCarmID();
-						logger.info("调试信息");
+						System.out.println("2updateInCar"+date);
 					}
 
 
@@ -4139,7 +4139,7 @@ public class CarManageServiceImpl implements CarManageService {
 					//没有提交的审核记录，就正常进入
 					 carmID = addManageCar(number, date, equipmentNumber, photopath, upName1, upName2, companyID, channel, numberType, parksId);
 					tip = "";//有会员正常进入
-					logger.info("调试信息");
+					System.out.println("1addManageCar"+date);
 				}
                    //会员期间
 			} else{
@@ -4176,7 +4176,7 @@ public class CarManageServiceImpl implements CarManageService {
 							//过期没有带提交记录 生成一条
 							carmID = addManageCar(number, date, equipmentNumber, photopath, upName1, upName2, companyID, channel, numberType, parksId);
 							tip = "2";//进门请扫码付款，或者联系工作人员人工审核
-							logger.info("调试信息");
+							System.out.println("2addManageCar"+date);
 
 
 						}
@@ -4187,14 +4187,14 @@ public class CarManageServiceImpl implements CarManageService {
 						tip = "8";//不人工审核的话，进去的时候直接进
 						carmID = cm.getCarmID();
 						Open = 1;//直接进
-						logger.info("调试信息");
+						System.out.println("3updateInCar"+date);
 
 
 					}
 
 				}else{
 					carmID = addManageCar(number, date, equipmentNumber, photopath, upName1, upName2, companyID, channel, numberType, parksId);
-					logger.info("调试信息");
+					System.out.println("3addManageCar"+date);
 
 					if(isAudit.equals("00")&&numberAudit.equals("00")) {
 						//过期没有带提交记录 生成一条
@@ -4209,7 +4209,7 @@ public class CarManageServiceImpl implements CarManageService {
 
 			}
 		}else{
-			logger.info("tca2");
+			System.out.println("tca2");
 
 			// 没有预付过
 			Open = 0;
@@ -4242,7 +4242,7 @@ public class CarManageServiceImpl implements CarManageService {
 					tip = "8";//不人工审核的话，进去的时候直接进
 					carmID = cm.getCarmID();
 					Open = 1;//直接进
-					logger.info("调试信息");
+					System.out.println("4updateInCar"+date);
 
 
 				}
@@ -4261,7 +4261,7 @@ public class CarManageServiceImpl implements CarManageService {
 					Open = 1;//直接进
 				}
 
-				logger.info("调试信息");
+				System.out.println("4addManageCar"+date);
 
 			}
 
@@ -4281,7 +4281,7 @@ public class CarManageServiceImpl implements CarManageService {
 
 
 			}
-			logger.info("tca1111");
+			System.out.println("tca1111");
 
 			return map ;
 	}
@@ -4304,7 +4304,7 @@ public class CarManageServiceImpl implements CarManageService {
 		try {
 			date1 = sdf.parse(date);
 		} catch (ParseException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		car.setIndate(date1);
 		car.setEquipmentNumber(equipmentNumber);
@@ -4462,29 +4462,29 @@ public class CarManageServiceImpl implements CarManageService {
 	public void updateManageCar(CarManage cm,String number,String date,String equipmentNumber,String photopath,String upName1,String upName2,String channel){
 		
 		try{
-		logger.info("调试信息");
-		logger.info("值：{}", number);
-		logger.info("值：{}", date);
-		logger.info("值：{}", equipmentNumber);
-		logger.info("值：{}", photopath);
-		logger.info("值：{}", upName1);
-		logger.info("值：{}", upName2);
-		logger.info("调试信息");
+		System.out.println(cm.getIndate());
+		System.out.println(number);
+		System.out.println(date);
+		System.out.println(equipmentNumber);
+		System.out.println(photopath);
+		System.out.println(upName1);
+		System.out.println(upName2);
+		System.out.println("channel"+channel);
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 小写的mm表示的是分钟
 		Date date1 = null;
 		try {
 			date1 = sdf.parse(date);
 		} catch (ParseException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		cm.setOutdate(date1);
 		cm.setEquipmentNumber(equipmentNumber);
 		cm.setEquipout(equipmentNumber);
 		cm.setMoney(amount(cm.getIndate(), cm.getOutdate(),
 				cm.getEquipmentNumber(), cm.getCarNumber(),cm));
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println("出去装填ChargeState："+cm.getChargeState());
+		System.out.println("出去装填ChargeType："+cm.getChargeType());
 		cm.setTime(change(date1, cm.getIndate()));
 		cm.setPanorama(photopath + "\\" + upName1);
 		cm.setPicture(photopath + "\\" + upName2);
@@ -4498,7 +4498,7 @@ public class CarManageServiceImpl implements CarManageService {
 					"from ParkingSpace where parksId = ?",
 					new Object[] { cm.getParksId() });
 			sp.setStatus("00");
-			logger.info("修改停车位状态");
+			System.out.println("修改停车位状态");
 			beans.add(sp);
 		}
 		beans.add(cm);
@@ -4520,9 +4520,9 @@ public class CarManageServiceImpl implements CarManageService {
 		//	beandao.saveBeansListAndexecuteHqlsByParams(beans,null, null);
 
 		beandao.saveBeansListAndexecuteHqlsByParams(beans,hqls, param.toArray());
-		logger.info("更新出去记录");
+		System.out.println("更新出去记录");
 		}catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 	
@@ -4602,7 +4602,7 @@ public class CarManageServiceImpl implements CarManageService {
 		car.setCreatedate(date1);
 		beandao.save(car);
     	}catch(Exception e){
-    		logger.error("操作异常", e);
+    		e.printStackTrace();
     	}
     	
     	return car.getCarmID();
@@ -4779,7 +4779,7 @@ public class CarManageServiceImpl implements CarManageService {
 		carManage.setChargeState1("06");
 		carManage.setIndate(Utilities.getDateFromString(date,"yyy-MM-dd HH:mm:ss"));
 		beandao.update(carManage);
-		logger.info("调试信息");
+		System.out.println("updateInCar"+date);
 
 
 

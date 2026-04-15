@@ -97,7 +97,7 @@ public class CmsMembersImpl implements CmsMembers {
 			//将结果返回
 			return XMLReader.doc2String(returnDoc);
 		} catch (Exception e) {			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return "";
 		}		
 	}

@@ -1,8 +1,5 @@
 package hy.ea.dao.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CEA;
 import hy.ea.bo.CEMB;
 import hy.ea.bo.CMenu;
@@ -114,7 +111,7 @@ public class CEADaoImpl implements CEADao{
 				sessionFactory.getCurrentSession().persist(cremi);
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 	}

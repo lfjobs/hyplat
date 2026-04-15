@@ -1,8 +1,5 @@
 package com.tiantai.wfj.front;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
@@ -40,7 +37,6 @@ import net.sf.json.JSONObject;
 @Controller
 @Scope("prototype")
 public class DigitalMallAction {
-	private static final Logger logger = LoggerFactory.getLogger(DigitalMallAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -265,7 +261,7 @@ public class DigitalMallAction {
             map.put("goodNum", goodNum);
         } catch (Exception e) {
             map.put("goodNum", goodNum);
-            //  logger.error("操作异常", e);
+            //  e.printStackTrace();
         }
 
         JSONObject obj = JSONObject.fromObject(map);
@@ -382,7 +378,7 @@ public class DigitalMallAction {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
 

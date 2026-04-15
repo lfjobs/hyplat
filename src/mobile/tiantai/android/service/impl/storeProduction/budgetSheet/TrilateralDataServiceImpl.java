@@ -1,8 +1,5 @@
 package mobile.tiantai.android.service.impl.storeProduction.budgetSheet;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import cn.hutool.core.collection.CollectionUtil;
 import com.opensymphony.xwork2.ActionContext;
 import com.stamp.Office2PdfUtil;
@@ -28,7 +25,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import sun.awt.util.IdentityArrayList;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -57,7 +53,7 @@ public class TrilateralDataServiceImpl implements TrilateralDataService {
 
     @Override
     public List<TrilateralData> getTrilateralDataList(String uploadProject) {
-        List<TrilateralData> trilateralDataList = new IdentityArrayList<>();
+        List<TrilateralData> trilateralDataList = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         List<BaseBean> result = new ArrayList<>();
         if (uploadProject == null) {
@@ -206,7 +202,7 @@ public class TrilateralDataServiceImpl implements TrilateralDataService {
 
     @Override
     public List<TrilateralData> getTrilateralData(String companyName) {
-        List<TrilateralData> trilateralDataList = new IdentityArrayList<>();
+        List<TrilateralData> trilateralDataList = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         List<BaseBean> result = new ArrayList<>();
         sql.append("SELECT t FROM TrilateralData t WHERE state ='0' and companyName LIKE ?");
@@ -583,7 +579,7 @@ public class TrilateralDataServiceImpl implements TrilateralDataService {
 
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return document;
     }
@@ -654,7 +650,7 @@ public class TrilateralDataServiceImpl implements TrilateralDataService {
             }
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
     }

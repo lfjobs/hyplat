@@ -317,12 +317,5 @@
   	<param-name>adminseal-password</param-name>
   	<param-value>111111</param-value>
   </context-param>
-  
-  	<!-- 银联支付配置 ty -->
-  <servlet>
-  	<servlet-name>InitServlet</servlet-name>
-  	<servlet-class>com.unionpay.payMeth.InitServlet</servlet-class>
-  	<load-on-startup>0</load-on-startup>
-  </servlet>
 
 </web-app>

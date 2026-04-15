@@ -305,7 +305,7 @@ public class DanCheAction extends ActionSupport {
                 map.put("sign", toMD5(userid + cmd + deviceid + serialnum+userKey));
                 JSONObject jsonO = JSONObject.fromObject(map);
                 JSONObject str = HttpClient.httpPost(url, jsonO);
-                //   logger.info("值：{}", str);
+                //   System.out.println(str);
                 if (str != null) {
                     jsonObj.accumulate("fanhui", "1"); //没有请求成功
                     result = jsonObj;
@@ -375,7 +375,7 @@ public class DanCheAction extends ActionSupport {
         }catch (Exception e) {
              log.error("解析单车数据报错");
         }
-        logger.info("值：{}", res);
+        System.out.println(res);
 
         if(res == null || res.equals("")) {
             jsonObj.accumulate("fanhui", "1"); //网络异常，车辆故障
@@ -457,7 +457,7 @@ public class DanCheAction extends ActionSupport {
         }catch (Exception e) {
             log.error("解析单车数据报错");
         }
-        logger.info("值：{}", res);
+        System.out.println(res);
 
         if(res == null || res.equals("")) {
             jsonObj.accumulate("fanhui", "1"); //网络异常，车辆故障
@@ -470,7 +470,7 @@ public class DanCheAction extends ActionSupport {
 
         JSONObject json=JSONObject.fromObject(res); // 将读取的数据转成JSON
         log.error(json.toString()+"数据查看");
-        logger.info("值：{}", json);
+        System.out.println(json);
         if (json == null ) {
             jsonObj.accumulate("fanhui", 1); //网络异常，车辆故障
             result = jsonObj;
@@ -524,7 +524,7 @@ public class DanCheAction extends ActionSupport {
                 byteArrayOutputStream.write(data, 0, len);
             }
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         resultData = new String(byteArrayOutputStream.toByteArray());
         return resultData;

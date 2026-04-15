@@ -1,8 +1,5 @@
 package com.wechatpay.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 
 
@@ -21,7 +18,6 @@ import hy.ea.util.Constant;
  * 
  */
 public class Demo {
-	private static final Logger logger = LoggerFactory.getLogger(Demo.class);
 	//微信支付商户开通后 微信会提供appid和appsecret和商户号partner
 	private static String appid = "";
 	private static String appsecret = "";
@@ -102,14 +98,14 @@ public class Demo {
 		try {
 			xmlbyq = WeChatUtils.mapToXml(packageParamsbyq);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		String urlbyq = "https://api.mch.weixin.qq.com/mmpaysptrans/query_bank";
-		logger.info("发送前的xml为：: {}", xmlbyq);
+		System.out.println("发送前的xml为：" + xmlbyq);
 		String returnXmlbyq = WeChatUtils.postData(urlbyq, xmlbyq, "1250801501", "D:/apiclient_cert.p12");
 		Map<String, String> returnMapbyq = WeChatUtils.parseXmlToList2(returnXmlbyq);
-		logger.info("返回的returnXml为:: {}", returnXmlbyq);
-		logger.info("返回的returnMap为:: {}", returnMapbyq);
+		System.out.println("返回的returnXml为:" + returnXmlbyq);
+		System.out.println("返回的returnMap为:" + returnMapbyq);
 
 
 		// 8，将微信返回的xml结果转成map格式
@@ -127,26 +123,26 @@ public class Demo {
 //			// 6.0获取需要发送的url地址
 //			String wxUrl = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers"; // 获取退款的api接口
 //
-//			logger.info("发送前的xml为：: {}", xml);
+//			System.out.println("发送前的xml为：" + xml);
 //
 //			// 7,向微信发送请求转账请求
 //			String returnXml = WeChatUtils.postData(wxUrl, xml, mch_id, "D:/apiclient_cert.p12");
 //
-//			logger.info("返回的returnXml为:: {}", returnXml);
+//			System.out.println("返回的returnXml为:" + returnXml);
 //
 //			// 8，将微信返回的xml结果转成map格式
 //			Map<String, String> returnMap = WeChatUtils.parseXmlToList2(returnXml);
 //
 //			if (returnMap.get("return_code").equals("SUCCESS")) {
 //				// 付款成功
-//				logger.info("returnMap为:: {}", returnMap);
+//				System.out.println("returnMap为:" + returnMap);
 //
 //			}
 
 //
 //		} catch (Exception e) {
 //			// TODO Auto-generated catch block
-//			logger.error("操作异常", e);
+//			e.printStackTrace();
 //		}
 
 	}
@@ -216,7 +212,7 @@ public class Demo {
 		
 		
 		code_url = new GetWxOrderno().getCodeUrl(createOrderURL, xml);
-		logger.info("调试信息");
+		System.out.println("code_url----------------"+code_url);
 		
 		return code_url;
 	}
@@ -295,7 +291,7 @@ public class Demo {
 		
 	/*	prepay_id = new GetWxOrderno().getPayNo(createOrderURL, xml);*/
 
-		logger.info("获取到的预支付ID：: {}", prepay_id);
+		System.out.println("获取到的预支付ID：" + prepay_id);
 		
 		
 		//获取prepay_id后，拼接最后请求支付所需要的package
@@ -316,7 +312,7 @@ public class Demo {
 		+ packages + "\",\"signType\" : \"MD5" + "\",\"paySign\":\""
 		+ finalsign + "\"";
 
-		logger.info("调试信息");
+		System.out.println("V3 jsApi package:"+finaPackage);
 		return finaPackage;
 	}
 

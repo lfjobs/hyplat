@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.TEshopCusCom;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
@@ -51,7 +48,6 @@ import com.tiantai.wfj.bo.TEshopCustomer;
 import com.tiantai.wfj.util.SessionWrap;
 
 public class WechatActivityAction {
-	private static final Logger logger = LoggerFactory.getLogger(WechatActivityAction.class);
 
 	@Resource
 	private ShowExcelService excelService;
@@ -181,7 +177,7 @@ public class WechatActivityAction {
 					+ inforType
 					+ "&enrollsuc=1");
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 
@@ -245,7 +241,7 @@ public class WechatActivityAction {
 		try {
 			FileUtils.writeStringToFile(f, c, ENCODING);
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		StringBuilder sb = new StringBuilder();
 		String path = sb.append(dtActivity.getId()).append(SUFFIX).toString();
@@ -291,7 +287,7 @@ public class WechatActivityAction {
 					+ weixinCompanyId
 					+ "&inforType=02");
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 	}
 

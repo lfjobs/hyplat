@@ -1,8 +1,5 @@
 package com.tiantai.wfj.front;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.bo.AndroidEdition;
 import com.tiantai.wfj.bo.TEshopCusCom;
@@ -222,9 +219,9 @@ public class WfjEbuyProductsAction<AccountName> {
 
 
 		String code = request.getParameter("code");
-		logger.info("调试信息");
+		System.out.println("authcode:"+code);
 	    String openId  = getOpenID(code); 
-	    logger.info("调试信息");
+	    System.out.println("openId:"+openId);
 	
 		tpWxPay.setWechatbz("wxff4c5683480d6664");
 		
@@ -239,7 +236,7 @@ public class WfjEbuyProductsAction<AccountName> {
 			tpWxPay.setBody(URLDecoder.decode(arry[1],"UTF-8"));
 		} catch (UnsupportedEncodingException e) {
 			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		tpWxPay.setOrderId(arry[0]);
@@ -279,7 +276,7 @@ public class WfjEbuyProductsAction<AccountName> {
 		//	openid = GetWxOrderno.getOpenID(accessurl, strparams);*/
 		} catch (Exception e) {
 			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return openid;
@@ -309,10 +306,10 @@ public class WfjEbuyProductsAction<AccountName> {
 			}
 			request.getReader().close();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
-		logger.info("接收到的报文：: {}", notityXml);
+		System.out.println("接收到的报文：" + notityXml);
 		
 		Map m = WeChatUtils.parseXmlToList2(notityXml);
 		WxPayResult wpr = new WxPayResult();
@@ -351,7 +348,7 @@ public class WfjEbuyProductsAction<AccountName> {
 			+ "<return_msg><![CDATA[报文为空]]></return_msg>" + "</xml> ";
 		}
 
-		logger.info("微信支付回调数据结束");
+		System.out.println("微信支付回调数据结束");
 		HttpServletResponse response = ServletActionContext.getResponse();
 		BufferedOutputStream out = new BufferedOutputStream(
 				response.getOutputStream());
@@ -372,8 +369,8 @@ public class WfjEbuyProductsAction<AccountName> {
 		Date currentTime = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		shijian = formatter.format(currentTime);
-		logger.info("订单号：: {}", listBillsId);
-		logger.info("金额：: {}", jine);
+		System.out.println("订单号：" + listBillsId);
+		System.out.println("金额：" + jine);
 		if (listBillsId != null & listBillsId.equals("1")) {
 			//失败后跳转到待付款页面
 			fkstatus = "01";
@@ -528,7 +525,7 @@ public class WfjEbuyProductsAction<AccountName> {
 			}
 			cBills.setCashierBillsKey(null);
 			cBills.setBillsType("收款单");
-			logger.info("调试信息");
+			System.out.println("生成的收款单："+cBills.getJournalNum());
 			cBills.setStatus("40");
 			cBills.setCashierDate(new Date());
 			cBills.setStatusbill("01");
@@ -673,7 +670,7 @@ public class WfjEbuyProductsAction<AccountName> {
 		comInfor.add(account.getAccountEmail());
 		comInfor.add(company.getCompanyIdentifier());
 		comInfor.add(JournalNum);
-		logger.info("值：{}", comInfor);
+		System.out.println(comInfor);
 		
 		TEshopCusCom scc = new TEshopCusCom();
 		scc.setSccId(serverService.getServerID("shopcuscom"));
@@ -1142,7 +1139,7 @@ public class WfjEbuyProductsAction<AccountName> {
 //			jine=priceSum;
 //		} catch (Exception e) {
 //			
-//			logger.error("操作异常", e);
+//			e.printStackTrace();
 //		}
 //			return "sucOrd";
 //		}*/
@@ -1152,7 +1149,7 @@ public class WfjEbuyProductsAction<AccountName> {
 		//弹出银联支付界面
 		//第一个参数地址，只有成功支付才会运行方法，出现错误只会在银联界面，和我们没关系↘
 //		orderID= unionpayMeth.frontConsume(baseUrl+"/ea/buyproducts/ea_unionpayQuery.jspa?",baseUrl+"/ea/buyproducts/ea_unionpayQuery.jspa", total,"");
-//		logger.info("值：{}", orderID);
+//		System.out.println(orderID);
 //		
 //		HttpSession session =  ServletActionContext.getRequest().getSession();
 //		session.setAttribute("orID",orderID);
@@ -1163,11 +1160,11 @@ public class WfjEbuyProductsAction<AccountName> {
 	public String  unionpayQuery() throws InterruptedException{
 			HttpSession session =  ServletActionContext.getRequest().getSession();
 			/*Map<String, String> order= unionpayMeth.query(session.getAttribute("orID")+"", session.getAttribute("orID")+"");
-			logger.info("调试信息");
-			logger.info("调试信息");
+			System.out.println(order.get("respMsg"));
+			System.out.println(order.get("queryId"));
 			session.setAttribute("qId",order.get("queryId"));
 			String respMsg = order.get("respMsg").substring(0, 2);
-			logger.info("值：{}", respMsg);
+			System.out.println(respMsg);
 			if("成功".equals(respMsg)){
 				 journalNum = (String) session.getAttribute("journalNum");
 				 trade_no = (String) session.getAttribute("orID");

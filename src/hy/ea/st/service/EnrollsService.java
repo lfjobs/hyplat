@@ -7,7 +7,6 @@ import hy.ea.bo.company.ContactRelation;
 import hy.plat.bo.BaseBean;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Administrator on 2017/7/18.
@@ -58,7 +57,4 @@ public interface EnrollsService {
 
     String getSccIdByAccount(String account);
 
-    StringBuffer requestGetAK(Map<String, String> param) throws Exception;
-
-    void requestGetAKjpg(Map<String, String> param) throws Exception;
 }

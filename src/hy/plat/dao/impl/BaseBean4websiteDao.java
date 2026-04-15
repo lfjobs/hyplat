@@ -1,8 +1,5 @@
 package hy.plat.dao.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.util.Converter;
 import hy.plat.bo.BaseBean;
 import hy.plat.bo.PageForm;
@@ -30,7 +27,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BaseBean4websiteDao {
-	private static final Logger logger = LoggerFactory.getLogger(BaseBean4websiteDao.class);
 	@Resource
 	public SessionFactory sessionFactory4website;
 
@@ -499,7 +495,7 @@ public class BaseBean4websiteDao {
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return page;
 	}
@@ -555,7 +551,7 @@ public class BaseBean4websiteDao {
 			cs.close();
 			ct.close();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return page;
 	}

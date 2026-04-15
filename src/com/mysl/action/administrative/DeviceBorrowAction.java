@@ -1,8 +1,5 @@
 package com.mysl.action.administrative;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Remind;
@@ -41,7 +38,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class DeviceBorrowAction {
-	private static final Logger logger = LoggerFactory.getLogger(DeviceBorrowAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -147,7 +143,7 @@ public class DeviceBorrowAction {
 					Date  ttt= matter1.parse(Dvusetime);
 					dc.add(Restrictions.eq("dvusetime",ttt));
 				} catch (ParseException e) {
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 			}
 	    }

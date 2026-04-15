@@ -21,31 +21,31 @@ import java.util.Map;
 
 
 public interface ProductlaunchService {
-	
-	/** 
-	* @Title: 查询
-	* @Description: 查询产品及其下的促销品
-	* @param ppid:产品id   
-	* @return 返回的集合    
-	*/
+
+	/**
+	 * @Title: 查询
+	 * @Description: 查询产品及其下的促销品
+	 * @param ppid:产品id
+	 * @return 返回的集合
+	 */
 	Map<String, Object> productInquiry(String ppID);
 
-	
-	/** 
-	* @param ptppId 
+
+	/**
+	 * @param ptppId
 	 * @Title: 模糊查询加分页
-	* @Description: 查询产品及其下的促销品
-	* @param pageNumber:当前页,pageSize:每页显示条数,goodsName:查询条件  
-	* @return 返回的集合    
-	*/
+	 * @Description: 查询产品及其下的促销品
+	 * @param pageNumber:当前页,pageSize:每页显示条数,goodsName:查询条件
+	 * @return 返回的集合
+	 */
 	PageForm allGiftsProducts(int pageNumber, int pageSize, String goodsName, String ptppId);
 
-	/** 
-	* @Title: 添加促销品
-	* @Description: 为产品添加促销品套餐
-	* @param promotions:促销品数据
-	* @return 无返回值
-	*/
+	/**
+	 * @Title: 添加促销品
+	 * @Description: 为产品添加促销品套餐
+	 * @param promotions:促销品数据
+	 * @return 无返回值
+	 */
 	void save(Promotion promotions);
 
 	/**
@@ -54,30 +54,30 @@ public interface ProductlaunchService {
 	 * @return 无返回值
 	 */
 	void addProductType(String companyid);
-	
-	/** 
-	* @Title: 查询
-	* @Description: 查询产品
-	* @param ppId:产品id
-	* @return 返回的集合    
-	*/
+
+	/**
+	 * @Title: 查询
+	 * @Description: 查询产品
+	 * @param ppId:产品id
+	 * @return 返回的集合
+	 */
 	List<BaseBean> queryPromotionProduct(String ppId);
 
-	
+
 	List<Object> PromotionsDetail(String companyId,String ppId);
-	
+
 	String generateProductCode(String tradeNum,String parentID);
-	
+
 	boolean upOrdown(String ppId,String flag);
-	
+
 	PageForm productsPageForm(String flag,Integer pageNumber,String search,String companyId);
-	
+
 	public String productsManage(String user);
-	
+
 	List<Object> getAttr(String ppId);
-	
+
 	Boolean checkProName(String ppName,String companyId);
-	
+
 	void savePssb(ProSetup ps,List<ProSetupSub> pssList,List<BaseBean> beans);
 
 	/**
@@ -146,23 +146,6 @@ public interface ProductlaunchService {
 	 * @return list 秤盘重量记录集合
 	 */
 	List<BaseBean> getWeithts(String cc) throws Exception;
-
-    /**
-     * 根据产品id查询库存信息
-     *
-     * @param ppid 产品id
-     * @return list 库存记录集合
-     * @throws Exception
-     */
-    List<BaseBean> getDepotByProid(String ppid, String depotid) throws Exception;
-
-    /**
-     * 获取商品信息
-     * @param param
-     * @param companyId
-     * @return
-     */
-    Map<String, Object> getProductByParam(String param,String companyId);
 
 	public String registerPShop(TEshopCusCom tcc);
 

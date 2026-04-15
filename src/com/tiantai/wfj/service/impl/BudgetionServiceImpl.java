@@ -1,8 +1,5 @@
 package com.tiantai.wfj.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 
 import java.util.Date;
@@ -113,7 +110,7 @@ public class BudgetionServiceImpl implements BudgetionService {
 			}
 			beandao.executeSqlsByParmsList(beans, null, null);
 		} catch (Exception e) {
-			logger.info("值：{}", e);
+			System.out.println(e);
 			flag=false;
 		}
 		return flag;
@@ -168,7 +165,7 @@ public class BudgetionServiceImpl implements BudgetionService {
 			}
 			beandao.executeSqlsByParmsList(null, sqls.toArray(new String[]{}), params);
 		} catch (Exception e) {
-			logger.info("值：{}", e);
+			System.out.println(e);
 			flag=false;
 		}
 		return flag;
@@ -280,7 +277,7 @@ public class BudgetionServiceImpl implements BudgetionService {
 			}
 			beandao.executeSqlsByParmsList(beans, null, null);
 		} catch (Exception e) {
-			logger.info("值：{}", e);
+			System.out.println(e);
 			flag=false;
 		}
 		return flag;
@@ -396,7 +393,7 @@ public class BudgetionServiceImpl implements BudgetionService {
 			} 
 			beandao.executeHqlsByParmsList(beans, sqls.toArray(new String[]{}), pa);
 		} catch (Exception e) {
-			logger.info("值：{}", e);
+			System.out.println(e);
 			flag=false;
 		}
 		return flag;

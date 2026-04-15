@@ -1,8 +1,5 @@
 package com.wechat.utils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -22,7 +19,6 @@ import java.util.Base64;
  * 敏感信息加解密
  */
 public class RsaCryptoUtil {
-	private static final Logger logger = LoggerFactory.getLogger(RsaCryptoUtil.class);
 
   public static String rsaEncryptOAEP(String message, X509Certificate certificate)
           throws IllegalBlockSizeException, IOException {
@@ -63,7 +59,7 @@ public class RsaCryptoUtil {
     } catch (InvalidKeyException e) {
       throw new IllegalArgumentException("无效的私钥", e);
     } catch (BadPaddingException | IllegalBlockSizeException e) {
-      logger.error("操作异常", e);
+      e.printStackTrace();
       throw new BadPaddingException("解密失败");
     }
   }
@@ -85,10 +81,10 @@ public class RsaCryptoUtil {
       mtext = rsaDecryptOAEP(ciphertext, privateKey);
 
 
-      logger.info("值：{}", mtext);
+      System.out.println(mtext);
 
     } catch (Exception e) {
-      logger.error("操作异常", e);
+      e.printStackTrace();
     }
 
     return mtext;
@@ -110,11 +106,11 @@ public class RsaCryptoUtil {
               (file_inputstream);
        ciphertext =  rsaEncryptOAEP(mtext, certificate);
 
-      logger.info("值：{}", ciphertext);
+      System.out.println(ciphertext);
 
 
     } catch (Exception e) {
-      logger.error("操作异常", e);
+      e.printStackTrace();
     }
     return ciphertext;
 
@@ -132,17 +128,17 @@ public class RsaCryptoUtil {
               (file_inputstream);
       String ciphertext =  rsaEncryptOAEP("210522198903092024", certificate);
 
-      logger.info("值：{}", ciphertext);
+      System.out.println(ciphertext);
 
       PrivateKey privateKey = WeChatUtil.getPrivateKey(WeChatUtil.privageKeyPath);
 
       String  mtext = rsaDecryptOAEP(ciphertext, privateKey);
 
 
-      logger.info("值：{}", mtext);
+      System.out.println(mtext);
 
     } catch (Exception e) {
-      logger.error("操作异常", e);
+      e.printStackTrace();
     }
   }
 }

@@ -1,8 +1,5 @@
 package com.mysl.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.util.RandomDatas;
 import hy.plat.bo.BaseBean;
 import hy.plat.dao.impl.BaseBeanDao;
@@ -58,7 +55,7 @@ public class OfficeServiceImpl implements OfficeService {
 			}
 			FileCopyUtils.copy(office, fileSave);
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return storePath+ "/" + fileSaveName;
@@ -73,12 +70,12 @@ public class OfficeServiceImpl implements OfficeService {
 			SOAObj.saveToFile(serverFilePath); // saveToFile 的参数是文档的物理绝对路径。
 			SOAObj.returnOK();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} finally {
 			try {
 				SOAObj.close();
 			} catch (Exception e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 	}
@@ -96,7 +93,7 @@ public class OfficeServiceImpl implements OfficeService {
 				file.delete();
 			}
 		} catch (Exception e) {
-			logger.info("删除文件夹出错");
+			System.out.println("删除文件夹出错");
 		}
 
 	}
@@ -124,7 +121,7 @@ public class OfficeServiceImpl implements OfficeService {
 			File fileSave = new File(realpath+filePath);
 			FileCopyUtils.copy(fileSave,newfilepath);
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return filedir+fileSaveName;
@@ -194,7 +191,7 @@ public class OfficeServiceImpl implements OfficeService {
 		}
 		
 		}catch(Exception e){
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return s2;
 		

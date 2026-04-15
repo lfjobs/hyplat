@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.human.LogBook;
@@ -41,7 +38,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class MobileLogBookAction {
-	private static final Logger logger = LoggerFactory.getLogger(MobileLogBookAction.class);
 	@Resource
 	private ShowExcelService excelService;
 	public InputStream excelStream;
@@ -203,7 +199,7 @@ public class MobileLogBookAction {
 					dc.add(Restrictions.between("todaydate", dateFormat
 							.parse(sdate), dateFormat.parse(edate)));
 				} catch (ParseException e) {
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 			}
 			dc.addOrder(Order.desc("todaydate"));
@@ -237,7 +233,7 @@ public class MobileLogBookAction {
 				dc.add(Restrictions.between("todaydate", dateFormat
 						.parse(sdate), dateFormat.parse(edate)));
 			} catch (ParseException e) {
-				logger.error("操作异常", e);
+				e.printStackTrace();
 			}
 		}
 		dc.addOrder(Order.desc("todaydate"));

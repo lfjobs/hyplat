@@ -8,23 +8,22 @@ import java.util.Objects;
 
 public class TransportBill  implements BaseBean, Serializable {
     /**
-	 * 送货单
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String transportkey;
-    private String transportid;//id
-    private String journalnum;//订单编号
-    private String transportnum;//送货单号
-    private String companyid;//公司id
-    private String purchaserid;//采购商id
-    private String purchasername;//采购商名字
-    private String pickingid;//送货人id
-    private String pichingname;//送货人名字
-    private String sellermessage;//买家留言
-    private String cashierbillsid;//订单id
-    private Date adddate;//添加时间
-    private String status;//单据状态  01:未送货 02:已送货
-
+    private String transportid;
+    private String journalnum;
+    private String transportnum;
+    private String companyid;
+    private String purchaserid;
+    private String purchasername;
+    private String pickingid;
+    private String pichingname;
+    private String sellermessage;
+    private String cashierbillsid;
+    private Date adddate;
+    private String status;
 
     public String getTransportkey() {
         return transportkey;

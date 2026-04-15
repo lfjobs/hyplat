@@ -1,8 +1,5 @@
 package hy.ea.marketing.action.supermaket;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.bo.PresetKey;
@@ -39,7 +36,6 @@ import java.util.regex.Pattern;
 @Scope("prototype")
 public class ScaleManageAction
 {
-	private static final Logger logger = LoggerFactory.getLogger(ScaleManageAction.class);
     @Resource
     private ServerService serverService;
     @Resource
@@ -248,7 +244,7 @@ public class ScaleManageAction
             response.getWriter().print(json);
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return  null;
     }
@@ -268,7 +264,7 @@ public class ScaleManageAction
             response.getWriter().print(json);
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return  null;
 
@@ -293,7 +289,7 @@ public class ScaleManageAction
             response.getWriter().print(json.toString());
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         return null;
@@ -321,7 +317,7 @@ public class ScaleManageAction
             response.getWriter().print(json);
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return  null;
     }
@@ -424,8 +420,8 @@ public class ScaleManageAction
         String codeID = request.getParameter("codeID");
         String ppname = request.getParameter("ppname");
         String searchtype=request.getParameter("searchtype");
-        logger.info("调试信息");
-        logger.info("调试信息");
+        System.out.println(null != pageForm ? pageForm.getPageNumber() : 1);
+        System.out.println(null != pageForm ? pageForm.getPageSize() : 10);
         pageForm = scaleSerivce.findProductByCatePhone(companyID,codeID,ppname,searchtype,parameter,1, 35);
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("pageForm",pageForm);

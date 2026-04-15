@@ -65,7 +65,6 @@ import java.util.*;
 
 @Controller
 public class hy_jinbiAction {
-	private static final Logger logger = LoggerFactory.getLogger(hy_jinbiAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -395,7 +394,7 @@ public class hy_jinbiAction {
             }
             request.setAttribute("dc", dc);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "bill";
     }
@@ -461,7 +460,7 @@ public class hy_jinbiAction {
             JSONObject json = JSONObject.fromObject(map, jsonConfig);
             result = json.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -1096,7 +1095,7 @@ public class hy_jinbiAction {
             int money = (int) (Float.parseFloat((request.getParameter("money") == null ? "0" : request.getParameter("money"))) * 100);//提现金额（元）
             str = jifenser.test(merSeqId, sccid, user, money, bankId);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("str", str);
@@ -1119,7 +1118,7 @@ public class hy_jinbiAction {
             String amount = new BigDecimal(request.getParameter("money")).subtract(new BigDecimal(Constant.POUNDAGE)).toString();
             str = jifenser.goldWithdrawalVerify(sccid, cusCom.getStaffid(), user, jNumOrder, amount, trade_no, methodPay);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("str", str);
@@ -1156,7 +1155,7 @@ public class hy_jinbiAction {
      */
     @SuppressWarnings({"rawtypes", "unused"})
     public void getzfb() {
-        logger.info("----------------------------------");
+        System.out.println("----------------------------------");
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();
         Map<String, String> params = new HashMap<String, String>();
@@ -1182,7 +1181,7 @@ public class hy_jinbiAction {
                         if (staffid != null && !staffid.equals("")) {
                             str = staffid.split(",");
                         }
-                        logger.info("staffid：{}{}", staffid, "-");
+                        System.out.println("staffid：" + staffid + "-");
                     }
                 }
                 // 乱码解决，这段代码在出现乱码时使用。如果mysign和sign不相等也可以使用这段代码转化
@@ -1191,7 +1190,7 @@ public class hy_jinbiAction {
                 params.put(name, valueStr);
             }
             isflag = str[7];
-            logger.info("值：{}", isflag);
+            System.out.println(isflag);
             // 支付宝交易号
             String trade_no = new String(request.getParameter("trade_no").getBytes(
                     "ISO-8859-1"), "UTF-8");
@@ -1212,7 +1211,7 @@ public class hy_jinbiAction {
                 if (AlipayNotify.verify(params)) {// 验证成功
                     if (trade_status.equals("TRADE_SUCCESS")) {
                         if (seller_id.equals(AlipayConfig.seller_id)) {
-                            logger.info("订单号：: {}", journalNum);
+                            System.out.println("订单号：" + journalNum);
                             //处理一系列单子
                             //查看该订单是否生成
                             if (journalNum != null && !"".equals(journalNum)) {
@@ -1261,11 +1260,11 @@ public class hy_jinbiAction {
                     response.getWriter().write("fail");
                 }
             } catch (IOException e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
         } catch (UnsupportedEncodingException e) {
             // TODO Auto-generated catch block
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
     }
 
@@ -1300,7 +1299,7 @@ public class hy_jinbiAction {
                     if (staffid != null && !staffid.equals("")) {
                         str = staffid.split(",");
                     }
-                    logger.info("staffid：{}{}", staffid, "-");
+                    System.out.println("staffid：" + staffid + "-");
                 }
 
                 // 乱码解决，这段代码在出现乱码时使用。如果mysign和sign不相等也可以使用这段代码转化
@@ -1334,11 +1333,11 @@ public class hy_jinbiAction {
                 // response.sendRedirect(orderUrl);返回订单页
             } else {
                 // 该页面可做页面美工编辑
-                logger.info("验证失败");
+                System.out.println("验证失败");
             }
 
         } catch (UnsupportedEncodingException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         TEshopCusCom cusCom = (TEshopCusCom) baseBeanService.getBeanByHqlAndParams("from TEshopCusCom where staffid=? and sccid=?", new Object[]{str[0], str[1]});
         request.setAttribute("syncpay", "syncpay");
@@ -1394,8 +1393,8 @@ public class hy_jinbiAction {
                         //收款单生成后复制订单和收款单到新表
                         goldOrderService.copyCash(journalNum, "d");
                     }catch (Exception e){
-                        logger.error("操作异常", e);
-                        logger.info("复制订单收款单错误");
+                        e.printStackTrace();
+                        System.out.println("复制订单收款单错误");
                     }
                     //把订单状态改程03已收货
                     goldOrderService.updateFkState(cashierBillsID);
@@ -1406,7 +1405,7 @@ public class hy_jinbiAction {
 
         } catch (Exception e) {
             bool = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return bool;
     }
@@ -1437,8 +1436,8 @@ public class hy_jinbiAction {
                         //收款单生成后复制订单和收款单到新表
                         goldOrderService.copyCash(journalNum, "d");
                     }catch (Exception e){
-                        logger.error("操作异常", e);
-                        logger.info("复制订单收款单错误");
+                        e.printStackTrace();
+                        System.out.println("复制订单收款单错误");
                     }
                     //把订单状态改程03已收货
                     goldOrderService.updateFkState(cashierBillsID);
@@ -1451,7 +1450,7 @@ public class hy_jinbiAction {
 
         } catch (Exception e) {
             bool = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return bool;
     }
@@ -1485,7 +1484,7 @@ public class hy_jinbiAction {
 
             actionContext.getContext().put("data", data);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         //excelStream = excelService.showExcel(WithDrawApply.columnHeadings(),excellist);
@@ -1576,13 +1575,13 @@ public class hy_jinbiAction {
         try {
             sign = AlipaySignature.rsaSign(content, AlipayConfig.APP_PRIVATE_KEY, AlipayConfig.input_charset, AlipayConfig.sign_type);
         } catch (AlipayApiException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         String enCodesign = null;
         try {
             enCodesign = URLEncoder.encode(sign, "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         String authInfo = content + "&sign=" + enCodesign;
         result = authInfo;
@@ -1619,7 +1618,7 @@ public class hy_jinbiAction {
         request.setGrantType("authorization_code");
         AlipaySystemOauthTokenResponse oauthTokenResponse = AlipayConfig.alipayClientNew.execute(request);
 
-        logger.info("调试信息");
+        System.out.println(oauthTokenResponse.getAccessToken());
         //根据access_token查询用户信息
         AlipayUserInfoShareRequest userInfoRequest = new AlipayUserInfoShareRequest();
         AlipayUserInfoShareResponse userInfoResponse = AlipayConfig.alipayClientNew.execute(userInfoRequest, oauthTokenResponse.getAccessToken());
@@ -1758,7 +1757,7 @@ public class hy_jinbiAction {
                                 str = "提现成功，生成订单失败，冻结账户";
                                 tucs.setStatus("2");
                                 baseBeanService.saveOrUpdate(tucs);
-                                logger.error("操作异常", e);
+                                e.printStackTrace();
                             }
                         } else {
                             withDrawReq.setState("10");
@@ -1767,7 +1766,7 @@ public class hy_jinbiAction {
                     } catch (AlipayApiException e) {
                         withDrawReq.setState("11");
                         str = "交易失败";
-                        logger.error("操作异常", e);
+                        e.printStackTrace();
                     }
                 }
                 withDrawReq.setMessage(str);
@@ -1870,11 +1869,11 @@ public class hy_jinbiAction {
                     try {
                         xml = WeChatUtils.mapToXml(packageParams);
                     } catch (Exception e) {
-                        logger.error("操作异常", e);
+                        e.printStackTrace();
                     }
                     // 6.0获取需要发送的url地址
                     String wxUrl = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers"; // 获取提现的api接口
-                    logger.info("发送前的xml为：: {}", xml);
+                    System.out.println("发送前的xml为：" + xml);
                     // 7,向微信发送请求转账请求
                     String returnXml = null;
                     try {
@@ -1882,9 +1881,9 @@ public class hy_jinbiAction {
                     } catch (Exception e) {
                         withDrawReq.setState("11");
                         str = "提现失败";
-                        logger.error("操作异常", e);
+                        e.printStackTrace();
                     }
-                    logger.info("返回的returnXml为:: {}", returnXml);
+                    System.out.println("返回的returnXml为:" + returnXml);
                     // 8，将微信返回的xml结果转成map格式
                     Map<String, String> returnMap = WeChatUtils.parseXmlToList2(returnXml);
                     if (returnMap.get("result_code").equals("SUCCESS")) {
@@ -1897,14 +1896,14 @@ public class hy_jinbiAction {
                             str = "提现成功，生成订单失败，冻结账户";
                             tucs.setStatus("2");
                             baseBeanService.saveOrUpdate(tucs);
-                            logger.error("操作异常", e);
+                            e.printStackTrace();
                         }
                     } else {
                         withDrawReq.setState("10");
                         str = returnMap.get("err_code_des");
-                        logger.info("提现失败");
+                        System.out.println("提现失败");
                     }
-                    logger.info("returnMap为:: {}", returnMap);
+                    System.out.println("returnMap为:" + returnMap);
                 }
                 withDrawReq.setMessage(str);
                 jifenser.saveOrUpdateithDrawReq(withDrawReq);
@@ -1997,7 +1996,7 @@ public class hy_jinbiAction {
                         estr = WeChatUtils.encrypt(bank.getBytes("UTF-8"), pub, 2048, 11, rsa);
                     } catch (Exception e) {
                         str = "银行账号加密失败";
-                        logger.error("操作异常", e);
+                        e.printStackTrace();
                     }
                     //并转为base64格式----  调用付款需要传的 银行卡号
                     bank = Base64.encode(estr);
@@ -2007,7 +2006,7 @@ public class hy_jinbiAction {
                         name = WeChatUtils.encrypt(bankName.getBytes("UTF-8"), pub, 2048, 11, rsa);
                     } catch (Exception e) {
                         str = "银行卡持卡人加密失败";
-                        logger.error("操作异常", e);
+                        e.printStackTrace();
                     }
                     //并转为base64格式--调用付款需要传的 用户名
                     bankName = Base64.encode(name);
@@ -2040,7 +2039,7 @@ public class hy_jinbiAction {
                         xml = WeChatUtils.mapToXml(parameters);
                     } catch (Exception e) {
                         str = "map转换xml失败";
-                        logger.error("操作异常", e);
+                        e.printStackTrace();
                     }
 
                     String wxUrl = "https://api.mch.weixin.qq.com/mmpaysptrans/pay_bank";
@@ -2051,9 +2050,9 @@ public class hy_jinbiAction {
                     } catch (Exception e) {
                         withDrawReq.setState("11");
                         str = "请求提现银行卡失败";
-                        logger.error("操作异常", e);
+                        e.printStackTrace();
                     }
-                    logger.info("值：{}", resultXml);
+                    System.out.println(resultXml);
                     Map<String, String> returnMap = WeChatUtils.parseXmlToList2(resultXml);
                     if (returnMap.get("result_code").equals("SUCCESS")) {
 
@@ -2069,7 +2068,7 @@ public class hy_jinbiAction {
 //					wfjJifen.setWfjJifenScore(golds+"");
                             tucs.setStatus("2");
                             baseBeanService.saveOrUpdate(tucs);
-                            logger.error("操作异常", e);
+                            e.printStackTrace();
                         }
                     } else if ("SYSTEMERROR".equals(returnMap.get("err_code"))) {
                         withDrawReq.setState("10");
@@ -2092,20 +2091,20 @@ public class hy_jinbiAction {
                             try {
                                 xmlByQuery = WeChatUtils.mapToXml(parameter);
                             } catch (Exception e) {
-                                logger.error("操作异常", e);
+                                e.printStackTrace();
                             }
                             // 获取需要发送的url地址
                             String wxUrlByQuery = "https://api.mch.weixin.qq.com/mmpaysptrans/query_bank"; // 获取查询的api接口
-                            logger.info("发送前的xml为：: {}", xmlByQuery);
+                            System.out.println("发送前的xml为：" + xmlByQuery);
                             // 向微信发送请求转账请求
                             String returnXmlByQuery = null;
                             try {
                                 returnXmlByQuery = WeChatUtils.postData(wxUrlByQuery, xmlByQuery, mchid, cert_path);
                             } catch (Exception e) {
                                 strQuery = "查询失败";
-                                logger.error("操作异常", e);
+                                e.printStackTrace();
                             }
-                            logger.info("返回的returnXml为:: {}", returnXmlByQuery);
+                            System.out.println("返回的returnXml为:" + returnXmlByQuery);
 
                             Map<String, String> returnMapByQuery = WeChatUtils.parseXmlToList2(returnXmlByQuery);
 
@@ -2124,7 +2123,7 @@ public class hy_jinbiAction {
 //								wfjJifen.setWfjJifenScore(golds+"");
                                         tucs.setStatus("1");
                                         baseBeanService.saveOrUpdate(tucs);
-                                        logger.error("操作异常", e);
+                                        e.printStackTrace();
                                     }
                                 } else if ("FAILED".equals(returnMapByQuery.get("status"))) {
                                     //失败
@@ -2135,12 +2134,12 @@ public class hy_jinbiAction {
                                 }
                             }
                         } catch (InterruptedException e) {
-                            logger.error("操作异常", e);
+                            e.printStackTrace();
                         }
                     } else {
                         withDrawReq.setState("10");
                         str = returnMap.get("err_code_des");
-                        logger.info("提现失败");
+                        System.out.println("提现失败");
                     }
                 }
                 withDrawReq.setMessage(str);
@@ -2268,7 +2267,7 @@ public class hy_jinbiAction {
 
                 }catch (Exception e){
 
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
                 hdBackupBillHistory.setMoney(money+"");
                 beans.add(hdBackupBillHistory);
@@ -2295,7 +2294,7 @@ public class hy_jinbiAction {
             for (BaseBean b : list) {
 
                 WxAccountDetail wxAccountDetail = (WxAccountDetail) b;
-                logger.info("调试信息");
+                System.out.println(wxAccountDetail.getJournalNum());
                 if (wxAccountDetail.getType().equals("供应商成本")) {
 
                         String hql1 = "from Staff s where s.staffID = (select c.contactUserID from CashierBills c where c.journalNum = ?)";
@@ -2323,7 +2322,7 @@ public class hy_jinbiAction {
                 }
             }
         }catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         baseBeanService.saveBeansListAndexecuteHqlsByParams(beans,null,null);
@@ -2352,7 +2351,7 @@ public class hy_jinbiAction {
             baseBeanService.executeSqlsByParmsList(null, new String[]{sql}, paramslist);
         } catch (Exception e) {
             isOK = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         map.put("isOK", isOK);
         JSONObject oj = JSONObject.fromObject(map);
@@ -2380,7 +2379,7 @@ public class hy_jinbiAction {
             baseBeanService.update(cusCom);
         } catch (Exception e) {
             isOK = false;
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         map.put("isOK", isOK);
         JSONObject oj = JSONObject.fromObject(map);

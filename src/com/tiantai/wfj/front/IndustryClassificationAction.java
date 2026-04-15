@@ -62,7 +62,6 @@ import static com.tiantai.wfj.util.SessionWrap.KEY_SHOPCUSCOM;
 @Controller
 @Scope("prototype")
 public class IndustryClassificationAction {
-	private static final Logger logger = LoggerFactory.getLogger(IndustryClassificationAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -546,7 +545,7 @@ public class IndustryClassificationAction {
 //		try{
 //			ind.setIndustryName(industryType);
 //		}catch (Exception e){
-//			logger.error("操作异常", e);
+//			e.printStackTrace();
 //		}
 //
 //		baseBeanService.saveOrUpdate(ind);
@@ -688,7 +687,7 @@ public class IndustryClassificationAction {
         List<Object> params = new ArrayList<Object>();
         if (HttpRequestDeviceUtils.isMobileDevice(req) == false) {
             sql.append("with a as(select r.compnay_id,ccf.pic_path,cc.brandinfo,cc.compurpose,cc.logopath,cc.ccompanyid,cc.companyName,cc.industrytype,cc.companyAddr");
-            sql.append(" ,GetDistance(cc.accuracy,cc.dimension, ? , ? ) meter,cc.accuracy, cc.dimension ");
+            sql.append(" ,GetDistance(cc.accuracy,cc.dimension, ? , ? ) meter ");
             if ("activity".equals(flag)) {
                 sql.append(",p.activity_type ");
                 sql.append(" from dt_ccom_com r ,dtContactCompany cc,dt_ccom_conf ccf,dt_prize_activity p ");
@@ -732,14 +731,14 @@ public class IndustryClassificationAction {
             sql.delete(0, sql.length());
             sql.append(" with a as(select r.compnay_id,cc.jjPath,cc.brandinfo,cc.compurpose,cc.logopath,cc.ccompanyid,cc.companyName,cc.industrytype,cc.companyAddr ");
             if ("activity".equals(flag)) {
-                sql.append(" ,GetDistance(cc.accuracy,cc.dimension, ? , ? ) meter,p.activity_type,cc.accuracy, cc.dimension ");
+                sql.append(" ,GetDistance(cc.accuracy,cc.dimension, ? , ? ) meter,p.activity_type ");
                 sql.append(" from dt_ccom_com r ,dtContactCompany cc,dt_prize_activity p ");
                 sql.append(" where r.ccompany_id=cc.ccompanyid and cc.webstatus='01' and  sysdate between p.starting_time+0 and p.end_time+0 and p.activity_range = 0 and p.status = 0 and p.company_id = r.compnay_id and trim(p.activity_type) = ?");
                 params.add(accuracy != null ? accuracy : "");
                 params.add(dimension != null ? dimension : "");
                 params.add(activityType);
             } else {
-                sql.append(" ,GetDistance(cc.accuracy,cc.dimension, ? , ? ) meter,cc.accuracy, cc.dimension ");
+                sql.append(" ,GetDistance(cc.accuracy,cc.dimension, ? , ? ) meter ");
                 sql.append(" from dt_ccom_com r ,dtContactCompany cc ");
                 sql.append(" where r.ccompany_id=cc.ccompanyid and cc.webstatus='01'");
                 params.add(accuracy != null ? accuracy : "");
@@ -1013,7 +1012,7 @@ public class IndustryClassificationAction {
             readcount = pcm.getReadcount();
 
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         request.setAttribute("readcount", readcount);
         return "informationDetails";
@@ -1364,7 +1363,7 @@ public class IndustryClassificationAction {
         try {
             baseBeanService.save(staffbank);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             msg = "no";
         }
         obj.accumulate("msg", msg);
@@ -1402,7 +1401,7 @@ public class IndustryClassificationAction {
             }
             reader.close();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return sbf.toString();
     }
@@ -1933,7 +1932,7 @@ public class IndustryClassificationAction {
             return contentToFileService.getContent(path);
 
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return "";
         }
     }
@@ -1998,7 +1997,7 @@ public class IndustryClassificationAction {
             obj.accumulate("stuts", true);
             obj.accumulate("ordernum", ordernum);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             obj.accumulate("stuts", false);
         }
         result = obj.toString();
@@ -2018,7 +2017,7 @@ public class IndustryClassificationAction {
         try {
             URLDecoder.decode(search, "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return search;
     }

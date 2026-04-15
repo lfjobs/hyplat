@@ -1,8 +1,5 @@
 package hy.ea.util.milvus.Xfyun;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.net.URLEncoder;
@@ -12,7 +9,6 @@ import java.util.*;
 import java.util.Base64;
 
 public class AuthUrlGenerator {
-	private static final Logger logger = LoggerFactory.getLogger(AuthUrlGenerator.class);
 
     public static String generateAuthUrl(String host, String path, String apiKey, String apiSecret) throws Exception {
         // 1️⃣ 获取 RFC1123 格式的 UTC 时间
@@ -52,12 +48,12 @@ public class AuthUrlGenerator {
         );
 
         // ✅ 打印调试信息（方便对照 Python 版本）
-        logger.info("----- 调试信息 -----");
-        logger.info("tmp = \n: {}", tmp);
-        logger.info("signature = : {}", signature);
-        logger.info("authorization_origin = : {}", authorizationOrigin);
-        logger.info("final URL = : {}", url);
-        logger.info("-------------------");
+        System.out.println("----- 调试信息 -----");
+        System.out.println("tmp = \n" + tmp);
+        System.out.println("signature = " + signature);
+        System.out.println("authorization_origin = " + authorizationOrigin);
+        System.out.println("final URL = " + url);
+        System.out.println("-------------------");
 
         return url;
     }

@@ -1,8 +1,5 @@
 package hy.ea.finance.action.BenDis;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.plat.bo.BaseBean;
 import hy.plat.bo.PageForm;
@@ -19,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 
 public class wfjzhAction {
-	private static final Logger logger = LoggerFactory.getLogger(wfjzhAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -67,7 +63,7 @@ public class wfjzhAction {
 			List<BaseBean> p_list=baseBeanService.getListBeanBySqlAndParams(p_sql.toString(),new Object[]{"会员类型级别","会员中心","系统粉丝","粉丝名片","移动粉丝"});
             request.setAttribute("p_list",p_list);
         }catch (Exception e){
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "list";
     }

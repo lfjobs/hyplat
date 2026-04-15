@@ -1,8 +1,5 @@
 package com.mysl.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Remind;
@@ -41,7 +38,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class CheckManageAction {
-	private static final Logger logger = LoggerFactory.getLogger(CheckManageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -387,7 +383,7 @@ public class CheckManageAction {
 					remind2=(Remind) remind.cloneRemind();
 				} catch (CloneNotSupportedException e) {
 					// TODO Auto-generated catch block
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 				
 				remind2.setRemindID(serverService.getServerID("remind"));

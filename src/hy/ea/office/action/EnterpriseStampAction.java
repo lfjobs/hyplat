@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.util.SessionWrap;
@@ -47,7 +44,6 @@ import java.util.*;
  * 企业印章管理
  */
 public class EnterpriseStampAction {
-	private static final Logger logger = LoggerFactory.getLogger(EnterpriseStampAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -288,7 +284,7 @@ public class EnterpriseStampAction {
 			baseBeanService.saveBeansListAndexecuteHqlsByParams(beans, null,
 					null);
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -389,7 +385,7 @@ public class EnterpriseStampAction {
 				map.put("result", "fail");
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject oj = JSONObject.fromObject(map);
 		this.result = oj.toString();
@@ -507,7 +503,7 @@ public class EnterpriseStampAction {
 
 		staffID = account.getStaffID();
 		companyID = account.getCompanyID();
-		logger.info("值：{}", parameter);
+		System.out.println(parameter);
         List<BaseBean> list =  enterpriceStampService.getStampList(staffID,companyID,parameter);
         if("search".equals(search)){
             Map<String,Object> map = new HashMap<String,Object>();

@@ -52,7 +52,6 @@ import org.apache.commons.httpclient.HttpClient;
 @Controller
 @Scope("prototype")
 public class CoacheRservationAction {
-	private static final Logger logger = LoggerFactory.getLogger(CoacheRservationAction.class);
     @Resource
     private  OrderServiceImpl ordersi;
     @Resource
@@ -315,7 +314,7 @@ public class CoacheRservationAction {
                     //long s = (h / 1000 - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60);
                     t=(double)hour+(min/60);
                 } catch (ParseException e) {
-                    logger.error("操作异常", e);
+                    e.printStackTrace();
                 }
                     detailTime.setStudentId(student.getStudentId());
                     detailTime.setStaffId(student.getStaffId());
@@ -877,7 +876,7 @@ public class CoacheRservationAction {
                 return true;
             }
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return false;
     }

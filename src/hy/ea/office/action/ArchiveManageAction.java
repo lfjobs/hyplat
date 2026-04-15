@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.Company;
@@ -52,7 +49,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class ArchiveManageAction {
-	private static final Logger logger = LoggerFactory.getLogger(ArchiveManageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -527,7 +523,7 @@ public class ArchiveManageAction {
 			}
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -700,7 +696,7 @@ public class ArchiveManageAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -801,7 +797,7 @@ public class ArchiveManageAction {
 			JSONObject jo = JSONObject.fromObject(map, cfg);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -860,7 +856,7 @@ public class ArchiveManageAction {
 					.getServletContext().getRealPath("/");
 			FileUtil.delete(path + attachment.getFilepath());
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", "suc");
@@ -936,7 +932,7 @@ public class ArchiveManageAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -1067,7 +1063,7 @@ public class ArchiveManageAction {
 			JSONObject jo = JSONObject.fromObject(map, cfg);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -1108,7 +1104,7 @@ public class ArchiveManageAction {
 			JSONObject jo = JSONObject.fromObject(map, cfg);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}

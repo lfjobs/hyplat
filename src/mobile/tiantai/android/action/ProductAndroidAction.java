@@ -1,8 +1,5 @@
 package mobile.tiantai.android.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -57,7 +54,6 @@ import com.opensymphony.xwork2.Action;
 @Controller
 @Scope("prototype")
 public class ProductAndroidAction {
-	private static final Logger logger = LoggerFactory.getLogger(ProductAndroidAction.class);
 	@Resource
 	private ServerService serverService;
 	@Resource
@@ -1229,7 +1225,7 @@ public class ProductAndroidAction {
 					content, path);
 
 		} catch (IOException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 	
 		}
 		return "/upload_files/goodDetail/"+id+UploadContentToFileService.suffix;

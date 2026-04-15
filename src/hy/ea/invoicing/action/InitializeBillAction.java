@@ -24,7 +24,6 @@ import java.util.*;
  * 初始库存
  */
 public class InitializeBillAction {
-	private static final Logger logger = LoggerFactory.getLogger(InitializeBillAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -48,7 +47,7 @@ public class InitializeBillAction {
         try {
             map = initializeService.getInitializeList(companyid, parameter, pageForm);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         JsonConfig jsonConfig = new JsonConfig();
         jsonConfig.registerJsonValueProcessor(java.util.Date.class,
@@ -119,7 +118,7 @@ public class InitializeBillAction {
             map.put("objList", objList);
         } catch (Exception e) {
             map.put("error", "数据错误");
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         JSONObject jsonArray = JSONObject.fromObject(map);
         result = jsonArray.toString();
@@ -146,7 +145,7 @@ public class InitializeBillAction {
             initializeService.SaveInitialize(formjum, serializeJson);
             map.put("falg", "完成");
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             map.put("falg", "失败");
         }
         JSONObject jsonArray = JSONObject.fromObject(map);
@@ -182,7 +181,7 @@ public class InitializeBillAction {
             JSONObject jsonArray = JSONObject.fromObject(map);
             result = jsonArray.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -208,7 +207,7 @@ public class InitializeBillAction {
             JSONObject jsonArray = JSONObject.fromObject(map);
             result = jsonArray.toString();
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }

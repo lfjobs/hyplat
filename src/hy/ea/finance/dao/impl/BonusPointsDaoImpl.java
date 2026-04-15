@@ -1,8 +1,5 @@
 package hy.ea.finance.dao.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 
 import java.sql.CallableStatement;
@@ -42,8 +39,8 @@ public class BonusPointsDaoImpl implements BonusPointsDao{
 		    ct.close();
 			
 		} catch (SQLException e) {	
-			logger.info("调试信息");
-			logger.error("操作异常", e);
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 

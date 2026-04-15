@@ -1,8 +1,5 @@
 package com.tiantai.nwa.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -18,7 +15,6 @@ import java.util.Locale;
  * <br/>2011-1-17 下午02:25:54
  */
 public class DateUtil {
-	private static final Logger logger = LoggerFactory.getLogger(DateUtil.class);
 	
 	private static final SimpleDateFormat SIMPLEDATEFORMAT = (SimpleDateFormat)DateFormat.getDateTimeInstance();
 	private static final SimpleDateFormat SIMPLEDATEFORMAT_WITH_FORMAT = (SimpleDateFormat)DateFormat.getDateTimeInstance();
@@ -103,7 +99,7 @@ public class DateUtil {
 		try {
 			return getDateTimeWithFormat(SIMPLEDATEFORMAT_WITH_FORMAT.parse(dateTime));
 		} catch (ParseException e) {			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return null;
 		}
 	}
@@ -120,23 +116,23 @@ public class DateUtil {
 		try {
 			return SIMPLEDATEFORMAT_WITH_FORMAT.parse(dateTime);
 		} catch (ParseException e) {			
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return null;
 		}
 	}	
 	
 	public static void main(String[] args) {		
-//		logger.info("调试信息");
-//		logger.info("调试信息");
-//		logger.info("调试信息");
-//		logger.info("调试信息");		
-//		logger.info("调试信息");
+//		System.out.println(getDateTimeByFormat(DateUtil.Date_Format_YYYYMMDD));
+//		System.out.println(getDefaultDateTime());
+//		System.out.println(getDateTimeByFormat(DateUtil.Date_Format_YYYYMMDD_HHMMSS));
+//		System.out.println(getDateTimeByFormat(DateUtil.Date_Format_HHMMSS));		
+//		System.out.println(formatDateTime("1998-9-13 12:55:45",DateUtil.Date_Format_YYYYMMDD_HHMMSS));
 		
 		String a = "22|735001040016552";
 		String[] arr  = a.split("\\|");		
-		logger.info("调试信息");
+		System.out.println(arr.length);
 		for (int i = 0; i < arr.length; i++) {
-			logger.info("调试信息");			
+			System.out.println(arr[i]);			
 		}
 	}
 }

@@ -1,8 +1,5 @@
 package hy.ea.collage.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.aliyuncs.exceptions.ClientException;
 
 import com.aliyuncs.vod.model.v20170321.*;
@@ -37,7 +34,6 @@ import java.util.*;
 @Controller
 @Scope("prototype")
 public class DspIndexAction {
-	private static final Logger logger = LoggerFactory.getLogger(DspIndexAction.class);
     @Resource
     private DspIndexSerivce dspIndexSerivce;
     @Resource
@@ -88,7 +84,7 @@ public class DspIndexAction {
 
             result = uploadInfo;
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
         return "success";
     }
@@ -218,7 +214,7 @@ public class DspIndexAction {
         try {
             dspIndexSerivce.addShare(videoId);
         } catch (Exception e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             result = "1";
         }
 
@@ -392,7 +388,7 @@ public class DspIndexAction {
                     earthIndexService.addBrowseHistory(tc.getSccId(), "视频", videoId);
                 }
             } catch (Exception e) {
-                logger.error("操作异常", e);
+                e.printStackTrace();
             }
         }
     }
@@ -510,10 +506,10 @@ public class DspIndexAction {
         SessionWrap sessionWrap = SessionWrap.getInstance();
         TEshopCusCom cus = (TEshopCusCom) sessionWrap.getObject(httpSession, SessionWrap.KEY_SHOPCUSCOM);
 
-        logger.info("调试信息");
-        logger.info("调试信息");
-        logger.info("调试信息");
-        logger.info("priceType: : {}", priceType);
+        System.out.println("titleName: " + video.getTitleName());
+        System.out.println("staffId: " + cus.getStaffid());
+        System.out.println("pvedio: " + pvedio.getPpid());
+        System.out.println("priceType: " + priceType);
 
         String r = dspIndexSerivce.pubVideo(video, cus.getStaffid(), pvedio.getPpid(), priceType);
         Map<String, Object> map = new HashMap<>();
@@ -528,11 +524,11 @@ public class DspIndexAction {
      * @return
      */
     public String getDspProducts() {
-        logger.info("值：{}", priceType);
-        logger.info("值：{}", pageNumber);
-        logger.info("值：{}", pageSize);
-        logger.info("值：{}", parameter);
-        logger.info("值：{}", sccId);
+        System.out.println(priceType);
+        System.out.println(pageNumber);
+        System.out.println(pageSize);
+        System.out.println(parameter);
+        System.out.println(sccId);
 
         pageForm = dspIndexSerivce.getDspProducts(priceType, pageNumber, pageSize, parameter, sccId);
 
@@ -856,7 +852,7 @@ public class DspIndexAction {
             map.put("result", "0");
         } catch (Exception e) {
             map.put("result", "1");
-            logger.error("操作异常", e);
+            e.printStackTrace();
         }
 
         JSONObject jo = JSONObject.fromObject(map);
@@ -877,7 +873,7 @@ public class DspIndexAction {
             map.put("result", "0");
         } catch (Exception e) {
             map.put("result", "1");
-            logger.error("操作异常", e);
+            e.printStackTrace();
             ;
         }
 

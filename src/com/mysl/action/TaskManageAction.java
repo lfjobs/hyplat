@@ -1,8 +1,5 @@
 package com.mysl.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.Remind;
 import hy.ea.bo.human.Staff;
@@ -53,7 +50,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class TaskManageAction {
-	private static final Logger logger = LoggerFactory.getLogger(TaskManageAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -159,7 +155,7 @@ public class TaskManageAction {
 	public String getTaskNoticeList() {
 		String hql = "from DtMytask where  proid = ?";
 		List<Object> params = new ArrayList<Object>();
-//		logger.info("调试信息");
+//		System.out.println(myproject.getProid());
 		params.add(myproject.getProid());
         
 		if (search != null && "search".equals(search)) {
@@ -408,7 +404,7 @@ public class TaskManageAction {
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		
@@ -437,7 +433,7 @@ public class TaskManageAction {
 		
 		  baseBeanService.deleteBeanByKey(DtMyattach.class,attach.getAttachkey());
 		 }catch(Exception e){
-			 logger.error("操作异常", e);
+			 e.printStackTrace();
 		 }
 		
 		 return "success";
@@ -499,7 +495,7 @@ public class TaskManageAction {
 		.getServletContext().getRealPath("/");
         HttpServletResponse response = ServletActionContext.getResponse();
         String docPath = request.getParameter("docPath");
-        logger.info("值：{}", docPath);
+        System.out.println(docPath);
 		officeService.saveOffice(request, response, realpath, docPath);
 		return "none";
 	}
@@ -652,7 +648,7 @@ public class TaskManageAction {
     	 attachrecord.setStatus(operate);
     	 baseBeanService.save(attachrecord);
     	 }catch(Exception e){
-    		 logger.error("操作异常", e);
+    		 e.printStackTrace();
     	 }
     	
      }
@@ -708,9 +704,9 @@ public class TaskManageAction {
  	    cost3 = fnum.format(Float.parseFloat(cost11.toString())-Float.parseFloat(cost22.toString()));
  		 }
  		}
-// 		logger.info("值：{}", cost1);
-// 		logger.info("值：{}", cost2);
-// 		logger.info("值：{}", cost3);
+// 		System.out.println(cost1);
+// 		System.out.println(cost2);
+// 		System.out.println(cost3);
     	 
     	 return "szcost";
      }
@@ -1038,8 +1034,8 @@ public class TaskManageAction {
 		dmpp.add(s1s);
 		dmpp1.add(ss);
 		dmpp1.add(s1s);
-		logger.info("值：{}", dmpp);
-		logger.info("值：{}", dmpp1);
+		System.out.println(dmpp);
+		System.out.println(dmpp1);
 		
 	}
 	/**---------------------------------生产设计结束-------------------------------**/

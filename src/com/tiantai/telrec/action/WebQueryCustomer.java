@@ -1,8 +1,5 @@
 package com.tiantai.telrec.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 
 import java.util.ArrayList;
@@ -50,7 +47,7 @@ public class WebQueryCustomer extends ActionSupport {
 		CAccount account = (CAccount) ActionContext.getContext().getSession()
 				.get("account");
 		String companyid = account.getCompanyID();
-		//logger.info("值：{}", companyid);
+		//System.out.println(companyid);
 		list = queryCustomerServie.queryCustomerForSplit(pageNum, recNum,
 				companyid);
 		ServletActionContext.getRequest().setAttribute("list", list);

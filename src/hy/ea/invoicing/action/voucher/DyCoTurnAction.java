@@ -1,8 +1,5 @@
 package hy.ea.invoicing.action.voucher;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CCode;
 import hy.ea.bo.company.ContactCompany;
@@ -51,7 +48,6 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller
 @Scope("prototype")
 public class DyCoTurnAction {
-	private static final Logger logger = LoggerFactory.getLogger(DyCoTurnAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -149,7 +145,7 @@ public class DyCoTurnAction {
  		try {
  			calendar.setTime(dateFormat.parse(dyco_ym));
  		} catch (ParseException e) {
- 			logger.error("操作异常", e);
+ 			e.printStackTrace();
  		}
  		calendar.add(Calendar.MONTH, -1);
  		yymm=dateFormat.format(calendar.getTime());

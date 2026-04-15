@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.human.Staff;
 import hy.ea.bo.office.Document;
@@ -40,7 +37,6 @@ import com.opensymphony.xwork2.ActionContext;
  * 公文流转管理
  */
 public class DocumentTemplateAction {
-	private static final Logger logger = LoggerFactory.getLogger(DocumentTemplateAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -201,7 +197,7 @@ public class DocumentTemplateAction {
 				map.put("result", "fail");
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		JSONObject oj = JSONObject.fromObject(map);
 		this.result = oj.toString();
@@ -224,7 +220,7 @@ public class DocumentTemplateAction {
 		try {
 			fileShowName = java.net.URLDecoder.decode(fileShowName, "utf-8");
 		} catch (UnsupportedEncodingException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		String hql = "from DocumentTemplate where fileShowName=? and companyId = ?";
@@ -243,7 +239,7 @@ public class DocumentTemplateAction {
 			JSONObject jo = JSONObject.fromObject(map);
 			this.result = jo.toString();
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}

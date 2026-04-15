@@ -1,8 +1,5 @@
 package hy.ea.office.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
@@ -40,7 +37,6 @@ import java.util.*;
  * 公文流转管理
  */
 public class DocumentFlowAction {
-	private static final Logger logger = LoggerFactory.getLogger(DocumentFlowAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -145,7 +141,7 @@ public class DocumentFlowAction {
 			}
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -238,7 +234,7 @@ public class DocumentFlowAction {
 					(String) session.get("module"), type);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		return "success";
@@ -311,7 +307,7 @@ public class DocumentFlowAction {
 					account.getCompanyID(), content);
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -364,7 +360,7 @@ public class DocumentFlowAction {
 			}
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return "success";
 	}
@@ -412,7 +408,7 @@ public class DocumentFlowAction {
 			}
 
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -516,7 +512,7 @@ public class DocumentFlowAction {
 								(String) session.get("organizationID") });
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -612,7 +608,7 @@ public class DocumentFlowAction {
 
 			}
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 		Map<String, Object> map = new HashMap<String, Object>();

@@ -1,8 +1,5 @@
 package com.faceSDK.faceUtil;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import net.sf.json.JSONObject;
@@ -26,7 +23,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class IdCardOcrUtils {
-	private static final Logger logger = LoggerFactory.getLogger(IdCardOcrUtils.class);
 
     private IdCardOcrUtils() {
     }
@@ -51,7 +47,7 @@ public class IdCardOcrUtils {
         ImageIO.write(bufferedImage, "png", baos);
         byte[] bytes = baos.toByteArray();
         Map<String, String> userInfoMap = IdCardOcrUtils.getStringStringMap(bytes);
-        //logger.info("值：{}", userInfoMap);
+        //System.out.println(userInfoMap);
     }*/
     /**
      * 身份证完整信息识别
@@ -80,35 +76,35 @@ public class IdCardOcrUtils {
         Gson gson = new Gson();
         Type type = new TypeToken<Map<String, Object>>() {}.getType();
         Map<String, Object> json = gson.fromJson(s, type);
-        //logger.info("调试信息");
+        //System.out.println("============"+s);
         List<List<Map>> jsons = (List<List<Map>>) json.get("results");
-        //logger.info("值：{}", jsons);
+        //System.out.println(jsons);
 
         for (int i = 0; i < jsons.get(0).size(); i++) {
-            //logger.info("调试信息");
+            //System.out.println("当前的文字是：" + jsons.get(0).get(i).get("text"));
             // 这里光靠这个trim()有些空格是去除不掉的，所以还需要使用替换这个，双重保险
             result.append(jsons.get(0).get(i).get("text").toString().trim().replace(" ", ""));
         }
         String trim = result.toString().trim();
-        //logger.info("=================拼接后的文字是=========================");
-        //logger.info("值：{}", trim);
-        //logger.info("=======================接下来就是使用正则表达提取文字信息了===============================");
+        //System.out.println("=================拼接后的文字是=========================");
+        //System.out.println(trim);
+        //System.out.println("=======================接下来就是使用正则表达提取文字信息了===============================");
         List<Map> maps = jsons.get(0);
         String name = predictName(maps);
         if (name.equals("") || name == null) {
             name = fullName(trim);
         }
-        //logger.info("姓名：: {}", name);
+        //System.out.println("姓名：" + name);
         String nation = national(maps);
-        //logger.info("民族：: {}", nation);
+        //System.out.println("民族：" + nation);
         String address = address(maps);
-        //logger.info("地址：: {}", address);
+        //System.out.println("地址：" + address);
         String cardNumber = cardNumber(maps);
-        //logger.info("身份证号：: {}", cardNumber);
+        //System.out.println("身份证号：" + cardNumber);
         String sex = sex(cardNumber);
-        //logger.info("性别：: {}", sex);
+        //System.out.println("性别：" + sex);
         String birthday = birthday(cardNumber);
-        //logger.info("出生：: {}", birthday);
+        //System.out.println("出生：" + birthday);
 
         // return json1;
 
@@ -326,7 +322,7 @@ public class IdCardOcrUtils {
         String str="公民身份证号511527199405051834";
         Matcher m = r.matcher(str);
         if (m.find()) {
-            //logger.info("调试信息");
+            //System.out.println(m.group(0));
         }
     }*/
 
@@ -404,7 +400,7 @@ public class IdCardOcrUtils {
             BufferedImage image = ImageIO.read(file);
             int width = image.getWidth();
             int height = image.getHeight();
-            //logger.info("调试信息");
+            //System.out.println("width:"+width+",height:"+height);
             BufferedImage imageNew = new BufferedImage(height, width, image.getType());
             if(width>height){
                 int maxX = width - 1;
@@ -426,7 +422,7 @@ public class IdCardOcrUtils {
             }
             return imageNew;
         } catch (IOException e) {
-            logger.error("操作异常", e);
+            e.printStackTrace();
             return null;
         }
     }

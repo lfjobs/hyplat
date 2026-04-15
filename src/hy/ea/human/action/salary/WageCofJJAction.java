@@ -1,8 +1,5 @@
 package hy.ea.human.action.salary;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.base.action.BaseAction;
 import hy.ea.bo.CCode;
 import hy.ea.bo.CLogBook;
@@ -65,7 +62,7 @@ public class WageCofJJAction extends BaseAction<WageCofJJ> {
 					.getPageFormByDC((null != pageForm ? pageForm.getPageNumber() : 1),
 							(pageNumber==0?10:pageNumber),getList());
 		} catch (ParseException e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		
 		return "itemList";
@@ -89,7 +86,7 @@ public class WageCofJJAction extends BaseAction<WageCofJJ> {
 					java.util.Date date1=sdf.parse(wcofjj.getYyyyCofDate()+"-12-31");  
 					dc.add(Restrictions.between("cofJjDate", date, date1));
 				} catch (Exception e) {
-					logger.error("操作异常", e);
+					e.printStackTrace();
 				}
 			}
 		}
@@ -113,7 +110,7 @@ public class WageCofJJAction extends BaseAction<WageCofJJ> {
 						java.util.Date date=sdf.parse(wcof.getYyyyCofDate()+"-1-1");  
 						wcof.setCofJjDate(date);
 					} catch (ParseException e) {
-						logger.error("操作异常", e);
+						e.printStackTrace();
 					}
 						
 					if(null != wcof.getCofSortSnT() && !"".equals(wcof.getCofSortSnT().trim())){
@@ -146,7 +143,7 @@ public class WageCofJJAction extends BaseAction<WageCofJJ> {
 						java.util.Date date=sdf.parse(wcof.getYyyyCofDate()+"-1-1");  
 						wcof.setCofJjDate(date);
 					} catch (ParseException e) {
-						logger.error("操作异常", e);
+						e.printStackTrace();
 					}
 					BigDecimal bdprice=new BigDecimal(wcof.getCjProPriceT().trim());   
 					wcof.setCjProPrice(bdprice.setScale(2, BigDecimal.ROUND_HALF_UP));

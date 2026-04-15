@@ -22,7 +22,6 @@ import org.slf4j.LoggerFactory;
  * 
  */
 public class FFmpegTransfer {
-	private static final Logger logger = LoggerFactory.getLogger(FFmpegTransfer.class);
 	public static int COMPLETE;
 	public static Logger logger = LoggerFactory.getLogger(FFmpegTransfer.class);
 	/**
@@ -63,8 +62,8 @@ public class FFmpegTransfer {
 			builder.start();
 		} catch (Exception e) {
 			mark = false;
-			logger.info("值：{}", e);
-			logger.error("操作异常", e);
+			System.out.println(e);
+			e.printStackTrace();
 		}
 		return mark;
 	}
@@ -104,10 +103,10 @@ public class FFmpegTransfer {
 			ProcessBuilder builder = new ProcessBuilder();
 			builder.command(commands);
 			builder.start();
-			logger.info("截取成功");
+			System.out.println("截取成功");
 			return true;
 		} catch (Exception e) {
-			logger.error("操作异常", e);
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -143,8 +142,8 @@ public class FFmpegTransfer {
 			builder.start();
 		} catch (Exception e) {
 			mark = false;
-			logger.info("值：{}", e);
-			logger.error("操作异常", e);
+			System.out.println(e);
+			e.printStackTrace();
 		}
 		return mark;
 
@@ -207,8 +206,8 @@ public class FFmpegTransfer {
 			builder.start();
 		} catch (Exception e) {
 			mark = false;
-			logger.info("值：{}", e);
-			logger.error("操作异常", e);
+			System.out.println(e);
+			e.printStackTrace();
 		}
 		return mark;
 
@@ -227,10 +226,10 @@ public class FFmpegTransfer {
 			}
 		} catch (IOException e) {
 			// tanghui Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		} catch (InterruptedException e) {
 			// tanghui Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 
 	}

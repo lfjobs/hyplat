@@ -1,8 +1,5 @@
 package hy.plat.common.hibernate3;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -18,7 +15,6 @@ import org.hibernate.type.Type;
  * 
  */
 public class Finder {
-	private static final Logger logger = LoggerFactory.getLogger(Finder.class);
 	protected Finder() {
 	}
 
@@ -317,7 +313,7 @@ public class Finder {
 	public static void main(String[] args) {
 		Finder find = Finder
 				.create("select distinct p FROM BookType join fetch p");
-		logger.info("调试信息");
-		logger.info("调试信息");
+		System.out.println(find.getRowCountHql());
+		System.out.println(find.getOrigHql());
 	}
 }

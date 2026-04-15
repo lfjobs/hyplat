@@ -1,8 +1,5 @@
 package hy.ea.company.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.tiantai.wfj.bo.PosDevice;
 import com.tiantai.wfj.bo.TEshopCusCom;
@@ -29,7 +26,6 @@ import java.util.List;
 import java.util.Map;
 
 public class DepotManageMobileAction {
-	private static final Logger logger = LoggerFactory.getLogger(DepotManageMobileAction.class);
     @Resource
     private BaseBeanService baseBeanService;
     @Resource
@@ -56,7 +52,6 @@ public class DepotManageMobileAction {
      * @return
      */
     public String getTypelist() {
-
         Map<String, Object> map = new HashMap();
         companyID = getCompanyID();
         if (companyID == null) {
@@ -149,7 +144,7 @@ public class DepotManageMobileAction {
             baseBeanService.update(depotManage);
         } catch (Exception p) {
             falg = "2";
-            logger.error("操作异常", e);
+            p.printStackTrace();
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("falg", falg);

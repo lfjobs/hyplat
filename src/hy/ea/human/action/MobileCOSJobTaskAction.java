@@ -1,8 +1,5 @@
 package hy.ea.human.action;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import hy.ea.bo.CAccount;
 import hy.ea.bo.CLogBook;
 import hy.ea.bo.human.COSJobTask;
@@ -45,7 +42,6 @@ import com.tiantai.telrec.tool.JsonDateValueProcessor;
 @Controller
 @Scope("prototype")
 public class MobileCOSJobTaskAction {
-	private static final Logger logger = LoggerFactory.getLogger(MobileCOSJobTaskAction.class);
 	@Resource
 	private BaseBeanService baseBeanService;
 	@Resource
@@ -144,11 +140,11 @@ public class MobileCOSJobTaskAction {
 		response.setCharacterEncoding("UTF-8");
 		try {
 			response.getWriter().write(outString);
-			//logger.info("值：{}", outString);
+			//System.out.println(outString);
 			response.flushBuffer();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			logger.error("操作异常", e);
+			e.printStackTrace();
 		}
 		return null;
 		// return "listSummary";
@@ -244,7 +240,7 @@ public class MobileCOSJobTaskAction {
 		jobTask = new COSJobTask();
 		beans = new ArrayList<BaseBean>();
 		if (null != jobTaskmap) {
-			logger.info("调试信息");
+			System.out.println(jobTaskmap.size());
 			for (COSJobTask jbt : jobTaskmap.values()) {
 				this.staffID = jbt.getStaffID();
 				if (null == jbt.getJobTaskID() || "".equals(jbt.getJobTaskID())) {

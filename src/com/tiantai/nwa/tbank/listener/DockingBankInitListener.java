@@ -1,8 +1,5 @@
 package com.tiantai.nwa.tbank.listener;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
@@ -20,7 +17,7 @@ public class DockingBankInitListener implements ServletContextListener {
 		DockingBankInitUtil.InitSystemProperties();
 		DockingBankInitUtil.InitBankSXMap();
 		DockingBankInitUtil.InitABCDictMap();
-		logger.info("-------------init ok----------------");
+		System.out.println("-------------init ok----------------");
 	}
 
 }

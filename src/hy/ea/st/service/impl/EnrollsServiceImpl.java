@@ -1,8 +1,5 @@
 package hy.ea.st.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.tiantai.wfj.bo.MarKeting;
 import com.tiantai.wfj.bo.TEshopCusCom;
 import com.tiantai.wfj.bo.TEshopCustomer;
@@ -25,16 +22,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.*;
-
-
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/7/18.
@@ -50,9 +39,6 @@ public class EnrollsServiceImpl implements EnrollsService {
     @Resource
     private BaseBeanService baseBeanService;
 
-    public static String URL = "https://api.map.baidu.com/location/ip?";   //百度地图定位
-
-    public static String AK = "TcVGuuIiIXftuZKGcSz3ns8DI8vhR02j";  //百度apiKey
 
     public List<BaseBean> getProductByType(String sql ,String ccompanyId){
         List<BaseBean> list = beandao.getListBeanBySqlAndParams(sql,new Object[]{ccompanyId});
@@ -232,7 +218,7 @@ public class EnrollsServiceImpl implements EnrollsService {
         jxsql.append(" and c.typeid=? and a.oa_sccid = ? and p.categoryname=? and p.companyID = ? and b.status!=?");
 
         int count = baseBeanService.getConutByBySqlAndParams(jxsql.toString(), new Object[]{"学员报名",sccid,licenceType,companyID,"99"});
-        logger.info("值：{}", count);
+        System.out.println(count);
         String  tips  = "";
         if (count > 0) {
             tips = "同一车型不可重复报名";
@@ -259,91 +245,4 @@ public class EnrollsServiceImpl implements EnrollsService {
         return sccId;
     }
 
-
-    /**
-     * 默认ak
-     * 选择了ak，使用IP白名单校验：
-     * 根据您选择的AK已为您生成调用代码
-     * 检测到您当前的ak设置了IP白名单校验
-     * 您的IP白名单中的IP非公网IP，请设置为公网IP，否则将请求失败
-     * 请在IP地址为xxxxxxx的计算发起请求，否则将请求失败
-     */
-    public StringBuffer requestGetAK(Map<String, String> param) throws Exception {
-        if (URL == null || URL.length() <= 0 || param == null || param.size() <= 0) {
-            return null;
-        }
-
-        param.put("ak", AK);
-        StringBuffer queryString = new StringBuffer();
-        queryString.append(URL);
-        for (Map.Entry<?, ?> pair : param.entrySet()) {
-            queryString.append(pair.getKey() + "=");
-            //第一种方式使用的 jdk 自带的转码方式   两种均可
-            queryString.append(URLEncoder.encode((String) pair.getValue(), "UTF-8").replace("+", "%20") + "&");
-            //第二种方式使用的 spring 的转码方法
-            //queryString.append(UriUtils.encodeUri((String) pair.getValue(), "UTF-8") + "&");
-        }
-
-        if (queryString.length() > 0) {
-            queryString.deleteCharAt(queryString.length() - 1);
-        }
-
-        URL url = new URL(queryString.toString());
-        URLConnection httpConnection = (HttpURLConnection) url.openConnection();
-        httpConnection.connect();
-
-        InputStreamReader isr = new InputStreamReader(httpConnection.getInputStream());
-        BufferedReader reader = new BufferedReader(isr);
-        StringBuffer buffer = new StringBuffer();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            buffer.append(Utilities.decodeUnicode(line));
-        }
-        reader.close();
-        isr.close();
-        return buffer;
-    }
-
-    /**
-     * 默认ak
-     * 选择了ak，使用IP白名单校验：
-     * 根据您选择的AK已为您生成调用代码
-     * 检测到您当前的ak设置了IP白名单校验
-     * 您的IP白名单中的IP非公网IP，请设置为公网IP，否则将请求失败
-     * 请在IP地址为xxxxxxx的计算发起请求，否则将请求失败
-     */
-    public void requestGetAKjpg(Map<String, String> param) throws Exception {
-        if (param == null || param.size() <= 0) {
-            return ;
-        }
-
-        StringBuffer queryString = new StringBuffer();
-        queryString.append("https://api.map.baidu.com/staticimage/v2");
-        for (Map.Entry<?, ?> pair : param.entrySet()) {
-            queryString.append(pair.getKey() + "=");
-            //    第一种方式使用的 jdk 自带的转码方式  第二种方式使用的 spring 的转码方法 两种均可
-             queryString.append(URLEncoder.encode((String) pair.getValue(), "UTF-8").replace("+", "%20") + "&");
-            //queryString.append(UriUtils.encode((String) pair.getValue(), "UTF-8") + "&");
-        }
-
-        if (queryString.length() > 0) {
-            queryString.deleteCharAt(queryString.length() - 1);
-        }
-
-        java.net.URL url = new URL(queryString.toString());
-        logger.info("调试信息");
-        URLConnection httpConnection = (HttpURLConnection) url.openConnection();
-        httpConnection.connect();
-
-        InputStreamReader isr = new InputStreamReader(httpConnection.getInputStream());
-        BufferedReader reader = new BufferedReader(isr);
-        StringBuffer buffer = new StringBuffer();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            buffer.append(line);
-        }
-        reader.close();
-        isr.close();
-        logger.info("调试信息");
-    }
 }
