@@ -3,14 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>com.hyplat</groupId>
     <artifactId>hyplat</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
-    
+
     <name>Hyplat JavaWeb Application</name>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -22,14 +22,14 @@
         <jfreechart.version>1.0.13</jfreechart.version>
         <jackson.version>2.9.4</jackson.version>
     </properties>
-    
+
     <repositories>
         <repository>
             <id>aliyun</id>
             <url>https://maven.aliyun.com/repository/public</url>
         </repository>
     </repositories>
-    
+
     <dependencies>
         <!-- ==================== Servlet/JSP ==================== -->
         <dependency>
@@ -49,7 +49,7 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-        
+
         <!-- ==================== Spring 3.1.0 ==================== -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -101,17 +101,18 @@
             <artifactId>spring-context-support</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        
+
         <!-- ==================== Struts2 2.5.16 ==================== -->
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
             <version>${struts2.version}</version>
         </dependency>
+        <!-- ========== P0漏洞修复: Struts2插件版本同步 ========== -->
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-spring-plugin</artifactId>
-            <version>2.3.24.3</version>
+            <version>${struts2.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.struts</groupId>
@@ -128,12 +129,14 @@
             <artifactId>struts2-jasperreports-plugin</artifactId>
             <version>${struts2.version}</version>
         </dependency>
+        <!-- 注意: struts2-dojo-plugin 在 2.5.x 已废弃，最终版本是 2.3.37 -->
+        <!-- 如果项目中用到 Dojo 组件，保留此依赖；否则可以删除 -->
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-dojo-plugin</artifactId>
-            <version>2.3.24.3</version>
+            <version>2.3.37</version>
         </dependency>
-        
+
         <!-- ==================== Hibernate 3 ==================== -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -155,7 +158,7 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.3.2.Final</version>
 		</dependency>
-        
+
         <!-- ==================== POI 3.9 ==================== -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -172,7 +175,7 @@
             <artifactId>poi-scratchpad</artifactId>
             <version>${poi.version}</version>
         </dependency>
-        
+
         <!-- ==================== JFreeChart 1.0.13 ==================== -->
         <dependency>
             <groupId>org.jfree</groupId>
@@ -188,7 +191,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/jcommon-1.0.16.jar</systemPath>
         </dependency>
-        
+
         <!-- ==================== 数据库 ==================== -->
         <dependency>
             <groupId>mysql</groupId>
@@ -200,7 +203,7 @@
             <artifactId>c3p0</artifactId>
             <version>0.9.1.2</version>
         </dependency>
-        
+
         <!-- ==================== 日志 ==================== -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -212,7 +215,7 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
-        
+
         <!-- ==================== JSON ==================== -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -226,7 +229,7 @@
             <artifactId>gson</artifactId>
             <version>2.2.2</version>
         </dependency>
-        
+
         <!-- ==================== Jackson 2.9.4 ==================== -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -243,7 +246,7 @@
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        
+
         <!-- ==================== Apache Commons ==================== -->
         <dependency>
             <groupId>commons-lang</groupId>
@@ -276,9 +279,9 @@
             <version>1.7.0</version>
         </dependency>
         <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
-            <version>3.1</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
         </dependency>
         <dependency>
             <groupId>commons-httpclient</groupId>
@@ -290,7 +293,7 @@
             <artifactId>commons-pool2</artifactId>
             <version>2.2</version>
         </dependency>
-        
+
         <!-- ==================== HttpClient ==================== -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
@@ -307,14 +310,14 @@
             <artifactId>httpmime</artifactId>
             <version>4.3.1</version>
         </dependency>
-        
+
         <!-- ==================== 支付宝SDK 4.10.81 ==================== -->
         <dependency>
             <groupId>com.alipay.sdk</groupId>
             <artifactId>alipay-sdk-java</artifactId>
             <version>4.10.81.ALL</version>
         </dependency>
-        
+
         <!-- ==================== 阿里云SDK ==================== -->
         <dependency>
             <groupId>com.aliyun.oss</groupId>
@@ -336,14 +339,14 @@
             <artifactId>aliyun-java-sdk-vod</artifactId>
             <version>2.16.24</version>
         </dependency>
-        
+
         <!-- ==================== Redis ==================== -->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>2.9.0</version>
         </dependency>
-        
+
         <!-- ==================== WebSocket ==================== -->
         <dependency>
             <groupId>javax.websocket</groupId>
@@ -356,7 +359,7 @@
             <artifactId>Java-WebSocket</artifactId>
             <version>1.5.5</version>
         </dependency>
-        
+
         <!-- ==================== Lombok ==================== -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -364,14 +367,14 @@
             <version>1.18.38</version>
             <scope>provided</scope>
         </dependency>
-        
+
         <!-- ==================== 火山引擎SDK ==================== -->
         <dependency>
             <groupId>com.volcengine</groupId>
             <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
             <version>1.0.13</version>
         </dependency>
-        
+
         <!-- ==================== Quartz ==================== -->
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
@@ -380,7 +383,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/quartz-1.6.0.jar</systemPath>
         </dependency>
-        
+
         <!-- ==================== CXF (system scope) ==================== -->
         <dependency>
             <groupId>org.apache.cxf</groupId>
@@ -399,21 +402,21 @@
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>2.3.3</version>
         </dependency>
-        
+
         <!-- ==================== Dom4j ==================== -->
         <dependency>
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
         </dependency>
-        
+
         <!-- ==================== JasperReports ==================== -->
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
             <version>4.5.1</version>
         </dependency>
-        
+
         <!-- ==================== iText ==================== -->
         <dependency>
             <groupId>com.itextpdf</groupId>
@@ -427,7 +430,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/xmlworker-5.5.13.4.jar</systemPath>
         </dependency>
-        
+
         <!-- ==================== 其他 ==================== -->
         <dependency>
             <groupId>org.javassist</groupId>
@@ -468,7 +471,7 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
-        
+
         <!-- ==================== 本地jar包(system scope) ==================== -->
         <dependency>
             <groupId>com.hyplat</groupId>
@@ -645,7 +648,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/jpush-client-3.2.6.jar</systemPath>
         </dependency>
-    
+
         <!-- ==================== 补充缺失依赖 ==================== -->
         <!-- hutool -->
         <dependency>
@@ -662,7 +665,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/hutool-http-5.8.27.jar</systemPath>
         </dependency>
-        
+
         <!-- org.json -->
         <dependency>
             <groupId>org.json</groupId>
@@ -671,7 +674,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/json.jar</systemPath>
         </dependency>
-        
+
         <!-- groovy -->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
@@ -680,7 +683,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/groovy-all-1.8.6.jar</systemPath>
         </dependency>
-        
+
         <!-- guava -->
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -689,7 +692,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/guava-27.0-jre.jar</systemPath>
         </dependency>
-        
+
         <!-- grpc netty shaded -->
         <dependency>
             <groupId>io.grpc</groupId>
@@ -698,7 +701,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/grpc-netty-shaded-1.59.1.jar</systemPath>
         </dependency>
-        
+
         <!-- jbpm -->
         <dependency>
             <groupId>org.jbpm</groupId>
@@ -707,7 +710,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/jbpm.jar</systemPath>
         </dependency>
-        
+
         <!-- jodconverter -->
         <dependency>
             <groupId>org.artofsolving.jodconverter</groupId>
@@ -716,7 +719,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/jodconverter-core-3.0-beta-4-jahia2.jar</systemPath>
         </dependency>
-        
+
         <!-- javamail -->
         <dependency>
             <groupId>javax.mail</groupId>
@@ -725,7 +728,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/mail.jar</systemPath>
         </dependency>
-        
+
         <!-- comet4j -->
         <dependency>
             <groupId>org.comet4j</groupId>
@@ -734,7 +737,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/comet4j-tomcat7.jar</systemPath>
         </dependency>
-        
+
         <!-- aliyun facebody -->
         <dependency>
             <groupId>com.aliyun</groupId>
@@ -753,7 +756,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/fastjson2-2.0.56.jar</systemPath>
         </dependency>
-        
+
         <!-- xerces -->
         <dependency>
             <groupId>xerces</groupId>
@@ -762,7 +765,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/xercesImpl.jar</systemPath>
         </dependency>
-        
+
         <!-- JAX-RS -->
         <dependency>
             <groupId>javax.ws.rs</groupId>
@@ -771,7 +774,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/javax.ws.rs-api-2.0.jar</systemPath>
         </dependency>
-        
+
         <!-- ZXing 二维码 -->
         <dependency>
             <groupId>com.google.zxing</groupId>
@@ -780,7 +783,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/core-3.4.0.jar</systemPath>
         </dependency>
-        
+
         <!-- jodconverter 旧版 -->
         <dependency>
             <groupId>com.artofsolving</groupId>
@@ -806,7 +809,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/sdk-2.2.6.jar</systemPath>
         </dependency>
-        
+
         <!-- 亿美短信 -->
         <dependency>
             <groupId>cn.emay</groupId>
@@ -815,7 +818,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/sdk-1.0.jar</systemPath>
         </dependency>
-        
+
         <!-- 文通OCR -->
         <dependency>
             <groupId>com.wintone</groupId>
@@ -824,7 +827,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/pki.jar</systemPath>
         </dependency>
-        
+
         <!-- 华安人脸相机 -->
         <dependency>
             <groupId>com.ha</groupId>
@@ -868,7 +871,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/hyplatlib/ojdbc14-10g.jar</systemPath>
         </dependency>
-        
+
         <!-- Apache Mina -->
         <dependency>
             <groupId>org.apache.mina</groupId>
@@ -878,7 +881,7 @@
             <systemPath>${project.basedir}/hyplatlib/mina-core-2.0.16.jar</systemPath>
         </dependency>
 </dependencies>
-    
+
     <build>
         <sourceDirectory>src</sourceDirectory>
         <resources>

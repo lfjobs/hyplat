@@ -47,7 +47,7 @@ import hy.plat.service.BaseBeanService;
 import hy.plat.service.ServerService;
 import mobile.tiantai.android.util.JushMain;
 import net.sf.json.JSONObject;
-import org.apache.commons.collections.map.HashedMap;
+import org.apache.commons.collections4.map.HashedMap;
 import org.apache.struts2.ServletActionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -3478,7 +3478,7 @@ public class GoldOrderServiceImpl implements GoldOrderService {
                 List<BaseBean> pplist = beandao.getListBeanByHqlAndParams("FROM ProProxy P WHERE P.ppid = ?", new Object[]{ppid});
                 Map<String, ProProxy> proxyMap = null;
                 if (pplist != null && !pplist.isEmpty()) {
-                    proxyMap = new HashedMap();
+                    proxyMap = new HashedMap<>();
                     boolean b = true;
                     boolean c = true;
                     for (int j = 0; j < pplist.size(); j++) {

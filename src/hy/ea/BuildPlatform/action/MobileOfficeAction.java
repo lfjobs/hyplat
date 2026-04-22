@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.persistence.IdClass;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -18,13 +18,12 @@ import com.opensymphony.xwork2.ActionContext;
 import hy.ea.bo.DrivingSchool.TbJpStudentInfo;
 import hy.ea.bo.human.Staff;
 import hy.ea.util.Constant;
-import hy.ea.util.DateUtil;
+
 import hy.plat.bo.BaseBean;
 import hy.plat.service.BaseBeanService;
 import net.sf.json.JSONArray;
-import org.apache.commons.collections.map.HashedMap;
+
 import org.apache.struts2.ServletActionContext;
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;

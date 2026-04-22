@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import hy.ea.bo.finance.BenDis.OperatorInfo;
 import hy.plat.bo.BaseBean;
 import net.sf.json.JSONArray;
-import org.apache.commons.collections.map.HashedMap;
+import org.apache.commons.collections4.map.HashedMap;
 import org.apache.struts2.ServletActionContext;
 
 import com.tiantai.wfj.bo.TEshopCusCom;
@@ -441,7 +441,7 @@ public class BonusPointsAction {
 				" where bp.sccid = ?" +
 				" group by wg.wfj_guize_calc";
 		List<BaseBean> inAndExpList = baseBeanService.getListBeanBySqlAndParams(sql,new	Object[]{sccid});
-		Map<String,String> inAndExpMap = new HashedMap();
+		Map<String,String> inAndExpMap = new HashedMap<>();
 		for (Object o :inAndExpList){
 			Object [] objects = (Object[]) o;
 			inAndExpMap.put(objects[0].toString(),objects[1].toString());
